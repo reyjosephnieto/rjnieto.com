@@ -1,0 +1,136 @@
+/* css styles */
+/* Academic-journal styling for rjnieto.com */
+
+:root {
+  --ink: #252422;
+  --muted-ink: #6b6862;
+  --paper: #fffefa;
+  --rule: #d9d5cc;
+  --accent: #732c35;
+  --accent-dark: #48171d;
+}
+
+body {
+  color: var(--ink);
+  background-color: var(--paper);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.06rem;
+  line-height: 1.75;
+}
+
+.navbar {
+  background-color: var(--paper) !important;
+  border-bottom: 1px solid var(--rule);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.navbar-title {
+  color: var(--ink);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.2rem;
+  font-weight: normal;
+  letter-spacing: 0.02em;
+}
+
+.navbar-nav .nav-link {
+  color: #46433f;
+  font-size: 0.92rem;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active {
+  color: var(--accent);
+}
+
+h1,
+h2,
+h3,
+h4 {
+  color: var(--ink);
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: normal;
+  line-height: 1.25;
+}
+
+h1 {
+  font-size: 2.5rem;
+  letter-spacing: -0.02em;
+}
+
+h2 {
+  margin-top: 2.6rem;
+  padding-bottom: 0.3rem;
+  border-bottom: 1px solid var(--rule);
+}
+
+h3 {
+  margin-top: 1.8rem;
+}
+
+a {
+  color: var(--accent);
+  text-decoration-thickness: 0.06em;
+  text-underline-offset: 0.15em;
+}
+
+a:hover {
+  color: var(--accent-dark);
+}
+
+.quarto-title-meta {
+  margin-top: 1rem;
+  padding: 0.8rem 0;
+  color: var(--muted-ink);
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.9rem;
+}
+
+blockquote {
+  margin: 1.75rem 0;
+  padding-left: 1.25rem;
+  color: #4d4944;
+  border-left: 3px solid var(--accent);
+  font-style: italic;
+}
+
+code {
+  font-size: 0.9em;
+}
+
+pre {
+  border: 1px solid #e3dfd7;
+  border-radius: 3px;
+}
+
+.math.display {
+  margin: 1.75rem 0;
+  overflow-x: auto;
+}
+
+.sidebar,
+#TOC,
+.page-footer {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#TOC {
+  font-size: 0.88rem;
+}
+
+.page-footer {
+  color: var(--muted-ink);
+  border-top: 1px solid var(--rule);
+  font-size: 0.85rem;
+}
+
+@media (max-width: 768px) {
+  body {
+    font-size: 1rem;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+}

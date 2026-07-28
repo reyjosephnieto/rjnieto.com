@@ -1,0 +1,14 @@
+---
+title: "Math Blog"
+description: "Essays and notes on mathematics, computation, networks, and topology."
+listing:
+  contents: posts
+  sort: "date desc"
+  type: default
+  categories: true
+  feed: true
+page-layout: full
+---
+
+Longer mathematical essays, shorter observations, computational experiments,
+and expository notes.

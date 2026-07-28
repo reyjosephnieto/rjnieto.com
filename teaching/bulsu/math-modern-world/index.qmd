@@ -1,0 +1,28 @@
+---
+title: "Mathematics in the Modern World"
+subtitle: "Bulacan State University"
+toc: true
+---
+
+This section contains lecture notes, examples, exercises, and supplementary
+materials for *Mathematics in the Modern World*.
+
+These are personal teaching materials prepared by RJ Nieto. Unless expressly
+stated otherwise, they should not be treated as official publications or
+policies of Bulacan State University.
+
+## Course materials
+
+Materials will be organised by topic and teaching week.
+
+1. The language of mathematics
+2. Patterns and mathematical reasoning
+3. Logic and proof
+4. Mathematics of graphs
+5. Mathematics of finance
+6. Voting and apportionment
+7. Data, uncertainty, and decision-making
+
+## Availability
+
+Materials will be added as they are prepared and reviewed.

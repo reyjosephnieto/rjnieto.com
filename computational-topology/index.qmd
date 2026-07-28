@@ -1,0 +1,36 @@
+---
+title: "Computational Algebraic Topology from Scratch"
+subtitle: "A constructive path from elementary topology to persistent homology"
+toc: true
+---
+
+These notes develop computational algebraic topology from first principles.
+They are intended for readers with undergraduate linear algebra and some
+mathematical maturity, but no prior knowledge of algebraic topology.
+
+The central idea is to turn geometric and topological questions into finite
+algebraic computations. In particular, we will study why
+
+$$
+\partial_k \circ \partial_{k+1}=0
+$$
+
+and how this identity leads to homology groups, algorithms, filtrations, and
+persistent homology.
+
+## Planned structure
+
+1. Mathematical prerequisites
+2. Topological spaces and continuity
+3. Simplicial and cubical complexes
+4. Groups, vector spaces, and chain complexes
+5. Homology
+6. Boundary matrices and reduction algorithms
+7. Filtrations and persistence modules
+8. Stability
+9. Implementations and worked examples
+
+## Status
+
+These notes are under development. Chapters will be added and revised
+incrementally.

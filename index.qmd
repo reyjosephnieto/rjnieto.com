@@ -1,0 +1,8 @@
+---
+title: "RJ Nieto"
+subtitle: "Mathematics, computation, and topology"
+page-layout: full
+---
+
+This website contains my mathematical writing, computational topology notes,
+teaching materials, and curriculum vitae.

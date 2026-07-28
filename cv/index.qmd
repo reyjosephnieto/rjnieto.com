@@ -1,0 +1,58 @@
+---
+title: "Curriculum Vitae"
+subtitle: "RJ Nieto"
+toc: true
+---
+
+A downloadable PDF version will be added to this page.
+
+## Education
+
+### University of Bristol
+
+**BSc Mathematics, First Class Honours**, 2023–2026
+
+- Final-year project: *Computational Stability of Cubical Homology:
+  Orthogonal Controls for Fault Isolation in Retinal Diagnostics*
+- Project mark: 90%
+- Selected areas: algebra, combinatorics, optimisation, statistical machine
+  learning, logic, probability, and computational topology
+
+## Research interests
+
+- Computational algebraic topology
+- Persistent homology
+- Networks and graph theory
+- Mathematical optimisation
+- Machine learning for small-data and high-oversight settings
+
+## Teaching experience
+
+### University of Bristol
+
+**Mathematical Programming Demonstrator**
+
+Supported undergraduate students with mathematical programming, numerical
+methods, optimisation, and Python.
+
+## Selected project
+
+### Computational topology for retinal diagnostics
+
+Studied the computational stability of cubical and simplicial persistent
+homology applied to retinal-image analysis.
+
+## Technical skills
+
+- Python
+- LaTeX
+- Git
+- PyTorch
+- GUDHI
+- NetworkX
+- OpenCV
+- scikit-image
+
+## Contact
+
+Contact details and a downloadable CV will be added here.
