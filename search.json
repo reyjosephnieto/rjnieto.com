@@ -1,0 +1,114 @@
+[
+  {
+    "objectID": "math-blog/index.html",
+    "href": "math-blog/index.html",
+    "title": "Math Blog",
+    "section": "",
+    "text": "Longer mathematical essays, shorter observations, computational experiments, and expository notes.\n\n\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "cv/index.html",
+    "href": "cv/index.html",
+    "title": "Curriculum Vitae",
+    "section": "",
+    "text": "A downloadable PDF version will be added to this page."
+  },
+  {
+    "objectID": "cv/index.html#education",
+    "href": "cv/index.html#education",
+    "title": "Curriculum Vitae",
+    "section": "Education",
+    "text": "Education\n\nUniversity of Bristol\nBSc Mathematics, First Class Honours, 2023–2026\n\nFinal-year project: Computational Stability of Cubical Homology: Orthogonal Controls for Fault Isolation in Retinal Diagnostics\nProject mark: 90%\nSelected areas: algebra, combinatorics, optimisation, statistical machine learning, logic, probability, and computational topology"
+  },
+  {
+    "objectID": "cv/index.html#research-interests",
+    "href": "cv/index.html#research-interests",
+    "title": "Curriculum Vitae",
+    "section": "Research interests",
+    "text": "Research interests\n\nComputational algebraic topology\nPersistent homology\nNetworks and graph theory\nMathematical optimisation\nMachine learning for small-data and high-oversight settings"
+  },
+  {
+    "objectID": "cv/index.html#teaching-experience",
+    "href": "cv/index.html#teaching-experience",
+    "title": "Curriculum Vitae",
+    "section": "Teaching experience",
+    "text": "Teaching experience\n\nUniversity of Bristol\nMathematical Programming Demonstrator\nSupported undergraduate students with mathematical programming, numerical methods, optimisation, and Python."
+  },
+  {
+    "objectID": "cv/index.html#selected-project",
+    "href": "cv/index.html#selected-project",
+    "title": "Curriculum Vitae",
+    "section": "Selected project",
+    "text": "Selected project\n\nComputational topology for retinal diagnostics\nStudied the computational stability of cubical and simplicial persistent homology applied to retinal-image analysis."
+  },
+  {
+    "objectID": "cv/index.html#technical-skills",
+    "href": "cv/index.html#technical-skills",
+    "title": "Curriculum Vitae",
+    "section": "Technical skills",
+    "text": "Technical skills\n\nPython\nLaTeX\nGit\nPyTorch\nGUDHI\nNetworkX\nOpenCV\nscikit-image"
+  },
+  {
+    "objectID": "cv/index.html#contact",
+    "href": "cv/index.html#contact",
+    "title": "Curriculum Vitae",
+    "section": "Contact",
+    "text": "Contact\nContact details and a downloadable CV will be added here."
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site"
+  },
+  {
+    "objectID": "computational-topology/index.html",
+    "href": "computational-topology/index.html",
+    "title": "Computational Algebraic Topology from Scratch",
+    "section": "",
+    "text": "These notes develop computational algebraic topology from first principles. They are intended for readers with undergraduate linear algebra and some mathematical maturity, but no prior knowledge of algebraic topology.\nThe central idea is to turn geometric and topological questions into finite algebraic computations. In particular, we will study why\n\\[\n\\partial_k \\circ \\partial_{k+1}=0\n\\]\nand how this identity leads to homology groups, algorithms, filtrations, and persistent homology."
+  },
+  {
+    "objectID": "computational-topology/index.html#planned-structure",
+    "href": "computational-topology/index.html#planned-structure",
+    "title": "Computational Algebraic Topology from Scratch",
+    "section": "Planned structure",
+    "text": "Planned structure\n\nMathematical prerequisites\nTopological spaces and continuity\nSimplicial and cubical complexes\nGroups, vector spaces, and chain complexes\nHomology\nBoundary matrices and reduction algorithms\nFiltrations and persistence modules\nStability\nImplementations and worked examples"
+  },
+  {
+    "objectID": "computational-topology/index.html#status",
+    "href": "computational-topology/index.html#status",
+    "title": "Computational Algebraic Topology from Scratch",
+    "section": "Status",
+    "text": "Status\nThese notes are under development. Chapters will be added and revised incrementally."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "RJ Nieto",
+    "section": "",
+    "text": "This website contains my mathematical writing, computational topology notes, teaching materials, and curriculum vitae."
+  },
+  {
+    "objectID": "teaching/bulsu/math-modern-world/index.html",
+    "href": "teaching/bulsu/math-modern-world/index.html",
+    "title": "Mathematics in the Modern World",
+    "section": "",
+    "text": "This section contains lecture notes, examples, exercises, and supplementary materials for Mathematics in the Modern World.\nThese are personal teaching materials prepared by RJ Nieto. Unless expressly stated otherwise, they should not be treated as official publications or policies of Bulacan State University."
+  },
+  {
+    "objectID": "teaching/bulsu/math-modern-world/index.html#course-materials",
+    "href": "teaching/bulsu/math-modern-world/index.html#course-materials",
+    "title": "Mathematics in the Modern World",
+    "section": "Course materials",
+    "text": "Course materials\nMaterials will be organised by topic and teaching week.\n\nThe language of mathematics\nPatterns and mathematical reasoning\nLogic and proof\nMathematics of graphs\nMathematics of finance\nVoting and apportionment\nData, uncertainty, and decision-making"
+  },
+  {
+    "objectID": "teaching/bulsu/math-modern-world/index.html#availability",
+    "href": "teaching/bulsu/math-modern-world/index.html#availability",
+    "title": "Mathematics in the Modern World",
+    "section": "Availability",
+    "text": "Availability\nMaterials will be added as they are prepared and reviewed."
+  }
+]
