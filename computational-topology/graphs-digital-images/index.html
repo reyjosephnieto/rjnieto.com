@@ -6,8 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="description" content="Graphs, connectivity, image grids, threshold sets, and the discrete structures underlying cubical topology.">
 
-<title>Computational Algebraic Topology from Scratch – RJ Nieto</title>
+<title>Graphs and Digital Images – RJ Nieto</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -26,46 +27,63 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for citations */
-div.csl-bib-body { }
-div.csl-entry {
-  clear: both;
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
 }
-.hanging-indent div.csl-entry {
-  margin-left:2em;
-  text-indent:-2em;
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
-div.csl-left-margin {
-  min-width:2em;
-  float:left;
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-div.csl-right-inline {
-  margin-left:2em;
-  padding-left:1em;
-}
-div.csl-indent {
-  margin-left: 2em;
-}</style>
+</style>
 
 
-<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../">
-<link href="../computational-topology/metric-spaces/index.html" rel="next">
-<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="../site_libs/quarto-html/popper.min.js"></script>
-<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-805e789c7b7f260b48d5cafdd348845c.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../computational-topology/complexes/index.html" rel="next">
+<link href="../../computational-topology/topological-spaces/index.html" rel="prev">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-805e789c7b7f260b48d5cafdd348845c.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -124,7 +142,7 @@ window.Quarto = {
 };
 </script>
 
-<link rel="stylesheet" href="../styles.css">
+<link rel="stylesheet" href="../../styles.css">
 </head>
 
 <body class="nav-sidebar docked nav-fixed quarto-light">
@@ -134,7 +152,7 @@ window.Quarto = {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="../index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">RJ Nieto</span>
     </a>
   </div>
@@ -145,19 +163,19 @@ window.Quarto = {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../index.html"> 
+    <a class="nav-link" href="../../index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="../computational-topology/index.html" aria-current="page"> 
+    <a class="nav-link active" href="../../computational-topology/index.html" aria-current="page"> 
 <span class="menu-text">TDA</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../teaching/index.html"> 
+    <a class="nav-link" href="../../teaching/index.html"> 
 <span class="menu-text">Teaching</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../cv/index.html"> 
+    <a class="nav-link" href="../../cv/index.html"> 
 <span class="menu-text">CV</span></a>
   </li>  
 </ul>
@@ -171,7 +189,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../computational-topology/index.html">Computational Algebraic Topology from Scratch</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../computational-topology/metric-spaces/index.html">Foundations</a></li><li class="breadcrumb-item"><a href="../../computational-topology/graphs-digital-images/index.html">Graphs and Digital Images</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -185,7 +203,7 @@ window.Quarto = {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../computational-topology/index.html" class="sidebar-item-text sidebar-link active">
+  <a href="../../computational-topology/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Computational Algebraic Topology from Scratch</span></a>
   </div>
 </li>
@@ -200,31 +218,31 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../computational-topology/metric-spaces/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../computational-topology/metric-spaces/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Metric Spaces</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../computational-topology/topological-spaces/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../computational-topology/topological-spaces/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Topological Spaces and Continuity</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../computational-topology/graphs-digital-images/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../computational-topology/graphs-digital-images/index.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Graphs and Digital Images</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../computational-topology/complexes/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../computational-topology/complexes/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Cubical and Simplicial Complexes</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../computational-topology/linear-algebra/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../computational-topology/linear-algebra/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Linear Algebra for Homology</span></a>
   </div>
 </li>
@@ -241,25 +259,25 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../computational-topology/homology/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../computational-topology/homology/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Chains, Boundaries, and Homology</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../computational-topology/computing-homology/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../computational-topology/computing-homology/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Computing Homology</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../computational-topology/persistent-homology/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../computational-topology/persistent-homology/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Filtrations and Persistent Homology</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../computational-topology/stability/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../computational-topology/stability/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Stability of Persistent Homology</span></a>
   </div>
 </li>
@@ -276,19 +294,19 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../computational-topology/computational-stability/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../computational-topology/computational-stability/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Computational Stability on Digital Images</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../computational-topology/reliability-engineering/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../computational-topology/reliability-engineering/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Reliability Engineering with Complementary Probes</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../computational-topology/retinal-case-study/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../computational-topology/retinal-case-study/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Case Study: Retinal Diagnostics</span></a>
   </div>
 </li>
@@ -305,7 +323,7 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../computational-topology/functoriality-triangulation/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../computational-topology/functoriality-triangulation/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Advanced: Functoriality and Triangulation</span></a>
   </div>
 </li>
@@ -321,25 +339,31 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#the-route-through-the-subject" id="toc-the-route-through-the-subject" class="nav-link active" data-scroll-target="#the-route-through-the-subject">The route through the subject</a></li>
-  <li><a href="#why-turn-topology-into-vectors" id="toc-why-turn-topology-into-vectors" class="nav-link" data-scroll-target="#why-turn-topology-into-vectors">Why turn topology into vectors?</a></li>
-  <li><a href="#foundations" id="toc-foundations" class="nav-link" data-scroll-target="#foundations">Foundations</a></li>
-  <li><a href="#homology-and-persistence" id="toc-homology-and-persistence" class="nav-link" data-scroll-target="#homology-and-persistence">Homology and persistence</a></li>
-  <li><a href="#research-application" id="toc-research-application" class="nav-link" data-scroll-target="#research-application">Research application</a></li>
-  <li><a href="#advanced-material" id="toc-advanced-material" class="nav-link" data-scroll-target="#advanced-material">Advanced material</a></li>
-  <li><a href="#status" id="toc-status" class="nav-link" data-scroll-target="#status">Status</a></li>
+  <li><a href="#graphs" id="toc-graphs" class="nav-link active" data-scroll-target="#graphs"><span class="header-section-number">1</span> Graphs</a></li>
+  <li><a href="#pixel-grids" id="toc-pixel-grids" class="nav-link" data-scroll-target="#pixel-grids"><span class="header-section-number">2</span> Pixel grids</a></li>
+  <li><a href="#four--and-eight-neighbour-adjacency" id="toc-four--and-eight-neighbour-adjacency" class="nav-link" data-scroll-target="#four--and-eight-neighbour-adjacency"><span class="header-section-number">3</span> Four- and eight-neighbour adjacency</a></li>
+  <li><a href="#threshold-sets" id="toc-threshold-sets" class="nav-link" data-scroll-target="#threshold-sets"><span class="header-section-number">4</span> Threshold sets</a></li>
+  <li><a href="#components-by-graph-search" id="toc-components-by-graph-search" class="nav-link" data-scroll-target="#components-by-graph-search"><span class="header-section-number">5</span> Components by graph search</a></li>
+  <li><a href="#from-graphs-to-cell-complexes" id="toc-from-graphs-to-cell-complexes" class="nav-link" data-scroll-target="#from-graphs-to-cell-complexes"><span class="header-section-number">6</span> From graphs to cell complexes</a></li>
+  <li><a href="#a-useful-discrete-gradient" id="toc-a-useful-discrete-gradient" class="nav-link" data-scroll-target="#a-useful-discrete-gradient"><span class="header-section-number">7</span> A useful discrete gradient</a></li>
+  <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises"><span class="header-section-number">8</span> Exercises</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../computational-topology/metric-spaces/index.html">Foundations</a></li><li class="breadcrumb-item"><a href="../../computational-topology/graphs-digital-images/index.html">Graphs and Digital Images</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Computational Algebraic Topology from Scratch</h1>
-<p class="subtitle lead">A constructive path from elementary topology to persistent homology</p>
+<h1 class="title">Graphs and Digital Images</h1>
+<p class="subtitle lead">Turning pixels into finite neighbourhood structures</p>
 </div>
 
+<div>
+  <div class="description">
+    Graphs, connectivity, image grids, threshold sets, and the discrete structures underlying cubical topology.
+  </div>
+</div>
 
 
 <div class="quarto-title-meta">
@@ -354,225 +378,227 @@ window.Quarto = {
 </header>
 
 
-<p>These notes develop computational algebraic topology from first principles. They are intended for readers with some mathematical maturity, but no prior knowledge of topology.</p>
-<p>The central idea is to turn geometric and topological questions into finite algebraic computations. In particular, we will study why</p>
-<p><span class="math display">\[
-\partial_k \circ \partial_{k+1}=0
-\]</span></p>
-<p>and how this identity leads to homology groups, algorithms, filtrations, and persistent homology.</p>
-<div class="callout callout-style-default callout-tip callout-titled" title="How to read these notes">
+<p>A digital image is a rectangular array of measurements. Topologically, the important information is not only the value of each pixel, but also which pixels are neighbours. Graphs provide the simplest finite model of that relationship.</p>
+<div class="callout callout-style-default callout-note callout-titled" title="From continuous spaces back to finite data">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>How to read these notes
+<span class="screen-reader-only">Note</span>From continuous spaces back to finite data
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>The chapters are cumulative, but they are not meant to be read at a uniform speed. A first encounter with metric spaces, quotient spaces, or functors can feel much more abstract than the image-processing problem that motivated them. When that happens, keep the following concrete dictionary in view:</p>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 50%">
-<col style="width: 50%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Abstract object</th>
-<th>Picture to keep in mind</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>metric</td>
-<td>a rule for deciding how different two points or images are</td>
-</tr>
-<tr class="even">
-<td>open neighbourhood</td>
-<td>the points allowed by a chosen tolerance</td>
-</tr>
-<tr class="odd">
-<td>complex</td>
-<td>pixels together with their edges and vertices</td>
-</tr>
-<tr class="even">
-<td>chain</td>
-<td>a selected collection of cells</td>
-</tr>
-<tr class="odd">
-<td>boundary map</td>
-<td>“keep only the perimeter”</td>
-</tr>
-<tr class="even">
-<td>homology class</td>
-<td>a loop or component after filled-in boundaries are ignored</td>
-</tr>
-<tr class="odd">
-<td>filtration</td>
-<td>a thresholded image growing one level at a time</td>
-</tr>
-<tr class="even">
-<td>persistence interval</td>
-<td>the lifespan of one topological feature</td>
-</tr>
-</tbody>
-</table>
-<p>On a first reading, concentrate on the examples and the statements of the results. Proofs marked as sketches and the final chapter on category theory can be revisited after the computational pipeline is familiar. None of the applications requires the reader to become fluent in categorical notation immediately.</p>
+<p>The previous chapter used paths <span class="math inline">\(\gamma\colon[0,1]\to X\)</span> to define continuous connectivity. A computer image contains only finitely many sample locations, so we replace a continuous path by a finite sequence of adjacent pixels. This is the same conceptual question—“can one location be reached from another?”—in a representation a computer can enumerate.</p>
+<p>This chapter uses graphs to settle adjacency and thresholding first. It then explains why graphs alone are insufficient for holes and why pixels must be promoted to filled squares in a cubical complex.</p>
 </div>
 </div>
-<section id="the-route-through-the-subject" class="level2">
-<h2 class="anchored" data-anchor-id="the-route-through-the-subject">The route through the subject</h2>
-<p>The course repeatedly moves through the same four levels:</p>
+<section id="graphs" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="graphs"><span class="header-section-number">1</span> Graphs</h2>
+<div id="def-graph" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 1 (Graph and path)</strong></span> A <strong>graph</strong> is a pair <span class="math inline">\(G=(V,E)\)</span> consisting of a set of vertices <span class="math inline">\(V\)</span> and a set of edges <span class="math inline">\(E\)</span>. For an undirected simple graph, each edge is an unordered pair <span class="math inline">\(\{u,v\}\)</span> of distinct vertices.</p>
+<p>A <strong>path</strong> from <span class="math inline">\(v_0\)</span> to <span class="math inline">\(v_m\)</span> is a sequence</p>
 <p><span class="math display">\[
-\text{distance and continuity}
-\longrightarrow
-\text{finite shapes}
-\longrightarrow
-\text{linear algebra}
-\longrightarrow
-\text{stable image descriptors}.
+v_0,v_1,\ldots,v_m
 \]</span></p>
-<p>Metric and topological spaces provide the language of closeness and deformation. Graphs and cell complexes replace continuous shapes by finite objects. Linear algebra turns their boundaries into matrices. Persistent homology then follows the resulting features through an image filtration, while stability theory tells us how sensitive those features are to changes in the data.</p>
+<p>such that <span class="math inline">\(\{v_{i-1},v_i\}\in E\)</span> for every <span class="math inline">\(i\)</span>. Two vertices are connected if there is a path between them. This relation partitions <span class="math inline">\(V\)</span> into <strong>connected components</strong>.</p>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../assets/sample-graph.png" class="img-fluid figure-img" style="width:52.0%" alt="Eight red labelled vertices arranged on a three-by-three coordinate grid and joined by directed edges."></p>
+<figcaption>A directed graph on eight vertices embedded in the integer grid. The drawing supplies coordinates, but the graph itself consists only of the labelled vertices and directed edges.</figcaption>
+</figure>
+</div>
+<p>The arrows show that graphs may also carry direction. The pixel-adjacency graphs used below are <strong>undirected</strong>, so a connection can be traversed in either direction. When reading the example only as an undirected graph, simply forget the arrowheads. This distinction matters because the equivalence relation in the next result uses undirected paths.</p>
+<div id="prp-graph-connected" class="theorem proposition">
+<p><span class="theorem-title"><strong>Proposition 1 (Graph connectivity is an equivalence relation)</strong></span> On the vertex set of an undirected graph, define <span class="math inline">\(u\sim v\)</span> when there is a path from <span class="math inline">\(u\)</span> to <span class="math inline">\(v\)</span>. Then <span class="math inline">\(\sim\)</span> is an equivalence relation, and its equivalence classes are the connected components.</p>
+</div>
+<div class="proof">
+<p><span class="proof-title"><em>Proof</em>. </span>The length-zero path shows <span class="math inline">\(u\sim u\)</span>, so the relation is reflexive. Reversing a path from <span class="math inline">\(u\)</span> to <span class="math inline">\(v\)</span> gives a path from <span class="math inline">\(v\)</span> to <span class="math inline">\(u\)</span>, so it is symmetric. Concatenating a path from <span class="math inline">\(u\)</span> to <span class="math inline">\(v\)</span> with one from <span class="math inline">\(v\)</span> to <span class="math inline">\(w\)</span> gives a path from <span class="math inline">\(u\)</span> to <span class="math inline">\(w\)</span>, so it is transitive. The equivalence classes therefore partition the vertex set.</p>
+</div>
+<p>Graphs already capture zeroth-dimensional topology: the number of graph components is the quantity later denoted <span class="math inline">\(\beta_0\)</span>.</p>
 </section>
-<section id="why-turn-topology-into-vectors" class="level2">
-<h2 class="anchored" data-anchor-id="why-turn-topology-into-vectors">Why turn topology into vectors?</h2>
-<p>Neural networks and most other statistical learning methods ultimately operate on numerical inputs. A digital image is already a numerical array, and the usual neural-network architecture for image data is a convolutional neural network (CNN). A CNN repeatedly transforms pixel arrays into learned numerical features. We will not develop that machinery here.</p>
-<p>Convolutional networks are effective at learning local visual patterns and can, in principle, learn information related to shape and topology. Standard CNN architectures, however, do not explicitly represent connected components, loops, or voids, nor do they ordinarily guarantee that these quantities are preserved through their learned transformations. When those structures matter, it is useful to provide them to a learning system directly rather than require the network to rediscover them from pixels.</p>
-<p>The pipeline developed in these notes therefore has the form</p>
+<section id="pixel-grids" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="pixel-grids"><span class="header-section-number">2</span> Pixel grids</h2>
+<div id="def-digital-image" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 2 (Digital image)</strong></span> Let</p>
 <p><span class="math display">\[
-\text{digital image}
-\longrightarrow
-\text{cubical filtration}
-\longrightarrow
-\text{persistence diagrams}
-\longrightarrow
-\text{topological vector}
-\longrightarrow
-\text{statistical or neural model}.
+\Omega\subset\mathbb Z^2
 \]</span></p>
-<p>The topological vector is a fixed-length numerical summary of components, loops, and their persistence across thresholds. It can be concatenated with ordinary image or geometric features, used as an interpretable auxiliary input, or studied independently with a simple classifier.</p>
-<p>Producing numbers is not enough: the conversion must also be stable. If two images differ only by a minute, physically insignificant perturbation, we would like their topological vectors to remain close. In schematic form, the desired guarantee is</p>
+<p>be a finite set of pixel coordinates. A grayscale digital image is a pair <span class="math inline">\((\Omega,I)\)</span>, where</p>
 <p><span class="math display">\[
-\text{small image change}
-\quad\Longrightarrow\quad
-\text{small topological-vector change}.
+I\colon\Omega\to\mathbb R
 \]</span></p>
-<p>Establishing when this implication holds—and identifying when sampling, interpolation, or an unstable vectorisation can break it—is one of the main purposes of the metric, persistence, and stability chapters.</p>
-<div class="callout callout-style-default callout-important callout-titled" title="About these notes">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
+<p>assigns an intensity to each pixel. For an 8-bit image, the values usually lie in <span class="math inline">\(\{0,\ldots,255\}\)</span>.</p>
 </div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Important</span>About these notes
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../assets/pixel-intensity-embedding.png" class="img-fluid figure-img" style="width:82.0%" alt="A red cross is converted into five occupied positions on a three-by-three coordinate grid and then into a grid whose five entries have intensity 255."></p>
+<figcaption>A maximal-intensity red cross sampled on a (3) grid. Recording intensity augments each spatial coordinate ((i,j)) with a scalar value (I(i,j)); topology will filter these values rather than treat the colour picture as an indivisible object.</figcaption>
+</figure>
 </div>
+<p>Colour images have several intensity functions—typically red, green, and blue. Many mathematical pipelines analyse one channel at a time or first transform the channels into a scalar field.</p>
+<p>For the retinal case study, the green channel is used because it gives strong contrast between the background retina, dark vessels and haemorrhages, and bright exudates. This is not a topological requirement: it is a modelling choice made before topology is computed. A different scalar channel can induce a different filtration and therefore a different persistence diagram.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../assets/retinal-green-channel.png" class="img-fluid figure-img" alt="A magnified retinal fundus region comparing an RGB image with the extracted green intensity channel."></p>
+<figcaption>A magnified retinal region shown as an RGB composite and through its green channel. The scalar green channel increases the contrast of bright and dark structures used by the filtrations.</figcaption>
+</figure>
 </div>
-<div class="callout-body-container callout-body">
-<p>The contents of these notes are based on my BSc Mathematics thesis, <em>Computational Stability of Cubical Homology: Orthogonal Controls for Fault Isolation in Retinal Diagnostics</em>. A public version of the thesis is available in the <a href="https://github.com/reyjosephnieto/ph">reyjosephnieto/ph</a> repository.</p>
-<p>I have adapted and reorganised the thesis into this developing set of notes so that I can expand the exposition gradually. A thesis has strict length constraints, which limited how fully I could motivate definitions, develop examples, and explain proofs. Here, I intend to fill those gaps and make the material accessible to readers whose mathematical background consists of basic calculus.</p>
-<p>The presentation is organised as a course: definitions are introduced before they are used, proofs are separated from implementation, and the retinal application appears only after the necessary mathematical foundations.</p>
-</div>
-</div>
-<div class="callout callout-style-default callout-note callout-titled" title="Proof-oriented presentation">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>Proof-oriented presentation
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>These notes follow the convention of a typical undergraduate mathematics course: definitions fix the objects under discussion; lemmas isolate useful steps; propositions and theorems state the main conclusions; and proofs make the logical dependence explicit. Results proved in the thesis source are included here whenever they fit the level and scope of the chapter. A proof sketch is labelled as such when a complete proof requires machinery developed elsewhere.</p>
-</div>
-</div>
-<div class="callout callout-style-default callout-note callout-titled" title="Why the development is cubical">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>Why the development is cubical
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Many introductions to computational topology develop the subject primarily through <strong>simplicial complexes</strong>. This is the standard and more flexible language: simplices can model arbitrary meshes and combinatorial spaces without requiring an underlying rectangular grid.</p>
-<p>These notes instead develop the main constructions first for <strong>cubical complexes</strong>. This is a deliberate choice motivated by the application. Digital images are already made of pixels, and volumetric images are made of voxels; these are naturally <span class="math inline">\(2\)</span>- and <span class="math inline">\(3\)</span>-dimensional cubes. A cubical model therefore preserves the native geometry and adjacency structure of the data, without first subdividing every pixel or voxel into simplices.</p>
-<p>The two viewpoints are not competing theories. Cubical complexes can be triangulated, and the later chapter on <a href="../computational-topology/functoriality-triangulation/index.html">functoriality and triangulation</a> explains how the Coxeter–Freudenthal–Kuhn construction passes from cubes to simplices while preserving the relevant chain and homology structure. Thus the cubical development remains connected to the broader simplicial theory, while keeping the image-based motivation visible from the outset.</p>
-</div>
-</div>
-<div class="callout callout-style-default callout-note callout-titled" title="Sources and attribution">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>Sources and attribution
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>The exposition and chapter sequence are my own adaptation of the thesis, but the mathematical development relies heavily on two principal sources:</p>
+</section>
+<section id="four--and-eight-neighbour-adjacency" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="four--and-eight-neighbour-adjacency"><span class="header-section-number">3</span> Four- and eight-neighbour adjacency</h2>
+<p>For pixels <span class="math inline">\(p=(p_1,p_2)\)</span> and <span class="math inline">\(q=(q_1,q_2)\)</span>:</p>
 <ul>
-<li>Vidit Nanda’s <em>Computational Algebraic Topology</em> lecture notes <span class="citation" data-cites="nanda2023">(<a href="#ref-nanda2023" role="doc-biblioref">Nanda 2023</a>)</span>; and</li>
-<li>Kaczynski, Mischaikow, and Mrozek’s <em>Computational Homology</em> <span class="citation" data-cites="kaczynski2006computational">(<a href="#ref-kaczynski2006computational" role="doc-biblioref">Kaczynski et al. 2006</a>)</span>.</li>
+<li>they are <strong>4-neighbours</strong> when <span class="math inline">\(d_1(p,q)=1\)</span>;</li>
+<li>they are <strong>8-neighbours</strong> when <span class="math inline">\(d_\infty(p,q)=1\)</span>.</li>
 </ul>
-<p>The retinal case study uses the FIVES fundus-image dataset created by Jin and coauthors <span class="citation" data-cites="jin2022fives">(<a href="#ref-jin2022fives" role="doc-biblioref">Jin et al. 2022</a>)</span>. These sources are cited throughout the notes where their definitions, results, or data are used. Figures adapted from external material are attributed individually; the remaining diagrams and experimental plots come from my thesis.</p>
+<p>Four-neighbour adjacency permits horizontal and vertical steps. Eight-neighbour adjacency also permits diagonal steps.</p>
+<p>Recall that</p>
+<p><span class="math display">\[
+d_1(p,q)=|p_1-q_1|+|p_2-q_2|,
+\qquad
+d_\infty(p,q)=\max\{|p_1-q_1|,|p_2-q_2|\}.
+\]</span></p>
+<p>Thus <span class="math inline">\(q=p+(1,0)\)</span> has both distances equal to <span class="math inline">\(1\)</span>, while <span class="math inline">\(q=p+(1,1)\)</span> has <span class="math inline">\(d_1(p,q)=2\)</span> but <span class="math inline">\(d_\infty(p,q)=1\)</span>. The formulas therefore recover exactly the horizontal/vertical and diagonal descriptions.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../assets/pixel-adjacency.png" class="img-fluid figure-img" style="width:70.0%" alt="Two three-by-three grid graphs, the second including diagonal edges."></p>
+<figcaption>Four-neighbour adjacency on the left and eight-neighbour adjacency on the right.</figcaption>
+</figure>
+</div>
+<p>The choice changes connectivity. Two diagonally touching pixels form two components under 4-connectivity but one component under 8-connectivity. Therefore, adjacency is part of the mathematical model—not a harmless implementation detail.</p>
+<div class="callout callout-style-default callout-warning callout-titled" title="The digital-connectivity ambiguity">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Warning</span>The digital-connectivity ambiguity
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Using the same adjacency rule for both foreground and background can create paradoxical interpretations of components and holes. Cubical complexes resolve much of this ambiguity by representing pixels together with their shared edges and vertices.</p>
 </div>
 </div>
 </section>
-<section id="foundations" class="level2">
-<h2 class="anchored" data-anchor-id="foundations">Foundations</h2>
+<section id="threshold-sets" class="level2" data-number="4">
+<h2 data-number="4" class="anchored" data-anchor-id="threshold-sets"><span class="header-section-number">4</span> Threshold sets</h2>
+<p>An image becomes a family of binary shapes when we vary an intensity threshold.</p>
+<p>For a one-row image with intensities</p>
+<p><span class="math display">\[
+\bigl(2,\ 7,\ 4\bigr),
+\]</span></p>
+<p>the sublevel sets at thresholds <span class="math inline">\(2\)</span>, <span class="math inline">\(4\)</span>, and <span class="math inline">\(7\)</span> contain respectively the first pixel; the first and third pixels; and all three pixels. At threshold <span class="math inline">\(4\)</span> there are two components, but at threshold <span class="math inline">\(7\)</span> the middle pixel joins them. Persistent homology will later record this merge rather than forcing us to choose one “correct” threshold.</p>
+<div id="def-image-level-sets" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 3 (Image level sets)</strong></span> For <span class="math inline">\(t\in\mathbb R\)</span>, define the <strong>sublevel set</strong></p>
+<p><span class="math display">\[
+L_t=\{x\in\Omega:I(x)\leq t\}.
+\]</span></p>
+<p>If <span class="math inline">\(s\leq t\)</span>, then <span class="math inline">\(L_s\subseteq L_t\)</span>. Increasing the threshold can add pixels but never remove them.</p>
+<p>The corresponding <strong>superlevel set</strong> is</p>
+<p><span class="math display">\[
+U_t=\{x\in\Omega:I(x)\geq t\}.
+\]</span></p>
+<p>Equivalently, superlevel sets can be studied as sublevel sets of the inverted image</p>
+<p><span class="math display">\[
+\widetilde I(x)=M-I(x),
+\]</span></p>
+<p>where <span class="math inline">\(M\)</span> is the maximum intensity.</p>
+</div>
+<div id="lem-nested-sublevels" class="theorem lemma">
+<p><span class="theorem-title"><strong>Lemma 1 (Sublevel sets are nested)</strong></span> If <span class="math inline">\(s\leq t\)</span>, then <span class="math inline">\(L_s\subseteq L_t\)</span>.</p>
+</div>
+<div class="proof">
+<p><span class="proof-title"><em>Proof</em>. </span>If <span class="math inline">\(x\in L_s\)</span>, then <span class="math inline">\(I(x)\leq s\leq t\)</span>, so <span class="math inline">\(x\in L_t\)</span>.</p>
+</div>
+<p>Sublevel sets reveal dark structures early. Superlevel sets reveal bright structures early. Persistent homology records how the connectivity and holes of these sets evolve.</p>
+<p>At this point, <span class="math inline">\(L_t\)</span> is only a set of pixel coordinates. We can use an adjacency graph to count its connected components, but we have not yet said which edges, vertices, or filled squares belong to the thresholded shape. The next chapter introduces cubical complexes and then upgrades these coordinate sets into genuine filtered cell complexes.</p>
+</section>
+<section id="components-by-graph-search" class="level2" data-number="5">
+<h2 data-number="5" class="anchored" data-anchor-id="components-by-graph-search"><span class="header-section-number">5</span> Components by graph search</h2>
+<p>Once an adjacency rule is fixed, connected components can be found by breadth-first search or depth-first search.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> components(vertices, neighbours):</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    unseen <span class="op">=</span> <span class="bu">set</span>(vertices)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    result <span class="op">=</span> []</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">while</span> unseen:</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>        start <span class="op">=</span> unseen.pop()</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>        stack <span class="op">=</span> [start]</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>        component <span class="op">=</span> {start}</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>        <span class="cf">while</span> stack:</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>            vertex <span class="op">=</span> stack.pop()</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>            <span class="cf">for</span> nxt <span class="kw">in</span> neighbours(vertex):</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>                <span class="cf">if</span> nxt <span class="kw">in</span> unseen:</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>                    unseen.remove(nxt)</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>                    component.add(nxt)</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>                    stack.append(nxt)</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>        result.append(component)</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> result</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>This is enough for <span class="math inline">\(\beta_0\)</span>, but graphs alone do not directly encode filled areas. A four-edge cycle might represent a genuine hole or merely the boundary of a filled square. To distinguish these cases, we need higher-dimensional cells.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../assets/filled-cycle-vs-hole.png" class="img-fluid figure-img" style="width:82.0%" alt="A grid of yellow vertices with two highlighted red square cycles; the left cycle lies on a filled green square while the right surrounds an empty centre."></p>
+<figcaption>Why a graph is insufficient for (H_1). Both highlighted edge sets contain a cycle; in the left configuration the cycle bounds a present (2)-cell, whereas in the right configuration it surrounds a missing region. The vertex-edge graph alone does not record that distinction.</figcaption>
+</figure>
+</div>
+</section>
+<section id="from-graphs-to-cell-complexes" class="level2" data-number="6">
+<h2 data-number="6" class="anchored" data-anchor-id="from-graphs-to-cell-complexes"><span class="header-section-number">6</span> From graphs to cell complexes</h2>
+<p>A graph has vertices and edges. A <strong>cell complex</strong> adds faces and higher-dimensional cells:</p>
+<p><span class="math display">\[
+\text{vertices}\longrightarrow
+\text{edges}\longrightarrow
+\text{squares or triangles}\longrightarrow\cdots
+\]</span></p>
+<p>The distinction is crucial. The boundary of a square is a cycle; once the square itself is present, that cycle is filled and no longer represents a hole.</p>
+<p>Digital images naturally lead to cubical complexes because pixels are squares. Point-cloud data often lead to simplicial complexes because triangles and higher-dimensional simplices can be built from pairwise relations.</p>
+</section>
+<section id="a-useful-discrete-gradient" class="level2" data-number="7">
+<h2 data-number="7" class="anchored" data-anchor-id="a-useful-discrete-gradient"><span class="header-section-number">7</span> A useful discrete gradient</h2>
+<p>Later, when studying image stability, we will need to measure the largest intensity jump between neighbouring pixels. Given a chosen adjacency graph, define</p>
+<p><span class="math display">\[
+L_I=\max_{\{x,y\}\in E}|I(x)-I(y)|.
+\]</span></p>
+<p>This is a graph-based Lipschitz constant. Large values indicate sharp edges; small values indicate slowly varying intensity. Interpolation across a high-gradient image can cause much larger topological changes than the same spatial motion applied to a smooth image.</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="What to carry forward">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>What to carry forward
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>A graph turns adjacency into a finite notion of path and component.</li>
+<li>An intensity threshold turns one image into a nested family of binary shapes.</li>
+<li>The adjacency convention is part of the model.</li>
+<li>Graphs count components, but filled cells are needed to distinguish a loop from the boundary of a filled region.</li>
+</ul>
+<p>The next chapter supplies those filled cells.</p>
+</div>
+</div>
+</section>
+<section id="exercises" class="level2" data-number="8">
+<h2 data-number="8" class="anchored" data-anchor-id="exercises"><span class="header-section-number">8</span> Exercises</h2>
 <ol type="1">
-<li><a href="../computational-topology/metric-spaces/index.html">Metric Spaces</a></li>
-<li><a href="../computational-topology/topological-spaces/index.html">Topological Spaces and Continuity</a></li>
-<li><a href="../computational-topology/graphs-digital-images/index.html">Graphs and Digital Images</a></li>
-<li><a href="../computational-topology/complexes/index.html">Cubical and Simplicial Complexes</a></li>
-<li><a href="../computational-topology/linear-algebra/index.html">Linear Algebra for Homology</a></li>
+<li>Determine the 4- and 8-neighbours of <span class="math inline">\((3,4)\)</span> in an unrestricted grid.</li>
+<li>Give three pixels that are connected under 8-connectivity but disconnected under 4-connectivity.</li>
+<li>Prove that <span class="math inline">\(L_s\subseteq L_t\)</span> whenever <span class="math inline">\(s\leq t\)</span>.</li>
+<li>For intensities <span class="math inline">\(\{0,2,5,7\}\)</span>, list the distinct sublevel sets.</li>
+<li>Explain why a graph cannot distinguish an unfilled triangle from a filled triangle.</li>
 </ol>
-</section>
-<section id="homology-and-persistence" class="level2">
-<h2 class="anchored" data-anchor-id="homology-and-persistence">Homology and persistence</h2>
-<ol start="6" type="1">
-<li><a href="../computational-topology/homology/index.html">Chains, Boundaries, and Homology</a></li>
-<li><a href="../computational-topology/computing-homology/index.html">Computing Homology</a></li>
-<li><a href="../computational-topology/persistent-homology/index.html">Filtrations and Persistent Homology</a></li>
-<li><a href="../computational-topology/stability/index.html">Stability of Persistent Homology</a></li>
-</ol>
-</section>
-<section id="research-application" class="level2">
-<h2 class="anchored" data-anchor-id="research-application">Research application</h2>
-<ol start="10" type="1">
-<li><a href="../computational-topology/computational-stability/index.html">Computational Stability on Digital Images</a></li>
-<li><a href="../computational-topology/reliability-engineering/index.html">Reliability Engineering with Complementary Probes</a></li>
-<li><a href="../computational-topology/retinal-case-study/index.html">Case Study: Retinal Diagnostics</a></li>
-</ol>
-</section>
-<section id="advanced-material" class="level2">
-<h2 class="anchored" data-anchor-id="advanced-material">Advanced material</h2>
-<ol start="13" type="1">
-<li><a href="../computational-topology/functoriality-triangulation/index.html">Functoriality and Triangulation</a></li>
-</ol>
-</section>
-<section id="status" class="level2">
-<h2 class="anchored" data-anchor-id="status">Status</h2>
-<p>The first complete draft is now available. These are living notes: notation, examples, proofs, exercises, and implementations will continue to be revised.</p>
-<p>For corrections or requests for errata, please email <strong>rj (at) rjnieto (dot) com</strong>.</p>
-
+<p><a href="../../computational-topology/topological-spaces/index.html">Previous: Topological Spaces</a> · <a href="../../computational-topology/index.html">Course contents</a> · <a href="../../computational-topology/complexes/index.html">Next: Cubical and Simplicial Complexes</a></p>
 
 
 </section>
 
-<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a><div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" role="list">
-<div id="ref-jin2022fives" class="csl-entry" role="listitem">
-Jin, Kai, Xingru Huang, Jingxing Zhou, et al. 2022. <span>“<span>FIVES</span>: A Fundus Image Dataset for Artificial Intelligence Based Vessel Segmentation.”</span> <em>Scientific Data</em> 9 (1): 475.
-</div>
-<div id="ref-kaczynski2006computational" class="csl-entry" role="listitem">
-Kaczynski, Tomasz, Konstantin Mischaikow, and Marian Mrozek. 2006. <em>Computational Homology</em>. Vol. 157. Springer.
-</div>
-<div id="ref-nanda2023" class="csl-entry" role="listitem">
-Nanda, Vidit. 2023. <em>Computational Algebraic Topology</em>. Lecture notes, University of Oxford. <a href="https://people.maths.ox.ac.uk/nanda/cat/">https://people.maths.ox.ac.uk/nanda/cat/</a>.
-</div>
-</div></section></div></main> <!-- /main -->
+<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
@@ -975,10 +1001,13 @@ Nanda, Vidit. 2023. <em>Computational Algebraic Topology</em>. Lecture notes, Un
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
+      <a href="../../computational-topology/topological-spaces/index.html" class="pagination-link" aria-label="Topological Spaces and Continuity">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Topological Spaces and Continuity</span>
+      </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../computational-topology/metric-spaces/index.html" class="pagination-link" aria-label="Metric Spaces">
-        <span class="nav-page-text">Metric Spaces</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../../computational-topology/complexes/index.html" class="pagination-link" aria-label="Cubical and Simplicial Complexes">
+        <span class="nav-page-text">Cubical and Simplicial Complexes</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

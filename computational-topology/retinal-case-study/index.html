@@ -1,0 +1,1346 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.10.18">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="description" content="The thesis application: cubical persistence, image perturbations, stable summaries, and fault isolation in retinal imaging.">
+
+<title>Case Study: Retinal Diagnostics – RJ Nieto</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../computational-topology/functoriality-triangulation/index.html" rel="next">
+<link href="../../computational-topology/reliability-engineering/index.html" rel="prev">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-805e789c7b7f260b48d5cafdd348845c.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../../styles.css">
+</head>
+
+<body class="nav-sidebar docked nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">RJ Nieto</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="../../computational-topology/index.html" aria-current="page"> 
+<span class="menu-text">TDA</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../teaching/index.html"> 
+<span class="menu-text">Teaching</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../cv/index.html"> 
+<span class="menu-text">CV</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../computational-topology/computational-stability/index.html">Research application</a></li><li class="breadcrumb-item"><a href="../../computational-topology/retinal-case-study/index.html">Case Study: Retinal Diagnostics</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../computational-topology/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Computational Algebraic Topology from Scratch</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Foundations</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../computational-topology/metric-spaces/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Metric Spaces</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../computational-topology/topological-spaces/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Topological Spaces and Continuity</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../computational-topology/graphs-digital-images/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Graphs and Digital Images</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../computational-topology/complexes/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Cubical and Simplicial Complexes</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../computational-topology/linear-algebra/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Linear Algebra for Homology</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Homology and persistence</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../computational-topology/homology/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Chains, Boundaries, and Homology</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../computational-topology/computing-homology/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Computing Homology</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../computational-topology/persistent-homology/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Filtrations and Persistent Homology</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../computational-topology/stability/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Stability of Persistent Homology</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text">Research application</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../computational-topology/computational-stability/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Computational Stability on Digital Images</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../computational-topology/reliability-engineering/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Reliability Engineering with Complementary Probes</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../computational-topology/retinal-case-study/index.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Case Study: Retinal Diagnostics</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
+ <span class="menu-text">Advanced</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../computational-topology/functoriality-triangulation/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Advanced: Functoriality and Triangulation</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#why-retinal-images" id="toc-why-retinal-images" class="nav-link active" data-scroll-target="#why-retinal-images"><span class="header-section-number">1</span> Why retinal images?</a></li>
+  <li><a href="#dataset-and-cohort" id="toc-dataset-and-cohort" class="nav-link" data-scroll-target="#dataset-and-cohort"><span class="header-section-number">2</span> Dataset and cohort</a>
+  <ul class="collapse">
+  <li><a href="#preprocessing" id="toc-preprocessing" class="nav-link" data-scroll-target="#preprocessing"><span class="header-section-number">2.1</span> Preprocessing</a></li>
+  </ul></li>
+  <li><a href="#three-persistence-streams" id="toc-three-persistence-streams" class="nav-link" data-scroll-target="#three-persistence-streams"><span class="header-section-number">3</span> Three persistence streams</a></li>
+  <li><a href="#stable-topological-summaries" id="toc-stable-topological-summaries" class="nav-link" data-scroll-target="#stable-topological-summaries"><span class="header-section-number">4</span> Stable topological summaries</a></li>
+  <li><a href="#an-orthogonal-geometric-control" id="toc-an-orthogonal-geometric-control" class="nav-link" data-scroll-target="#an-orthogonal-geometric-control"><span class="header-section-number">5</span> An orthogonal geometric control</a></li>
+  <li><a href="#differential-failure-matrix" id="toc-differential-failure-matrix" class="nav-link" data-scroll-target="#differential-failure-matrix"><span class="header-section-number">6</span> Differential failure matrix</a></li>
+  <li><a href="#sensitivity-audit" id="toc-sensitivity-audit" class="nav-link" data-scroll-target="#sensitivity-audit"><span class="header-section-number">7</span> Sensitivity audit</a>
+  <ul class="collapse">
+  <li><a href="#perturbation-protocols" id="toc-perturbation-protocols" class="nav-link" data-scroll-target="#perturbation-protocols"><span class="header-section-number">7.1</span> Perturbation protocols</a></li>
+  <li><a href="#robustness-gap" id="toc-robustness-gap" class="nav-link" data-scroll-target="#robustness-gap"><span class="header-section-number">7.2</span> Robustness gap</a></li>
+  <li><a href="#clean-baseline" id="toc-clean-baseline" class="nav-link" data-scroll-target="#clean-baseline"><span class="header-section-number">7.3</span> Clean baseline</a></li>
+  </ul></li>
+  <li><a href="#main-observations" id="toc-main-observations" class="nav-link" data-scroll-target="#main-observations"><span class="header-section-number">8</span> Main observations</a></li>
+  <li><a href="#empirical-failure-matrix" id="toc-empirical-failure-matrix" class="nav-link" data-scroll-target="#empirical-failure-matrix"><span class="header-section-number">9</span> Empirical failure matrix</a></li>
+  <li><a href="#reproducibility" id="toc-reproducibility" class="nav-link" data-scroll-target="#reproducibility"><span class="header-section-number">10</span> Reproducibility</a></li>
+  <li><a href="#what-the-case-study-contributes" id="toc-what-the-case-study-contributes" class="nav-link" data-scroll-target="#what-the-case-study-contributes"><span class="header-section-number">11</span> What the case study contributes</a></li>
+  <li><a href="#limitations-and-future-directions" id="toc-limitations-and-future-directions" class="nav-link" data-scroll-target="#limitations-and-future-directions"><span class="header-section-number">12</span> Limitations and future directions</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../computational-topology/computational-stability/index.html">Research application</a></li><li class="breadcrumb-item"><a href="../../computational-topology/retinal-case-study/index.html">Case Study: Retinal Diagnostics</a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title">Case Study: Retinal Diagnostics</h1>
+<p class="subtitle lead">Topology as one probe in a differential reliability framework</p>
+</div>
+
+<div>
+  <div class="description">
+    The thesis application: cubical persistence, image perturbations, stable summaries, and fault isolation in retinal imaging.
+  </div>
+</div>
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>The thesis applies cubical persistent homology to retinal fundus images. The goal is not to present a clinical diagnostic system, but to study a narrower reliability question, using the FIVES image dataset and building on earlier retinal applications of topological data analysis <span class="citation" data-cites="jin2022fives garside2019topological">(<a href="#ref-jin2022fives" role="doc-biblioref">Jin et al. 2022</a>; <a href="#ref-garside2019topological" role="doc-biblioref">Garside et al. 2019</a>)</span>:</p>
+<blockquote class="blockquote">
+<p>When image-based performance deteriorates, can complementary mathematical probes help distinguish spatial acquisition failure from radiometric failure?</p>
+</blockquote>
+<div class="callout callout-style-default callout-warning callout-titled" title="Scope">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Warning</span>Scope
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>This is a mathematical and computational case study, not medical advice or a validated clinical device.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled" title="How the case study is organised">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>How the case study is organised
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>This chapter separates four questions that are easily conflated:</p>
+<ol type="1">
+<li><strong>Representation:</strong> which mathematical features are extracted?</li>
+<li><strong>Prediction:</strong> how well do those features separate the two study groups on clean data?</li>
+<li><strong>Robustness:</strong> how much does that performance change under a controlled corruption?</li>
+<li><strong>Fault isolation:</strong> do the geometric and topological probes fail in the pattern predicted by the acquisition model?</li>
+</ol>
+<p>A high clean accuracy does not by itself establish robustness, and robustness on these synthetic perturbations does not establish clinical validity.</p>
+</div>
+</div>
+<section id="why-retinal-images" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="why-retinal-images"><span class="header-section-number">1</span> Why retinal images?</h2>
+<p>Fundus photographs contain structures at several scales:</p>
+<ul>
+<li>connected dark regions such as haemorrhagic features;</li>
+<li>bright connected regions such as exudative features; and</li>
+<li>vascular structures capable of forming loops.</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../assets/retinal-anatomy-comparison.png" class="img-fluid figure-img" style="width:94.0%" alt="Two labelled schematic retinas: the healthy eye marks the fovea, macula, optic disc, and vessels, while the diabetic-retinopathy eye marks haemorrhage, abnormal vessel growth, aneurysm, cotton-wool spot, and hard exudates."></p>
+<figcaption>Schematic retinal anatomy, comparing a healthy fundus with annotated diabetic-retinopathy features. Adapted from Figure 1 of Malhi, Grewal, and Pannu under CC BY 4.0 <span class="citation" data-cites="malhi2023detection">(<a href="#ref-malhi2023detection" role="doc-biblioref">Malhi et al. 2023</a>)</span>. The diagram supplies anatomical orientation; it does not assert that every labelled lesion is uniquely recoverable from homology.</figcaption>
+</figure>
+</div>
+<p>They are naturally represented as intensity functions on a cubical grid. Dimensions zero and one have direct structural interpretations:</p>
+<p><span class="math display">\[
+H_0\longleftrightarrow\text{connected components},
+\qquad
+H_1\longleftrightarrow\text{loops}.
+\]</span></p>
+<p>These correspondences describe image morphology, not a one-to-one mapping between a homology class and a lesion. A component or loop may also arise from normal anatomy, acquisition artefacts, preprocessing, or the image boundary.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../assets/retinal-blobs-loops.png" class="img-fluid figure-img" style="width:88.0%" alt="A diabetic-retinopathy fundus image with two magnified regions, one circling a red blob and the other circling several vascular loops."></p>
+<figcaption>A concrete FIVES image with zoomed examples of a red blob-like region and vascular loops <span class="citation" data-cites="jin2022fives">(<a href="#ref-jin2022fives" role="doc-biblioref">Jin et al. 2022</a>)</span>. These annotations motivate the (H_0/H_1) vocabulary, but they are visual examples rather than labelled generators of the computed homology groups.</figcaption>
+</figure>
+</div>
+</section>
+<section id="dataset-and-cohort" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="dataset-and-cohort"><span class="header-section-number">2</span> Dataset and cohort</h2>
+<p>The FIVES dataset contains retinal fundus photographs and vessel annotations across several diagnostic groups <span class="citation" data-cites="jin2022fives">(<a href="#ref-jin2022fives" role="doc-biblioref">Jin et al. 2022</a>)</span>. The thesis restricts its sensitivity audit to the Normal and Diabetic Retinopathy groups. The official partitions are pooled into a balanced cohort of <span class="math inline">\(N=400\)</span> images:</p>
+<p><span class="math display">\[
+200\text{ Normal}
+\qquad\text{and}\qquad
+200\text{ Diabetic Retinopathy}.
+\]</span></p>
+<p>Evaluation uses stratified five-fold cross-validation. Pooling and repartitioning serve the narrow robustness experiment: every degradation is compared against the same balanced baseline folds rather than against differences inherited from an external train/test split. This design is not a claim about how a clinical model should ultimately be validated.</p>
+<section id="preprocessing" class="level3" data-number="2.1">
+<h3 data-number="2.1" class="anchored" data-anchor-id="preprocessing"><span class="header-section-number">2.1</span> Preprocessing</h3>
+<p>The baseline scalar image is the green channel. Contrast Limited Adaptive Histogram Equalisation (CLAHE) is applied to reduce local illumination variation while limiting the amplification of noise. The same preprocessing definition must be applied consistently to clean and perturbed data; otherwise the experiment would mix acquisition sensitivity with a changing preprocessing pipeline.</p>
+<p>The study uses:</p>
+<ul>
+<li><span class="math inline">\(k=5\)</span> in every top-<span class="math inline">\(k\)</span> persistence sum;</li>
+<li>truncation threshold <span class="math inline">\(\tau=5\)</span> for truncated total persistence;</li>
+<li><span class="math inline">\(\mathbb F_2\)</span> coefficients;</li>
+<li>sublevel <span class="math inline">\(H_0\)</span> and <span class="math inline">\(H_1\)</span> diagrams; and</li>
+<li>an inverted-image sublevel <span class="math inline">\(H_0\)</span> diagram for bright structures.</li>
+</ul>
+<p>These are experimental design parameters, not universal constants. Changing the bit depth, intensity normalisation, resolution, or acquisition device changes their physical meaning.</p>
+</section>
+</section>
+<section id="three-persistence-streams" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="three-persistence-streams"><span class="header-section-number">3</span> Three persistence streams</h2>
+<p>The pipeline constructs three diagrams from each image:</p>
+<ol type="1">
+<li><span class="math inline">\(\mathcal D_0\)</span>: sublevel <span class="math inline">\(H_0\)</span> features for dark components;</li>
+<li><span class="math inline">\(\mathcal D_1\)</span>: sublevel <span class="math inline">\(H_1\)</span> features for dark loops;</li>
+<li><span class="math inline">\(\mathcal D_S\)</span>: superlevel <span class="math inline">\(H_0\)</span> features for bright components.</li>
+</ol>
+<p>The superlevel stream is implemented as a sublevel filtration of the inverted image. Keeping it separate preserves the physical interpretation of bright and dark structures.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../assets/retinal-barcodes-diagrams.png" class="img-fluid figure-img" style="width:100.0%" alt="Two retinal images, each shown in colour and green-channel form, beside columns of persistence barcodes and persistence diagrams for connected components, loops, and bright components."></p>
+<figcaption>Illustrative topological signatures from two FIVES images <span class="citation" data-cites="jin2022fives">(<a href="#ref-jin2022fives" role="doc-biblioref">Jin et al. 2022</a>)</span>. Rows compare the original RGB image with its green channel; columns show sublevel (H_0), sublevel (H_1), and bright-feature superlevel (H_0), with a barcode above the corresponding persistence diagram. The examples demonstrate the representation pipeline, not a diagnostic rule or a claim that one diagram identifies disease.</figcaption>
+</figure>
+</div>
+<p>The figure makes two otherwise abstract choices concrete. First, passing from RGB to the green channel changes the scalar function being filtered and hence changes the resulting signatures. Second, each persistence stream contains many intervals; the vectorisation below compresses those variable-size collections into a fixed number of numerical inputs.</p>
+</section>
+<section id="stable-topological-summaries" class="level2" data-number="4">
+<h2 data-number="4" class="anchored" data-anchor-id="stable-topological-summaries"><span class="header-section-number">4</span> Stable topological summaries</h2>
+<p>For a diagram <span class="math inline">\(\mathcal D\)</span>, order the finite persistences</p>
+<p><span class="math display">\[
+p_1\geq p_2\geq\cdots\geq0.
+\]</span></p>
+<div id="def-retinal-summaries" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 1 (Persistence summaries)</strong></span> The <strong>top-<span class="math inline">\(k\)</span> persistence sum</strong> is</p>
+<p><span class="math display">\[
+S_k(\mathcal D)=\sum_{i=1}^k p_i.
+\]</span></p>
+<p>If <span class="math inline">\(d_B(\mathcal D,\mathcal D')\leq\delta\)</span>, then</p>
+<p><span class="math display">\[
+|S_k(\mathcal D)-S_k(\mathcal D')|
+\leq2k\delta.
+\]</span></p>
+<p>The <strong><span class="math inline">\(\tau\)</span>-truncated total persistence</strong> removes a noise floor:</p>
+<p><span class="math display">\[
+E^\tau_{\mathrm{tot}}(\mathcal D)
+=
+\sum_{(b,d)\in\mathcal D}
+\max(0,d-b-\tau).
+\]</span></p>
+</div>
+<div id="prp-truncated-stability" class="theorem proposition">
+<p><span class="theorem-title"><strong>Proposition 1 (Stability of truncated total persistence)</strong></span> Let <span class="math inline">\(\mathcal D\)</span> and <span class="math inline">\(\mathcal D'\)</span> be finite persistence diagrams with <span class="math inline">\(d_B(\mathcal D,\mathcal D')\leq\delta&lt;\tau/2\)</span>. Write <span class="math inline">\(N_a(\mathcal D)\)</span> for the number of points of persistence greater than <span class="math inline">\(a\)</span>. Then</p>
+<p><span class="math display">\[
+\left|
+E^\tau_{\mathrm{tot}}(\mathcal D)
+-E^\tau_{\mathrm{tot}}(\mathcal D')
+\right|
+\leq
+2\delta\left(
+N_{\tau-2\delta}(\mathcal D)
++N_{\tau-2\delta}(\mathcal D')
+\right).
+\]</span></p>
+</div>
+<div class="proof">
+<p><span class="proof-title"><em>Proof</em>. </span>Choose a bottleneck matching of cost arbitrarily close to <span class="math inline">\(\delta\)</span>. Matched points have birth and death coordinates differing by at most <span class="math inline">\(\delta\)</span>, so their persistences differ by at most <span class="math inline">\(2\delta\)</span>. Since <span class="math inline">\(p\mapsto\max(0,p-\tau)\)</span> is <span class="math inline">\(1\)</span>-Lipschitz, each relevant matched pair changes the truncated contribution by at most <span class="math inline">\(2\delta\)</span>.</p>
+<p>A point matched to the diagonal has persistence at most <span class="math inline">\(2\delta&lt;\tau\)</span> and therefore contributes zero. A matched pair can contribute only if at least one of its points has persistence greater than <span class="math inline">\(\tau\)</span>; the other then has persistence greater than <span class="math inline">\(\tau-2\delta\)</span>. The displayed count is an upper bound on the number of such pairs. Summing their contributions proves the inequality.</p>
+</div>
+<p>The thesis combines these statistics into the six-dimensional vector</p>
+<p><span class="math display">\[
+\mathbf v_{\mathrm{topo}}
+=
+\begin{pmatrix}
+S_k(\mathcal D_0)\\
+E^\tau_{\mathrm{tot}}(\mathcal D_0)\\
+S_k(\mathcal D_1)\\
+E^\tau_{\mathrm{tot}}(\mathcal D_1)\\
+S_k(\mathcal D_S)\\
+E^\tau_{\mathrm{tot}}(\mathcal D_S)
+\end{pmatrix}.
+\]</span></p>
+<p>This vector intentionally discards spatial location and focuses on persistent connectivity.</p>
+</section>
+<section id="an-orthogonal-geometric-control" class="level2" data-number="5">
+<h2 data-number="5" class="anchored" data-anchor-id="an-orthogonal-geometric-control"><span class="header-section-number">5</span> An orthogonal geometric control</h2>
+<p>The comparison vector uses seven log-transformed Hu invariant moments. Raw moments are spatial intensity sums <span class="citation" data-cites="hu1962visual">(<a href="#ref-hu1962visual" role="doc-biblioref">Hu 1962</a>)</span></p>
+<p><span class="math display">\[
+M_{pq}
+=
+\sum_{(x,y)\in\Omega}
+x^p y^q I(x,y).
+\]</span></p>
+<p>Central and scale-normalised moments produce seven classical combinations <span class="math inline">\(\phi_1,\ldots,\phi_7\)</span>. Their dynamic range is stabilised by</p>
+<p><span class="math display">\[
+h_i
+=
+-\operatorname{sgn}(\phi_i)
+\log_{10}(|\phi_i|+\varepsilon).
+\]</span></p>
+<p>Hu moments are designed to be invariant under translation, scale, and rotation in the continuous setting. Their global intensity integration makes them a useful complement to the topological vector:</p>
+<ul>
+<li>geometry is comparatively robust to spatial motion;</li>
+<li>topology is comparatively robust to some intensity-order changes;</li>
+<li>their failures need not coincide.</li>
+</ul>
+</section>
+<section id="differential-failure-matrix" class="level2" data-number="6">
+<h2 data-number="6" class="anchored" data-anchor-id="differential-failure-matrix"><span class="header-section-number">6</span> Differential failure matrix</h2>
+<p>The two probes form a simple fault-isolation heuristic.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th></th>
+<th>Topology passes</th>
+<th>Topology fails</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Geometry passes</strong></td>
+<td>Operational envelope or an unmodelled factor</td>
+<td>Mechanical issue: interpolation or alignment damages connectivity</td>
+</tr>
+<tr class="even">
+<td><strong>Geometry fails</strong></td>
+<td>Radiometric issue: structural order survives intensity washout</td>
+<td>Catastrophic or mixed failure</td>
+</tr>
+</tbody>
+</table>
+<p>This matrix does not diagnose disease. It diagnoses disagreement between measurement channels under controlled perturbations.</p>
+</section>
+<section id="sensitivity-audit" class="level2" data-number="7">
+<h2 data-number="7" class="anchored" data-anchor-id="sensitivity-audit"><span class="header-section-number">7</span> Sensitivity audit</h2>
+<p>The thesis trains simple linear probes on clean baseline features and evaluates them under structured transformations:</p>
+<ul>
+<li>rotation;</li>
+<li>blur;</li>
+<li>resolution reduction;</li>
+<li>illumination drift;</li>
+<li>contrast and gamma changes;</li>
+<li>bit-depth reduction;</li>
+<li>Gaussian, Poisson, and salt-and-pepper noise.</li>
+</ul>
+<p>The evaluation uses stratified cross-validation and tracks the change in probe performance relative to baseline. The emphasis is failure behaviour rather than maximum classification accuracy.</p>
+<p>The critical isolation control is <strong>train on clean, test on corrupt</strong>. Within each fold, the scaler and logistic-regression probe are fitted only on clean training features. The fitted objects are then applied without retraining to the clean validation images and to every perturbed version of those same images. Consequently, a performance drop cannot be hidden by adaptation to the corruption.</p>
+<section id="perturbation-protocols" class="level3" data-number="7.1">
+<h3 data-number="7.1" class="anchored" data-anchor-id="perturbation-protocols"><span class="header-section-number">7.1</span> Perturbation protocols</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 23%">
+<col style="width: 23%">
+<col style="width: 30%">
+<col style="width: 23%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Family</th>
+<th>Protocol</th>
+<th style="text-align: right;">Range used in the thesis</th>
+<th>Mechanism</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>mechanical</td>
+<td>rotation</td>
+<td style="text-align: right;"><span class="math inline">\(-10^\circ\)</span> to <span class="math inline">\(10^\circ\)</span></td>
+<td>bilinear resampling</td>
+</tr>
+<tr class="even">
+<td>mechanical</td>
+<td>Gaussian blur</td>
+<td style="text-align: right;"><span class="math inline">\(\sigma=0\)</span> to <span class="math inline">\(1.5\)</span></td>
+<td>local spatial averaging</td>
+</tr>
+<tr class="odd">
+<td>mechanical</td>
+<td>resolution</td>
+<td style="text-align: right;"><span class="math inline">\(64\)</span> to <span class="math inline">\(2048\)</span> pixels</td>
+<td>area resize and resampling</td>
+</tr>
+<tr class="even">
+<td>radiometric</td>
+<td>gamma</td>
+<td style="text-align: right;"><span class="math inline">\(0.1\)</span> to <span class="math inline">\(3.0\)</span></td>
+<td>nonlinear response</td>
+</tr>
+<tr class="odd">
+<td>radiometric</td>
+<td>contrast</td>
+<td style="text-align: right;"><span class="math inline">\(0.5\)</span> to <span class="math inline">\(3.0\)</span></td>
+<td>linear scaling about mid-grey</td>
+</tr>
+<tr class="even">
+<td>radiometric</td>
+<td>drift</td>
+<td style="text-align: right;"><span class="math inline">\(-150\)</span> to <span class="math inline">\(150\)</span></td>
+<td>clipped additive offset</td>
+</tr>
+<tr class="odd">
+<td>radiometric</td>
+<td>Gaussian noise</td>
+<td style="text-align: right;"><span class="math inline">\(0\)</span> to <span class="math inline">\(0.2\)</span></td>
+<td>additive stochastic corruption</td>
+</tr>
+<tr class="even">
+<td>radiometric</td>
+<td>Poisson noise</td>
+<td style="text-align: right;"><span class="math inline">\(0\)</span> to <span class="math inline">\(0.2\)</span></td>
+<td>shot/read-noise model</td>
+</tr>
+<tr class="odd">
+<td>radiometric</td>
+<td>salt-and-pepper</td>
+<td style="text-align: right;">probability up to <span class="math inline">\(0.025\)</span></td>
+<td>impulse corruption</td>
+</tr>
+<tr class="even">
+<td>radiometric</td>
+<td>bit depth</td>
+<td style="text-align: right;"><span class="math inline">\(2\)</span> through <span class="math inline">\(8\)</span> bits</td>
+<td>uniform quantisation</td>
+</tr>
+</tbody>
+</table>
+<p>The ranges intentionally extend beyond mild degradation. The goal is to find where each probe breaks, not merely to report performance near the baseline.</p>
+</section>
+<section id="robustness-gap" class="level3" data-number="7.2">
+<h3 data-number="7.2" class="anchored" data-anchor-id="robustness-gap"><span class="header-section-number">7.2</span> Robustness gap</h3>
+<p>For a perturbation <span class="math inline">\(\Theta_\varepsilon\)</span>, define</p>
+<p><span class="math display">\[
+\Delta(\varepsilon)
+=
+\operatorname{Acc}
+\bigl(\Phi_{\mathrm{topo}}\circ\Theta_\varepsilon\bigr)
+-
+\operatorname{Acc}
+\bigl(\Phi_{\mathrm{geo}}\circ\Theta_\varepsilon\bigr).
+\]</span></p>
+<p>A positive gap means that the topological probe outperforms the geometric probe at that perturbation; a negative gap means the reverse. The sign is interpreted only relative to the baseline and the controlled protocol. It is not, by itself, a statistical test or a causal diagnosis.</p>
+</section>
+<section id="clean-baseline" class="level3" data-number="7.3">
+<h3 data-number="7.3" class="anchored" data-anchor-id="clean-baseline"><span class="header-section-number">7.3</span> Clean baseline</h3>
+<p>Mean five-fold accuracies reported in the public-edition thesis are:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Probe</th>
+<th style="text-align: right;">Dimension</th>
+<th style="text-align: right;">Baseline accuracy</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Log-Hu geometry</td>
+<td style="text-align: right;">7</td>
+<td style="text-align: right;">70.7%</td>
+</tr>
+<tr class="even">
+<td>sublevel <span class="math inline">\(H_1\)</span> summary</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">70.3%</td>
+</tr>
+<tr class="odd">
+<td>sublevel <span class="math inline">\(H_0\)</span> summary</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">81.7%</td>
+</tr>
+<tr class="even">
+<td>bright-feature <span class="math inline">\(H_S\)</span> summary</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">85.7%</td>
+</tr>
+<tr class="odd">
+<td>combined <span class="math inline">\(H_0H_1H_S\)</span> topology</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">86.7%</td>
+</tr>
+</tbody>
+</table>
+<p>Thus <span class="math inline">\(\Delta(0)=16.0\)</span> percentage points for the combined topological and geometric probes. Because their baseline accuracies differ, raw accuracy difference must be interpreted with care: a probe that starts higher has more room to fall. The stability curves and threshold crossings are therefore more informative than one isolated gap value.</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="How to read the stress-test plots">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>How to read the stress-test plots
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Read each curve relative to its own value at the clean operating point. The important questions are:</p>
+<ol type="1">
+<li>how rapidly does the curve depart from baseline?</li>
+<li>is the response gradual, abrupt, or terrace-like?</li>
+<li>at what perturbation does it cross the pre-specified operating threshold?</li>
+<li>does the complementary probe cross at the same point?</li>
+</ol>
+<p>The plots compare representations under distribution shift. They should not be read as a leaderboard of universally superior feature extractors.</p>
+</div>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../assets/probe-orthogonality.png" class="img-fluid figure-img" style="width:92.0%" alt="Two accuracy plots comparing homology feature streams, their combination, and Hu moments under image rotation and illumination drift."></p>
+<figcaption>The thesis’s central complementary-failure comparison. Under off-grid rotation, the Hu-moment probe remains comparatively steady while the topological streams deteriorate; under illumination drift, the response is reversed over part of the tested range. Curves report this particular cohort and pipeline and should not be interpreted as clinical operating limits.</figcaption>
+</figure>
+</div>
+<p>That two-panel comparison isolates the headline contrast. The following figures widen the view: first across the mechanical family, then across the radiometric family. They use the same vertical quantity and legend, so the curves should be compared with their own clean baselines rather than by colour alone.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../assets/mechanical-stress-tests.png" class="img-fluid figure-img" alt="Three classification-accuracy plots for rotation, Gaussian blur, and image resolution."></p>
+<figcaption>Mechanical stress tests from the thesis. The combined topological probe and its component streams are compared with Hu moments under rotation, blur, and resolution changes.</figcaption>
+</figure>
+</div>
+<p>Mechanical perturbations resample or mix spatial neighbours. Radiometric perturbations below primarily alter values on the existing grid.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../assets/radiometric-stress-tests.png" class="img-fluid figure-img" alt="Three classification-accuracy plots for illumination offset, gamma, and contrast factor."></p>
+<figcaption>Radiometric stress tests from the thesis, comparing topological feature streams with Hu moments under illumination drift, gamma, and contrast changes.</figcaption>
+</figure>
+</div>
+</section>
+</section>
+<section id="main-observations" class="level2" data-number="8">
+<h2 data-number="8" class="anchored" data-anchor-id="main-observations"><span class="header-section-number">8</span> Main observations</h2>
+<p>The experiments support a deliberately asymmetric picture:</p>
+<ul>
+<li><strong>Off-grid rotation and resampling:</strong> topological connectivity can degrade sharply through interpolation, while global geometric moments remain more stable.</li>
+<li><strong>Blur and resolution change:</strong> narrow loops and components may merge or vanish, again stressing the topological probe.</li>
+<li><strong>Contrast and illumination changes:</strong> persistence summaries can retain structural ordering after global intensity integrals begin to wash out.</li>
+<li><strong>Bit depth:</strong> the topological probe exhibits a terrace-like plateau across moderate quantisation before eventual collapse.</li>
+<li><strong>Stochastic noise:</strong> many local extrema create topological dust; truncation helps, but sufficiently strong noise degrades the topological probe.</li>
+</ul>
+<p>Stochastic noise is radiometric in physical origin but can resemble a mechanical failure algebraically: it disrupts local ordering, creates extrema, and fragments persistence pairings. In the reported audit, Hu moments average much of the zero-mean fluctuation over the image, whereas the topological probe approaches chance rapidly.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../assets/stochastic-stress-tests.png" class="img-fluid figure-img" alt="Three accuracy plots showing probe behaviour under Gaussian, Poisson, and salt-and-pepper noise."></p>
+<figcaption>Stochastic-noise stress tests comparing the combined topological probe, its component streams, and the Hu-moment control.</figcaption>
+</figure>
+</div>
+<p>Noise and quantisation are both radiometric, but their signatures differ. Noise creates many local extrema, whereas quantisation merges nearby intensity levels. The next plot therefore exhibits terraces rather than the same noise-driven fragmentation.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../assets/bit-depth-terrace.png" class="img-fluid figure-img" style="width:75.0%" alt="Classification accuracy versus bit depth for three homology streams, their combination, and Hu moments."></p>
+<figcaption>Bit-depth experiment from the thesis. The combined topological probe remains on a broad performance terrace from three through eight bits.</figcaption>
+</figure>
+</div>
+<p>These are operational findings on a particular pipeline and dataset, not universal properties of every topological or geometric representation.</p>
+</section>
+<section id="empirical-failure-matrix" class="level2" data-number="9">
+<h2 data-number="9" class="anchored" data-anchor-id="empirical-failure-matrix"><span class="header-section-number">9</span> Empirical failure matrix</h2>
+<p>For the thesis audit, approximate empirical pass thresholds were set at 80% accuracy for the combined topological probe and 65% for the geometric probe. Those choices populate the matrix as follows:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th></th>
+<th>Topology pass (<span class="math inline">\(\geq80\%\)</span>)</th>
+<th>Topology fail (<span class="math inline">\(&lt;80\%\)</span>)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Geometry pass (<span class="math inline">\(\geq65\%\)</span>)</strong></td>
+<td>clean baseline; quantisation at three bits or more</td>
+<td>rotation around <span class="math inline">\(3^\circ\)</span> or more; moderate blur; sufficiently strong stochastic noise</td>
+</tr>
+<tr class="even">
+<td><strong>Geometry fail (<span class="math inline">\(&lt;65\%\)</span>)</strong></td>
+<td>strong positive drift; low contrast in the reported envelope</td>
+<td>extreme negative drift; severe blur; mixed information loss</td>
+</tr>
+</tbody>
+</table>
+<p>These thresholds are descriptive results of this cohort and implementation. They require external validation before they can be treated as operating limits. In particular, accuracy estimates from five folds are correlated, and the table does not supply confidence intervals or a prospective device study.</p>
+</section>
+<section id="reproducibility" class="level2" data-number="10">
+<h2 data-number="10" class="anchored" data-anchor-id="reproducibility"><span class="header-section-number">10</span> Reproducibility</h2>
+<p>The public project code is available at <a href="https://github.com/reyjosephnieto/ph">github.com/reyjosephnieto/ph</a>.</p>
+<p>A responsible reproduction should record:</p>
+<ul>
+<li>dataset version and cohort construction;</li>
+<li>preprocessing and channel selection;</li>
+<li>adjacency and boundary conventions;</li>
+<li>filtration direction;</li>
+<li>coefficient field;</li>
+<li>persistence truncation parameters;</li>
+<li>cross-validation splits; and</li>
+<li>every perturbation parameter.</li>
+</ul>
+</section>
+<section id="what-the-case-study-contributes" class="level2" data-number="11">
+<h2 data-number="11" class="anchored" data-anchor-id="what-the-case-study-contributes"><span class="header-section-number">11</span> What the case study contributes</h2>
+<p>The central contribution is a way of reasoning about failure:</p>
+<p><span class="math display">\[
+\text{physical acquisition}
+\longrightarrow
+\text{discrete intensity error}
+\longrightarrow
+\text{diagram displacement}
+\longrightarrow
+\text{feature displacement}.
+\]</span></p>
+<p>The Aim-and-Shoot bound explains how error propagates. The differential matrix uses complementary probes to interpret which part of the acquisition process is likely responsible.</p>
+</section>
+<section id="limitations-and-future-directions" class="level2" data-number="12">
+<h2 data-number="12" class="anchored" data-anchor-id="limitations-and-future-directions"><span class="header-section-number">12</span> Limitations and future directions</h2>
+<p>The thesis suggests several next steps:</p>
+<ul>
+<li>validate the failure matrix prospectively on images acquired under measured physical perturbations rather than only software corruptions;</li>
+<li>test transfer across cameras, clinics, and image modalities;</li>
+<li>estimate uncertainty for quadrant assignments rather than using hard accuracy cut-offs alone;</li>
+<li>replace the global graph-gradient bound with tighter spatially varying or operator-aware estimates;</li>
+<li>investigate persistent cohomology or representative cycles for localisation of a detected defect; and</li>
+<li>determine whether an intermediate resolution can reliably suppress sensor noise without aliasing small lesions.</li>
+</ul>
+<p>The reported interior optimum near <span class="math inline">\(1024\)</span> pixels is especially dataset-dependent. It motivates a resolution study; it does not establish a general optimal resolution for retinal imaging.</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="What to retain from the case study">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>What to retain from the case study
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The experiment is an illustration of the mathematical chain developed in the course, not a clinical endpoint. It shows that a representation can be stable under one perturbation mechanism and fragile under another; that preprocessing and vectorisation are part of the stability question; and that complementary failure modes can be more informative than a single clean-data accuracy.</p>
+</div>
+</div>
+<p><a href="../../computational-topology/reliability-engineering/index.html">Previous: Reliability Engineering</a> · <a href="../../computational-topology/index.html">Course contents</a> · <a href="../../computational-topology/functoriality-triangulation/index.html">Advanced: Functoriality and Triangulation</a></p>
+
+
+
+</section>
+
+<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a><div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" role="list">
+<div id="ref-garside2019topological" class="csl-entry" role="listitem">
+Garside, Kathryn, Robin Henderson, Irina Makarenko, and Cristina Masoller. 2019. <span>“Topological Data Analysis of High Resolution Diabetic Retinopathy Images.”</span> <em><span>PLOS</span> ONE</em> 14 (5): e0217413.
+</div>
+<div id="ref-hu1962visual" class="csl-entry" role="listitem">
+Hu, Ming-Kuei. 1962. <span>“Visual Pattern Recognition by Moment Invariants.”</span> <em><span>IRE</span> Transactions on Information Theory</em> 8 (2): 179–87.
+</div>
+<div id="ref-jin2022fives" class="csl-entry" role="listitem">
+Jin, Kai, Xingru Huang, Jingxing Zhou, et al. 2022. <span>“<span>FIVES</span>: A Fundus Image Dataset for Artificial Intelligence Based Vessel Segmentation.”</span> <em>Scientific Data</em> 9 (1): 475.
+</div>
+<div id="ref-malhi2023detection" class="csl-entry" role="listitem">
+Malhi, Avleen, Reaya Grewal, and Husanbir Singh Pannu. 2023. <span>“Detection and Diabetic Retinopathy Grading Using Digital Retinal Images.”</span> <em>International Journal of Intelligent Robotics and Applications</em> 7 (2): 426–58.
+</div>
+</div></section></div></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/rjnieto\.com");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../../computational-topology/reliability-engineering/index.html" class="pagination-link" aria-label="Reliability Engineering with Complementary Probes">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Reliability Engineering with Complementary Probes</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../../computational-topology/functoriality-triangulation/index.html" class="pagination-link" aria-label="Advanced: Functoriality and Triangulation">
+        <span class="nav-page-text">Advanced: Functoriality and Triangulation</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>© 2026 RJ Nieto</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+<p>Built with Quarto</p>
+</div>
+  </div>
+</footer>
+
+
+
+
+</body></html>

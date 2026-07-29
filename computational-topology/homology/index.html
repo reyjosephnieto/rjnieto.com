@@ -1,0 +1,1307 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.10.18">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="description" content="Chain groups, boundary operators, cycles, boundaries, homology groups, and Betti numbers.">
+
+<title>Chains, Boundaries, and Homology – RJ Nieto</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../computational-topology/computing-homology/index.html" rel="next">
+<link href="../../computational-topology/linear-algebra/index.html" rel="prev">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-805e789c7b7f260b48d5cafdd348845c.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../../styles.css">
+</head>
+
+<body class="nav-sidebar docked nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">RJ Nieto</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="../../computational-topology/index.html" aria-current="page"> 
+<span class="menu-text">TDA</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../teaching/index.html"> 
+<span class="menu-text">Teaching</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../cv/index.html"> 
+<span class="menu-text">CV</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../computational-topology/homology/index.html">Homology and persistence</a></li><li class="breadcrumb-item"><a href="../../computational-topology/homology/index.html">Chains, Boundaries, and Homology</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../computational-topology/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Computational Algebraic Topology from Scratch</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Foundations</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../computational-topology/metric-spaces/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Metric Spaces</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../computational-topology/topological-spaces/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Topological Spaces and Continuity</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../computational-topology/graphs-digital-images/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Graphs and Digital Images</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../computational-topology/complexes/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Cubical and Simplicial Complexes</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../computational-topology/linear-algebra/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Linear Algebra for Homology</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Homology and persistence</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../computational-topology/homology/index.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Chains, Boundaries, and Homology</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../computational-topology/computing-homology/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Computing Homology</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../computational-topology/persistent-homology/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Filtrations and Persistent Homology</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../computational-topology/stability/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Stability of Persistent Homology</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text">Research application</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../computational-topology/computational-stability/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Computational Stability on Digital Images</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../computational-topology/reliability-engineering/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Reliability Engineering with Complementary Probes</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../computational-topology/retinal-case-study/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Case Study: Retinal Diagnostics</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
+ <span class="menu-text">Advanced</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../computational-topology/functoriality-triangulation/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Advanced: Functoriality and Triangulation</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#chain-groups" id="toc-chain-groups" class="nav-link active" data-scroll-target="#chain-groups"><span class="header-section-number">1</span> Chain groups</a></li>
+  <li><a href="#the-boundary-operator" id="toc-the-boundary-operator" class="nav-link" data-scroll-target="#the-boundary-operator"><span class="header-section-number">2</span> The boundary operator</a>
+  <ul class="collapse">
+  <li><a href="#the-simplicial-boundary" id="toc-the-simplicial-boundary" class="nav-link" data-scroll-target="#the-simplicial-boundary"><span class="header-section-number">2.1</span> The simplicial boundary</a></li>
+  </ul></li>
+  <li><a href="#boundary-of-a-boundary" id="toc-boundary-of-a-boundary" class="nav-link" data-scroll-target="#boundary-of-a-boundary"><span class="header-section-number">3</span> Boundary of a boundary</a></li>
+  <li><a href="#cycles-and-boundaries" id="toc-cycles-and-boundaries" class="nav-link" data-scroll-target="#cycles-and-boundaries"><span class="header-section-number">4</span> Cycles and boundaries</a>
+  <ul class="collapse">
+  <li><a href="#why-counting-cycles-is-not-enough" id="toc-why-counting-cycles-is-not-enough" class="nav-link" data-scroll-target="#why-counting-cycles-is-not-enough"><span class="header-section-number">4.1</span> Why counting cycles is not enough</a></li>
+  </ul></li>
+  <li><a href="#homology-groups" id="toc-homology-groups" class="nav-link" data-scroll-target="#homology-groups"><span class="header-section-number">5</span> Homology groups</a>
+  <ul class="collapse">
+  <li><a href="#dimension-zero" id="toc-dimension-zero" class="nav-link" data-scroll-target="#dimension-zero"><span class="header-section-number">5.1</span> Dimension zero</a></li>
+  <li><a href="#dimension-one" id="toc-dimension-one" class="nav-link" data-scroll-target="#dimension-one"><span class="header-section-number">5.2</span> Dimension one</a></li>
+  <li><a href="#dimension-two" id="toc-dimension-two" class="nav-link" data-scroll-target="#dimension-two"><span class="header-section-number">5.3</span> Dimension two</a></li>
+  </ul></li>
+  <li><a href="#betti-numbers" id="toc-betti-numbers" class="nav-link" data-scroll-target="#betti-numbers"><span class="header-section-number">6</span> Betti numbers</a>
+  <ul class="collapse">
+  <li><a href="#betti-numbers-along-a-filtration" id="toc-betti-numbers-along-a-filtration" class="nav-link" data-scroll-target="#betti-numbers-along-a-filtration"><span class="header-section-number">6.1</span> Betti numbers along a filtration</a></li>
+  <li><a href="#interpretation-in-the-retinal-example" id="toc-interpretation-in-the-retinal-example" class="nav-link" data-scroll-target="#interpretation-in-the-retinal-example"><span class="header-section-number">6.2</span> Interpretation in the retinal example</a></li>
+  </ul></li>
+  <li><a href="#homotopy-invariance" id="toc-homotopy-invariance" class="nav-link" data-scroll-target="#homotopy-invariance"><span class="header-section-number">7</span> Homotopy invariance</a></li>
+  <li><a href="#a-worked-square" id="toc-a-worked-square" class="nav-link" data-scroll-target="#a-worked-square"><span class="header-section-number">8</span> A worked square</a></li>
+  <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises"><span class="header-section-number">9</span> Exercises</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../computational-topology/homology/index.html">Homology and persistence</a></li><li class="breadcrumb-item"><a href="../../computational-topology/homology/index.html">Chains, Boundaries, and Homology</a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title">Chains, Boundaries, and Homology</h1>
+<p class="subtitle lead">Turning holes into quotient vector spaces</p>
+</div>
+
+<div>
+  <div class="description">
+    Chain groups, boundary operators, cycles, boundaries, homology groups, and Betti numbers.
+  </div>
+</div>
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>Homology counts holes by comparing two kinds of chains:</p>
+<ul>
+<li>cycles, which have no boundary; and</li>
+<li>boundaries, which enclose higher-dimensional cells.</li>
+</ul>
+<p>A hole is represented by a cycle that is not itself a boundary. The construction developed here follows the standard computational treatment <span class="citation" data-cites="edelsbrunner2010 nanda2023">(<a href="#ref-edelsbrunner2010" role="doc-biblioref">Edelsbrunner and Harer 2010</a>; <a href="#ref-nanda2023" role="doc-biblioref">Nanda 2023</a>)</span>.</p>
+<div class="callout callout-style-default callout-note callout-titled" title="Keep one square in view">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Keep one square in view
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The entire construction can be understood by comparing two objects:</p>
+<ol type="1">
+<li>the four-edge perimeter of a square, with no interior; and</li>
+<li>the same perimeter together with the filled square.</li>
+</ol>
+<p>The perimeter has no boundary, so it is a cycle in both objects. In the first object it surrounds a hole. In the second it is itself the boundary of the filled square and should not count as a hole. Homology is the algebraic rule that makes exactly this distinction.</p>
+</div>
+</div>
+<section id="chain-groups" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="chain-groups"><span class="header-section-number">1</span> Chain groups</h2>
+<p>Let <span class="math inline">\(K\)</span> be a finite cell complex and work over <span class="math inline">\(\mathbb F_2\)</span>. The <strong><span class="math inline">\(k\)</span>th chain group</strong> <span class="math inline">\(C_k(K)\)</span> is the vector space with the <span class="math inline">\(k\)</span>-cells of <span class="math inline">\(K\)</span> as a basis.</p>
+<p>Thus:</p>
+<ul>
+<li><span class="math inline">\(C_0(K)\)</span> contains formal sums of vertices;</li>
+<li><span class="math inline">\(C_1(K)\)</span> contains formal sums of edges; and</li>
+<li><span class="math inline">\(C_2(K)\)</span> contains formal sums of squares or triangles.</li>
+</ul>
+<p>Because coefficients lie in <span class="math inline">\(\mathbb F_2\)</span>, a chain can be identified with a subset of cells. Addition is symmetric difference.</p>
+<p>The word <strong>formal</strong> is important: adding two edges does not mean adding their coordinates or lengths. It means placing both edges in one algebraic collection. If the same edge is selected twice, its coefficient is <span class="math inline">\(1+1=0\)</span>, so it disappears.</p>
+</section>
+<section id="the-boundary-operator" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="the-boundary-operator"><span class="header-section-number">2</span> The boundary operator</h2>
+<div id="def-boundary-operator" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 1 (Boundary operator)</strong></span> The <strong>boundary operator</strong></p>
+<p><span class="math display">\[
+\partial_k\colon C_k(K)\to C_{k-1}(K)
+\]</span></p>
+<p>sends each cell to the sum of its facets and extends linearly.</p>
+<p>For an edge <span class="math inline">\(e=[u,v]\)</span>,</p>
+<p><span class="math display">\[
+\partial_1 e=u+v.
+\]</span></p>
+<p>For a square <span class="math inline">\(\kappa\)</span> with boundary edges <span class="math inline">\(e_1,e_2,e_3,e_4\)</span>,</p>
+<p><span class="math display">\[
+\partial_2\kappa=e_1+e_2+e_3+e_4.
+\]</span></p>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../assets/boundary-operator.png" class="img-fluid figure-img" alt="A filled square maps to its four-edge boundary and a filled triangle maps to its three-edge boundary."></p>
+<figcaption>The boundary operator removes the interior of a filled square or triangle and returns its perimeter.</figcaption>
+</figure>
+</div>
+<p>The first picture shows what (_k) does to one cell. Arranging the same operation in every dimension produces the chain complex in the next picture: (2)-cells map to edge chains, edge chains map to vertex chains, and vertex chains map to zero.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../assets/chain-complex.png" class="img-fluid figure-img" alt="Two squares map to their edges, then vertices, then zero through boundary operators."></p>
+<figcaption>A cubical complex separated into chain groups connected by boundary maps.</figcaption>
+</figure>
+</div>
+<section id="the-simplicial-boundary" class="level3" data-number="2.1">
+<h3 data-number="2.1" class="anchored" data-anchor-id="the-simplicial-boundary"><span class="header-section-number">2.1</span> The simplicial boundary</h3>
+<p>The same construction works for simplicial complexes. Let <span class="math inline">\(C_k^\triangle(K)\)</span> have the <span class="math inline">\(k\)</span>-simplices as a basis.</p>
+<div id="def-simplicial-boundary" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 2 (Simplicial boundary operator)</strong></span> For a <span class="math inline">\(k\)</span>-simplex <span class="math inline">\(\sigma=[v_0,\ldots,v_k]\)</span>, define</p>
+<p><span class="math display">\[
+\partial_k^\triangle\sigma
+=
+\sum_{i=0}^k
+[v_0,\ldots,\widehat{v_i},\ldots,v_k],
+\]</span></p>
+<p>where the hat means that <span class="math inline">\(v_i\)</span> is omitted. Extend the formula linearly to all simplicial <span class="math inline">\(k\)</span>-chains.</p>
+</div>
+<p>For a triangle,</p>
+<p><span class="math display">\[
+\partial_2^\triangle[v_0,v_1,v_2]
+=[v_1,v_2]+[v_0,v_2]+[v_0,v_1],
+\]</span></p>
+<p>the formal sum of its three edges. Thus the cubical and simplicial formulas implement the same instruction—sum the codimension-one faces—even though the cells have different shapes.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../assets/oriented-simplex-boundary.png" class="img-fluid figure-img" style="width:92.0%" alt="An oriented filled triangle maps to an alternating sum of three oriented edges, which recombine as its oriented perimeter."></p>
+<figcaption>With oriented coefficients, the boundary of ([v_0,v_1,v_2]) is the alternating sum ([v_1,v_2]-[v_0,v_2]+[v_0,v_1]). Over (F_2), the signs disappear but the same three edges remain.</figcaption>
+</figure>
+</div>
+</section>
+</section>
+<section id="boundary-of-a-boundary" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="boundary-of-a-boundary"><span class="header-section-number">3</span> Boundary of a boundary</h2>
+<div id="lem-boundary-squared" class="theorem lemma">
+<p><span class="theorem-title"><strong>Lemma 1 (Fundamental lemma of homology)</strong></span> For every cubical chain,</p>
+<p><span class="math display">\[
+\partial_{k-1}\circ\partial_k=0.
+\]</span></p>
+</div>
+<div class="proof">
+<p><span class="proof-title"><em>Proof</em>. </span>It is enough to prove the identity on a basis cube <span class="math inline">\(\kappa=I_1\times\cdots\times I_n\)</span>. Each codimension-two face of <span class="math inline">\(\kappa\)</span> is obtained by collapsing two distinct non-degenerate factors, say <span class="math inline">\(I_a\)</span> and <span class="math inline">\(I_b\)</span>. It appears twice in <span class="math inline">\(\partial(\partial\kappa)\)</span>: once by collapsing <span class="math inline">\(I_a\)</span> first and <span class="math inline">\(I_b\)</span> second, and once in the opposite order.</p>
+<p>Over <span class="math inline">\(\mathbb F_2\)</span>, the two copies have total coefficient <span class="math inline">\(1+1=0\)</span>. With oriented coefficients, the two orders have opposite signs and cancel for the same reason. Every term in <span class="math inline">\(\partial(\partial\kappa)\)</span> is such a codimension-two face, so the whole sum is zero. Linearity extends the result from cubes to all chains.</p>
+</div>
+<div id="lem-simplicial-boundary-square" class="theorem lemma">
+<p><span class="theorem-title"><strong>Lemma 2 (The simplicial boundary also squares to zero)</strong></span> For every <span class="math inline">\(k\geq2\)</span>,</p>
+<p><span class="math display">\[
+\partial_{k-1}^\triangle\partial_k^\triangle=0.
+\]</span></p>
+</div>
+<div class="proof">
+<p><span class="proof-title"><em>Proof</em>. </span>Evaluate the composite on a simplex <span class="math inline">\(\sigma=[v_0,\ldots,v_k]\)</span>. Every codimension-two face is obtained by deleting two distinct vertices, say <span class="math inline">\(v_i\)</span> and <span class="math inline">\(v_j\)</span>. It occurs once when <span class="math inline">\(v_i\)</span> is deleted first and <span class="math inline">\(v_j\)</span> second, and once in the opposite order. Thus every codimension-two face occurs exactly twice and cancels over <span class="math inline">\(\mathbb F_2\)</span>. Linearity gives the result for every simplicial chain.</p>
+</div>
+<p>Both cell models therefore produce the same algebraic pattern: a sequence of chain spaces in which two consecutive boundary operations compose to zero.</p>
+<p>This identity makes the sequence</p>
+<p><span class="math display">\[
+\cdots\longrightarrow C_{k+1}
+\xrightarrow{\partial_{k+1}}C_k
+\xrightarrow{\partial_k}C_{k-1}
+\longrightarrow\cdots
+\]</span></p>
+<p>a <strong>chain complex</strong>.</p>
+<p>Read the arrows from right to left as repeated perimeter-taking: a <span class="math inline">\(k\)</span>-dimensional chain is sent to its <span class="math inline">\((k-1)\)</span>-dimensional boundary, which is then sent to zero. The adjective “complex” here refers to this linked sequence of vector spaces and maps, not to a cubical or simplicial complex itself.</p>
+</section>
+<section id="cycles-and-boundaries" class="level2" data-number="4">
+<h2 data-number="4" class="anchored" data-anchor-id="cycles-and-boundaries"><span class="header-section-number">4</span> Cycles and boundaries</h2>
+<p>The notation in this section condenses two geometric tests:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Space</th>
+<th>Test</th>
+<th>Geometric reading</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(Z_k=\ker\partial_k\)</span></td>
+<td><span class="math inline">\(\partial_kz=0\)</span></td>
+<td><span class="math inline">\(z\)</span> has no exposed boundary</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(B_k=\operatorname{im}\partial_{k+1}\)</span></td>
+<td><span class="math inline">\(z=\partial_{k+1}c\)</span></td>
+<td><span class="math inline">\(z\)</span> bounds a higher-dimensional filling</td>
+</tr>
+</tbody>
+</table>
+<p>Both conditions are needed. Being closed makes a chain a candidate hole; failing to bound is what makes the candidate nontrivial.</p>
+<p>The space of <strong><span class="math inline">\(k\)</span>-cycles</strong> is</p>
+<p><span class="math display">\[
+Z_k(K)=\ker\partial_k.
+\]</span></p>
+<p>These are chains with no boundary.</p>
+<p>The space of <strong><span class="math inline">\(k\)</span>-boundaries</strong> is</p>
+<p><span class="math display">\[
+B_k(K)=\operatorname{im}\partial_{k+1}.
+\]</span></p>
+<p>These are chains that occur as boundaries of higher-dimensional chains.</p>
+<div id="prp-boundaries-cycles" class="theorem proposition">
+<p><span class="theorem-title"><strong>Proposition 1 (Every boundary is a cycle)</strong></span> For every <span class="math inline">\(k\)</span>,</p>
+<p><span class="math display">\[
+B_k(K)\subseteq Z_k(K).
+\]</span></p>
+</div>
+<div class="proof">
+<p><span class="proof-title"><em>Proof</em>. </span>Let <span class="math inline">\(z\in B_k(K)\)</span>. Then <span class="math inline">\(z=\partial_{k+1}c\)</span> for some <span class="math inline">\(c\in C_{k+1}(K)\)</span>. By <a href="#lem-boundary-squared" class="quarto-xref">Lemma&nbsp;1</a>,</p>
+<p><span class="math display">\[
+\partial_kz
+=\partial_k(\partial_{k+1}c)
+=0.
+\]</span></p>
+<p>Thus <span class="math inline">\(z\in\ker\partial_k=Z_k(K)\)</span>.</p>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../assets/cycles-boundaries.png" class="img-fluid figure-img" alt="Nested regions B inside Z inside C at consecutive chain dimensions."></p>
+<figcaption>Boundaries sit inside cycles, which sit inside chains.</figcaption>
+</figure>
+</div>
+<p>Every boundary is a cycle, but not every cycle is a boundary. The difference between them is precisely the hole information.</p>
+<section id="why-counting-cycles-is-not-enough" class="level3" data-number="4.1">
+<h3 data-number="4.1" class="anchored" data-anchor-id="why-counting-cycles-is-not-enough"><span class="header-section-number">4.1</span> Why counting cycles is not enough</h3>
+<p>It is tempting to define a hole as a cycle and simply count all cycles. That fails because many geometrically different cycles can surround the same empty region. Moving a loop outward across a band of filled squares changes the edges in the loop, but it should not create a new topological feature.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../assets/homologous-cycles.png" class="img-fluid figure-img" alt="A cubical region with one central hole and four nested edge cycles drawn around that hole."></p>
+<figcaption>Four different 1-cycles surrounding the same missing central region. Their pairwise differences are boundaries of the filled bands between them, so all four represent one homology class.</figcaption>
+</figure>
+</div>
+<p>The next picture performs that statement on an explicit cubical chain. Applying () to every square in the annular (2)-chain makes the interior shared edges occur twice and cancel. Only the outer and inner loops remain. Thus</p>
+<p><span class="math display">\[
+\partial\gamma
+=\lambda_{\mathrm{outer}}-\lambda_{\mathrm{inner}},
+\]</span></p>
+<p>or, over (F_2), the same equation with (+) in place of (-).</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../assets/cubical-annulus-boundary.png" class="img-fluid figure-img" style="width:100.0%" alt="A grid annulus is differentiated square by square; shared edges cancel and the remaining inner and outer perimeter loops have opposite orientations."></p>
+<figcaption>The boundary of a cubical annulus. Boundaries of adjacent squares cancel along shared edges, leaving the outer loop and the oppositely oriented inner loop. Hence the two loops differ by a boundary and represent the same (H_1)-class.</figcaption>
+</figure>
+</div>
+<p>The quotient by <span class="math inline">\(B_k\)</span> is precisely the algebraic operation that removes this over-counting. Rather than choosing one privileged representative, homology keeps the entire equivalence class of cycles that differ by boundaries.</p>
+</section>
+</section>
+<section id="homology-groups" class="level2" data-number="5">
+<h2 data-number="5" class="anchored" data-anchor-id="homology-groups"><span class="header-section-number">5</span> Homology groups</h2>
+<p>The <strong><span class="math inline">\(k\)</span>th homology group</strong> is</p>
+<p><span class="math display">\[
+H_k(K)
+=
+\frac{Z_k(K)}{B_k(K)}
+=
+\frac{\ker\partial_k}{\operatorname{im}\partial_{k+1}}.
+\]</span></p>
+<p>The historical name is “group,” but with coefficients in the field <span class="math inline">\(\mathbb F_2\)</span> this quotient is also a vector space. That is why we may take its dimension and why Gaussian elimination can compute it.</p>
+<div id="lem-homologous-cycles" class="theorem lemma">
+<p><span class="theorem-title"><strong>Lemma 3 (Homologous cycles)</strong></span> For <span class="math inline">\(z_1,z_2\in Z_k(K)\)</span>,</p>
+<p><span class="math display">\[
+[z_1]=[z_2]\text{ in }H_k(K)
+\quad\Longleftrightarrow\quad
+z_1-z_2\in B_k(K).
+\]</span></p>
+</div>
+<div class="proof">
+<p><span class="proof-title"><em>Proof</em>. </span>By equality of cosets,</p>
+<p><span class="math display">\[
+[z_1]=[z_2]
+\iff z_1+B_k=z_2+B_k
+\iff z_1-z_2\in B_k.
+\]</span></p>
+</div>
+<p>Intuitively, homologous cycles wrap around the same hole.</p>
+<section id="dimension-zero" class="level3" data-number="5.1">
+<h3 data-number="5.1" class="anchored" data-anchor-id="dimension-zero"><span class="header-section-number">5.1</span> Dimension zero</h3>
+<p><span class="math inline">\(H_0(K)\)</span> records connected components. If <span class="math inline">\(K\)</span> has <span class="math inline">\(c\)</span> components, then</p>
+<p><span class="math display">\[
+H_0(K)\cong\mathbb F_2^c.
+\]</span></p>
+</section>
+<section id="dimension-one" class="level3" data-number="5.2">
+<h3 data-number="5.2" class="anchored" data-anchor-id="dimension-one"><span class="header-section-number">5.2</span> Dimension one</h3>
+<p><span class="math inline">\(H_1(K)\)</span> records independent loops. The boundary of an unfilled square represents a nonzero class. Once the square is filled by a <span class="math inline">\(2\)</span>-cell, the same cycle becomes a boundary and hence represents zero in homology.</p>
+</section>
+<section id="dimension-two" class="level3" data-number="5.3">
+<h3 data-number="5.3" class="anchored" data-anchor-id="dimension-two"><span class="header-section-number">5.3</span> Dimension two</h3>
+<p><span class="math inline">\(H_2(K)\)</span> records enclosed two-dimensional voids, such as the surface of a hollow cube. Adding the solid <span class="math inline">\(3\)</span>-cube fills the void.</p>
+</section>
+</section>
+<section id="betti-numbers" class="level2" data-number="6">
+<h2 data-number="6" class="anchored" data-anchor-id="betti-numbers"><span class="header-section-number">6</span> Betti numbers</h2>
+<p>The <strong><span class="math inline">\(k\)</span>th Betti number</strong> is</p>
+<p><span class="math display">\[
+\beta_k(K)=\dim H_k(K).
+\]</span></p>
+<p>Over a field,</p>
+<p><span class="math display">\[
+\beta_k
+=
+\dim\ker\partial_k-\dim\operatorname{im}\partial_{k+1}.
+\]</span></p>
+<div id="prp-betti-rank" class="theorem proposition">
+<p><span class="theorem-title"><strong>Proposition 2 (Betti number from boundary ranks)</strong></span> Let <span class="math inline">\(D_k\)</span> be the matrix of <span class="math inline">\(\partial_k\)</span>, let <span class="math inline">\(r_k=\operatorname{rank}D_k\)</span>, and let <span class="math inline">\(n_k\)</span> be the number of <span class="math inline">\(k\)</span>-cells of <span class="math inline">\(K\)</span>. Then</p>
+<p><span class="math display">\[
+\beta_k(K)=n_k-r_k-r_{k+1}.
+\]</span></p>
+</div>
+<div class="proof">
+<p><span class="proof-title"><em>Proof</em>. </span>By definition and the dimension formula for a quotient,</p>
+<p><span class="math display">\[
+\beta_k
+=\dim Z_k-\dim B_k
+=\operatorname{nullity}D_k-\operatorname{rank}D_{k+1}.
+\]</span></p>
+<p>Rank–nullity gives <span class="math inline">\(\operatorname{nullity}D_k=n_k-r_k\)</span>, while <span class="math inline">\(\operatorname{rank}D_{k+1}=r_{k+1}\)</span>. Substitution proves the formula.</p>
+</div>
+<p>Typical signatures include:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Space</th>
+<th style="text-align: right;"><span class="math inline">\(\beta_0\)</span></th>
+<th style="text-align: right;"><span class="math inline">\(\beta_1\)</span></th>
+<th style="text-align: right;"><span class="math inline">\(\beta_2\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>point</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td>two points</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td>filled disc</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td>circle</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td>sphere surface</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="even">
+<td>torus surface</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">1</td>
+</tr>
+</tbody>
+</table>
+<p>Betti numbers are coarse: they count holes but do not describe their exact location or geometry.</p>
+<section id="betti-numbers-along-a-filtration" class="level3" data-number="6.1">
+<h3 data-number="6.1" class="anchored" data-anchor-id="betti-numbers-along-a-filtration"><span class="header-section-number">6.1</span> Betti numbers along a filtration</h3>
+<p>At one threshold, Betti numbers give a static inventory. Across thresholds, they become functions of the filtration parameter. New pixels can create a component, merge two components, create a loop, or fill a loop; accordingly, <span class="math inline">\(\beta_0\)</span> and <span class="math inline">\(\beta_1\)</span> can both increase and decrease.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../assets/betti-filtration.png" class="img-fluid figure-img" alt="A five-by-five intensity grid and several binary threshold stages used to track zeroth and first Betti numbers."></p>
+<figcaption>A labelled pixel patch viewed at successive thresholds, illustrating changes in connected components and loops.</figcaption>
+</figure>
+</div>
+<p>For the filtration shown in the figure, one obtains:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: right;"><span class="math inline">\(t\)</span></th>
+<th style="text-align: right;">10</th>
+<th style="text-align: right;">20</th>
+<th style="text-align: right;">50</th>
+<th style="text-align: right;">90</th>
+<th style="text-align: right;">100</th>
+<th style="text-align: right;">120</th>
+<th style="text-align: right;">150</th>
+<th style="text-align: right;">180</th>
+<th style="text-align: right;">200</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;"><span class="math inline">\(\beta_0\)</span></td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;"><span class="math inline">\(\beta_1\)</span></td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+</tr>
+</tbody>
+</table>
+<p>This table also exposes the weakness of selecting a single threshold. A threshold that isolates one structure may merge or erase another. Persistent homology replaces the search for a universally correct threshold with a record of the entire topological evolution.</p>
+</section>
+<section id="interpretation-in-the-retinal-example" class="level3" data-number="6.2">
+<h3 data-number="6.2" class="anchored" data-anchor-id="interpretation-in-the-retinal-example"><span class="header-section-number">6.2</span> Interpretation in the retinal example</h3>
+<p>The thesis uses three deliberately simple correspondences:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Image structure</th>
+<th>Filtration</th>
+<th>Homological quantity</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>dark components, including haemorrhage-like regions</td>
+<td>sublevel</td>
+<td><span class="math inline">\(H_0\)</span></td>
+</tr>
+<tr class="even">
+<td>dark vascular loops</td>
+<td>sublevel</td>
+<td><span class="math inline">\(H_1\)</span></td>
+</tr>
+<tr class="odd">
+<td>bright components, including exudate-like regions</td>
+<td>inverted-image sublevel</td>
+<td><span class="math inline">\(H_0\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>These are modelling correspondences, not diagnoses. A component or loop can be caused by anatomy, pathology, illumination, the image boundary, or an interpolation artefact. Homology records structure; clinical interpretation requires the acquisition and validation analysis developed later.</p>
+</section>
+</section>
+<section id="homotopy-invariance" class="level2" data-number="7">
+<h2 data-number="7" class="anchored" data-anchor-id="homotopy-invariance"><span class="header-section-number">7</span> Homotopy invariance</h2>
+<p>This theorem reconnects the computation to the topological motivation. Its statement is essential; the proof sketch uses the functorial language developed only in the optional final chapter. On a first reading, retain the conclusion that continuously deforming a space does not change its homology.</p>
+<div id="thm-homotopy-invariance" class="theorem">
+<p><span class="theorem-title"><strong>Theorem 1 (Homotopy invariance of homology)</strong></span> If <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> are homotopy equivalent, then</p>
+<p><span class="math display">\[
+H_k(X)\cong H_k(Y)
+\]</span></p>
+<p>for every <span class="math inline">\(k\)</span>. Consequently, all Betti numbers agree.</p>
+</div>
+<div class="proof-sketch">
+<p>Choose homotopy-inverse maps <span class="math inline">\(f\colon X\to Y\)</span> and <span class="math inline">\(g\colon Y\to X\)</span>. Functoriality gives induced maps <span class="math inline">\(H_k(f)\)</span> and <span class="math inline">\(H_k(g)\)</span>. Homotopic maps induce the same map on homology, so</p>
+<p><span class="math display">\[
+H_k(g)H_k(f)=H_k(g\circ f)=H_k(\operatorname{id}_X)
+\]</span></p>
+<p>and similarly <span class="math inline">\(H_k(f)H_k(g)=H_k(\operatorname{id}_Y)\)</span>. Thus the induced maps are inverse isomorphisms. The nontrivial ingredient—that homotopic maps induce the same homology map—is proved by constructing a chain homotopy; see <span class="citation" data-cites="nanda2023">Nanda (<a href="#ref-nanda2023" role="doc-biblioref">2023</a>)</span>.</p>
+</div>
+<p>This explains why a thick annulus and a circle have the same homology. It also explains the value of homology for noisy geometry: many local deformations leave the algebraic signature unchanged.</p>
+</section>
+<section id="a-worked-square" class="level2" data-number="8">
+<h2 data-number="8" class="anchored" data-anchor-id="a-worked-square"><span class="header-section-number">8</span> A worked square</h2>
+<p>Let <span class="math inline">\(K\)</span> consist of four vertices and four edges forming a square, but no <span class="math inline">\(2\)</span>-cell.</p>
+<ul>
+<li>There is one connected component, so <span class="math inline">\(\beta_0=1\)</span>.</li>
+<li>The sum of all four edges is a <span class="math inline">\(1\)</span>-cycle.</li>
+<li>There are no <span class="math inline">\(2\)</span>-cells, so <span class="math inline">\(B_1=0\)</span>.</li>
+<li>Therefore the cycle survives in <span class="math inline">\(H_1\)</span>, giving <span class="math inline">\(\beta_1=1\)</span>.</li>
+</ul>
+<p>Now add the square as a <span class="math inline">\(2\)</span>-cell. Its boundary is exactly that four-edge cycle. The cycle moves into <span class="math inline">\(B_1\)</span>, so <span class="math inline">\(\beta_1\)</span> drops to zero.</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="What to carry forward">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>What to carry forward
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>Chains are selections of cells.</li>
+<li>Cycles have no boundary.</li>
+<li>Boundaries are cycles already explained by a higher-dimensional filling.</li>
+<li>Homology identifies cycles that differ only by such fillings.</li>
+<li>A Betti number is the number of independent surviving classes.</li>
+</ul>
+<p>The next chapter replaces these definitions by boundary matrices and Gaussian elimination.</p>
+</div>
+</div>
+</section>
+<section id="exercises" class="level2" data-number="9">
+<h2 data-number="9" class="anchored" data-anchor-id="exercises"><span class="header-section-number">9</span> Exercises</h2>
+<ol type="1">
+<li>Compute the boundary of a path consisting of three consecutive edges.</li>
+<li>Explain why a single edge is not a <span class="math inline">\(1\)</span>-cycle.</li>
+<li>Compute <span class="math inline">\((\beta_0,\beta_1)\)</span> for two disjoint unfilled triangles.</li>
+<li>What happens to <span class="math inline">\(\beta_1\)</span> when both triangles in Exercise 3 are filled?</li>
+<li>Show directly that the boundary of a triangle has zero boundary over <span class="math inline">\(\mathbb F_2\)</span>.</li>
+</ol>
+<p><a href="../../computational-topology/linear-algebra/index.html">Previous: Linear Algebra for Homology</a> · <a href="../../computational-topology/index.html">Course contents</a> · <a href="../../computational-topology/computing-homology/index.html">Next: Computing Homology</a></p>
+
+
+
+</section>
+
+<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a><div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" role="list">
+<div id="ref-edelsbrunner2010" class="csl-entry" role="listitem">
+Edelsbrunner, Herbert, and John Harer. 2010. <em>Computational Topology: An Introduction</em>. American Mathematical Society.
+</div>
+<div id="ref-nanda2023" class="csl-entry" role="listitem">
+Nanda, Vidit. 2023. <em>Computational Algebraic Topology</em>. Lecture notes, University of Oxford. <a href="https://people.maths.ox.ac.uk/nanda/cat/">https://people.maths.ox.ac.uk/nanda/cat/</a>.
+</div>
+</div></section></div></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/rjnieto\.com");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../../computational-topology/linear-algebra/index.html" class="pagination-link" aria-label="Linear Algebra for Homology">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Linear Algebra for Homology</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../../computational-topology/computing-homology/index.html" class="pagination-link" aria-label="Computing Homology">
+        <span class="nav-page-text">Computing Homology</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>© 2026 RJ Nieto</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+<p>Built with Quarto</p>
+</div>
+  </div>
+</footer>
+
+
+
+
+</body></html>

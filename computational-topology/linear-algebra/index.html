@@ -6,8 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="description" content="The focused linear algebra needed to define and compute homology.">
 
-<title>Computational Algebraic Topology from Scratch – RJ Nieto</title>
+<title>Linear Algebra for Homology – RJ Nieto</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -26,46 +27,28 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for citations */
-div.csl-bib-body { }
-div.csl-entry {
-  clear: both;
-}
-.hanging-indent div.csl-entry {
-  margin-left:2em;
-  text-indent:-2em;
-}
-div.csl-left-margin {
-  min-width:2em;
-  float:left;
-}
-div.csl-right-inline {
-  margin-left:2em;
-  padding-left:1em;
-}
-div.csl-indent {
-  margin-left: 2em;
-}</style>
+</style>
 
 
-<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../">
-<link href="../computational-topology/metric-spaces/index.html" rel="next">
-<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="../site_libs/quarto-html/popper.min.js"></script>
-<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-805e789c7b7f260b48d5cafdd348845c.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../computational-topology/homology/index.html" rel="next">
+<link href="../../computational-topology/complexes/index.html" rel="prev">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-805e789c7b7f260b48d5cafdd348845c.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -124,7 +107,7 @@ window.Quarto = {
 };
 </script>
 
-<link rel="stylesheet" href="../styles.css">
+<link rel="stylesheet" href="../../styles.css">
 </head>
 
 <body class="nav-sidebar docked nav-fixed quarto-light">
@@ -134,7 +117,7 @@ window.Quarto = {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="../index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">RJ Nieto</span>
     </a>
   </div>
@@ -145,19 +128,19 @@ window.Quarto = {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../index.html"> 
+    <a class="nav-link" href="../../index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="../computational-topology/index.html" aria-current="page"> 
+    <a class="nav-link active" href="../../computational-topology/index.html" aria-current="page"> 
 <span class="menu-text">TDA</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../teaching/index.html"> 
+    <a class="nav-link" href="../../teaching/index.html"> 
 <span class="menu-text">Teaching</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../cv/index.html"> 
+    <a class="nav-link" href="../../cv/index.html"> 
 <span class="menu-text">CV</span></a>
   </li>  
 </ul>
@@ -171,7 +154,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../computational-topology/index.html">Computational Algebraic Topology from Scratch</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../computational-topology/metric-spaces/index.html">Foundations</a></li><li class="breadcrumb-item"><a href="../../computational-topology/linear-algebra/index.html">Linear Algebra for Homology</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -185,7 +168,7 @@ window.Quarto = {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../computational-topology/index.html" class="sidebar-item-text sidebar-link active">
+  <a href="../../computational-topology/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Computational Algebraic Topology from Scratch</span></a>
   </div>
 </li>
@@ -200,31 +183,31 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../computational-topology/metric-spaces/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../computational-topology/metric-spaces/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Metric Spaces</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../computational-topology/topological-spaces/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../computational-topology/topological-spaces/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Topological Spaces and Continuity</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../computational-topology/graphs-digital-images/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../computational-topology/graphs-digital-images/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Graphs and Digital Images</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../computational-topology/complexes/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../computational-topology/complexes/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Cubical and Simplicial Complexes</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../computational-topology/linear-algebra/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../computational-topology/linear-algebra/index.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Linear Algebra for Homology</span></a>
   </div>
 </li>
@@ -241,25 +224,25 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../computational-topology/homology/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../computational-topology/homology/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Chains, Boundaries, and Homology</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../computational-topology/computing-homology/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../computational-topology/computing-homology/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Computing Homology</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../computational-topology/persistent-homology/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../computational-topology/persistent-homology/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Filtrations and Persistent Homology</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../computational-topology/stability/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../computational-topology/stability/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Stability of Persistent Homology</span></a>
   </div>
 </li>
@@ -276,19 +259,19 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../computational-topology/computational-stability/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../computational-topology/computational-stability/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Computational Stability on Digital Images</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../computational-topology/reliability-engineering/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../computational-topology/reliability-engineering/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Reliability Engineering with Complementary Probes</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../computational-topology/retinal-case-study/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../computational-topology/retinal-case-study/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Case Study: Retinal Diagnostics</span></a>
   </div>
 </li>
@@ -305,7 +288,7 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../computational-topology/functoriality-triangulation/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../computational-topology/functoriality-triangulation/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Advanced: Functoriality and Triangulation</span></a>
   </div>
 </li>
@@ -321,25 +304,33 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#the-route-through-the-subject" id="toc-the-route-through-the-subject" class="nav-link active" data-scroll-target="#the-route-through-the-subject">The route through the subject</a></li>
-  <li><a href="#why-turn-topology-into-vectors" id="toc-why-turn-topology-into-vectors" class="nav-link" data-scroll-target="#why-turn-topology-into-vectors">Why turn topology into vectors?</a></li>
-  <li><a href="#foundations" id="toc-foundations" class="nav-link" data-scroll-target="#foundations">Foundations</a></li>
-  <li><a href="#homology-and-persistence" id="toc-homology-and-persistence" class="nav-link" data-scroll-target="#homology-and-persistence">Homology and persistence</a></li>
-  <li><a href="#research-application" id="toc-research-application" class="nav-link" data-scroll-target="#research-application">Research application</a></li>
-  <li><a href="#advanced-material" id="toc-advanced-material" class="nav-link" data-scroll-target="#advanced-material">Advanced material</a></li>
-  <li><a href="#status" id="toc-status" class="nav-link" data-scroll-target="#status">Status</a></li>
+  <li><a href="#fields-and-vector-spaces" id="toc-fields-and-vector-spaces" class="nav-link active" data-scroll-target="#fields-and-vector-spaces"><span class="header-section-number">1</span> Fields and vector spaces</a></li>
+  <li><a href="#spans-independence-and-bases" id="toc-spans-independence-and-bases" class="nav-link" data-scroll-target="#spans-independence-and-bases"><span class="header-section-number">2</span> Spans, independence, and bases</a></li>
+  <li><a href="#linear-maps-and-matrices" id="toc-linear-maps-and-matrices" class="nav-link" data-scroll-target="#linear-maps-and-matrices"><span class="header-section-number">3</span> Linear maps and matrices</a></li>
+  <li><a href="#kernel-image-and-rank" id="toc-kernel-image-and-rank" class="nav-link" data-scroll-target="#kernel-image-and-rank"><span class="header-section-number">4</span> Kernel, image, and rank</a></li>
+  <li><a href="#quotient-spaces" id="toc-quotient-spaces" class="nav-link" data-scroll-target="#quotient-spaces"><span class="header-section-number">5</span> Quotient spaces</a></li>
+  <li><a href="#why-mathbb-f_2-is-convenient" id="toc-why-mathbb-f_2-is-convenient" class="nav-link" data-scroll-target="#why-mathbb-f_2-is-convenient"><span class="header-section-number">6</span> Why <span class="math inline">\(\mathbb F_2\)</span> is convenient</a></li>
+  <li><a href="#gaussian-elimination-over-mathbb-f_2" id="toc-gaussian-elimination-over-mathbb-f_2" class="nav-link" data-scroll-target="#gaussian-elimination-over-mathbb-f_2"><span class="header-section-number">7</span> Gaussian elimination over <span class="math inline">\(\mathbb F_2\)</span></a></li>
+  <li><a href="#direct-sums" id="toc-direct-sums" class="nav-link" data-scroll-target="#direct-sums"><span class="header-section-number">8</span> Direct sums</a></li>
+  <li><a href="#the-algebraic-destination" id="toc-the-algebraic-destination" class="nav-link" data-scroll-target="#the-algebraic-destination"><span class="header-section-number">9</span> The algebraic destination</a></li>
+  <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises"><span class="header-section-number">10</span> Exercises</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../computational-topology/metric-spaces/index.html">Foundations</a></li><li class="breadcrumb-item"><a href="../../computational-topology/linear-algebra/index.html">Linear Algebra for Homology</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Computational Algebraic Topology from Scratch</h1>
-<p class="subtitle lead">A constructive path from elementary topology to persistent homology</p>
+<h1 class="title">Linear Algebra for Homology</h1>
+<p class="subtitle lead">Kernels, images, quotients, and arithmetic over two elements</p>
 </div>
 
+<div>
+  <div class="description">
+    The focused linear algebra needed to define and compute homology.
+  </div>
+</div>
 
 
 <div class="quarto-title-meta">
@@ -354,23 +345,18 @@ window.Quarto = {
 </header>
 
 
-<p>These notes develop computational algebraic topology from first principles. They are intended for readers with some mathematical maturity, but no prior knowledge of topology.</p>
-<p>The central idea is to turn geometric and topological questions into finite algebraic computations. In particular, we will study why</p>
-<p><span class="math display">\[
-\partial_k \circ \partial_{k+1}=0
-\]</span></p>
-<p>and how this identity leads to homology groups, algorithms, filtrations, and persistent homology.</p>
-<div class="callout callout-style-default callout-tip callout-titled" title="How to read these notes">
+<p>Homology converts geometry into linear algebra. Cells become basis vectors, boundaries become matrices, and holes emerge from kernels and quotient spaces. This chapter develops only the algebra needed for that conversion.</p>
+<div class="callout callout-style-default callout-note callout-titled" title="A geometric dictionary for the algebra">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>How to read these notes
+<span class="screen-reader-only">Note</span>A geometric dictionary for the algebra
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>The chapters are cumulative, but they are not meant to be read at a uniform speed. A first encounter with metric spaces, quotient spaces, or functors can feel much more abstract than the image-processing problem that motivated them. When that happens, keep the following concrete dictionary in view:</p>
+<p>The chapter can be read with one picture in mind: take a square assembled from edges.</p>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 50%">
@@ -378,201 +364,248 @@ window.Quarto = {
 </colgroup>
 <thead>
 <tr class="header">
-<th>Abstract object</th>
-<th>Picture to keep in mind</th>
+<th>Linear-algebra term</th>
+<th>Topological meaning later</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>metric</td>
-<td>a rule for deciding how different two points or images are</td>
+<td>basis vector</td>
+<td>one cell, such as one edge</td>
 </tr>
 <tr class="even">
-<td>open neighbourhood</td>
-<td>the points allowed by a chosen tolerance</td>
-</tr>
-<tr class="odd">
-<td>complex</td>
-<td>pixels together with their edges and vertices</td>
-</tr>
-<tr class="even">
-<td>chain</td>
+<td>vector</td>
 <td>a selected collection of cells</td>
 </tr>
 <tr class="odd">
-<td>boundary map</td>
-<td>“keep only the perimeter”</td>
+<td>linear map</td>
+<td>an operation such as taking the boundary</td>
 </tr>
 <tr class="even">
-<td>homology class</td>
-<td>a loop or component after filled-in boundaries are ignored</td>
+<td>kernel</td>
+<td>chains whose boundary vanishes</td>
 </tr>
 <tr class="odd">
-<td>filtration</td>
-<td>a thresholded image growing one level at a time</td>
+<td>image</td>
+<td>chains produced as boundaries of higher cells</td>
 </tr>
 <tr class="even">
-<td>persistence interval</td>
-<td>the lifespan of one topological feature</td>
+<td>quotient</td>
+<td>identify two cycles when they differ only by a filled boundary</td>
+</tr>
+<tr class="odd">
+<td>dimension</td>
+<td>the number of independent features</td>
 </tr>
 </tbody>
 </table>
-<p>On a first reading, concentrate on the examples and the statements of the results. Proofs marked as sketches and the final chapter on category theory can be revisited after the computational pipeline is familiar. None of the applications requires the reader to become fluent in categorical notation immediately.</p>
+<p>The definitions below are general because the same algebra works in every dimension, but each has a concrete role in this table.</p>
 </div>
 </div>
-<section id="the-route-through-the-subject" class="level2">
-<h2 class="anchored" data-anchor-id="the-route-through-the-subject">The route through the subject</h2>
-<p>The course repeatedly moves through the same four levels:</p>
+<section id="fields-and-vector-spaces" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="fields-and-vector-spaces"><span class="header-section-number">1</span> Fields and vector spaces</h2>
+<div id="def-vector-space" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 1 (Field and vector space)</strong></span> A <strong>field</strong> is a set in which addition, subtraction, multiplication, and division by nonzero elements behave as expected. Familiar examples are <span class="math inline">\(\mathbb Q\)</span> and <span class="math inline">\(\mathbb R\)</span>.</p>
+<p>For computation, we will often use</p>
 <p><span class="math display">\[
-\text{distance and continuity}
-\longrightarrow
-\text{finite shapes}
-\longrightarrow
-\text{linear algebra}
-\longrightarrow
-\text{stable image descriptors}.
+\mathbb F_2=\{0,1\},
 \]</span></p>
-<p>Metric and topological spaces provide the language of closeness and deformation. Graphs and cell complexes replace continuous shapes by finite objects. Linear algebra turns their boundaries into matrices. Persistent homology then follows the resulting features through an image filtration, while stability theory tells us how sensitive those features are to changes in the data.</p>
+<p>with arithmetic modulo <span class="math inline">\(2\)</span>. In particular,</p>
+<p><span class="math display">\[
+1+1=0.
+\]</span></p>
+<p>A <strong>vector space</strong> <span class="math inline">\(V\)</span> over a field <span class="math inline">\(\mathbb F\)</span> is a set whose elements can be added and multiplied by scalars from <span class="math inline">\(\mathbb F\)</span>.</p>
+<p>Over <span class="math inline">\(\mathbb F_2\)</span>, a vector is a binary string, vector addition is componentwise XOR, and every vector is its own additive inverse.</p>
+</div>
+<p>If a complex has ordered edges <span class="math inline">\((e_1,e_2,e_3,e_4)\)</span>, the binary vector</p>
+<p><span class="math display">\[
+(1,0,1,1)
+\]</span></p>
+<p>means “select <span class="math inline">\(e_1,e_3,e_4\)</span>.” Adding <span class="math inline">\((1,1,0,0)\)</span> gives <span class="math inline">\((0,1,1,1)\)</span> because the repeated edge <span class="math inline">\(e_1\)</span> cancels. This is why formal vector addition has a visible geometric interpretation.</p>
 </section>
-<section id="why-turn-topology-into-vectors" class="level2">
-<h2 class="anchored" data-anchor-id="why-turn-topology-into-vectors">Why turn topology into vectors?</h2>
-<p>Neural networks and most other statistical learning methods ultimately operate on numerical inputs. A digital image is already a numerical array, and the usual neural-network architecture for image data is a convolutional neural network (CNN). A CNN repeatedly transforms pixel arrays into learned numerical features. We will not develop that machinery here.</p>
-<p>Convolutional networks are effective at learning local visual patterns and can, in principle, learn information related to shape and topology. Standard CNN architectures, however, do not explicitly represent connected components, loops, or voids, nor do they ordinarily guarantee that these quantities are preserved through their learned transformations. When those structures matter, it is useful to provide them to a learning system directly rather than require the network to rediscover them from pixels.</p>
-<p>The pipeline developed in these notes therefore has the form</p>
+<section id="spans-independence-and-bases" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="spans-independence-and-bases"><span class="header-section-number">2</span> Spans, independence, and bases</h2>
+<p>Given vectors <span class="math inline">\(v_1,\ldots,v_m\in V\)</span>, their span is</p>
 <p><span class="math display">\[
-\text{digital image}
-\longrightarrow
-\text{cubical filtration}
-\longrightarrow
-\text{persistence diagrams}
-\longrightarrow
-\text{topological vector}
-\longrightarrow
-\text{statistical or neural model}.
+\operatorname{span}\{v_1,\ldots,v_m\}
+=
+\left\{
+\sum_{i=1}^m a_iv_i:a_i\in\mathbb F
+\right\}.
 \]</span></p>
-<p>The topological vector is a fixed-length numerical summary of components, loops, and their persistence across thresholds. It can be concatenated with ordinary image or geometric features, used as an interpretable auxiliary input, or studied independently with a simple classifier.</p>
-<p>Producing numbers is not enough: the conversion must also be stable. If two images differ only by a minute, physically insignificant perturbation, we would like their topological vectors to remain close. In schematic form, the desired guarantee is</p>
+<p>The vectors are <strong>linearly independent</strong> if</p>
 <p><span class="math display">\[
-\text{small image change}
-\quad\Longrightarrow\quad
-\text{small topological-vector change}.
+\sum_{i=1}^m a_iv_i=0
 \]</span></p>
-<p>Establishing when this implication holds—and identifying when sampling, interpolation, or an unstable vectorisation can break it—is one of the main purposes of the metric, persistence, and stability chapters.</p>
-<div class="callout callout-style-default callout-important callout-titled" title="About these notes">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
+<p>forces every <span class="math inline">\(a_i=0\)</span>. A <strong>basis</strong> is a linearly independent spanning set. The number of elements in a finite basis is the <strong>dimension</strong> of the vector space.</p>
+<p>Later, the <span class="math inline">\(k\)</span>-cells of a complex will form a basis for a vector space <span class="math inline">\(C_k\)</span>. A chain is then a linear combination of cells.</p>
+</section>
+<section id="linear-maps-and-matrices" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="linear-maps-and-matrices"><span class="header-section-number">3</span> Linear maps and matrices</h2>
+<p>A function <span class="math inline">\(T\colon V\to W\)</span> is <strong>linear</strong> if</p>
+<p><span class="math display">\[
+T(av+bw)=aT(v)+bT(w)
+\]</span></p>
+<p>for all vectors <span class="math inline">\(v,w\)</span> and scalars <span class="math inline">\(a,b\)</span>.</p>
+<p>After choosing bases, <span class="math inline">\(T\)</span> is represented by a matrix <span class="math inline">\(A\)</span>. Its <span class="math inline">\(j\)</span>th column is the coordinate vector of the image of the <span class="math inline">\(j\)</span>th basis vector.</p>
+<p>This convention matters for boundary matrices: columns correspond to cells in the domain, rows correspond to their facets in the codomain.</p>
+</section>
+<section id="kernel-image-and-rank" class="level2" data-number="4">
+<h2 data-number="4" class="anchored" data-anchor-id="kernel-image-and-rank"><span class="header-section-number">4</span> Kernel, image, and rank</h2>
+<p>The <strong>kernel</strong> of <span class="math inline">\(T\)</span> is</p>
+<p><span class="math display">\[
+\ker T=\{v\in V:T(v)=0\}.
+\]</span></p>
+<p>The <strong>image</strong> is</p>
+<p><span class="math display">\[
+\operatorname{im}T=\{T(v):v\in V\}.
+\]</span></p>
+<p>Both are vector subspaces. Their dimensions are the <strong>nullity</strong> and <strong>rank</strong> of <span class="math inline">\(T\)</span>, respectively.</p>
+<p>For finite-dimensional <span class="math inline">\(V\)</span>, the rank–nullity theorem states</p>
+<p><span class="math display">\[
+\dim V=\dim\ker T+\dim\operatorname{im}T.
+\]</span></p>
+<p>This identity will turn the definition of homology into a practical formula for Betti numbers.</p>
+<div id="thm-rank-nullity" class="theorem">
+<p><span class="theorem-title"><strong>Theorem 1 (Rank–nullity theorem)</strong></span> Let <span class="math inline">\(T\colon V\to W\)</span> be linear, where <span class="math inline">\(V\)</span> is finite-dimensional. Then</p>
+<p><span class="math display">\[
+\dim V=\dim\ker T+\dim\operatorname{im}T.
+\]</span></p>
 </div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Important</span>About these notes
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>The contents of these notes are based on my BSc Mathematics thesis, <em>Computational Stability of Cubical Homology: Orthogonal Controls for Fault Isolation in Retinal Diagnostics</em>. A public version of the thesis is available in the <a href="https://github.com/reyjosephnieto/ph">reyjosephnieto/ph</a> repository.</p>
-<p>I have adapted and reorganised the thesis into this developing set of notes so that I can expand the exposition gradually. A thesis has strict length constraints, which limited how fully I could motivate definitions, develop examples, and explain proofs. Here, I intend to fill those gaps and make the material accessible to readers whose mathematical background consists of basic calculus.</p>
-<p>The presentation is organised as a course: definitions are introduced before they are used, proofs are separated from implementation, and the retinal application appears only after the necessary mathematical foundations.</p>
-</div>
-</div>
-<div class="callout callout-style-default callout-note callout-titled" title="Proof-oriented presentation">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>Proof-oriented presentation
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>These notes follow the convention of a typical undergraduate mathematics course: definitions fix the objects under discussion; lemmas isolate useful steps; propositions and theorems state the main conclusions; and proofs make the logical dependence explicit. Results proved in the thesis source are included here whenever they fit the level and scope of the chapter. A proof sketch is labelled as such when a complete proof requires machinery developed elsewhere.</p>
-</div>
-</div>
-<div class="callout callout-style-default callout-note callout-titled" title="Why the development is cubical">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>Why the development is cubical
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Many introductions to computational topology develop the subject primarily through <strong>simplicial complexes</strong>. This is the standard and more flexible language: simplices can model arbitrary meshes and combinatorial spaces without requiring an underlying rectangular grid.</p>
-<p>These notes instead develop the main constructions first for <strong>cubical complexes</strong>. This is a deliberate choice motivated by the application. Digital images are already made of pixels, and volumetric images are made of voxels; these are naturally <span class="math inline">\(2\)</span>- and <span class="math inline">\(3\)</span>-dimensional cubes. A cubical model therefore preserves the native geometry and adjacency structure of the data, without first subdividing every pixel or voxel into simplices.</p>
-<p>The two viewpoints are not competing theories. Cubical complexes can be triangulated, and the later chapter on <a href="../computational-topology/functoriality-triangulation/index.html">functoriality and triangulation</a> explains how the Coxeter–Freudenthal–Kuhn construction passes from cubes to simplices while preserving the relevant chain and homology structure. Thus the cubical development remains connected to the broader simplicial theory, while keeping the image-based motivation visible from the outset.</p>
-</div>
-</div>
-<div class="callout callout-style-default callout-note callout-titled" title="Sources and attribution">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>Sources and attribution
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>The exposition and chapter sequence are my own adaptation of the thesis, but the mathematical development relies heavily on two principal sources:</p>
-<ul>
-<li>Vidit Nanda’s <em>Computational Algebraic Topology</em> lecture notes <span class="citation" data-cites="nanda2023">(<a href="#ref-nanda2023" role="doc-biblioref">Nanda 2023</a>)</span>; and</li>
-<li>Kaczynski, Mischaikow, and Mrozek’s <em>Computational Homology</em> <span class="citation" data-cites="kaczynski2006computational">(<a href="#ref-kaczynski2006computational" role="doc-biblioref">Kaczynski et al. 2006</a>)</span>.</li>
-</ul>
-<p>The retinal case study uses the FIVES fundus-image dataset created by Jin and coauthors <span class="citation" data-cites="jin2022fives">(<a href="#ref-jin2022fives" role="doc-biblioref">Jin et al. 2022</a>)</span>. These sources are cited throughout the notes where their definitions, results, or data are used. Figures adapted from external material are attributed individually; the remaining diagrams and experimental plots come from my thesis.</p>
-</div>
+<div class="proof">
+<p><span class="proof-title"><em>Proof</em>. </span>Choose a basis <span class="math inline">\(v_1,\ldots,v_r\)</span> of <span class="math inline">\(\ker T\)</span> and extend it to a basis <span class="math inline">\(v_1,\ldots,v_r,v_{r+1},\ldots,v_n\)</span> of <span class="math inline">\(V\)</span>. We claim that <span class="math inline">\(T(v_{r+1}),\ldots,T(v_n)\)</span> is a basis for <span class="math inline">\(\operatorname{im}T\)</span>.</p>
+<p>It spans the image because any <span class="math inline">\(v\in V\)</span> is a linear combination of the <span class="math inline">\(v_i\)</span>, and the first <span class="math inline">\(r\)</span> terms vanish under <span class="math inline">\(T\)</span>. For independence, if <span class="math inline">\(\sum_{i=r+1}^n a_iT(v_i)=0\)</span>, then <span class="math inline">\(\sum_{i=r+1}^n a_iv_i\in\ker T\)</span>, so it is also a combination of <span class="math inline">\(v_1,\ldots,v_r\)</span>. Uniqueness of coordinates in the full basis forces all <span class="math inline">\(a_i=0\)</span>. Hence <span class="math inline">\(\dim\operatorname{im}T=n-r\)</span>, and the formula follows.</p>
 </div>
 </section>
-<section id="foundations" class="level2">
-<h2 class="anchored" data-anchor-id="foundations">Foundations</h2>
+<section id="quotient-spaces" class="level2" data-number="5">
+<h2 data-number="5" class="anchored" data-anchor-id="quotient-spaces"><span class="header-section-number">5</span> Quotient spaces</h2>
+<p>Quotient spaces are usually the least familiar construction in this chapter. The guiding operation is <strong>declaring certain differences irrelevant</strong>. In clock arithmetic, for example, the hours <span class="math inline">\(2\)</span> and <span class="math inline">\(14\)</span> are treated as the same because their difference is a multiple of <span class="math inline">\(12\)</span>. In homology, two cycles are treated as the same when their difference is the boundary of a filled region.</p>
+<p>Suppose <span class="math inline">\(W\)</span> is a subspace of <span class="math inline">\(V\)</span>. Two vectors <span class="math inline">\(v,v'\in V\)</span> are equivalent modulo <span class="math inline">\(W\)</span> when</p>
+<p><span class="math display">\[
+v-v'\in W.
+\]</span></p>
+<p>The equivalence class of <span class="math inline">\(v\)</span> is the coset</p>
+<p><span class="math display">\[
+v+W=\{v+w:w\in W\}.
+\]</span></p>
+<p>The set of all cosets is the <strong>quotient space</strong> <span class="math inline">\(V/W\)</span>.</p>
+<p>Quotienting declares every vector in <span class="math inline">\(W\)</span> to be algebraically trivial. This is exactly what homology needs: cycles that differ by the boundary of a higher-dimensional cell should represent the same hole.</p>
+<p>Concretely, suppose <span class="math inline">\(z\)</span> is the perimeter of a square and <span class="math inline">\(\kappa\)</span> is its filled interior. Since <span class="math inline">\(\partial\kappa=z\)</span>, adding <span class="math inline">\(z\)</span> to another cycle merely adds the boundary of a filled cell. In the quotient used by homology, the two cycles represent the same class. A quotient does not erase the vectors in the larger space; it groups vectors into equivalence classes according to the difference we have chosen to ignore.</p>
+<p>If <span class="math inline">\(V\)</span> is finite-dimensional, then</p>
+<p><span class="math display">\[
+\dim(V/W)=\dim V-\dim W.
+\]</span></p>
+<div id="prp-quotient-dimension" class="theorem proposition">
+<p><span class="theorem-title"><strong>Proposition 1 (Dimension of a quotient)</strong></span> If <span class="math inline">\(V\)</span> is finite-dimensional and <span class="math inline">\(W\leq V\)</span>, then</p>
+<p><span class="math display">\[
+\dim(V/W)=\dim V-\dim W.
+\]</span></p>
+</div>
+<div class="proof">
+<p><span class="proof-title"><em>Proof</em>. </span>Choose a basis <span class="math inline">\(w_1,\ldots,w_r\)</span> of <span class="math inline">\(W\)</span> and extend it to a basis <span class="math inline">\(w_1,\ldots,w_r,v_{r+1},\ldots,v_n\)</span> of <span class="math inline">\(V\)</span>. The cosets <span class="math inline">\(v_{r+1}+W,\ldots,v_n+W\)</span> span <span class="math inline">\(V/W\)</span> and are linearly independent there. They therefore form a basis of <span class="math inline">\(V/W\)</span>, which has dimension <span class="math inline">\(n-r\)</span>.</p>
+</div>
+</section>
+<section id="why-mathbb-f_2-is-convenient" class="level2" data-number="6">
+<h2 data-number="6" class="anchored" data-anchor-id="why-mathbb-f_2-is-convenient"><span class="header-section-number">6</span> Why <span class="math inline">\(\mathbb F_2\)</span> is convenient</h2>
+<p>Working over <span class="math inline">\(\mathbb F_2\)</span> removes orientation signs. A cell is either present or absent from a chain. When the same face appears twice, it cancels:</p>
+<p><span class="math display">\[
+e+e=0.
+\]</span></p>
+<p>For example, two adjacent squares share an edge. Adding their boundaries causes the shared edge to appear twice, so it vanishes. The resulting boundary is the outer perimeter.</p>
+<p>This makes the theory and implementation clean. Other coefficient fields can detect information hidden by <span class="math inline">\(\mathbb F_2\)</span>, but binary coefficients are an excellent first model.</p>
+<p>The thesis fixes <span class="math inline">\(\mathbb F_2\)</span> for six related reasons:</p>
 <ol type="1">
-<li><a href="../computational-topology/metric-spaces/index.html">Metric Spaces</a></li>
-<li><a href="../computational-topology/topological-spaces/index.html">Topological Spaces and Continuity</a></li>
-<li><a href="../computational-topology/graphs-digital-images/index.html">Graphs and Digital Images</a></li>
-<li><a href="../computational-topology/complexes/index.html">Cubical and Simplicial Complexes</a></li>
-<li><a href="../computational-topology/linear-algebra/index.html">Linear Algebra for Homology</a></li>
+<li><strong>Orientation independence.</strong> Since <span class="math inline">\(-1=1\)</span> in characteristic two, the alternating signs in an oriented boundary formula disappear.</li>
+<li><strong>Binary incidence matrices.</strong> Boundary matrices contain only zeroes and ones and can be reduced using XOR.</li>
+<li><strong>Chains as subsets.</strong> A cell has coefficient either zero or one, so a chain is identified with the subset of cells that occur.</li>
+<li><strong>Transparent cancellation.</strong> Every codimension-two face in <span class="math inline">\(\partial^2\)</span> occurs twice, and <span class="math inline">\(1+1=0\)</span>.</li>
+<li><strong>Vector-space homology.</strong> Homology is characterised by dimensions, making Betti numbers directly accessible by rank–nullity.</li>
+<li><strong>Gaussian elimination.</strong> Over a field, ordinary row reduction replaces the Smith normal form required for integral homology.</li>
 </ol>
+<p>This is a choice of coefficients, not a theorem that <span class="math inline">\(\mathbb F_2\)</span> is always best. Integral coefficients can detect torsion and retain orientation information. Those phenomena matter in many topological spaces, but not for the thesis’s narrow task of counting components and planar loops in digital images. The notation <span class="math inline">\(\mathbb F_2\)</span> is used rather than <span class="math inline">\(\mathbb Z_2\)</span> to emphasise the field structure and avoid confusion with the ring of <span class="math inline">\(2\)</span>-adic integers.</p>
 </section>
-<section id="homology-and-persistence" class="level2">
-<h2 class="anchored" data-anchor-id="homology-and-persistence">Homology and persistence</h2>
-<ol start="6" type="1">
-<li><a href="../computational-topology/homology/index.html">Chains, Boundaries, and Homology</a></li>
-<li><a href="../computational-topology/computing-homology/index.html">Computing Homology</a></li>
-<li><a href="../computational-topology/persistent-homology/index.html">Filtrations and Persistent Homology</a></li>
-<li><a href="../computational-topology/stability/index.html">Stability of Persistent Homology</a></li>
+<section id="gaussian-elimination-over-mathbb-f_2" class="level2" data-number="7">
+<h2 data-number="7" class="anchored" data-anchor-id="gaussian-elimination-over-mathbb-f_2"><span class="header-section-number">7</span> Gaussian elimination over <span class="math inline">\(\mathbb F_2\)</span></h2>
+<p>Ranks and kernels are computed by row reduction. The legal operations are:</p>
+<ol type="1">
+<li>swap two rows;</li>
+<li>add one row to another; and</li>
+<li>omit rescaling, because the only nonzero scalar is <span class="math inline">\(1\)</span>.</li>
 </ol>
+<p>Addition is XOR, making binary elimination especially efficient.</p>
+<p>Consider</p>
+<p><span class="math display">\[
+A=
+\begin{pmatrix}
+1&amp;1&amp;0\\
+1&amp;0&amp;1\\
+0&amp;1&amp;1
+\end{pmatrix}.
+\]</span></p>
+<p>Over <span class="math inline">\(\mathbb R\)</span> this matrix has rank <span class="math inline">\(3\)</span>. Over <span class="math inline">\(\mathbb F_2\)</span>, the third row is the sum of the first two, so its rank is <span class="math inline">\(2\)</span>. Coefficients matter.</p>
 </section>
-<section id="research-application" class="level2">
-<h2 class="anchored" data-anchor-id="research-application">Research application</h2>
-<ol start="10" type="1">
-<li><a href="../computational-topology/computational-stability/index.html">Computational Stability on Digital Images</a></li>
-<li><a href="../computational-topology/reliability-engineering/index.html">Reliability Engineering with Complementary Probes</a></li>
-<li><a href="../computational-topology/retinal-case-study/index.html">Case Study: Retinal Diagnostics</a></li>
-</ol>
+<section id="direct-sums" class="level2" data-number="8">
+<h2 data-number="8" class="anchored" data-anchor-id="direct-sums"><span class="header-section-number">8</span> Direct sums</h2>
+<p>This short section is a look ahead. Direct sums become important only when a persistence module is decomposed into independent feature lifespans.</p>
+<p>The <strong>direct sum</strong> <span class="math inline">\(V\oplus W\)</span> consists of pairs <span class="math inline">\((v,w)\)</span> with componentwise operations. Dimensions add:</p>
+<p><span class="math display">\[
+\dim(V\oplus W)=\dim V+\dim W.
+\]</span></p>
+<p>Persistent homology uses direct sums to decompose a complicated evolving vector space into independent interval modules, one for each birth–death interval.</p>
 </section>
-<section id="advanced-material" class="level2">
-<h2 class="anchored" data-anchor-id="advanced-material">Advanced material</h2>
-<ol start="13" type="1">
-<li><a href="../computational-topology/functoriality-triangulation/index.html">Functoriality and Triangulation</a></li>
-</ol>
-</section>
-<section id="status" class="level2">
-<h2 class="anchored" data-anchor-id="status">Status</h2>
-<p>The first complete draft is now available. These are living notes: notation, examples, proofs, exercises, and implementations will continue to be revised.</p>
-<p>For corrections or requests for errata, please email <strong>rj (at) rjnieto (dot) com</strong>.</p>
-
-
-
-</section>
-
-<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a><div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" role="list">
-<div id="ref-jin2022fives" class="csl-entry" role="listitem">
-Jin, Kai, Xingru Huang, Jingxing Zhou, et al. 2022. <span>“<span>FIVES</span>: A Fundus Image Dataset for Artificial Intelligence Based Vessel Segmentation.”</span> <em>Scientific Data</em> 9 (1): 475.
+<section id="the-algebraic-destination" class="level2" data-number="9">
+<h2 data-number="9" class="anchored" data-anchor-id="the-algebraic-destination"><span class="header-section-number">9</span> The algebraic destination</h2>
+<p>For boundary maps</p>
+<p><span class="math display">\[
+C_{k+1}\xrightarrow{\partial_{k+1}}
+C_k\xrightarrow{\partial_k}C_{k-1},
+\]</span></p>
+<p>the identity <span class="math inline">\(\partial_k\partial_{k+1}=0\)</span> implies</p>
+<p><span class="math display">\[
+\operatorname{im}\partial_{k+1}
+\subseteq
+\ker\partial_k.
+\]</span></p>
+<p>Therefore, the quotient</p>
+<p><span class="math display">\[
+H_k=
+\ker\partial_k/
+\operatorname{im}\partial_{k+1}
+\]</span></p>
+<p>is well-defined. Its dimension is the <span class="math inline">\(k\)</span>th Betti number.</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="What to carry forward">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
 </div>
-<div id="ref-kaczynski2006computational" class="csl-entry" role="listitem">
-Kaczynski, Tomasz, Konstantin Mischaikow, and Marian Mrozek. 2006. <em>Computational Homology</em>. Vol. 157. Springer.
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>What to carry forward
 </div>
-<div id="ref-nanda2023" class="csl-entry" role="listitem">
-Nanda, Vidit. 2023. <em>Computational Algebraic Topology</em>. Lecture notes, University of Oxford. <a href="https://people.maths.ox.ac.uk/nanda/cat/">https://people.maths.ox.ac.uk/nanda/cat/</a>.
 </div>
-</div></section></div></main> <!-- /main -->
+<div class="callout-body-container callout-body">
+<p>The expression</p>
+<p><span class="math display">\[
+H_k=\ker\partial_k/\operatorname{im}\partial_{k+1}
+\]</span></p>
+<p>says: begin with every <span class="math inline">\(k\)</span>-dimensional chain whose boundary vanishes, then identify chains that differ by the boundary of a filled <span class="math inline">\((k+1)\)</span>-dimensional chain. The next chapter constructs these two spaces geometrically. If quotient notation still feels unfamiliar, this verbal reading is sufficient to proceed.</p>
+</div>
+</div>
+</section>
+<section id="exercises" class="level2" data-number="10">
+<h2 data-number="10" class="anchored" data-anchor-id="exercises"><span class="header-section-number">10</span> Exercises</h2>
+<ol type="1">
+<li>List all vectors in <span class="math inline">\(\mathbb F_2^3\)</span>.</li>
+<li>Find a basis for the span of <span class="math inline">\((1,1,0)\)</span> and <span class="math inline">\((0,1,1)\)</span> over <span class="math inline">\(\mathbb F_2\)</span>.</li>
+<li>Row-reduce the matrix <span class="math inline">\(A\)</span> above over <span class="math inline">\(\mathbb F_2\)</span>.</li>
+<li>If <span class="math inline">\(\dim V=8\)</span> and <span class="math inline">\(\dim W=3\)</span>, compute <span class="math inline">\(\dim(V/W)\)</span>.</li>
+<li>Explain geometrically why shared edges cancel when adding two square boundaries over <span class="math inline">\(\mathbb F_2\)</span>.</li>
+</ol>
+<p><a href="../../computational-topology/complexes/index.html">Previous: Cubical and Simplicial Complexes</a> · <a href="../../computational-topology/index.html">Course contents</a> · <a href="../../computational-topology/homology/index.html">Next: Chains, Boundaries, and Homology</a></p>
+
+
+</section>
+
+<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
@@ -975,10 +1008,13 @@ Nanda, Vidit. 2023. <em>Computational Algebraic Topology</em>. Lecture notes, Un
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
+      <a href="../../computational-topology/complexes/index.html" class="pagination-link" aria-label="Cubical and Simplicial Complexes">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Cubical and Simplicial Complexes</span>
+      </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../computational-topology/metric-spaces/index.html" class="pagination-link" aria-label="Metric Spaces">
-        <span class="nav-page-text">Metric Spaces</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../../computational-topology/homology/index.html" class="pagination-link" aria-label="Chains, Boundaries, and Homology">
+        <span class="nav-page-text">Chains, Boundaries, and Homology</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

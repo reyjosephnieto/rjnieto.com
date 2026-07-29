@@ -1,0 +1,1162 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.10.18">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="description" content="Categories, chain and homology functors, CFK triangulation, filtered complexes, and the functorial stability argument.">
+
+<title>Advanced: Functoriality and Triangulation – RJ Nieto</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../computational-topology/retinal-case-study/index.html" rel="prev">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-805e789c7b7f260b48d5cafdd348845c.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../../styles.css">
+</head>
+
+<body class="nav-sidebar docked nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">RJ Nieto</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="../../computational-topology/index.html" aria-current="page"> 
+<span class="menu-text">TDA</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../teaching/index.html"> 
+<span class="menu-text">Teaching</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../cv/index.html"> 
+<span class="menu-text">CV</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../computational-topology/functoriality-triangulation/index.html">Advanced</a></li><li class="breadcrumb-item"><a href="../../computational-topology/functoriality-triangulation/index.html">Advanced: Functoriality and Triangulation</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../computational-topology/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Computational Algebraic Topology from Scratch</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Foundations</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../computational-topology/metric-spaces/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Metric Spaces</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../computational-topology/topological-spaces/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Topological Spaces and Continuity</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../computational-topology/graphs-digital-images/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Graphs and Digital Images</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../computational-topology/complexes/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Cubical and Simplicial Complexes</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../computational-topology/linear-algebra/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Linear Algebra for Homology</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Homology and persistence</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../computational-topology/homology/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Chains, Boundaries, and Homology</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../computational-topology/computing-homology/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Computing Homology</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../computational-topology/persistent-homology/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Filtrations and Persistent Homology</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../computational-topology/stability/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Stability of Persistent Homology</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text">Research application</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../computational-topology/computational-stability/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Computational Stability on Digital Images</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../computational-topology/reliability-engineering/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Reliability Engineering with Complementary Probes</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../computational-topology/retinal-case-study/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Case Study: Retinal Diagnostics</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
+ <span class="menu-text">Advanced</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../computational-topology/functoriality-triangulation/index.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Advanced: Functoriality and Triangulation</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#categories-and-functors" id="toc-categories-and-functors" class="nav-link active" data-scroll-target="#categories-and-functors"><span class="header-section-number">1</span> Categories and functors</a>
+  <ul class="collapse">
+  <li><a href="#the-poset-category" id="toc-the-poset-category" class="nav-link" data-scroll-target="#the-poset-category"><span class="header-section-number">1.1</span> The poset category</a></li>
+  </ul></li>
+  <li><a href="#the-chain-functor" id="toc-the-chain-functor" class="nav-link" data-scroll-target="#the-chain-functor"><span class="header-section-number">2</span> The chain functor</a></li>
+  <li><a href="#the-homology-functor" id="toc-the-homology-functor" class="nav-link" data-scroll-target="#the-homology-functor"><span class="header-section-number">3</span> The homology functor</a></li>
+  <li><a href="#cubes-to-simplices" id="toc-cubes-to-simplices" class="nav-link" data-scroll-target="#cubes-to-simplices"><span class="header-section-number">4</span> Cubes to simplices</a></li>
+  <li><a href="#filtered-functors" id="toc-filtered-functors" class="nav-link" data-scroll-target="#filtered-functors"><span class="header-section-number">5</span> Filtered functors</a></li>
+  <li><a href="#functorial-stability" id="toc-functorial-stability" class="nav-link" data-scroll-target="#functorial-stability"><span class="header-section-number">6</span> Functorial stability</a></li>
+  <li><a href="#why-keep-this-chapter-advanced" id="toc-why-keep-this-chapter-advanced" class="nav-link" data-scroll-target="#why-keep-this-chapter-advanced"><span class="header-section-number">7</span> Why keep this chapter advanced?</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../computational-topology/functoriality-triangulation/index.html">Advanced</a></li><li class="breadcrumb-item"><a href="../../computational-topology/functoriality-triangulation/index.html">Advanced: Functoriality and Triangulation</a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title">Advanced: Functoriality and Triangulation</h1>
+<p class="subtitle lead">Why the computational pipeline preserves structure</p>
+</div>
+
+<div>
+  <div class="description">
+    Categories, chain and homology functors, CFK triangulation, filtered complexes, and the functorial stability argument.
+  </div>
+</div>
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>The earlier chapters describe a pipeline:</p>
+<p><span class="math display">\[
+\text{complex}
+\longrightarrow
+\text{chain complex}
+\longrightarrow
+\text{homology}.
+\]</span></p>
+<p>Category theory explains why this pipeline respects maps, compositions, and filtrations rather than merely assigning isolated outputs <span class="citation" data-cites="nanda2023">(<a href="#ref-nanda2023" role="doc-biblioref">Nanda 2023</a>)</span>.</p>
+<div class="callout callout-style-default callout-important callout-titled" title="This chapter is a second pass">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Important</span>This chapter is a second pass
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The computational course is complete without this chapter. Its purpose is to show that the maps used throughout the notes fit together coherently and that the cubical theory connects to the standard simplicial theory.</p>
+<p>If category theory is new, read “object” as a mathematical structure and “morphism” as an allowed structure-preserving map. The essential dictionary is:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Geometry</th>
+<th>Algebra</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>cubical complex <span class="math inline">\(K\)</span></td>
+<td>chain complex <span class="math inline">\(C_\bullet(K)\)</span></td>
+</tr>
+<tr class="even">
+<td>cubical map <span class="math inline">\(f\)</span></td>
+<td>chain map <span class="math inline">\(C_\bullet(f)\)</span></td>
+</tr>
+<tr class="odd">
+<td>inclusion <span class="math inline">\(K_s\hookrightarrow K_t\)</span></td>
+<td>homology map <span class="math inline">\(H_k(K_s)\to H_k(K_t)\)</span></td>
+</tr>
+<tr class="even">
+<td>filtration</td>
+<td>persistence module</td>
+</tr>
+</tbody>
+</table>
+<p>The abstraction packages this entire table into functors. It does not alter the homology computations already performed.</p>
+</div>
+</div>
+<section id="categories-and-functors" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="categories-and-functors"><span class="header-section-number">1</span> Categories and functors</h2>
+<div id="def-category-functor" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 1 (Category and functor)</strong></span> A <strong>category</strong> <span class="math inline">\(\mathcal C\)</span> consists of:</p>
+<ol type="1">
+<li>a collection of objects;</li>
+<li>for every pair <span class="math inline">\(X,Y\)</span>, a collection <span class="math inline">\(\mathcal C(X,Y)\)</span> of morphisms <span class="math inline">\(f\colon X\to Y\)</span>;</li>
+<li>associative composition <span class="math inline">\(\mathcal C(X,Y)\times\mathcal C(Y,Z)\to\mathcal C(X,Z)\)</span>; and</li>
+<li>an identity morphism <span class="math inline">\(\operatorname{id}_X\)</span> for every object, satisfying <span class="math inline">\(f\circ\operatorname{id}_X=f=\operatorname{id}_Y\circ f\)</span>.</li>
+</ol>
+<p>Relevant examples include:</p>
+<ul>
+<li><span class="math inline">\(\mathbf{CubeCx}\)</span>: cubical complexes and cubical maps;</li>
+<li><span class="math inline">\(\mathbf{SimpCx}\)</span>: simplicial complexes and simplicial maps;</li>
+<li><span class="math inline">\(\mathbf{ChainCx}\)</span>: chain complexes and chain maps;</li>
+<li><span class="math inline">\(\mathbf{Vect}_{\mathbb F_2}\)</span>: vector spaces and linear maps.</li>
+</ul>
+<p>A <strong>functor</strong> <span class="math inline">\(F\colon\mathcal C\to\mathcal D\)</span> maps objects to objects and morphisms to morphisms while preserving identities and composition:</p>
+<p><span class="math display">\[
+F(\operatorname{id}_X)=\operatorname{id}_{F(X)},
+\qquad
+F(g\circ f)=F(g)\circ F(f).
+\]</span></p>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../assets/functorial-path-independence.png" class="img-fluid figure-img" style="width:76.0%" alt="A two-row commuting diagram whose red upper route and green lower route both connect the image of x to the image of z."></p>
+<figcaption>Functoriality as path independence. One may compose (f) and (g) in the source and then apply (), or apply () to each map and compose in the target. Both routes end at the same morphism (xz).</figcaption>
+</figure>
+</div>
+<p>The axioms formalise a simple discipline: objects cannot be studied in isolation from the maps between them. In computational topology, the maps are what track a feature from one threshold to the next.</p>
+<p>For a familiar example, vector spaces form a category whose morphisms are linear maps. Composing morphisms is ordinary function composition, and the identity matrix represents the identity morphism. Category theory keeps only this pattern and permits the word “vector space” to be replaced by “complex,” “chain complex,” or “persistence module.”</p>
+<section id="the-poset-category" class="level3" data-number="1.1">
+<h3 data-number="1.1" class="anchored" data-anchor-id="the-poset-category"><span class="header-section-number">1.1</span> The poset category</h3>
+<p>Every partially ordered set <span class="math inline">\((P,\leq)\)</span> determines a category. Its objects are the elements of <span class="math inline">\(P\)</span>, and there is one morphism <span class="math inline">\(p\to q\)</span> exactly when <span class="math inline">\(p\leq q\)</span>. Reflexivity supplies identities and transitivity supplies composition.</p>
+<p>The filtration index set is such a category. A persistence module is equivalently a functor</p>
+<p><span class="math display">\[
+V\colon(\mathbb N,\leq)\longrightarrow\mathbf{Vect}_{\mathbb F_2}.
+\]</span></p>
+<p>This viewpoint explains why all squares involving structure maps must commute: there is only one order morphism <span class="math inline">\(i\to j\)</span>, so every factorisation of it must have the same image under the functor.</p>
+</section>
+</section>
+<section id="the-chain-functor" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="the-chain-functor"><span class="header-section-number">2</span> The chain functor</h2>
+<p>A cellular map <span class="math inline">\(f\colon K\to L\)</span> induces linear maps</p>
+<p><span class="math display">\[
+C_k(f)\colon C_k(K)\to C_k(L).
+\]</span></p>
+<p>To be a <strong>chain map</strong>, these must commute with the boundary:</p>
+<p><span class="math display">\[
+\partial^L_k C_k(f)
+=
+C_{k-1}(f)\partial^K_k.
+\]</span></p>
+<p>This commuting relation is not cosmetic: it is exactly what guarantees that cycles are sent to cycles and boundaries to boundaries.</p>
+<div id="prp-cubical-chain-functor" class="theorem proposition">
+<p><span class="theorem-title"><strong>Proposition 1 (Cubical chains form a functor)</strong></span> With coefficients in <span class="math inline">\(\mathbb F_2\)</span>, a dimension-nonincreasing cubical map <span class="math inline">\(f\colon K\to L\)</span> induces</p>
+<p><span class="math display">\[
+C_k(f)(\sigma)=
+\begin{cases}
+f(\sigma),&amp;\dim f(\sigma)=k,\\
+0,&amp;\dim f(\sigma)&lt;k,
+\end{cases}
+\]</span></p>
+<p>on each basis <span class="math inline">\(k\)</span>-cube <span class="math inline">\(\sigma\)</span>, extended linearly. These maps form a chain map and define a functor</p>
+<p><span class="math display">\[
+C_\bullet\colon\mathbf{CubeCx}\longrightarrow\mathbf{ChainCx}.
+\]</span></p>
+</div>
+<div class="proof-sketch">
+<p>The boundary of a cube is the sum of its facets. Face preservation ensures that the non-degenerate images of those facets are precisely the facets of the image cube; facets collapsed by <span class="math inline">\(f\)</span> contribute in cancelling pairs over <span class="math inline">\(\mathbb F_2\)</span>. Hence <span class="math inline">\(\partial C_k(f)=C_{k-1}(f)\partial\)</span> on basis cubes, and therefore on all chains by linearity. The identity map fixes every basis cube, while evaluation on a basis cube shows</p>
+<p><span class="math display">\[
+C_\bullet(g\circ f)=C_\bullet(g)\circ C_\bullet(f).
+\]</span></p>
+<p>Thus identities and compositions are preserved. A fully general treatment of cubical maps requires careful handling of degeneracies; the formula above records the mechanism used in the finite cubical setting <span class="citation" data-cites="kaczynski2006computational">(<a href="#ref-kaczynski2006computational" role="doc-biblioref">Kaczynski et al. 2006</a>)</span>.</p>
+</div>
+<p>The two possible routes—map then take the boundary, or take the boundary then map—give the same result.</p>
+<p>This equality is often drawn as a commuting square. “Commuting” means that starting with a <span class="math inline">\(k\)</span>-chain in the upper-left corner and following either route produces exactly the same <span class="math inline">\((k-1)\)</span>-chain. The diagrammatic language is only a compact way to assert equality of two compositions.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../assets/chain-map-square.svg" class="img-fluid figure-img" style="width:62.0%" alt="A two-by-two commutative square from C k of K to C k minus one of K across the top, and the corresponding chain spaces of L across the bottom. Vertical arrows are induced by f and horizontal arrows are boundary maps."></p>
+<figcaption>The chain-map square. Moving right by taking a boundary and then down by applying the induced map gives the same chain as moving down first and then taking the boundary.</figcaption>
+</figure>
+</div>
+</section>
+<section id="the-homology-functor" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="the-homology-functor"><span class="header-section-number">3</span> The homology functor</h2>
+<div id="prp-induced-homology" class="theorem proposition">
+<p><span class="theorem-title"><strong>Proposition 2 (A chain map induces a homology map)</strong></span> Let <span class="math inline">\(f_\bullet\colon C_\bullet\to D_\bullet\)</span> be a chain map. Then</p>
+<p><span class="math display">\[
+H_k(f)\colon H_k(C)\to H_k(D),
+\qquad
+[z]\longmapsto[f_k(z)]
+\]</span></p>
+<p>is a well-defined linear map.</p>
+</div>
+<div class="proof">
+<p><span class="proof-title"><em>Proof</em>. </span>If <span class="math inline">\(z\)</span> is a cycle, then <span class="math inline">\(\partial f_k(z)=f_{k-1}(\partial z)=0\)</span>, so <span class="math inline">\(f_k(z)\)</span> is a cycle. If <span class="math inline">\(z-z'=\partial c\)</span>, then</p>
+<p><span class="math display">\[
+f_k(z)-f_k(z')
+=f_k(\partial c)
+=\partial f_{k+1}(c),
+\]</span></p>
+<p>so the images differ by a boundary and determine the same homology class. Thus the formula is independent of the representative. Linearity follows from linearity of <span class="math inline">\(f_k\)</span>.</p>
+</div>
+<p>A chain map therefore sends cycles to cycles and boundaries to boundaries. It induces</p>
+<p><span class="math display">\[
+H_k(f)\colon H_k(K)\to H_k(L),
+\qquad
+[z]\longmapsto[C_k(f)(z)].
+\]</span></p>
+<p>This assignment preserves identities and compositions, so <span class="math inline">\(H_k\)</span> is a functor from complexes to vector spaces.</p>
+<p>Functoriality is what lets an inclusion</p>
+<p><span class="math display">\[
+K_s\hookrightarrow K_t
+\]</span></p>
+<p>produce the linear map</p>
+<p><span class="math display">\[
+H_k(K_s)\to H_k(K_t)
+\]</span></p>
+<p>used in a persistence module.</p>
+</section>
+<section id="cubes-to-simplices" class="level2" data-number="4">
+<h2 data-number="4" class="anchored" data-anchor-id="cubes-to-simplices"><span class="header-section-number">4</span> Cubes to simplices</h2>
+<p>The Coxeter–Freudenthal–Kuhn triangulation splits an <span class="math inline">\(n\)</span>-cube into <span class="math inline">\(n!\)</span> simplices without introducing new vertices. In two dimensions, it divides a square into two triangles.</p>
+<p>For the unit cube <span class="math inline">\([0,1]^n\)</span>, choose a permutation <span class="math inline">\(\pi\)</span> of <span class="math inline">\(\{1,\ldots,n\}\)</span>. Starting from <span class="math inline">\(v_0=0\)</span>, define</p>
+<p><span class="math display">\[
+v_k=\sum_{j=1}^k e_{\pi(j)},\qquad 1\leq k\leq n,
+\]</span></p>
+<p>where <span class="math inline">\(e_i\)</span> is the <span class="math inline">\(i\)</span>th coordinate vector. The simplex <span class="math inline">\([v_0,\ldots,v_n]\)</span> consists of points whose coordinates are ordered according to <span class="math inline">\(\pi\)</span>. Equivalently, after fixing an ordering convention it is described by inequalities of the form</p>
+<p><span class="math display">\[
+0\leq x_{\pi(n)}\leq\cdots\leq x_{\pi(1)}\leq1.
+\]</span></p>
+<p>There are <span class="math inline">\(n!\)</span> coordinate permutations and hence <span class="math inline">\(n!\)</span> top-dimensional simplices. Their common faces agree across neighbouring cubes. This global consistency is what an arbitrary, independently chosen diagonal in each cube would fail to guarantee.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../assets/cfk-triangulation.png" class="img-fluid figure-img" style="width:75.0%" alt="A square maps to a sum of two triangles sharing a diagonal."></p>
+<figcaption>The two-dimensional triangulation map.</figcaption>
+</figure>
+</div>
+<p>For one square, either diagonal would produce a triangulation. Across an image grid, however, the choices cannot be made independently: the subdivisions must agree wherever neighbouring cubes meet. The CFK convention supplies one coherent choice throughout the lattice.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../assets/cfk-grid-triangulation.png" class="img-fluid figure-img" style="width:62.0%" alt="A two-by-two square grid is shown before and after adding four parallel green diagonal edges, one in every square."></p>
+<figcaption>The CFK rule applied across a (2) cubical grid. Every square receives the same diagonal convention, so adjacent cubes agree on their common edge and the individual subdivisions assemble into one simplicial complex.</figcaption>
+</figure>
+</div>
+<div id="prp-triangulation-chain-map" class="theorem proposition">
+<p><span class="theorem-title"><strong>Proposition 3 (Triangulation is a chain map)</strong></span> The triangulation map</p>
+<p><span class="math display">\[
+\mathbb T\colon C_\bullet^\square(K)
+\to
+C_\bullet^\triangle(K^\triangle)
+\]</span></p>
+<p>commutes with boundary:</p>
+<p><span class="math display">\[
+\partial^\triangle\mathbb T
+=
+\mathbb T\partial^\square.
+\]</span></p>
+</div>
+<div class="proof-sketch">
+<p>Let a square have vertices <span class="math inline">\(v_{00},v_{10},v_{01},v_{11}\)</span> and triangulate it along the diagonal <span class="math inline">\([v_{00},v_{11}]\)</span>. Then</p>
+<p><span class="math display">\[
+\mathbb T(\kappa)
+=[v_{00},v_{10},v_{11}]+[v_{00},v_{01},v_{11}].
+\]</span></p>
+<p>Taking the simplicial boundary produces the four outer edges and two copies of the diagonal. The diagonal cancels over <span class="math inline">\(\mathbb F_2\)</span>, leaving precisely the triangulation of the four cubical boundary edges. Hence <span class="math inline">\(\partial^\triangle\mathbb T(\kappa)=\mathbb T\partial^\square(\kappa)\)</span>. The identity is immediate on vertices and edges and extends linearly.</p>
+<p>In dimension <span class="math inline">\(n\)</span>, the Coxeter–Freudenthal–Kuhn triangulation indexes the <span class="math inline">\(n!\)</span> simplices by coordinate permutations; internal facets occur in pairs and cancel, while boundary facets reproduce the triangulated cubical boundary <span class="citation" data-cites="kaczynski2006computational">(<a href="#ref-kaczynski2006computational" role="doc-biblioref">Kaczynski et al. 2006</a>)</span>.</p>
+</div>
+<div id="thm-triangulation-homology" class="theorem">
+<p><span class="theorem-title"><strong>Theorem 1 (Triangulation preserves homology)</strong></span> Consequently,</p>
+<p><span class="math display">\[
+H_k^\square(K)\cong H_k^\triangle(K^\triangle).
+\]</span></p>
+<p>Triangulation changes the cell decomposition without changing the underlying topological space.</p>
+</div>
+<div class="proof-sketch">
+<p>The chain-map identity above gives maps on homology. The cubical complex and its CFK triangulation have the same geometric realisation, and the triangulation map has a chain-homotopy inverse obtained by grouping the simplices back into their parent cubes. Chain-homotopic composites induce the identity on homology, so the induced homology maps are isomorphisms.</p>
+</div>
+<div id="thm-cfk-functor" class="theorem">
+<p><span class="theorem-title"><strong>Theorem 2 (CFK triangulation is functorial)</strong></span> On cubical complexes and cubical maps that respect the lattice order, the assignments</p>
+<p><span class="math display">\[
+K\longmapsto K^\triangle,
+\qquad
+f\longmapsto f^\triangle
+\]</span></p>
+<p>define a functor <span class="math inline">\(\mathbb T\colon\mathbf{CubeCx}\to\mathbf{SimpCx}\)</span>.</p>
+</div>
+<div class="proof-sketch">
+<p>The vertices of every CFK simplex form an inclusion chain in the coordinate order. An order-preserving cubical map sends such a chain to another chain, possibly with repeated vertices. Removing repetitions leaves a simplex of <span class="math inline">\(L^\triangle\)</span>, so the vertex map extends to a simplicial map <span class="math inline">\(f^\triangle\)</span>. The identity cubical map gives the identity vertex map. For composable maps <span class="math inline">\(f\)</span> and <span class="math inline">\(g\)</span>, both <span class="math inline">\((g\circ f)^\triangle\)</span> and <span class="math inline">\(g^\triangle\circ f^\triangle\)</span> agree on every vertex. A simplicial map is determined by its vertex values, so the two maps are equal. Thus identities and compositions are preserved.</p>
+</div>
+</section>
+<section id="filtered-functors" class="level2" data-number="5">
+<h2 data-number="5" class="anchored" data-anchor-id="filtered-functors"><span class="header-section-number">5</span> Filtered functors</h2>
+<p>A filtered cubical complex is not only a sequence</p>
+<p><span class="math display">\[
+K_0\subseteq K_1\subseteq\cdots.
+\]</span></p>
+<p>It is a functor from its ordered index set to <span class="math inline">\(\mathbf{CubeCx}\)</span>. A morphism between filtered complexes is a family of cubical maps <span class="math inline">\(f_t\colon K_t\to L_t\)</span> satisfying</p>
+<p><span class="math display">\[
+f_u\circ\iota^K_{t,u}
+=
+\iota^L_{t,u}\circ f_t
+\qquad(t\leq u).
+\]</span></p>
+<p>This equation says that mapping at threshold <span class="math inline">\(t\)</span> and then including gives the same result as first including and then mapping at threshold <span class="math inline">\(u\)</span>.</p>
+<p>Applying triangulation, chains, and homology at every index gives functors</p>
+<p><span class="math display">\[
+\mathbf{CubeFilt}
+\longrightarrow
+\mathbf{SimpFilt}
+\longrightarrow
+\mathbf{ChainFilt}
+\longrightarrow
+\mathbf{PersMod}.
+\]</span></p>
+<p>Here <span class="math inline">\(\mathbf{ChainFilt}\)</span> contains filtered chain complexes and compatible chain maps, while <span class="math inline">\(\mathbf{PersMod}\)</span> contains persistence modules and module morphisms. Their composition is the persistent-homology functor</p>
+<p><span class="math display">\[
+\operatorname{PH}_k
+=H_k^{\mathrm{filt}}\circ C_\bullet^{\mathrm{filt}}
+\circ\mathbb T^{\mathrm{filt}}.
+\]</span></p>
+<p>It preserves every commuting square needed to follow a class through the entire filtration. This is the formal chain of custody from a pixel threshold to a persistent homology class.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../assets/functorial-pipeline.svg" class="img-fluid figure-img" style="width:100.0%" alt="A five-column, two-row commutative diagram. The upper row passes from an image space to cubical complexes, simplicial complexes, chain complexes, and vector spaces. The lower row passes through the corresponding filtered categories and ends in persistence modules."></p>
+<figcaption>The functorial pipeline in its static and filtered forms. The upper row sends an image-derived cubical complex through triangulation, chains, and ordinary homology. The lower row applies the same constructions throughout a filtration and ends in a persistence module.</figcaption>
+</figure>
+</div>
+<p>Each column is one mathematical representation of the same input. The dashed vertical arrows indicate the passage from a static object to its filtration-level counterpart; the horizontal arrows are the functors that carry structure from one representation to the next.</p>
+</section>
+<section id="functorial-stability" class="level2" data-number="6">
+<h2 data-number="6" class="anchored" data-anchor-id="functorial-stability"><span class="header-section-number">6</span> Functorial stability</h2>
+<div id="thm-functorial-algebraic-stability" class="theorem">
+<p><span class="theorem-title"><strong>Theorem 3 (Functorial route to algebraic stability)</strong></span> Suppose</p>
+<p><span class="math display">\[
+\lVert I-J\rVert_\infty\leq k.
+\]</span></p>
+<p>Then the associated persistence modules are <span class="math inline">\(k\)</span>-interleaved, and their persistence diagrams satisfy</p>
+<p><span class="math display">\[
+d_B\bigl(
+\operatorname{Dgm}(I),
+\operatorname{Dgm}(J)
+\bigr)
+\leq k.
+\]</span></p>
+</div>
+<div class="proof">
+<p><span class="proof-title"><em>Proof</em>. </span>For every cell <span class="math inline">\(\sigma\)</span>, <span class="math inline">\(I(\sigma)\leq J(\sigma)+k\)</span> and <span class="math inline">\(J(\sigma)\leq I(\sigma)+k\)</span>. Therefore</p>
+<p>Then the sublevel complexes satisfy shifted inclusions</p>
+<p><span class="math display">\[
+K_t(I)\subseteq K_{t+k}(J),
+\qquad
+K_t(J)\subseteq K_{t+k}(I).
+\]</span></p>
+<p>Denote these inclusions by <span class="math inline">\(\alpha_t\)</span> and <span class="math inline">\(\beta_t\)</span>. Inclusion maps compose transitively, so</p>
+<p><span class="math display">\[
+\beta_{t+k}\circ\alpha_t
+=\iota^I_{t,t+2k},
+\qquad
+\alpha_{t+k}\circ\beta_t
+=\iota^J_{t,t+2k}.
+\]</span></p>
+<p>The persistent-homology functor preserves compositions. Hence <span class="math inline">\(\operatorname{PH}_k(\alpha_t)\)</span> and <span class="math inline">\(\operatorname{PH}_k(\beta_t)\)</span> obey the same two equations in <span class="math inline">\(\mathbf{PersMod}\)</span> and constitute a <span class="math inline">\(k\)</span>-interleaving. The algebraic isometry theorem identifies interleaving distance with bottleneck distance for the finite, pointwise finite-dimensional modules considered here. Consequently,</p>
+<p><span class="math display">\[
+d_B\bigl(
+\operatorname{Dgm}(I),
+\operatorname{Dgm}(J)
+\bigr)
+\leq k.
+\]</span></p>
+</div>
+<p>The argument is powerful because each layer has one responsibility:</p>
+<ol type="1">
+<li>the intensity bound creates shifted inclusions;</li>
+<li>functoriality carries inclusions into algebra;</li>
+<li>interleavings measure the shift; and</li>
+<li>the isometry theorem converts it into diagram distance.</li>
+</ol>
+</section>
+<section id="why-keep-this-chapter-advanced" class="level2" data-number="7">
+<h2 data-number="7" class="anchored" data-anchor-id="why-keep-this-chapter-advanced"><span class="header-section-number">7</span> Why keep this chapter advanced?</h2>
+<p>Categories are not required to compute a boundary matrix or read a barcode. They become valuable when we want to prove that an entire multi-stage pipeline is coherent.</p>
+<p>For a first reading, it is enough to retain the principle:</p>
+<blockquote class="blockquote">
+<p>Structure-preserving maps remain structure-preserving after passing from geometry to chains, homology, and persistence.</p>
+</blockquote>
+<div class="callout callout-style-default callout-tip callout-titled" title="What to carry forward">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>What to carry forward
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Functoriality is disciplined bookkeeping with mathematical force. It ensures that inclusions and transformations are not forgotten when geometry is converted into algebra. Triangulation then permits cubical image complexes to use results developed in the more flexible simplicial setting, without changing their homology.</p>
+</div>
+</div>
+<p><a href="../../computational-topology/retinal-case-study/index.html">Previous: Retinal Diagnostics Case Study</a> · <a href="../../computational-topology/index.html">Course contents</a></p>
+
+
+
+</section>
+
+<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a><div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" role="list">
+<div id="ref-kaczynski2006computational" class="csl-entry" role="listitem">
+Kaczynski, Tomasz, Konstantin Mischaikow, and Marian Mrozek. 2006. <em>Computational Homology</em>. Vol. 157. Springer.
+</div>
+<div id="ref-nanda2023" class="csl-entry" role="listitem">
+Nanda, Vidit. 2023. <em>Computational Algebraic Topology</em>. Lecture notes, University of Oxford. <a href="https://people.maths.ox.ac.uk/nanda/cat/">https://people.maths.ox.ac.uk/nanda/cat/</a>.
+</div>
+</div></section></div></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/rjnieto\.com");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../../computational-topology/retinal-case-study/index.html" class="pagination-link" aria-label="Case Study: Retinal Diagnostics">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Case Study: Retinal Diagnostics</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+  </div>
+</nav>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>© 2026 RJ Nieto</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+<p>Built with Quarto</p>
+</div>
+  </div>
+</footer>
+
+
+
+
+</body></html>

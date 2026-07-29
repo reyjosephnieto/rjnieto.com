@@ -1,0 +1,1226 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.10.18">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="description" content="Filtrations, persistence modules, interval decompositions, barcodes, diagrams, and matrix reduction.">
+
+<title>Filtrations and Persistent Homology – RJ Nieto</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../computational-topology/stability/index.html" rel="next">
+<link href="../../computational-topology/computing-homology/index.html" rel="prev">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-805e789c7b7f260b48d5cafdd348845c.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../../styles.css">
+</head>
+
+<body class="nav-sidebar docked nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">RJ Nieto</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="../../computational-topology/index.html" aria-current="page"> 
+<span class="menu-text">TDA</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../teaching/index.html"> 
+<span class="menu-text">Teaching</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../cv/index.html"> 
+<span class="menu-text">CV</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../computational-topology/homology/index.html">Homology and persistence</a></li><li class="breadcrumb-item"><a href="../../computational-topology/persistent-homology/index.html">Filtrations and Persistent Homology</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../computational-topology/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Computational Algebraic Topology from Scratch</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Foundations</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../computational-topology/metric-spaces/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Metric Spaces</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../computational-topology/topological-spaces/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Topological Spaces and Continuity</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../computational-topology/graphs-digital-images/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Graphs and Digital Images</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../computational-topology/complexes/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Cubical and Simplicial Complexes</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../computational-topology/linear-algebra/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Linear Algebra for Homology</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Homology and persistence</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../computational-topology/homology/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Chains, Boundaries, and Homology</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../computational-topology/computing-homology/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Computing Homology</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../computational-topology/persistent-homology/index.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Filtrations and Persistent Homology</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../computational-topology/stability/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Stability of Persistent Homology</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text">Research application</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../computational-topology/computational-stability/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Computational Stability on Digital Images</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../computational-topology/reliability-engineering/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Reliability Engineering with Complementary Probes</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../computational-topology/retinal-case-study/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Case Study: Retinal Diagnostics</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
+ <span class="menu-text">Advanced</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../computational-topology/functoriality-triangulation/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Advanced: Functoriality and Triangulation</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#filtrations" id="toc-filtrations" class="nav-link active" data-scroll-target="#filtrations"><span class="header-section-number">1</span> Filtrations</a></li>
+  <li><a href="#image-filtrations" id="toc-image-filtrations" class="nav-link" data-scroll-target="#image-filtrations"><span class="header-section-number">2</span> Image filtrations</a></li>
+  <li><a href="#two-small-examples" id="toc-two-small-examples" class="nav-link" data-scroll-target="#two-small-examples"><span class="header-section-number">3</span> Two small examples</a></li>
+  <li><a href="#barcodes-and-persistence-diagrams" id="toc-barcodes-and-persistence-diagrams" class="nav-link" data-scroll-target="#barcodes-and-persistence-diagrams"><span class="header-section-number">4</span> Barcodes and persistence diagrams</a></li>
+  <li><a href="#persistence-modules" id="toc-persistence-modules" class="nav-link" data-scroll-target="#persistence-modules"><span class="header-section-number">5</span> Persistence modules</a>
+  <ul class="collapse">
+  <li><a href="#birth-and-death-as-linear-algebraic-events" id="toc-birth-and-death-as-linear-algebraic-events" class="nav-link" data-scroll-target="#birth-and-death-as-linear-algebraic-events"><span class="header-section-number">5.1</span> Birth and death as linear-algebraic events</a></li>
+  </ul></li>
+  <li><a href="#interval-modules" id="toc-interval-modules" class="nav-link" data-scroll-target="#interval-modules"><span class="header-section-number">6</span> Interval modules</a></li>
+  <li><a href="#persistent-homology-groups" id="toc-persistent-homology-groups" class="nav-link" data-scroll-target="#persistent-homology-groups"><span class="header-section-number">7</span> Persistent homology groups</a></li>
+  <li><a href="#compatible-orderings-and-refined-filtrations" id="toc-compatible-orderings-and-refined-filtrations" class="nav-link" data-scroll-target="#compatible-orderings-and-refined-filtrations"><span class="header-section-number">8</span> Compatible orderings and refined filtrations</a></li>
+  <li><a href="#matrix-reduction" id="toc-matrix-reduction" class="nav-link" data-scroll-target="#matrix-reduction"><span class="header-section-number">9</span> Matrix reduction</a></li>
+  <li><a href="#what-persistence-doesand-does-notsay" id="toc-what-persistence-doesand-does-notsay" class="nav-link" data-scroll-target="#what-persistence-doesand-does-notsay"><span class="header-section-number">10</span> What persistence does—and does not—say</a></li>
+  <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises"><span class="header-section-number">11</span> Exercises</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../computational-topology/homology/index.html">Homology and persistence</a></li><li class="breadcrumb-item"><a href="../../computational-topology/persistent-homology/index.html">Filtrations and Persistent Homology</a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title">Filtrations and Persistent Homology</h1>
+<p class="subtitle lead">Following topological features through scale</p>
+</div>
+
+<div>
+  <div class="description">
+    Filtrations, persistence modules, interval decompositions, barcodes, diagrams, and matrix reduction.
+  </div>
+</div>
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>Ordinary homology studies one complex at a time. Persistent homology studies a nested sequence</p>
+<p><span class="math display">\[
+K_0\subseteq K_1\subseteq\cdots\subseteq K_m
+\]</span></p>
+<p>and records how long each homological feature survives. The cubical construction and interval viewpoint follow <span class="citation" data-cites="wagner2011cubical">Wagner et al. (<a href="#ref-wagner2011cubical" role="doc-biblioref">2012</a>)</span> and <span class="citation" data-cites="zomorodian2004computing">Zomorodian and Carlsson (<a href="#ref-zomorodian2004computing" role="doc-biblioref">2004</a>)</span>.</p>
+<div class="callout callout-style-default callout-note callout-titled" title="Three descriptions of the same process">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Three descriptions of the same process
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>This chapter moves between three levels. They should not be mistaken for three separate constructions.</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Level</th>
+<th>What we see</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>geometry</td>
+<td>complexes grow as the threshold increases</td>
+</tr>
+<tr class="even">
+<td>algebra</td>
+<td>homology groups are connected by linear maps</td>
+</tr>
+<tr class="odd">
+<td>summary</td>
+<td>each class becomes an interval or a diagram point</td>
+</tr>
+</tbody>
+</table>
+<p>The geometry provides intuition, the algebra determines which features are really the same through time, and the barcode records the result compactly. Whenever the module notation becomes dense, return to the picture of a component appearing, merging, or a loop filling in.</p>
+</div>
+</div>
+<section id="filtrations" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="filtrations"><span class="header-section-number">1</span> Filtrations</h2>
+<div id="def-filtration" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 1 (Filtration)</strong></span> A <strong>filtration</strong> of a complex <span class="math inline">\(K\)</span> is a nested family of subcomplexes whose union is <span class="math inline">\(K\)</span>. Every cell <span class="math inline">\(\sigma\)</span> has a <strong>filtration value</strong></p>
+<p><span class="math display">\[
+\operatorname{filt}(\sigma)
+=
+\min\{t:\sigma\in K_t\}.
+\]</span></p>
+<p>Face closure requires</p>
+<p><span class="math display">\[
+\tau\preceq\sigma
+\quad\Longrightarrow\quad
+\operatorname{filt}(\tau)
+\leq
+\operatorname{filt}(\sigma).
+\]</span></p>
+<p>A cell cannot appear before one of its faces.</p>
+</div>
+</section>
+<section id="image-filtrations" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="image-filtrations"><span class="header-section-number">2</span> Image filtrations</h2>
+<p>For an image <span class="math inline">\((\Omega,I)\)</span>, pixel values are attached to top-dimensional <span class="math inline">\(2\)</span>-cubes. Lower-dimensional faces must also receive values. For a sublevel filtration, define</p>
+<p><span class="math display">\[
+\widehat I(\gamma)
+=
+\min\{I(z):\gamma\preceq\kappa_z\}.
+\]</span></p>
+<p>Then</p>
+<p><span class="math display">\[
+K_t=\{\sigma:\widehat I(\sigma)\leq t\}
+\]</span></p>
+<p>is face-closed. Dark pixels enter early and brighter pixels enter later.</p>
+<p>A superlevel filtration can be implemented as a sublevel filtration of</p>
+<p><span class="math display">\[
+\widetilde I=M-I.
+\]</span></p>
+<p>This makes bright structures appear early.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../assets/example-filtration.png" class="img-fluid figure-img" alt="Six stages of an evolving three-by-three cubical complex."></p>
+<figcaption>A nested cubical filtration in which components appear, merge, form a loop, and finally fill it.</figcaption>
+</figure>
+</div>
+</section>
+<section id="two-small-examples" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="two-small-examples"><span class="header-section-number">3</span> Two small examples</h2>
+<p>First read the unlabelled filtration geometrically. At (t=0), the left column is one component. At (t=1), two isolated pixels appear on the right, so two components are born simultaneously. The middle-right pixel joins those two components at (t=2); the top-middle pixel joins the resulting right-hand component to the older left-hand component at (t=3). The bottom-middle pixel then closes a loop at (t=4), and the central pixel fills it at (t=5).</p>
+<p>Thus its (H_0) intervals are</p>
+<p><span class="math display">\[
+[0,\infty),\qquad [1,2),\qquad [1,3),
+\]</span></p>
+<p>and its (H_1) interval is</p>
+<p><span class="math display">\[
+[4,5).
+\]</span></p>
+<p>The simultaneous births at (t=1) already signal a bookkeeping issue: threshold values alone do not order tied cells or tied generators. Later we will impose a compatible ordering when an algorithm requires one.</p>
+<p>The next example isolates the <strong>elder rule</strong>. Components (a), (b), and (c) are born at thresholds (0), (1), and (2). When (a) meets (c) at (t=3), the older component (a) continues and (c) dies. When (a) meets (b) at (t=4), (a) again continues and (b) dies. Its (H_0) barcode is therefore</p>
+<p><span class="math display">\[
+[0,\infty),\qquad [1,4),\qquad [2,3).
+\]</span></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../assets/elder-rule.png" class="img-fluid figure-img" alt="A three-by-three image filtration with component labels above a barcode showing one infinite and two finite intervals."></p>
+<figcaption>The elder rule applied to a second synthetic image filtration: components (a), (b), and (c) are born and merge, producing the three displayed (H_0) intervals.</figcaption>
+</figure>
+</div>
+<p>In either example, the left endpoint is the threshold at which a feature appears and the right endpoint is the threshold at which it ceases to define an independent homology class. The symbol () means that the class survives to the end of the filtration.</p>
+</section>
+<section id="barcodes-and-persistence-diagrams" class="level2" data-number="4">
+<h2 data-number="4" class="anchored" data-anchor-id="barcodes-and-persistence-diagrams"><span class="header-section-number">4</span> Barcodes and persistence diagrams</h2>
+<p>The intervals drawn for the example form a <strong>barcode</strong>: one horizontal bar for each feature lifespan. The equivalent <strong>persistence diagram</strong> replaces an interval <span class="math inline">\([b,d)\)</span> with the point <span class="math inline">\((b,d)\)</span>.</p>
+<p>The diagonal</p>
+<p><span class="math display">\[
+\Delta=\{(x,x):x\in\mathbb R\}
+\]</span></p>
+<p>represents zero-persistence features. A point far from the diagonal represents a long-lived feature because its vertical distance above the line <span class="math inline">\(b=d\)</span> increases with <span class="math inline">\(d-b\)</span>.</p>
+<p>Barcodes make lifespans visually intuitive; diagrams make distances and statistical summaries easier to define. At this stage, regard them as two ways to record the intervals seen in the example. The module theory below explains why every finite one-parameter filtration has such an interval description and why that description is unique.</p>
+</section>
+<section id="persistence-modules" class="level2" data-number="5">
+<h2 data-number="5" class="anchored" data-anchor-id="persistence-modules"><span class="header-section-number">5</span> Persistence modules</h2>
+<p>Applying <span class="math inline">\(H_k\)</span> to every complex and every inclusion produces a sequence of vector spaces and linear maps:</p>
+<p><span class="math display">\[
+H_k(K_0)\longrightarrow
+H_k(K_1)\longrightarrow\cdots\longrightarrow
+H_k(K_m).
+\]</span></p>
+<p>The map <span class="math inline">\(H_k(K_t)\to H_k(K_{t+1})\)</span> is induced by inclusion. It asks what a class visible at time <span class="math inline">\(t\)</span> becomes one threshold later. It may remain independent, become zero because a hole is filled, or merge into an older class. A persistence module is simply the entire linked sequence treated as one object.</p>
+<div id="def-persistence-module" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 2 (Persistence module)</strong></span> A finite persistence module is a sequence of vector spaces and linear maps</p>
+<p><span class="math display">\[
+V_0\longrightarrow V_1\longrightarrow\cdots\longrightarrow V_m.
+\]</span></p>
+<p>Applying <span class="math inline">\(H_k\)</span> to a filtration produces such a module with <span class="math inline">\(V_t=H_k(K_t)\)</span>.</p>
+</div>
+<p>A <strong>morphism of persistence modules</strong> <span class="math inline">\(\phi_\bullet\colon V_\bullet\to W_\bullet\)</span> is a family of linear maps <span class="math inline">\(\phi_t\colon V_t\to W_t\)</span> that respects the structure maps:</p>
+<p><span class="math display">\[
+b_t\phi_t=\phi_{t+1}a_t.
+\]</span></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../assets/persistence-module-morphism.svg" class="img-fluid figure-img" style="width:72.0%" alt="Two horizontal persistence sequences V and W with vertical maps phi at adjacent indices, forming a commuting square between the structure maps a and b."></p>
+<figcaption>A morphism of persistence modules. Every square commutes: evolving inside (V) and then applying () agrees with applying () first and then evolving inside (W).</figcaption>
+</figure>
+</div>
+<p>This condition prevents the maps <span class="math inline">\(\phi_t\)</span> from making unrelated choices at different thresholds. A module isomorphism is such a morphism in which every <span class="math inline">\(\phi_t\)</span> is invertible and the componentwise inverses also respect the structure maps.</p>
+<p>A class is <strong>born</strong> when it first appears outside the image of the previous map. It <strong>dies</strong> when it becomes trivial or merges into an older class. Its lifespan is an interval</p>
+<p><span class="math display">\[
+[b,d).
+\]</span></p>
+<p>The persistence is <span class="math inline">\(d-b\)</span>. Long intervals describe features that survive many thresholds; short intervals describe transient features.</p>
+<section id="birth-and-death-as-linear-algebraic-events" class="level3" data-number="5.1">
+<h3 data-number="5.1" class="anchored" data-anchor-id="birth-and-death-as-linear-algebraic-events"><span class="header-section-number">5.1</span> Birth and death as linear-algebraic events</h3>
+<p>Write <span class="math inline">\(a_{i\to j}=a_{j-1}\circ\cdots\circ a_i\)</span> for the composite structure map. A nonzero vector <span class="math inline">\(v\in V_i\)</span> is <strong>born at <span class="math inline">\(i\)</span></strong> when</p>
+<p><span class="math display">\[
+v\notin\operatorname{im}a_{i-1\to i}.
+\]</span></p>
+<p>For <span class="math inline">\(i=0\)</span>, there is no preceding vector space; equivalently set <span class="math inline">\(V_{-1}=0\)</span>, so every nonzero class initially present is born at index <span class="math inline">\(0\)</span>.</p>
+<p>It <strong>dies at <span class="math inline">\(j&gt;i\)</span></strong> when <span class="math inline">\(j\)</span> is the first index for which its forward image is indistinguishable from something older:</p>
+<p><span class="math display">\[
+a_{i\to j}(v)\in\operatorname{im}a_{i-1\to j}.
+\]</span></p>
+<p>This definition includes two geometrically different events:</p>
+<ul>
+<li>the class may become zero because a cycle is filled; or</li>
+<li>it may merge with a class born earlier.</li>
+</ul>
+<p>In both cases it ceases to be an independent generator. If no such <span class="math inline">\(j\)</span> exists, the class has interval <span class="math inline">\([i,\infty)\)</span>.</p>
+<p>The <strong>elder rule</strong> resolves the bookkeeping ambiguity at a merge: the older class is continued and the younger class is declared dead. If two classes have the same birth index, a fixed compatible cell ordering breaks the tie. The rule chooses interval representatives; it does not assert that a geometric component possesses a literal identity independent of the filtration.</p>
+</section>
+</section>
+<section id="interval-modules" class="level2" data-number="6">
+<h2 data-number="6" class="anchored" data-anchor-id="interval-modules"><span class="header-section-number">6</span> Interval modules</h2>
+<p>The following definitions formalise the intervals already read from the example. They are not a new geometric stage: an interval module is the smallest algebraic object representing one feature that is present for one consecutive span of thresholds.</p>
+<div id="def-interval-module" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 3 (Interval module)</strong></span> The interval module <span class="math inline">\(I^{[b,d)}\)</span> is <span class="math inline">\(\mathbb F\)</span> at indices <span class="math inline">\(b\leq t&lt;d\)</span>, zero elsewhere, and uses identity maps between its nonzero vector spaces.</p>
+</div>
+<p>The name “interval” is literal: the module is nonzero on one consecutive block of indices and nowhere else. It is the algebraic model of one feature that is born once, remains alive, and dies once.</p>
+<div id="def-module-direct-sum" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 4 (Direct sum of persistence modules)</strong></span> For persistence modules <span class="math inline">\((V_\bullet,a_\bullet)\)</span> and <span class="math inline">\((W_\bullet,b_\bullet)\)</span>, their direct sum is</p>
+<p><span class="math display">\[
+(V_\bullet,a_\bullet)\oplus(W_\bullet,b_\bullet)
+=
+(V_\bullet\oplus W_\bullet,\ a_\bullet\oplus b_\bullet),
+\]</span></p>
+<p>where every structure map acts componentwise.</p>
+</div>
+<div id="prp-persistent-direct-sum" class="theorem proposition">
+<p><span class="theorem-title"><strong>Proposition 1 (Persistent groups respect direct sums)</strong></span> For <span class="math inline">\(i\leq j\)</span>,</p>
+<p><span class="math display">\[
+\operatorname{im}(a_{i\to j}\oplus b_{i\to j})
+\cong
+\operatorname{im}a_{i\to j}
+\oplus
+\operatorname{im}b_{i\to j}.
+\]</span></p>
+</div>
+<div class="proof">
+<p><span class="proof-title"><em>Proof</em>. </span>The composite structure map of the direct sum is block diagonal:</p>
+<p><span class="math display">\[
+(a\oplus b)_{i\to j}
+=
+\begin{pmatrix}
+a_{i\to j}&amp;0\\
+0&amp;b_{i\to j}
+\end{pmatrix}.
+\]</span></p>
+<p>Its value on <span class="math inline">\((v,w)\)</span> is <span class="math inline">\((a_{i\to j}v,b_{i\to j}w)\)</span>. Hence its image consists exactly of pairs with first coordinate in <span class="math inline">\(\operatorname{im}a_{i\to j}\)</span> and second coordinate in <span class="math inline">\(\operatorname{im}b_{i\to j}\)</span>.</p>
+</div>
+<p>This proposition licenses the “divide and conquer” interpretation of a barcode. If a module splits into interval summands, its persistent information is the collection of the persistent information of those summands.</p>
+<div id="def-indecomposable-module" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 5 (Indecomposable persistence module)</strong></span> A nonzero persistence module is <strong>indecomposable</strong> if an isomorphism <span class="math inline">\(I_\bullet\cong V_\bullet\oplus W_\bullet\)</span> forces one of <span class="math inline">\(V_\bullet\)</span> or <span class="math inline">\(W_\bullet\)</span> to be the zero module.</p>
+</div>
+<div class="callout callout-style-default callout-note callout-titled" title="Why introduce indecomposability?">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Why introduce indecomposability?
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The term is algebraic bookkeeping for “one feature that cannot be split into two independent shorter-lived features.” It is needed to state the structure theorem precisely. On a first reading, the practical conclusion matters more than the terminology: a finite one-parameter persistence module can be broken into interval-shaped pieces.</p>
+</div>
+</div>
+<div id="prp-interval-indecomposable" class="theorem proposition">
+<p><span class="theorem-title"><strong>Proposition 2 (Interval modules are indecomposable)</strong></span> Every interval module <span class="math inline">\(I^{[b,d)}\)</span> is indecomposable.</p>
+</div>
+<div class="proof">
+<p><span class="proof-title"><em>Proof</em>. </span>Suppose <span class="math inline">\(I^{[b,d)}\cong V_\bullet\oplus W_\bullet\)</span>. At an index inside <span class="math inline">\([b,d)\)</span>,</p>
+<p><span class="math display">\[
+1=\dim I_t=\dim V_t+\dim W_t,
+\]</span></p>
+<p>so exactly one of <span class="math inline">\(V_t,W_t\)</span> is one-dimensional and the other is zero. Suppose the nonzero summand switched somewhere inside the interval, say <span class="math inline">\(V_t\cong\mathbb F\)</span> but <span class="math inline">\(V_{t+1}=0\)</span>. Then the map on the <span class="math inline">\(V\)</span> summand has rank zero. Since <span class="math inline">\(W_t=0\)</span>, the map on the <span class="math inline">\(W\)</span> summand also has rank zero. Their direct sum would have rank zero, contradicting the identity map of rank one in the interval module. Thus the same summand is nonzero throughout <span class="math inline">\([b,d)\)</span> and the other summand is zero everywhere.</p>
+</div>
+<div id="thm-structure-persistence" class="theorem">
+<p><span class="theorem-title"><strong>Theorem 1 (Structure theorem for finite persistence modules)</strong></span> Every finite-dimensional one-parameter persistence module over a field decomposes as</p>
+<p><span class="math display">\[
+V_\bullet
+\cong
+\bigoplus_{[b,d)}
+\left(I^{[b,d)}_\bullet\right)^{\oplus\mu(b,d)}.
+\]</span></p>
+<p>The multiset of intervals is unique up to ordering and isomorphism. A complicated evolving vector space can therefore be decomposed into independent lifespans.</p>
+</div>
+<p>This theorem is the reason barcodes are legitimate rather than merely a visual convention. It says the linked vector spaces actually decompose into feature lifespans, and that the multiset of lifespans is determined uniquely.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../assets/interval-module-decomposition.svg" class="img-fluid figure-img" style="width:88.0%" alt="A three-row commutative diagram. The first two rows are interval modules supported on one to three and zero to infinity. The bottom row is their direct sum, with vector-space dimensions one, two, two, one, one."></p>
+<figcaption>A persistence module decomposed into two interval modules. One summand is present from index (0) onward; the other is present only at indices (1) and (2). Their direct sum has dimensions (1,2,2,1,1).</figcaption>
+</figure>
+</div>
+<p>Read the diagram columnwise: at any index, the vector space in the bottom row is the direct sum of the two entries above it. Read it rowwise: each upper row is one independent lifespan. The barcode forgets the displayed bases and retains only those two supports.</p>
+<div class="proof-sketch">
+<p>Regard the module as a finite representation of the directed path <span class="math inline">\(0\to1\to\cdots\to m\)</span>. A left-to-right elimination chooses compatible bases while retaining the pivot choices already made at earlier arrows. In these adapted bases, each surviving basis vector follows one chain of identity arrows from a first nonzero index <span class="math inline">\(b\)</span> to a last nonzero index <span class="math inline">\(d-1\)</span> and is zero elsewhere. Each such chain is an interval submodule <span class="math inline">\(I^{[b,d)}\)</span>, and the adapted basis expresses the whole representation as their direct sum.</p>
+<p>The phrase “compatible bases” is essential: putting each linear map independently into rank-normal form would not ensure that the basis chosen in an intermediate vector space works for both adjacent maps. Establishing that simultaneous compatibility is the substantive existence step in the type-<span class="math inline">\(A\)</span> quiver decomposition theorem.</p>
+<p>For uniqueness, the ranks of all composite maps <span class="math inline">\(V_i\to V_j\)</span> determine every interval multiplicity by finite differences. Indeed, <span class="math inline">\(\operatorname{rank}(V_i\to V_j)\)</span> counts exactly those intervals that contain both <span class="math inline">\(i\)</span> and <span class="math inline">\(j\)</span>. Hence two interval decompositions of the same module have the same multiplicities. A full algebraic proof is the type-<span class="math inline">\(A\)</span> quiver/PID decomposition theorem <span class="citation" data-cites="zomorodian2004computing nanda2023">(<a href="#ref-zomorodian2004computing" role="doc-biblioref">Zomorodian and Carlsson 2004</a>; <a href="#ref-nanda2023" role="doc-biblioref">Nanda 2023</a>)</span>.</p>
+</div>
+</section>
+<section id="persistent-homology-groups" class="level2" data-number="7">
+<h2 data-number="7" class="anchored" data-anchor-id="persistent-homology-groups"><span class="header-section-number">7</span> Persistent homology groups</h2>
+<div id="def-persistent-group" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 6 (Persistent homology group)</strong></span> For indices <span class="math inline">\(i\leq j\)</span>, the persistent homology group</p>
+<p><span class="math display">\[
+H_k^{i\to j}
+=
+\operatorname{im}
+\left(
+H_k(K_i)\to H_k(K_j)
+\right)
+\]</span></p>
+<p>contains the classes born by time <span class="math inline">\(i\)</span> that remain alive at time <span class="math inline">\(j\)</span>. Its dimension is the persistent Betti number over that interval.</p>
+</div>
+</section>
+<section id="compatible-orderings-and-refined-filtrations" class="level2" data-number="8">
+<h2 data-number="8" class="anchored" data-anchor-id="compatible-orderings-and-refined-filtrations"><span class="header-section-number">8</span> Compatible orderings and refined filtrations</h2>
+<p>Several cells can share one intensity value. The coarse filtration then adds them simultaneously, hiding the individual algebraic events. For computation, we refine time by ordering the cells one at a time.</p>
+<p>For example, all four edges of a square may receive value <span class="math inline">\(7\)</span>. The mathematical filtration adds them together at threshold <span class="math inline">\(7\)</span>, but a column-reduction algorithm must process four separate columns. A compatible ordering invents four temporary substeps, all still labelled by the physical threshold <span class="math inline">\(7\)</span>. These substeps are computational bookkeeping and must not be interpreted as four distinct intensity measurements.</p>
+<div id="def-compatible-ordering" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 7 (Compatible cell ordering)</strong></span> Let <span class="math inline">\(f\)</span> be a face-monotone filtration function on a finite complex <span class="math inline">\(K\)</span>. A total order</p>
+<p><span class="math display">\[
+\sigma_1,\ldots,\sigma_N
+\]</span></p>
+<p>is <strong>compatible</strong> when:</p>
+<ol type="1">
+<li><span class="math inline">\(f(\sigma_i)&lt;f(\sigma_j)\)</span> implies <span class="math inline">\(i&lt;j\)</span>; and</li>
+<li><span class="math inline">\(\sigma_i\prec\sigma_j\)</span> implies <span class="math inline">\(i&lt;j\)</span>.</li>
+</ol>
+</div>
+<p>The refined filtration is</p>
+<p><span class="math display">\[
+K_i^*=\{\sigma_1,\ldots,\sigma_i\},
+\qquad
+\varnothing=K_0^*\subset K_1^*\subset\cdots\subset K_N^*=K.
+\]</span></p>
+<p>The second compatibility condition makes every <span class="math inline">\(K_i^*\)</span> face-closed. At the last index associated with a threshold <span class="math inline">\(t\)</span>, the refined complex equals the original <span class="math inline">\(K_t\)</span>. Refinement is therefore a time dilation of tied events, not a change to the threshold complexes themselves.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../assets/compatible-ordering.png" class="img-fluid figure-img" style="width:100.0%" alt="A long sequence of nested square complexes, beginning with one vertex and adding the remaining vertices, edges, and finally the filled square one at a time."></p>
+<figcaption>A compatible ordering refines the arrival of one square into face-closed stages: vertices enter first, then edges, and only then the (2)-cell. Each inclusion adds exactly one cell.</figcaption>
+</figure>
+</div>
+<div id="prp-cell-attachment" class="theorem proposition">
+<p><span class="theorem-title"><strong>Proposition 3 (Single-cell birth–death dichotomy)</strong></span> Suppose a filtration adds one <span class="math inline">\(k\)</span>-cell <span class="math inline">\(\sigma\)</span> at a step and all faces of <span class="math inline">\(\sigma\)</span> are already present. Exactly one of the following occurs:</p>
+<ol type="1">
+<li>a class in <span class="math inline">\(H_k\)</span> is born; or</li>
+<li>a class in <span class="math inline">\(H_{k-1}\)</span> dies.</li>
+</ol>
+</div>
+<div class="proof">
+<p><span class="proof-title"><em>Proof</em>. </span>Let <span class="math inline">\(K'=K\cup\{\sigma\}\)</span>. Since every face of <span class="math inline">\(\sigma\)</span> lies in <span class="math inline">\(K\)</span>, <span class="math inline">\(\partial\sigma\in Z_{k-1}(K)\)</span>.</p>
+<p>If <span class="math inline">\(\partial\sigma\notin B_{k-1}(K)\)</span>, it represents a nonzero class in <span class="math inline">\(H_{k-1}(K)\)</span>. In <span class="math inline">\(K'\)</span> it becomes the boundary of <span class="math inline">\(\sigma\)</span>, so that class dies.</p>
+<p>If <span class="math inline">\(\partial\sigma\in B_{k-1}(K)\)</span>, choose <span class="math inline">\(c\in C_k(K)\)</span> with <span class="math inline">\(\partial c=\partial\sigma\)</span>. Then <span class="math inline">\(z=\sigma-c\)</span> satisfies <span class="math inline">\(\partial z=0\)</span>. Because the coefficient of the new cell <span class="math inline">\(\sigma\)</span> in <span class="math inline">\(z\)</span> is nonzero, <span class="math inline">\(z\)</span> was not a chain in <span class="math inline">\(K\)</span>. It also cannot be a boundary in <span class="math inline">\(K'\)</span>: any <span class="math inline">\((k+1)\)</span>-cell whose boundary contains <span class="math inline">\(\sigma\)</span> would have <span class="math inline">\(\sigma\)</span> as a face and therefore, by compatibility, could not have appeared before <span class="math inline">\(\sigma\)</span>. Thus <span class="math inline">\(z\)</span> gives a new <span class="math inline">\(k\)</span>-dimensional class. These two cases are mutually exclusive and exhaustive.</p>
+</div>
+</section>
+<section id="matrix-reduction" class="level2" data-number="9">
+<h2 data-number="9" class="anchored" data-anchor-id="matrix-reduction"><span class="header-section-number">9</span> Matrix reduction</h2>
+<p>This section turns the preceding theory into an algorithm. It uses the same column addition as Gaussian elimination, but preserves the left-to-right filtration order. Ordinary rank reduction tells us how many classes remain; persistence reduction also remembers which column first created a class and which later column killed it.</p>
+<p>Order all cells so that faces precede cofaces and filtration values never decrease. Form one boundary matrix <span class="math inline">\(D\)</span> for the filtered complex.</p>
+<p>The standard persistence algorithm reduces columns from left to right. Let <span class="math inline">\(\operatorname{low}(j)\)</span> be the row index of the lowest nonzero entry in column <span class="math inline">\(j\)</span>. Whenever two nonzero columns share the same low:</p>
+<p><span class="math display">\[
+\operatorname{low}(i)=\operatorname{low}(j),
+\qquad i&lt;j,
+\]</span></p>
+<p>replace column <span class="math inline">\(j\)</span> by</p>
+<p><span class="math display">\[
+D_j\leftarrow D_j+D_i
+\]</span></p>
+<p>over <span class="math inline">\(\mathbb F_2\)</span>. Continue until every nonzero column has a unique low.</p>
+<p>The pairing interpretation is:</p>
+<ul>
+<li>a reduced zero column creates a birth; and</li>
+<li>a nonzero column <span class="math inline">\(j\)</span> with <span class="math inline">\(\operatorname{low}(j)=i\)</span> pairs the birth at cell <span class="math inline">\(i\)</span> with the death at cell <span class="math inline">\(j\)</span>.</li>
+</ul>
+<p>Unpaired births persist indefinitely.</p>
+<div id="lem-column-operation-filtration" class="theorem lemma">
+<p><span class="theorem-title"><strong>Lemma 1 (Allowed column additions preserve the filtered boundary information)</strong></span> If <span class="math inline">\(i&lt;j\)</span>, replacing column <span class="math inline">\(D_j\)</span> by <span class="math inline">\(D_j+D_i\)</span> is an invertible change of basis in the chain group that uses only a cell appearing no later than <span class="math inline">\(\sigma_j\)</span>. It preserves the boundary operator and the filtration-compatible span of every prefix of columns.</p>
+</div>
+<div class="proof">
+<p><span class="proof-title"><em>Proof</em>. </span>The operation is right multiplication by an elementary matrix <span class="math inline">\(E\)</span> satisfying <span class="math inline">\(E^{-1}=E\)</span> over <span class="math inline">\(\mathbb F_2\)</span>, so it is an invertible basis change. Because <span class="math inline">\(i&lt;j\)</span>, the new <span class="math inline">\(j\)</span>th basis vector is <span class="math inline">\(\sigma_j+\sigma_i\)</span> and belongs to the same filtration prefix as <span class="math inline">\(\sigma_j\)</span>. No earlier column changes. Hence the span of the first <span class="math inline">\(r\)</span> columns is unchanged for every <span class="math inline">\(r\)</span>, and the represented filtered boundary map is unchanged up to a compatible basis.</p>
+</div>
+<div id="thm-persistence-reduction" class="theorem">
+<p><span class="theorem-title"><strong>Theorem 2 (Reduced pivots encode persistence intervals)</strong></span> After left-to-right reduction, every nonzero column <span class="math inline">\(j\)</span> has a unique pivot <span class="math inline">\(i=\operatorname{low}(j)\)</span>. The pair <span class="math inline">\((i,j)\)</span> records a homology class born when <span class="math inline">\(\sigma_i\)</span> enters and killed when <span class="math inline">\(\sigma_j\)</span> enters. A zero column whose index is not used as a pivot records an essential class that remains unpaired.</p>
+</div>
+<div class="proof-sketch">
+<p>At stage <span class="math inline">\(j\)</span>, the first <span class="math inline">\(j-1\)</span> cells already form a subcomplex. If the reduced boundary of <span class="math inline">\(\sigma_j\)</span> is nonzero with lowest row <span class="math inline">\(i\)</span>, it represents the oldest still-unpaired boundary component selected by the compatible basis; attaching <span class="math inline">\(\sigma_j\)</span> makes that class a boundary. Uniqueness of the pivot prevents the same birth from being killed twice. If the column reduces to zero, its boundary is already generated by earlier boundaries, so the single-cell dichotomy produces a new class instead. Subsequent columns either use its row as a unique pivot, giving its death, or never do, in which case the class survives to the end. The allowed column operations preserve every filtered prefix by <a href="#lem-column-operation-filtration" class="quarto-xref">Lemma&nbsp;1</a>, so these pairings belong to the original filtration rather than merely to the reduced matrix <span class="citation" data-cites="edelsbrunner2010 zomorodian2004computing">(<a href="#ref-edelsbrunner2010" role="doc-biblioref">Edelsbrunner and Harer 2010</a>; <a href="#ref-zomorodian2004computing" role="doc-biblioref">Zomorodian and Carlsson 2004</a>)</span>.</p>
+</div>
+<p>The algorithm enforces the elder rule algebraically: when a new column creates a dependence among living generators, reduction eliminates the generator with the latest compatible birth index and leaves the older pivot structure in place.</p>
+<div class="callout callout-style-default callout-note callout-titled" title="Compatible ordering">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Compatible ordering
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If several cells share a filtration value, ties must be broken so every face appears before its cofaces. This preserves face closure and prevents artificial birth–death events.</p>
+</div>
+</div>
+</section>
+<section id="what-persistence-doesand-does-notsay" class="level2" data-number="10">
+<h2 data-number="10" class="anchored" data-anchor-id="what-persistence-doesand-does-notsay"><span class="header-section-number">10</span> What persistence does—and does not—say</h2>
+<p>Persistence quantifies survival across the chosen filtration. It does not automatically identify semantic importance. A long interval may represent a meaningful structure, a boundary artefact, or a systematic acquisition defect.</p>
+<p>Interpretation always depends on:</p>
+<ul>
+<li>the complex construction;</li>
+<li>the filtration function;</li>
+<li>coefficient field;</li>
+<li>boundary treatment; and</li>
+<li>the physical meaning of the data.</li>
+</ul>
+<div class="callout callout-style-default callout-tip callout-titled" title="What to carry forward">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>What to carry forward
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>A filtration is one shape observed at every threshold.</li>
+<li>Homology maps decide whether a feature at one threshold is still the same feature later.</li>
+<li>The structure theorem converts this evolution into intervals.</li>
+<li>Matrix pivots compute the birth–death pairings.</li>
+<li>Persistence measures survival under the chosen filtration, not automatic semantic importance.</li>
+</ul>
+<p>The next chapter asks whether these intervals change continuously when the input image changes.</p>
+</div>
+</div>
+</section>
+<section id="exercises" class="level2" data-number="11">
+<h2 data-number="11" class="anchored" data-anchor-id="exercises"><span class="header-section-number">11</span> Exercises</h2>
+<ol type="1">
+<li>Reconstruct the three (H_0) intervals and one (H_1) interval of the first, unlabelled filtration directly from its six pictures.</li>
+<li>Convert the labelled elder-rule intervals <span class="math inline">\([0,\infty)\)</span>, <span class="math inline">\([1,4)\)</span>, and <span class="math inline">\([2,3)\)</span> into persistence-diagram points.</li>
+<li>What happens to every interval if a constant <span class="math inline">\(c\)</span> is added to all filtration values?</li>
+<li>Explain why a lower-dimensional face cannot enter after its coface.</li>
+<li>In a reduced boundary matrix, what does a zero column represent?</li>
+</ol>
+<p><a href="../../computational-topology/computing-homology/index.html">Previous: Computing Homology</a> · <a href="../../computational-topology/index.html">Course contents</a> · <a href="../../computational-topology/stability/index.html">Next: Stability</a></p>
+
+
+
+</section>
+
+<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a><div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" role="list">
+<div id="ref-edelsbrunner2010" class="csl-entry" role="listitem">
+Edelsbrunner, Herbert, and John Harer. 2010. <em>Computational Topology: An Introduction</em>. American Mathematical Society.
+</div>
+<div id="ref-nanda2023" class="csl-entry" role="listitem">
+Nanda, Vidit. 2023. <em>Computational Algebraic Topology</em>. Lecture notes, University of Oxford. <a href="https://people.maths.ox.ac.uk/nanda/cat/">https://people.maths.ox.ac.uk/nanda/cat/</a>.
+</div>
+<div id="ref-wagner2011cubical" class="csl-entry" role="listitem">
+Wagner, Hubert, Chao Chen, and Erald Vučini. 2012. <span>“Efficient Computation of Persistent Homology for Cubical Data.”</span> In <em>Topological Methods in Data Analysis and Visualization II</em>. Springer. <a href="https://doi.org/10.1007/978-3-642-23175-9_7">https://doi.org/10.1007/978-3-642-23175-9_7</a>.
+</div>
+<div id="ref-zomorodian2004computing" class="csl-entry" role="listitem">
+Zomorodian, Afra, and Gunnar Carlsson. 2004. <span>“Computing Persistent Homology.”</span> <em>Proceedings of the Twentieth Annual Symposium on Computational Geometry</em>, 347–56. <a href="https://doi.org/10.1145/997817.997870">https://doi.org/10.1145/997817.997870</a>.
+</div>
+</div></section></div></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/rjnieto\.com");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../../computational-topology/computing-homology/index.html" class="pagination-link" aria-label="Computing Homology">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Computing Homology</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../../computational-topology/stability/index.html" class="pagination-link" aria-label="Stability of Persistent Homology">
+        <span class="nav-page-text">Stability of Persistent Homology</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>© 2026 RJ Nieto</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+<p>Built with Quarto</p>
+</div>
+  </div>
+</footer>
+
+
+
+
+</body></html>
