@@ -1,0 +1,969 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.10.18">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Chapter 1: Mathematics in Our World – RJ Nieto</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="../../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../../">
+<script src="../../../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../../site_libs/bootstrap/bootstrap-805e789c7b7f260b48d5cafdd348845c.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../../../../styles.css">
+</head>
+
+<body class="nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../../../index.html">
+    <span class="navbar-title">RJ Nieto</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../../../index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../../computational-topology/index.html"> 
+<span class="menu-text">TDA</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../../teaching/index.html"> 
+<span class="menu-text">Teaching</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../../cv/index.html"> 
+<span class="menu-text">CV</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#mathematics-in-an-ordinary-morning" id="toc-mathematics-in-an-ordinary-morning" class="nav-link active" data-scroll-target="#mathematics-in-an-ordinary-morning">Mathematics in an ordinary morning</a></li>
+  <li><a href="#mathematics-behind-navigation-applications" id="toc-mathematics-behind-navigation-applications" class="nav-link" data-scroll-target="#mathematics-behind-navigation-applications">Mathematics behind navigation applications</a></li>
+  <li><a href="#a-famous-pattern" id="toc-a-famous-pattern" class="nav-link" data-scroll-target="#a-famous-pattern">A famous pattern</a>
+  <ul class="collapse">
+  <li><a href="#the-fibonacci-connection" id="toc-the-fibonacci-connection" class="nav-link" data-scroll-target="#the-fibonacci-connection">The Fibonacci connection</a></li>
+  <li><a href="#a-connection-with-plant-growth" id="toc-a-connection-with-plant-growth" class="nav-link" data-scroll-target="#a-connection-with-plant-growth">A connection with plant growth</a></li>
+  </ul></li>
+  <li><a href="#mathematical-objects-other-than-numbers" id="toc-mathematical-objects-other-than-numbers" class="nav-link" data-scroll-target="#mathematical-objects-other-than-numbers">Mathematical objects other than numbers</a>
+  <ul class="collapse">
+  <li><a href="#group-theory" id="toc-group-theory" class="nav-link" data-scroll-target="#group-theory">Group theory</a></li>
+  <li><a href="#linear-algebra" id="toc-linear-algebra" class="nav-link" data-scroll-target="#linear-algebra">Linear algebra</a></li>
+  <li><a href="#graph-theory" id="toc-graph-theory" class="nav-link" data-scroll-target="#graph-theory">Graph theory</a></li>
+  <li><a href="#category-theory" id="toc-category-theory" class="nav-link" data-scroll-target="#category-theory">Category theory</a></li>
+  <li><a href="#algebraic-topology" id="toc-algebraic-topology" class="nav-link" data-scroll-target="#algebraic-topology">Algebraic topology</a></li>
+  </ul></li>
+  <li><a href="#a-biological-example-diabetic-retinopathy" id="toc-a-biological-example-diabetic-retinopathy" class="nav-link" data-scroll-target="#a-biological-example-diabetic-retinopathy">A biological example: diabetic retinopathy</a>
+  <ul class="collapse">
+  <li><a href="#helping-a-computer-describe-what-we-see" id="toc-helping-a-computer-describe-what-we-see" class="nav-link" data-scroll-target="#helping-a-computer-describe-what-we-see">Helping a computer describe what we see</a></li>
+  </ul></li>
+  <li><a href="#is-mathematics-an-exact-science" id="toc-is-mathematics-an-exact-science" class="nav-link" data-scroll-target="#is-mathematics-an-exact-science">Is mathematics an exact science?</a></li>
+  <li><a href="#mathematics-and-collaboration" id="toc-mathematics-and-collaboration" class="nav-link" data-scroll-target="#mathematics-and-collaboration">Mathematics and collaboration</a></li>
+  <li><a href="#check-your-understanding" id="toc-check-your-understanding" class="nav-link" data-scroll-target="#check-your-understanding">Check your understanding</a></li>
+  <li><a href="#what-it-means-to-think-mathematically" id="toc-what-it-means-to-think-mathematically" class="nav-link" data-scroll-target="#what-it-means-to-think-mathematically">What it means to think mathematically</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Chapter 1: Mathematics in Our World</h1>
+<p class="subtitle lead">Mathematics Is More Than Numbers</p>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>“Being good with numbers means being good at mathematics.” This is something we often hear from our elders. The idea is understandable. After all, nearly all the mathematics you encountered in high school involved the extensive use of numbers: arithmetic, algebra, trigonometry, statistics, probability, and calculus.</p>
+<p>Numerical skill is certainly an important part of mathematics. However, mathematics is much more than calculation. It is concerned with patterns, structures, quantities, shapes, changes, relationships, and uncertainty. It also provides us with a language for describing these ideas and a logical framework for reasoning about them.</p>
+<div class="callout callout-style-default callout-note callout-titled" title="Learning outcomes">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Learning outcomes
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>After completing this chapter, you should be able to:</p>
+<ul>
+<li>identify examples of patterns and regularities in nature and everyday life;</li>
+<li>explain why mathematics is more than numerical calculation;</li>
+<li>distinguish a mathematical model from the reality it represents;</li>
+<li>recognise examples of inductive and deductive reasoning;</li>
+<li>describe some practical, intellectual, and aesthetic dimensions of mathematics; and</li>
+<li>explain how mathematics contributes to Biology and modern technology.</li>
+</ul>
+</div>
+</div>
+<section id="mathematics-in-an-ordinary-morning" class="level2">
+<h2 class="anchored" data-anchor-id="mathematics-in-an-ordinary-morning">Mathematics in an ordinary morning</h2>
+<p>Some uses of mathematics in everyday life are fairly obvious.</p>
+<p>Suppose your first class begins at 8:00 a.m. What time should you wake up so that you can arrive on time?</p>
+<p>You might estimate how long it takes to get out of bed, take a shower, get dressed, prepare your belongings, eat breakfast, and travel to school. At first, this appears to be a simple arithmetic problem: add the estimated duration of each activity, then subtract the total from the beginning of your first class.</p>
+<p>But what you are doing is not merely arithmetic. You are also using probability, estimation, and decision-making under uncertainty.</p>
+<p>For example, if you take public transportation, your travel time depends partly on how frequently buses, jeepneys, or tricycles pass your stop. If vehicles arrive regularly, you may expect only a short waiting time. A long wait is possible, but you may consider it unlikely. Your estimate may also change depending on whether your class is held on a weekday or a Saturday, since traffic conditions are usually different.</p>
+<p>You may also consider the possibility of rain, road construction, long queues, or unexpected delays. You might then add an extra fifteen or twenty minutes as a safety allowance. How large that allowance should be depends on how uncertain the journey is and how strongly you wish to avoid being late.</p>
+<p>In other words, you have constructed a simple <strong>mathematical model</strong> of your morning. The model does not reproduce every detail of reality. Instead, it identifies the factors that matter most and uses them to guide a decision.</p>
+</section>
+<section id="mathematics-behind-navigation-applications" class="level2">
+<h2 class="anchored" data-anchor-id="mathematics-behind-navigation-applications">Mathematics behind navigation applications</h2>
+<p>We sometimes avoid making these calculations ourselves by consulting applications such as Google Maps or Waze. However, these applications work precisely because they combine several areas of mathematics.</p>
+<ul>
+<li><strong>Geometry, coordinate systems, and trigonometry</strong> help represent locations, distances, directions, and positions on the surface of the Earth.</li>
+<li><strong>Graph theory</strong> represents a road network as a collection of points and connections. Intersections or destinations may be represented as vertices, while roads connecting them are represented as edges.</li>
+<li><strong>Shortest-path and optimisation algorithms</strong> compare possible routes and attempt to identify an efficient one. Some of these methods are related to classical procedures such as Dijkstra’s algorithm.</li>
+<li><strong>Statistics and probability</strong> are used to estimate travel times from historical and current information, including the observed speeds of vehicles travelling along particular roads.</li>
+<li><strong>Rates of change</strong>, an idea associated with calculus, help us reason about quantities such as speed, acceleration, and the way traffic conditions change over time.</li>
+<li><strong>Computer science and numerical computation</strong> allow enormous amounts of information to be processed quickly enough for a suggested route to be updated while the journey is taking place.</li>
+</ul>
+<p>Thus, when a navigation application tells you that one route will take thirty-five minutes while another will take fifty, the result is not produced by arithmetic alone. It comes from a model involving location, networks, uncertainty, changing conditions, and computation.</p>
+<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/YwVSpPZ5goc" title="Video about mathematics and navigation" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
+<p>The video above introduces route-finding methods such as Dijkstra’s algorithm and A*, a related algorithm that uses an estimate of the remaining distance to guide its search. You will not be expected to implement either one. At their mathematical core, Google Maps, Apple Maps, and Waze solve essentially the same kind of problem: represent roads as a weighted network and search for a route with a low cost, such as travel time. Their actual systems are far more complicated than the classroom algorithms because they must also account for live traffic, road restrictions, and many other practical considerations. The purpose of this example is not to teach route-finding algorithms in detail, but to show how much mathematics is already embedded in everyday tools and decisions, often without our noticing it.</p>
+<p>Mathematics does more than help us make practical decisions. It also helps us recognise, describe, and investigate patterns—including patterns that people find beautiful.</p>
+</section>
+<section id="a-famous-pattern" class="level2">
+<h2 class="anchored" data-anchor-id="a-famous-pattern">A famous pattern</h2>
+<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/kkGeOWYOFoA" title="Video introducing a famous mathematical pattern" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
+<p>The video above brings together the famous Fibonacci sequence, the golden ratio, and several patterns associated with them. These ideas are closely connected, and the golden ratio provides the central thread linking much of the discussion. The name <strong>golden ratio</strong> is modern, but the underlying proportion is ancient.</p>
+<p>In <a href="https://math.clarku.edu/~djoyce/java/elements/bookVI/defVI3.html">Book VI, Definition 3 of Euclid’s <em>Elements</em></a>, a straight line is said to be cut <strong>in extreme and mean ratio</strong> when “the whole is to the greater segment as the greater segment is to the less.”</p>
+<p>Suppose a line segment <span class="math inline">\(AB\)</span> is divided at a point <span class="math inline">\(C\)</span>. Let the longer segment <span class="math inline">\(AC\)</span> have length <span class="math inline">\(a\)</span> and the shorter segment <span class="math inline">\(CB\)</span> have length <span class="math inline">\(b\)</span>. The whole segment <span class="math inline">\(AB\)</span> then has length <span class="math inline">\(a+b\)</span>. Euclid’s definition becomes</p>
+<div id="fig-golden-ratio-segment" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-golden-ratio-segment-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="figures/golden-ratio-segment.svg" class="img-fluid figure-img" style="width:85.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-golden-ratio-segment-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: A line segment (AB) divided at (C): the longer part (AC) has length (a), the shorter part (CB) has length (b), and the whole has length (a+b).
+</figcaption>
+</figure>
+</div>
+<p><span class="math display">\[
+\frac{a+b}{a}=\frac{a}{b}.
+\]</span></p>
+<p>In modern notation, this common ratio is denoted by the Greek letter <span class="math inline">\(\varphi\)</span>, pronounced <em>phi</em>.</p>
+<p>Because <span class="math inline">\(a/b=\varphi\)</span>, the equation above gives</p>
+<p><span class="math display">\[
+\varphi=1+\frac{1}{\varphi}.
+\]</span></p>
+<p>Multiplying by <span class="math inline">\(\varphi\)</span> produces</p>
+<p><span class="math display">\[
+\varphi^2-\varphi-1=0.
+\]</span></p>
+<p>The positive solution is</p>
+<p><span class="math display">\[
+\varphi=\frac{1+\sqrt{5}}{2}\approx 1.618.
+\]</span></p>
+<p>The negative solution of the quadratic is rejected here because <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span> are lengths.</p>
+<section id="the-fibonacci-connection" class="level3">
+<h3 class="anchored" data-anchor-id="the-fibonacci-connection">The Fibonacci connection</h3>
+<p>The Fibonacci sequence begins</p>
+<p><span class="math display">\[
+1,\ 1,\ 2,\ 3,\ 5,\ 8,\ 13,\ 21,\ldots
+\]</span></p>
+<p>Each term after the first two is obtained by adding the two preceding terms. Now divide each term by the one before it:</p>
+<p><span class="math display">\[
+\frac{2}{1}=2,\qquad
+\frac{3}{2}=1.5,\qquad
+\frac{5}{3}\approx1.667,\qquad
+\frac{8}{5}=1.6,\qquad
+\frac{13}{8}=1.625,\qquad
+\frac{21}{13}\approx1.615.
+\]</span></p>
+<p>The ratios move above and below <span class="math inline">\(1.618\)</span>, but gradually approach <span class="math inline">\(\varphi\)</span>. We can see why without proving every detail. If the ratio between successive Fibonacci numbers eventually settles near some number <span class="math inline">\(L\)</span>, the rule for generating the sequence forces</p>
+<p><span class="math display">\[
+L=1+\frac{1}{L},
+\]</span></p>
+<p>which is the same equation satisfied by the golden ratio.</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="Two ways of reasoning">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Two ways of reasoning
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Looking at the successive Fibonacci ratios and conjecturing that they approach a common value is an example of <strong>inductive reasoning</strong>: we observe a pattern in particular cases and propose a more general conclusion.</p>
+<p>Starting from Euclid’s definition and logically deriving <span class="math inline">\(\varphi^2-\varphi-1=0\)</span> is an example of <strong>deductive reasoning</strong>: the conclusion follows from definitions, assumptions, and valid algebraic steps. Inductive reasoning helps us discover plausible patterns; deductive reasoning helps us establish what must follow from our premises.</p>
+</div>
+</div>
+<details>
+<summary>
+<strong>Optional linear-algebra connection — non-examinable</strong>
+</summary>
+<p>For readers who have encountered matrices, the Fibonacci numbers can be generated using</p>
+<p><span class="math display">\[
+Q=
+\begin{pmatrix}
+1&amp;1\\
+1&amp;0
+\end{pmatrix}.
+\]</span></p>
+<p>One can show that</p>
+<p><span class="math display">\[
+Q^n=
+\begin{pmatrix}
+F_{n+1}&amp;F_n\\
+F_n&amp;F_{n-1}
+\end{pmatrix}.
+\]</span></p>
+<p>The eigenvalues of <span class="math inline">\(Q\)</span> are found from</p>
+<p><span class="math display">\[
+\det(Q-\lambda I)=\lambda^2-\lambda-1=0,
+\]</span></p>
+<p>and are therefore</p>
+<p><span class="math display">\[
+\lambda_1=\varphi=\frac{1+\sqrt5}{2},
+\qquad
+\lambda_2=\frac{1-\sqrt5}{2}=-\frac1\varphi.
+\]</span></p>
+<p>Repeated powers of the matrix are increasingly governed by <span class="math inline">\(\varphi\)</span> because <span class="math inline">\(\varphi&gt;1\)</span>, while <span class="math inline">\(\lvert-1/\varphi\rvert&lt;1\)</span>. This is why</p>
+<p><span class="math display">\[
+\frac{F_{n+1}}{F_n}\longrightarrow\varphi.
+\]</span></p>
+<p>Strictly speaking, <span class="math inline">\(Q^n\)</span> itself does not converge: its entries grow without bound. It is the normalized matrix <span class="math inline">\(Q^n/\varphi^n\)</span> that approaches a finite matrix. None of this matrix material is required for assessment.</p>
+</details>
+</section>
+<section id="a-connection-with-plant-growth" class="level3">
+<h3 class="anchored" data-anchor-id="a-connection-with-plant-growth">A connection with plant growth</h3>
+<p>In botany, <strong>phyllotaxis</strong> describes how leaves, seeds, or other plant organs are arranged. In some spiral arrangements, successive organs form an angle close to the <strong>golden angle</strong></p>
+<p><span class="math display">\[
+\frac{360^\circ}{\varphi^2}\approx137.5^\circ.
+\]</span></p>
+<p>This spacing is associated with the familiar Fibonacci-like spirals seen in some flower heads and other plants. The pattern is a genuine subject of <a href="https://www.nature.com/articles/srep15358">research in mathematical biology</a>, but it should not be turned into a universal rule. Not every plant follows a golden-angle pattern, and plants do not calculate <span class="math inline">\(\varphi\)</span>. The pattern emerges from biological growth processes and the way developing structures interact in limited space.</p>
+<div class="callout callout-style-default callout-warning callout-titled" title="Do not find the golden ratio everywhere">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Warning</span>Do not find the golden ratio everywhere
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The golden ratio is often used to make exaggerated claims about faces, paintings, buildings, shells, and galaxies. A shape that looks approximately golden is not evidence that the ratio was deliberately used or that it caused the shape to form. A mathematical claim should be supported by clear definitions, reproducible measurements, and—when biology is involved—a plausible biological mechanism.</p>
+<p>A case in point is the familiar claim that the façade of the Parthenon was deliberately designed around the golden ratio. In the short video below, <a href="https://www.maths.cam.ac.uk/person/hf418">Professor Hannah Fry, Cambridge’s Professor of the Public Understanding of Mathematics</a>, explains why the historical and geometrical evidence does not support that popular story.</p>
+<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/Y4tSre9bqQM" title="Hannah Fry examines the claim that the Parthenon uses the golden ratio" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
+</div>
+</div>
+<p>This is also a reminder that mathematics is a human endeavour. People notice patterns, propose definitions, construct arguments, make mistakes, challenge claims, and improve earlier explanations.</p>
+</section>
+</section>
+<section id="mathematical-objects-other-than-numbers" class="level2">
+<h2 class="anchored" data-anchor-id="mathematical-objects-other-than-numbers">Mathematical objects other than numbers</h2>
+<p>Most of the mathematics in this course will still involve numbers. Nevertheless, many branches of mathematics study objects whose central features are not numerical. The following brief examples illustrate how broad mathematics can be. They are included for perspective, not as material you are expected to master in this course.</p>
+<section id="group-theory" class="level3">
+<h3 class="anchored" data-anchor-id="group-theory">Group theory</h3>
+<p>Group theory studies symmetry, transformations, and systems of operations. For example, we may rotate or reflect a geometric figure while preserving its overall structure. Group theory allows us to study the rules governing such transformations without focusing primarily on numerical calculation.</p>
+</section>
+<section id="linear-algebra" class="level3">
+<h3 class="anchored" data-anchor-id="linear-algebra">Linear algebra</h3>
+<p>Linear algebra studies vectors, systems of linear relationships, and transformations between spaces. Although its computations often involve numbers and matrices, its deeper concern is how objects can be combined, transformed, compressed, or represented. It is fundamental to computer graphics, economics, statistics, engineering, and machine learning.</p>
+</section>
+<section id="graph-theory" class="level3">
+<h3 class="anchored" data-anchor-id="graph-theory">Graph theory</h3>
+<p>Graph theory studies networks of objects and the relationships connecting them. It can be used to represent roads between cities, friendships in a social network, links between websites, communication systems, biological interactions, and the spread of disease.</p>
+</section>
+<section id="category-theory" class="level3">
+<h3 class="anchored" data-anchor-id="category-theory">Category theory</h3>
+<p>Category theory studies mathematical structures by examining the relationships and transformations between them. Rather than concentrating on the internal details of a single object, it asks how different objects and systems are connected. It is an advanced subject, mentioned here only as an example of how abstract mathematical thinking can become.</p>
+</section>
+<section id="algebraic-topology" class="level3">
+<h3 class="anchored" data-anchor-id="algebraic-topology">Algebraic topology</h3>
+<p>Algebraic topology studies the shape and structure of spaces by translating geometric features into algebraic information. It can distinguish, for example, between separate components, loops, cavities, and higher-dimensional holes. These ideas have applications in physics, robotics, medical imaging, and data analysis.</p>
+<p>We now return from this brief survey to a concrete biological problem. Several of these areas—especially linear algebra, graph theory, and algebraic topology—can contribute to ways of representing and analysing medical images.</p>
+</section>
+</section>
+<section id="a-biological-example-diabetic-retinopathy" class="level2">
+<h2 class="anchored" data-anchor-id="a-biological-example-diabetic-retinopathy">A biological example: diabetic retinopathy</h2>
+<p>There are many other, less familiar kinds of mathematics that do not appear to use many numbers. Several of the examples above can help computers describe patterns that people recognise almost immediately.</p>
+<p>Consider <strong>diabetic retinopathy</strong> (DR), an eye condition caused by diabetes. Diabetes can damage the small blood vessels in the retina, the light-sensitive layer at the back of the eye. In advanced cases, damaged vessels may leak or bleed, and the person may experience blurred vision, dark floating spots, or even blindness.</p>
+<div id="fig-vision-dr" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-vision-dr-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/n_v_dr.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-vision-dr-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2: An illustration of normal vision (left) and vision affected by advanced diabetic retinopathy (right). Early DR may cause no noticeable symptoms.
+</figcaption>
+</figure>
+</div>
+<p>The first image illustrates what a person might see. To look for the disease, a clinician examines the retina itself. A <strong>fundus photograph</strong> is simply a colour photograph of the back of the eye.</p>
+<div id="fig-normal-diabetic-fundus" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-normal-diabetic-fundus-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/normal_v_diabetic.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-normal-diabetic-fundus-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3: Fundus photographs from the FIVES dataset: a normal retina (left) and a retina with diabetic retinopathy (right) <span class="citation" data-cites="jin2022fives">(<a href="#ref-jin2022fives" role="doc-biblioref">Jin et al. 2022</a>)</span>.
+</figcaption>
+</figure>
+</div>
+<p>In this example, the right-hand image looks much more irregular than the left. We can see large yellow regions and other visible changes. This particular case is fairly easy to distinguish by inspection, but not every case is so obvious. Early disease can be subtle, and an actual diagnosis must be made by a qualified clinician.</p>
+<p>Many students in this class hope to become doctors or other health professionals. When many patients need screening, computers can help organise images and identify those that may require closer attention. The computer does not replace the clinician; it helps the clinician work through a large amount of information.</p>
+<section id="helping-a-computer-describe-what-we-see" class="level3">
+<h3 class="anchored" data-anchor-id="helping-a-computer-describe-what-we-see">Helping a computer describe what we see</h3>
+<p>We might informally say that the diseased image looks “messier.” A computer does not understand that word. It needs measurable information.</p>
+<p>One approach comes from <strong>topological data analysis</strong> (TDA). For the moment, the main idea is enough: TDA can look for simple features such as separate blobs and loops in an image. It can then summarise those features as a short list of numbers, sometimes called a <strong>topological signature</strong>.</p>
+<p>Once each image has a numerical signature, we can compare groups using statistics. The same numbers can also be supplied to a machine-learning model, including an artificial neural network—another mathematical creation that combines ideas from probability, linear algebra, and calculus.</p>
+<p>This does not mean that TDA diagnoses diabetic retinopathy by itself. Images are already made of numbers, and other computer methods can analyse their pixels directly. TDA simply gives us another description—one that focuses on shape and connectedness. Researchers must test whether that extra information actually makes a computer system more reliable.</p>
+<div class="callout callout-style-default callout-note callout-titled" title="The main idea">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>The main idea
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A person can look at two images and say, “These look different.” Mathematics helps us state exactly what is different, turn that difference into something measurable, and test whether it is genuinely useful.</p>
+</div>
+</div>
+</section>
+</section>
+<section id="is-mathematics-an-exact-science" class="level2">
+<h2 class="anchored" data-anchor-id="is-mathematics-an-exact-science">Is mathematics an exact science?</h2>
+<p>Mathematics is often described as exact, but that statement needs an important qualification. <strong>Pure mathematics can be exact within its definitions and assumptions.</strong> Once we agree on the rules, a valid proof establishes its conclusion with logical certainty. The real world, however, does not arrive with perfectly defined objects, flawless measurements, or assumptions that are always true.</p>
+<p>Suppose someone says that he is 5 feet 6 inches tall. This normally does not mean that his height is <em>exactly</em> 66 inches. The measurement may have been rounded to the nearest inch; it may also vary slightly with posture, footwear, the measuring instrument, and even the time of day. Nevertheless, “5 feet 6 inches” is usually precise enough for an ordinary conversation or a form asking for someone’s height. Greater precision would add detail, but it would not necessarily be useful for the purpose at hand.</p>
+<p>The same principle applies when mathematics is used to study traffic, populations, disease, climate, finance, or biological systems. A <strong>mathematical model</strong> keeps the features judged relevant to a question and leaves others out. It is therefore a simplified representation of reality, not reality itself. Its conclusions depend both on sound mathematics and on how well its assumptions and data represent the situation being studied.</p>
+<p>This does not make applied mathematics unreliable. It means that a model should be judged in context: What is it intended to do? How accurate must it be for that purpose? What assumptions does it make? How uncertain are its measurements and predictions? A subway map is not geographically exact, for example, but it can still be an excellent model for finding the correct train.</p>
+<div class="callout callout-style-default callout-important callout-titled" title="Exact reasoning, approximate descriptions">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Important</span>Exact reasoning, approximate descriptions
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Mathematics allows us to reason precisely about a chosen model. It does not guarantee that the model is a perfect copy of the world. A useful model is often not the one containing every possible detail, but the simplest one that is sufficiently accurate for its intended purpose.</p>
+</div>
+</div>
+</section>
+<section id="mathematics-and-collaboration" class="level2">
+<h2 class="anchored" data-anchor-id="mathematics-and-collaboration">Mathematics and collaboration</h2>
+<p>Mathematicians are good at working with quantities, finding patterns, identifying structure, and reasoning from carefully stated assumptions. These abilities are powerful, but they are not sufficient by themselves. As the familiar saying warns, “If all you have is a hammer, everything looks like a nail.” A mathematician who approaches a biological problem using mathematics alone may construct an elegant model that overlooks something biologically important.</p>
+<p>Applying mathematics effectively therefore usually requires collaboration with <strong>domain experts</strong>—people with specialised knowledge of the subject being studied. In Biology, these may include laboratory researchers, field biologists, clinicians, epidemiologists, and public-health specialists. They help determine which questions matter, which assumptions are reasonable, what data can be collected, and whether a mathematical conclusion makes biological sense. Mathematicians, statisticians, and computer scientists can then help turn those questions into models, analyse the resulting data, and quantify what is known and what remains uncertain.</p>
+<p>Many of you may never study advanced mathematics, and you do not need to become mathematicians. Nevertheless, a working grasp of mathematical ideas will help you communicate and collaborate with people who use them. It may allow you to recognise when a biological question can be measured, modelled, or investigated in a new way.</p>
+<p>Some biologists specialise in mathematical or computational work, while others concentrate on laboratory, clinical, or field research. Modern science needs all of them. Important advances often arise when people with different forms of expertise can understand one another well enough to work on the same problem. One day, such a collaboration may help some of you develop a better cancer treatment, improve the management of HIV, or respond to a disease that has not yet emerged. The purpose of learning mathematics here is not merely to pass an examination; it is also to give you another language with which to participate in interdisciplinary science.</p>
+</section>
+<section id="check-your-understanding" class="level2">
+<h2 class="anchored" data-anchor-id="check-your-understanding">Check your understanding</h2>
+<p>These short activities are intended to help you use the ideas in the chapter, not merely read about them.</p>
+<ol type="1">
+<li><p><strong>Model an ordinary journey.</strong> List the factors that could affect how long it takes you to travel to class. Which factors would you include in a useful model, and which details could you reasonably leave out?</p></li>
+<li><p><strong>Investigate a pattern.</strong> Calculate the next three Fibonacci numbers and the ratios of successive terms. Do the new ratios support the conjecture that they approach <span class="math inline">\(\varphi\)</span>? Explain why this is evidence rather than a complete proof.</p></li>
+<li><p><strong>Describe an image mathematically.</strong> Compare the two retinal photographs above. Suggest one visible feature that could be measured numerically. Explain what information your proposed measurement captures and what it might overlook.</p></li>
+<li><p><strong>Question a claim.</strong> Find an everyday or biological claim involving a mathematical pattern. What definition, measurements, or evidence would you require before accepting it?</p></li>
+</ol>
+</section>
+<section id="what-it-means-to-think-mathematically" class="level2">
+<h2 class="anchored" data-anchor-id="what-it-means-to-think-mathematically">What it means to think mathematically</h2>
+<p>Being mathematically capable therefore involves more than performing calculations quickly. It includes the ability to:</p>
+<ul>
+<li>recognise patterns and relationships;</li>
+<li>identify relevant information;</li>
+<li>construct and evaluate models;</li>
+<li>reason logically from assumptions;</li>
+<li>account for uncertainty;</li>
+<li>compare possible solutions; and</li>
+<li>explain why a conclusion should be accepted.</li>
+</ul>
+<p>Numbers remain indispensable, but they are only part of the story. Mathematics is not simply a collection of techniques for obtaining numerical answers. It is a way of organising information, examining relationships, solving problems, and thinking carefully about the world.</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="Closing reflection">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Closing reflection
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>What decisions have you already made today that involved mathematics, even though you did not consciously perform a written calculation?</p>
+</div>
+</div>
+
+
+
+</section>
+
+<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a><div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" role="list">
+<div id="ref-jin2022fives" class="csl-entry" role="listitem">
+Jin, Kai, Xingru Huang, Jingxing Zhou, et al. 2022. <span>“<span>FIVES</span>: A Fundus Image Dataset for Artificial Intelligence Based Vessel Segmentation.”</span> <em>Scientific Data</em> 9 (1): 475.
+</div>
+</div></section></div></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/rjnieto\.com");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>© 2026 RJ Nieto</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+<p>Built with Quarto</p>
+</div>
+  </div>
+</footer>
+
+
+
+
+</body></html>

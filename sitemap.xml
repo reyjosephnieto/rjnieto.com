@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://rjnieto.com/teaching/index.html</loc>
+    <lastmod>2026-07-29T16:54:36.619Z</lastmod>
+  </url>
+  <url>
+    <loc>https://rjnieto.com/teaching/bulsu/math-modern-world/index.html</loc>
+    <lastmod>2026-07-29T19:24:24.507Z</lastmod>
+  </url>
+  <url>
     <loc>https://rjnieto.com/index.html</loc>
     <lastmod>2026-07-29T16:05:34.570Z</lastmod>
   </url>
@@ -66,10 +74,14 @@
   </url>
   <url>
     <loc>https://rjnieto.com/cv/index.html</loc>
-    <lastmod>2026-07-29T15:54:18.344Z</lastmod>
+    <lastmod>2026-07-29T16:36:31.583Z</lastmod>
   </url>
   <url>
-    <loc>https://rjnieto.com/teaching/bulsu/math-modern-world/index.html</loc>
-    <lastmod>2026-07-28T23:21:03.274Z</lastmod>
+    <loc>https://rjnieto.com/mmw/index.html</loc>
+    <lastmod>2026-07-29T17:50:36.103Z</lastmod>
+  </url>
+  <url>
+    <loc>https://rjnieto.com/teaching/bulsu/math-modern-world/mathematics-in-our-world/index.html</loc>
+    <lastmod>2026-07-29T21:28:28.457Z</lastmod>
   </url>
 </urlset>
