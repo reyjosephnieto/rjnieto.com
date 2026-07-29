@@ -1,8 +1,43 @@
 ---
 title: "RJ Nieto"
 subtitle: "Mathematics, computation, and topology"
-page-layout: full
 ---
 
-This website contains my mathematical writing, computational topology notes,
-teaching materials, and curriculum vitae.
+::: {.home-intro}
+::: {.home-intro-copy}
+Hi, I’m Rey Joseph “RJ” Nieto.
+
+I am a mathematician, university instructor, and communications professional.
+I hold a First Class Honours BSc in Mathematics from the
+[University of Bristol](https://www.bristol.ac.uk/) in England and currently teach
+mathematics and information technology at
+[Bulacan State University](https://bulsu.edu.ph/) (BulSU) in the Philippines. Before returning
+to formal study, I worked across journalism, broadcasting, public affairs,
+technical writing, and government communications.
+:::
+
+::: {.home-intro-photo}
+![](assets/profile-pic.jpg){.profile-photo fig-alt="Portrait of Rey Joseph RJ Nieto"}
+:::
+:::
+
+This website brings together the different strands of my academic and
+professional work.
+
+- The [**TDA**](computational-topology/index.qmd) section
+contains self-study notes adapted and expanded from my bachelor’s thesis on
+the computational stability of cubical homology in retinal imaging.
+
+- The
+[**Teaching**](teaching/index.qmd) section contains materials for
+*Mathematics in the Modern World*, which I teach at BulSU.
+
+- The
+[**CV**](cv/index.qmd) section provides a fuller account of my academic and
+professional background.
+
+You can also find me on:
+
+- [LinkedIn](https://www.linkedin.com/in/reyjosephnieto/)
+- [Facebook](https://www.facebook.com/rjosephnieto)
+- [X](https://x.com/rjosephnieto)

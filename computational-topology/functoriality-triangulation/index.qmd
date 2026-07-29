@@ -1,5 +1,5 @@
 ---
-title: "Advanced: Functoriality and Triangulation"
+title: "Functoriality and Triangulation"
 subtitle: "Why the computational pipeline preserves structure"
 description: "Categories, chain and homology functors, CFK triangulation, filtered complexes, and the functorial stability argument."
 number-sections: true

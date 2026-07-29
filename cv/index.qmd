@@ -10,6 +10,8 @@ toc-depth: 2
 - **Academic email:** zo23232 (at) alumni.bristol.ac.uk
 - **Personal email:** rj (at) rjnieto (dot) com
 - **LinkedIn:** [linkedin.com/in/reyjosephnieto](https://www.linkedin.com/in/reyjosephnieto/)
+- **Facebook:** [facebook.com/rjosephnieto](https://www.facebook.com/rjosephnieto)
+- **X / Twitter:** [x.com/rjosephnieto](https://x.com/rjosephnieto)
 
 ## Profile
 
@@ -31,7 +33,7 @@ experiments.
 
 ### Instructor (Mathematics and Information Technology)
 
-**Bulacan State University, San Rafael Campus**<br>
+**Bulacan State University**<br>
 2026–Present
 
 Contract of Service appointment delivering undergraduate mathematics and

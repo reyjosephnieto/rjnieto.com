@@ -177,6 +177,27 @@ pre {
   font-size: 0.85rem;
 }
 
+.home-intro {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 190px;
+  gap: 2.5rem;
+  align-items: start;
+  margin-bottom: 2rem;
+}
+
+.home-intro-photo {
+  padding-top: 0.4rem;
+  text-align: center;
+}
+
+img.profile-photo {
+  width: 190px;
+  max-width: 100%;
+  height: auto;
+  border: 1px solid var(--rule);
+  border-radius: 50%;
+}
+
 @media (max-width: 768px) {
   body {
     font-size: 1rem;
@@ -184,5 +205,15 @@ pre {
 
   h1 {
     font-size: 2rem;
+  }
+
+  .home-intro {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .home-intro-photo {
+    grid-row: 1;
+    padding-top: 0;
   }
 }

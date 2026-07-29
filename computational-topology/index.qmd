@@ -1,12 +1,14 @@
 ---
-title: "Computational Algebraic Topology from Scratch"
-subtitle: "A constructive path from elementary topology to persistent homology"
+title: "Topological Data Analysis from Scratch"
+subtitle: "A computational algebraic topology route from metric spaces to persistent homology"
 toc: true
 ---
 
-These notes develop computational algebraic topology from first principles.
-They are intended for readers with some mathematical maturity, but no prior
-knowledge of topology.
+These notes develop the mathematical foundations of **topological data
+analysis (TDA)** through computational algebraic topology. Starting from
+distance and continuity, we build toward cubical homology, persistence,
+stability, and image-based applications. They are intended for readers with
+some mathematical maturity, but no prior knowledge of topology.
 
 The central idea is to turn geometric and topological questions into finite
 algebraic computations. In particular, we will study why
