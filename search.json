@@ -11,7 +11,7 @@
     "href": "index.html",
     "title": "RJ Nieto",
     "section": "",
-    "text": "This website contains my mathematical writing, computational topology notes, teaching materials, and curriculum vitae.\n\n\n\n Back to top"
+    "text": "Hi, I’m Rey Joseph “RJ” Nieto.\nI am a mathematician, university instructor, and communications professional. I hold a First Class Honours BSc in Mathematics from the University of Bristol in England and currently teach mathematics and information technology at Bulacan State University (BulSU) in the Philippines. Before returning to formal study, I worked across journalism, broadcasting, public affairs, technical writing, and government communications.\n\n\n\n\n\nThis website brings together the different strands of my academic and professional work.\n\nThe TDA section contains self-study notes adapted and expanded from my bachelor’s thesis on the computational stability of cubical homology in retinal imaging.\nThe Teaching section contains materials for Mathematics in the Modern World, which I teach at BulSU.\nThe CV section provides a fuller account of my academic and professional background.\n\nYou can also find me on:\n\nLinkedIn\nFacebook\nX\n\n\n\n\n Back to top"
   },
   {
     "objectID": "computational-topology/topological-spaces/index.html",
@@ -688,97 +688,97 @@
   {
     "objectID": "computational-topology/functoriality-triangulation/index.html",
     "href": "computational-topology/functoriality-triangulation/index.html",
-    "title": "Advanced: Functoriality and Triangulation",
+    "title": "Functoriality and Triangulation",
     "section": "",
     "text": "The earlier chapters describe a pipeline:\n\\[\n\\text{complex}\n\\longrightarrow\n\\text{chain complex}\n\\longrightarrow\n\\text{homology}.\n\\]\nCategory theory explains why this pipeline respects maps, compositions, and filtrations rather than merely assigning isolated outputs (Nanda 2023).",
     "crumbs": [
       "TDA",
       "Advanced",
-      "Advanced: Functoriality and Triangulation"
+      "Functoriality and Triangulation"
     ]
   },
   {
     "objectID": "computational-topology/functoriality-triangulation/index.html#categories-and-functors",
     "href": "computational-topology/functoriality-triangulation/index.html#categories-and-functors",
-    "title": "Advanced: Functoriality and Triangulation",
+    "title": "Functoriality and Triangulation",
     "section": "1 Categories and functors",
     "text": "1 Categories and functors\n\nDefinition 1 (Category and functor) A category \\(\\mathcal C\\) consists of:\n\na collection of objects;\nfor every pair \\(X,Y\\), a collection \\(\\mathcal C(X,Y)\\) of morphisms \\(f\\colon X\\to Y\\);\nassociative composition \\(\\mathcal C(X,Y)\\times\\mathcal C(Y,Z)\\to\\mathcal C(X,Z)\\); and\nan identity morphism \\(\\operatorname{id}_X\\) for every object, satisfying \\(f\\circ\\operatorname{id}_X=f=\\operatorname{id}_Y\\circ f\\).\n\nRelevant examples include:\n\n\\(\\mathbf{CubeCx}\\): cubical complexes and cubical maps;\n\\(\\mathbf{SimpCx}\\): simplicial complexes and simplicial maps;\n\\(\\mathbf{ChainCx}\\): chain complexes and chain maps;\n\\(\\mathbf{Vect}_{\\mathbb F_2}\\): vector spaces and linear maps.\n\nA functor \\(F\\colon\\mathcal C\\to\\mathcal D\\) maps objects to objects and morphisms to morphisms while preserving identities and composition:\n\\[\nF(\\operatorname{id}_X)=\\operatorname{id}_{F(X)},\n\\qquad\nF(g\\circ f)=F(g)\\circ F(f).\n\\]\n\n\n\n\nFunctoriality as path independence. One may compose (f) and (g) in the source and then apply (), or apply () to each map and compose in the target. Both routes end at the same morphism (xz).\n\n\nThe axioms formalise a simple discipline: objects cannot be studied in isolation from the maps between them. In computational topology, the maps are what track a feature from one threshold to the next.\nFor a familiar example, vector spaces form a category whose morphisms are linear maps. Composing morphisms is ordinary function composition, and the identity matrix represents the identity morphism. Category theory keeps only this pattern and permits the word “vector space” to be replaced by “complex,” “chain complex,” or “persistence module.”\n\n1.1 The poset category\nEvery partially ordered set \\((P,\\leq)\\) determines a category. Its objects are the elements of \\(P\\), and there is one morphism \\(p\\to q\\) exactly when \\(p\\leq q\\). Reflexivity supplies identities and transitivity supplies composition.\nThe filtration index set is such a category. A persistence module is equivalently a functor\n\\[\nV\\colon(\\mathbb N,\\leq)\\longrightarrow\\mathbf{Vect}_{\\mathbb F_2}.\n\\]\nThis viewpoint explains why all squares involving structure maps must commute: there is only one order morphism \\(i\\to j\\), so every factorisation of it must have the same image under the functor.",
     "crumbs": [
       "TDA",
       "Advanced",
-      "Advanced: Functoriality and Triangulation"
+      "Functoriality and Triangulation"
     ]
   },
   {
     "objectID": "computational-topology/functoriality-triangulation/index.html#the-chain-functor",
     "href": "computational-topology/functoriality-triangulation/index.html#the-chain-functor",
-    "title": "Advanced: Functoriality and Triangulation",
+    "title": "Functoriality and Triangulation",
     "section": "2 The chain functor",
     "text": "2 The chain functor\nA cellular map \\(f\\colon K\\to L\\) induces linear maps\n\\[\nC_k(f)\\colon C_k(K)\\to C_k(L).\n\\]\nTo be a chain map, these must commute with the boundary:\n\\[\n\\partial^L_k C_k(f)\n=\nC_{k-1}(f)\\partial^K_k.\n\\]\nThis commuting relation is not cosmetic: it is exactly what guarantees that cycles are sent to cycles and boundaries to boundaries.\n\nProposition 1 (Cubical chains form a functor) With coefficients in \\(\\mathbb F_2\\), a dimension-nonincreasing cubical map \\(f\\colon K\\to L\\) induces\n\\[\nC_k(f)(\\sigma)=\n\\begin{cases}\nf(\\sigma),&\\dim f(\\sigma)=k,\\\\\n0,&\\dim f(\\sigma)&lt;k,\n\\end{cases}\n\\]\non each basis \\(k\\)-cube \\(\\sigma\\), extended linearly. These maps form a chain map and define a functor\n\\[\nC_\\bullet\\colon\\mathbf{CubeCx}\\longrightarrow\\mathbf{ChainCx}.\n\\]\n\n\nThe boundary of a cube is the sum of its facets. Face preservation ensures that the non-degenerate images of those facets are precisely the facets of the image cube; facets collapsed by \\(f\\) contribute in cancelling pairs over \\(\\mathbb F_2\\). Hence \\(\\partial C_k(f)=C_{k-1}(f)\\partial\\) on basis cubes, and therefore on all chains by linearity. The identity map fixes every basis cube, while evaluation on a basis cube shows\n\\[\nC_\\bullet(g\\circ f)=C_\\bullet(g)\\circ C_\\bullet(f).\n\\]\nThus identities and compositions are preserved. A fully general treatment of cubical maps requires careful handling of degeneracies; the formula above records the mechanism used in the finite cubical setting (Kaczynski et al. 2006).\n\nThe two possible routes—map then take the boundary, or take the boundary then map—give the same result.\nThis equality is often drawn as a commuting square. “Commuting” means that starting with a \\(k\\)-chain in the upper-left corner and following either route produces exactly the same \\((k-1)\\)-chain. The diagrammatic language is only a compact way to assert equality of two compositions.\n\n\n\nThe chain-map square. Moving right by taking a boundary and then down by applying the induced map gives the same chain as moving down first and then taking the boundary.",
     "crumbs": [
       "TDA",
       "Advanced",
-      "Advanced: Functoriality and Triangulation"
+      "Functoriality and Triangulation"
     ]
   },
   {
     "objectID": "computational-topology/functoriality-triangulation/index.html#the-homology-functor",
     "href": "computational-topology/functoriality-triangulation/index.html#the-homology-functor",
-    "title": "Advanced: Functoriality and Triangulation",
+    "title": "Functoriality and Triangulation",
     "section": "3 The homology functor",
     "text": "3 The homology functor\n\nProposition 2 (A chain map induces a homology map) Let \\(f_\\bullet\\colon C_\\bullet\\to D_\\bullet\\) be a chain map. Then\n\\[\nH_k(f)\\colon H_k(C)\\to H_k(D),\n\\qquad\n[z]\\longmapsto[f_k(z)]\n\\]\nis a well-defined linear map.\n\n\nProof. If \\(z\\) is a cycle, then \\(\\partial f_k(z)=f_{k-1}(\\partial z)=0\\), so \\(f_k(z)\\) is a cycle. If \\(z-z'=\\partial c\\), then\n\\[\nf_k(z)-f_k(z')\n=f_k(\\partial c)\n=\\partial f_{k+1}(c),\n\\]\nso the images differ by a boundary and determine the same homology class. Thus the formula is independent of the representative. Linearity follows from linearity of \\(f_k\\).\n\nA chain map therefore sends cycles to cycles and boundaries to boundaries. It induces\n\\[\nH_k(f)\\colon H_k(K)\\to H_k(L),\n\\qquad\n[z]\\longmapsto[C_k(f)(z)].\n\\]\nThis assignment preserves identities and compositions, so \\(H_k\\) is a functor from complexes to vector spaces.\nFunctoriality is what lets an inclusion\n\\[\nK_s\\hookrightarrow K_t\n\\]\nproduce the linear map\n\\[\nH_k(K_s)\\to H_k(K_t)\n\\]\nused in a persistence module.",
     "crumbs": [
       "TDA",
       "Advanced",
-      "Advanced: Functoriality and Triangulation"
+      "Functoriality and Triangulation"
     ]
   },
   {
     "objectID": "computational-topology/functoriality-triangulation/index.html#cubes-to-simplices",
     "href": "computational-topology/functoriality-triangulation/index.html#cubes-to-simplices",
-    "title": "Advanced: Functoriality and Triangulation",
+    "title": "Functoriality and Triangulation",
     "section": "4 Cubes to simplices",
     "text": "4 Cubes to simplices\nThe Coxeter–Freudenthal–Kuhn triangulation splits an \\(n\\)-cube into \\(n!\\) simplices without introducing new vertices. In two dimensions, it divides a square into two triangles.\nFor the unit cube \\([0,1]^n\\), choose a permutation \\(\\pi\\) of \\(\\{1,\\ldots,n\\}\\). Starting from \\(v_0=0\\), define\n\\[\nv_k=\\sum_{j=1}^k e_{\\pi(j)},\\qquad 1\\leq k\\leq n,\n\\]\nwhere \\(e_i\\) is the \\(i\\)th coordinate vector. The simplex \\([v_0,\\ldots,v_n]\\) consists of points whose coordinates are ordered according to \\(\\pi\\). Equivalently, after fixing an ordering convention it is described by inequalities of the form\n\\[\n0\\leq x_{\\pi(n)}\\leq\\cdots\\leq x_{\\pi(1)}\\leq1.\n\\]\nThere are \\(n!\\) coordinate permutations and hence \\(n!\\) top-dimensional simplices. Their common faces agree across neighbouring cubes. This global consistency is what an arbitrary, independently chosen diagonal in each cube would fail to guarantee.\n\n\n\nThe two-dimensional triangulation map.\n\n\nFor one square, either diagonal would produce a triangulation. Across an image grid, however, the choices cannot be made independently: the subdivisions must agree wherever neighbouring cubes meet. The CFK convention supplies one coherent choice throughout the lattice.\n\n\n\nThe CFK rule applied across a (2) cubical grid. Every square receives the same diagonal convention, so adjacent cubes agree on their common edge and the individual subdivisions assemble into one simplicial complex.\n\n\n\nProposition 3 (Triangulation is a chain map) The triangulation map\n\\[\n\\mathbb T\\colon C_\\bullet^\\square(K)\n\\to\nC_\\bullet^\\triangle(K^\\triangle)\n\\]\ncommutes with boundary:\n\\[\n\\partial^\\triangle\\mathbb T\n=\n\\mathbb T\\partial^\\square.\n\\]\n\n\nLet a square have vertices \\(v_{00},v_{10},v_{01},v_{11}\\) and triangulate it along the diagonal \\([v_{00},v_{11}]\\). Then\n\\[\n\\mathbb T(\\kappa)\n=[v_{00},v_{10},v_{11}]+[v_{00},v_{01},v_{11}].\n\\]\nTaking the simplicial boundary produces the four outer edges and two copies of the diagonal. The diagonal cancels over \\(\\mathbb F_2\\), leaving precisely the triangulation of the four cubical boundary edges. Hence \\(\\partial^\\triangle\\mathbb T(\\kappa)=\\mathbb T\\partial^\\square(\\kappa)\\). The identity is immediate on vertices and edges and extends linearly.\nIn dimension \\(n\\), the Coxeter–Freudenthal–Kuhn triangulation indexes the \\(n!\\) simplices by coordinate permutations; internal facets occur in pairs and cancel, while boundary facets reproduce the triangulated cubical boundary (Kaczynski et al. 2006).\n\n\nTheorem 1 (Triangulation preserves homology) Consequently,\n\\[\nH_k^\\square(K)\\cong H_k^\\triangle(K^\\triangle).\n\\]\nTriangulation changes the cell decomposition without changing the underlying topological space.\n\n\nThe chain-map identity above gives maps on homology. The cubical complex and its CFK triangulation have the same geometric realisation, and the triangulation map has a chain-homotopy inverse obtained by grouping the simplices back into their parent cubes. Chain-homotopic composites induce the identity on homology, so the induced homology maps are isomorphisms.\n\n\nTheorem 2 (CFK triangulation is functorial) On cubical complexes and cubical maps that respect the lattice order, the assignments\n\\[\nK\\longmapsto K^\\triangle,\n\\qquad\nf\\longmapsto f^\\triangle\n\\]\ndefine a functor \\(\\mathbb T\\colon\\mathbf{CubeCx}\\to\\mathbf{SimpCx}\\).\n\n\nThe vertices of every CFK simplex form an inclusion chain in the coordinate order. An order-preserving cubical map sends such a chain to another chain, possibly with repeated vertices. Removing repetitions leaves a simplex of \\(L^\\triangle\\), so the vertex map extends to a simplicial map \\(f^\\triangle\\). The identity cubical map gives the identity vertex map. For composable maps \\(f\\) and \\(g\\), both \\((g\\circ f)^\\triangle\\) and \\(g^\\triangle\\circ f^\\triangle\\) agree on every vertex. A simplicial map is determined by its vertex values, so the two maps are equal. Thus identities and compositions are preserved.",
     "crumbs": [
       "TDA",
       "Advanced",
-      "Advanced: Functoriality and Triangulation"
+      "Functoriality and Triangulation"
     ]
   },
   {
     "objectID": "computational-topology/functoriality-triangulation/index.html#filtered-functors",
     "href": "computational-topology/functoriality-triangulation/index.html#filtered-functors",
-    "title": "Advanced: Functoriality and Triangulation",
+    "title": "Functoriality and Triangulation",
     "section": "5 Filtered functors",
     "text": "5 Filtered functors\nA filtered cubical complex is not only a sequence\n\\[\nK_0\\subseteq K_1\\subseteq\\cdots.\n\\]\nIt is a functor from its ordered index set to \\(\\mathbf{CubeCx}\\). A morphism between filtered complexes is a family of cubical maps \\(f_t\\colon K_t\\to L_t\\) satisfying\n\\[\nf_u\\circ\\iota^K_{t,u}\n=\n\\iota^L_{t,u}\\circ f_t\n\\qquad(t\\leq u).\n\\]\nThis equation says that mapping at threshold \\(t\\) and then including gives the same result as first including and then mapping at threshold \\(u\\).\nApplying triangulation, chains, and homology at every index gives functors\n\\[\n\\mathbf{CubeFilt}\n\\longrightarrow\n\\mathbf{SimpFilt}\n\\longrightarrow\n\\mathbf{ChainFilt}\n\\longrightarrow\n\\mathbf{PersMod}.\n\\]\nHere \\(\\mathbf{ChainFilt}\\) contains filtered chain complexes and compatible chain maps, while \\(\\mathbf{PersMod}\\) contains persistence modules and module morphisms. Their composition is the persistent-homology functor\n\\[\n\\operatorname{PH}_k\n=H_k^{\\mathrm{filt}}\\circ C_\\bullet^{\\mathrm{filt}}\n\\circ\\mathbb T^{\\mathrm{filt}}.\n\\]\nIt preserves every commuting square needed to follow a class through the entire filtration. This is the formal chain of custody from a pixel threshold to a persistent homology class.\n\n\n\nThe functorial pipeline in its static and filtered forms. The upper row sends an image-derived cubical complex through triangulation, chains, and ordinary homology. The lower row applies the same constructions throughout a filtration and ends in a persistence module.\n\n\nEach column is one mathematical representation of the same input. The dashed vertical arrows indicate the passage from a static object to its filtration-level counterpart; the horizontal arrows are the functors that carry structure from one representation to the next.",
     "crumbs": [
       "TDA",
       "Advanced",
-      "Advanced: Functoriality and Triangulation"
+      "Functoriality and Triangulation"
     ]
   },
   {
     "objectID": "computational-topology/functoriality-triangulation/index.html#functorial-stability",
     "href": "computational-topology/functoriality-triangulation/index.html#functorial-stability",
-    "title": "Advanced: Functoriality and Triangulation",
+    "title": "Functoriality and Triangulation",
     "section": "6 Functorial stability",
     "text": "6 Functorial stability\n\nTheorem 3 (Functorial route to algebraic stability) Suppose\n\\[\n\\lVert I-J\\rVert_\\infty\\leq k.\n\\]\nThen the associated persistence modules are \\(k\\)-interleaved, and their persistence diagrams satisfy\n\\[\nd_B\\bigl(\n\\operatorname{Dgm}(I),\n\\operatorname{Dgm}(J)\n\\bigr)\n\\leq k.\n\\]\n\n\nProof. For every cell \\(\\sigma\\), \\(I(\\sigma)\\leq J(\\sigma)+k\\) and \\(J(\\sigma)\\leq I(\\sigma)+k\\). Therefore\nThen the sublevel complexes satisfy shifted inclusions\n\\[\nK_t(I)\\subseteq K_{t+k}(J),\n\\qquad\nK_t(J)\\subseteq K_{t+k}(I).\n\\]\nDenote these inclusions by \\(\\alpha_t\\) and \\(\\beta_t\\). Inclusion maps compose transitively, so\n\\[\n\\beta_{t+k}\\circ\\alpha_t\n=\\iota^I_{t,t+2k},\n\\qquad\n\\alpha_{t+k}\\circ\\beta_t\n=\\iota^J_{t,t+2k}.\n\\]\nThe persistent-homology functor preserves compositions. Hence \\(\\operatorname{PH}_k(\\alpha_t)\\) and \\(\\operatorname{PH}_k(\\beta_t)\\) obey the same two equations in \\(\\mathbf{PersMod}\\) and constitute a \\(k\\)-interleaving. The algebraic isometry theorem identifies interleaving distance with bottleneck distance for the finite, pointwise finite-dimensional modules considered here. Consequently,\n\\[\nd_B\\bigl(\n\\operatorname{Dgm}(I),\n\\operatorname{Dgm}(J)\n\\bigr)\n\\leq k.\n\\]\n\nThe argument is powerful because each layer has one responsibility:\n\nthe intensity bound creates shifted inclusions;\nfunctoriality carries inclusions into algebra;\ninterleavings measure the shift; and\nthe isometry theorem converts it into diagram distance.",
     "crumbs": [
       "TDA",
       "Advanced",
-      "Advanced: Functoriality and Triangulation"
+      "Functoriality and Triangulation"
     ]
   },
   {
     "objectID": "computational-topology/functoriality-triangulation/index.html#why-keep-this-chapter-advanced",
     "href": "computational-topology/functoriality-triangulation/index.html#why-keep-this-chapter-advanced",
-    "title": "Advanced: Functoriality and Triangulation",
+    "title": "Functoriality and Triangulation",
     "section": "7 Why keep this chapter advanced?",
     "text": "7 Why keep this chapter advanced?\nCategories are not required to compute a boundary matrix or read a barcode. They become valuable when we want to prove that an entire multi-stage pipeline is coherent.\nFor a first reading, it is enough to retain the principle:\n\nStructure-preserving maps remain structure-preserving after passing from geometry to chains, homology, and persistence.\n\n\n\n\n\n\n\nTipWhat to carry forward\n\n\n\nFunctoriality is disciplined bookkeeping with mathematical force. It ensures that inclusions and transformations are not forgotten when geometry is converted into algebra. Triangulation then permits cubical image complexes to use results developed in the more flexible simplicial setting, without changing their homology.\n\n\nPrevious: Retinal Diagnostics Case Study · Course contents",
     "crumbs": [
       "TDA",
       "Advanced",
-      "Advanced: Functoriality and Triangulation"
+      "Functoriality and Triangulation"
     ]
   },
   {
@@ -1259,89 +1259,89 @@
   {
     "objectID": "computational-topology/index.html",
     "href": "computational-topology/index.html",
-    "title": "Computational Algebraic Topology from Scratch",
+    "title": "Topological Data Analysis from Scratch",
     "section": "",
-    "text": "These notes develop computational algebraic topology from first principles. They are intended for readers with some mathematical maturity, but no prior knowledge of topology.\nThe central idea is to turn geometric and topological questions into finite algebraic computations. In particular, we will study why\n\\[\n\\partial_k \\circ \\partial_{k+1}=0\n\\]\nand how this identity leads to homology groups, algorithms, filtrations, and persistent homology.",
+    "text": "These notes develop the mathematical foundations of topological data analysis (TDA) through computational algebraic topology. Starting from distance and continuity, we build toward cubical homology, persistence, stability, and image-based applications. They are intended for readers with some mathematical maturity, but no prior knowledge of topology.\nThe central idea is to turn geometric and topological questions into finite algebraic computations. In particular, we will study why\n\\[\n\\partial_k \\circ \\partial_{k+1}=0\n\\]\nand how this identity leads to homology groups, algorithms, filtrations, and persistent homology.",
     "crumbs": [
       "TDA",
-      "Computational Algebraic Topology from Scratch"
+      "Topological Data Analysis from Scratch"
     ]
   },
   {
     "objectID": "computational-topology/index.html#the-route-through-the-subject",
     "href": "computational-topology/index.html#the-route-through-the-subject",
-    "title": "Computational Algebraic Topology from Scratch",
+    "title": "Topological Data Analysis from Scratch",
     "section": "The route through the subject",
     "text": "The route through the subject\nThe course repeatedly moves through the same four levels:\n\\[\n\\text{distance and continuity}\n\\longrightarrow\n\\text{finite shapes}\n\\longrightarrow\n\\text{linear algebra}\n\\longrightarrow\n\\text{stable image descriptors}.\n\\]\nMetric and topological spaces provide the language of closeness and deformation. Graphs and cell complexes replace continuous shapes by finite objects. Linear algebra turns their boundaries into matrices. Persistent homology then follows the resulting features through an image filtration, while stability theory tells us how sensitive those features are to changes in the data.",
     "crumbs": [
       "TDA",
-      "Computational Algebraic Topology from Scratch"
+      "Topological Data Analysis from Scratch"
     ]
   },
   {
     "objectID": "computational-topology/index.html#why-turn-topology-into-vectors",
     "href": "computational-topology/index.html#why-turn-topology-into-vectors",
-    "title": "Computational Algebraic Topology from Scratch",
+    "title": "Topological Data Analysis from Scratch",
     "section": "Why turn topology into vectors?",
     "text": "Why turn topology into vectors?\nNeural networks and most other statistical learning methods ultimately operate on numerical inputs. A digital image is already a numerical array, and the usual neural-network architecture for image data is a convolutional neural network (CNN). A CNN repeatedly transforms pixel arrays into learned numerical features. We will not develop that machinery here.\nConvolutional networks are effective at learning local visual patterns and can, in principle, learn information related to shape and topology. Standard CNN architectures, however, do not explicitly represent connected components, loops, or voids, nor do they ordinarily guarantee that these quantities are preserved through their learned transformations. When those structures matter, it is useful to provide them to a learning system directly rather than require the network to rediscover them from pixels.\nThe pipeline developed in these notes therefore has the form\n\\[\n\\text{digital image}\n\\longrightarrow\n\\text{cubical filtration}\n\\longrightarrow\n\\text{persistence diagrams}\n\\longrightarrow\n\\text{topological vector}\n\\longrightarrow\n\\text{statistical or neural model}.\n\\]\nThe topological vector is a fixed-length numerical summary of components, loops, and their persistence across thresholds. It can be concatenated with ordinary image or geometric features, used as an interpretable auxiliary input, or studied independently with a simple classifier.\nProducing numbers is not enough: the conversion must also be stable. If two images differ only by a minute, physically insignificant perturbation, we would like their topological vectors to remain close. In schematic form, the desired guarantee is\n\\[\n\\text{small image change}\n\\quad\\Longrightarrow\\quad\n\\text{small topological-vector change}.\n\\]\nEstablishing when this implication holds—and identifying when sampling, interpolation, or an unstable vectorisation can break it—is one of the main purposes of the metric, persistence, and stability chapters.\n\n\n\n\n\n\nImportantAbout these notes\n\n\n\nThe contents of these notes are based on my BSc Mathematics thesis, Computational Stability of Cubical Homology: Orthogonal Controls for Fault Isolation in Retinal Diagnostics. A public version of the thesis is available in the reyjosephnieto/ph repository.\nI have adapted and reorganised the thesis into this developing set of notes so that I can expand the exposition gradually. A thesis has strict length constraints, which limited how fully I could motivate definitions, develop examples, and explain proofs. Here, I intend to fill those gaps and make the material accessible to readers whose mathematical background consists of basic calculus.\nThe presentation is organised as a course: definitions are introduced before they are used, proofs are separated from implementation, and the retinal application appears only after the necessary mathematical foundations.\n\n\n\n\n\n\n\n\nNoteProof-oriented presentation\n\n\n\nThese notes follow the convention of a typical undergraduate mathematics course: definitions fix the objects under discussion; lemmas isolate useful steps; propositions and theorems state the main conclusions; and proofs make the logical dependence explicit. Results proved in the thesis source are included here whenever they fit the level and scope of the chapter. A proof sketch is labelled as such when a complete proof requires machinery developed elsewhere.\n\n\n\n\n\n\n\n\nNoteWhy the development is cubical\n\n\n\nMany introductions to computational topology develop the subject primarily through simplicial complexes. This is the standard and more flexible language: simplices can model arbitrary meshes and combinatorial spaces without requiring an underlying rectangular grid.\nThese notes instead develop the main constructions first for cubical complexes. This is a deliberate choice motivated by the application. Digital images are already made of pixels, and volumetric images are made of voxels; these are naturally \\(2\\)- and \\(3\\)-dimensional cubes. A cubical model therefore preserves the native geometry and adjacency structure of the data, without first subdividing every pixel or voxel into simplices.\nThe two viewpoints are not competing theories. Cubical complexes can be triangulated, and the later chapter on functoriality and triangulation explains how the Coxeter–Freudenthal–Kuhn construction passes from cubes to simplices while preserving the relevant chain and homology structure. Thus the cubical development remains connected to the broader simplicial theory, while keeping the image-based motivation visible from the outset.\n\n\n\n\n\n\n\n\nNoteSources and attribution\n\n\n\nThe exposition and chapter sequence are my own adaptation of the thesis, but the mathematical development relies heavily on two principal sources:\n\nVidit Nanda’s Computational Algebraic Topology lecture notes (Nanda 2023); and\nKaczynski, Mischaikow, and Mrozek’s Computational Homology (Kaczynski et al. 2006).\n\nThe retinal case study uses the FIVES fundus-image dataset created by Jin and coauthors (Jin et al. 2022). These sources are cited throughout the notes where their definitions, results, or data are used. Figures adapted from external material are attributed individually; the remaining diagrams and experimental plots come from my thesis.",
     "crumbs": [
       "TDA",
-      "Computational Algebraic Topology from Scratch"
+      "Topological Data Analysis from Scratch"
     ]
   },
   {
     "objectID": "computational-topology/index.html#foundations",
     "href": "computational-topology/index.html#foundations",
-    "title": "Computational Algebraic Topology from Scratch",
+    "title": "Topological Data Analysis from Scratch",
     "section": "Foundations",
     "text": "Foundations\n\nMetric Spaces\nTopological Spaces and Continuity\nGraphs and Digital Images\nCubical and Simplicial Complexes\nLinear Algebra for Homology",
     "crumbs": [
       "TDA",
-      "Computational Algebraic Topology from Scratch"
+      "Topological Data Analysis from Scratch"
     ]
   },
   {
     "objectID": "computational-topology/index.html#homology-and-persistence",
     "href": "computational-topology/index.html#homology-and-persistence",
-    "title": "Computational Algebraic Topology from Scratch",
+    "title": "Topological Data Analysis from Scratch",
     "section": "Homology and persistence",
     "text": "Homology and persistence\n\nChains, Boundaries, and Homology\nComputing Homology\nFiltrations and Persistent Homology\nStability of Persistent Homology",
     "crumbs": [
       "TDA",
-      "Computational Algebraic Topology from Scratch"
+      "Topological Data Analysis from Scratch"
     ]
   },
   {
     "objectID": "computational-topology/index.html#research-application",
     "href": "computational-topology/index.html#research-application",
-    "title": "Computational Algebraic Topology from Scratch",
+    "title": "Topological Data Analysis from Scratch",
     "section": "Research application",
     "text": "Research application\n\nComputational Stability on Digital Images\nReliability Engineering with Complementary Probes\nCase Study: Retinal Diagnostics",
     "crumbs": [
       "TDA",
-      "Computational Algebraic Topology from Scratch"
+      "Topological Data Analysis from Scratch"
     ]
   },
   {
     "objectID": "computational-topology/index.html#advanced-material",
     "href": "computational-topology/index.html#advanced-material",
-    "title": "Computational Algebraic Topology from Scratch",
+    "title": "Topological Data Analysis from Scratch",
     "section": "Advanced material",
     "text": "Advanced material\n\nFunctoriality and Triangulation",
     "crumbs": [
       "TDA",
-      "Computational Algebraic Topology from Scratch"
+      "Topological Data Analysis from Scratch"
     ]
   },
   {
     "objectID": "computational-topology/index.html#status",
     "href": "computational-topology/index.html#status",
-    "title": "Computational Algebraic Topology from Scratch",
+    "title": "Topological Data Analysis from Scratch",
     "section": "Status",
     "text": "Status\nThe first complete draft is now available. These are living notes: notation, examples, proofs, exercises, and implementations will continue to be revised.\nFor corrections or requests for errata, please email rj (at) rjnieto (dot) com.",
     "crumbs": [
       "TDA",
-      "Computational Algebraic Topology from Scratch"
+      "Topological Data Analysis from Scratch"
     ]
   },
   {
@@ -1697,14 +1697,14 @@
     "href": "cv/index.html",
     "title": "Curriculum Vitae",
     "section": "",
-    "text": "Academic email: zo23232 (at) alumni.bristol.ac.uk\nPersonal email: rj (at) rjnieto (dot) com\nLinkedIn: linkedin.com/in/reyjosephnieto"
+    "text": "Academic email: zo23232 (at) alumni.bristol.ac.uk\nPersonal email: rj (at) rjnieto (dot) com\nLinkedIn: linkedin.com/in/reyjosephnieto\nFacebook: facebook.com/rjosephnieto\nX / Twitter: x.com/rjosephnieto"
   },
   {
     "objectID": "cv/index.html#contact",
     "href": "cv/index.html#contact",
     "title": "Curriculum Vitae",
     "section": "",
-    "text": "Academic email: zo23232 (at) alumni.bristol.ac.uk\nPersonal email: rj (at) rjnieto (dot) com\nLinkedIn: linkedin.com/in/reyjosephnieto"
+    "text": "Academic email: zo23232 (at) alumni.bristol.ac.uk\nPersonal email: rj (at) rjnieto (dot) com\nLinkedIn: linkedin.com/in/reyjosephnieto\nFacebook: facebook.com/rjosephnieto\nX / Twitter: x.com/rjosephnieto"
   },
   {
     "objectID": "cv/index.html#profile",
@@ -1718,7 +1718,7 @@
     "href": "cv/index.html#experience",
     "title": "Curriculum Vitae",
     "section": "Experience",
-    "text": "Experience\n\nInstructor (Mathematics and Information Technology)\nBulacan State University, San Rafael Campus 2026–Present\nContract of Service appointment delivering undergraduate mathematics and information-technology instruction.\n\n\nMathematical Programming Demonstrator\nUniversity of Bristol 2025–2026\nSupported second-year mathematics students in computational problem-solving, numerical methods, debugging, and Python programming. Helped students translate mathematical ideas into working computational implementations.\n\n\nTelevision Host\nPeople’s Television Network 2024\nHosted the PTV-4 Pre-SONA Special with RJ Nieto, interviewing Cabinet officials regarding government programmes, policy implementation, and departmental performance.\n\n\nColumnist\nManila Bulletin 2019–2023\nWrote the weekly public-interest column Thinking Pinoy, covering government, politics, public policy, and socioeconomic affairs.\n\n\nFounder and Editor-in-Chief\nThinking Pinoy 2015–2023\nFounded and managed a digital public-affairs platform with more than two million followers across its social-media channels. Directed editorial work and produced commentary on governance, economic policy, foreign affairs, and national political developments.\n\n\nBroadcast Journalist\nSMNI News 2020–2022\nHosted a weekday current-affairs programme featuring policy analysis and interviews with government officials, public figures, and subject-matter specialists.\n\n\nRadio Programme Co-host\nAliw Broadcasting Corporation 2017–2020\nProvided political and public-policy analysis on Karambola, a daily current-affairs programme broadcast on DWIZ 882 AM.\n\n\nHead of Strategic Communications (Content)\nDepartment of Foreign Affairs, Office of the Undersecretary for Migrant Workers’ Affairs 2017\nDeveloped content and digital communication materials for the Department’s outreach to overseas Filipino workers. Helped present government policies, programmes, and consular information in accessible formats and supported engagement with the Filipino diaspora.\n\n\nNews Reporter\nSun.Star Davao 2009–2010\nConducted field reporting and interviews and wrote daily news and feature stories on government, community affairs, and other matters of public interest."
+    "text": "Experience\n\nInstructor (Mathematics and Information Technology)\nBulacan State University 2026–Present\nContract of Service appointment delivering undergraduate mathematics and information-technology instruction.\n\n\nMathematical Programming Demonstrator\nUniversity of Bristol 2025–2026\nSupported second-year mathematics students in computational problem-solving, numerical methods, debugging, and Python programming. Helped students translate mathematical ideas into working computational implementations.\n\n\nTelevision Host\nPeople’s Television Network 2024\nHosted the PTV-4 Pre-SONA Special with RJ Nieto, interviewing Cabinet officials regarding government programmes, policy implementation, and departmental performance.\n\n\nColumnist\nManila Bulletin 2019–2023\nWrote the weekly public-interest column Thinking Pinoy, covering government, politics, public policy, and socioeconomic affairs.\n\n\nFounder and Editor-in-Chief\nThinking Pinoy 2015–2023\nFounded and managed a digital public-affairs platform with more than two million followers across its social-media channels. Directed editorial work and produced commentary on governance, economic policy, foreign affairs, and national political developments.\n\n\nBroadcast Journalist\nSMNI News 2020–2022\nHosted a weekday current-affairs programme featuring policy analysis and interviews with government officials, public figures, and subject-matter specialists.\n\n\nRadio Programme Co-host\nAliw Broadcasting Corporation 2017–2020\nProvided political and public-policy analysis on Karambola, a daily current-affairs programme broadcast on DWIZ 882 AM.\n\n\nHead of Strategic Communications (Content)\nDepartment of Foreign Affairs, Office of the Undersecretary for Migrant Workers’ Affairs 2017\nDeveloped content and digital communication materials for the Department’s outreach to overseas Filipino workers. Helped present government policies, programmes, and consular information in accessible formats and supported engagement with the Filipino diaspora.\n\n\nNews Reporter\nSun.Star Davao 2009–2010\nConducted field reporting and interviews and wrote daily news and feature stories on government, community affairs, and other matters of public interest."
   },
   {
     "objectID": "cv/index.html#selected-public-service-and-professional-engagements",
