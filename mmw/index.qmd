@@ -1,0 +1,17 @@
+---
+title: "Mathematics in the Modern World"
+toc: false
+page-navigation: false
+header-includes: |
+  <link rel="canonical" href="https://rjnieto.com/teaching/bulsu/math-modern-world/">
+  <meta http-equiv="refresh" content="0; url=/teaching/bulsu/math-modern-world/">
+---
+
+```{=html}
+<script>
+  window.location.replace("/teaching/bulsu/math-modern-world/");
+</script>
+```
+
+You are being redirected to
+[Mathematics in the Modern World](/teaching/bulsu/math-modern-world/).

@@ -1,0 +1,22 @@
+---
+title: "Teaching"
+subtitle: "Lecture notes and course materials"
+toc: false
+---
+
+This section contains course materials that I prepare for my university
+teaching. The notes are intended to support classroom instruction and
+independent review.
+
+## Courses
+
+### [Mathematics in the Modern World](bulsu/math-modern-world/index.qmd)
+
+Lecture notes, examples, exercises, and supplementary materials for
+*Mathematics in the Modern World* at Bulacan State University.
+
+[Open the course notes](bulsu/math-modern-world/index.qmd){.btn .btn-outline-primary}
+
+These are personal teaching materials. Unless expressly stated otherwise,
+they should not be treated as official publications or policies of Bulacan
+State University.
