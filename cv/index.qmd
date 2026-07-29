@@ -1,58 +1,205 @@
 ---
 title: "Curriculum Vitae"
-subtitle: "RJ Nieto"
+subtitle: "Rey Joseph Nieto"
 toc: true
+toc-depth: 2
 ---
-
-A downloadable PDF version will be added to this page.
-
-## Education
-
-### University of Bristol
-
-**BSc Mathematics, First Class Honours**, 2023–2026
-
-- Final-year project: *Computational Stability of Cubical Homology:
-  Orthogonal Controls for Fault Isolation in Retinal Diagnostics*
-- Project mark: 90%
-- Selected areas: algebra, combinatorics, optimisation, statistical machine
-  learning, logic, probability, and computational topology
-
-## Research interests
-
-- Computational algebraic topology
-- Persistent homology
-- Networks and graph theory
-- Mathematical optimisation
-- Machine learning for small-data and high-oversight settings
-
-## Teaching experience
-
-### University of Bristol
-
-**Mathematical Programming Demonstrator**
-
-Supported undergraduate students with mathematical programming, numerical
-methods, optimisation, and Python.
-
-## Selected project
-
-### Computational topology for retinal diagnostics
-
-Studied the computational stability of cubical and simplicial persistent
-homology applied to retinal-image analysis.
-
-## Technical skills
-
-- Python
-- LaTeX
-- Git
-- PyTorch
-- GUDHI
-- NetworkX
-- OpenCV
-- scikit-image
 
 ## Contact
 
-Contact details and a downloadable CV will be added here.
+- **Academic email:** zo23232 (at) alumni.bristol.ac.uk
+- **Personal email:** rj (at) rjnieto (dot) com
+- **LinkedIn:** [linkedin.com/in/reyjosephnieto](https://www.linkedin.com/in/reyjosephnieto/)
+
+## Profile
+
+Communications and media professional with experience in public affairs,
+journalism, technical writing, broadcasting, and digital media. Previous work
+includes a communications role with the Department of Foreign Affairs' Office
+of the Undersecretary for Migrant Workers' Affairs, editorial and broadcast
+work, and the coordination of a public-service initiative during the COVID-19
+pandemic.
+
+Also holds a First Class Honours degree in Mathematics from the University of
+Bristol. Academic work covered statistical machine learning, artificial neural
+networks, mathematical programming, and computational topology. The final-year
+project examined the computational stability of topological methods for
+retinal images using mathematical analysis, Python, and machine-learning
+experiments.
+
+## Experience
+
+### Instructor (Mathematics and Information Technology)
+
+**Bulacan State University, San Rafael Campus**<br>
+2026–Present
+
+Contract of Service appointment delivering undergraduate mathematics and
+information-technology instruction.
+
+### Mathematical Programming Demonstrator
+
+**University of Bristol**<br>
+2025–2026
+
+Supported second-year mathematics students in computational problem-solving,
+numerical methods, debugging, and Python programming. Helped students translate
+mathematical ideas into working computational implementations.
+
+### Television Host
+
+**People's Television Network**<br>
+2024
+
+Hosted the *PTV-4 Pre-SONA Special with RJ Nieto*, interviewing Cabinet
+officials regarding government programmes, policy implementation, and
+departmental performance.
+
+### Columnist
+
+**Manila Bulletin**<br>
+2019–2023
+
+Wrote the weekly public-interest column *Thinking Pinoy*, covering government,
+politics, public policy, and socioeconomic affairs.
+
+### Founder and Editor-in-Chief
+
+**Thinking Pinoy**<br>
+2015–2023
+
+Founded and managed a digital public-affairs platform with more than two
+million followers across its social-media channels. Directed editorial work
+and produced commentary on governance, economic policy, foreign affairs, and
+national political developments.
+
+### Broadcast Journalist
+
+**SMNI News**<br>
+2020–2022
+
+Hosted a weekday current-affairs programme featuring policy analysis and
+interviews with government officials, public figures, and subject-matter
+specialists.
+
+### Radio Programme Co-host
+
+**Aliw Broadcasting Corporation**<br>
+2017–2020
+
+Provided political and public-policy analysis on *Karambola*, a daily
+current-affairs programme broadcast on DWIZ 882 AM.
+
+### Head of Strategic Communications (Content)
+
+**Department of Foreign Affairs, Office of the Undersecretary for Migrant Workers' Affairs**<br>
+2017
+
+Developed content and digital communication materials for the Department's
+outreach to overseas Filipino workers. Helped present government policies,
+programmes, and consular information in accessible formats and supported
+engagement with the Filipino diaspora.
+
+### News Reporter
+
+**Sun.Star Davao**<br>
+2009–2010
+
+Conducted field reporting and interviews and wrote daily news and feature
+stories on government, community affairs, and other matters of public
+interest.
+
+## Selected public service and professional engagements
+
+### Project Lead
+
+**PPEniTP Initiative**<br>
+2020–2021
+
+Coordinated a civic initiative that distributed more than PHP 25 million worth
+of personal protective equipment to over 100 public and private hospitals
+during the COVID-19 pandemic. Worked with donors, partner organisations,
+beneficiary institutions, and distribution teams.
+
+### Guest Lecturer
+
+**San Miguel Corporation Campus ED**<br>
+2021
+
+Delivered lecture-workshops on digital research for multimedia platforms to
+journalism and communication students at universities in Bulacan.
+
+### Guest Speaker
+
+**Armed Forces of the Philippines**<br>
+2020
+
+Delivered training to Media and Civil Affairs Group personnel on digital
+communications, social-media engagement, crisis messaging, community
+relations, and responsible public communication.
+
+### Guest Speaker
+
+**AboitizPower**<br>
+2017
+
+Presented digital communication and audience-engagement strategies to the
+company's marketing and communications personnel.
+
+## Other professional experience
+
+### Proposal Writer
+
+**Ability with Innovation LLC, Dubai, UAE**<br>
+2012–2015
+
+Prepared technical and commercial proposals for government, supranational, and
+energy-sector clients. Edited colleagues' work, helped train new members of the
+proposal team, coordinated input from subject-matter specialists, and supported
+regulatory compliance.
+
+### Freelance Technical Writer and Editor
+
+**oDesk and other platforms**<br>
+2010–2015
+
+Completed research, technical writing, editing, and digital-content assignments
+for more than 30 clients in North America, Europe, and Australia.
+
+## Education
+
+### BSc Mathematics
+
+**University of Bristol, United Kingdom**<br>
+2026 · First Class Honours
+
+Final-year project: *Computational Stability of Cubical Homology: Orthogonal
+Controls for Fault Isolation in Retinal Diagnostics*. Combined mathematical
+exposition, Python experiments, medical imaging, topological data analysis, and
+machine-learning classification.
+
+[View the public thesis repository](https://github.com/reyjosephnieto/ph).
+
+### Foundation Certificate
+
+**Kaplan International College London, United Kingdom**<br>
+2023 · Pass with Distinction
+
+## Areas of experience
+
+- Government and strategic communications, public affairs, policy
+  communication, and stakeholder engagement
+- Interviewing, public speaking, broadcasting, crisis communication, and
+  digital communications
+- Editorial work, research, technical writing, proposal development, and team
+  training
+- Programme coordination, audience engagement, and public-service project
+  implementation
+- Quantitative and statistical analysis, mathematical modelling, Python, R,
+  LaTeX, and machine learning
+
+## Additional information
+
+- **Nationality:** Filipino
+- **Languages:** English (fluent), Tagalog (fluent), Cebuano (elementary), and
+  German (elementary)

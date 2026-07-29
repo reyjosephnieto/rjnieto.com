@@ -1,5 +1,9 @@
 project:
   type: website
+  render:
+    - "*.qmd"
+    - "**/*.qmd"
+    - "!source-material/**"
 
 website:
   title: "RJ Nieto"
@@ -11,15 +15,42 @@ website:
     left:
       - href: index.qmd
         text: Home
-      - href: math-blog/index.qmd
-        text: Math Blog
       - href: computational-topology/index.qmd
-        text: Computational Topology
+        text: TDA
       - href: teaching/index.qmd
         text: Teaching
       - href: cv/index.qmd
         text: CV
 
+  sidebar:
+    title: "Computational Topology"
+    style: docked
+    contents:
+      - computational-topology/index.qmd
+      - section: "Foundations"
+        contents:
+          - computational-topology/metric-spaces/index.qmd
+          - computational-topology/topological-spaces/index.qmd
+          - computational-topology/graphs-digital-images/index.qmd
+          - computational-topology/complexes/index.qmd
+          - computational-topology/linear-algebra/index.qmd
+      - section: "Homology and persistence"
+        contents:
+          - computational-topology/homology/index.qmd
+          - computational-topology/computing-homology/index.qmd
+          - computational-topology/persistent-homology/index.qmd
+          - computational-topology/stability/index.qmd
+      - section: "Research application"
+        contents:
+          - computational-topology/computational-stability/index.qmd
+          - computational-topology/reliability-engineering/index.qmd
+          - computational-topology/retinal-case-study/index.qmd
+      - section: "Advanced"
+        contents:
+          - computational-topology/functoriality-triangulation/index.qmd
+
+  page-navigation: true
+  back-to-top-navigation: true
   search: true
 
   page-footer:
@@ -38,3 +69,5 @@ format:
 
 execute:
   freeze: auto
+
+bibliography: computational-topology/references.bib

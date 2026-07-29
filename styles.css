@@ -1,5 +1,5 @@
 /* css styles */
-/* Academic-journal styling for rjnieto.com */
+/* Academic-journal styling for the personal website */
 
 :root {
   --ink: #252422;
@@ -107,6 +107,58 @@ pre {
 .math.display {
   margin: 1.75rem 0;
   overflow-x: auto;
+}
+
+/* Proof-oriented mathematical exposition */
+.theorem,
+.lemma,
+.proposition,
+.corollary,
+.definition {
+  margin: 1.6rem 0;
+  padding: 1rem 1.15rem;
+  background: #f8f6f1;
+  border-left: 4px solid var(--accent);
+  border-radius: 2px;
+}
+
+.example,
+.remark {
+  margin: 1.4rem 0;
+  padding: 0.85rem 1.05rem;
+  background: #fff;
+  border: 1px solid var(--rule);
+  border-radius: 2px;
+}
+
+.proof,
+.proof-sketch {
+  margin: 1.25rem 0 1.75rem;
+  padding-left: 1.15rem;
+  border-left: 2px solid var(--rule);
+}
+
+.proof::after {
+  content: "\25A1";
+  float: right;
+  color: var(--muted-ink);
+}
+
+.proof-sketch::before {
+  content: "Proof sketch. ";
+  font-style: italic;
+}
+
+.theorem p:last-child,
+.lemma p:last-child,
+.proposition p:last-child,
+.corollary p:last-child,
+.definition p:last-child,
+.example p:last-child,
+.remark p:last-child,
+.proof p:last-child,
+.proof-sketch p:last-child {
+  margin-bottom: 0;
 }
 
 .sidebar,
