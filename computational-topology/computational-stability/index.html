@@ -377,24 +377,24 @@ window.Quarto = {
 
 
 <p>The algebraic stability theorem controls topology by <span class="math inline">\(\lVert I-J\rVert_\infty\)</span>. In digital imaging, the crucial question is how a physical acquisition error produces that intensity difference.</p>
-<p>This chapter develops the thesis’s <strong>Aim-and-Shoot</strong> model: first the image is spatially aligned with the sensor, then its intensity is measured.</p>
+<p>The thesis models acquisition in two stages, called <strong>Aim-and-Shoot</strong>: the image is first aligned spatially with the sensor, after which its intensity is measured.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="../assets/aim-and-shoot.png" class="img-fluid figure-img" style="width:55.0%" alt="An eye is spatially aligned with a camera before capture."></p>
 <figcaption>The Aim-and-Shoot abstraction: align the scene, then capture its intensity.</figcaption>
 </figure>
 </div>
-<div class="callout callout-style-default callout-note callout-titled" title="What this chapter adds">
+<div class="callout callout-style-default callout-note callout-titled" title="From theorem to acquisition model">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>What this chapter adds
+<span class="screen-reader-only">Note</span>From theorem to acquisition model
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>The preceding stability theorem starts with the number <span class="math inline">\(\|I-I_{\mathrm{obs}}\|_\infty\)</span>. It does not explain where that number comes from. This chapter opens the acquisition pipeline and bounds it using three quantities:</p>
+<p>The preceding stability theorem starts with the number <span class="math inline">\(\|I-I_{\mathrm{obs}}\|_\infty\)</span>. It does not explain where that number comes from. The acquisition model bounds it using three quantities:</p>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 33%">

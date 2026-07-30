@@ -700,7 +700,7 @@ B_\varepsilon(x)\subseteq U.
 <p>Let <span class="math inline">\(\{U_\alpha\}_{\alpha\in A}\)</span> be open and let <span class="math inline">\(x\in\bigcup_{\alpha\in A}U_\alpha\)</span>. Choose <span class="math inline">\(\alpha_0\)</span> with <span class="math inline">\(x\in U_{\alpha_0}\)</span>. Some ball <span class="math inline">\(B_\varepsilon(x)\)</span> lies in <span class="math inline">\(U_{\alpha_0}\)</span> and hence in the union. Thus arbitrary unions are open.</p>
 <p>Finally, let <span class="math inline">\(x\in U_1\cap\cdots\cap U_n\)</span>, where every <span class="math inline">\(U_i\)</span> is open. Choose <span class="math inline">\(\varepsilon_i&gt;0\)</span> with <span class="math inline">\(B_{\varepsilon_i}(x)\subseteq U_i\)</span> and put <span class="math inline">\(\varepsilon=\min_i\varepsilon_i\)</span>. Then <span class="math inline">\(B_\varepsilon(x)\subseteq\bigcap_iU_i\)</span>. Therefore finite intersections are open.</p>
 </div>
-<p>Topology remembers which sets are open but forgets the numerical distances that produced them. This is our first move from geometry toward topology: exact measurements become less important than the qualitative structure of neighbourhoods.</p>
+<p>Topology remembers which sets are open but forgets the numerical distances that produced them. This is our first move from geometry towards topology: exact measurements become less important than the qualitative structure of neighbourhoods.</p>
 <p>Different metrics can induce the same topology. For example, <span class="math inline">\(d_1\)</span>, <span class="math inline">\(d_2\)</span>, and <span class="math inline">\(d_\infty\)</span> all determine the usual topology on <span class="math inline">\(\mathbb{R}^n\)</span>. They disagree about exact distances and the shapes of balls, but agree about which subsets are open. The norm inequalities above allow a sufficiently small ball for one metric to be placed inside a ball for another.</p>
 </section>
 <section id="convergence-and-continuity" class="level2" data-number="6">
@@ -819,7 +819,7 @@ d_\infty(f,g)
 \]</span></p>
 <p>The <strong>supremum</strong> is the smallest number that is at least as large as every value <span class="math inline">\(|f(x)-g(x)|\)</span>. It is needed when <span class="math inline">\(X\)</span> is infinite and a largest value might not actually be attained. On a finite image grid, no subtlety remains: the supremum is simply the largest entry in the difference image.</p>
 <p>This is a metric on <span class="math inline">\(\mathcal B(X,\mathbb R)\)</span>. Boundedness ensures that the distance is finite. If <span class="math inline">\(X\)</span> is a finite pixel grid, the supremum is simply a maximum, so the distance between two equally sized images is the largest pointwise intensity difference.</p>
-<p>For example, consider two <span class="math inline">\(2\times2\)</span> grayscale images:</p>
+<p>For example, consider two <span class="math inline">\(2\times2\)</span> greyscale images:</p>
 <p><span class="math display">\[
 f=
 \begin{pmatrix}
@@ -890,7 +890,7 @@ d_B\bigl(\operatorname{Dgm}(f),\operatorname{Dgm}(g)\bigr)
 <li>Describe <span class="math inline">\(B_1(0)\)</span> in <span class="math inline">\(\mathbb{R}\)</span> with the usual metric. How does it differ from <span class="math inline">\(\overline B_1(0)\)</span>?</li>
 <li>Let <span class="math inline">\(X=\{a,b,c\}\)</span> have the discrete metric. List every open ball of radius <span class="math inline">\(1/2\)</span> and every open ball of radius <span class="math inline">\(2\)</span>.</li>
 <li>Prove that every singleton is open in a discrete metric space.</li>
-<li>Suppose two grayscale images have intensities in <span class="math inline">\([0,255]\)</span>. What is the largest possible supremum distance between them?</li>
+<li>Suppose two greyscale images have intensities in <span class="math inline">\([0,255]\)</span>. What is the largest possible supremum distance between them?</li>
 <li>Prove that every isometry is Lipschitz and therefore continuous.</li>
 <li>For bounded functions <span class="math inline">\(f,g,h\colon X\to\mathbb R\)</span>, prove the triangle inequality <span class="math inline">\(\lVert f-h\rVert_\infty\leq
 \lVert f-g\rVert_\infty+\lVert g-h\rVert_\infty\)</span>.</li>

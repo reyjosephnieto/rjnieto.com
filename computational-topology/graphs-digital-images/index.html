@@ -394,7 +394,7 @@ window.Quarto = {
 </div>
 <div class="callout-body-container callout-body">
 <p>The previous chapter used paths <span class="math inline">\(\gamma\colon[0,1]\to X\)</span> to define continuous connectivity. A computer image contains only finitely many sample locations, so we replace a continuous path by a finite sequence of adjacent pixels. This is the same conceptual question—“can one location be reached from another?”—in a representation a computer can enumerate.</p>
-<p>This chapter uses graphs to settle adjacency and thresholding first. It then explains why graphs alone are insufficient for holes and why pixels must be promoted to filled squares in a cubical complex.</p>
+<p>Graphs settle adjacency and thresholding, but they do not by themselves distinguish a filled cycle from a hole. That distinction requires pixels to be treated as filled squares in a cubical complex.</p>
 </div>
 </div>
 <section id="graphs" class="level2" data-number="1">
@@ -429,7 +429,7 @@ v_0,v_1,\ldots,v_m
 <p><span class="math display">\[
 \Omega\subset\mathbb Z^2
 \]</span></p>
-<p>be a finite set of pixel coordinates. A grayscale digital image is a pair <span class="math inline">\((\Omega,I)\)</span>, where</p>
+<p>be a finite set of pixel coordinates. A greyscale digital image is a pair <span class="math inline">\((\Omega,I)\)</span>, where</p>
 <p><span class="math display">\[
 I\colon\Omega\to\mathbb R
 \]</span></p>
