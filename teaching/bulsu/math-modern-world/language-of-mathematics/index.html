@@ -1,0 +1,1725 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.10.18">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>The Language of Mathematics – RJ Nieto</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../../">
+<script src="../../../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../../site_libs/bootstrap/bootstrap-805e789c7b7f260b48d5cafdd348845c.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../../../../styles.css">
+</head>
+
+<body class="nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../../../index.html">
+    <span class="navbar-title">RJ Nieto</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../../../index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../../computational-topology/index.html"> 
+<span class="menu-text">TDA</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../../teaching/index.html"> 
+<span class="menu-text">Teaching</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../../cv/index.html"> 
+<span class="menu-text">CV</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#expressions-and-sentences" id="toc-expressions-and-sentences" class="nav-link active" data-scroll-target="#expressions-and-sentences">Expressions and sentences</a></li>
+  <li><a href="#reading-and-writing-mathematical-symbols" id="toc-reading-and-writing-mathematical-symbols" class="nav-link" data-scroll-target="#reading-and-writing-mathematical-symbols">Reading and writing mathematical symbols</a>
+  <ul class="collapse">
+  <li><a href="#translating-between-words-and-symbols" id="toc-translating-between-words-and-symbols" class="nav-link" data-scroll-target="#translating-between-words-and-symbols">Translating between words and symbols</a></li>
+  </ul></li>
+  <li><a href="#conventions-in-mathematical-language" id="toc-conventions-in-mathematical-language" class="nav-link" data-scroll-target="#conventions-in-mathematical-language">Conventions in mathematical language</a>
+  <ul class="collapse">
+  <li><a href="#order-of-operations" id="toc-order-of-operations" class="nav-link" data-scroll-target="#order-of-operations">Order of operations</a></li>
+  <li><a href="#other-common-conventions" id="toc-other-common-conventions" class="nav-link" data-scroll-target="#other-common-conventions">Other common conventions</a></li>
+  </ul></li>
+  <li><a href="#four-basic-concepts" id="toc-four-basic-concepts" class="nav-link" data-scroll-target="#four-basic-concepts">Four basic concepts</a>
+  <ul class="collapse">
+  <li><a href="#sets" id="toc-sets" class="nav-link" data-scroll-target="#sets">Sets</a></li>
+  <li><a href="#ordered-pairs-and-cartesian-products" id="toc-ordered-pairs-and-cartesian-products" class="nav-link" data-scroll-target="#ordered-pairs-and-cartesian-products">Ordered pairs and Cartesian products</a></li>
+  <li><a href="#relations" id="toc-relations" class="nav-link" data-scroll-target="#relations">Relations</a></li>
+  <li><a href="#functions" id="toc-functions" class="nav-link" data-scroll-target="#functions">Functions</a></li>
+  <li><a href="#binary-operations" id="toc-binary-operations" class="nav-link" data-scroll-target="#binary-operations">Binary operations</a></li>
+  </ul></li>
+  <li><a href="#elementary-logic" id="toc-elementary-logic" class="nav-link" data-scroll-target="#elementary-logic">Elementary logic</a>
+  <ul class="collapse">
+  <li><a href="#logical-connectives" id="toc-logical-connectives" class="nav-link" data-scroll-target="#logical-connectives">Logical connectives</a></li>
+  <li><a href="#quantifiers" id="toc-quantifiers" class="nav-link" data-scroll-target="#quantifiers">Quantifiers</a></li>
+  </ul></li>
+  <li><a href="#formality-in-mathematical-language" id="toc-formality-in-mathematical-language" class="nav-link" data-scroll-target="#formality-in-mathematical-language">Formality in mathematical language</a></li>
+  <li><a href="#check-your-understanding" id="toc-check-your-understanding" class="nav-link" data-scroll-target="#check-your-understanding">Check your understanding</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">The Language of Mathematics</h1>
+<p class="subtitle lead">Mathematical Language and Symbols</p>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>Mathematics can appear daunting because it is often presented using unfamiliar symbols. To a new reader, a line of notation may look like a sentence written in an alien language. Mathematical symbols, however, are not intended to hide ideas. They allow us to express ideas that would otherwise require many words.</p>
+<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/YtERoY3nVl8" title="Video introducing the language of mathematics" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
+<p>Like every language, mathematics has vocabulary, grammar, and conventions. Its vocabulary consists of symbols and specialised terms. Its grammar tells us which arrangements of symbols are meaningful. Its conventions allow different readers to interpret the same notation consistently.</p>
+<p>Mathematical language is especially valued because it is:</p>
+<ul>
+<li><strong>precise:</strong> it allows distinctions that ordinary language may leave ambiguous;</li>
+<li><strong>concise:</strong> it can communicate an idea using relatively few symbols; and</li>
+<li><strong>powerful:</strong> it can describe complicated structures and relationships in a form that can be analysed logically.</li>
+</ul>
+<p>These advantages do not mean that mathematical writing should consist only of symbols. Good mathematical communication combines notation with clear prose. The symbols compress the ideas; the surrounding words tell the reader what those ideas mean and why they matter.</p>
+<div class="callout callout-style-default callout-note callout-titled" title="Learning outcomes">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Learning outcomes
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>After completing this chapter, you should be able to:</p>
+<ul>
+<li>distinguish mathematical expressions, open sentences, and closed sentences;</li>
+<li>translate elementary statements between words and symbols;</li>
+<li>use common mathematical symbols and conventions correctly;</li>
+<li>apply the order-of-operations convention without treating PEMDAS mechanically;</li>
+<li>explain the elementary meanings of sets, relations, functions, and binary operations;</li>
+<li>interpret elementary logical connectives and quantifiers;</li>
+<li>distinguish a statement from its converse and its negation;</li>
+<li>explain how formality reduces ambiguity in mathematical communication; and</li>
+<li>recognise examples of these concepts in Biology and everyday life.</li>
+</ul>
+</div>
+</div>
+<section id="expressions-and-sentences" class="level2">
+<h2 class="anchored" data-anchor-id="expressions-and-sentences">Expressions and sentences</h2>
+<p>The distinction between an <strong>expression</strong> and a <strong>sentence</strong> is similar to the distinction between a noun phrase and a complete sentence in English.</p>
+<div class="callout callout-style-default callout-note callout-titled" title="Definition: mathematical expression">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Definition: mathematical expression
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A <strong>mathematical expression</strong> is a well-formed arrangement of symbols that represents a mathematical object, value, or quantity. An expression does not, by itself, make a claim that can be judged true or false.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled" title="Definition: mathematical sentence">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Definition: mathematical sentence
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A <strong>mathematical sentence</strong> is a well-formed arrangement of symbols that makes a mathematical assertion. A <strong>closed sentence</strong>, also called a <strong>proposition</strong>, has a definite truth value: it is either true or false.</p>
+</div>
+</div>
+<p>An assertion whose truth depends on an unspecified variable is commonly called an <strong>open sentence</strong>. Assigning the variable a value—or binding it with a phrase such as “for every” or “there exists”—can turn it into a closed sentence.</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="Examples: expressions and sentences">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Examples: expressions and sentences
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Notation</th>
+<th>Classification</th>
+<th>Reason</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(b^2-4ac\)</span></td>
+<td>expression</td>
+<td>represents the discriminant of <span class="math inline">\(ax^2+bx+c\)</span> but makes no assertion</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(m/V\)</span></td>
+<td>expression</td>
+<td>may represent density but makes no assertion</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(x+1=2\)</span></td>
+<td>open sentence</td>
+<td>true only for particular values of <span class="math inline">\(x\)</span></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(1+1=2\)</span></td>
+<td>true closed sentence</td>
+<td>has a definite truth value</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(1+1=3\)</span></td>
+<td>false closed sentence</td>
+<td>has a definite truth value</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\forall x\in\mathbb R,\ x^2\geq0\)</span></td>
+<td>true closed sentence</td>
+<td>the variable is bound by “for every”</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p>Sentences often join expressions using relations such as <span class="math inline">\(=,\neq,&lt;,\leq,\)</span> and <span class="math inline">\(\in\)</span>. The equality sign in <span class="math inline">\(1+1=2\)</span>, for example, asserts that the expressions on its two sides represent the same number.</p>
+</section>
+<section id="reading-and-writing-mathematical-symbols" class="level2">
+<h2 class="anchored" data-anchor-id="reading-and-writing-mathematical-symbols">Reading and writing mathematical symbols</h2>
+<p>Symbols should be read as meaningful words or phrases, not as decorative marks. The following are some common examples.</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Symbolic form</th>
+<th>One way to read it</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(x+y\)</span></td>
+<td>the sum of <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(x-y\)</span></td>
+<td>the difference between <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(xy\)</span></td>
+<td>the product of <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\dfrac{x}{y}\)</span></td>
+<td><span class="math inline">\(x\)</span> divided by <span class="math inline">\(y\)</span></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(x=y\)</span></td>
+<td><span class="math inline">\(x\)</span> is equal to <span class="math inline">\(y\)</span></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(x\neq y\)</span></td>
+<td><span class="math inline">\(x\)</span> is not equal to <span class="math inline">\(y\)</span></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(x&lt;y\)</span></td>
+<td><span class="math inline">\(x\)</span> is less than <span class="math inline">\(y\)</span></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(x\leq y\)</span></td>
+<td><span class="math inline">\(x\)</span> is less than or equal to <span class="math inline">\(y\)</span></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(x\in A\)</span></td>
+<td><span class="math inline">\(x\)</span> is an element of <span class="math inline">\(A\)</span></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(A\subseteq B\)</span></td>
+<td><span class="math inline">\(A\)</span> is a subset of <span class="math inline">\(B\)</span></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(\forall x\)</span></td>
+<td>for every <span class="math inline">\(x\)</span></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\exists x\)</span></td>
+<td>there exists an <span class="math inline">\(x\)</span></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(P\Rightarrow Q\)</span></td>
+<td>if <span class="math inline">\(P\)</span> is true, then <span class="math inline">\(Q\)</span> is true</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(P\Leftrightarrow Q\)</span></td>
+<td><span class="math inline">\(P\)</span> is true if and only if <span class="math inline">\(Q\)</span> is true</td>
+</tr>
+</tbody>
+</table>
+<section id="translating-between-words-and-symbols" class="level3">
+<h3 class="anchored" data-anchor-id="translating-between-words-and-symbols">Translating between words and symbols</h3>
+<div class="callout callout-style-default callout-tip callout-titled" title="Example: translating a temperature condition">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Example: translating a temperature condition
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Consider the sentence:</p>
+<blockquote class="blockquote">
+<p>The body temperature <span class="math inline">\(T\)</span> is at least <span class="math inline">\(38^\circ\text{C}\)</span>.</p>
+</blockquote>
+<p>The phrase <strong>at least</strong> includes <span class="math inline">\(38\)</span>, so it can be written as</p>
+<p><span class="math display">\[
+T\geq38.
+\]</span></p>
+<p>The notation <span class="math inline">\(T\geq38\)</span> illustrates the three qualities introduced at the beginning of this chapter:</p>
+<ul>
+<li>It is <strong>concise</strong> because it expresses the condition on body temperature using only a few symbols.</li>
+<li>It is <strong>precise</strong> once we have established that <span class="math inline">\(T\)</span> denotes temperature measured in degrees Celsius and that <span class="math inline">\(\geq\)</span> means “is greater than or equal to.” By contrast, “the body temperature is greater than <span class="math inline">\(38^\circ\text{C}\)</span>” becomes <span class="math inline">\(T&gt;38\)</span>; removing the small bar excludes a temperature of exactly <span class="math inline">\(38^\circ\text{C}\)</span>.</li>
+<li>It is <strong>powerful</strong> because it places the English sentence in a form that can readily be incorporated into calculations, compared with other inequalities, or manipulated using the rules of algebra.</li>
+</ul>
+</div>
+</div>
+<details>
+<summary>
+<strong>Additional translation examples</strong>
+</summary>
+<p>Here are further examples.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Words</th>
+<th>Symbols</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(x\)</span> is positive</td>
+<td><span class="math inline">\(x&gt;0\)</span></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(n\)</span> is no more than 20</td>
+<td><span class="math inline">\(n\leq20\)</span></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(p\)</span> is between 0 and 1, inclusive</td>
+<td><span class="math inline">\(0\leq p\leq1\)</span></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(x\)</span> belongs to the set <span class="math inline">\(A\)</span></td>
+<td><span class="math inline">\(x\in A\)</span></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> have no common elements</td>
+<td><span class="math inline">\(A\cap B=\varnothing\)</span></td>
+</tr>
+<tr class="even">
+<td>there is a real number whose square is 4</td>
+<td><span class="math inline">\(\exists x\in\mathbb R\colon x^2=4\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>Translation requires attention to meaning rather than word substitution. For example, “less than” reverses the order in which quantities may appear: “five less than <span class="math inline">\(x\)</span>” is <span class="math inline">\(x-5\)</span>, not <span class="math inline">\(5-x\)</span>.</p>
+</details>
+</section>
+</section>
+<section id="conventions-in-mathematical-language" class="level2">
+<h2 class="anchored" data-anchor-id="conventions-in-mathematical-language">Conventions in mathematical language</h2>
+<p>Mathematical conventions are agreed ways of writing and interpreting mathematics. Without them, two readers could assign different meanings to the same line of notation.</p>
+<section id="order-of-operations" class="level3">
+<h3 class="anchored" data-anchor-id="order-of-operations">Order of operations</h3>
+<p>One familiar convention is the order of operations, often remembered using <strong>PEMDAS</strong>:</p>
+<ol type="1">
+<li>parentheses;</li>
+<li>exponents;</li>
+<li>multiplication and division; and</li>
+<li>addition and subtraction.</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled" title="Example: applying the order of operations">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Example: applying the order of operations
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><span class="math display">\[
+\begin{aligned}
+1+2-3(4+5)
+  &amp;=1+2-3(9) &amp;&amp;\text{parentheses}\\
+  &amp;=1+2-27   &amp;&amp;\text{multiplication}\\
+  &amp;=3-27     &amp;&amp;\text{addition from left to right}\\
+  &amp;=-24.     &amp;&amp;\text{subtraction}
+\end{aligned}
+\]</span></p>
+<p>If we ignored the convention and performed the subtraction before the multiplication, we would obtain a different result.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-warning callout-titled" title="PEMDAS is not simply a six-step ladder">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Warning</span>PEMDAS is not simply a six-step ladder
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Multiplication and division have the <strong>same</strong> precedence and are evaluated from left to right. Addition and subtraction also have the same precedence and are evaluated from left to right.</p>
+<p>Thus,</p>
+<p><span class="math display">\[
+18\div3\times2=6\times2=12,
+\]</span></p>
+<p>not <span class="math inline">\(3\)</span>. The letters M and D in PEMDAS do not mean that every multiplication must be performed before every division.</p>
+</div>
+</div>
+</section>
+<section id="other-common-conventions" class="level3">
+<h3 class="anchored" data-anchor-id="other-common-conventions">Other common conventions</h3>
+<ul>
+<li>If <span class="math inline">\(n\)</span> is a positive integer, then <span class="math inline">\(x^n=\underbrace{x\cdot x\cdots x}_{n\text{ factors}}\)</span>.</li>
+<li>Symbols written next to one another usually indicate multiplication: <span class="math inline">\(3x=3\cdot x\)</span> and <span class="math inline">\(ab=a\cdot b\)</span>.</li>
+<li>A fraction bar groups the entire numerator and denominator: <span class="math inline">\(\dfrac{a+b}{c+d}\)</span> means <span class="math inline">\((a+b)\div(c+d)\)</span>.</li>
+<li>Parentheses can change the object to which an operation applies: <span class="math inline">\(-3^2=-(3^2)=-9\)</span>, whereas <span class="math inline">\((-3)^2=9\)</span>.</li>
+<li>The notation <span class="math inline">\(f(x)\)</span> usually means the value of the function <span class="math inline">\(f\)</span> at <span class="math inline">\(x\)</span>; it does not ordinarily mean <span class="math inline">\(f\)</span> multiplied by <span class="math inline">\(x\)</span>.</li>
+<li>The equality sign expresses sameness of value. Every expression in a chain such as <span class="math inline">\(a=b=c\)</span> must represent the same object.</li>
+<li>The approximation sign <span class="math inline">\(\approx\)</span> should be used when quantities are close but not exactly equal. For example, <span class="math inline">\(\pi\approx3.14\)</span>, not <span class="math inline">\(\pi=3.14\)</span>.</li>
+</ul>
+<p>Conventions are not laws of nature. They are shared agreements that make mathematical communication efficient and consistent.</p>
+</section>
+</section>
+<section id="four-basic-concepts" class="level2">
+<h2 class="anchored" data-anchor-id="four-basic-concepts">Four basic concepts</h2>
+<p>Four ideas appear repeatedly across mathematics: <strong>sets</strong>, <strong>relations</strong>, <strong>functions</strong>, and <strong>binary operations</strong>. They provide a useful vocabulary for describing collections of objects and the ways those objects are connected or combined.</p>
+<section id="sets" class="level3">
+<h3 class="anchored" data-anchor-id="sets">Sets</h3>
+<div class="callout callout-style-default callout-note callout-titled" title="Definition: set">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Definition: set
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>For the purposes of this course, a <strong>set</strong> is a well-defined collection of distinct objects. The objects belonging to the set are called its <strong>elements</strong>.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled" title="Example: set notation">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Example: set notation
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Sets are usually denoted by capital letters and their elements by lowercase letters. If</p>
+<p><span class="math display">\[
+A=\{\text{adenine},\text{cytosine},\text{guanine},\text{thymine}\},
+\]</span></p>
+<p>then <span class="math inline">\(\text{adenine}\in A\)</span>, meaning that adenine is an element of <span class="math inline">\(A\)</span>.</p>
+<p>Repeated elements are not counted more than once, and the order in which elements are listed does not matter:</p>
+<p><span class="math display">\[
+\{1,2,2,3\}=\{3,2,1\}=\{1,2,3\}.
+\]</span></p>
+</div>
+</div>
+<p>If every element of <span class="math inline">\(A\)</span> is also an element of <span class="math inline">\(B\)</span>, we write <span class="math inline">\(A\subseteq B\)</span> and say that <span class="math inline">\(A\)</span> is a <strong>subset</strong> of <span class="math inline">\(B\)</span>. The set with no elements is the <strong>empty set</strong>, denoted by <span class="math inline">\(\varnothing\)</span>.</p>
+<p>Important operations on sets include</p>
+<p><span class="math display">\[
+A\cup B \quad\text{(union)},\qquad
+A\cap B \quad\text{(intersection)}.
+\]</span></p>
+<p>The union contains elements that belong to <span class="math inline">\(A\)</span>, to <span class="math inline">\(B\)</span>, or to both. The intersection contains only the elements common to both sets.</p>
+<details>
+<summary>
+<strong>Why this is called a naïve definition — non-examinable</strong>
+</summary>
+<p>The definition above belongs to <strong>naïve set theory</strong> and is sufficient for this course. In more advanced mathematics, allowing absolutely any verbal description to define a set creates contradictions.</p>
+<p>Russell’s paradox considers the supposed set</p>
+<p><span class="math display">\[
+R=\{X:X\notin X\},
+\]</span></p>
+<p>the collection of all sets that are not elements of themselves. If <span class="math inline">\(R\in R\)</span>, then its defining property says <span class="math inline">\(R\notin R\)</span>. But if <span class="math inline">\(R\notin R\)</span>, then it satisfies the defining property and therefore <span class="math inline">\(R\in R\)</span>. Modern axiomatic set theory carefully restricts how sets may be constructed to avoid this contradiction. For now, treat this as an interesting piece of mathematical trivia: the foundations of axiomatic set theory lie well beyond the scope of this course.</p>
+</details>
+</section>
+<section id="ordered-pairs-and-cartesian-products" class="level3">
+<h3 class="anchored" data-anchor-id="ordered-pairs-and-cartesian-products">Ordered pairs and Cartesian products</h3>
+<div class="callout callout-style-default callout-tip callout-titled" title="Example: ordered pairs and the Cartesian plane">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Example: ordered pairs and the Cartesian plane
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>An <strong>ordered pair</strong> <span class="math inline">\((a,b)\)</span> records both its entries and their order. In general, <span class="math inline">\((a,b)\neq(b,a)\)</span>. The <strong>Cartesian product</strong></p>
+<p><span class="math display">\[
+A\times B=\{(a,b):a\in A\text{ and }b\in B\}.
+\]</span></p>
+<p>is simply the set of all possible pairs with <span class="math inline">\(a\in A\)</span> and <span class="math inline">\(b\in B\)</span>. The familiar Cartesian plane is</p>
+<p><span class="math display">\[
+\mathbb R\times\mathbb R=\mathbb R^2.
+\]</span></p>
+<p>Each point <span class="math inline">\((x,y)\)</span> represents one element: <span class="math inline">\(x\)</span> gives its horizontal position and <span class="math inline">\(y\)</span> its vertical position.</p>
+</div>
+</div>
+</section>
+<section id="relations" class="level3">
+<h3 class="anchored" data-anchor-id="relations">Relations</h3>
+<div class="callout callout-style-default callout-note callout-titled" title="Definition: relation">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Definition: relation
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A <strong>relation from <span class="math inline">\(A\)</span> to <span class="math inline">\(B\)</span></strong> is a subset of <span class="math inline">\(A\times B\)</span>. It records which elements of <span class="math inline">\(A\)</span> are related to which elements of <span class="math inline">\(B\)</span>.</p>
+</div>
+</div>
+<p>Relations may also be defined on a single set. In an ecological network, for example, “preys upon” is a relation on a set of species.</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="Example: a relation as a dietary model">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Example: a relation as a dietary model
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Let</p>
+<p><span class="math display">\[
+A=\{\text{dog},\text{wolf},\text{hyena}\},
+\qquad
+B=\{\text{carnivore},\text{herbivore}\}.
+\]</span></p>
+<p>In a deliberately simplified model, allow the two dietary labels to overlap. The resulting relation might be</p>
+<p><span class="math display">\[
+R=
+\{
+(\text{dog},\text{carnivore}),
+(\text{dog},\text{herbivore}),
+(\text{wolf},\text{carnivore}),
+(\text{hyena},\text{carnivore})
+\}.
+\]</span></p>
+<p>The dog has two outputs, so <span class="math inline">\(R\)</span> is not a function from <span class="math inline">\(A\)</span> to <span class="math inline">\(B\)</span>. To remove that ambiguity, introduce the mutually exclusive category “omnivore”:</p>
+<p><span class="math display">\[
+B'=\{\text{carnivore},\text{herbivore},\text{omnivore}\}.
+\]</span></p>
+<p>Define <span class="math inline">\(f\colon A\to B'\)</span> by</p>
+<p><span class="math display">\[
+f(\text{dog})=\text{omnivore},\qquad
+f(\text{wolf})=\text{carnivore},\qquad
+f(\text{hyena})=\text{carnivore}.
+\]</span></p>
+<p>The revised rule assigns every animal exactly one output and is therefore a function. It is clearer for this task, although actual diets remain more complicated. As Chapter 1 emphasised, models should be refined when their simplifications become misleading.</p>
+</div>
+</div>
+</section>
+<section id="functions" class="level3">
+<h3 class="anchored" data-anchor-id="functions">Functions</h3>
+<div class="callout callout-style-default callout-note callout-titled" title="Definition: function">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Definition: function
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A <strong>function</strong> <span class="math inline">\(f\)</span> from a set <span class="math inline">\(A\)</span> to a set <span class="math inline">\(B\)</span>, written <span class="math inline">\(f\colon A\to B\)</span>, is a relation that assigns <strong>every</strong> element of <span class="math inline">\(A\)</span> to <strong>exactly one</strong> element of <span class="math inline">\(B\)</span>.</p>
+</div>
+</div>
+<p>The set <span class="math inline">\(A\)</span> is the <strong>domain</strong>, and <span class="math inline">\(B\)</span> is the <strong>codomain</strong>. The set of outputs that the function actually produces is its <strong>range</strong>, which is a subset of the codomain.</p>
+<p>The phrase “exactly one” is essential. Different inputs may have the same output, but one input cannot be assigned two different outputs by the same function.</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="Example: DNA base pairing as a function">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Example: DNA base pairing as a function
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Let</p>
+<p><span class="math display">\[
+D=\{A,C,G,T\}
+\]</span></p>
+<p>be the set of DNA bases, where <span class="math inline">\(A\)</span> denotes <strong>adenine</strong>, <span class="math inline">\(C\)</span> denotes <strong>cytosine</strong>, <span class="math inline">\(G\)</span> denotes <strong>guanine</strong>, and <span class="math inline">\(T\)</span> denotes <strong>thymine</strong>. These four bases form part of the familiar double-helix structure shown below.</p>
+<div id="fig-dna-double-helix" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-dna-double-helix-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/dna-double-helix.jpg" class="img-fluid figure-img" style="width:80.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-dna-double-helix-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: An illustration of the DNA double helix. Image: <a href="https://imb.uq.edu.au/dna-rna-genes-and-genomics-%E2%80%93-whats-difference">Institute for Molecular Bioscience, The University of Queensland</a>.
+</figcaption>
+</figure>
+</div>
+<p>You may recall from high-school Biology that the two strands of DNA are held together by specific complementary base pairing: adenine pairs with thymine, while cytosine pairs with guanine. This pairing rule defines a function <span class="math inline">\(f\colon D\to D\)</span> by</p>
+<p><span class="math display">\[
+f(A)=T,\qquad f(T)=A,\qquad f(C)=G,\qquad f(G)=C.
+\]</span></p>
+<p>Every input base has exactly one complementary base, so this rule is a function.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-warning callout-titled" title="A common incomplete definition">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Warning</span>A common incomplete definition
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>It is not enough to say only that a function never assigns two different outputs to the same input. A function <span class="math inline">\(f\colon A\to B\)</span> must also assign an output to <strong>every</strong> element of its stated domain <span class="math inline">\(A\)</span>.</p>
+</div>
+</div>
+</section>
+<section id="binary-operations" class="level3">
+<h3 class="anchored" data-anchor-id="binary-operations">Binary operations</h3>
+<div class="callout callout-style-default callout-note callout-titled" title="Definition: binary operation">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Definition: binary operation
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A <strong>binary operation</strong> on a set <span class="math inline">\(A\)</span> is a function</p>
+<p><span class="math display">\[
+\star\colon A\times A\to A.
+\]</span></p>
+<p>It takes two elements of <span class="math inline">\(A\)</span>, combines them according to a rule, and produces another element of <span class="math inline">\(A\)</span>.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled" title="Examples: binary operations and closure">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Examples: binary operations and closure
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Ordinary addition is a binary operation on the integers because the sum of any two integers is another integer:</p>
+<p><span class="math display">\[
++\colon\mathbb Z\times\mathbb Z\to\mathbb Z.
+\]</span></p>
+<p>Union is a binary operation on a collection of sets because the union of two sets is again a set in that collection, provided the collection has been chosen appropriately.</p>
+<p>The choice of the underlying set matters. Subtraction is not a binary operation on the positive integers because, for example, <span class="math inline">\(2-3=-1\)</span> is not a positive integer. Division is not a binary operation on all real numbers because division by zero is undefined.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled" title="Example: a custom binary operation">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Example: a custom binary operation
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The symbol used for an operation acquires its meaning from its definition. It need not represent one of the familiar operations. For example, define a new operation <span class="math inline">\(\star\)</span> on the real numbers by</p>
+<p><span class="math display">\[
+a\star b=a+2b.
+\]</span></p>
+<p>We then calculate by applying the stated rule:</p>
+<p><span class="math display">\[
+3\star4=3+2(4)=11.
+\]</span></p>
+</div>
+</div>
+<details>
+<summary>
+<strong>Further example: associativity — non-examinable</strong>
+</summary>
+<p>Nested operations must be evaluated carefully:</p>
+<p><span class="math display">\[
+(3\star4)\star2=11\star2=11+2(2)=15,
+\]</span></p>
+<p>whereas</p>
+<p><span class="math display">\[
+3\star(4\star2)=3\star8=3+2(8)=19.
+\]</span></p>
+<p>Thus, this particular operation is not associative. The example demonstrates why we must read the definition of an unfamiliar symbol rather than assume that it behaves like ordinary addition or multiplication.</p>
+</details>
+</section>
+</section>
+<section id="elementary-logic" class="level2">
+<h2 class="anchored" data-anchor-id="elementary-logic">Elementary logic</h2>
+<p>Mathematical language is governed not only by conventions but also by <strong>logic</strong>, the study of correct reasoning. Logic helps us combine statements and determine what conclusions follow from them.</p>
+<div class="callout callout-style-default callout-note callout-titled" title="Scope of this section">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Scope of this section
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The intention here is to give you a working familiarity with elementary logic, not to provide a full course in symbolic or mathematical logic. You should learn to read the basic logical connectives and quantifiers, interpret simple logical statements, complete a basic two-variable truth table, and distinguish a conditional statement from its converse.</p>
+<p>Complicated truth tables involving many nested statements, formal proofs of logical equivalence, and more advanced systems of logic lie beyond the scope of this course unless explicitly stated otherwise.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled" title="Definition: proposition">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Definition: proposition
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A <strong>proposition</strong> is a closed sentence that is either true or false. It cannot be both true and false under the same interpretation.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled" title="Example: proposition versus non-proposition">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Example: proposition versus non-proposition
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>“A dog is a mammal” is a proposition. The expression <span class="math inline">\(x+1\)</span> is not a proposition because it makes no assertion, while the open sentence <span class="math inline">\(x+1=2\)</span> does not have a definite truth value until <span class="math inline">\(x\)</span> is specified or quantified.</p>
+</div>
+</div>
+<section id="logical-connectives" class="level3">
+<h3 class="anchored" data-anchor-id="logical-connectives">Logical connectives</h3>
+<p>Simple propositions can be joined to form compound propositions. Let <span class="math inline">\(P\)</span> and <span class="math inline">\(Q\)</span> denote propositions.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Symbol</th>
+<th>Name</th>
+<th>Reading</th>
+<th>When it is true</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(\neg P\)</span></td>
+<td>negation</td>
+<td>not <span class="math inline">\(P\)</span></td>
+<td>when <span class="math inline">\(P\)</span> is false</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(P\land Q\)</span></td>
+<td>conjunction</td>
+<td><span class="math inline">\(P\)</span> and <span class="math inline">\(Q\)</span></td>
+<td>when both are true</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(P\lor Q\)</span></td>
+<td>disjunction</td>
+<td><span class="math inline">\(P\)</span> or <span class="math inline">\(Q\)</span></td>
+<td>when at least one is true</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(P\Rightarrow Q\)</span></td>
+<td>conditional</td>
+<td>if <span class="math inline">\(P\)</span>, then <span class="math inline">\(Q\)</span></td>
+<td>except when <span class="math inline">\(P\)</span> is true and <span class="math inline">\(Q\)</span> is false</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(P\Leftrightarrow Q\)</span></td>
+<td>biconditional</td>
+<td><span class="math inline">\(P\)</span> if and only if <span class="math inline">\(Q\)</span></td>
+<td>when <span class="math inline">\(P\)</span> and <span class="math inline">\(Q\)</span> have the same truth value</td>
+</tr>
+</tbody>
+</table>
+<p>In mathematics, <strong>or</strong> is normally inclusive: <span class="math inline">\(P\lor Q\)</span> is true when <span class="math inline">\(P\)</span> is true, when <span class="math inline">\(Q\)</span> is true, or when both are true.</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="Example: a truth table for the logical connectives">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Example: a truth table for the logical connectives
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A <strong>truth table</strong> displays the truth value of a compound proposition for every possible combination of truth values of its parts.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 14%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><span class="math inline">\(P\)</span></th>
+<th><span class="math inline">\(Q\)</span></th>
+<th><span class="math inline">\(\neg P\)</span></th>
+<th><span class="math inline">\(P\land Q\)</span></th>
+<th><span class="math inline">\(P\lor Q\)</span></th>
+<th><span class="math inline">\(P\Rightarrow Q\)</span></th>
+<th><span class="math inline">\(P\Leftrightarrow Q\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>T</td>
+<td>T</td>
+<td>F</td>
+<td>T</td>
+<td>T</td>
+<td>T</td>
+<td>T</td>
+</tr>
+<tr class="even">
+<td>T</td>
+<td>F</td>
+<td>F</td>
+<td>F</td>
+<td>T</td>
+<td>F</td>
+<td>F</td>
+</tr>
+<tr class="odd">
+<td>F</td>
+<td>T</td>
+<td>T</td>
+<td>F</td>
+<td>T</td>
+<td>T</td>
+<td>F</td>
+</tr>
+<tr class="even">
+<td>F</td>
+<td>F</td>
+<td>T</td>
+<td>F</td>
+<td>F</td>
+<td>T</td>
+<td>T</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled" title="Example: a conditional and its converse">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Example: a conditional and its converse
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The conditional deserves particular attention. Let</p>
+<ul>
+<li><span class="math inline">\(P\)</span> mean “the organism is a dog”; and</li>
+<li><span class="math inline">\(Q\)</span> mean “the organism is a mammal.”</li>
+</ul>
+<p>Then <span class="math inline">\(P\Rightarrow Q\)</span> says, “If the organism is a dog, then it is a mammal.” Under the usual biological classification, this is true. Its <strong>converse</strong> is <span class="math inline">\(Q\Rightarrow P\)</span>: “If the organism is a mammal, then it is a dog.” The converse is false because many mammals are not dogs.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-warning callout-titled" title="Implication is not causation">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Warning</span>Implication is not causation
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The notation <span class="math inline">\(P\Rightarrow Q\)</span> means that whenever <span class="math inline">\(P\)</span> is true, <span class="math inline">\(Q\)</span> must also be true. It does not by itself say that <span class="math inline">\(P\)</span> physically causes <span class="math inline">\(Q\)</span>, nor does it say that the converse <span class="math inline">\(Q\Rightarrow P\)</span> is true.</p>
+</div>
+</div>
+</section>
+<section id="quantifiers" class="level3">
+<h3 class="anchored" data-anchor-id="quantifiers">Quantifiers</h3>
+<p>Quantifiers tell us how many elements satisfy an open sentence.</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Symbol</th>
+<th>Reading</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(\forall\)</span></td>
+<td>for every, or for all</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\exists\)</span></td>
+<td>there exists at least one</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(\exists!\)</span></td>
+<td>there exists exactly one</td>
+</tr>
+</tbody>
+</table>
+<div class="callout callout-style-default callout-tip callout-titled" title="Example: quantifying DNA base pairing">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Example: quantifying DNA base pairing
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The DNA complementary-base function satisfies</p>
+<p><span class="math display">\[
+\forall x\in D,\qquad f(f(x))=x.
+\]</span></p>
+<p>This says that, for every DNA base <span class="math inline">\(x\)</span> in <span class="math inline">\(D\)</span>, taking the complement twice returns the original base.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled" title="Example: why the domain matters">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Example: why the domain matters
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The domain of a quantifier matters. The sentence</p>
+<p><span class="math display">\[
+\forall x\in\mathbb Z,\quad
+\exists y\in\mathbb Z\text{ such that }x+y=0
+\]</span></p>
+<p>is true. Given any integer <span class="math inline">\(x\)</span>, we may choose <span class="math inline">\(y=-x\)</span>, which is also an integer. The number <span class="math inline">\(y\)</span> is called the <strong>additive inverse</strong> of <span class="math inline">\(x\)</span>.</p>
+<p>By contrast, the sentence</p>
+<p><span class="math display">\[
+\forall x\in\mathbb N,\quad
+\exists y\in\mathbb N\text{ such that }x+y=0
+\]</span></p>
+<p>is false when <span class="math inline">\(\mathbb N\)</span> denotes the natural or counting numbers. For example, if <span class="math inline">\(x=1\)</span>, the only real number satisfying <span class="math inline">\(1+y=0\)</span> is <span class="math inline">\(y=-1\)</span>, and <span class="math inline">\(-1\notin\mathbb N\)</span>. The same equation therefore produces different truth values when the permitted domain changes.</p>
+</div>
+</div>
+<details>
+<summary>
+<strong>Biological extension: classification depends on the domain — non-examinable</strong>
+</summary>
+<p>The same issue arises in biological classification. Consider the traditional five-kingdom model, and let <span class="math inline">\(\mathcal L\)</span> be the set of living cellular organisms covered by that model. Let</p>
+<p><span class="math display">\[
+\mathcal K=
+\{
+\text{Monera},
+\text{Protista},
+\text{Fungi},
+\text{Plantae},
+\text{Animalia}
+\},
+\]</span></p>
+<p>where each kingdom is itself regarded as a set of organisms. We can express the claim that every organism receives a kingdom classification as</p>
+<p><span class="math display">\[
+\forall x\in\mathcal L,\quad
+\exists Y\in\mathcal K\text{ such that }x\in Y.
+\]</span></p>
+<p>Now suppose we broaden the domain to a set <span class="math inline">\(\mathcal G\)</span> containing all biological entities that possess a genome, while leaving <span class="math inline">\(\mathcal K\)</span> unchanged. The corresponding claim</p>
+<p><span class="math display">\[
+\forall x\in\mathcal G,\quad
+\exists Y\in\mathcal K\text{ such that }x\in Y
+\]</span></p>
+<p>is false because the enlarged domain includes viruses, which are not assigned to any of the five kingdoms. The varicella-zoster virus—the virus that causes chickenpox and shingles—is one counterexample: it has a <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC4066823/">double-stranded DNA genome</a>, but it does not belong to Monera, Protista, Fungi, Plantae, or Animalia. Defining the domain as “entities possessing a genome” also avoids requiring us to settle the separate and contested question of whether viruses should be called living.</p>
+<p>This is another example of a mathematical model revealing its limits. The quantified statement may be true for the domain the classification was built to describe and false after that domain is enlarged.</p>
+</details>
+<div class="callout callout-style-default callout-tip callout-titled" title="Example: negating quantified statements">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Example: negating quantified statements
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Negating a quantified statement also changes its quantifier:</p>
+<p><span class="math display">\[
+\neg(\forall x,\ P(x))
+\quad\Longleftrightarrow\quad
+\exists x\text{ such that }\neg P(x),
+\]</span></p>
+<p>and</p>
+<p><span class="math display">\[
+\neg(\exists x,\ P(x))
+\quad\Longleftrightarrow\quad
+\forall x,\ \neg P(x).
+\]</span></p>
+<p>In words, the negation of “every organism has property <span class="math inline">\(P\)</span>” is not “no organism has property <span class="math inline">\(P\)</span>.” It is the weaker statement “at least one organism does not have property <span class="math inline">\(P\)</span>.”</p>
+</div>
+</div>
+<p>Formal logic is not merely symbolic decoration. It structures reasoning, helps us evaluate arguments, and allows explicitly stated rules to be processed by computers. The following video illustrates that connection.</p>
+<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/5NGKbiA04Cw" title="Video illustrating how computers use logical rules" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
+</section>
+</section>
+<section id="formality-in-mathematical-language" class="level2">
+<h2 class="anchored" data-anchor-id="formality-in-mathematical-language">Formality in mathematical language</h2>
+<p>In ordinary conversation, context, tone, and shared experience often help us interpret an incomplete or ambiguous sentence. Mathematics aims to reduce that dependence on context. <strong>Formality</strong> means stating ideas in a sufficiently structured way that their objects, assumptions, and logical relationships can be interpreted consistently.</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="Example: formalising a classification rule">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Example: formalising a classification rule
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Consider the informal sentence:</p>
+<blockquote class="blockquote">
+<p>Each animal has one classification.</p>
+</blockquote>
+<p>It does not identify the animals or classifications, and “one” may mean “at least one” or “exactly one.” With <span class="math inline">\(A\)</span>, <span class="math inline">\(B'\)</span>, and <span class="math inline">\(f\)</span> defined by our dietary model, the intended claim is</p>
+<p><span class="math display">\[
+\forall a\in A,\qquad
+\exists! b\in B'\text{ such that }f(a)=b.
+\]</span></p>
+<p>This says that every animal receives exactly one classification. The words define the objects; the notation makes the logical structure visible.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled" title="Making a statement sufficiently formal">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Making a statement sufficiently formal
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Before presenting a mathematical claim, check that you have:</p>
+<ol type="1">
+<li>identified the objects being discussed;</li>
+<li>defined the variables and their domains;</li>
+<li>stated any assumptions;</li>
+<li>used the required quantifiers and logical connectives; and</li>
+<li>made clear exactly what is being asserted.</li>
+</ol>
+<p>The appropriate degree of formality depends on the purpose and audience. A classroom explanation may use more ordinary language than a formal proof, but neither should rely on avoidable ambiguity.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-important callout-titled" title="Chapter summary">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Important</span>Chapter summary
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Sets identify the objects, relations connect them, functions assign outputs, binary operations combine objects, and logic governs the statements we make about them. Formality makes the objects, domains, assumptions, and conclusions explicit. Symbols are useful only when we understand what they represent and what they mean in the situation being studied.</p>
+</div>
+</div>
+</section>
+<section id="check-your-understanding" class="level2">
+<h2 class="anchored" data-anchor-id="check-your-understanding">Check your understanding</h2>
+<ol type="1">
+<li><p>Classify each item as an expression, an open sentence, or a closed sentence:</p>
+<ol type="a">
+<li><span class="math inline">\(3x+5\)</span><br>
+</li>
+<li><span class="math inline">\(3x+5=20\)</span><br>
+</li>
+<li><span class="math inline">\(3(5)+5=20\)</span><br>
+</li>
+<li><span class="math inline">\(\forall x\in\mathbb R,\ x^2\geq0\)</span></li>
+</ol></li>
+<li><p>Translate each statement into symbols:</p>
+<ol type="a">
+<li>The population <span class="math inline">\(P\)</span> is greater than 500.<br>
+</li>
+<li>The probability <span class="math inline">\(p\)</span> is between 0 and 1, inclusive.<br>
+</li>
+<li>Species <span class="math inline">\(s\)</span> belongs to the set <span class="math inline">\(E\)</span> of endangered species.</li>
+</ol></li>
+<li><p>Evaluate the following and explain which convention you used at each step:</p>
+<p><span class="math display">\[
+20-12\div3\times2.
+\]</span></p></li>
+<li><p>Let</p>
+<p><span class="math display">\[
+A=\{\text{cat},\text{dog},\text{eagle}\},
+\qquad
+B=\{\text{mammal},\text{bird}\}.
+\]</span></p>
+<p>Write a relation from <span class="math inline">\(A\)</span> to <span class="math inline">\(B\)</span> that records the biological class of each animal. Is your relation also a function? Explain.</p></li>
+<li><p>Complete the following truth table. Then let <span class="math inline">\(P\)</span> mean “the organism is a dog” and <span class="math inline">\(Q\)</span> mean “the organism is a mammal”; write <span class="math inline">\(P\Rightarrow Q\)</span> and its converse in words.</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th><span class="math inline">\(P\)</span></th>
+<th><span class="math inline">\(Q\)</span></th>
+<th><span class="math inline">\(\neg Q\)</span></th>
+<th><span class="math inline">\(P\land\neg Q\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>T</td>
+<td>T</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>T</td>
+<td>F</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>F</td>
+<td>T</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>F</td>
+<td>F</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table></li>
+<li><p>Write the negation of each statement without simply placing the words “it is not true that” at the beginning:</p>
+<ol type="a">
+<li>Every organism in the sample exhibits the trait.<br>
+</li>
+<li>There exists a patient whose temperature satisfies <span class="math inline">\(T\geq38\)</span>.</li>
+</ol></li>
+</ol>
+<details>
+<summary>
+<strong>Additional practice</strong>
+</summary>
+<ol type="1">
+<li><p>Decide whether addition on <span class="math inline">\(\mathbb Z\)</span>, subtraction on the positive integers, multiplication on <span class="math inline">\(\mathbb R\)</span>, and division on <span class="math inline">\(\mathbb R\)</span> are binary operations.</p></li>
+<li><p>Let <span class="math inline">\(a\star b=a+2b\)</span>. Calculate <span class="math inline">\(5\star(-2)\)</span>, <span class="math inline">\((1\star3)\star2\)</span>, and <span class="math inline">\(1\star(3\star2)\)</span>. Is <span class="math inline">\(\star\)</span> associative?</p></li>
+<li><p>Give a biological example of a set, a relation, and a function.</p></li>
+<li><p>The sentence “Each specimen has one measurement” is ambiguous. List three pieces of information needed to make it a precise mathematical claim.</p></li>
+</ol>
+</details>
+<div class="callout callout-style-default callout-tip callout-titled" title="Closing reflection">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Closing reflection
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Choose one mathematical symbol that once seemed unfamiliar to you. Explain what it means in an ordinary English sentence and give an example of its use.</p>
+</div>
+</div>
+
+
+</section>
+
+<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/rjnieto\.com");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>© 2026 RJ Nieto</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+<p>Built with Quarto</p>
+</div>
+  </div>
+</footer>
+
+
+
+
+</body></html>
