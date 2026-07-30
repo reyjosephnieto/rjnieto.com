@@ -19,6 +19,8 @@ website:
         text: TDA
       - href: teaching/index.qmd
         text: Teaching
+      - href: teaching/bulsu/math-modern-world/index.qmd
+        text: MMW
       - href: cv/index.qmd
         text: CV
 
