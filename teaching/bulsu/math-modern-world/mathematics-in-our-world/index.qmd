@@ -119,6 +119,7 @@ connected, and the golden ratio provides the central thread linking much of
 the discussion. The name **golden ratio** is modern, but the underlying
 proportion is ancient.
 
+::: {.callout-tip title="Deriving the golden ratio"}
 In [Book VI, Definition 3 of Euclid's
 *Elements*](https://math.clarku.edu/~djoyce/java/elements/bookVI/defVI3.html),
 a straight line is said to be cut **in extreme and mean ratio** when “the
@@ -157,6 +158,7 @@ $$
 
 The negative solution of the quadratic is rejected here because $a$ and
 $b$ are lengths.
+:::
 
 ### The Fibonacci connection
 
@@ -293,13 +295,16 @@ This is also a reminder that mathematics is a human endeavour. People notice
 patterns, propose definitions, construct arguments, make mistakes, challenge
 claims, and improve earlier explanations.
 
-## Mathematical objects other than numbers
+## Mathematical objects other than numbers — non-examinable
 
 Most of the mathematics in this course will still involve numbers.
 Nevertheless, many branches of mathematics study objects whose central
-features are not numerical. The following brief examples illustrate how broad
-mathematics can be. They are included for perspective, not as material you are
+features are not numerical. The following video clip illustrates how broad
+mathematics can be. It is included for perspective, not as material you are
 expected to master in this course.
+
+{{< video https://www.youtube.com/watch?v=OmJ-4B-mS-Y
+    title="Video illustrating the breadth of mathematics" >}}
 
 ### Group theory
 
@@ -343,7 +348,7 @@ We now return from this brief survey to a concrete biological problem. Several
 of these areas—especially linear algebra, graph theory, and algebraic
 topology—can contribute to ways of representing and analysing medical images.
 
-## A biological example: diabetic retinopathy
+## A biological example: diabetic retinopathy — non-examinable
 
 There are many other, less familiar kinds of mathematics that do not appear
 to use many numbers. Several of the examples above can help computers describe

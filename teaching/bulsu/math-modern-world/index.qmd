@@ -63,6 +63,16 @@ inquiries related to the course)
    discussion, and guided work in class. Attendance will contribute to the
    final mark in accordance with the course syllabus and university policy.
 
+   The course notes provide a general guide to what we intend to discuss, not
+   an inflexible transcript of every class meeting. Depending on the time
+   available, the pace of the class, and the questions that arise, I may
+   change the order of presentation, supplement the notes with another
+   example, modify a discussion, or omit a portion that we cannot cover
+   responsibly. It is therefore important to **attend class** so that you know
+   what was actually covered and what emphasis was placed on it. Any change
+   affecting examinable material will be announced clearly; you will not be
+   assessed on a topic that was added without notice.
+
 3. **Participate and ask questions.** Questions are an important part of
    learning, and students are strongly encouraged to raise them in class.
    Consultation hours will be announced once the teaching timetable has been
@@ -237,7 +247,7 @@ inquiries related to the course)
 ## Course materials
 
 1. [Mathematics in Our World](mathematics-in-our-world/index.qmd)
-2. Mathematical Language and Symbols
+2. [The Language of Mathematics](language-of-mathematics/index.qmd)
 3. Problem Solving and Reasoning
 4. Data Science and Data Management
 5. Mathematics of Personal Finance
