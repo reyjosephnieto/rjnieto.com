@@ -328,7 +328,7 @@ translation relation near \(0\) or \(255\). The following retinal example
 shows both behaviours: most endpoints move coherently, while features meeting
 the boundary can be truncated.
 
-![A uniform negative illumination drift applied to a FIVES image [@jin2022fives]. The \(H_0\) and \(H_1\) barcode endpoints shift toward lower thresholds; clipping at the intensity boundary can truncate features, so the finite 8-bit experiment is not merely an unconstrained translation of \(\mathbb R\).](../assets/illumination-drift-barcodes.png){fig-alt="A retinal image and its darkened version, each shown beside H zero and H one barcodes whose endpoints shift left after illumination drift." width=78%}
+![A uniform negative illumination drift applied to a FIVES image [@jin2022fives]. The \(H_0\) and \(H_1\) barcode endpoints shift towards lower thresholds; clipping at the intensity boundary can truncate features, so the finite 8-bit experiment is not merely an unconstrained translation of \(\mathbb R\).](../assets/illumination-drift-barcodes.png){fig-alt="A retinal image and its darkened version, each shown beside H zero and H one barcodes whose endpoints shift left after illumination drift." width=78%}
 
 A toy filtration makes the translation mechanism visible cell by cell. Adding
 one to every intensity delays the appearance of every cell by one filtration

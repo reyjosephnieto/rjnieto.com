@@ -9,7 +9,7 @@ toc-depth: 3
 
 Homology converts geometry into linear algebra. Cells become basis vectors,
 boundaries become matrices, and holes emerge from kernels and quotient spaces.
-This chapter develops only the algebra needed for that conversion.
+Only the algebra required for that conversion is developed here.
 
 ::: {.callout-note title="A geometric dictionary for the algebra"}
 The chapter can be read with one picture in mind: take a square assembled from

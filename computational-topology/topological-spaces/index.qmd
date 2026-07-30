@@ -353,7 +353,7 @@ A thick annulus deformation retracts onto its central circle. This is why
 topology treats a thick loop and a thin loop as having the same essential
 shape.
 
-![Each red subspace is a deformation retract of the surrounding green space: points in the green region move continuously toward the red core while the red points remain fixed.](../assets/deformation-retract.png){fig-alt="Three red subspaces inside green neighbourhoods, with arrows indicating continuous collapse from the green region onto the red core." width=68%}
+![Each red subspace is a deformation retract of the surrounding green space: points in the green region move continuously towards the red core while the red points remain fixed.](../assets/deformation-retract.png){fig-alt="Three red subspaces inside green neighbourhoods, with arrows indicating continuous collapse from the green region onto the red core." width=68%}
 
 ::: {#prp-deformation-retract name="A deformation retract is a homotopy equivalence"}
 If $A$ is a deformation retract of $X$, then the inclusion

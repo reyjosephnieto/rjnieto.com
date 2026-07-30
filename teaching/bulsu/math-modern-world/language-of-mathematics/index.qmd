@@ -4,10 +4,9 @@ subtitle: "Mathematical Language and Symbols"
 toc: true
 ---
 
-Mathematics can appear daunting because it is often presented using unfamiliar
-symbols. To a new reader, a line of notation may look like a sentence written
-in an alien language. Mathematical symbols, however, are not intended to hide
-ideas. They allow us to express ideas that would otherwise require many words.
+Unfamiliar notation can make mathematics appear more forbidding than it is.
+Symbols do not conceal the underlying ideas; they express them economically
+and with fewer ambiguities than ordinary prose often permits.
 
 {{< video https://www.youtube.com/watch?v=YtERoY3nVl8
     title="Video introducing the language of mathematics" >}}
@@ -17,7 +16,7 @@ Its vocabulary consists of symbols and specialised terms. Its grammar tells us
 which arrangements of symbols are meaningful. Its conventions allow different
 readers to interpret the same notation consistently.
 
-Mathematical language is especially valued because it is:
+Mathematical language is valued because it is:
 
 - **precise:** it allows distinctions that ordinary language may leave
   ambiguous;

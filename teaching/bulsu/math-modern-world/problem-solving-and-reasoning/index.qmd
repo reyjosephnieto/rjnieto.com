@@ -4,17 +4,13 @@ subtitle: "From Observations to Defensible Conclusions"
 toc: true
 ---
 
-Mathematics is not merely number-crunching. As we saw in Chapter 1,
-mathematics is precise relative to its assumptions, but a mathematical model
-of a real-world phenomenon is only a purposeful approximation of that
-phenomenon. A model leaves some details out so that we can concentrate on the
-features relevant to the question at hand.
+Mathematical models are precise relative to their assumptions, but they remain
+selective accounts of real phenomena. A model omits detail so that attention
+can be directed to the features relevant to a particular question.
 
-This means that applying mathematics involves more than performing a correct
-calculation. We must also decide what to measure, which assumptions are
-reasonable, which mathematical tools suit the problem, and what the resulting
-answer does—and does not—allow us to conclude. In this chapter, we begin
-studying how to make and defend those choices.
+Applying mathematics therefore requires more than a correct calculation. We
+must decide what to measure, which assumptions are reasonable, which methods
+suit the problem, and what the result does—and does not—justify.
 
 ::: {.callout-note title="Learning outcomes"}
 After completing this chapter, you should be able to:
@@ -288,7 +284,7 @@ $$
 0<1-0.\overline{9}<10^{-n}.
 $$
 
-In other words, $0<y<10^{-n}$, contradicting our choice
+Thus $0<y<10^{-n}$, contradicting our choice
 $10^{-n}<y$. There can therefore be no positive gap between
 $0.\overline{9}$ and $1$.
 
@@ -349,7 +345,7 @@ justification.
 
 ## A nontrivial example: deriving the quadratic formula
 
-We now apply the same four steps to a more substantial problem. Suppose that
+The same four steps apply to a more substantial problem. Suppose that
 
 $$
 ax^2+bx+c=0,
@@ -464,7 +460,7 @@ check on the result:
   negative number is not real.
 
 We can also substitute either resulting value of $x$ into the original
-equation to verify it. More importantly, looking back reveals why the formula
+equation to verify it. Looking back also reveals why the formula
 has its familiar structure: it is not an arbitrary expression to be
 memorised, but the inevitable result of completing the square in the general
 quadratic equation.
@@ -591,7 +587,7 @@ $$
 S=\frac{5}{2}(2+14)=40,
 $$
 
-which agrees with direct addition. The formula is simply a compact record of
+which agrees with direct addition. The formula is a compact record of
 the pairing pattern revealed by writing the sum in both directions.
 
 <details>

@@ -21,8 +21,8 @@ deteriorated, is the dominant fault mechanical—alignment, interpolation,
 resolution, or blur—or radiometric—illumination, response, quantisation, or
 sensor noise?
 
-The thesis treats this as a reliability-engineering problem rather than merely
-a classification problem. It pairs two deliberately low-dimensional probes
+The thesis treats this as a reliability-engineering problem, not only as a
+classification problem. It pairs two deliberately low-dimensional probes
 whose failure modes are expected to be complementary:
 
 - a geometric probe based on global image moments; and
@@ -33,7 +33,7 @@ The goal is to make their disagreement informative.
 
 ::: {.callout-note title="A change of viewpoint"}
 The earlier chapters asked whether a mathematical representation is stable.
-This chapter asks how two imperfect representations can be used together to
+The question is how two imperfect representations can be used together to
 identify a likely failure mechanism. The logic is comparative:
 
 1. compress each image into a small geometric vector and a small topological

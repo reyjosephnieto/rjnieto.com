@@ -21,8 +21,8 @@ This is a mathematical and computational case study, not medical advice or a
 validated clinical device.
 :::
 
-::: {.callout-note title="How the case study is organised"}
-This chapter separates four questions that are easily conflated:
+::: {.callout-note title="Structure of the case study"}
+The analysis separates four questions that are easily conflated:
 
 1. **Representation:** which mathematical features are extracted?
 2. **Prediction:** how well do those features separate the two study groups

@@ -21,19 +21,16 @@ technical writing, and government communications.
 :::
 :::
 
-This website brings together the different strands of my academic and
-professional work.
+This site records my academic, teaching, and professional work.
 
-- The [**TDA**](computational-topology/index.qmd) section
-contains self-study notes adapted and expanded from my bachelor’s thesis on
+- [**TDA**](computational-topology/index.qmd) contains self-study notes adapted
+and expanded from my bachelor’s thesis on
 the computational stability of cubical homology in retinal imaging.
 
-- The
-[**Teaching**](teaching/index.qmd) section contains materials for
+- [**Teaching**](teaching/index.qmd) contains materials for
 *Mathematics in the Modern World*, which I teach at BulSU.
 
-- The
-[**CV**](cv/index.qmd) section provides a fuller account of my academic and
+- [**CV**](cv/index.qmd) provides a fuller account of my academic and
 professional background.
 
 You can also find me on:

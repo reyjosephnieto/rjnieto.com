@@ -19,7 +19,7 @@ The cubical construction and interval viewpoint follow
 @wagner2011cubical and @zomorodian2004computing.
 
 ::: {.callout-note title="Three descriptions of the same process"}
-This chapter moves between three levels. They should not be mistaken for
+The discussion moves between three levels. They should not be mistaken for
 three separate constructions.
 
 | Level | What we see |

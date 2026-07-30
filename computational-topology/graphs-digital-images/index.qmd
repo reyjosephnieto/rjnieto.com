@@ -19,9 +19,9 @@ locations, so we replace a continuous path by a finite sequence of adjacent
 pixels. This is the same conceptual question—“can one location be reached
 from another?”—in a representation a computer can enumerate.
 
-This chapter uses graphs to settle adjacency and thresholding first. It then
-explains why graphs alone are insufficient for holes and why pixels must be
-promoted to filled squares in a cubical complex.
+Graphs settle adjacency and thresholding, but they do not by themselves
+distinguish a filled cycle from a hole. That distinction requires pixels to be
+treated as filled squares in a cubical complex.
 :::
 
 ## Graphs
@@ -76,7 +76,7 @@ $$
 \Omega\subset\mathbb Z^2
 $$
 
-be a finite set of pixel coordinates. A grayscale digital image is a pair
+be a finite set of pixel coordinates. A greyscale digital image is a pair
 $(\Omega,I)$, where
 
 $$

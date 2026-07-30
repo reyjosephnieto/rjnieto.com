@@ -373,7 +373,7 @@ open.
 :::
 
 Topology remembers which sets are open but forgets the numerical distances
-that produced them. This is our first move from geometry toward topology:
+that produced them. This is our first move from geometry towards topology:
 exact measurements become less important than the qualitative structure of
 neighbourhoods.
 
@@ -560,7 +560,7 @@ distance is finite. If $X$ is a finite pixel grid, the supremum is simply a
 maximum, so the distance between two equally sized images is the largest
 pointwise intensity difference.
 
-For example, consider two $2\times2$ grayscale images:
+For example, consider two $2\times2$ greyscale images:
 
 $$
 f=
@@ -646,7 +646,7 @@ translation of the definition.
 5. Let $X=\{a,b,c\}$ have the discrete metric. List every open ball of radius
    $1/2$ and every open ball of radius $2$.
 6. Prove that every singleton is open in a discrete metric space.
-7. Suppose two grayscale images have intensities in $[0,255]$. What is the
+7. Suppose two greyscale images have intensities in $[0,255]$. What is the
    largest possible supremum distance between them?
 8. Prove that every isometry is Lipschitz and therefore continuous.
 9. For bounded functions $f,g,h\colon X\to\mathbb R$, prove the triangle

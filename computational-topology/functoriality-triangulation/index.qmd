@@ -20,10 +20,10 @@ $$
 Category theory explains why this pipeline respects maps, compositions, and
 filtrations rather than merely assigning isolated outputs [@nanda2023].
 
-::: {.callout-important title="This chapter is a second pass"}
-The computational course is complete without this chapter. Its purpose is to
-show that the maps used throughout the notes fit together coherently and that
-the cubical theory connects to the standard simplicial theory.
+::: {.callout-important title="Optional second pass"}
+The computational course is complete without this material. The purpose here
+is to show that the maps used throughout the notes fit together coherently and
+that the cubical theory connects to the standard simplicial theory.
 
 If category theory is new, read “object” as a mathematical structure and
 “morphism” as an allowed structure-preserving map. The essential dictionary

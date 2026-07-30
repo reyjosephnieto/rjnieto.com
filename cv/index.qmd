@@ -22,9 +22,10 @@ of the Undersecretary for Migrant Workers' Affairs, editorial and broadcast
 work, and the coordination of a public-service initiative during the COVID-19
 pandemic.
 
-Also holds a First Class Honours degree in Mathematics from the University of
-Bristol. Academic work covered statistical machine learning, artificial neural
-networks, mathematical programming, and computational topology. The final-year
+Academic training includes a First Class Honours degree in Mathematics from
+the University of Bristol, with work in statistical machine learning,
+artificial neural networks, mathematical programming, and computational
+topology. The final-year
 project examined the computational stability of topological methods for
 retinal images using mathematical analysis, Python, and machine-learning
 experiments.

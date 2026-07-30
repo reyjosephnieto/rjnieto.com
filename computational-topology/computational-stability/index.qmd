@@ -11,15 +11,16 @@ The algebraic stability theorem controls topology by
 $\lVert I-J\rVert_\infty$. In digital imaging, the crucial question is how a
 physical acquisition error produces that intensity difference.
 
-This chapter develops the thesis's **Aim-and-Shoot** model: first the image is
-spatially aligned with the sensor, then its intensity is measured.
+The thesis models acquisition in two stages, called **Aim-and-Shoot**: the
+image is first aligned spatially with the sensor, after which its intensity is
+measured.
 
 ![The Aim-and-Shoot abstraction: align the scene, then capture its intensity.](../assets/aim-and-shoot.png){fig-alt="An eye is spatially aligned with a camera before capture." width=55%}
 
-::: {.callout-note title="What this chapter adds"}
+::: {.callout-note title="From theorem to acquisition model"}
 The preceding stability theorem starts with the number
 $\|I-I_{\mathrm{obs}}\|_\infty$. It does not explain where that number comes
-from. This chapter opens the acquisition pipeline and bounds it using three
+from. The acquisition model bounds it using three
 quantities:
 
 | Symbol | Meaning | Units |

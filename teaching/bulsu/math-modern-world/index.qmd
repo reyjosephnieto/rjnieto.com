@@ -4,8 +4,8 @@ subtitle: "Bulacan State University, First Semester, A.Y. 2026-2027"
 toc: true
 ---
 
-This section contains lecture notes, examples, exercises, and/or supplementary
-materials for *Mathematics in the Modern World*.
+These pages contain lecture notes, examples, exercises, and supplementary
+material for *Mathematics in the Modern World*.
 
 ::: {.callout-note title="Curricular basis and intended audience"}
 The scope and organisation of these lecture notes follow the framework for
@@ -47,17 +47,17 @@ inquiries related to the course)
 
 | Assessment | Date |
 |---|---|
-| Midterm examinations | Saturday, 29 August 2026 (Tentative) |
-| Final examinations | Saturday, 30 October 2026 |
+| Midterm examinations | Saturday, 5 September 2026 |
+| Final examinations | Friday, 30 October 2026 |
 
 ## Course materials
 
-1. [Mathematics in Our World](mathematics-in-our-world/index.qmd)
-2. [The Language of Mathematics](language-of-mathematics/index.qmd)
-3. [Problem Solving and Reasoning](problem-solving-and-reasoning/index.qmd)
-4. Data Science and Data Management
-5. Mathematics of Personal Finance
-6. Mathematics of Graphs
+- [Chapter 1: Mathematics in Our World](mathematics-in-our-world/index.qmd)
+- [Chapter 2: The Language of Mathematics](language-of-mathematics/index.qmd)
+- [Chapter 3: Problem Solving and Reasoning](problem-solving-and-reasoning/index.qmd)
+- Chapter 4: Data Science and Data Management *(under construction)*
+- Chapter 5: Mathematics of Personal Finance
+- Chapter 6: Mathematics of Graphs
 
 ## House rules
 

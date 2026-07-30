@@ -4,17 +4,14 @@ subtitle: "Mathematics Is More Than Numbers"
 toc: true
 ---
 
-“Being good with numbers means being good at mathematics.” This is something
-we often hear from our elders. The idea is understandable. After all, nearly
-all the mathematics you encountered in high school involved the extensive use
-of numbers: arithmetic, algebra, trigonometry, statistics, probability, and
-calculus.
+Mathematical ability is often equated with numerical fluency. The association
+is understandable: much of school mathematics concerns arithmetic, algebra,
+trigonometry, statistics, probability, and calculus.
 
-Numerical skill is certainly an important part of mathematics. However,
-mathematics is much more than calculation. It is concerned with patterns,
-structures, quantities, shapes, changes, relationships, and uncertainty. It
-also provides us with a language for describing these ideas and a logical
-framework for reasoning about them.
+Numerical skill matters, but mathematics extends beyond calculation. It
+studies patterns, structures, quantities, shapes, change, relationships, and
+uncertainty. It also supplies a language for describing these subjects and a
+logical framework for reasoning about them.
 
 ::: {.callout-note title="Learning outcomes"}
 After completing this chapter, you should be able to:
@@ -56,7 +53,7 @@ or unexpected delays. You might then add an extra fifteen or twenty minutes as
 a safety allowance. How large that allowance should be depends on how
 uncertain the journey is and how strongly you wish to avoid being late.
 
-In other words, you have constructed a simple **mathematical model** of your
+You have constructed a simple **mathematical model** of your
 morning. The model does not reproduce every detail of reality. Instead, it
 identifies the factors that matter most and uses them to guide a decision.
 
@@ -100,8 +97,8 @@ the same kind of problem: represent roads as a weighted network and search
 for a route with a low cost, such as travel time. Their actual systems are far
 more complicated than the classroom algorithms because they must also account
 for live traffic, road restrictions, and many other practical considerations.
-The purpose of this example is not to teach route-finding algorithms in
-detail, but to show how much mathematics is already embedded in everyday
+This example does not teach route-finding algorithms in detail; it shows how
+much mathematics is already embedded in everyday
 tools and decisions, often without our noticing it.
 
 Mathematics does more than help us make practical decisions. It also helps us
@@ -344,8 +341,8 @@ example, between separate components, loops, cavities, and
 higher-dimensional holes. These ideas have applications in physics, robotics,
 medical imaging, and data analysis.
 
-We now return from this brief survey to a concrete biological problem. Several
-of these areas—especially linear algebra, graph theory, and algebraic
+The survey leads to a concrete biological problem. Several of these
+areas—especially linear algebra, graph theory, and algebraic
 topology—can contribute to ways of representing and analysing medical images.
 
 ## A biological example: diabetic retinopathy — non-examinable

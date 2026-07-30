@@ -4,9 +4,8 @@ subtitle: "Lecture notes and course materials"
 toc: false
 ---
 
-This section contains course materials that I prepare for my university
-teaching. The notes are intended to support classroom instruction and
-independent review.
+These are course materials prepared for my university teaching. They support
+classroom instruction and independent review.
 
 ## Courses
 

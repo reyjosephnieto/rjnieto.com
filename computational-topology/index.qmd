@@ -6,7 +6,7 @@ toc: true
 
 These notes develop the mathematical foundations of **topological data
 analysis (TDA)** through computational algebraic topology. Starting from
-distance and continuity, we build toward cubical homology, persistence,
+distance and continuity, we build towards cubical homology, persistence,
 stability, and image-based applications. They are intended for readers with
 some mathematical maturity, but no prior knowledge of topology.
 

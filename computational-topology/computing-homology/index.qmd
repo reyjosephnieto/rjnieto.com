@@ -26,8 +26,8 @@ For each dimension $k$:
 4. substitute the ranks into
    $\beta_k=n_k-r_k-r_{k+1}$.
 
-Nothing geometrically new is introduced in this chapter. It is a coordinate
-version of the chain groups and boundary maps already defined.
+No new geometry is introduced here. The calculation expresses the chain
+groups and boundary maps already defined in coordinates.
 :::
 
 ![A small cubical complex used as a bookkeeping model: one \(2\)-cube, seven \(1\)-cubes, and six \(0\)-cubes. Listing those cells by dimension gives bases for \(C_2\), \(C_1\), and \(C_0\), from which the boundary matrices are built.](../assets/worked-cubical-complex.png){fig-alt="Two adjacent square outlines with only the left square filled; the six vertices are labelled a through f." width=68%}
