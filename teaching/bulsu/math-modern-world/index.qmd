@@ -50,6 +50,15 @@ inquiries related to the course)
 | Midterm examinations | Saturday, 29 August 2026 (Tentative) |
 | Final examinations | Saturday, 30 October 2026 |
 
+## Course materials
+
+1. [Mathematics in Our World](mathematics-in-our-world/index.qmd)
+2. [The Language of Mathematics](language-of-mathematics/index.qmd)
+3. Problem Solving and Reasoning
+4. Data Science and Data Management
+5. Mathematics of Personal Finance
+6. Mathematics of Graphs
+
 ## House rules
 
 1. **Printed notes are available if you need them.** If you do not own, or do
@@ -243,12 +252,3 @@ inquiries related to the course)
    alone. You are part of a wider BulSU community that can support your
    learning. Your teacher should be one of the first people you can approach,
    and in this course, that person is me.
-
-## Course materials
-
-1. [Mathematics in Our World](mathematics-in-our-world/index.qmd)
-2. [The Language of Mathematics](language-of-mathematics/index.qmd)
-3. Problem Solving and Reasoning
-4. Data Science and Data Management
-5. Mathematics of Personal Finance
-6. Mathematics of Graphs
