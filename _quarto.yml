@@ -9,6 +9,7 @@ website:
   title: "RJ Nieto"
   site-url: "https://rjnieto.com"
   description: "Mathematics, computation, topology, and teaching."
+  favicon: Rj-logo.png
 
   navbar:
     background: light
