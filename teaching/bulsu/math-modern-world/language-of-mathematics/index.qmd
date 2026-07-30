@@ -1,5 +1,5 @@
 ---
-title: "The Language of Mathematics"
+title: "Chapter 2: The Language of Mathematics"
 subtitle: "Mathematical Language and Symbols"
 toc: true
 ---

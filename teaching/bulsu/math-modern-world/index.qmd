@@ -54,7 +54,7 @@ inquiries related to the course)
 
 1. [Mathematics in Our World](mathematics-in-our-world/index.qmd)
 2. [The Language of Mathematics](language-of-mathematics/index.qmd)
-3. Problem Solving and Reasoning
+3. [Problem Solving and Reasoning](problem-solving-and-reasoning/index.qmd)
 4. Data Science and Data Management
 5. Mathematics of Personal Finance
 6. Mathematics of Graphs
