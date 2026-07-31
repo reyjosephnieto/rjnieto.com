@@ -16,12 +16,12 @@ website:
     left:
       - href: index.qmd
         text: Home
-      - href: computational-topology/index.qmd
-        text: TDA
       - href: teaching/index.qmd
         text: Teaching
       - href: teaching/bulsu/math-modern-world/index.qmd
-        text: MMW
+        text: MMW101
+      - href: computational-topology/index.qmd
+        text: TDA
       - href: cv/index.qmd
         text: CV
 

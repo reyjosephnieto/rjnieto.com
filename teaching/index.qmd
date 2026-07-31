@@ -9,12 +9,13 @@ classroom instruction and independent review.
 
 ## Courses
 
-### [Mathematics in the Modern World](bulsu/math-modern-world/index.qmd)
+### Mathematics in the Modern World
 
 Lecture notes, examples, exercises, and supplementary materials for
-*Mathematics in the Modern World* at Bulacan State University.
+*Mathematics in the Modern World*, developed specifically for biology majors
+at Bulacan State University.
 
-[Open the course notes](bulsu/math-modern-world/index.qmd){.btn .btn-outline-primary}
+[Open the course page](bulsu/math-modern-world/index.qmd){.btn .btn-outline-primary}
 
 These are personal teaching materials. Unless expressly stated otherwise,
 they should not be treated as official publications or policies of Bulacan

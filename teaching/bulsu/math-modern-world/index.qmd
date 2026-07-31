@@ -1,22 +1,13 @@
 ---
 title: "Mathematics in the Modern World"
-subtitle: "Bulacan State University, First Semester, A.Y. 2026-2027"
+subtitle: "MMW 101, Bulacan State University, 1st Semester, A.Y. 2026-2027"
 toc: true
 ---
 
 These pages contain lecture notes, examples, exercises, and supplementary
 material for *Mathematics in the Modern World*.
 
-::: {.callout-note title="Curricular basis and intended audience"}
-The scope and organisation of these lecture notes follow the framework for
-*Mathematics in the Modern World* set out by the Philippine
-Commission on Higher Education (CHED) in
-CHED Memorandum Order No. 20, series of 2013,
-*General Education Curriculum: Holistic Understandings, Intellectual and Civic
-Competencies*. CHED describes the course as addressing the nature of
-mathematics, its practical, intellectual, and aesthetic dimensions, and the
-application of mathematical tools in daily life.
-
+::: {.callout-note title="Intended audience"}
 The notes are written primarily for the BS Biology students whom I teach.
 Whenever practicable, the discussion uses examples drawn from biology,
 ecology, health, data analysis, and other situations that students may
@@ -24,14 +15,9 @@ encounter in their studies and subsequent work. The course also considers
 less obvious applications: part of learning mathematics in the modern world
 is recognising its presence in problems and decisions that may not initially
 appear mathematical.
-
-These independently prepared lecture notes are designed to support
-*Mathematics in the Modern World* and are aligned with the course framework
-established by CHED. They are personal teaching materials and should not be
-understood as an official publication of Bulacan State University or CHED.
 :::
 
-## Logistics for First Semester A.Y. 2026–2027
+::: {.callout-note title="Logistics and important dates — First Semester A.Y. 2026–2027"}
 
 **Instructor's name:** Rey Joseph Nieto  
 **Email:** rj (at) rjnieto (dot) com (for questions or
@@ -43,214 +29,108 @@ inquiries related to the course)
 | BSB 1B | RCS 204 | Saturdays, 9:00–11:00 a.m. |
 | BSB 1A | RCS 203 | Saturdays, 12:00–3:00 p.m. |
 
-### Important dates
+**Important dates**
 
 | Assessment | Date |
 |---|---|
 | Midterm examinations | TBD |
 | Final examinations | TBD |
+:::
 
-## Course materials
+::: {.callout-important title="Printable lecture notes"}
+The current version of the complete lecture notes is available as a PDF.
 
-- [Chapter 1: Mathematics in Our World](mathematics-in-our-world/index.qmd)
-- [Chapter 2: The Language of Mathematics](language-of-mathematics/index.qmd)
-- [Chapter 3: Problem Solving and Reasoning](problem-solving-and-reasoning/index.qmd)
-- Chapter 4: Data Science and Data Management *(under construction)*
-- Chapter 5: Mathematics of Personal Finance
-- Chapter 6: Mathematics of Graphs
+[Download the MMW 101 lecture notes](lecture-notes/MMW101_Lecture_Notes_20260731.pdf){.btn .btn-primary download="MMW101_Lecture_Notes_20260731.pdf"}
+
+*Current version: 31 July 2026*
+:::
 
 ## House rules
 
-1. **Printed notes are available if you need them.** If you do not own, or do
-   not have reliable access to, a laptop or mobile device, please approach me
-   after class or during consultation hours. You do not need to explain your
-   circumstances; I will provide printed copies of the relevant course notes
-   free of charge.
+1. **Printed notes are available if you need them.** If you do not have
+   reliable access to a laptop or mobile device, speak to me after class or
+   during consultation hours. You do not need to explain your circumstances;
+   I will provide the relevant printed notes free of charge.
 
-2. **Attend regularly and arrive on time.** Consistent attendance is expected
-   because much of the learning will take place through explanation,
-   discussion, and guided work in class. Attendance will contribute to the
-   final mark in accordance with the course syllabus and university policy.
+2. **Attend regularly and arrive on time.** Much of our learning will happen
+   through explanation, discussion, and guided work in class, and attendance
+   contributes to the final mark under the syllabus and university policy.
+   The notes are a guide rather than a transcript: our pace, examples, and
+   order may change. Any change affecting examinable material will be announced
+   clearly; you will not be assessed on an unannounced topic.
 
-   The course notes provide a general guide to what we intend to discuss, not
-   an inflexible transcript of every class meeting. Depending on the time
-   available, the pace of the class, and the questions that arise, I may
-   change the order of presentation, supplement the notes with another
-   example, modify a discussion, or omit a portion that we cannot cover
-   responsibly. It is therefore important to **attend class** so that you know
-   what was actually covered and what emphasis was placed on it. Any change
-   affecting examinable material will be announced clearly; you will not be
-   assessed on a topic that was added without notice.
+3. **Participate, ask questions, and seek help.** Questions are welcome in
+   class, by email, and during consultation hours; longer or off-syllabus
+   discussions are usually best saved for consultation. You will not be judged
+   for finding something difficult. Ask classmates, compare notes, and come to
+   me when something remains unclear—we are all part of your learning
+   community.
 
-3. **Participate and ask questions.** Questions are an important part of
-   learning, and students are strongly encouraged to raise them in class.
-   Consultation hours will be announced once the teaching timetable has been
-   finalised. These meetings are suitable for questions requiring a longer
-   discussion, including questions that go beyond the formal curriculum. This
-   allows us to explore them properly while keeping class meetings focused on
-   the material that everyone needs to learn. You may also send
-   course-related questions or inquiries by email; the course email address is
-   provided in the Logistics section above.
-
-4. **Do not assume that biology contains little mathematics.** Modern biology
-   uses mathematics to describe population growth, inheritance, epidemics,
-   ecological networks, experimental uncertainty, medical images, and the
-   behaviour of complex biological systems. A particularly striking example is
-   the [2024 Nobel Prize in
-   Chemistry](https://www.nobelprize.org/prizes/chemistry/2024/press-release/):
-   half recognised computational protein design, while the other half
-   recognised protein-structure prediction—the work associated with
-   AlphaFold2. Both achievements brought biological knowledge together with
-   computation, statistics, and mathematical reasoning.
+4. **Expect biology to involve mathematics.** Population growth, inheritance,
+   epidemics, ecological networks, experimental uncertainty, medical images,
+   and protein structures all involve mathematical thinking. You will not be
+   asked to train an artificial neural network; the goal is to recognise
+   quantitative structure, interpret evidence, and reason carefully—skills
+   useful in biology, medicine, everyday decisions, and many other settings.
 
    ::: {.callout-note title="A case in point: mathematics and biology"}
-   My own BSc Mathematics thesis is a case in point. Although it is a
-   mathematics project, it is grounded in a biological and medical setting:
-   photographs of the retina at the back of the eye. Such images are used when
-   assessing conditions including [diabetic
-   retinopathy](https://www.who.int/europe/news/item/13-11-2020-who-europe-is-focusing-on-eye-screening-for-people-with-diabetes),
-   in which diabetes damages blood vessels in the retina and can ultimately
-   cause vision loss or blindness. I studied how computational topology can
-   turn the connected components and loops appearing across a retinal image
-   into numerical summaries, and whether those summaries remain reliable when
-   the image is rotated, blurred, rescaled, or affected by noise. The project
-   therefore brings together topology, computation, medical imaging, and the
-   practical problem of retinal diagnosis. An expanded, self-study treatment
-   is available in the [Topological Data Analysis
-   section](/computational-topology/), while the complete project repository is
-   available at
-   [reyjosephnieto/ph](https://github.com/reyjosephnieto/ph). These links are
-   included for curious readers; the mathematics required to study the project
-   in detail lies well beyond the scope of this course.
-
+   My BSc Mathematics thesis used computational topology to turn structures in
+   retinal photographs into numerical summaries and test their reliability
+   under changes such as blur, rotation, and noise. It brings together
+   mathematics, computation, and medical imaging. Curious readers can explore
+   the [self-study TDA section](/computational-topology/) or the
+   [project repository](https://github.com/reyjosephnieto/ph); the advanced
+   mathematics is not required for this course.
    :::
 
-   This course will not require students to train artificial neural networks.
-   Its purpose is to develop the habits needed to recognise quantitative
-   structure, interpret evidence, and reason carefully about unfamiliar
-   problems. Those habits are useful in everyday decision-making and can be
-   especially valuable to students who later pursue advanced study in biology,
-   medicine, or related fields.
+5. **Be present and considerate.** I have no interest in teaching through
+   fear, and questions are always welcome. In return, help maintain a
+   respectful room: listen when someone is speaking and avoid side
+   conversations. Keep electronic devices away unless I authorise their use or
+   an accessibility need requires them. Giving one another our attention makes
+   those *“Wow, talaga?”* moments much easier to reach.
 
-5. **Be present and considerate.** I am not interested in teaching through
-   fear; there is no educational value in intimidating students, and I am
-   probably more approachable than you may initially think. In return, I
-   expect everyone, as adults, to take responsibility for maintaining a
-   respectful learning environment. Please do not hold side conversations
-   while someone is speaking.
-
-   Electronic devices should be put away during class unless I have asked you
-   to use one for a learning activity or an approved accessibility need
-   requires it. This is not about feeding the instructor's ego. It is about
-   giving yourself and those around you the attention needed to understand,
-   question, and retain the material. I aim to choose topics that occasionally
-   produce a genuine *“Wow, talaga?”* response; that moment of discovery is
-   much harder to reach when our attention is divided between the lesson and a
-   screen.
-
-6. **Bring a notebook and a pen.** Since electronic devices will ordinarily
-   remain put away, come prepared to take handwritten notes. Avoid trying to
-   record the lecture word for word. Instead, use brief bullet points to
-   capture definitions, key ideas, examples, and questions in your own words.
-   After class, close your notes and practise active recall: reconstruct the
-   main ideas from memory, then reopen the notebook to identify what you
-   missed or misunderstood. If you discover a gap, ask your classmates and
-   compare notes; they are part of your learning community and may well become
-   lifelong friends. If the point remains unclear, bring the question to me
-   during consultation hours.
+6. **Bring a notebook and a pen.** Record definitions, ideas, examples, and
+   questions in your own words rather than copying everything. After class,
+   practise active recall: reconstruct the main ideas from memory, then check
+   what you missed. Compare notes with classmates and ask me about gaps that
+   remain.
 
    ::: {.callout-note title="Use of generative AI"}
-   I strongly encourage the cautious use of generative-AI tools—including
-   ChatGPT, Claude, Gemini, DeepSeek, and similar systems—for self-study. They
-   can help you request another explanation, generate practice questions, or
-   explore a topic from a different angle. However, they can also produce
-   convincing but incorrect answers, so check their claims against the course
-   notes and work through the mathematics yourself.
-
-   Do not become dependent on these tools. They will not be available to help
-   you in real time during graded assessments, where you must explain and apply
-   ideas independently. All quizzes and recitations will be announced in
-   advance and completed in class; there will be no take-home quizzes or
-   recitations.
+   Generative-AI tools can provide another explanation, suggest practice
+   questions, or offer a different perspective. Use them cautiously: they can
+   sound convincing while being wrong, so check their claims against the notes
+   and do the mathematics yourself. They cannot replace independent
+   understanding and will not be available during graded assessments. Quizzes
+   and recitations will be announced and completed in class.
    :::
 
-7. **Work steadily, but keep marks in perspective.** I recognise that we are
-   working within a tight academic schedule, so assessments will be designed
-   deliberately and kept proportionate to the time and material available.
-   Your marks will reflect the published assessment criteria and the work you
-   submit.
+7. **Work steadily, but keep marks in perspective.** Assessments will be
+   proportionate to the available time and published criteria. I will identify
+   enrichment as examinable or non-examinable, and examinations will not hide
+   “curveball” topics whose status was unclear. You may still be asked to apply
+   a familiar idea in a new setting. Focus on sustained effort and constructive
+   use of feedback. Have faith in your ability—I do.
 
-   Examinations will not contain “curveball” questions based on material whose
-   status has been left unclear. We may occasionally discuss an interesting
-   idea beyond the essential course content; when we do, I will state
-   explicitly whether it is examinable or non-examinable. This follows the
-   transparent approach to assessment that I encountered in British
-   universities. An examination may still ask you to apply a familiar idea in
-   a new setting, but it will not quietly test a topic that was presented as
-   optional enrichment.
-
-   ::: {.callout-note title="A sidenote on our Lingua Franca"}
-   You may also notice an occasional mixture of British and American English
-   in these notes. My basic education used American English, whereas my
-   university education used British English, and I still move between the two
-   conventions. I apologise for any resulting inconsistency; it should never
-   affect the mathematical meaning. Students may use either convention—the
-   important things are clarity and consistency.
-
-   I encourage everyone to practise using English because it is the principal
-   language of much of the biology literature you will encounter. This is an
-   encouragement, not a barrier to participation: English, Tagalog, and
-   Cebuano are all welcome in class, and no one will be treated differently
-   for choosing among them. I am open to questions in other languages as well,
-   although I may need you or a classmate to translate if I do not understand
-   them. If you find my accent or English difficult to follow, please tell me,
-   either during class or privately. I can explain in Taglish whenever
-   practicable while retaining the technical terms needed for the subject.
+   ::: {.callout-note title="Language in our classroom"}
+   The notes may mix British and American English; either is acceptable if your
+   meaning is clear and consistent. Practising English will help with the
+   biology literature, but it is not a barrier to participation. English,
+   Tagalog, and Cebuano are welcome, as are questions in other languages when
+   someone can help translate. If my accent or wording is difficult to follow,
+   tell me—I can explain in Taglish whenever practicable.
    :::
 
-   Rather than worrying constantly about individual scores, focus on sustained
-   effort, academic discipline, and responding constructively to feedback. If
-   you do those things consistently, there should be no unpleasant surprises
-   when you receive your class card. You have earned your place among
-   Bulacan's capable and hardworking students. Have faith in your ability—I
-   have faith in you, too.
+8. **Read the notes before class.** I will aim to publish each set of notes at
+   least two weeks before we cover it. You are not expected to master the
+   material beforehand: skim the headings, notice the main ideas and examples,
+   and bring any questions that arise. Mathematics can be difficult, but it
+   becomes more approachable when studied steadily, explained patiently, and
+   connected to meaningful problems.
 
-8. **Read the course notes before class.** Since this is my first time teaching
-   this course, the complete collection of lecture notes is still under
-   construction. However, I will make the notes for each day's scheduled
-   topics available at least two weeks before we cover them.
-
-   You are not expected to master the material before the lecture. The aim is
-   simply to make an initial acquaintance with it: skim the headings, notice
-   the main definitions and examples, and identify anything that already
-   raises a question. Even a brief preview will make the topic feel less
-   unfamiliar and help you follow the discussion without feeling lost.
-
-   Much of our fear of mathematics is learned through discouraging experiences
-   and the widespread assumption that only a few people can understand it.
-   Mathematics can certainly be difficult, but it is not uniquely so: biology,
-   economics, chemistry, and every other serious discipline present their own
-   unfamiliar ideas and ways of thinking. As the course progresses, I hope you
-   will discover that mathematics becomes approachable when it is explained
-   patiently, connected to meaningful problems, and studied consistently.
-
-9. **Correct mistakes—respectfully.** I strongly encourage you to point out
-   errors, whether they appear in the notes, in a classmate's reasoning, or in
-   something I have said or written. Corrections should address the idea rather
-   than embarrass the person, and this is especially important when correcting
-   one another.
-
-   If the mistake is mine, please do not hesitate to say so. Valid corrections
-   of mathematical or factual errors in my lectures or course materials may
-   earn extra credit, under the same criteria and opportunity available to
-   everyone. I am thoroughly egalitarian about this: finding something I have
-   got wrong is not a challenge to my authority. My reaction will be unabated
-   delight, because careful criticism improves both the notes and the class.
-
-10. **Ask for help when you are struggling.** You will not be judged for finding
-   something difficult or for admitting that you do not yet understand it. I
-   struggled in several classes when I was a student, too, and I made progress
-   by seeking guidance rather than insisting that I solve every difficulty
-   alone. You are part of a wider BulSU community that can support your
-   learning. Your teacher should be one of the first people you can approach,
-   and in this course, that person is me.
+9. **Correct mistakes—respectfully.** Address the idea, never embarrass the
+   person. Please point out errors in the notes or in anything I say; a valid
+   mathematical or factual correction may earn extra credit under criteria
+   applied equally to everyone. Finding a mistake is not a challenge to my
+   authority—it helps improve both the notes and the class, and I will be glad
+   you raised it.
