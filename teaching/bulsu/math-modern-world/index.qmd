@@ -40,7 +40,7 @@ inquiries related to the course)
 ::: {.callout-important title="Printable lecture notes"}
 The current version of the complete lecture notes is available as a PDF.
 
-[Download the MMW 101 lecture notes](lecture-notes/MMW101_Lecture_Notes_20260731.pdf){.btn .btn-primary download="MMW101_Lecture_Notes_20260731.pdf"}
+[Open the MMW 101 lecture notes](lecture-notes/MMW101_Lecture_Notes_20260731.pdf){.btn .btn-primary target="_blank" rel="noopener"}
 
 *Current version: 31 July 2026*
 :::
