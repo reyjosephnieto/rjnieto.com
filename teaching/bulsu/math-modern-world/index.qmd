@@ -1,24 +1,49 @@
 ---
 title: "Mathematics in the Modern World"
-subtitle: "MMW 101, Bulacan State University, 1st Semester, A.Y. 2026-2027"
+subtitle: "Bulacan State University, San Rafael Campus"
 toc: true
 ---
 
-These pages contain lecture notes, examples, exercises, and supplementary
-material for *Mathematics in the Modern World*.
+This page contains lecture notes, examples, exercises, and supplementary
+material for *Mathematics in the Modern World*, prepared primarily for the
+BS Biology students whom I teach. This is not just a mathematics appreciation
+course. This version of MMW places more emphasis on calculation and
+mathematical reasoning than students may expect from a general-education
+course. It may feel challenging at times, but the work is intended to stretch
+students rather than overwhelm them. This emphasis is consistent with CHED
+guidelines, which call for students to do mathematics with rigour and apply it
+to practical problems.
 
-::: {.callout-note title="Intended audience"}
-The notes are written primarily for the BS Biology students whom I teach.
-Whenever practicable, the discussion uses examples drawn from biology,
-ecology, health, data analysis, and other situations that students may
-encounter in their studies and subsequent work. The course also considers
-less obvious applications: part of learning mathematics in the modern world
-is recognising its presence in problems and decisions that may not initially
-appear mathematical.
-:::
+The course has two aims. The first is to develop practical mathematical
+literacy—including financial literacy—that students can use in everyday life.
+The second is to introduce a little of several areas of mathematics in
+preparation for more advanced quantitative courses. Biology is arguably the
+most mathematically intensive undergraduate programme offered at Bulacan State
+University's San Rafael Campus, so examples are drawn whenever possible from
+biology, ecology, health, and data analysis.
 
-::: {.callout-note title="Logistics and important dates — First Semester A.Y. 2026–2027"}
+Biological and medical research is highly interdisciplinary. Students are not
+expected to master every field, but knowing something about different
+mathematical and computational approaches helps them recognise what a problem
+calls for—and whom they might ask to collaborate with, whether a statistician,
+mathematical modeller, computer scientist, or another specialist.
 
+I generally think of this as a challenging but enjoyable course. At a time
+when so much can feel uncertain, I hope students can find, as I do, some solace
+in mathematics: definitions can be made clear, assumptions stated, and
+conclusions followed step by step. Mathematics has easy and difficult parts,
+just like any other field, but it has acquired an undeservedly nasty
+reputation. Much of the fear surrounding it begins with that reputation,
+unfamiliar notation, or an earlier bad experience rather than with the subject
+itself. It takes practice, but it is not reserved for geniuses. I am not a
+genius; I learnt mathematics in the same way most people learn anything
+difficult—by studying, making mistakes, and trying again.
+
+## Logistics
+
+**Course title:** Mathematics in the Modern World  
+**Course number:** MMW 101  
+**Term:** First Semester, A.Y. 2026–2027  
 **Instructor's name:** Rey Joseph Nieto  
 **Email:** rj (at) rjnieto (dot) com (for questions or
 inquiries related to the course)  
@@ -35,15 +60,14 @@ inquiries related to the course)
 |---|---|
 | Midterm examinations | TBD |
 | Final examinations | TBD |
-:::
 
-::: {.callout-important title="Printable lecture notes"}
+## Printable lecture notes
+
 The current version of the complete lecture notes is available as a PDF.
 
 [Open the MMW 101 lecture notes](lecture-notes/MMW101_Lecture_Notes_20260801.pdf){.btn .btn-primary target="_blank" rel="noopener"}
 
 *Current version: 1 August 2026*
-:::
 
 ## House rules
 
@@ -63,15 +87,23 @@ The current version of the complete lecture notes is available as a PDF.
    class, by email, and during consultation hours; longer or off-syllabus
    discussions are usually best saved for consultation. You will not be judged
    for finding something difficult. Ask classmates, compare notes, and come to
-   me when something remains unclear—we are all part of your learning
-   community.
+   me when something remains unclear. You do not have to struggle alone.
+
+   ::: {.callout-note title="Language in our classroom"}
+   The notes may mix British and American English; either is acceptable if your
+   meaning is clear and consistent. Practising English will help with the
+   biology literature, but it is not a barrier to participation. English,
+   Tagalog, and Cebuano are welcome, as are questions in other languages when
+   someone can help translate. If my accent or wording is difficult to follow,
+   tell me—I can explain in Taglish whenever practicable.
+   :::
 
 4. **Expect biology to involve mathematics.** Population growth, inheritance,
    epidemics, ecological networks, experimental uncertainty, medical images,
    and protein structures all involve mathematical thinking. You will not be
    asked to train an artificial neural network; the goal is to recognise
-   quantitative structure, interpret evidence, and reason carefully—skills
-   useful in biology, medicine, everyday decisions, and many other settings.
+   quantitative structure, interpret evidence, and reason carefully. These
+   skills matter in biology and medicine as well as in ordinary decisions.
 
    ::: {.callout-note title="A case in point: mathematics and biology"}
    My BSc Mathematics thesis used computational topology to turn structures in
@@ -86,9 +118,8 @@ The current version of the complete lecture notes is available as a PDF.
 5. **Be present and considerate.** I have no interest in teaching through
    fear, and questions are always welcome. In return, help maintain a
    respectful room: listen when someone is speaking and avoid side
-   conversations. Keep electronic devices away unless I authorise their use or
-   an accessibility need requires them. Giving one another our attention makes
-   those *“Wow, talaga?”* moments much easier to reach.
+   conversations. Giving one another our attention makes those
+   *“Wow, talaga?”* moments much easier to reach.
 
 6. **Bring a notebook and a pen.** Record definitions, ideas, examples, and
    questions in your own words rather than copying everything. After class,
@@ -101,25 +132,16 @@ The current version of the complete lecture notes is available as a PDF.
    questions, or offer a different perspective. Use them cautiously: they can
    sound convincing while being wrong, so check their claims against the notes
    and do the mathematics yourself. They cannot replace independent
-   understanding and will not be available during graded assessments. Quizzes
-   and recitations will be announced and completed in class.
+   understanding and will not be available during graded assessments.
    :::
 
 7. **Work steadily, but keep marks in perspective.** Assessments will be
    proportionate to the available time and published criteria. I will identify
    enrichment as examinable or non-examinable, and examinations will not hide
    “curveball” topics whose status was unclear. You may still be asked to apply
-   a familiar idea in a new setting. Focus on sustained effort and constructive
-   use of feedback. Have faith in your ability—I do.
-
-   ::: {.callout-note title="Language in our classroom"}
-   The notes may mix British and American English; either is acceptable if your
-   meaning is clear and consistent. Practising English will help with the
-   biology literature, but it is not a barrier to participation. English,
-   Tagalog, and Cebuano are welcome, as are questions in other languages when
-   someone can help translate. If my accent or wording is difficult to follow,
-   tell me—I can explain in Taglish whenever practicable.
-   :::
+   a familiar idea in a new setting. Quizzes and recitations will be announced
+   and completed in class. Work steadily, and use feedback to improve. Have
+   faith in your ability—I do.
 
 8. **Read the notes before class.** I will aim to publish each set of notes at
    least two weeks before we cover it. You are not expected to master the
