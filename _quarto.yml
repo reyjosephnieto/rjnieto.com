@@ -70,6 +70,7 @@ format:
   html:
     theme: cosmo
     css: styles.css
+    include-in-header: includes/identity-metadata.html
     toc: true
     toc-depth: 3
     code-copy: true
