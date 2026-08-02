@@ -235,6 +235,46 @@ img.profile-photo {
   color: #111111;
 }
 
+/* Keep the blog index compact: date, title, then description. */
+#listing-listing .quarto-post {
+  flex-direction: column;
+  gap: 0.2rem;
+  padding-bottom: 1.15rem;
+}
+
+#listing-listing .quarto-post .metadata {
+  order: 1;
+  flex-basis: auto;
+  margin: 0;
+  color: var(--muted-ink);
+  font-size: 0.85rem;
+}
+
+#listing-listing .quarto-post .body {
+  order: 2;
+  flex-basis: auto;
+}
+
+#listing-listing .quarto-post .listing-title {
+  margin: 0;
+}
+
+#listing-listing .quarto-post .listing-title a {
+  color: var(--bs-link-color);
+  font-weight: 600;
+}
+
+#listing-listing .quarto-post .listing-title a:hover,
+#listing-listing .quarto-post .listing-title a:focus {
+  color: var(--bs-link-hover-color);
+  text-decoration: underline;
+}
+
+#listing-listing .quarto-post .listing-description,
+#listing-listing .quarto-post .listing-description p {
+  margin: 0;
+}
+
 @media (max-width: 768px) {
   body {
     font-size: 1rem;
@@ -253,4 +293,5 @@ img.profile-photo {
     grid-row: 1;
     padding-top: 0;
   }
+
 }

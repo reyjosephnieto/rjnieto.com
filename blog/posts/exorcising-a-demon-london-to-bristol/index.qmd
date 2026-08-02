@@ -1,0 +1,86 @@
+---
+title: "Exorcising a Demon II: From London to Bristol"
+description: "Leaving London for Bristol, returning to mathematics, and discovering that a cautious compromise was no longer enough."
+date: 2026-08-03
+author: "Rey Joseph Nieto"
+image: "bristol.webp"
+image-alt: "The illuminated Wills Memorial Building seen along Park Street in Bristol at dusk."
+toc: false
+---
+
+![The illuminated Wills Memorial Building, viewed along Park Street in Bristol at dusk.](bristol.webp){fig-alt="The illuminated Wills Memorial Building seen along Park Street in Bristol at dusk."}
+
+> ***“The afternoon knows what the morning never suspected.”*** — *Robert Frost*
+
+Faced with an all-consuming fear of utter humiliation, I kept calm and carried on. Well, I carried on, but I was not particularly calm.
+
+I had close to five hours of classes almost every day, and outside those hours, I revised as though the world was about to end. My life in London was monotonous: college, halls, college, halls. Nearly all my spare time was spent studying.
+
+Kaplan’s programme ended in August 2023, while Bristol’s academic year began barely a month later. This created another problem. I had to pay deposits for tuition and accommodation well before September, when I still did not know whether I would actually pass the foundation course. If I failed Kaplan, the whole thing would become a financial disaster.
+
+Somehow, I completed Kaplan’s programme with distinction, which allowed me to progress to Bristol’s BSc Mathematics and Economics programme.
+
+I would have been ecstatic, but there was still much to be done. I had to move to Bristol, a city I had never visited and did not even know how to reach. All I had was Google Maps. With the help of Filipino friends in London, I managed to make the move. After that, all I had to do was wait for the first day of classes.
+
+When that day came, I found myself in exactly the same predicament I had faced in London. My classmates were half my age.
+
+Yes, the private humiliation was still there. But nothing could be done about it. I could blame fate for its wicked sense of humour, or I could shut up and do the work. So I shut up and did the work.
+
+Students entering mathematics degrees in Britain have generally encountered calculus before university. Consequently, my first term already included real analysis: the abstract and rigorous foundations of calculus.
+
+Yes, I had studied calculus at UP Diliman before, but that had been twenty years earlier. I was not even sure whether I could still differentiate anything more complicated than a polynomial.
+
+To make matters worse, I also had linear algebra. Matrices were almost entirely new to me, and I struggled with them so badly that I began to suspect that matrices and I were fundamentally incompatible.
+
+It also did not help that I belatedly discovered that Paul Dirac had studied at Bristol. Yes, the Paul Dirac who helped lay the foundations of quantum mechanics. Winston Churchill had also served as the university’s Chancellor, while several Nobel laureates had studied or worked there. Every new fact I learnt about Bristol made me feel slightly more certain that everybody there was clever except me.
+
+Suffice it to say that my first month in Bristol was pure torture. Was everybody there genuinely brilliant while I was merely pretending to belong?
+
+Almost every day, I wondered whether my return to mathematics was driven by too much ambition and too little talent. I knew that I had shown some aptitude for the subject as a teenager, but that had been a long time ago. I was afraid that whatever mathematical ability I once had might have faded with age.
+
+I wanted to quit, but I could not. By then, I was already in too deep. I had crossed countries, spent much of my savings and reorganised my entire life around this one attempt. I could no longer simply walk away.
+
+I reminded myself that this was my last shot. If I blew it, I would have to wrestle with the same demon until my final breath.
+
+Through sheer force of will, I suppose, I gradually managed to reactivate some long-dormant neurons. I started doing well. Then I started doing very well. The mathematics that had seemed almost impossible during my first few weeks slowly became familiar again.
+
+I began to feel that I could do more. Much more.
+
+This would have been entirely good news, except that my rekindled love for mathematics made me increasingly unhappy with the other half of my degree.
+
+Economics is a beautiful subject, but the mathematics used in first-year undergraduate economics felt too basic for what I had begun to want. I remained optimistic, so I asked the School of Economics whether the mathematics would become more advanced in the later years. They told me that it would eventually reach statistics and linear algebra.
+
+That broke my heart.
+
+I was already studying statistics and linear algebra in my first year. I had hoped that economics would eventually take me far beyond them. Of course, much more advanced mathematics is used in economics, but much of it would not appear until postgraduate study. I did not know whether I would have the time or the money for that. At that point, I did not even know whether I would survive my undergraduate degree.
+
+All I knew was that I loved mathematics, and I intended to make it love me back.
+
+So I contacted the School of Mathematics and asked to transfer from the joint Mathematics and Economics programme to the single-honours Mathematics programme.
+
+They agreed, provided that I finished my first year with a decent upper-second-class average. Very roughly speaking, the required mark occupied the sort of academic territory associated with graduating with honours at a Philippine university, although the two grading systems are not directly equivalent.
+
+I did not have much to lose. If I succeeded, I would be able to study what I really wanted. If I failed, I would simply remain in Mathematics and Economics.
+
+But I wanted mathematics so badly that I barely slept for the rest of the year. I studied all day and often well into the night.
+
+When my final first-year marks came out, I discovered that I had earned a first. I had exceeded the transfer requirement by a considerable margin.
+
+And so, after completing the first year of the BSc Mathematics and Economics programme, I joined the second year of the BSc Mathematics programme.
+
+Things were looking good.
+
+So far.
+
+**Share this post**
+
+~~~{=html}
+<div class="d-flex flex-wrap gap-2 mb-4">
+  <a class="btn btn-outline-primary" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Frjnieto.com%2Fblog%2Fposts%2Fexorcising-a-demon-london-to-bristol%2F" target="_blank" rel="noopener noreferrer">Facebook</a>
+  <a class="btn btn-outline-primary" href="https://twitter.com/intent/tweet?url=https%3A%2F%2Frjnieto.com%2Fblog%2Fposts%2Fexorcising-a-demon-london-to-bristol%2F&amp;text=Exorcising%20a%20Demon%20II%3A%20From%20London%20to%20Bristol" target="_blank" rel="noopener noreferrer">Twitter</a>
+  <a class="btn btn-outline-primary" href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Frjnieto.com%2Fblog%2Fposts%2Fexorcising-a-demon-london-to-bristol%2F" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+  <button type="button" class="btn btn-outline-primary" data-copy-url="https://rjnieto.com/blog/posts/exorcising-a-demon-london-to-bristol/" aria-label="Copy a link to this post" onclick="navigator.clipboard.writeText(this.dataset.copyUrl); this.textContent='Copied!'">Copy link</button>
+</div>
+~~~
+
+[← Previous post: *Exorcising a Demon I: From Manila to London*](../exorcising-a-demon-manila-to-london/index.qmd){.btn .btn-outline-primary}

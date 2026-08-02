@@ -1,11 +1,10 @@
 ---
 title: "Calculated Trainwreck"
-subtitle: "Notes on maths, education, technology, and public life"
+subtitle: "My personal blog on maths, education, technology, and public life"
 toc: false
+listing:
+  contents: posts
+  sort: "date desc"
+  type: default
+  fields: [date, title, description]
 ---
-
-*Calculated Trainwreck* is where I write about maths, education, technology,
-and public life. The name reflects a simple fact: even carefully considered
-plans can end somewhere unexpected.
-
-Posts will appear here as they are published.

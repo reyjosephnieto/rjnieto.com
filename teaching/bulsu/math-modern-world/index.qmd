@@ -1,6 +1,7 @@
 ---
 title: "Mathematics in the Modern World"
 subtitle: "Bulacan State University<br><em>San Rafael Campus</em>"
+description: "Lecture notes, exercises, course information, and class policies for Mathematics in the Modern World, prepared primarily for BS Biology students."
 toc: true
 ---
 

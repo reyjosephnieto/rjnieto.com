@@ -1,0 +1,12 @@
+---
+title: "Page Not Found"
+description: "The requested page could not be found on rjnieto.com."
+toc: false
+page-navigation: false
+header-includes: |
+  <meta name="robots" content="noindex, follow">
+---
+
+The page you requested may have moved or may no longer exist.
+
+[Return to the home page](/){.btn .btn-primary}

@@ -4,12 +4,21 @@ project:
     - "*.qmd"
     - "**/*.qmd"
     - "!source-material/**"
+  resources:
+    - about.html
+    - mmw/index.html
 
 website:
   title: "RJ Nieto"
   site-url: "https://rjnieto.com"
-  description: "Mathematics, computation, topology, and teaching."
+  description: "The personal website of Rey Joseph Nieto, featuring mathematics, education, information technology, topological data analysis, and the Calculated Trainwreck blog."
   favicon: Rj-logo.png
+  open-graph:
+    site-name: "RJ Nieto"
+    locale: en_GB
+  twitter-card:
+    creator: "@rjosephnieto"
+    site: "@rjosephnieto"
 
   navbar:
     background: light
@@ -81,3 +90,4 @@ execute:
   freeze: auto
 
 bibliography: computational-topology/references.bib
+lang: en-GB

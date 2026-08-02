@@ -1,6 +1,7 @@
 ---
 title: "Teaching"
 subtitle: "Lecture notes and course materials"
+description: "Course pages, lecture notes, exercises, and teaching materials prepared by RJ Nieto for university students at Bulacan State University."
 toc: false
 ---
 

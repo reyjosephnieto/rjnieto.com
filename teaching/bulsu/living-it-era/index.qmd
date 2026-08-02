@@ -1,6 +1,7 @@
 ---
 title: "Living in the IT Era"
 subtitle: "Bulacan State University<br><em>San Rafael Campus</em>"
+description: "Lecture notes, exercises, course information, and class policies for Living in the IT Era, prepared primarily for first-year BS Biology students."
 toc: true
 ---
 
