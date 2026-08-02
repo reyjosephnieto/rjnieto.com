@@ -28,7 +28,9 @@ and expanded from my bachelor’s thesis on
 the computational stability of cubical homology in retinal imaging.
 
 - [**Teaching**](teaching/index.qmd) contains materials for
-*Mathematics in the Modern World*, which I teach at BulSU.
+[MMW 101: *Mathematics in the Modern World*](teaching/bulsu/math-modern-world/index.qmd)
+and [MST 101d: *Living in the IT Era*](teaching/bulsu/living-it-era/index.qmd),
+which I teach at BulSU.
 
 - [**CV**](cv/index.qmd) provides a fuller account of my academic and
 professional background.

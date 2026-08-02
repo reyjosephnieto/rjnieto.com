@@ -20,6 +20,8 @@ website:
         text: Teaching
       - href: teaching/bulsu/math-modern-world/index.qmd
         text: MMW101
+      - href: teaching/bulsu/living-it-era/index.qmd
+        text: MST101d
       - href: computational-topology/index.qmd
         text: TDA
       - href: cv/index.qmd

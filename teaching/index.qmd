@@ -17,6 +17,15 @@ at Bulacan State University.
 
 [Open the course page](bulsu/math-modern-world/index.qmd){.btn .btn-outline-primary}
 
+### Living in the IT Era
+
+Lecture notes and course materials for *Living in the IT Era*, developed for
+first-year biology majors at Bulacan State University. The course provides
+practical working knowledge of computers, networks, software, online safety,
+digital life, and emerging technologies.
+
+[Open the course page](bulsu/living-it-era/index.qmd){.btn .btn-outline-primary}
+
 These are personal teaching materials. Unless expressly stated otherwise,
 they should not be treated as official publications or policies of Bulacan
 State University.

@@ -1,0 +1,132 @@
+---
+title: "Living in the IT Era"
+subtitle: "Bulacan State University, San Rafael Campus"
+toc: true
+---
+
+This page contains lecture notes, exercises, and supplementary material for
+*Living in the IT Era*, prepared primarily for the first-year BS Biology
+students whom I teach. The course is not intended to turn students into
+computer technicians or make them memorise catalogues of devices, inventors,
+and fashionable technologies. Its purpose is to provide enough working
+knowledge to make better decisions about computers, internet services,
+software, privacy, security, online conduct, AI, and other technologies that
+students encounter in ordinary life and scientific work.
+
+Much of the subject will already be familiar in fragments. A student may know
+one part from using a phone, another from connecting to Wi-Fi, and another from
+hearing about online scams or AI. The course brings those pieces together,
+fills important gaps, and explains how they are related. Examples are drawn
+whenever practicable from biology, health, research, and Philippine digital
+life.
+
+The module follows the broad general-education scope described for *Living in
+the IT Era* in [CHED Memorandum Order No. 20, series of
+2013](https://ched.gov.ph/wp-content/uploads/2017/10/CMO-No.20-s2013.pdf).
+Its ten-chapter plan is a modern interpretation of that scope rather than a
+claim that CHED prescribes this exact sequence. The notes will be developed as
+the course proceeds and may change in response to students' questions,
+suggestions, and practical needs.
+
+## Logistics
+
+**Course title:** Living in the IT Era<br>
+**Course number:** MST 101d<br>
+**Term:** First Semester, A.Y. 2026–2027<br>
+**Instructor's name:** Rey Joseph Nieto<br>
+**Email:** rj (at) rjnieto (dot) com (for questions or inquiries related to
+the course)<br>
+**Consultation hours:** To be determined<br>
+**Class schedule and room:** Refer to the official class schedule
+
+**Important dates**
+
+| Assessment | Date |
+|---|---|
+| Midterm examinations | TBD |
+| Final examinations | TBD |
+
+## Printable lecture notes
+
+The current release contains the Introduction and Chapter 1. Further chapters
+will be added as the course progresses.
+
+[Open the MST 101d lecture notes](lecture-notes/MST101d_Lecture_Notes_20260802.pdf){.btn .btn-primary target="_blank" rel="noopener"}
+
+*Current version: 2 August 2026*
+
+## How classes will work
+
+We shall use a **flipped-classroom approach**. Students first encounter the
+assigned material by reading the announced pages or sections before class.
+Class meetings will provide a bird's-eye view of the chapter and concentrate
+on questions, discussion, examples, and practical applications rather than
+repeat the notes line by line.
+
+The assigned reading will not usually be terribly long, and students are not
+expected to master it before class. They are, however, expected to read the
+assigned sections carefully rather than skim only the headings and examples.
+They should arrive familiar with the main ideas and ready to say what was
+clear, what was confusing, and what deserves further discussion. Reading
+before class is part of the course rather than optional preparation for it.
+
+## House rules
+
+1. **Printed notes are available if you need them.** If you do not have
+   reliable access to a laptop or mobile device, speak to me after class or
+   during consultation hours. You do not need to explain your circumstances;
+   I will provide the relevant printed material free of charge.
+
+2. **Attend regularly and arrive on time.** Much of the course depends on
+   discussion, questions, and guided work that cannot be reconstructed fully
+   from the notes. The notes are a guide rather than a transcript, and the
+   examples or pace may change. Any change affecting examinable material will
+   be announced clearly.
+
+3. **Complete the announced reading before class.** Unlike the advance reading
+   for MMW, the MST reading should not be treated as a quick skim. Read the
+   assigned sections carefully from beginning to end. If you encounter an
+   unfamiliar term, make a brief effort to look it up using a search engine or
+   dependable reference. This does not require a full research project; the
+   aim is simply to understand enough to follow the discussion and identify
+   what still needs explanation. Bring those questions, examples from your own
+   experience, and claims that you would like the class to examine.
+
+4. **Participate and ask for help.** Questions are welcome in class, by email,
+   and during consultation hours. You will not be judged if a technical idea
+   is difficult or unfamiliar. Ask classmates, compare notes, and
+   speak to me when something remains unclear.
+
+   ::: {.callout-note title="Language in our classroom"}
+   The notes use British English, but British and American usage are both
+   acceptable when the meaning is clear and consistent. English is useful for
+   reading technical and biological literature, but it is not a barrier to
+   participation. English, Tagalog, and Cebuano are welcome. If my accent or
+   wording is difficult to follow, tell me; I can explain in Taglish whenever
+   practicable.
+   :::
+
+5. **Discuss ideas firmly but civilly.** A useful discussion may involve
+   disagreement. Address the claim rather than embarrassing the person who
+   made it, distinguish evidence from opinion, and be willing to correct or
+   revise a position. The same standard applies to communication in class and
+   online.
+
+6. **Use devices and generative AI thoughtfully.** A phone or laptop may be a
+   legitimate tool for reading, checking a specification, examining a source,
+   or recording a question. Use it for the work at hand without distracting
+   other people. Generative-AI tools may offer explanations or alternative
+   perspectives, but fluent answers can still be wrong. Check important
+   claims against the notes and dependable sources, and do not use AI during a
+   graded assessment unless I have expressly permitted it.
+
+7. **Protect other people's information.** Do not share a classmate's personal
+   details, messages, photographs, recordings, account information, or
+   screenshots without permission. Use fictitious or properly anonymised data
+   when an activity does not require real personal information.
+
+8. **Help improve the course.** Please point out factual errors, unclear
+   explanations, broken links, and practical topics that the notes have
+   overlooked. Correct mistakes respectfully. The notes are being developed
+   alongside the course, and well-founded student feedback may shape later
+   versions.

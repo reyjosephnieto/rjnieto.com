@@ -17,10 +17,9 @@ to practical problems.
 The course has two aims. The first is to develop practical mathematical
 literacy—including financial literacy—that students can use in everyday life.
 The second is to introduce a little of several areas of mathematics in
-preparation for more advanced quantitative courses. Biology is arguably the
-most mathematically intensive undergraduate programme offered at Bulacan State
-University's San Rafael Campus, so examples are drawn whenever possible from
-biology, ecology, health, and data analysis.
+preparation for more advanced quantitative courses. Contrary to popular
+opinion, there is a great deal of mathematics in biology, so examples are drawn
+whenever possible from biology, ecology, health, and data analysis.
 
 Biological and medical research is highly interdisciplinary. Students are not
 expected to master every field, but knowing something about different
@@ -41,18 +40,14 @@ difficult—by studying, making mistakes, and trying again.
 
 ## Logistics
 
-**Course title:** Mathematics in the Modern World  
-**Course number:** MMW 101  
-**Term:** First Semester, A.Y. 2026–2027  
-**Instructor's name:** Rey Joseph Nieto  
+**Course title:** Mathematics in the Modern World<br>
+**Course number:** MMW 101<br>
+**Term:** First Semester, A.Y. 2026–2027<br>
+**Instructor's name:** Rey Joseph Nieto<br>
 **Email:** rj (at) rjnieto (dot) com (for questions or
-inquiries related to the course)  
-**Consultation hours:** To be determined
-
-| Class | Room | Schedule |
-|---|---|---|
-| BSB 1B | RCS 204 | Saturdays, 9:00–11:00 a.m. |
-| BSB 1A | RCS 203 | Saturdays, 12:00–3:00 p.m. |
+inquiries related to the course)<br>
+**Consultation hours:** To be determined<br>
+**Class schedule and room:** Refer to the official class schedule
 
 **Important dates**
 
