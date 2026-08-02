@@ -364,6 +364,23 @@ window.Quarto = {
 
 
 <p>These notes develop the mathematical foundations of <strong>topological data analysis (TDA)</strong> through computational algebraic topology. Starting from distance and continuity, we build towards cubical homology, persistence, stability, and image-based applications. They are intended for readers with some mathematical maturity, but no prior knowledge of topology.</p>
+<p><strong>Work in progress.</strong> Every planned chapter currently has a draft, but this TDA section is still under development. The exposition, notation, proofs, examples, exercises, and implementations may change as the notes are revised.</p>
+<div class="callout callout-style-default callout-important callout-titled" title="Bachelor's thesis and repository">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Important</span>Bachelor’s thesis and repository
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The contents of these notes are based on my BSc Mathematics thesis, <em>Computational Stability of Cubical Homology: Orthogonal Controls for Fault Isolation in Retinal Diagnostics</em>. The public thesis and its accompanying code and materials are available below.</p>
+<p><a href="thesis/Nieto_TDA_Public_20260430.pdf" class="btn btn-primary" target="_blank" rel="noopener">Read the bachelor’s thesis</a> <a href="https://github.com/reyjosephnieto/ph" class="btn btn-outline-primary" target="_blank" rel="noopener">Open the project repository</a></p>
+<p>I have adapted and reorganised the thesis into this developing set of notes so that I can expand the exposition gradually. A thesis has strict length constraints, which limited how fully I could motivate definitions, develop examples, and explain proofs. Here, I intend to fill those gaps and make the material accessible to readers whose mathematical background consists of basic calculus.</p>
+<p>The presentation is organised as a course: definitions are introduced before they are used, proofs are separated from implementation, and the retinal application appears only after the necessary mathematical foundations.</p>
+</div>
+</div>
 <p>The central idea is to turn geometric and topological questions into finite algebraic computations. In particular, we will study why</p>
 <p><span class="math display">\[
 \partial_k \circ \partial_{k+1}=0
@@ -467,21 +484,6 @@ window.Quarto = {
 \text{small topological-vector change}.
 \]</span></p>
 <p>Establishing when this implication holds—and identifying when sampling, interpolation, or an unstable vectorisation can break it—is one of the main purposes of the metric, persistence, and stability chapters.</p>
-<div class="callout callout-style-default callout-important callout-titled" title="About these notes">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Important</span>About these notes
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>The contents of these notes are based on my BSc Mathematics thesis, <em>Computational Stability of Cubical Homology: Orthogonal Controls for Fault Isolation in Retinal Diagnostics</em>. A public version of the thesis is available in the <a href="https://github.com/reyjosephnieto/ph">reyjosephnieto/ph</a> repository.</p>
-<p>I have adapted and reorganised the thesis into this developing set of notes so that I can expand the exposition gradually. A thesis has strict length constraints, which limited how fully I could motivate definitions, develop examples, and explain proofs. Here, I intend to fill those gaps and make the material accessible to readers whose mathematical background consists of basic calculus.</p>
-<p>The presentation is organised as a course: definitions are introduced before they are used, proofs are separated from implementation, and the retinal application appears only after the necessary mathematical foundations.</p>
-</div>
-</div>
 <div class="callout callout-style-default callout-note callout-titled" title="Proof-oriented presentation">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -564,7 +566,7 @@ window.Quarto = {
 </section>
 <section id="status" class="level2">
 <h2 class="anchored" data-anchor-id="status">Status</h2>
-<p>The first complete draft is now available. These are living notes: notation, examples, proofs, exercises, and implementations will continue to be revised.</p>
+<p>Every planned chapter currently has a draft, but the TDA section remains a work in progress. These are living notes: notation, examples, proofs, exercises, and implementations will continue to be revised.</p>
 <p>For corrections or requests for errata, please email <strong>rj (at) rjnieto (dot) com</strong>.</p>
 
 
