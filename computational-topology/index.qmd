@@ -10,6 +10,31 @@ distance and continuity, we build towards cubical homology, persistence,
 stability, and image-based applications. They are intended for readers with
 some mathematical maturity, but no prior knowledge of topology.
 
+**Work in progress.** Every planned chapter currently has a draft, but this
+TDA section is still under development. The exposition, notation, proofs,
+examples, exercises, and implementations may change as the notes are revised.
+
+::: {.callout-important title="Bachelor's thesis and repository"}
+The contents of these notes are based on my BSc Mathematics thesis,
+*Computational Stability of Cubical Homology: Orthogonal Controls for Fault
+Isolation in Retinal Diagnostics*. The public thesis and its accompanying code
+and materials are available below.
+
+[Read the bachelor's thesis](thesis/Nieto_TDA_Public_20260430.pdf){.btn .btn-primary target="_blank" rel="noopener"}
+[Open the project repository](https://github.com/reyjosephnieto/ph){.btn .btn-outline-primary target="_blank" rel="noopener"}
+
+I have adapted and reorganised the thesis into this developing set of notes so
+that I can expand the exposition gradually. A thesis has strict length
+constraints, which limited how fully I could motivate definitions, develop
+examples, and explain proofs. Here, I intend to fill those gaps and make the
+material accessible to readers whose mathematical background consists of
+basic calculus.
+
+The presentation is organised as a course: definitions are introduced before
+they are used, proofs are separated from implementation, and the retinal
+application appears only after the necessary mathematical foundations.
+:::
+
 The central idea is to turn geometric and topological questions into finite
 algebraic computations. In particular, we will study why
 
@@ -115,24 +140,6 @@ Establishing when this implication holds—and identifying when sampling,
 interpolation, or an unstable vectorisation can break it—is one of the main
 purposes of the metric, persistence, and stability chapters.
 
-::: {.callout-important title="About these notes"}
-The contents of these notes are based on my BSc Mathematics thesis,
-*Computational Stability of Cubical Homology: Orthogonal Controls for Fault
-Isolation in Retinal Diagnostics*. A public version of the thesis is available
-in the [reyjosephnieto/ph](https://github.com/reyjosephnieto/ph) repository.
-
-I have adapted and reorganised the thesis into this developing set of notes so
-that I can expand the exposition gradually. A thesis has strict length
-constraints, which limited how fully I could motivate definitions, develop
-examples, and explain proofs. Here, I intend to fill those gaps and make the
-material accessible to readers whose mathematical background consists of
-basic calculus.
-
-The presentation is organised as a course: definitions are introduced before
-they are used, proofs are separated from implementation, and the retinal
-application appears only after the necessary mathematical foundations.
-:::
-
 ::: {.callout-note title="Proof-oriented presentation"}
 These notes follow the convention of a typical undergraduate mathematics
 course: definitions fix the objects under discussion; lemmas isolate useful
@@ -208,8 +215,9 @@ plots come from my thesis.
 
 ## Status
 
-The first complete draft is now available. These are living notes: notation,
-examples, proofs, exercises, and implementations will continue to be revised.
+Every planned chapter currently has a draft, but the TDA section remains a
+work in progress. These are living notes: notation, examples, proofs,
+exercises, and implementations will continue to be revised.
 
 For corrections or requests for errata, please email
 **rj (at) rjnieto (dot) com**.
