@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-GB" xml:lang="en-GB"><head>
 
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.10.18">
@@ -37,6 +37,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
 <link href="../Rj-logo.png" rel="icon" type="image/png">
+<script src="../site_libs/quarto-listing/list.min.js"></script>
+<script src="../site_libs/quarto-listing/quarto-listing.js"></script>
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
@@ -74,20 +76,106 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<script>
+
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-listing .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
+
+    const options = {
+      valueNames: ['listing-date','listing-title','listing-description',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      
+      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
+  </script>
 <meta name="author" content="Rey Joseph Nieto">
-<meta name="keywords" content="Rey Joseph Nieto, RJ Nieto, Thinking Pinoy">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Person",
-  "name": "Rey Joseph Nieto",
-  "alternateName": ["RJ Nieto", "Thinking Pinoy"],
-  "url": "https://rjnieto.com/"
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "https://rjnieto.com/#rey-joseph-nieto",
+      "name": "Rey Joseph Nieto",
+      "alternateName": ["RJ Nieto", "Thinking Pinoy"],
+      "url": "https://rjnieto.com/",
+      "image": "https://rjnieto.com/assets/profile-pic.jpg",
+      "sameAs": [
+        "https://www.linkedin.com/in/reyjosephnieto/",
+        "https://www.facebook.com/rjosephnieto",
+        "https://x.com/rjosephnieto"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://rjnieto.com/#website",
+      "url": "https://rjnieto.com/",
+      "name": "RJ Nieto",
+      "description": "The personal website of Rey Joseph Nieto.",
+      "inLanguage": "en-GB",
+      "author": { "@id": "https://rjnieto.com/#rey-joseph-nieto" }
+    }
+  ]
 }
 </script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../styles.css">
+<meta property="og:title" content="Calculated Trainwreck – RJ Nieto">
+<meta property="og:description" content="My personal blog on maths, education, technology, and public life">
+<meta property="og:site_name" content="RJ Nieto">
+<meta property="og:locale" content="en_GB">
+<meta name="twitter:title" content="Calculated Trainwreck – RJ Nieto">
+<meta name="twitter:description" content="My personal blog on maths, education, technology, and public life">
+<meta name="twitter:creator" content="@rjosephnieto">
+<meta name="twitter:site" content="@rjosephnieto">
+<meta name="twitter:card" content="summary">
 </head>
 
 <body class="nav-fixed fullcontent quarto-light">
@@ -160,7 +248,7 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
 <h1 class="title">Calculated Trainwreck</h1>
-<p class="subtitle lead">Notes on maths, education, technology, and public life</p>
+<p class="subtitle lead">My personal blog on maths, education, technology, and public life</p>
 </div>
 
 
@@ -177,12 +265,49 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p><em>Calculated Trainwreck</em> is where I write about maths, education, technology, and public life. The name reflects a simple fact: even carefully considered plans can end somewhere unexpected.</p>
-<p>Posts will appear here as they are published.</p>
 
 
 
-<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
+
+<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
+<div class="list quarto-listing-default">
+<div class="quarto-post image-right" data-index="0" data-listing-date-sort="1785686400000" data-listing-file-modified-sort="1785694089300" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1053">
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="../blog/posts/exorcising-a-demon-london-to-bristol/index.html" class="no-external">Exorcising a Demon II: From London to Bristol</a>
+</h3>
+<div class="delink listing-description"><a href="../blog/posts/exorcising-a-demon-london-to-bristol/index.html" class="no-external">
+<p>Leaving London for Bristol, returning to mathematics, and discovering that a cautious compromise was no longer enough.</p>
+</a></div>
+</div>
+<div class="metadata">
+<a href="../blog/posts/exorcising-a-demon-london-to-bristol/index.html" class="no-external">
+<div class="listing-date">
+3 Aug 2026
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="1" data-listing-date-sort="1785600000000" data-listing-file-modified-sort="1785694088470" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="971">
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="../blog/posts/exorcising-a-demon-manila-to-london/index.html" class="no-external">Exorcising a Demon I: From Manila to London</a>
+</h3>
+<div class="delink listing-description"><a href="../blog/posts/exorcising-a-demon-manila-to-london/index.html" class="no-external">
+<p>Returning to university after nearly two decades and finding a route back to mathematics.</p>
+</a></div>
+</div>
+<div class="metadata">
+<a href="../blog/posts/exorcising-a-demon-manila-to-london/index.html" class="no-external">
+<div class="listing-date">
+2 Aug 2026
+</div>
+</a>
+</div>
+</div>
+</div>
+<div class="listing-no-matching d-none">No matching items</div>
+</div><a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
