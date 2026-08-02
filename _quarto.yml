@@ -16,12 +16,16 @@ website:
     left:
       - href: index.qmd
         text: Home
-      - href: teaching/index.qmd
-        text: Teaching
-      - href: teaching/bulsu/math-modern-world/index.qmd
-        text: MMW101
-      - href: teaching/bulsu/living-it-era/index.qmd
-        text: MST101d
+      - text: Teaching
+        menu:
+          - href: teaching/index.qmd
+            text: Overview
+          - href: teaching/bulsu/math-modern-world/index.qmd
+            text: MMW101
+          - href: teaching/bulsu/living-it-era/index.qmd
+            text: MST101d
+      - href: blog/index.qmd
+        text: Blog
       - href: computational-topology/index.qmd
         text: TDA
       - href: cv/index.qmd

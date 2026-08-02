@@ -1,6 +1,6 @@
 ---
 title: "Mathematics in the Modern World"
-subtitle: "Bulacan State University, San Rafael Campus"
+subtitle: "Bulacan State University<br><em>San Rafael Campus</em>"
 toc: true
 ---
 
@@ -85,12 +85,15 @@ The current version of the complete lecture notes is available as a PDF.
    me when something remains unclear. You do not have to struggle alone.
 
    ::: {.callout-note title="Language in our classroom"}
-   The notes may mix British and American English; either is acceptable if your
-   meaning is clear and consistent. Practising English will help with the
-   biology literature, but it is not a barrier to participation. English,
-   Tagalog, and Cebuano are welcome, as are questions in other languages when
-   someone can help translate. If my accent or wording is difficult to follow,
-   tell me—I can explain in Taglish whenever practicable.
+   The notes use British English. The differences between British and American
+   English are relatively subtle in this course, apart from some spelling
+   conventions and a few terms, so they should not cause difficulty. Either is
+   acceptable if your meaning is clear and consistent. Practising English will
+   help with the biology literature, but it is not a barrier to participation.
+   Students may use any dialect of Tagalog or Cebuano, or English. Questions in
+   other languages are also welcome when someone can help translate. If my
+   accent or wording is difficult to follow, tell me—I can explain in Taglish
+   whenever practicable.
    :::
 
 4. **Expect biology to involve mathematics.** Population growth, inheritance,
