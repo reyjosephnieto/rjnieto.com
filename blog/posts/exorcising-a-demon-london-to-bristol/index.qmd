@@ -8,6 +8,8 @@ image-alt: "The illuminated Wills Memorial Building seen along Park Street in Br
 toc: false
 ---
 
+[← Previous post: *Exorcising a Demon I: From Manila to London*](../exorcising-a-demon-manila-to-london/){.btn .btn-outline-primary}
+
 ![The illuminated Wills Memorial Building, viewed along Park Street in Bristol at dusk.](bristol.webp){fig-alt="The illuminated Wills Memorial Building seen along Park Street in Bristol at dusk."}
 
 > ***“The afternoon knows what the morning never suspected.”*** — *Robert Frost*
@@ -83,4 +85,4 @@ So far.
 </div>
 ~~~
 
-[← Previous post: *Exorcising a Demon I: From Manila to London*](../exorcising-a-demon-manila-to-london/index.qmd){.btn .btn-outline-primary}
+[Next post: *Exorcising a Demon III: From Bristol to Bristol* →](../exorcising-a-demon-bristol-to-bristol/){.btn .btn-primary}

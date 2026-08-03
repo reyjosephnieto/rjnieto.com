@@ -49,7 +49,7 @@ Two presidential elections later, however, I realised that I was getting older a
 
 In a culture that places an almost sacred value on education, the fact that I had never completed my degree haunted me endlessly. At thirty-seven, I decided it was time to take another shot at it and, once and for all, lay that ghost to rest. I needed to finish my mathematics degree.
 
-In my mind, returning to a Philippine university was no longer an option. I assumed that my chequered academic record would make me an impossible prospect for any admissions panel. I wanted to begin again abroad, far from the political noise that had followed me for years.
+In my mind, returning to a Philippine university was no longer an option. I assumed that my chequered academic record, together with the public profile created by my subsequent political career, would make me an impossible prospect for any admissions panel. I wanted to begin again abroad, far from the political noise that had followed me for years.
 
 So I looked overseas.
 
@@ -90,4 +90,4 @@ It was a considerable risk. If I failed, I would return to Manila not merely as 
 </div>
 ~~~
 
-[Next post: *Exorcising a Demon II: From London to Bristol* →](../exorcising-a-demon-london-to-bristol/index.qmd){.btn .btn-primary}
+[Next post: *Exorcising a Demon II: From London to Bristol* →](../exorcising-a-demon-london-to-bristol/){.btn .btn-primary}

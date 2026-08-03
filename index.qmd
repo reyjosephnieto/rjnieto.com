@@ -24,6 +24,15 @@ technical writing, and government communications.
 
 This site records my academic, teaching, and professional work.
 
+**Teaching**
+
+Course materials for *Mathematics in the Modern World* and *Living in the IT
+Era*, which I teach at BulSU.
+
+[Teaching overview](teaching/index.qmd){.btn .btn-primary}
+[MMW 101](teaching/bulsu/math-modern-world/index.qmd){.btn .btn-outline-primary}
+[MST 101d](teaching/bulsu/living-it-era/index.qmd){.btn .btn-outline-primary}
+
 **Calculated Trainwreck**
 
 A blog about maths, education, technology, and public life.
@@ -36,15 +45,6 @@ Self-study notes adapted and expanded from my bachelor’s thesis on the
 computational stability of cubical homology in retinal imaging.
 
 [Open the TDA notes](computational-topology/index.qmd){.btn .btn-primary}
-
-**Teaching**
-
-Course materials for *Mathematics in the Modern World* and *Living in the IT
-Era*, which I teach at BulSU.
-
-[Teaching overview](teaching/index.qmd){.btn .btn-primary}
-[MMW 101](teaching/bulsu/math-modern-world/index.qmd){.btn .btn-outline-primary}
-[MST 101d](teaching/bulsu/living-it-era/index.qmd){.btn .btn-outline-primary}
 
 **Curriculum vitae**
 
