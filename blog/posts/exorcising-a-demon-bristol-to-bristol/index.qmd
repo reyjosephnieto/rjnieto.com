@@ -48,19 +48,21 @@ That gesture meant more to me than he probably realised. It gave my badly damage
 
 As Year 2 drew to a close, we were asked to choose our final-year projects—the closest equivalent in my programme to undergraduate theses. We were given around a hundred topics from which to choose. It was only then that I realised quite how large Bristol’s School of Mathematics was.
 
+When my Year 2 marks arrived, my average was much better than it had been in Year 1. By my calculation, an average in the low sixties in Year 3 would be enough for me to graduate with first-class honours.
+
+Still, I could not afford to become complacent. If there is one thing I have learnt over the past four decades, it is that misfortune enjoys dropping by to say hello.
+
 I chose a project advertised as *Data and Topology: Persistent Homology*. To be perfectly honest, part of the attraction was that it sounded cool. The description listed Linear Algebra or Matrix Algebra as the prerequisite; Metric Spaces might be useful, it said, but was not required. That made the project appear reasonably accessible.
 
 It also helped that the project supervisor was Dr Andrew Donald, one of the coolest lecturers I encountered at Bristol. He had taught me in both Years 1 and 2. He was so chill in class that I sometimes forgot how difficult the mathematics actually was.
 
+::: {.callout-note appearance="simple" icon=false title="A Different World"}
 By then, I had begun to realise that, yes, I was alone, but not quite as alone as I had imagined. For much of the decade before I came to Britain, I had lived in the dog-eat-dog world of politics, where I had grown accustomed to believing that everybody was out to get me and that I had to do everything by myself. I was slow to realise that I no longer lived in that world. Dr Michael, Dr Cox and now Dr Donald showed me that there were people in the School who genuinely wanted to support me. I no longer had to do everything alone. All three also seemed to love what they did, and some of that enthusiasm rubbed off on me. Their support and obvious affection for their work helped keep me sane.
+:::
 
 The advert described homology, informally, as counting holes in a space. That caught my attention. In [Part I](../exorcising-a-demon-manila-to-london/), I wrote that the financial difficulties following my father’s death eventually forced me to leave university. He had suffered from diabetes, and the first serious complication he developed was diabetic retinopathy, a condition that damages the blood vessels of the retina. Suddenly, TDA seemed to offer a way of studying the shapes and structures found in retinal images. It felt as though the project had given me an opportunity to speak to my younger self.
 
 The advert left plenty of room to choose a direction. One could concentrate on the algebraic structures or investigate the shape of particular data sets, with the option of adding a computational element. I ended up doing both: working through the algebraic foundations and then using them to investigate data computationally. I did not want the dissertation to amount to, “Wow, this looks cute—but so what?” I wanted to use persistent homology on a concrete problem, turning patterns in images into something that could be defined, computed and compared.
-
-When my Year 2 marks arrived, my average was much better than it had been in Year 1. By my calculation, an average in the low sixties in Year 3 would be enough for me to graduate with first-class honours.
-
-Still, I could not afford to become complacent. If there is one thing I have learnt over the past four decades, it is that misfortune enjoys dropping by to say hello.
 
 At the algorithmic level, persistent homology can look like a sequence of matrix reductions. Without the underlying theory, however, the procedure felt uncomfortably hand-wavy. This was algebraic territory, and my algebraic preparation from Years 1 and 2 was much weaker than my background in probability and analysis. The advertised prerequisites were fair; I had simply chosen a direction that demanded rather more from me.
 
