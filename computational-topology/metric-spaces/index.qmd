@@ -1,7 +1,7 @@
 ---
 title: "Metric Spaces"
 subtitle: "Measuring distance, nearness, and perturbation"
-description: "A first-principles introduction to metrics, open balls, continuity, and the supremum distance used in computational topology."
+description-meta: "A first-principles introduction to metrics, open balls, continuity, and the supremum distance used in computational topology."
 number-sections: true
 toc: true
 toc-depth: 3

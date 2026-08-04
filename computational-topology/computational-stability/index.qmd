@@ -1,7 +1,7 @@
 ---
 title: "Computational Stability on Digital Images"
 subtitle: "Separating mechanical and radiometric error"
-description: "A discrete acquisition model and stability bound for cubical persistent homology on sampled images."
+description-meta: "A discrete acquisition model and stability bound for cubical persistent homology on sampled images."
 number-sections: true
 toc: true
 toc-depth: 3

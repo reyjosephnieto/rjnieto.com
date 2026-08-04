@@ -1,7 +1,7 @@
 ---
 title: "Mathematics in the Modern World"
 subtitle: "Bulacan State University<br><em>San Rafael Campus</em>"
-description: "Lecture notes, exercises, course information, and class policies for Mathematics in the Modern World, prepared primarily for BS Biology students."
+description-meta: "Lecture notes, exercises, course information, and class policies for Mathematics in the Modern World, prepared primarily for BS Biology students."
 toc: true
 ---
 
@@ -66,6 +66,14 @@ The current version of the complete lecture notes is available as a PDF.
 *Current version: 1 August 2026*
 
 ## House rules
+
+> ***“…The young must be idealistic; the young must believe that the world
+> should be more just, and there should be more moral rectitude in the
+> behaviour of their leaders… (But) at the end of the day I think decisions
+> have got to be made by adults, not teenagers. But it’s got to be made in
+> such a way that when the teenagers become adults, and they look back on
+> these decisions, they would be proud of the generation that went before
+> them.”*** — *Lee Kuan Yew*
 
 1. **Printed notes are available if you need them.** If you do not have
    reliable access to a laptop or mobile device, speak to me after class or

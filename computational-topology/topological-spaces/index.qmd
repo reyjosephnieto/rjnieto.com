@@ -1,7 +1,7 @@
 ---
 title: "Topological Spaces and Continuity"
 subtitle: "Keeping nearness while forgetting exact distance"
-description: "Open sets, continuous maps, homeomorphisms, connectedness, and homotopy from first principles."
+description-meta: "Open sets, continuous maps, homeomorphisms, connectedness, and homotopy from first principles."
 number-sections: true
 toc: true
 toc-depth: 3

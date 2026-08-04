@@ -1,7 +1,7 @@
 ---
 title: "Cubical and Simplicial Complexes"
 subtitle: "Finite models of shape"
-description: "Elementary cubes, simplices, face closure, complexes, geometric realisation, and triangulation."
+description-meta: "Elementary cubes, simplices, face closure, complexes, geometric realisation, and triangulation."
 number-sections: true
 toc: true
 toc-depth: 3

@@ -1,7 +1,7 @@
 ---
 title: "Chains, Boundaries, and Homology"
 subtitle: "Turning holes into quotient vector spaces"
-description: "Chain groups, boundary operators, cycles, boundaries, homology groups, and Betti numbers."
+description-meta: "Chain groups, boundary operators, cycles, boundaries, homology groups, and Betti numbers."
 number-sections: true
 toc: true
 toc-depth: 3

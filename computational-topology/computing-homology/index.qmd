@@ -1,7 +1,7 @@
 ---
 title: "Computing Homology"
 subtitle: "Boundary matrices and reduction over F₂"
-description: "How to turn a finite cell complex into matrices and compute its Betti numbers."
+description-meta: "How to turn a finite cell complex into matrices and compute its Betti numbers."
 number-sections: true
 toc: true
 toc-depth: 3

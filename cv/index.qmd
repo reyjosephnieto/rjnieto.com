@@ -1,7 +1,7 @@
 ---
 title: "Curriculum Vitae"
 subtitle: "Rey Joseph Nieto"
-description: "The curriculum vitae of Rey Joseph Nieto, a mathematician, university instructor, and communications professional in the Philippines."
+description-meta: "The curriculum vitae of Rey Joseph Nieto, a mathematician, university instructor, and communications professional in the Philippines."
 toc: true
 toc-depth: 2
 ---

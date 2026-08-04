@@ -1,7 +1,7 @@
 ---
 title: "Linear Algebra for Homology"
 subtitle: "Kernels, images, quotients, and arithmetic over two elements"
-description: "The focused linear algebra needed to define and compute homology."
+description-meta: "The focused linear algebra needed to define and compute homology."
 number-sections: true
 toc: true
 toc-depth: 3

@@ -1,7 +1,7 @@
 ---
 title: "Topological Data Analysis from Scratch"
 subtitle: "A computational algebraic topology route from metric spaces to persistent homology"
-description: "Self-study notes in computational algebraic topology, from metric spaces and homology to persistence, stability, and retinal imaging applications."
+description-meta: "Self-study notes in computational algebraic topology, from metric spaces and homology to persistence, stability, and retinal imaging applications."
 toc: true
 ---
 

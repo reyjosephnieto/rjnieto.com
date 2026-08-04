@@ -1,7 +1,7 @@
 ---
 title: "Case Study: Retinal Diagnostics"
 subtitle: "Topology as one probe in a differential reliability framework"
-description: "The thesis application: cubical persistence, image perturbations, stable summaries, and fault isolation in retinal imaging."
+description-meta: "The thesis application: cubical persistence, image perturbations, stable summaries, and fault isolation in retinal imaging."
 number-sections: true
 toc: true
 toc-depth: 3

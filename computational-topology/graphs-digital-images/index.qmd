@@ -1,7 +1,7 @@
 ---
 title: "Graphs and Digital Images"
 subtitle: "Turning pixels into finite neighbourhood structures"
-description: "Graphs, connectivity, image grids, threshold sets, and the discrete structures underlying cubical topology."
+description-meta: "Graphs, connectivity, image grids, threshold sets, and the discrete structures underlying cubical topology."
 number-sections: true
 toc: true
 toc-depth: 3
