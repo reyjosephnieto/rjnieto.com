@@ -2,8 +2,12 @@
 title: "Teaching"
 subtitle: "Lecture notes and course materials"
 description-meta: "Course pages, lecture notes, exercises, and teaching materials prepared by RJ Nieto for university students at Bulacan State University."
+image: "../Bulsu-San-Rafael-gate.png"
+image-alt: "The entrance gate of Bulacan State University's San Rafael Campus"
 toc: false
 ---
+
+![](../Bulsu-San-Rafael-gate.png){fig-alt="The entrance gate of Bulacan State University's San Rafael Campus" width="100%"}
 
 These are course materials prepared for my university teaching. They support
 classroom instruction and independent review.
