@@ -1,0 +1,169 @@
+---
+title: "Exorcising a Demon IV: An NHS Nurse, Alex Eala, a Greying Student and Filipino Psychology"
+description: "What kapwa can tell us about Alex Eala, a Filipino student in Bristol, and the care offered by Filipino NHS nurses."
+date: 2026-08-05
+author: "Rey Joseph Nieto"
+header-includes: |
+  <link rel="canonical" href="https://rjnieto.com/blog/posts/exorcising-a-demon-filipino-psychology/">
+  <meta property="og:url" content="https://rjnieto.com/blog/posts/exorcising-a-demon-filipino-psychology/">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Exorcising a Demon IV: An NHS Nurse, Alex Eala, a Greying Student and Filipino Psychology",
+    "description": "What kapwa can tell us about Alex Eala, a Filipino student in Bristol, and the care offered by Filipino NHS nurses.",
+    "datePublished": "2026-08-05",
+    "dateModified": "2026-08-05",
+    "inLanguage": "en-GB",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://rjnieto.com/blog/posts/exorcising-a-demon-filipino-psychology/"
+    },
+    "author": {
+      "@type": "Person",
+      "@id": "https://rjnieto.com/#rey-joseph-nieto",
+      "name": "Rey Joseph Nieto",
+      "url": "https://rjnieto.com/"
+    }
+  }
+  </script>
+toc: false
+---
+
+[← Previous post: *Exorcising a Demon III: From Bristol to Bristol*](../exorcising-a-demon-bristol-to-bristol/){.btn .btn-outline-primary}
+
+Before explaining just how wrong I was about my final-year project, I need to
+take a detour. Rereading the first three parts of this series, I noticed that I
+had moved from paranoid defeatism to cautious optimism without losing the habit
+of making jokes at my own expense. The little bit of Britain I had acquired
+thought, good grief, this sounds like a soap opera. A restrained Englishman
+might have said that university had been “a bit difficult” and left it there.
+
+Perhaps there is some melodrama in them, but the Filipino heart was doing most
+of the talking. My family, friends and lecturers were not supporting characters
+in an individual story; they were part of how I understood myself. Perhaps it
+was only then that I began to see the people at Bristol as *kapwa*, rather than
+as potential judges.
+
+## Filipino Nurses and a Tennis Player
+
+That is why this detour begins in an NHS hospital ward. Most of us will need a
+nurse eventually, and Britain has a horde of Filipino nurses. One of them may
+well be caring for you. Their care may feel unusually personal: more patient
+than the circumstances reasonably permit or more concerned about your comfort
+than the job strictly requires.
+
+This is not a theorem about Filipino nurses. A population of more than a hundred
+million people will provide counterexamples to almost any proposition. I am
+interested in the narrower question of why some Filipino nurses appear to treat
+care as something more personal than a professional transaction.
+
+To understand that, consider Alex Eala. Her ranking bears her name, and she wins
+or loses her own matches. Yet Filipinos [fill courts wherever she
+plays](https://www.rolandgarros.com/en-us/article/alex-eala-janice-tjen-top-50-2026-season-fans-asia-progress-clay-courts).
+They queued for hours at Wimbledon and followed her to Washington, where she
+won her [first tour-level WTA
+title](https://www.wtatennis.com/tournaments/1045/washington-dc/2026/past-winners).
+The Philippines, which is not known as a tennis country, promptly developed
+several million experts on second serves.
+
+After her Wimbledon run, President Ferdinand Marcos Jr [received her at
+Malacañan Palace](https://pco.gov.ph/news_releases/president-marcos-hails-alex-eala-as-ph-tennis-champion-vows-full-government-support/)
+and praised the way she carried her Filipino identity onto the court. Eala has
+said much the same thing herself: [where she comes from forms part of who she
+is](https://www.wtatennis.com/news/4530020/alexandra-eala-history-first-filipina-third-round-grand-slam-the-philippines-in-wimbledon-it-means-so-much).
+She competes on an individual professional tour, yet Filipinos experience her
+victories as partly theirs.
+
+## The Audience in My Head
+
+I understand this because something similar happened inside my head at
+Bristol. There was no flag beside my name on an examination paper, but I worried
+that my performance reflected upon Filipinos generally. If I struggled, I felt
+that I was confirming somebody’s doubts about us; if I did well, I felt that I
+had defended a national reputation nobody had asked me to defend.
+
+My lecturers had imposed none of this. They could distinguish one Filipino with
+a chequered academic history from an entire country. If I failed Linear Algebra,
+nobody was going to summon the Philippine ambassador. The audience was largely
+imaginary, but that did not make it harmless.
+
+[Virgilio Enriquez’s concept of
+*kapwa*](https://cir.nii.ac.jp/crid/1360870767498462848) helps explain it. Enriquez,
+the founder of *Sikolohiyang Pilipino*, argued that Filipino psychology should
+begin with Filipino language and experience rather than assume that concepts
+developed elsewhere would fit us perfectly.
+
+*Kapwa* is sometimes translated as “other person”, although that loses much of
+its meaning. In English, the other is separate from me. With *kapwa*, the other
+person and I share something of the same identity. This does not mean Filipinos
+live in perpetual harmony; anyone who has attended a Filipino family gathering
+will know better. It means that the boundary between what belongs to me and what
+belongs to others is not always absolute. For better or worse, *kapwa* forms
+part of our cultural firmware.
+
+I had encountered this when I left content creation. I had around two million
+followers, most of whom were Filipino, and many felt betrayed when I left public
+life to return to university. They did not want me to remain stupid; they had
+simply come to regard my political work as something we shared, so my departure
+did not appear to be an entirely private decision.
+
+Looking back, I suspect they understood my departure through *kapwa*. I was
+trying to finish the education I had abandoned; they saw me walking away from
+something in which they had also invested. I cannot blame them, but leaving was
+something I had to do. The work bore my name without belonging only to me.
+
+## Back to the Ward
+
+The same idea may help us understand your Filipino NHS nurse. I am not a nurse,
+and using [retinal images in a mathematics
+project](https://github.com/reyjosephnieto/ph) does not qualify me to speak for
+one. I suspect, however, that *kapwa* explains part of what patients sometimes
+experience as unusually personal care.
+
+A patient may begin as a stranger but remains *kapwa*: another person whose
+suffering is not entirely separate from one’s own. There is also
+*pakikiramdam*, the effort to notice what another person feels without waiting
+for a formal request. The nurse is unlikely to think, “I shall now demonstrate
+Filipino culture to Bed 12.” They may simply find it difficult to walk away
+while somebody remains frightened or uncomfortable.
+
+Professional training, experience and temperament still matter. *Kapwa* is not
+a complete explanation, but it helps explain why care may feel personal even
+when the relationship began as a professional one.
+
+There is also a danger. Describing Filipinos as naturally caring, selfless and
+hardworking gives an overstretched health service a convenient excuse for
+expecting too much from them. A [study of Filipino nurses in
+Britain](https://openaccess.city.ac.uk/id/eprint/35114/) noted that, during the
+first two months of the COVID-19 pandemic, Filipinos were estimated to account
+for 36 per cent of known healthcare-worker deaths despite comprising about 8
+per cent of the NHS nursing workforce. Being good at caring for other people
+does not make somebody indestructible.
+
+Eala should be allowed to lose without feeling that she has failed the
+Philippines. I should have been able to perform badly in an examination without
+treating it as an international incident. A Filipino nurse should be able to
+finish a shift without believing that exhaustion represents a failure to care.
+
+*Kapwa* is not the demon that needs exorcising. It fills tennis courts for a
+young woman from Quezon City, helped the son of a pig farmer and grandson of a
+rice farmer survive at a university half a planet away, and can make a
+frightened patient feel that somebody sees them. The demon is the belief that
+belonging must always be earned through achievement and sacrifice.
+
+If a Filipino nurse cares for you, say thank you, but do not mistake that
+kindness for an unlimited resource. *Kapwa* may help explain why they care; it
+does not mean they do not need caring for. As for my final-year project, that
+particular disaster will have to wait.
+
+**Share this post**
+
+~~~{=html}
+<div class="d-flex flex-wrap gap-2 mb-4">
+  <a class="btn btn-outline-primary" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Frjnieto.com%2Fblog%2Fposts%2Fexorcising-a-demon-filipino-psychology%2F" target="_blank" rel="noopener noreferrer">Facebook</a>
+  <a class="btn btn-outline-primary" href="https://twitter.com/intent/tweet?url=https%3A%2F%2Frjnieto.com%2Fblog%2Fposts%2Fexorcising-a-demon-filipino-psychology%2F&amp;text=Exorcising%20a%20Demon%20IV%3A%20An%20NHS%20Nurse%2C%20Alex%20Eala%2C%20a%20Greying%20Student%20and%20Filipino%20Psychology" target="_blank" rel="noopener noreferrer">Twitter</a>
+  <a class="btn btn-outline-primary" href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Frjnieto.com%2Fblog%2Fposts%2Fexorcising-a-demon-filipino-psychology%2F" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+  <button type="button" class="btn btn-outline-primary" data-copy-url="https://rjnieto.com/blog/posts/exorcising-a-demon-filipino-psychology/" aria-label="Copy a link to this post" onclick="navigator.clipboard.writeText(this.dataset.copyUrl); this.textContent='Copied!'">Copy link</button>
+</div>
+~~~
