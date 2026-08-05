@@ -1,8 +1,10 @@
 ---
-title: "Exorcising a Demon IV: An NHS Nurse, Alex Eala, a Greying Student and Filipino Psychology"
+title: "Exorcising a Demon IV: The NHS, Wimbledon, Bristol, and Filipino Psychology"
 description: "What kapwa can tell us about Alex Eala, a Filipino student in Bristol, and the care offered by Filipino NHS nurses."
 date: 2026-08-05
 author: "Rey Joseph Nieto"
+image: "nhs-tennis-bristol.jpg"
+image-alt: "An illustrative triptych showing a Filipino nurse at work, a grass tennis court and the Wills Memorial Building in Bristol."
 header-includes: |
   <link rel="canonical" href="https://rjnieto.com/blog/posts/exorcising-a-demon-filipino-psychology/">
   <meta property="og:url" content="https://rjnieto.com/blog/posts/exorcising-a-demon-filipino-psychology/">
@@ -10,8 +12,9 @@ header-includes: |
   {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
-    "headline": "Exorcising a Demon IV: An NHS Nurse, Alex Eala, a Greying Student and Filipino Psychology",
+    "headline": "Exorcising a Demon IV: The NHS, Wimbledon, Bristol, and Filipino Psychology",
     "description": "What kapwa can tell us about Alex Eala, a Filipino student in Bristol, and the care offered by Filipino NHS nurses.",
+    "image": "https://rjnieto.com/blog/posts/exorcising-a-demon-filipino-psychology/nhs-tennis-bristol.jpg",
     "datePublished": "2026-08-05",
     "dateModified": "2026-08-05",
     "inLanguage": "en-GB",
@@ -31,6 +34,10 @@ toc: false
 ---
 
 [← Previous post: *Exorcising a Demon III: From Bristol to Bristol*](../exorcising-a-demon-bristol-to-bristol/){.btn .btn-outline-primary}
+
+![An illustrative triptych of a Filipino nurse, a grass tennis court and the
+Wills Memorial Building in
+Bristol.](nhs-tennis-bristol.jpg){fig-alt="An illustrative triptych showing a Filipino nurse at work, a grass tennis court and the Wills Memorial Building in Bristol."}
 
 Before explaining just how wrong I was about my final-year project, I need to
 take a detour. Rereading the first three parts of this series, I noticed that I
@@ -154,15 +161,16 @@ belonging must always be earned through achievement and sacrifice.
 
 If a Filipino nurse cares for you, say thank you, but do not mistake that
 kindness for an unlimited resource. *Kapwa* may help explain why they care; it
-does not mean they do not need caring for. As for my final-year project, that
-particular disaster will have to wait.
+does not mean they do not need caring for.
+
+As for my final-year project, that particular disaster will have to wait.
 
 **Share this post**
 
 ~~~{=html}
 <div class="d-flex flex-wrap gap-2 mb-4">
   <a class="btn btn-outline-primary" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Frjnieto.com%2Fblog%2Fposts%2Fexorcising-a-demon-filipino-psychology%2F" target="_blank" rel="noopener noreferrer">Facebook</a>
-  <a class="btn btn-outline-primary" href="https://twitter.com/intent/tweet?url=https%3A%2F%2Frjnieto.com%2Fblog%2Fposts%2Fexorcising-a-demon-filipino-psychology%2F&amp;text=Exorcising%20a%20Demon%20IV%3A%20An%20NHS%20Nurse%2C%20Alex%20Eala%2C%20a%20Greying%20Student%20and%20Filipino%20Psychology" target="_blank" rel="noopener noreferrer">Twitter</a>
+  <a class="btn btn-outline-primary" href="https://twitter.com/intent/tweet?url=https%3A%2F%2Frjnieto.com%2Fblog%2Fposts%2Fexorcising-a-demon-filipino-psychology%2F&amp;text=Exorcising%20a%20Demon%20IV%3A%20The%20NHS%2C%20Wimbledon%2C%20Bristol%2C%20and%20Filipino%20Psychology" target="_blank" rel="noopener noreferrer">Twitter</a>
   <a class="btn btn-outline-primary" href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Frjnieto.com%2Fblog%2Fposts%2Fexorcising-a-demon-filipino-psychology%2F" target="_blank" rel="noopener noreferrer">LinkedIn</a>
   <button type="button" class="btn btn-outline-primary" data-copy-url="https://rjnieto.com/blog/posts/exorcising-a-demon-filipino-psychology/" aria-label="Copy a link to this post" onclick="navigator.clipboard.writeText(this.dataset.copyUrl); this.textContent='Copied!'">Copy link</button>
 </div>
