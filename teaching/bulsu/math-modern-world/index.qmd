@@ -117,7 +117,7 @@ The current version of the complete lecture notes is available as a PDF.
    retinal photographs into numerical summaries and test their reliability
    under changes such as blur, rotation, and noise. It brings together
    mathematics, computation, and medical imaging. Curious readers can explore
-   the [self-study TDA section](/computational-topology/) or the
+   the [public thesis](https://github.com/reyjosephnieto/ph/blob/main/Nieto_TDA_Public_20260430.pdf) or the
    [project repository](https://github.com/reyjosephnieto/ph); the advanced
    mathematics is not required for this course.
    :::

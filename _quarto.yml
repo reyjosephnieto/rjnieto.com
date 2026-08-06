@@ -11,7 +11,7 @@ project:
 website:
   title: "RJ Nieto"
   site-url: "https://rjnieto.com"
-  description: "The personal website of Rey Joseph Nieto, featuring mathematics, education, information technology, topological data analysis, and the Calculated Trainwreck blog."
+  description: "The personal website of Rey Joseph Nieto, featuring mathematics, education, information technology, and the Calculated Trainwreck blog."
   favicon: Rj-logo.png
   open-graph:
     site-name: "RJ Nieto"
@@ -35,37 +35,8 @@ website:
             text: MST101d
       - href: blog/index.qmd
         text: Blog
-      - href: computational-topology/index.qmd
-        text: TDA
       - href: cv/index.qmd
         text: CV
-
-  sidebar:
-    title: "Computational Topology"
-    style: docked
-    contents:
-      - computational-topology/index.qmd
-      - section: "Foundations"
-        contents:
-          - computational-topology/metric-spaces/index.qmd
-          - computational-topology/topological-spaces/index.qmd
-          - computational-topology/graphs-digital-images/index.qmd
-          - computational-topology/complexes/index.qmd
-          - computational-topology/linear-algebra/index.qmd
-      - section: "Homology and persistence"
-        contents:
-          - computational-topology/homology/index.qmd
-          - computational-topology/computing-homology/index.qmd
-          - computational-topology/persistent-homology/index.qmd
-          - computational-topology/stability/index.qmd
-      - section: "Research application"
-        contents:
-          - computational-topology/computational-stability/index.qmd
-          - computational-topology/reliability-engineering/index.qmd
-          - computational-topology/retinal-case-study/index.qmd
-      - section: "Advanced"
-        contents:
-          - computational-topology/functoriality-triangulation/index.qmd
 
   page-navigation: true
   back-to-top-navigation: true
@@ -89,5 +60,4 @@ format:
 execute:
   freeze: auto
 
-bibliography: computational-topology/references.bib
 lang: en-GB
