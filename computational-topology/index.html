@@ -6,9 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="description" content="Self-study notes in computational algebraic topology, from metric spaces and homology to persistence, stability, and retinal imaging applications.">
 
-<title>Topological Data Analysis from Scratch – RJ Nieto</title>
+<title>Computational Topology – RJ Nieto</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -27,26 +26,7 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for citations */
-div.csl-bib-body { }
-div.csl-entry {
-  clear: both;
-}
-.hanging-indent div.csl-entry {
-  margin-left:2em;
-  text-indent:-2em;
-}
-div.csl-left-margin {
-  min-width:2em;
-  float:left;
-}
-div.csl-right-inline {
-  margin-left:2em;
-  padding-left:1em;
-}
-div.csl-indent {
-  margin-left: 2em;
-}</style>
+</style>
 
 
 <script src="../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -56,7 +36,6 @@ div.csl-indent {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../computational-topology/metric-spaces/index.html" rel="next">
 <link href="../Rj-logo.png" rel="icon" type="image/png">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -67,7 +46,7 @@ div.csl-indent {
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-f5170239b9d8bf5972d3d342efe8b563.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-b33b9b69f4c5fb4494f9449cceaef590.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -125,50 +104,26 @@ div.csl-indent {
   ]
 }
 </script>
-
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
+<meta http-equiv="refresh" content="0; url=https://github.com/reyjosephnieto/ph/blob/main/Nieto_TDA_Public_20260430.pdf">
+<link rel="canonical" href="https://github.com/reyjosephnieto/ph/blob/main/Nieto_TDA_Public_20260430.pdf">
+<script>
+  window.location.replace("https://github.com/reyjosephnieto/ph/blob/main/Nieto_TDA_Public_20260430.pdf");
 </script>
 
+
 <link rel="stylesheet" href="../styles.css">
-<meta property="og:title" content="Topological Data Analysis from Scratch – RJ Nieto">
-<meta property="og:description" content="A computational algebraic topology route from metric spaces to persistent homology">
+<meta property="og:title" content="Computational Topology – RJ Nieto">
+<meta property="og:description" content="The personal website of Rey Joseph Nieto, featuring mathematics, education, information technology, and the Calculated Trainwreck blog.">
 <meta property="og:site_name" content="RJ Nieto">
 <meta property="og:locale" content="en_GB">
-<meta name="twitter:title" content="Topological Data Analysis from Scratch – RJ Nieto">
-<meta name="twitter:description" content="A computational algebraic topology route from metric spaces to persistent homology">
+<meta name="twitter:title" content="Computational Topology – RJ Nieto">
+<meta name="twitter:description" content="The personal website of Rey Joseph Nieto, featuring mathematics, education, information technology, and the Calculated Trainwreck blog.">
 <meta name="twitter:creator" content="@rjosephnieto">
 <meta name="twitter:site" content="@rjosephnieto">
 <meta name="twitter:card" content="summary">
 </head>
 
-<body class="nav-sidebar docked nav-fixed quarto-light">
+<body class="nav-fixed fullcontent quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -213,10 +168,6 @@ window.Quarto = {
 <span class="menu-text">Blog</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="../computational-topology/index.html" aria-current="page"> 
-<span class="menu-text">TDA</span></a>
-  </li>  
-  <li class="nav-item">
     <a class="nav-link" href="../cv/index.html"> 
 <span class="menu-text">CV</span></a>
   </li>  
@@ -226,178 +177,18 @@ window.Quarto = {
 </div>
       </div> <!-- /container-fluid -->
     </nav>
-  <nav class="quarto-secondary-nav">
-    <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-        <i class="bi bi-layout-text-sidebar-reverse"></i>
-      </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../computational-topology/index.html">Topological Data Analysis from Scratch</a></li></ol></nav>
-        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-        </a>
-    </div>
-  </nav>
 </header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
-    <div class="sidebar-menu-container"> 
-    <ul class="list-unstyled mt-1">
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../computational-topology/index.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Topological Data Analysis from Scratch</span></a>
-  </div>
-</li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
- <span class="menu-text">Foundations</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../computational-topology/metric-spaces/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Metric Spaces</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../computational-topology/topological-spaces/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Topological Spaces and Continuity</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../computational-topology/graphs-digital-images/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Graphs and Digital Images</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../computational-topology/complexes/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Cubical and Simplicial Complexes</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../computational-topology/linear-algebra/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Linear Algebra for Homology</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
- <span class="menu-text">Homology and persistence</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../computational-topology/homology/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Chains, Boundaries, and Homology</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../computational-topology/computing-homology/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Computing Homology</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../computational-topology/persistent-homology/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Filtrations and Persistent Homology</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../computational-topology/stability/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Stability of Persistent Homology</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
- <span class="menu-text">Research application</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../computational-topology/computational-stability/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Computational Stability on Digital Images</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../computational-topology/reliability-engineering/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Reliability Engineering with Complementary Probes</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../computational-topology/retinal-case-study/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Case Study: Retinal Diagnostics</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
- <span class="menu-text">Advanced</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../computational-topology/functoriality-triangulation/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Functoriality and Triangulation</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-    </ul>
-    </div>
-</nav>
-<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#the-route-through-the-subject" id="toc-the-route-through-the-subject" class="nav-link active" data-scroll-target="#the-route-through-the-subject">The route through the subject</a></li>
-  <li><a href="#why-turn-topology-into-vectors" id="toc-why-turn-topology-into-vectors" class="nav-link" data-scroll-target="#why-turn-topology-into-vectors">Why turn topology into vectors?</a></li>
-  <li><a href="#foundations" id="toc-foundations" class="nav-link" data-scroll-target="#foundations">Foundations</a></li>
-  <li><a href="#homology-and-persistence" id="toc-homology-and-persistence" class="nav-link" data-scroll-target="#homology-and-persistence">Homology and persistence</a></li>
-  <li><a href="#research-application" id="toc-research-application" class="nav-link" data-scroll-target="#research-application">Research application</a></li>
-  <li><a href="#advanced-material" id="toc-advanced-material" class="nav-link" data-scroll-target="#advanced-material">Advanced material</a></li>
-  <li><a href="#status" id="toc-status" class="nav-link" data-scroll-target="#status">Status</a></li>
-  </ul>
-</nav>
-    </div>
+    
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Topological Data Analysis from Scratch</h1>
-<p class="subtitle lead">A computational algebraic topology route from metric spaces to persistent homology</p>
+<h1 class="title">Computational Topology</h1>
 </div>
 
 
@@ -414,227 +205,11 @@ window.Quarto = {
 </header>
 
 
-<p>These notes develop the mathematical foundations of <strong>topological data analysis (TDA)</strong> through computational algebraic topology. Starting from distance and continuity, we build towards cubical homology, persistence, stability, and image-based applications. They are intended for readers with some mathematical maturity, but no prior knowledge of topology.</p>
-<p><strong>Work in progress.</strong> Every planned chapter currently has a draft, but this TDA section is still under development. The exposition, notation, proofs, examples, exercises, and implementations may change as the notes are revised.</p>
-<div class="callout callout-style-default callout-important callout-titled" title="Bachelor's thesis and repository">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Important</span>Bachelor’s thesis and repository
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>The contents of these notes are based on my BSc Mathematics thesis, <em>Computational Stability of Cubical Homology: Orthogonal Controls for Fault Isolation in Retinal Diagnostics</em>. The public thesis and its accompanying code and materials are available below.</p>
-<p><a href="thesis/Nieto_TDA_Public_20260430.pdf" class="btn btn-primary" target="_blank" rel="noopener">Read the bachelor’s thesis</a> <a href="https://github.com/reyjosephnieto/ph" class="btn btn-outline-primary" target="_blank" rel="noopener">Open the project repository</a></p>
-<p>I have adapted and reorganised the thesis into this developing set of notes so that I can expand the exposition gradually. A thesis has strict length constraints, which limited how fully I could motivate definitions, develop examples, and explain proofs. Here, I intend to fill those gaps and make the material accessible to readers whose mathematical background consists of basic calculus.</p>
-<p>The presentation is organised as a course: definitions are introduced before they are used, proofs are separated from implementation, and the retinal application appears only after the necessary mathematical foundations.</p>
-</div>
-</div>
-<p>The central idea is to turn geometric and topological questions into finite algebraic computations. In particular, we will study why</p>
-<p><span class="math display">\[
-\partial_k \circ \partial_{k+1}=0
-\]</span></p>
-<p>and how this identity leads to homology groups, algorithms, filtrations, and persistent homology.</p>
-<div class="callout callout-style-default callout-tip callout-titled" title="How to read these notes">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>How to read these notes
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>The chapters are cumulative, but they are not meant to be read at a uniform speed. A first encounter with metric spaces, quotient spaces, or functors can feel much more abstract than the image-processing problem that motivated them. When that happens, keep the following concrete dictionary in view:</p>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 50%">
-<col style="width: 50%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Abstract object</th>
-<th>Picture to keep in mind</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>metric</td>
-<td>a rule for deciding how different two points or images are</td>
-</tr>
-<tr class="even">
-<td>open neighbourhood</td>
-<td>the points allowed by a chosen tolerance</td>
-</tr>
-<tr class="odd">
-<td>complex</td>
-<td>pixels together with their edges and vertices</td>
-</tr>
-<tr class="even">
-<td>chain</td>
-<td>a selected collection of cells</td>
-</tr>
-<tr class="odd">
-<td>boundary map</td>
-<td>“keep only the perimeter”</td>
-</tr>
-<tr class="even">
-<td>homology class</td>
-<td>a loop or component after filled-in boundaries are ignored</td>
-</tr>
-<tr class="odd">
-<td>filtration</td>
-<td>a thresholded image growing one level at a time</td>
-</tr>
-<tr class="even">
-<td>persistence interval</td>
-<td>the lifespan of one topological feature</td>
-</tr>
-</tbody>
-</table>
-<p>On a first reading, concentrate on the examples and the statements of the results. Proofs marked as sketches and the final chapter on category theory can be revisited after the computational pipeline is familiar. None of the applications requires the reader to become fluent in categorical notation immediately.</p>
-</div>
-</div>
-<section id="the-route-through-the-subject" class="level2">
-<h2 class="anchored" data-anchor-id="the-route-through-the-subject">The route through the subject</h2>
-<p>The course repeatedly moves through the same four levels:</p>
-<p><span class="math display">\[
-\text{distance and continuity}
-\longrightarrow
-\text{finite shapes}
-\longrightarrow
-\text{linear algebra}
-\longrightarrow
-\text{stable image descriptors}.
-\]</span></p>
-<p>Metric and topological spaces provide the language of closeness and deformation. Graphs and cell complexes replace continuous shapes by finite objects. Linear algebra turns their boundaries into matrices. Persistent homology then follows the resulting features through an image filtration, while stability theory tells us how sensitive those features are to changes in the data.</p>
-</section>
-<section id="why-turn-topology-into-vectors" class="level2">
-<h2 class="anchored" data-anchor-id="why-turn-topology-into-vectors">Why turn topology into vectors?</h2>
-<p>Neural networks and most other statistical learning methods ultimately operate on numerical inputs. A digital image is already a numerical array, and the usual neural-network architecture for image data is a convolutional neural network (CNN). A CNN repeatedly transforms pixel arrays into learned numerical features. We will not develop that machinery here.</p>
-<p>Convolutional networks are effective at learning local visual patterns and can, in principle, learn information related to shape and topology. Standard CNN architectures, however, do not explicitly represent connected components, loops, or voids, nor do they ordinarily guarantee that these quantities are preserved through their learned transformations. When those structures matter, it is useful to provide them to a learning system directly rather than require the network to rediscover them from pixels.</p>
-<p>The pipeline developed in these notes therefore has the form</p>
-<p><span class="math display">\[
-\text{digital image}
-\longrightarrow
-\text{cubical filtration}
-\longrightarrow
-\text{persistence diagrams}
-\longrightarrow
-\text{topological vector}
-\longrightarrow
-\text{statistical or neural model}.
-\]</span></p>
-<p>The topological vector is a fixed-length numerical summary of components, loops, and their persistence across thresholds. It can be concatenated with ordinary image or geometric features, used as an interpretable auxiliary input, or studied independently with a simple classifier.</p>
-<p>Producing numbers is not enough: the conversion must also be stable. If two images differ only by a minute, physically insignificant perturbation, we would like their topological vectors to remain close. In schematic form, the desired guarantee is</p>
-<p><span class="math display">\[
-\text{small image change}
-\quad\Longrightarrow\quad
-\text{small topological-vector change}.
-\]</span></p>
-<p>Establishing when this implication holds—and identifying when sampling, interpolation, or an unstable vectorisation can break it—is one of the main purposes of the metric, persistence, and stability chapters.</p>
-<div class="callout callout-style-default callout-note callout-titled" title="Proof-oriented presentation">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>Proof-oriented presentation
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>These notes follow the convention of a typical undergraduate mathematics course: definitions fix the objects under discussion; lemmas isolate useful steps; propositions and theorems state the main conclusions; and proofs make the logical dependence explicit. Results proved in the thesis source are included here whenever they fit the level and scope of the chapter. A proof sketch is labelled as such when a complete proof requires machinery developed elsewhere.</p>
-</div>
-</div>
-<div class="callout callout-style-default callout-note callout-titled" title="Why the development is cubical">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>Why the development is cubical
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Many introductions to computational topology develop the subject primarily through <strong>simplicial complexes</strong>. This is the standard and more flexible language: simplices can model arbitrary meshes and combinatorial spaces without requiring an underlying rectangular grid.</p>
-<p>These notes instead develop the main constructions first for <strong>cubical complexes</strong>. This is a deliberate choice motivated by the application. Digital images are already made of pixels, and volumetric images are made of voxels; these are naturally <span class="math inline">\(2\)</span>- and <span class="math inline">\(3\)</span>-dimensional cubes. A cubical model therefore preserves the native geometry and adjacency structure of the data, without first subdividing every pixel or voxel into simplices.</p>
-<p>The two viewpoints are not competing theories. Cubical complexes can be triangulated, and the later chapter on <a href="../computational-topology/functoriality-triangulation/index.html">functoriality and triangulation</a> explains how the Coxeter–Freudenthal–Kuhn construction passes from cubes to simplices while preserving the relevant chain and homology structure. Thus the cubical development remains connected to the broader simplicial theory, while keeping the image-based motivation visible from the outset.</p>
-</div>
-</div>
-<div class="callout callout-style-default callout-note callout-titled" title="Sources and attribution">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>Sources and attribution
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>The exposition and chapter sequence are my own adaptation of the thesis, but the mathematical development relies heavily on two principal sources:</p>
-<ul>
-<li>Vidit Nanda’s <em>Computational Algebraic Topology</em> lecture notes <span class="citation" data-cites="nanda2023">(<a href="#ref-nanda2023" role="doc-biblioref">Nanda 2023</a>)</span>; and</li>
-<li>Kaczynski, Mischaikow, and Mrozek’s <em>Computational Homology</em> <span class="citation" data-cites="kaczynski2006computational">(<a href="#ref-kaczynski2006computational" role="doc-biblioref">Kaczynski et al. 2006</a>)</span>.</li>
-</ul>
-<p>The retinal case study uses the FIVES fundus-image dataset created by Jin and coauthors <span class="citation" data-cites="jin2022fives">(<a href="#ref-jin2022fives" role="doc-biblioref">Jin et al. 2022</a>)</span>. These sources are cited throughout the notes where their definitions, results, or data are used. Figures adapted from external material are attributed individually; the remaining diagrams and experimental plots come from my thesis.</p>
-</div>
-</div>
-</section>
-<section id="foundations" class="level2">
-<h2 class="anchored" data-anchor-id="foundations">Foundations</h2>
-<ol type="1">
-<li><a href="../computational-topology/metric-spaces/index.html">Metric Spaces</a></li>
-<li><a href="../computational-topology/topological-spaces/index.html">Topological Spaces and Continuity</a></li>
-<li><a href="../computational-topology/graphs-digital-images/index.html">Graphs and Digital Images</a></li>
-<li><a href="../computational-topology/complexes/index.html">Cubical and Simplicial Complexes</a></li>
-<li><a href="../computational-topology/linear-algebra/index.html">Linear Algebra for Homology</a></li>
-</ol>
-</section>
-<section id="homology-and-persistence" class="level2">
-<h2 class="anchored" data-anchor-id="homology-and-persistence">Homology and persistence</h2>
-<ol start="6" type="1">
-<li><a href="../computational-topology/homology/index.html">Chains, Boundaries, and Homology</a></li>
-<li><a href="../computational-topology/computing-homology/index.html">Computing Homology</a></li>
-<li><a href="../computational-topology/persistent-homology/index.html">Filtrations and Persistent Homology</a></li>
-<li><a href="../computational-topology/stability/index.html">Stability of Persistent Homology</a></li>
-</ol>
-</section>
-<section id="research-application" class="level2">
-<h2 class="anchored" data-anchor-id="research-application">Research application</h2>
-<ol start="10" type="1">
-<li><a href="../computational-topology/computational-stability/index.html">Computational Stability on Digital Images</a></li>
-<li><a href="../computational-topology/reliability-engineering/index.html">Reliability Engineering with Complementary Probes</a></li>
-<li><a href="../computational-topology/retinal-case-study/index.html">Case Study: Retinal Diagnostics</a></li>
-</ol>
-</section>
-<section id="advanced-material" class="level2">
-<h2 class="anchored" data-anchor-id="advanced-material">Advanced material</h2>
-<ol start="13" type="1">
-<li><a href="../computational-topology/functoriality-triangulation/index.html">Functoriality and Triangulation</a></li>
-</ol>
-</section>
-<section id="status" class="level2">
-<h2 class="anchored" data-anchor-id="status">Status</h2>
-<p>Every planned chapter currently has a draft, but the TDA section remains a work in progress. These are living notes: notation, examples, proofs, exercises, and implementations will continue to be revised.</p>
-<p>For corrections or requests for errata, please email <strong>rj (at) rjnieto (dot) com</strong>.</p>
+<p>The computational-topology notes have been retired. Continue to the <a href="https://github.com/reyjosephnieto/ph/blob/main/Nieto_TDA_Public_20260430.pdf">BSc Mathematics thesis</a>.</p>
 
 
 
-</section>
-
-<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a><div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" role="list">
-<div id="ref-jin2022fives" class="csl-entry" role="listitem">
-Jin, Kai, Xingru Huang, Jingxing Zhou, et al. 2022. <span>‘<span>FIVES</span>: A Fundus Image Dataset for Artificial Intelligence Based Vessel Segmentation’</span>. <em>Scientific Data</em> 9 (1): 475.
-</div>
-<div id="ref-kaczynski2006computational" class="csl-entry" role="listitem">
-Kaczynski, Tomasz, Konstantin Mischaikow, and Marian Mrozek. 2006. <em>Computational Homology</em>. Vol. 157. Springer.
-</div>
-<div id="ref-nanda2023" class="csl-entry" role="listitem">
-Nanda, Vidit. 2023. <em>Computational Algebraic Topology</em>. Lecture notes, University of Oxford. <a href="https://people.maths.ox.ac.uk/nanda/cat/">https://people.maths.ox.ac.uk/nanda/cat/</a>.
-</div>
-</div></section></div></main> <!-- /main -->
+<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
@@ -1035,15 +610,6 @@ Nanda, Vidit. 2023. <em>Computational Algebraic Topology</em>. Lecture notes, Un
     }
   });
   </script>
-<nav class="page-navigation">
-  <div class="nav-page nav-page-previous">
-  </div>
-  <div class="nav-page nav-page-next">
-      <a href="../computational-topology/metric-spaces/index.html" class="pagination-link" aria-label="Metric Spaces">
-        <span class="nav-page-text">Metric Spaces</span> <i class="bi bi-arrow-right-short"></i>
-      </a>
-  </div>
-</nav>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
