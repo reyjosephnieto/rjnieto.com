@@ -23,6 +23,16 @@ government communications.
 :::
 :::
 
+## Teaching
+
+Course materials for general education subjects [Mathematics in the Modern
+World](teaching/bulsu/math-modern-world/index.qmd) and [Living in the IT
+Era](teaching/bulsu/living-it-era/index.qmd), which I teach at BulSU.
+
+[Teaching materials](teaching/index.qmd){.btn .btn-primary}
+[MMW 101](teaching/bulsu/math-modern-world/index.qmd){.btn .btn-outline-primary}
+[MST 101d](teaching/bulsu/living-it-era/index.qmd){.btn .btn-outline-primary}
+
 ## Research
 
 My final-year project studied the computational stability of cubical persistent
@@ -32,14 +42,6 @@ images.
 
 [Read the public project](https://github.com/reyjosephnieto/ph/blob/main/Nieto_TDA_Public_20260430.pdf){.btn .btn-primary target="_blank" rel="noopener"}
 [View the repository](https://github.com/reyjosephnieto/ph){.btn .btn-outline-primary}
-
-## Teaching
-
-Course materials for general education subjects [Mathematics in the Modern
-World](teaching/bulsu/math-modern-world/index.qmd) and [Living in the IT
-Era](teaching/bulsu/living-it-era/index.qmd), which I teach at BulSU.
-
-[Teaching materials](teaching/index.qmd){.btn .btn-primary}
 
 ## Professional Background
 
