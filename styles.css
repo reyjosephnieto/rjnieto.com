@@ -77,6 +77,10 @@ a:hover {
   color: var(--accent-dark);
 }
 
+a.cv-institution {
+  font-weight: 700;
+}
+
 .quarto-title-meta {
   margin-top: 1rem;
   padding: 0.8rem 0;

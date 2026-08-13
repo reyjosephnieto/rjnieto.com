@@ -7,17 +7,15 @@ toc: false
 ::: {.home-intro-copy}
 Hi, I’m Rey Joseph “RJ” Nieto.
 
-I am a mathematician, university instructor, and communications professional.
-I hold a First Class Honours BSc in Mathematics from the
-[University of Bristol](https://www.bristol.ac.uk/news/2026/june/university-of-bristol-ranked-8th-in-uk-in-latest-qs-world-university-rankings.html)
-in England and currently teach general-education information technology and
-mathematics at Bulacan State University (BulSU) in the Philippines. Before
-returning to formal study, I worked across journalism, broadcasting, public
-affairs, technical writing, and government communications. Here are my
-[CV](cv/index.qmd), my [BSc project on computational
-topology](https://github.com/reyjosephnieto/ph/blob/main/Nieto_TDA_Public_20260430.pdf){target="_blank" rel="noopener"},
-its [GitHub repository](https://github.com/reyjosephnieto/ph), and my
-[LinkedIn profile](https://www.linkedin.com/in/reyjosephnieto/).
+I am a mathematician and university instructor with a First Class Honours BSc
+in Mathematics from the [University of Bristol](https://www.bristol.ac.uk/). I
+currently teach mathematics and information technology at Bulacan State
+University (BulSU) in the Philippines.
+
+My technical interests include topological data analysis, applied machine
+learning, and computational image analysis. Before returning to mathematics, I
+worked in journalism, broadcasting, public affairs, technical writing, and
+government communications.
 :::
 
 ::: {.home-intro-photo}
@@ -25,10 +23,28 @@ its [GitHub repository](https://github.com/reyjosephnieto/ph), and my
 :::
 :::
 
+## Research
+
+My final-year project studied the computational stability of cubical persistent
+homology in digital imaging. I derived a computable stability bound and built a
+parallelised Python pipeline to investigate acquisition errors in retinal
+images.
+
+[Read the public project](https://github.com/reyjosephnieto/ph/blob/main/Nieto_TDA_Public_20260430.pdf){.btn .btn-primary target="_blank" rel="noopener"}
+[View the repository](https://github.com/reyjosephnieto/ph){.btn .btn-outline-primary}
+
 ## Teaching
 
-Course materials for [Mathematics in the Modern
+Course materials for general education subjects [Mathematics in the Modern
 World](teaching/bulsu/math-modern-world/index.qmd) and [Living in the IT
 Era](teaching/bulsu/living-it-era/index.qmd), which I teach at BulSU.
 
 [Teaching materials](teaching/index.qmd){.btn .btn-primary}
+
+## Professional Background
+
+My earlier career spans journalism, broadcasting, public affairs, government
+communications, and digital publishing.
+
+[View my CV](cv/index.qmd){.btn .btn-primary}
+[LinkedIn profile](https://www.linkedin.com/in/reyjosephnieto/){.btn .btn-outline-primary}

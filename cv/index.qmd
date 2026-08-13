@@ -13,20 +13,42 @@ toc-depth: 2
 
 ## Profile
 
-Communications and media professional with experience in public affairs,
-journalism, technical writing, broadcasting, and digital media. Previous work
-includes a communications role with the Department of Foreign Affairs' Office
-of the Undersecretary for Migrant Workers' Affairs, editorial and broadcast
-work, and the coordination of a public-service initiative during the COVID-19
-pandemic.
+Mathematics graduate and university instructor with First Class Honours from
+the University of Bristol, specialising in topological data analysis, applied
+machine learning, and computational image analysis. Experienced in Python,
+R, mathematical programming, and the development of university-level teaching
+materials.
 
-Academic training includes a First Class Honours degree in Mathematics from
-the University of Bristol, with work in statistical machine learning,
-artificial neural networks, mathematical programming, and computational
-topology. The final-year
-project examined the computational stability of topological methods for
-retinal images using mathematical analysis, Python, and machine-learning
-experiments.
+Earlier career experience spans public affairs, journalism, broadcasting,
+technical writing, and strategic communications, including work in government,
+national media, and digital publishing.
+
+## Education
+
+### BSc Mathematics
+
+**[University of Bristol](https://www.bristol.ac.uk/){.cv-institution}**<br>
+*Bristol, England, United Kingdom*<br>
+September 2023–June 2026 · First Class Honours
+
+Specialised in topological data analysis, applied machine learning, and computer
+vision. Selected marks included Mathematical Programming (94%), Combinatorics
+(93%), Artificial Intelligence (92%), and Analysis (90%).
+
+Final-year project: *Computational Stability of Cubical Homology: Orthogonal
+Controls for Fault Isolation in Retinal Diagnostics* (final paper mark: 90%).
+Developed a topology-informed framework for measuring acquisition stability and
+isolating faults in digital images. Derived a computable stability bound for
+cubical persistent homology and built a parallelised Python pipeline to test
+mechanical and radiometric degradations in retinal images.
+
+[View the public version of the project](https://github.com/reyjosephnieto/ph).
+
+### Foundation Certificate in Business, Law and Social Sciences
+
+**[Kaplan International College London](https://www.kaplanpathways.com/where-to-study/kaplan-international-college-london/){.cv-institution}**<br>
+*London, England, United Kingdom*<br>
+March–August 2023 · Distinction (89% overall; 95% in Mathematics)
 
 ## Experience
 
@@ -35,8 +57,11 @@ experiments.
 **Bulacan State University**<br>
 2026–Present
 
-Contract of Service appointment delivering undergraduate mathematics and
-information-technology instruction.
+Teach *Mathematics in the Modern World* and *Living in the IT Era* to
+undergraduate biology students. Develop original lecture notes, exercises, and
+supplementary materials covering mathematical reasoning, quantitative literacy,
+computing, online safety, and emerging technologies, with examples drawn from
+biology, health, and data analysis.
 
 ### Mathematical Programming Demonstrator
 
@@ -167,42 +192,20 @@ regulatory compliance.
 Completed research, technical writing, editing, and digital-content assignments
 for more than 30 clients in North America, Europe, and Australia.
 
-## Education
+## Skills
 
-### BSc Mathematics
-
-**[University of Bristol](https://www.bristol.ac.uk/)**<br>
-*Bristol, England, United Kingdom*<br>
-2026 · First Class Honours
-
-Final-year project: *Computational Stability of Cubical Homology: Orthogonal
-Controls for Fault Isolation in Retinal Diagnostics*. Combined mathematical
-exposition, Python experiments, medical imaging, topological data analysis, and
-machine-learning classification.
-
-[View the public thesis repository](https://github.com/reyjosephnieto/ph).
-
-### Foundation Certificate
-
-**[Kaplan International College London](https://www.kaplanpathways.com/where-to-study/kaplan-international-college-london/)**<br>
-*London, England, United Kingdom*<br>
-2023 · Pass with Distinction
-
-## Areas of experience
-
-- Government and strategic communications, public affairs, policy
-  communication, and stakeholder engagement
-- Interviewing, public speaking, broadcasting, crisis communication, and
-  digital communications
-- Editorial work, research, technical writing, proposal development, and team
-  training
-- Programme coordination, audience engagement, and public-service project
-  implementation
-- Quantitative and statistical analysis, mathematical modelling, Python, R,
-  LaTeX, and machine learning
+- **Mathematics and data:** Topological data analysis, mathematical modelling,
+  statistical analysis, machine learning, and computer vision
+- **Technical:** Python, R, LaTeX, computational experimentation, data
+  visualisation, and technical documentation
+- **Teaching and research:** Curriculum and lecture-note development,
+  mathematical exposition, literature review, and undergraduate instruction
+- **Communications:** Public affairs, journalism, broadcasting, interviewing,
+  editorial work, public speaking, and digital communications
+- **Programme delivery:** Stakeholder engagement, proposal development, team
+  training, and project coordination
 
 ## Additional information
 
-- **Nationality:** Filipino
 - **Languages:** English (fluent), Tagalog (fluent), Cebuano (elementary), and
   German (elementary)
