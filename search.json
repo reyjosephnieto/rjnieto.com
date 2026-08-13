@@ -67,14 +67,21 @@
     "href": "cv/index.html#profile",
     "title": "Curriculum Vitae",
     "section": "Profile",
-    "text": "Profile\nCommunications and media professional with experience in public affairs, journalism, technical writing, broadcasting, and digital media. Previous work includes a communications role with the Department of Foreign Affairs’ Office of the Undersecretary for Migrant Workers’ Affairs, editorial and broadcast work, and the coordination of a public-service initiative during the COVID-19 pandemic.\nAcademic training includes a First Class Honours degree in Mathematics from the University of Bristol, with work in statistical machine learning, artificial neural networks, mathematical programming, and computational topology. The final-year project examined the computational stability of topological methods for retinal images using mathematical analysis, Python, and machine-learning experiments."
+    "text": "Profile\nMathematics graduate and university instructor with First Class Honours from the University of Bristol, specialising in topological data analysis, applied machine learning, and computational image analysis. Experienced in Python, R, mathematical programming, and the development of university-level teaching materials.\nEarlier career experience spans public affairs, journalism, broadcasting, technical writing, and strategic communications, including work in government, national media, and digital publishing."
+  },
+  {
+    "objectID": "cv/index.html#education",
+    "href": "cv/index.html#education",
+    "title": "Curriculum Vitae",
+    "section": "Education",
+    "text": "Education\n\nBSc Mathematics\nUniversity of Bristol Bristol, England, United Kingdom September 2023–June 2026 · First Class Honours\nSpecialised in topological data analysis, applied machine learning, and computer vision. Selected marks included Mathematical Programming (94%), Combinatorics (93%), Artificial Intelligence (92%), and Analysis (90%).\nFinal-year project: Computational Stability of Cubical Homology: Orthogonal Controls for Fault Isolation in Retinal Diagnostics (final paper mark: 90%). Developed a topology-informed framework for measuring acquisition stability and isolating faults in digital images. Derived a computable stability bound for cubical persistent homology and built a parallelised Python pipeline to test mechanical and radiometric degradations in retinal images.\nView the public version of the project.\n\n\nFoundation Certificate in Business, Law and Social Sciences\nKaplan International College London London, England, United Kingdom March–August 2023 · Distinction (89% overall; 95% in Mathematics)"
   },
   {
     "objectID": "cv/index.html#experience",
     "href": "cv/index.html#experience",
     "title": "Curriculum Vitae",
     "section": "Experience",
-    "text": "Experience\n\nInstructor (Mathematics and Information Technology)\nBulacan State University 2026–Present\nContract of Service appointment delivering undergraduate mathematics and information-technology instruction.\n\n\nMathematical Programming Demonstrator\nUniversity of Bristol 2025–2026\nSupported second-year mathematics students in computational problem-solving, numerical methods, debugging, and Python programming. Helped students translate mathematical ideas into working computational implementations.\n\n\nTelevision Host\nPeople’s Television Network 2024\nHosted the PTV-4 Pre-SONA Special with RJ Nieto, interviewing Cabinet officials regarding government programmes, policy implementation, and departmental performance.\n\n\nColumnist\nManila Bulletin 2019–2023\nWrote the weekly public-interest column Thinking Pinoy, covering government, politics, public policy, and socioeconomic affairs.\n\n\nFounder and Editor-in-Chief\nThinking Pinoy 2015–2023\nFounded and managed a digital public-affairs platform with more than two million followers across its social-media channels. Directed editorial work and produced commentary on governance, economic policy, foreign affairs, and national political developments.\n\n\nBroadcast Journalist\nSMNI News 2020–2022\nHosted a weekday current-affairs programme featuring policy analysis and interviews with government officials, public figures, and subject-matter specialists.\n\n\nRadio Programme Co-host\nAliw Broadcasting Corporation 2017–2020\nProvided political and public-policy analysis on Karambola, a daily current-affairs programme broadcast on DWIZ 882 AM.\n\n\nHead of Strategic Communications (Content)\nDepartment of Foreign Affairs, Office of the Undersecretary for Migrant Workers’ Affairs 2017\nDeveloped content and digital communication materials for the Department’s outreach to overseas Filipino workers. Helped present government policies, programmes, and consular information in accessible formats and supported engagement with the Filipino diaspora.\n\n\nNews Reporter\nSun.Star Davao 2009–2010\nConducted field reporting and interviews and wrote daily news and feature stories on government, community affairs, and other matters of public interest."
+    "text": "Experience\n\nInstructor (Mathematics and Information Technology)\nBulacan State University 2026–Present\nTeach Mathematics in the Modern World and Living in the IT Era to undergraduate biology students. Develop original lecture notes, exercises, and supplementary materials covering mathematical reasoning, quantitative literacy, computing, online safety, and emerging technologies, with examples drawn from biology, health, and data analysis.\n\n\nMathematical Programming Demonstrator\nUniversity of Bristol 2025–2026\nSupported second-year mathematics students in computational problem-solving, numerical methods, debugging, and Python programming. Helped students translate mathematical ideas into working computational implementations.\n\n\nTelevision Host\nPeople’s Television Network 2024\nHosted the PTV-4 Pre-SONA Special with RJ Nieto, interviewing Cabinet officials regarding government programmes, policy implementation, and departmental performance.\n\n\nColumnist\nManila Bulletin 2019–2023\nWrote the weekly public-interest column Thinking Pinoy, covering government, politics, public policy, and socioeconomic affairs.\n\n\nFounder and Editor-in-Chief\nThinking Pinoy 2015–2023\nFounded and managed a digital public-affairs platform with more than two million followers across its social-media channels. Directed editorial work and produced commentary on governance, economic policy, foreign affairs, and national political developments.\n\n\nBroadcast Journalist\nSMNI News 2020–2022\nHosted a weekday current-affairs programme featuring policy analysis and interviews with government officials, public figures, and subject-matter specialists.\n\n\nRadio Programme Co-host\nAliw Broadcasting Corporation 2017–2020\nProvided political and public-policy analysis on Karambola, a daily current-affairs programme broadcast on DWIZ 882 AM.\n\n\nHead of Strategic Communications (Content)\nDepartment of Foreign Affairs, Office of the Undersecretary for Migrant Workers’ Affairs 2017\nDeveloped content and digital communication materials for the Department’s outreach to overseas Filipino workers. Helped present government policies, programmes, and consular information in accessible formats and supported engagement with the Filipino diaspora.\n\n\nNews Reporter\nSun.Star Davao 2009–2010\nConducted field reporting and interviews and wrote daily news and feature stories on government, community affairs, and other matters of public interest."
   },
   {
     "objectID": "cv/index.html#selected-public-service-and-professional-engagements",
@@ -91,32 +98,32 @@
     "text": "Other professional experience\n\nProposal Writer\nAbility with Innovation LLC, Dubai, UAE 2012–2015\nPrepared technical and commercial proposals for government, supranational, and energy-sector clients. Edited colleagues’ work, helped train new members of the proposal team, coordinated input from subject-matter specialists, and supported regulatory compliance.\n\n\nFreelance Technical Writer and Editor\noDesk and other platforms 2010–2015\nCompleted research, technical writing, editing, and digital-content assignments for more than 30 clients in North America, Europe, and Australia."
   },
   {
-    "objectID": "cv/index.html#education",
-    "href": "cv/index.html#education",
+    "objectID": "cv/index.html#skills",
+    "href": "cv/index.html#skills",
     "title": "Curriculum Vitae",
-    "section": "Education",
-    "text": "Education\n\nBSc Mathematics\nUniversity of Bristol Bristol, England, United Kingdom 2026 · First Class Honours\nFinal-year project: Computational Stability of Cubical Homology: Orthogonal Controls for Fault Isolation in Retinal Diagnostics. Combined mathematical exposition, Python experiments, medical imaging, topological data analysis, and machine-learning classification.\nView the public thesis repository.\n\n\nFoundation Certificate\nKaplan International College London London, England, United Kingdom 2023 · Pass with Distinction"
-  },
-  {
-    "objectID": "cv/index.html#areas-of-experience",
-    "href": "cv/index.html#areas-of-experience",
-    "title": "Curriculum Vitae",
-    "section": "Areas of experience",
-    "text": "Areas of experience\n\nGovernment and strategic communications, public affairs, policy communication, and stakeholder engagement\nInterviewing, public speaking, broadcasting, crisis communication, and digital communications\nEditorial work, research, technical writing, proposal development, and team training\nProgramme coordination, audience engagement, and public-service project implementation\nQuantitative and statistical analysis, mathematical modelling, Python, R, LaTeX, and machine learning"
+    "section": "Skills",
+    "text": "Skills\n\nMathematics and data: Topological data analysis, mathematical modelling, statistical analysis, machine learning, and computer vision\nTechnical: Python, R, LaTeX, computational experimentation, data visualisation, and technical documentation\nTeaching and research: Curriculum and lecture-note development, mathematical exposition, literature review, and undergraduate instruction\nCommunications: Public affairs, journalism, broadcasting, interviewing, editorial work, public speaking, and digital communications\nProgramme delivery: Stakeholder engagement, proposal development, team training, and project coordination"
   },
   {
     "objectID": "cv/index.html#additional-information",
     "href": "cv/index.html#additional-information",
     "title": "Curriculum Vitae",
     "section": "Additional information",
-    "text": "Additional information\n\nNationality: Filipino\nLanguages: English (fluent), Tagalog (fluent), Cebuano (elementary), and German (elementary)"
+    "text": "Additional information\n\nLanguages: English (fluent), Tagalog (fluent), Cebuano (elementary), and German (elementary)"
   },
   {
     "objectID": "index.html",
     "href": "index.html",
     "title": "RJ Nieto",
     "section": "",
-    "text": "Hi, I’m Rey Joseph “RJ” Nieto.\nI am a mathematician, university instructor, and communications professional. I hold a First Class Honours BSc in Mathematics from the University of Bristol in England and currently teach general-education information technology and mathematics at Bulacan State University (BulSU) in the Philippines. Before returning to formal study, I worked across journalism, broadcasting, public affairs, technical writing, and government communications. Here are my CV, my BSc project on computational topology, its GitHub repository, and my LinkedIn profile."
+    "text": "Hi, I’m Rey Joseph “RJ” Nieto.\nI am a mathematician and university instructor with a First Class Honours BSc in Mathematics from the University of Bristol. I currently teach mathematics and information technology at Bulacan State University (BulSU) in the Philippines.\nMy technical interests include topological data analysis, applied machine learning, and computational image analysis. Before returning to mathematics, I worked in journalism, broadcasting, public affairs, technical writing, and government communications."
+  },
+  {
+    "objectID": "index.html#research",
+    "href": "index.html#research",
+    "title": "RJ Nieto",
+    "section": "Research",
+    "text": "Research\nMy final-year project studied the computational stability of cubical persistent homology in digital imaging. I derived a computable stability bound and built a parallelised Python pipeline to investigate acquisition errors in retinal images.\nRead the public project View the repository"
   },
   {
     "objectID": "index.html#teaching",
@@ -124,6 +131,13 @@
     "title": "RJ Nieto",
     "section": "Teaching",
     "text": "Teaching\nCourse materials for general education subjects Mathematics in the Modern World and Living in the IT Era, which I teach at BulSU.\nTeaching materials"
+  },
+  {
+    "objectID": "index.html#professional-background",
+    "href": "index.html#professional-background",
+    "title": "RJ Nieto",
+    "section": "Professional Background",
+    "text": "Professional Background\nMy earlier career spans journalism, broadcasting, public affairs, government communications, and digital publishing.\nView my CV LinkedIn profile"
   },
   {
     "objectID": "teaching/bulsu/math-modern-world/index.html",
