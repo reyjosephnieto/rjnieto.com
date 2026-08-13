@@ -119,18 +119,18 @@
     "text": "Hi, I’m Rey Joseph “RJ” Nieto.\nI am a mathematician and university instructor with a First Class Honours BSc in Mathematics from the University of Bristol. I currently teach mathematics and information technology at Bulacan State University (BulSU) in the Philippines.\nMy technical interests include topological data analysis, applied machine learning, and computational image analysis. Before returning to mathematics, I worked in journalism, broadcasting, public affairs, technical writing, and government communications."
   },
   {
+    "objectID": "index.html#teaching",
+    "href": "index.html#teaching",
+    "title": "RJ Nieto",
+    "section": "Teaching",
+    "text": "Teaching\nCourse materials for general education subjects Mathematics in the Modern World and Living in the IT Era, which I teach at BulSU.\nTeaching materials MMW 101 MST 101d"
+  },
+  {
     "objectID": "index.html#research",
     "href": "index.html#research",
     "title": "RJ Nieto",
     "section": "Research",
     "text": "Research\nMy final-year project studied the computational stability of cubical persistent homology in digital imaging. I derived a computable stability bound and built a parallelised Python pipeline to investigate acquisition errors in retinal images.\nRead the public project View the repository"
-  },
-  {
-    "objectID": "index.html#teaching",
-    "href": "index.html#teaching",
-    "title": "RJ Nieto",
-    "section": "Teaching",
-    "text": "Teaching\nCourse materials for general education subjects Mathematics in the Modern World and Living in the IT Era, which I teach at BulSU.\nTeaching materials"
   },
   {
     "objectID": "index.html#professional-background",
