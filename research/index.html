@@ -6,9 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="description" content="Course pages, lecture notes, exercises, and teaching materials prepared by RJ Nieto for university students at Bulacan State University.">
+<meta name="description" content="RJ Nieto’s current research and independent study in the mathematics of stability, uncertainty and image analysis.">
 
-<title>Teaching – RJ Nieto</title>
+<title>Current Research – RJ Nieto</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -106,24 +106,53 @@ ul.task-list li input[type="checkbox"] {
 }
 </script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../styles.css">
-<meta property="og:title" content="Teaching – RJ Nieto">
-<meta property="og:description" content="Lecture notes and course materials">
-<meta property="og:image" content="https://rjnieto.com/assets/images/bulsu-san-rafael-gate.png">
+<meta property="og:title" content="Current Research – RJ Nieto">
+<meta property="og:description" content="Mathematical foundations for reliable image analysis">
+<meta property="og:image" content="https://rjnieto.com/assets/images/research/fives-214d-blobs-loops.png">
 <meta property="og:site_name" content="RJ Nieto">
 <meta property="og:locale" content="en_GB">
-<meta property="og:image:height" content="1029">
-<meta property="og:image:width" content="1604">
-<meta property="og:image:alt" content="The entrance gate of Bulacan State University's San Rafael Campus">
-<meta name="twitter:title" content="Teaching – RJ Nieto">
-<meta name="twitter:description" content="Lecture notes and course materials">
-<meta name="twitter:image" content="https://rjnieto.com/assets/images/bulsu-san-rafael-gate.png">
+<meta property="og:image:alt" content="A colour retinal fundus photograph with two boxed regions enlarged alongside it. One enlargement marks a red lesion as a connected blob; the other marks several loops in the retinal vasculature.">
+<meta property="og:image:height" content="439">
+<meta property="og:image:width" content="900">
+<meta name="twitter:title" content="Current Research – RJ Nieto">
+<meta name="twitter:description" content="Mathematical foundations for reliable image analysis">
+<meta name="twitter:image" content="https://rjnieto.com/assets/images/research/fives-214d-blobs-loops.png">
 <meta name="twitter:creator" content="@rjosephnieto">
 <meta name="twitter:site" content="@rjosephnieto">
-<meta name="twitter:image-height" content="1029">
-<meta name="twitter:image-width" content="1604">
-<meta name="twitter:image:alt" content="The entrance gate of Bulacan State University's San Rafael Campus">
+<meta name="twitter:image:alt" content="A colour retinal fundus photograph with two boxed regions enlarged alongside it. One enlargement marks a red lesion as a connected blob; the other marks several loops in the retinal vasculature.">
+<meta name="twitter:image-height" content="439">
+<meta name="twitter:image-width" content="900">
 <meta name="twitter:card" content="summary_large_image">
 </head>
 
@@ -168,7 +197,7 @@ ul.task-list li input[type="checkbox"] {
     </ul>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="../research/index.html"> 
+    <a class="nav-link active" href="../research/index.html" aria-current="page"> 
 <span class="menu-text">Research</span></a>
   </li>  
   <li class="nav-item">
@@ -192,8 +221,8 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Teaching</h1>
-<p class="subtitle lead">Lecture notes and course materials</p>
+<h1 class="title">Current Research</h1>
+<p class="subtitle lead">Mathematical foundations for reliable image analysis</p>
 </div>
 
 
@@ -210,23 +239,79 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p><img src="../assets/images/bulsu-san-rafael-gate.png" class="img-fluid" style="width:100.0%" alt="The entrance gate of Bulacan State University's San Rafael Campus"></p>
-<p>I use these materials in my university classes and make them available here so students can read ahead, revisit a topic, or catch up after an absence.</p>
-<section id="courses" class="level2">
-<h2 class="anchored" data-anchor-id="courses">Courses</h2>
-<section id="mathematics-in-the-modern-world" class="level3">
-<h3 class="anchored" data-anchor-id="mathematics-in-the-modern-world">Mathematics in the Modern World</h3>
-<p>Lecture notes, examples, exercises, and supplementary materials for <em>Mathematics in the Modern World</em>, developed specifically for biology majors at Bulacan State University.</p>
-<p><a href="../teaching/bulsu/math-modern-world/index.html" class="btn btn-outline-primary">Open the course page</a></p>
+<p>From July to December 2026, I am spending 20 weeks studying dynamical systems, functional analysis, and measure theory and probability. This is independent study, organised around a research problem rather than three separate textbook courses.</p>
+<p>I have found that I learn mathematics most effectively when abstract ideas serve a concrete task. The programme is designed accordingly: each strand must help clarify a real problem, sharpen an argument, or show why a proposed approach cannot work.</p>
+<p>The problem is easy to state. An imaging system never produces a perfect copy of its subject. An image may be blurred, rotated, resized, poorly exposed, or corrupted by sensor noise. I want to understand how those changes affect the structural information that a computer extracts from the image, and whether the resulting pattern can tell us something about what went wrong during acquisition.</p>
+<p>Part of this work uses topological data analysis. In this setting, topology provides ways to describe features such as connected regions and loops, and persistent homology records how those features appear and disappear as an image is examined at different thresholds. The underlying mathematics is precise; the practical question is whether these summaries remain reliable when the image does not.</p>
+<p>Digital images have a natural cubical structure: pixels and voxels lie on a regular grid. Cubical and simplicial homology are related ways of representing the topology of that structure, rather than one being a subset of the other. Under suitable constructions, a compatible triangulation can relate the two representations while preserving the topology under study. My interest is in whether working directly with the cubical structure can tell us more about the stability of measurements made from digital images.</p>
+<section id="connection-to-my-earlier-research" class="level2">
+<h2 class="anchored" data-anchor-id="connection-to-my-earlier-research">Connection to my earlier research</h2>
+<p>My interest in retinal imaging has a personal origin in an experience with diabetic retinopathy. It led me to take a particular interest in the reliability of retinal-image analysis.</p>
+<div id="fig-retinal-motivation" class="quarto-float quarto-figure quarto-figure-center anchored" alt="A colour retinal fundus photograph with two boxed regions enlarged alongside it. One enlargement marks a red lesion as a connected blob; the other marks several loops in the retinal vasculature.">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-retinal-motivation-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../assets/images/research/fives-214d-blobs-loops.png" class="img-fluid figure-img" style="width:92.0%" alt="A colour retinal fundus photograph with two boxed regions enlarged alongside it. One enlargement marks a red lesion as a connected blob; the other marks several loops in the retinal vasculature.">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-retinal-motivation-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: A diabetic-retinopathy fundus image, annotated for my thesis to enlarge a connected lesion and examples of vascular loops. Source: image <code>214_D</code> from the <a href="https://doi.org/10.1038/s41597-022-01564-3" target="_blank" rel="noopener">FIVES fundus-image dataset</a>; reused and adapted under <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener">CC BY 4.0</a>.
+</figcaption>
+</figure>
+</div>
+<section id="how-the-project-changed-direction" class="level3">
+<h3 class="anchored" data-anchor-id="how-the-project-changed-direction">How the project changed direction</h3>
+<p>My original intention was to produce a topology-informed classifier for diabetic retinopathy. Classifiers of this kind already existed, but reproducing and extending established work would still have been a useful objective for a four-month undergraduate project.</p>
+<p>The direction changed during ablation testing, when I deliberately subjected the images to individual forms of degradation. A simulated rotation of roughly three degrees was enough to drive the selected topology-based classifier close to chance performance. That raised a practical question: what value would the classifier have if a slight change in the subject’s head alignment could cause it to fail? The topological vectors were highly sensitive to rotation and other mechanical changes that required the image to be resampled. Interpolation on the pixel grid could create or destroy topological features even when the underlying subject had changed very little. My <a href="https://github.com/reyjosephnieto/ph/blob/main/Nieto_TDA_Public_20260430.pdf" target="_blank" rel="noopener">undergraduate thesis</a> described this behaviour as <em>grid shattering</em>.</p>
+<p>Once the ablation tests exposed this limitation, the project changed direction. Instead of treating the result as an inconvenience to the proposed classifier, I made it part of the research question and asked whether the contrasting failure behaviour could itself be useful.</p>
+<p>The same topological summaries were comparatively robust under several photometric changes, including exposure drift and quantisation, although not under every form of noise. Log-transformed Hu moments, which are geometric descriptors based on an image’s overall shape, showed a broadly reverse profile: they were comparatively strong under mechanical transformations but weaker under changes in intensity. Instead of asking either representation to serve as the classifier by itself, I treated them as two complementary, or “orthogonal”, controls.</p>
+<p>Their contrasting failure profiles became the Differential Failure Matrix. It was designed to test whether signatures associated with alignment and resampling could be distinguished from signatures associated with radiometric degradation. The final project was therefore not the classifier I had originally planned. It treated an apparent weakness of the cubical-persistence pipeline as a possible signal for a coarse fault-isolation heuristic. The code and supporting material are available in the project’s <a href="https://github.com/reyjosephnieto/ph" target="_blank" rel="noopener">GitHub repository</a>.</p>
 </section>
-<section id="living-in-the-it-era" class="level3">
-<h3 class="anchored" data-anchor-id="living-in-the-it-era">Living in the IT Era</h3>
-<p>Lecture notes and course materials for <em>Living in the IT Era</em>, developed for first-year biology majors at Bulacan State University. The course provides practical working knowledge of computers, networks, software, online safety, digital life, and emerging technologies.</p>
-<p><a href="../teaching/bulsu/living-it-era/index.html" class="btn btn-outline-primary">Open the course page</a></p>
-<p>These are personal teaching materials. Unless expressly stated otherwise, they should not be treated as official publications or policies of Bulacan State University.</p>
+<section id="why-i-am-returning-to-it" class="level3">
+<h3 class="anchored" data-anchor-id="why-i-am-returning-to-it">Why I am returning to it</h3>
+<p>The thesis was completed over four months. That was enough to establish and test the framework, but not to exhaust the questions it raised. The decomposition was descriptive and produced a suggestive empirical pattern, but it was mathematically coarse: its stability bound was conservative, and the final fault-isolation stage necessarily relied in part on empirical thresholds and heuristics. Time did not permit a deeper investigation of those mechanisms.</p>
+<p>In a biomedical setting, a promising experimental result is not enough. The intended use, assumptions, limitations, performance, and possible failure modes of a method must be described and validated. My purpose in returning to the mathematics is to understand the underlying mechanisms more fully and to determine whether the heuristic parts of the pipeline can be replaced, constrained, or justified by stronger mathematical and empirical support. The longer-term aim is a pipeline whose assumptions and failure modes are more transparent and therefore easier to examine in technical and regulatory review. This is not a claim that the present work is a clinically validated or regulator-approved system.</p>
+<p>Retinal imaging remains the immediate problem, and similar acquisition issues arise in industrial inspection and other computer-vision systems. My earlier experiments were confined to retinal images, so industrial applications remain a direction for further work.</p>
+<p>The project provides the immediate mission, but it does not limit what I may learn from it. The mathematics may lead into other areas of computer vision, machine learning, and the use of topological data analysis on non-image data after it has been given a suitable geometric representation. Any such embedding would need to preserve the structure relevant to the problem. These possibilities remain exploratory and are not claims of the present study programme.</p>
+</section>
+</section>
+<section id="the-study-programme" class="level2">
+<h2 class="anchored" data-anchor-id="the-study-programme">The study programme</h2>
+<div id="fig-y4h1-study-flow" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Flowchart beginning with Nieto — Computational Stability of Cubical Homology and its deliberately coarse bound. It branches into dynamical systems and stability, functional analysis, and measure theory and probability. These strands meet in the study of image-acquisition operators and several notions of perturbation, leading to possible theoretical, negative, or empirical results with applications to biomedical and industrial image analysis.">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-y4h1-study-flow-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../assets/images/mathematics/y4h1-study-flow.png" class="img-fluid figure-img" style="width:100.0%" alt="Flowchart beginning with Nieto — Computational Stability of Cubical Homology and its deliberately coarse bound. It branches into dynamical systems and stability, functional analysis, and measure theory and probability. These strands meet in the study of image-acquisition operators and several notions of perturbation, leading to possible theoretical, negative, or empirical results with applications to biomedical and industrial image analysis.">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-y4h1-study-flow-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2: How the July–December 2026 study programme develops the questions raised by my final-year paper.
+</figcaption>
+</figure>
+</div>
+<section id="dynamical-systems" class="level3">
+<h3 class="anchored" data-anchor-id="dynamical-systems">Dynamical systems</h3>
+<p>Dynamical systems studies change: how a system evolves, what states remain steady, and how its behaviour responds to a small disturbance. I am working through ordinary differential equations, equilibria, linearisation, parameter dependence, perturbation, and stability.</p>
+<p>This subject gives me a firmer language for reasoning about stability. It also lays groundwork for later study of learning dynamics and state-space models, although I do not assume that every part of it will be needed for the present image-analysis problem.</p>
+</section>
+<section id="functional-analysis" class="level3">
+<h3 class="anchored" data-anchor-id="functional-analysis">Functional analysis</h3>
+<p>Functional analysis studies spaces of functions and the operations that act on them. This is useful in imaging because blur, filtering, and convolution can be treated as mathematical operators rather than as a loose collection of software effects.</p>
+<p>My current work includes normed and Banach spaces, bounded linear operators, operator norms, differentiation, and Hilbert spaces. These ideas help turn questions such as “How much did this operation change the image?” into statements that can be defined and tested carefully.</p>
+</section>
+<section id="measure-theory-and-probability" class="level3">
+<h3 class="anchored" data-anchor-id="measure-theory-and-probability">Measure theory and probability</h3>
+<p>Measure theory supplies a rigorous basis for integration, probability, and different ways of measuring error. I am studying measurable functions, Lebesgue integration, convergence, expectation, <span class="math inline">\(L^p\)</span> spaces, product measures, and stochastic models.</p>
+<p>This strand matters when degradation is random rather than fixed. It provides tools for describing sensor noise, combining more than one source of uncertainty, and asking what can be said on average or with a stated probability.</p>
+</section>
+</section>
+<section id="how-i-am-approaching-the-work" class="level2">
+<h2 class="anchored" data-anchor-id="how-i-am-approaching-the-work">How I am approaching the work</h2>
+<p>Persistent homology already has a substantial stability theory: in broad terms, a small change in the function used to examine an image leads to a controlled change in its persistence diagram. This general result is important, but it does not by itself explain every practical failure in an image-analysis pipeline. Existing research has also shown that robustness on greyscale images depends on the chosen filtration, persistence summary, and form of disturbance. For example, a broad experimental study by <a href="https://doi.org/10.1371/journal.pone.0257215" target="_blank" rel="noopener">Turkeš and colleagues</a> examined several filtrations and summaries under affine, photometric, and noise perturbations on handwritten digits.</p>
+<p>That work establishes important context, but it does not derive a tighter bound for the particular sequence that concerns me: a geometric transformation represented on a sampled pixel grid, followed by a cubical filtration and its persistence diagram. The computational bound used in my thesis was deliberately coarse. Global estimates of displacement and intensity variation can give a large upper bound even when the measured topological change is small.</p>
+<p>I am investigating whether the regular cubical grid, local image structure, and the properties of a specified sampling or acquisition process can support tighter or more informative bounds under explicit assumptions. A related question is whether the contrasting responses of topological and geometric measurements can identify the likely source of a failure, rather than merely showing that performance has deteriorated.</p>
+<p>A more immediate extension is to replace the signed logarithmic transformation applied to the Hu moments with a compression that has an explicit Lipschitz bound. This would not necessarily make the Differential Failure Matrix more effective. Its value would be cleaner stability accounting: under stated assumptions, both branches of the pipeline could be analysed using explicit continuity bounds, making it clearer where empirical thresholds and other assumptions still enter.</p>
+<p>The aim is not to restate the general stability theorem in cubical language, and I am not claiming that either question is novel before the relevant literature has been examined in full.</p>
+<p>The eventual result may be a theorem with restricted assumptions, an example showing that a proposed bound cannot hold, a probabilistic reformulation, or a careful computational study. A negative result is useful if it explains why an apparently reasonable idea fails.</p>
+<p>These studies are still in progress. I may add public notes later, once there is enough material to be useful to another reader.</p>
 
 
-</section>
 </section>
 
 <a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
