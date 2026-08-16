@@ -127,6 +127,13 @@ programme.
 
 ## The study programme
 
+At a non-technical level, the three subjects approach different parts of the
+same problem. Dynamical systems describes how disturbances develop, functional
+analysis examines how operations change an image, and measure theory and
+probability provide ways to reason about random noise and uncertainty.
+
+![Three mathematical views of the same imaging problem, showing change over time, the effect of image operations, and random disturbance.](../assets/images/research/three-mathematical-views.png){#fig-three-mathematical-views fig-alt="A three-panel illustrated diagram. A pixel-grid shape changes over time under dynamical systems, passes through an image operation under functional analysis, and appears with random variations under measure theory and probability. Arrows from all three panels lead to a more precise reliability estimate." width="100%"}
+
 ![How the July--December 2026 study programme develops the questions raised by my final-year paper.](../assets/images/mathematics/y4h1-study-flow.png){#fig-y4h1-study-flow fig-alt="Flowchart beginning with Nieto — Computational Stability of Cubical Homology and its deliberately coarse bound. It branches into dynamical systems and stability, functional analysis, and measure theory and probability. These strands meet in the study of image-acquisition operators and several notions of perturbation, leading to possible theoretical, negative, or empirical results with applications to biomedical and industrial image analysis." width="100%"}
 
 ### Dynamical systems
