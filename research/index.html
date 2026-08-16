@@ -139,24 +139,24 @@ window.Quarto = {
 <link rel="stylesheet" href="../styles.css">
 <meta property="og:title" content="Current Research – RJ Nieto">
 <meta property="og:description" content="Mathematical foundations for reliable image analysis">
-<meta property="og:image" content="https://rjnieto.com/assets/images/research/algebraic-topology-abstract.png">
+<meta property="og:image" content="https://rjnieto.com/assets/images/research/diabetic-retinopathy-visual-field.png">
 <meta property="og:site_name" content="RJ Nieto">
 <meta property="og:locale" content="en_GB">
-<meta property="og:image:alt" content="Four-stage cartoon cycle showing a ring-shaped doughnut being compressed into a coffee mug and stretched back into the original doughnut, with one hole preserved throughout.">
-<meta property="og:image:height" content="1254">
-<meta property="og:image:width" content="1254">
+<meta property="og:image:alt" content="Two illustrated views of the same children playing football in a park, as if seen by a parent. The first is clear. The second is blurred and partly obscured by soft dark patches and floaters to suggest one possible experience of sight loss associated with advanced diabetic retinopathy.">
+<meta property="og:image:height" content="1024">
+<meta property="og:image:width" content="1536">
 <meta name="twitter:title" content="Current Research – RJ Nieto">
 <meta name="twitter:description" content="Mathematical foundations for reliable image analysis">
-<meta name="twitter:image" content="https://rjnieto.com/assets/images/research/algebraic-topology-abstract.png">
+<meta name="twitter:image" content="https://rjnieto.com/assets/images/research/diabetic-retinopathy-visual-field.png">
 <meta name="twitter:creator" content="@rjosephnieto">
 <meta name="twitter:site" content="@rjosephnieto">
-<meta name="twitter:image:alt" content="Four-stage cartoon cycle showing a ring-shaped doughnut being compressed into a coffee mug and stretched back into the original doughnut, with one hole preserved throughout.">
-<meta name="twitter:image-height" content="1254">
-<meta name="twitter:image-width" content="1254">
+<meta name="twitter:image:alt" content="Two illustrated views of the same children playing football in a park, as if seen by a parent. The first is clear. The second is blurred and partly obscured by soft dark patches and floaters to suggest one possible experience of sight loss associated with advanced diabetic retinopathy.">
+<meta name="twitter:image-height" content="1024">
+<meta name="twitter:image-width" content="1536">
 <meta name="twitter:card" content="summary_large_image">
 </head>
 
-<body class="nav-fixed fullcontent quarto-light">
+<body class="nav-fixed quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -215,7 +215,18 @@ window.Quarto = {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul class="collapse">
+  <li><a href="#the-initial-motivation" id="toc-the-initial-motivation" class="nav-link active" data-scroll-target="#the-initial-motivation">The initial motivation</a></li>
+  <li><a href="#the-three-cores-of-the-work" id="toc-the-three-cores-of-the-work" class="nav-link" data-scroll-target="#the-three-cores-of-the-work">The three cores of the work</a></li>
+  <li><a href="#the-current-mathematical-question" id="toc-the-current-mathematical-question" class="nav-link" data-scroll-target="#the-current-mathematical-question">The current mathematical question</a></li>
+  <li><a href="#the-study-programme" id="toc-the-study-programme" class="nav-link" data-scroll-target="#the-study-programme">The study programme</a></li>
+  </ul>
+</nav>
+    </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
@@ -240,9 +251,59 @@ window.Quarto = {
 
 
 <p>My current research asks a practical question: when an image is blurred, rotated, resized, poorly exposed, or corrupted by sensor noise, how does the information extracted by a computer change? I want to understand whether the pattern of those changes can help identify what went wrong during acquisition.</p>
-<p>From July to December 2026, I am spending 20 weeks developing the mathematical tools needed to investigate that question. This is independent study, organised around a research problem rather than a set of separate textbook courses.</p>
+<section id="the-initial-motivation" class="level2">
+<h2 class="anchored" data-anchor-id="the-initial-motivation">The initial motivation</h2>
+<p>My interest in retinal imaging has a personal origin in an experience with diabetic retinopathy. It led me to take a particular interest in the reliability of retinal-image analysis.</p>
+<div id="fig-dr-visual-field" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Two illustrated views of the same children playing football in a park, as if seen by a parent. The first is clear. The second is blurred and partly obscured by soft dark patches and floaters to suggest one possible experience of sight loss associated with advanced diabetic retinopathy.">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-dr-visual-field-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../assets/images/research/diabetic-retinopathy-visual-field.png" class="img-fluid figure-img" style="width:100.0%" alt="Two illustrated views of the same children playing football in a park, as if seen by a parent. The first is clear. The second is blurred and partly obscured by soft dark patches and floaters to suggest one possible experience of sight loss associated with advanced diabetic retinopathy.">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-dr-visual-field-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: An illustration of what is at stake: being able to see ordinary moments as children grow up. The second view represents one possible experience of sight loss associated with advanced diabetic retinopathy. The condition usually has no noticeable symptoms at first, and its later effects on vision vary. This is an explanatory illustration, not a clinical simulation. See the <a href="https://www.nhs.uk/conditions/diabetic-retinopathy/" target="_blank" rel="noopener">NHS overview of diabetic retinopathy</a>.
+</figcaption>
+</figure>
+</div>
+<div id="fig-retinal-motivation" class="quarto-float quarto-figure quarto-figure-center anchored" alt="A colour retinal fundus photograph with two boxed regions enlarged alongside it. One enlargement marks a red lesion as a connected blob; the other marks several loops in the retinal vasculature.">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-retinal-motivation-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../assets/images/research/fives-214d-blobs-loops.png" class="img-fluid figure-img" style="width:92.0%" alt="A colour retinal fundus photograph with two boxed regions enlarged alongside it. One enlargement marks a red lesion as a connected blob; the other marks several loops in the retinal vasculature.">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-retinal-motivation-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2: A diabetic-retinopathy fundus image, annotated for my thesis to enlarge a connected lesion and examples of vascular loops. Source: image <code>214_D</code> from the <a href="https://doi.org/10.1038/s41597-022-01564-3" target="_blank" rel="noopener">FIVES fundus-image dataset</a>; reused and adapted under <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener">CC BY 4.0</a>.
+</figcaption>
+</figure>
+</div>
+<p>The NHS Diabetic Eye Screening Programme shows why this problem matters. Fundus photographs are assessed against defined <a href="https://www.gov.uk/government/publications/diabetic-eye-screening-retinal-image-grading-criteria" target="_blank" rel="noopener">feature-based criteria</a> within a structured <a href="https://www.gov.uk/government/publications/diabetic-eye-screening-pathway-requirements-specification/diabetic-eye-screening-pathway-requirements-specification" target="_blank" rel="noopener">grading and referral pathway</a>. Trained graders inspect the images, uncertain or referable findings receive further review, and people who may need treatment are referred for clinical assessment.</p>
+<p>As the number of people requiring screening grows, so does the grading workload. Expanding trained grading capacity also takes time. The UK National Screening Committee is therefore <a href="https://nationalscreening.blog.gov.uk/2026/05/11/uk-nsc-consults-on-use-of-artificial-intelligence-in-the-diabetic-eye-screening-programme/" target="_blank" rel="noopener">reviewing automated retinal-image analysis</a> as a possible way to triage images before human grading, although it does not currently recommend introducing automated grading into the programme. A conservative role for such systems is to support trained graders and clinical teams by handling suitable routine images and flagging abnormal, uncertain, or ungradable cases for human review. The research question is what mathematical and technical assurances would be needed before that assistance could be trusted at screening scale.</p>
+<p>The same concern with reliability has a second practical direction: more informative quality checks and fault investigation in medical or industrial imaging systems. Some faults might eventually be assessed remotely before a specialist travels onsite. This is a direction for the research, not a capability of the present work.</p>
+<section id="how-the-project-changed-direction" class="level3">
+<h3 class="anchored" data-anchor-id="how-the-project-changed-direction">How the project changed direction</h3>
+<p>My original intention was to produce a topology-informed classifier for diabetic retinopathy. Classifiers of this kind already existed, but reproducing and extending established work would still have been a useful objective for a four-month undergraduate project.</p>
+<p>The direction changed during ablation testing, when I deliberately subjected the images to individual forms of degradation. A simulated rotation of roughly three degrees was enough to drive the selected topology-based classifier close to chance performance. That raised a practical question: what value would the classifier have if a slight change in the subject’s head alignment could cause it to fail? The topological vectors were highly sensitive to rotation and other mechanical changes that required the image to be resampled. Interpolation on the pixel grid could create or destroy topological features even when the underlying subject had changed very little. My <a href="https://github.com/reyjosephnieto/ph/blob/main/Nieto_TDA_Public_20260430.pdf" target="_blank" rel="noopener">undergraduate thesis</a> described this behaviour as <em>grid shattering</em>.</p>
+<div id="fig-grid-shattering" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Four-panel schematic of a continuous retinal vascular loop and its sampled pixel representation. When aligned, the sampled pixels retain an intact loop. After a slight rotation and resampling, the same underlying vascular structure becomes fragmented on the pixel grid.">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-grid-shattering-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../assets/images/research/grid-shattering-abstract.png" class="img-fluid figure-img" style="width:100.0%" alt="Four-panel schematic of a continuous retinal vascular loop and its sampled pixel representation. When aligned, the sampled pixels retain an intact loop. After a slight rotation and resampling, the same underlying vascular structure becomes fragmented on the pixel grid.">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-grid-shattering-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3: A schematic DR-related vascular loop used to illustrate grid shattering. Above, alignment with the sampling grid preserves one cubical loop. Below, a small rotation followed by resampling fragments the pixel representation and destroys the detected loop, even though the underlying continuous vascular structure has not changed.
+</figcaption>
+</figure>
+</div>
+<p>Once the ablation tests exposed this limitation, the project changed direction. Instead of treating the result as an inconvenience to the proposed classifier, I made it part of the research question and asked whether the contrasting failure behaviour could itself be useful.</p>
+<p>The same topological summaries were comparatively robust under several photometric changes, including exposure drift and quantisation, although not under every form of noise. Log-transformed Hu moments, which are geometric descriptors based on an image’s overall shape, showed a broadly reverse profile: they were comparatively strong under mechanical transformations but weaker under changes in intensity. Instead of asking either representation to serve as the classifier by itself, I treated them as two complementary, or “orthogonal”, controls.</p>
+<p>Their contrasting failure profiles became the Differential Failure Matrix. It was designed to test whether signatures associated with alignment and resampling could be distinguished from signatures associated with radiometric degradation. The final project was therefore not the classifier I had originally planned. It treated an apparent weakness of the cubical-persistence pipeline as a possible signal for a coarse fault-isolation heuristic. The code and supporting material are available in the project’s <a href="https://github.com/reyjosephnieto/ph" target="_blank" rel="noopener">GitHub repository</a>.</p>
+</section>
+<section id="why-i-am-returning-to-it" class="level3">
+<h3 class="anchored" data-anchor-id="why-i-am-returning-to-it">Why I am returning to it</h3>
+<p>The thesis was completed over four months. That was enough to establish and test the framework, but not to exhaust the questions it raised. The decomposition was descriptive and produced a suggestive empirical pattern, but it was mathematically coarse: its stability bound was conservative, and the final fault-isolation stage necessarily relied in part on empirical thresholds and heuristics. Time did not permit a deeper investigation of those mechanisms.</p>
+<p>In a biomedical setting, a promising experimental result is not enough. The intended use, assumptions, limitations, performance, and possible failure modes of a method must be described and validated. My purpose in returning to the mathematics is to understand the underlying mechanisms more fully and to determine whether the heuristic parts of the pipeline can be replaced, constrained, or justified by stronger mathematical and empirical support. The longer-term aim is a pipeline whose assumptions and failure modes are more transparent and therefore easier to examine in technical and regulatory review. This is not a claim that the present work is a clinically validated or regulator-approved system.</p>
+<p>Retinal imaging remains the immediate problem, and similar acquisition issues arise in industrial inspection and other computer-vision systems. My earlier experiments were confined to retinal images, so industrial applications remain a direction for further work.</p>
+<p>From July to December 2026, I am spending 20 weeks developing the mathematical tools needed to investigate the questions raised by that earlier work. This is independent study, organised around a research problem rather than a set of separate textbook courses.</p>
 <p>I have found that I learn mathematics most effectively when abstract ideas serve a concrete task. The programme is designed accordingly: each strand must help clarify a real problem, sharpen an argument, or show why a proposed approach cannot work.</p>
-<p>A longer-term possibility is that such patterns could support clearer quality checks and fault investigation in medical or industrial imaging systems. Some faults might eventually be assessed remotely before a specialist travels onsite. This is a direction for the research, not a capability of the present work.</p>
+</section>
+</section>
 <section id="the-three-cores-of-the-work" class="level2">
 <h2 class="anchored" data-anchor-id="the-three-cores-of-the-work">The three cores of the work</h2>
 <p>The project brings together three complementary cores. Algebraic topology supplies structural measurements of an image. Category theory provides the formal connections between stages of the mathematical pipeline. Statistical machine learning tests whether the resulting measurements remain useful under controlled changes to the image.</p>
@@ -277,35 +338,6 @@ window.Quarto = {
 </section>
 </div>
 </section>
-<section id="connection-to-my-earlier-research" class="level2">
-<h2 class="anchored" data-anchor-id="connection-to-my-earlier-research">Connection to my earlier research</h2>
-<p>My interest in retinal imaging has a personal origin in an experience with diabetic retinopathy. It led me to take a particular interest in the reliability of retinal-image analysis.</p>
-<div id="fig-retinal-motivation" class="quarto-float quarto-figure quarto-figure-center anchored" alt="A colour retinal fundus photograph with two boxed regions enlarged alongside it. One enlargement marks a red lesion as a connected blob; the other marks several loops in the retinal vasculature.">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-retinal-motivation-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="../assets/images/research/fives-214d-blobs-loops.png" class="img-fluid figure-img" style="width:92.0%" alt="A colour retinal fundus photograph with two boxed regions enlarged alongside it. One enlargement marks a red lesion as a connected blob; the other marks several loops in the retinal vasculature.">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-retinal-motivation-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;1: A diabetic-retinopathy fundus image, annotated for my thesis to enlarge a connected lesion and examples of vascular loops. Source: image <code>214_D</code> from the <a href="https://doi.org/10.1038/s41597-022-01564-3" target="_blank" rel="noopener">FIVES fundus-image dataset</a>; reused and adapted under <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener">CC BY 4.0</a>.
-</figcaption>
-</figure>
-</div>
-<section id="how-the-project-changed-direction" class="level3">
-<h3 class="anchored" data-anchor-id="how-the-project-changed-direction">How the project changed direction</h3>
-<p>My original intention was to produce a topology-informed classifier for diabetic retinopathy. Classifiers of this kind already existed, but reproducing and extending established work would still have been a useful objective for a four-month undergraduate project.</p>
-<p>The direction changed during ablation testing, when I deliberately subjected the images to individual forms of degradation. A simulated rotation of roughly three degrees was enough to drive the selected topology-based classifier close to chance performance. That raised a practical question: what value would the classifier have if a slight change in the subject’s head alignment could cause it to fail? The topological vectors were highly sensitive to rotation and other mechanical changes that required the image to be resampled. Interpolation on the pixel grid could create or destroy topological features even when the underlying subject had changed very little. My <a href="https://github.com/reyjosephnieto/ph/blob/main/Nieto_TDA_Public_20260430.pdf" target="_blank" rel="noopener">undergraduate thesis</a> described this behaviour as <em>grid shattering</em>.</p>
-<p>Once the ablation tests exposed this limitation, the project changed direction. Instead of treating the result as an inconvenience to the proposed classifier, I made it part of the research question and asked whether the contrasting failure behaviour could itself be useful.</p>
-<p>The same topological summaries were comparatively robust under several photometric changes, including exposure drift and quantisation, although not under every form of noise. Log-transformed Hu moments, which are geometric descriptors based on an image’s overall shape, showed a broadly reverse profile: they were comparatively strong under mechanical transformations but weaker under changes in intensity. Instead of asking either representation to serve as the classifier by itself, I treated them as two complementary, or “orthogonal”, controls.</p>
-<p>Their contrasting failure profiles became the Differential Failure Matrix. It was designed to test whether signatures associated with alignment and resampling could be distinguished from signatures associated with radiometric degradation. The final project was therefore not the classifier I had originally planned. It treated an apparent weakness of the cubical-persistence pipeline as a possible signal for a coarse fault-isolation heuristic. The code and supporting material are available in the project’s <a href="https://github.com/reyjosephnieto/ph" target="_blank" rel="noopener">GitHub repository</a>.</p>
-</section>
-<section id="why-i-am-returning-to-it" class="level3">
-<h3 class="anchored" data-anchor-id="why-i-am-returning-to-it">Why I am returning to it</h3>
-<p>The thesis was completed over four months. That was enough to establish and test the framework, but not to exhaust the questions it raised. The decomposition was descriptive and produced a suggestive empirical pattern, but it was mathematically coarse: its stability bound was conservative, and the final fault-isolation stage necessarily relied in part on empirical thresholds and heuristics. Time did not permit a deeper investigation of those mechanisms.</p>
-<p>In a biomedical setting, a promising experimental result is not enough. The intended use, assumptions, limitations, performance, and possible failure modes of a method must be described and validated. My purpose in returning to the mathematics is to understand the underlying mechanisms more fully and to determine whether the heuristic parts of the pipeline can be replaced, constrained, or justified by stronger mathematical and empirical support. The longer-term aim is a pipeline whose assumptions and failure modes are more transparent and therefore easier to examine in technical and regulatory review. This is not a claim that the present work is a clinically validated or regulator-approved system.</p>
-<p>Retinal imaging remains the immediate problem, and similar acquisition issues arise in industrial inspection and other computer-vision systems. My earlier experiments were confined to retinal images, so industrial applications remain a direction for further work.</p>
-<p>The project provides the immediate mission, but it does not limit what I may learn from it. The mathematics may lead into other areas of computer vision, machine learning, and the use of topological data analysis on non-image data after it has been given a suitable geometric representation. Any such embedding would need to preserve the structure relevant to the problem. These possibilities remain exploratory and are not claims of the present study programme.</p>
-</section>
-</section>
 <section id="the-current-mathematical-question" class="level2">
 <h2 class="anchored" data-anchor-id="the-current-mathematical-question">The current mathematical question</h2>
 <p>The immediate question is whether changes introduced by sampling and resampling can be bounded more precisely when a digital image is treated on its native cubical grid.</p>
@@ -318,14 +350,14 @@ Figure&nbsp;1: A diabetic-retinopathy fundus image, annotated for my thesis to e
 </section>
 <section id="the-study-programme" class="level2">
 <h2 class="anchored" data-anchor-id="the-study-programme">The study programme</h2>
-<p>The three cores define the structure, formal justification, and experiments. The three subjects in my July–December 2026 programme extend the mathematical foundation needed to investigate them. At a non-technical level, dynamical systems describes how disturbances develop, functional analysis examines how operations change an image, and measure theory and probability provide ways to reason about random noise and uncertainty.</p>
+<p>The three cores define the measurements, formal justification, and experiments. My July–December 2026 programme extends the mathematical foundation needed to investigate the unresolved stability problem. At a non-technical level, dynamical systems describes how disturbances develop, functional analysis examines how operations change an image, and measure theory and probability provide ways to reason about random noise and uncertainty.</p>
 <div id="fig-three-mathematical-views" class="quarto-float quarto-figure quarto-figure-center anchored" alt="A three-panel illustrated diagram. A pixel-grid shape changes over time under dynamical systems, passes through an image operation under functional analysis, and appears with random variations under measure theory and probability. Arrows from all three panels lead to a more precise reliability estimate.">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-three-mathematical-views-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="../assets/images/research/three-mathematical-views.png" class="img-fluid figure-img" style="width:100.0%" alt="A three-panel illustrated diagram. A pixel-grid shape changes over time under dynamical systems, passes through an image operation under functional analysis, and appears with random variations under measure theory and probability. Arrows from all three panels lead to a more precise reliability estimate.">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-three-mathematical-views-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;2: Three mathematical views of the same imaging problem, showing change over time, the effect of image operations, and random disturbance.
+Figure&nbsp;4: Three mathematical views of the same imaging problem, showing change over time, the effect of image operations, and random disturbance.
 </figcaption>
 </figure>
 </div>
@@ -365,10 +397,11 @@ Figure&nbsp;2: Three mathematical views of the same imaging problem, showing cha
 <img src="../assets/images/mathematics/y4h1-study-flow.png" class="img-fluid figure-img" style="width:100.0%" alt="Flowchart beginning with Nieto — Computational Stability of Cubical Homology and its deliberately coarse bound. It branches into dynamical systems and stability, functional analysis, and measure theory and probability. These strands meet in the study of image-acquisition operators and several notions of perturbation, leading to possible theoretical, negative, or empirical results with applications to biomedical and industrial image analysis.">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-y4h1-study-flow-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;3: How the July–December 2026 study programme develops the questions raised by my thesis.
+Figure&nbsp;5: How the July–December 2026 study programme develops the questions raised by my thesis.
 </figcaption>
 </figure>
 </div>
+<p>The project provides the immediate mission, but it does not limit what I may learn from it. The mathematics may lead into other areas of computer vision, machine learning, and the use of topological data analysis on non-image data after it has been given a suitable geometric representation. Any such embedding would need to preserve the structure relevant to the problem. These possibilities remain exploratory and are not claims of the present study programme.</p>
 <p>An unexpected experimental result exposed a specific mathematical problem. The present study programme is my attempt to assemble the tools needed to investigate it properly. I will add public notes when there is enough material to be useful to other readers.</p>
 
 
