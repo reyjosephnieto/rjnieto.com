@@ -7,9 +7,14 @@ aliases:
 toc: false
 ---
 
-From July to December 2026, I am spending 20 weeks studying dynamical systems,
-functional analysis, and measure theory and probability. This is independent
-study, organised around a research problem rather than three separate textbook
+My current research asks a practical question: when an image is blurred,
+rotated, resized, poorly exposed, or corrupted by sensor noise, how does the
+information extracted by a computer change? I want to understand whether the
+pattern of those changes can help identify what went wrong during acquisition.
+
+From July to December 2026, I am spending 20 weeks developing the mathematical
+tools needed to investigate that question. This is independent study,
+organised around a research problem rather than a set of separate textbook
 courses.
 
 I have found that I learn mathematics most effectively when abstract ideas
@@ -17,27 +22,77 @@ serve a concrete task. The programme is designed accordingly: each strand must
 help clarify a real problem, sharpen an argument, or show why a proposed
 approach cannot work.
 
-The problem is easy to state. An imaging system never produces a perfect copy
-of its subject. An image may be blurred, rotated, resized, poorly exposed, or
-corrupted by sensor noise. I want to understand how those changes affect the
-structural information that a computer extracts from the image, and whether the
-resulting pattern can tell us something about what went wrong during
-acquisition.
+A longer-term possibility is that such patterns could support clearer quality
+checks and fault investigation in medical or industrial imaging systems. Some
+faults might eventually be assessed remotely before a specialist travels
+onsite. This is a direction for the research, not a capability of the present
+work.
 
-Part of this work uses topological data analysis. In this setting, topology
-provides ways to describe features such as connected regions and loops, and
-persistent homology records how those features appear and disappear as an
-image is examined at different thresholds. The underlying mathematics is
-precise; the practical question is whether these summaries remain reliable
-when the image does not.
+## The three cores of the work
 
-Digital images have a natural cubical structure: pixels and voxels lie on a
-regular grid. Cubical and simplicial homology are related ways of representing
-the topology of that structure, rather than one being a subset of the other.
-Under suitable constructions, a compatible triangulation can relate the two
-representations while preserving the topology under study. My interest is in
-whether working directly with the cubical structure can tell us more about the
-stability of measurements made from digital images.
+The project brings together three complementary cores. Algebraic topology
+supplies structural measurements of an image. Category theory provides the
+formal connections between stages of the mathematical pipeline. Statistical
+machine learning tests whether the resulting measurements remain useful under
+controlled changes to the image.
+
+:::: {.study-topic}
+::: {.study-topic-image}
+![](../assets/images/research/algebraic-topology-abstract.png){.study-topic-art fig-alt="Four-stage cartoon cycle showing a ring-shaped doughnut being compressed into a coffee mug and stretched back into the original doughnut, with one hole preserved throughout."}
+:::
+::: {.study-topic-copy}
+### Structural Core: Algebraic Topology
+
+Algebraic topology turns questions about shape into algebraic summaries of
+features such as connected pieces, loops, and voids. Persistent homology then
+records when those features appear, how long they remain, and when they
+disappear as an image is examined at different thresholds.
+
+Digital images have a natural cubical structure because pixels and voxels lie
+on a regular grid. Cubical and simplicial homology are related ways of
+representing the topology of that structure, rather than one being a subset of
+the other. Under suitable constructions, a compatible triangulation can
+relate the two representations while preserving the topology under study.
+:::
+::::
+
+:::: {.study-topic}
+::: {.study-topic-image}
+![](../assets/images/research/category-theory-abstract.png){.study-topic-art fig-alt="Commuting-square illustration connecting a cubical grid and its triangulation to a filtered sequence and a persistence barcode, with the same loop preserved along both routes."}
+:::
+::: {.study-topic-copy}
+### Formal Core: Category Theory
+
+Category theory provides a language for mathematical structures and the maps
+between them. A filtration is not merely a collection of thresholded images:
+inclusion maps connect its stages, and homology carries those relationships
+into the linear maps that form a persistence module.
+
+In my thesis, a standard construction called Coxeter--Freudenthal--Kuhn (CFK)
+triangulation connected the cubical geometry of pixels to the simplicial
+setting used in much of the established theory. Expressing that bridge and the
+subsequent operations as functors made it possible to state precisely when
+simplicial stability results could be applied in the cubical setting.
+:::
+::::
+
+:::: {.study-topic}
+::: {.study-topic-image}
+![](../assets/images/research/statistical-machine-learning-abstract.png){.study-topic-art fig-alt="Four-panel illustration showing a decision boundary developing from no boundary, through a straight line and an initial curve, to a smooth curve separating two groups of points."}
+:::
+::: {.study-topic-copy}
+### Experimental Core: Statistical Machine Learning
+
+Statistical machine learning provides the experimental probes. In my thesis,
+simple classifiers were trained on topological or geometric summaries and then
+tested on deliberately degraded images. Changes in their performance made the
+response of each representation observable.
+
+In this role, a classifier is also a measuring instrument. The immediate aim
+is not to claim state-of-the-art diagnostic accuracy, but to compare failure
+patterns under stated perturbations.
+:::
+::::
 
 ## Connection to my earlier research
 
@@ -125,12 +180,62 @@ embedding would need to preserve the structure relevant to the problem. These
 possibilities remain exploratory and are not claims of the present study
 programme.
 
+## The current mathematical question
+
+The immediate question is whether changes introduced by sampling and
+resampling can be bounded more precisely when a digital image is treated on
+its native cubical grid.
+
+Persistent homology already has a substantial stability theory: in broad
+terms, a small change in the function used to examine an image leads to a
+controlled change in its persistence diagram. This general result is
+important, but it does not by itself explain every practical failure in an
+image-analysis pipeline. Existing research has also shown that robustness on
+greyscale images depends on the chosen filtration, persistence summary, and
+form of disturbance. For example, a broad experimental study by
+[Turkeš and colleagues](https://doi.org/10.1371/journal.pone.0257215){target="_blank" rel="noopener"}
+examined several filtrations and summaries under affine, photometric, and noise
+perturbations on handwritten digits.
+
+That work establishes important context, but it does not derive a tighter bound
+for the particular sequence that concerns me: a geometric transformation
+represented on a sampled pixel grid, followed by a cubical filtration and its
+persistence diagram. The computational bound used in my thesis was deliberately
+coarse. Global estimates of displacement and intensity variation can give a
+large upper bound even when the measured topological change is small.
+
+I am investigating whether the regular cubical grid, local image structure,
+and the properties of a specified sampling or acquisition process can support
+tighter or more informative bounds under explicit assumptions. A related
+question is whether the contrasting responses of topological and geometric
+measurements can identify the likely source of a failure, rather than merely
+showing that performance has deteriorated.
+
+A more immediate extension is to replace the signed logarithmic transformation
+applied to the Hu moments with a compression that has an explicit Lipschitz
+bound. This would not necessarily make the Differential Failure Matrix more
+effective. Its value would be cleaner stability accounting: under stated
+assumptions, both branches of the pipeline could be analysed using explicit
+continuity bounds, making it clearer where empirical thresholds and other
+assumptions still enter.
+
+The aim is not to restate the general stability theorem in cubical language,
+and I am not claiming that either question is novel before the relevant
+literature has been examined in full.
+
+The eventual result may be a theorem with restricted assumptions, an example
+showing that a proposed bound cannot hold, a probabilistic reformulation, or a
+careful computational study. A negative result is useful if it explains why an
+apparently reasonable idea fails.
+
 ## The study programme
 
-At a non-technical level, the three subjects approach different parts of the
-same problem. Dynamical systems describes how disturbances develop, functional
-analysis examines how operations change an image, and measure theory and
-probability provide ways to reason about random noise and uncertainty.
+The three cores define the structure, formal justification, and experiments.
+The three subjects in my July--December 2026 programme extend the mathematical
+foundation needed to investigate them. At a non-technical level, dynamical
+systems describes how disturbances develop, functional analysis examines how
+operations change an image, and measure theory and probability provide ways to
+reason about random noise and uncertainty.
 
 ![Three mathematical views of the same imaging problem, showing change over time, the effect of image operations, and random disturbance.](../assets/images/research/three-mathematical-views.png){#fig-three-mathematical-views fig-alt="A three-panel illustrated diagram. A pixel-grid shape changes over time under dynamical systems, passes through an image operation under functional analysis, and appears with random variations under measure theory and probability. Arrows from all three panels lead to a more precise reliability estimate." width="100%"}
 
@@ -191,51 +296,9 @@ probability.
 :::
 ::::
 
-![How the July--December 2026 study programme develops the questions raised by my final-year paper.](../assets/images/mathematics/y4h1-study-flow.png){#fig-y4h1-study-flow fig-alt="Flowchart beginning with Nieto — Computational Stability of Cubical Homology and its deliberately coarse bound. It branches into dynamical systems and stability, functional analysis, and measure theory and probability. These strands meet in the study of image-acquisition operators and several notions of perturbation, leading to possible theoretical, negative, or empirical results with applications to biomedical and industrial image analysis." width="100%"}
+![How the July--December 2026 study programme develops the questions raised by my thesis.](../assets/images/mathematics/y4h1-study-flow.png){#fig-y4h1-study-flow fig-alt="Flowchart beginning with Nieto — Computational Stability of Cubical Homology and its deliberately coarse bound. It branches into dynamical systems and stability, functional analysis, and measure theory and probability. These strands meet in the study of image-acquisition operators and several notions of perturbation, leading to possible theoretical, negative, or empirical results with applications to biomedical and industrial image analysis." width="100%"}
 
-## How I am approaching the work
-
-Persistent homology already has a substantial stability theory: in broad
-terms, a small change in the function used to examine an image leads to a
-controlled change in its persistence diagram. This general result is
-important, but it does not by itself explain every practical failure in an
-image-analysis pipeline. Existing research has also shown that robustness on
-greyscale images depends on the chosen filtration, persistence summary, and
-form of disturbance. For example, a broad experimental study by
-[Turkeš and colleagues](https://doi.org/10.1371/journal.pone.0257215){target="_blank" rel="noopener"}
-examined several filtrations and summaries under affine, photometric, and noise
-perturbations on handwritten digits.
-
-That work establishes important context, but it does not derive a tighter bound
-for the particular sequence that concerns me: a geometric transformation
-represented on a sampled pixel grid, followed by a cubical filtration and its
-persistence diagram. The computational bound used in my thesis was deliberately
-coarse. Global estimates of displacement and intensity variation can give a
-large upper bound even when the measured topological change is small.
-
-I am investigating whether the regular cubical grid, local image structure,
-and the properties of a specified sampling or acquisition process can support
-tighter or more informative bounds under explicit assumptions. A related
-question is whether the contrasting responses of topological and geometric
-measurements can identify the likely source of a failure, rather than merely
-showing that performance has deteriorated.
-
-A more immediate extension is to replace the signed logarithmic transformation
-applied to the Hu moments with a compression that has an explicit Lipschitz
-bound. This would not necessarily make the Differential Failure Matrix more
-effective. Its value would be cleaner stability accounting: under stated
-assumptions, both branches
-of the pipeline could be analysed using explicit continuity bounds, making it
-clearer where empirical thresholds and other assumptions still enter.
-
-The aim is not to restate the general stability theorem in cubical language,
-and I am not claiming that either question is novel before the relevant
-literature has been examined in full.
-
-The eventual result may be a theorem with restricted assumptions, an example
-showing that a proposed bound cannot hold, a probabilistic reformulation, or a
-careful computational study. A negative result is useful if it explains why an
-apparently reasonable idea fails.
-
-These studies are still in progress. I may add public notes later, once there
-is enough material to be useful to another reader.
+An unexpected experimental result exposed a specific mathematical problem.
+The present study programme is my attempt to assemble the tools needed to
+investigate it properly. I will add public notes when there is enough material
+to be useful to other readers.
