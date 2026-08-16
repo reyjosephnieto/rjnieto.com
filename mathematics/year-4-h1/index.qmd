@@ -43,6 +43,12 @@ My interest in retinal imaging began with my father's diabetic retinopathy and
 its effects on my family. That made the reliability of retinal-image analysis
 more than an abstract case study for me.
 
+::: {#fig-retinal-motivation}
+![](../../assets/images/research/fives-214d-blobs-loops.png){fig-alt="A colour retinal fundus photograph with two boxed regions enlarged alongside it. One enlargement marks a red lesion as a connected blob; the other marks several loops in the retinal vasculature." width="92%"}
+
+A diabetic-retinopathy fundus image, annotated for my thesis to enlarge a connected lesion and examples of vascular loops. Source: image `214_D` from the [FIVES fundus-image dataset](https://doi.org/10.1038/s41597-022-01564-3){target="_blank" rel="noopener"}; reused and adapted under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/){target="_blank" rel="noopener"}.
+:::
+
 ### How the project changed direction
 
 My original intention was to produce a topology-informed classifier for
@@ -182,10 +188,19 @@ and the properties of a specified sampling or acquisition process can support
 tighter or more informative bounds under explicit assumptions. A related
 question is whether the contrasting responses of topological and geometric
 measurements can identify the likely source of a failure, rather than merely
-showing that performance has deteriorated. The aim is not to restate the
-general stability theorem in cubical language, and I am not claiming that
-either question is novel before the relevant literature has been examined in
-full.
+showing that performance has deteriorated.
+
+A more immediate extension is to replace the signed logarithmic transformation
+applied to the Hu moments with a compression that has an explicit Lipschitz
+bound. This would not necessarily make the Differential Failure Matrix more
+effective. Its value would be cleaner stability accounting: under stated
+assumptions, both branches
+of the pipeline could be analysed using explicit continuity bounds, making it
+clearer where empirical thresholds and other assumptions still enter.
+
+The aim is not to restate the general stability theorem in cubical language,
+and I am not claiming that either question is novel before the relevant
+literature has been examined in full.
 
 The eventual result may be a theorem with restricted assumptions, an example
 showing that a proposed bound cannot hold, a probabilistic reformulation, or a
