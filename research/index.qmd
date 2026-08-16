@@ -134,8 +134,6 @@ probability provide ways to reason about random noise and uncertainty.
 
 ![Three mathematical views of the same imaging problem, showing change over time, the effect of image operations, and random disturbance.](../assets/images/research/three-mathematical-views.png){#fig-three-mathematical-views fig-alt="A three-panel illustrated diagram. A pixel-grid shape changes over time under dynamical systems, passes through an image operation under functional analysis, and appears with random variations under measure theory and probability. Arrows from all three panels lead to a more precise reliability estimate." width="100%"}
 
-![How the July--December 2026 study programme develops the questions raised by my final-year paper.](../assets/images/mathematics/y4h1-study-flow.png){#fig-y4h1-study-flow fig-alt="Flowchart beginning with Nieto — Computational Stability of Cubical Homology and its deliberately coarse bound. It branches into dynamical systems and stability, functional analysis, and measure theory and probability. These strands meet in the study of image-acquisition operators and several notions of perturbation, leading to possible theoretical, negative, or empirical results with applications to biomedical and industrial image analysis." width="100%"}
-
 ### Dynamical systems
 
 Dynamical systems studies change: how a system evolves, what states remain
@@ -171,6 +169,8 @@ This strand matters when degradation is random rather than fixed. It provides
 tools for describing sensor noise, combining more than one source of
 uncertainty, and asking what can be said on average or with a stated
 probability.
+
+![How the July--December 2026 study programme develops the questions raised by my final-year paper.](../assets/images/mathematics/y4h1-study-flow.png){#fig-y4h1-study-flow fig-alt="Flowchart beginning with Nieto — Computational Stability of Cubical Homology and its deliberately coarse bound. It branches into dynamical systems and stability, functional analysis, and measure theory and probability. These strands meet in the study of image-acquisition operators and several notions of perturbation, leading to possible theoretical, negative, or empirical results with applications to biomedical and industrial image analysis." width="100%"}
 
 ## How I am approaching the work
 
