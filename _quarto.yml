@@ -33,7 +33,7 @@ website:
             text: MMW101
           - href: teaching/bulsu/living-it-era/index.qmd
             text: MST101d
-      - href: mathematics/year-4-h1/index.qmd
+      - href: research/index.qmd
         text: Research
       - href: cv/index.qmd
         text: CV

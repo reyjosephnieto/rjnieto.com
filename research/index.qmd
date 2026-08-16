@@ -2,6 +2,8 @@
 title: "Current Research"
 subtitle: "Mathematical foundations for reliable image analysis"
 description-meta: "RJ Nieto's current research and independent study in the mathematics of stability, uncertainty and image analysis."
+aliases:
+  - /mathematics/year-4-h1/
 toc: false
 ---
 
@@ -44,7 +46,7 @@ diabetic retinopathy. It led me to take a particular interest in the reliability
 of retinal-image analysis.
 
 ::: {#fig-retinal-motivation}
-![](../../assets/images/research/fives-214d-blobs-loops.png){fig-alt="A colour retinal fundus photograph with two boxed regions enlarged alongside it. One enlargement marks a red lesion as a connected blob; the other marks several loops in the retinal vasculature." width="92%"}
+![](../assets/images/research/fives-214d-blobs-loops.png){fig-alt="A colour retinal fundus photograph with two boxed regions enlarged alongside it. One enlargement marks a red lesion as a connected blob; the other marks several loops in the retinal vasculature." width="92%"}
 
 A diabetic-retinopathy fundus image, annotated for my thesis to enlarge a connected lesion and examples of vascular loops. Source: image `214_D` from the [FIVES fundus-image dataset](https://doi.org/10.1038/s41597-022-01564-3){target="_blank" rel="noopener"}; reused and adapted under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/){target="_blank" rel="noopener"}.
 :::
@@ -125,7 +127,7 @@ programme.
 
 ## The study programme
 
-![How the July--December 2026 study programme develops the questions raised by my final-year paper.](../../assets/images/mathematics/y4h1-study-flow.png){#fig-y4h1-study-flow fig-alt="Flowchart beginning with Nieto — Computational Stability of Cubical Homology and its deliberately coarse bound. It branches into dynamical systems and stability, functional analysis, and measure theory and probability. These strands meet in the study of image-acquisition operators and several notions of perturbation, leading to possible theoretical, negative, or empirical results with applications to biomedical and industrial image analysis." width="100%"}
+![How the July--December 2026 study programme develops the questions raised by my final-year paper.](../assets/images/mathematics/y4h1-study-flow.png){#fig-y4h1-study-flow fig-alt="Flowchart beginning with Nieto — Computational Stability of Cubical Homology and its deliberately coarse bound. It branches into dynamical systems and stability, functional analysis, and measure theory and probability. These strands meet in the study of image-acquisition operators and several notions of perturbation, leading to possible theoretical, negative, or empirical results with applications to biomedical and industrial image analysis." width="100%"}
 
 ### Dynamical systems
 

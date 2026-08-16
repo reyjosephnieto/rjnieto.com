@@ -56,7 +56,7 @@ can help distinguish different degradation signatures. This is ongoing
 research; I am not assuming in advance that either question will yield a new
 theorem.
 
-[Current research](mathematics/year-4-h1/index.qmd){.btn .btn-primary}
+[Current research](research/index.qmd){.btn .btn-primary}
 [View the repo](https://github.com/reyjosephnieto/ph){.btn .btn-outline-primary target="_blank" rel="noopener"}
 [View thesis PDF](https://github.com/reyjosephnieto/ph/blob/main/Nieto_TDA_Public_20260430.pdf){.btn .btn-outline-primary target="_blank" rel="noopener"}
 
