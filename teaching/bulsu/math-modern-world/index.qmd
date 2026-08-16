@@ -11,9 +11,10 @@ BS Biology students whom I teach. This is not just a mathematics appreciation
 course. This version of MMW places more emphasis on calculation and
 mathematical reasoning than students may expect from a general-education
 course. It may feel challenging at times, but the work is intended to stretch
-students rather than overwhelm them. This emphasis is consistent with CHED
-guidelines, which call for students to do mathematics with rigour and apply it
-to practical problems.
+students rather than overwhelm them. This emphasis follows the broad scope of
+*Mathematics in the Modern World* described in [CHED Memorandum Order No. 20,
+series of 2013](https://ched.gov.ph/wp-content/uploads/2017/10/CMO-No.20-s2013.pdf),
+while adapting the material to the needs of biology students.
 
 The course has two aims. The first is to develop practical mathematical
 literacy—including financial literacy—that students can use in everyday life.
@@ -47,15 +48,15 @@ difficult—by studying, making mistakes, and trying again.
 **Instructor's name:** Rey Joseph Nieto<br>
 **Email:** rj (at) rjnieto (dot) com (for questions or
 inquiries related to the course)<br>
-**Consultation hours:** To be determined<br>
+**Consultation hours:** To be announced through official class channels<br>
 **Class schedule and room:** Refer to the official class schedule
 
 **Important dates**
 
 | Assessment | Date |
 |---|---|
-| Midterm examinations | TBD |
-| Final examinations | TBD |
+| Midterm examinations | To be announced through official class channels |
+| Final examinations | To be announced through official class channels |
 
 ## Printable lecture notes
 
@@ -66,14 +67,6 @@ The current version of the complete lecture notes is available as a PDF.
 *Current version: 1 August 2026*
 
 ## House rules
-
-> ***“…The young must be idealistic; the young must believe that the world
-> should be more just, and there should be more moral rectitude in the
-> behaviour of their leaders… (But) at the end of the day I think decisions
-> have got to be made by adults, not teenagers. But it’s got to be made in
-> such a way that when the teenagers become adults, and they look back on
-> these decisions, they would be proud of the generation that went before
-> them.”*** — *Lee Kuan Yew*
 
 1. **Printed notes are available if you need them.** If you do not have
    reliable access to a laptop or mobile device, speak to me after class or

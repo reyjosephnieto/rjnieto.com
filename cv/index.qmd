@@ -14,10 +14,10 @@ toc-depth: 2
 ## Profile
 
 Mathematics graduate and university instructor with First Class Honours from
-the University of Bristol, specialising in topological data analysis, applied
-machine learning, and computational image analysis. Experienced in Python,
-R, mathematical programming, and the development of university-level teaching
-materials.
+the University of Bristol, with final-year work in topological data analysis,
+applied machine learning, and computational image analysis. Experienced in
+Python, R, mathematical programming, and the development of university-level
+teaching materials.
 
 Earlier career experience spans public affairs, journalism, broadcasting,
 technical writing, and strategic communications, including work in government,
@@ -31,16 +31,17 @@ national media, and digital publishing.
 *Bristol, England, United Kingdom*<br>
 September 2023–June 2026 · First Class Honours
 
-Specialised in topological data analysis, applied machine learning, and computer
-vision. Selected marks included Mathematical Programming (94%), Combinatorics
-(93%), Artificial Intelligence (92%), and Analysis (90%).
+Final-year work focused on topological data analysis, applied machine learning,
+and computer vision. Selected marks included Mathematical Programming (94%),
+Combinatorics (93%), Artificial Intelligence (92%), and Analysis (90%).
 
 Final-year project: *Computational Stability of Cubical Homology: Orthogonal
 Controls for Fault Isolation in Retinal Diagnostics* (final paper mark: 90%).
 Developed a topology-informed framework for measuring acquisition stability and
-isolating faults in digital images. Derived a computable stability bound for
-cubical persistent homology and built a parallelised Python pipeline to test
-mechanical and radiometric degradations in retinal images.
+exploring a fault-isolation heuristic in digital images. Derived a computable
+stability bound for the cubical-persistence model and built a parallelised
+Python pipeline to test simulated mechanical and radiometric degradations in
+retinal images.
 
 [View the public version of the project](https://github.com/reyjosephnieto/ph).
 

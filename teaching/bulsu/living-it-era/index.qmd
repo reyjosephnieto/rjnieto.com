@@ -21,13 +21,10 @@ fills important gaps, and explains how they are related. Examples are drawn
 whenever practicable from biology, health, research, and Philippine digital
 life.
 
-The module follows the broad general-education scope described for *Living in
-the IT Era* in [CHED Memorandum Order No. 20, series of
-2013](https://ched.gov.ph/wp-content/uploads/2017/10/CMO-No.20-s2013.pdf).
-Its ten-chapter plan is a modern interpretation of that scope rather than a
-claim that CHED prescribes this exact sequence. The notes will be developed as
-the course proceeds and may change in response to students' questions,
-suggestions, and practical needs.
+The ten-chapter plan is my working interpretation of the course's assigned
+scope, adapted for biology students and current technological concerns. The
+notes will be developed as the course proceeds and may change in response to
+students' questions, suggestions, and practical needs.
 
 ## Logistics
 
@@ -37,15 +34,15 @@ suggestions, and practical needs.
 **Instructor's name:** Rey Joseph Nieto<br>
 **Email:** rj (at) rjnieto (dot) com (for questions or inquiries related to
 the course)<br>
-**Consultation hours:** To be determined<br>
+**Consultation hours:** To be announced through official class channels<br>
 **Class schedule and room:** Refer to the official class schedule
 
 **Important dates**
 
 | Assessment | Date |
 |---|---|
-| Midterm examinations | TBD |
-| Final examinations | TBD |
+| Midterm examinations | To be announced through official class channels |
+| Final examinations | To be announced through official class channels |
 
 ## Printable lecture notes
 
@@ -72,14 +69,6 @@ clear, what was confusing, and what deserves further discussion. Reading
 before class is part of the course rather than optional preparation for it.
 
 ## House rules
-
-> ***“…The young must be idealistic; the young must believe that the world
-> should be more just, and there should be more moral rectitude in the
-> behaviour of their leaders… (But) at the end of the day I think decisions
-> have got to be made by adults, not teenagers. But it’s got to be made in
-> such a way that when the teenagers become adults, and they look back on
-> these decisions, they would be proud of the generation that went before
-> them.”*** — *Lee Kuan Yew*
 
 1. **Printed notes are available if you need them.** If you do not have
    reliable access to a laptop or mobile device, speak to me after class or

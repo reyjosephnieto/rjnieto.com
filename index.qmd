@@ -1,5 +1,6 @@
 ---
 title: "RJ Nieto"
+description-meta: "The personal website of Rey Joseph Nieto, featuring mathematics, research, teaching, and professional work."
 toc: false
 ---
 
@@ -12,14 +13,20 @@ in Mathematics from the [University of Bristol](https://www.bristol.ac.uk/). I
 currently teach mathematics and information technology at Bulacan State
 University (BulSU) in the Philippines.
 
-My technical interests include topological data analysis, applied machine
-learning, and computational image analysis. Before returning to mathematics, I
-worked in journalism, broadcasting, public affairs, technical writing, and
-government communications.
+Alongside my teaching, I am undertaking structured independent study in
+dynamical systems, functional analysis, and measure theory and probability.
+This supports my continuing research in topology-informed computer vision,
+with potential applications in reliable biomedical and industrial imaging.
+
+Over the longer term, I would like to study the mathematical behaviour of
+learning systems, including how they change over time and retain information.
+
+Before returning to mathematics, I worked in journalism, broadcasting, public
+affairs, technical writing, and government communications.
 :::
 
 ::: {.home-intro-photo}
-![](assets/profile-pic.jpg){.profile-photo fig-alt="Portrait of Rey Joseph RJ Nieto"}
+![](assets/images/profile-pic.jpg){.profile-photo fig-alt="Portrait of Rey Joseph RJ Nieto"}
 :::
 :::
 
@@ -35,13 +42,23 @@ Era](teaching/bulsu/living-it-era/index.qmd), which I teach at BulSU.
 
 ## Research
 
-My final-year project studied the computational stability of cubical persistent
-homology in digital imaging. I derived a computable stability bound and built a
-parallelised Python pipeline to investigate acquisition errors in retinal
-images.
+My final-year project asked how reliably a computer can recover structural
+features from an image after blur, rotation, a change in resolution, or sensor
+noise. Using cubical persistent homology, I derived a computable stability
+bound and built a parallelised Python pipeline to study how simulated
+acquisition errors can affect measurements derived from retinal images.
+
+I am now returning to a question left open by that project: whether the effects
+of sampling and interpolation on a pixel grid can be described more precisely
+than the conservative general bound used in the thesis. I am also examining
+whether the contrasting responses of topological and geometric measurements
+can help distinguish different degradation signatures. This is ongoing
+research; I am not assuming in advance that either question will yield a new
+theorem.
 
 [Read the public project](https://github.com/reyjosephnieto/ph/blob/main/Nieto_TDA_Public_20260430.pdf){.btn .btn-primary target="_blank" rel="noopener"}
 [View the repository](https://github.com/reyjosephnieto/ph){.btn .btn-outline-primary}
+[Current research](mathematics/year-4-h1/index.qmd){.btn .btn-outline-primary}
 
 ## Professional Background
 
