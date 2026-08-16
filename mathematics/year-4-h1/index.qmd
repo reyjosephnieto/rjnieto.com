@@ -39,9 +39,9 @@ stability of measurements made from digital images.
 
 ## Connection to my earlier research
 
-My interest in retinal imaging began with my father's diabetic retinopathy and
-its effects on my family. That made the reliability of retinal-image analysis
-more than an abstract case study for me.
+My interest in retinal imaging has a personal origin in an experience with
+diabetic retinopathy. It led me to take a particular interest in the reliability
+of retinal-image analysis.
 
 ::: {#fig-retinal-motivation}
 ![](../../assets/images/research/fives-214d-blobs-loops.png){fig-alt="A colour retinal fundus photograph with two boxed regions enlarged alongside it. One enlargement marks a red lesion as a connected blob; the other marks several loops in the retinal vasculature." width="92%"}
