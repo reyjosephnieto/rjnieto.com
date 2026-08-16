@@ -25,12 +25,6 @@ of retinal-image analysis.
 An illustration of what is at stake: being able to see ordinary moments as children grow up. The second view represents one possible experience of sight loss associated with advanced diabetic retinopathy. The condition usually has no noticeable symptoms at first, and its later effects on vision vary. This is an explanatory illustration, not a clinical simulation. See the [NHS overview of diabetic retinopathy](https://www.nhs.uk/conditions/diabetic-retinopathy/){target="_blank" rel="noopener"}.
 :::
 
-::: {#fig-retinal-motivation}
-![](../assets/images/research/fives-214d-blobs-loops.png){fig-alt="A colour retinal fundus photograph with two boxed regions enlarged alongside it. One enlargement marks a red lesion as a connected blob; the other marks several loops in the retinal vasculature." width="92%"}
-
-A diabetic-retinopathy fundus image, annotated for my thesis to enlarge a connected lesion and examples of vascular loops. Source: image `214_D` from the [FIVES fundus-image dataset](https://doi.org/10.1038/s41597-022-01564-3){target="_blank" rel="noopener"}; reused and adapted under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/){target="_blank" rel="noopener"}.
-:::
-
 The NHS Diabetic Eye Screening Programme shows why this problem matters.
 Fundus photographs are assessed against defined
 [feature-based criteria](https://www.gov.uk/government/publications/diabetic-eye-screening-retinal-image-grading-criteria){target="_blank" rel="noopener"}
@@ -39,6 +33,12 @@ within a structured
 Trained graders inspect the images, uncertain or referable findings receive
 further review, and people who may need treatment are referred for clinical
 assessment.
+
+::: {#fig-retinal-motivation}
+![](../assets/images/research/fives-214d-blobs-loops.png){fig-alt="A colour retinal fundus photograph with two boxed regions enlarged alongside it. One enlargement marks a red lesion as a connected blob; the other marks several loops in the retinal vasculature." width="92%"}
+
+A diabetic-retinopathy fundus image, annotated for my thesis to enlarge a connected lesion and examples of vascular loops. Source: image `214_D` from the [FIVES fundus-image dataset](https://doi.org/10.1038/s41597-022-01564-3){target="_blank" rel="noopener"}; reused and adapted under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/){target="_blank" rel="noopener"}.
+:::
 
 As the number of people requiring screening grows, so does the grading
 workload. Expanding trained grading capacity also takes time. The UK National
@@ -88,14 +88,14 @@ Instead of treating the result as an inconvenience to the proposed classifier,
 I made it part of the research question and asked whether the contrasting
 failure behaviour could itself be useful.
 
-The same topological summaries were comparatively robust under several
-photometric changes, including exposure drift and quantisation, although not
-under every form of noise. Log-transformed Hu moments, which are geometric
-descriptors based on an image's overall shape, showed a broadly reverse
-profile: they were comparatively strong under mechanical transformations but
-weaker under changes in intensity. Instead of asking either representation to
-serve as the classifier by itself, I treated them as two complementary, or
-“orthogonal”, controls.
+In my thesis experiments, the same topological summaries were comparatively
+robust under several photometric changes, including exposure drift and
+quantisation, although not under every form of noise. Log-transformed Hu
+moments, which are geometric descriptors based on an image's overall shape,
+showed a broadly reverse profile: they were comparatively strong under
+mechanical transformations but weaker under changes in intensity. Instead of
+asking either representation to serve as the classifier by itself, I treated
+them as two complementary, or “orthogonal”, controls.
 
 Their contrasting failure profiles became the Differential Failure Matrix. It
 was designed to test whether signatures associated with alignment and
