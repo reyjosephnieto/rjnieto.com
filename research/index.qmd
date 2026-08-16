@@ -134,6 +134,11 @@ probability provide ways to reason about random noise and uncertainty.
 
 ![Three mathematical views of the same imaging problem, showing change over time, the effect of image operations, and random disturbance.](../assets/images/research/three-mathematical-views.png){#fig-three-mathematical-views fig-alt="A three-panel illustrated diagram. A pixel-grid shape changes over time under dynamical systems, passes through an image operation under functional analysis, and appears with random variations under measure theory and probability. Arrows from all three panels lead to a more precise reliability estimate." width="100%"}
 
+:::: {.study-topic}
+::: {.study-topic-image}
+![](../assets/images/research/dynamical-systems-abstract.png){.study-topic-art fig-alt="Abstract illustration of a Lorenz attractor, with nested trajectories forming two lobes."}
+:::
+::: {.study-topic-copy}
 ### Dynamical systems
 
 Dynamical systems studies change: how a system evolves, what states remain
@@ -145,7 +150,14 @@ This subject gives me a firmer language for reasoning about stability. It also
 lays groundwork for later study of learning dynamics and state-space models,
 although I do not assume that every part of it will be needed for the present
 image-analysis problem.
+:::
+::::
 
+:::: {.study-topic}
+::: {.study-topic-image}
+![](../assets/images/research/functional-analysis-abstract.png){.study-topic-art fig-alt="Abstract illustration of families of curves passing through an operator and emerging smoother."}
+:::
+::: {.study-topic-copy}
 ### Functional analysis
 
 Functional analysis studies spaces of functions and the operations that act on
@@ -157,7 +169,14 @@ My current work includes normed and Banach spaces, bounded linear operators,
 operator norms, differentiation, and Hilbert spaces. These ideas help turn
 questions such as “How much did this operation change the image?” into
 statements that can be defined and tested carefully.
+:::
+::::
 
+:::: {.study-topic}
+::: {.study-topic-image}
+![](../assets/images/research/measure-theory-probability-abstract.png){.study-topic-art fig-alt="Abstract illustration of measurable regions, sampled points, and a probability distribution."}
+:::
+::: {.study-topic-copy}
 ### Measure theory and probability
 
 Measure theory supplies a rigorous basis for integration, probability, and
@@ -169,6 +188,8 @@ This strand matters when degradation is random rather than fixed. It provides
 tools for describing sensor noise, combining more than one source of
 uncertainty, and asking what can be said on average or with a stated
 probability.
+:::
+::::
 
 ![How the July--December 2026 study programme develops the questions raised by my final-year paper.](../assets/images/mathematics/y4h1-study-flow.png){#fig-y4h1-study-flow fig-alt="Flowchart beginning with Nieto — Computational Stability of Cubical Homology and its deliberately coarse bound. It branches into dynamical systems and stability, functional analysis, and measure theory and probability. These strands meet in the study of image-acquisition operators and several notions of perturbation, leading to possible theoretical, negative, or empirical results with applications to biomedical and industrial image analysis." width="100%"}
 

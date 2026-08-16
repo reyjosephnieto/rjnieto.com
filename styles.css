@@ -239,6 +239,34 @@ img.profile-photo {
   color: #111111;
 }
 
+.study-topic {
+  display: grid;
+  grid-template-columns: minmax(160px, 24%) minmax(0, 1fr);
+  gap: 1.5rem;
+  align-items: center;
+  margin: 2rem 0;
+}
+
+.study-topic-image p {
+  margin: 0;
+}
+
+.study-topic-art {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--rule);
+  border-radius: 0.35rem;
+}
+
+.study-topic-copy > :first-child {
+  margin-top: 0;
+}
+
+.study-topic-copy > :last-child {
+  margin-bottom: 0;
+}
+
 @media (max-width: 768px) {
   body {
     font-size: 1rem;
@@ -256,6 +284,16 @@ img.profile-photo {
   .home-intro-photo {
     grid-row: 1;
     padding-top: 0;
+  }
+
+  .study-topic {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .study-topic-image {
+    width: min(72vw, 280px);
+    margin: 0 auto;
   }
 
 }
