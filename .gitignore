@@ -1,5 +1,7 @@
 /.quarto/
 /_site/
+/README.md
+# Private working notes, source files, books, and project context.
 /source-material/
 **/*.quarto_ipynb
 .DS_Store
