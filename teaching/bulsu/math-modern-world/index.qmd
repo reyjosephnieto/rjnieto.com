@@ -62,9 +62,9 @@ inquiries related to the course)<br>
 
 The current version of the complete lecture notes is available as a PDF.
 
-[Open the MMW 101 lecture notes](lecture-notes/MMW101_Lecture_Notes_20260801.pdf){.btn .btn-primary target="_blank" rel="noopener"}
+[Open the MMW 101 lecture notes](lecture-notes/MMW101_Lecture_Notes_20260822.pdf){.btn .btn-primary target="_blank" rel="noopener"}
 
-*Current version: 1 August 2026*
+*Current version: 22 August 2026*
 
 ## House rules
 
