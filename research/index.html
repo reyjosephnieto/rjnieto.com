@@ -106,35 +106,6 @@ ul.task-list li input[type="checkbox"] {
 }
 </script>
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 <link rel="stylesheet" href="../styles.css">
 <meta property="og:title" content="Current Research – RJ Nieto">
@@ -221,9 +192,7 @@ window.Quarto = {
    
   <ul class="collapse">
   <li><a href="#the-initial-motivation" id="toc-the-initial-motivation" class="nav-link active" data-scroll-target="#the-initial-motivation">The initial motivation</a></li>
-  <li><a href="#the-three-cores-of-the-work" id="toc-the-three-cores-of-the-work" class="nav-link" data-scroll-target="#the-three-cores-of-the-work">The three cores of the work</a></li>
-  <li><a href="#the-current-mathematical-question" id="toc-the-current-mathematical-question" class="nav-link" data-scroll-target="#the-current-mathematical-question">The current mathematical question</a></li>
-  <li><a href="#the-study-programme" id="toc-the-study-programme" class="nav-link" data-scroll-target="#the-study-programme">The study programme</a></li>
+  <li><a href="#where-the-work-is-heading" id="toc-where-the-work-is-heading" class="nav-link" data-scroll-target="#where-the-work-is-heading">Where the work is heading</a></li>
   </ul>
 </nav>
     </div>
@@ -300,109 +269,12 @@ Figure&nbsp;3: A schematic DR-related vascular loop used to illustrate grid shat
 <p>The thesis was completed over four months. That was enough to establish and test the framework, but not to exhaust the questions it raised. The decomposition was descriptive and produced a suggestive empirical pattern, but it was mathematically coarse: its stability bound was conservative, and the final fault-isolation stage necessarily relied in part on empirical thresholds and heuristics. Time did not permit a deeper investigation of those mechanisms.</p>
 <p>In a biomedical setting, a promising experimental result is not enough. The intended use, assumptions, limitations, performance, and possible failure modes of a method must be described and validated. My purpose in returning to the mathematics is to understand the underlying mechanisms more fully and to determine whether the heuristic parts of the pipeline can be replaced, constrained, or justified by stronger mathematical and empirical support. The longer-term aim is a pipeline whose assumptions and failure modes are more transparent and therefore easier to examine in technical and regulatory review. This is not a claim that the present work is a clinically validated or regulator-approved system.</p>
 <p>Retinal imaging remains the immediate problem, and similar acquisition issues arise in industrial inspection and other computer-vision systems. My earlier experiments were confined to retinal images, so industrial applications remain a direction for further work.</p>
-<p>From July to December 2026, I am spending 20 weeks developing the mathematical tools needed to investigate the questions raised by that earlier work. This is independent study, organised around a research problem rather than a set of separate textbook courses.</p>
-<p>I have found that I learn mathematics most effectively when abstract ideas serve a concrete task. The programme is designed accordingly: each strand must help clarify a real problem, sharpen an argument, or show why a proposed approach cannot work.</p>
 </section>
 </section>
-<section id="the-three-cores-of-the-work" class="level2">
-<h2 class="anchored" data-anchor-id="the-three-cores-of-the-work">The three cores of the work</h2>
-<p>The project brings together three complementary cores. Algebraic topology supplies structural measurements of an image. Category theory provides the formal connections between stages of the mathematical pipeline. Statistical machine learning tests whether the resulting measurements remain useful under controlled changes to the image.</p>
-<div class="study-topic">
-<div class="study-topic-image">
-<p><img src="../assets/images/research/algebraic-topology-abstract.png" class="study-topic-art img-fluid" alt="Four-stage cartoon cycle showing a ring-shaped doughnut being compressed into a coffee mug and stretched back into the original doughnut, with one hole preserved throughout."></p>
-</div>
-<section id="structural-core-algebraic-topology" class="level3 study-topic-copy">
-<h3 class="anchored" data-anchor-id="structural-core-algebraic-topology">Structural Core: Algebraic Topology</h3>
-<p>Algebraic topology turns questions about shape into algebraic summaries of features such as connected pieces, loops, and voids. Persistent homology then records when those features appear, how long they remain, and when they disappear as an image is examined at different thresholds.</p>
-<p>Digital images have a natural cubical structure because pixels and voxels lie on a regular grid. Cubical and simplicial homology are related ways of representing the topology of that structure, rather than one being a subset of the other. Under suitable constructions, a compatible triangulation can relate the two representations while preserving the topology under study.</p>
-</section>
-</div>
-<div class="study-topic">
-<div class="study-topic-image">
-<p><img src="../assets/images/research/category-theory-abstract.png" class="study-topic-art img-fluid" alt="Commuting-square illustration connecting a cubical grid and its triangulation to a filtered sequence and a persistence barcode, with the same loop preserved along both routes."></p>
-</div>
-<section id="formal-core-category-theory" class="level3 study-topic-copy">
-<h3 class="anchored" data-anchor-id="formal-core-category-theory">Formal Core: Category Theory</h3>
-<p>Category theory provides a language for mathematical structures and the maps between them. A filtration is not merely a collection of thresholded images: inclusion maps connect its stages, and homology carries those relationships into the linear maps that form a persistence module.</p>
-<p>In my thesis, a standard construction called Coxeter–Freudenthal–Kuhn (CFK) triangulation connected the cubical geometry of pixels to the simplicial setting used in much of the established theory. Expressing that bridge and the subsequent operations as functors made it possible to state precisely when simplicial stability results could be applied in the cubical setting.</p>
-</section>
-</div>
-<div class="study-topic">
-<div class="study-topic-image">
-<p><img src="../assets/images/research/statistical-machine-learning-abstract.png" class="study-topic-art img-fluid" alt="Four-panel illustration showing a decision boundary developing from no boundary, through a straight line and an initial curve, to a smooth curve separating two groups of points."></p>
-</div>
-<section id="experimental-core-statistical-machine-learning" class="level3 study-topic-copy">
-<h3 class="anchored" data-anchor-id="experimental-core-statistical-machine-learning">Experimental Core: Statistical Machine Learning</h3>
-<p>Statistical machine learning provides the experimental probes. In my thesis, simple classifiers were trained on topological or geometric summaries and then tested on deliberately degraded images. Changes in their performance made the response of each representation observable.</p>
-<p>In this role, a classifier is also a measuring instrument. The immediate aim is not to claim state-of-the-art diagnostic accuracy, but to compare failure patterns under stated perturbations.</p>
-</section>
-</div>
-</section>
-<section id="the-current-mathematical-question" class="level2">
-<h2 class="anchored" data-anchor-id="the-current-mathematical-question">The current mathematical question</h2>
-<p>The immediate question is whether changes introduced by sampling and resampling can be bounded more precisely when a digital image is treated on its native cubical grid.</p>
-<p>Persistent homology already has a substantial stability theory: in broad terms, a small change in the function used to examine an image leads to a controlled change in its persistence diagram. This general result is important, but it does not by itself explain every practical failure in an image-analysis pipeline. Existing research has also shown that robustness on greyscale images depends on the chosen filtration, persistence summary, and form of disturbance. For example, a broad experimental study by <a href="https://doi.org/10.1371/journal.pone.0257215" target="_blank" rel="noopener">Turkeš and colleagues</a> examined several filtrations and summaries under affine, photometric, and noise perturbations on handwritten digits.</p>
-<p>That work establishes important context, but it does not derive a tighter bound for the particular sequence that concerns me: a geometric transformation represented on a sampled pixel grid, followed by a cubical filtration and its persistence diagram. The computational bound used in my thesis was deliberately coarse. Global estimates of displacement and intensity variation can give a large upper bound even when the measured topological change is small.</p>
-<p>I am investigating whether the regular cubical grid, local image structure, and the properties of a specified sampling or acquisition process can support tighter or more informative bounds under explicit assumptions. A related question is whether the contrasting responses of topological and geometric measurements can identify the likely source of a failure, rather than merely showing that performance has deteriorated.</p>
-<p>A more immediate extension is to replace the signed logarithmic transformation applied to the Hu moments with a compression that has an explicit Lipschitz bound. This would not necessarily make the Differential Failure Matrix more effective. Its value would be cleaner stability accounting: under stated assumptions, both branches of the pipeline could be analysed using explicit continuity bounds, making it clearer where empirical thresholds and other assumptions still enter.</p>
-<p>The aim is not to restate the general stability theorem in cubical language, and I am not claiming that either question is novel before the relevant literature has been examined in full.</p>
-<p>The eventual result may be a theorem with restricted assumptions, an example showing that a proposed bound cannot hold, a probabilistic reformulation, or a careful computational study. A negative result is useful if it explains why an apparently reasonable idea fails.</p>
-</section>
-<section id="the-study-programme" class="level2">
-<h2 class="anchored" data-anchor-id="the-study-programme">The study programme</h2>
-<p>The three cores define the measurements, formal justification, and experiments. My July–December 2026 programme extends the mathematical foundation needed to investigate the unresolved stability problem. At a non-technical level, dynamical systems describes how disturbances develop, functional analysis examines how operations change an image, and measure theory and probability provide ways to reason about random noise and uncertainty.</p>
-<div id="fig-three-mathematical-views" class="quarto-float quarto-figure quarto-figure-center anchored" alt="A three-panel illustrated diagram. A pixel-grid shape changes over time under dynamical systems, passes through an image operation under functional analysis, and appears with random variations under measure theory and probability. Arrows from all three panels lead to a more precise reliability estimate.">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-three-mathematical-views-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="../assets/images/research/three-mathematical-views.png" class="img-fluid figure-img" style="width:100.0%" alt="A three-panel illustrated diagram. A pixel-grid shape changes over time under dynamical systems, passes through an image operation under functional analysis, and appears with random variations under measure theory and probability. Arrows from all three panels lead to a more precise reliability estimate.">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-three-mathematical-views-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;4: Three mathematical views of the same imaging problem, showing change over time, the effect of image operations, and random disturbance.
-</figcaption>
-</figure>
-</div>
-<div class="study-topic">
-<div class="study-topic-image">
-<p><img src="../assets/images/research/dynamical-systems-abstract.png" class="study-topic-art img-fluid" alt="Abstract illustration of a Lorenz attractor, with nested trajectories forming two lobes."></p>
-</div>
-<section id="dynamical-systems" class="level3 study-topic-copy">
-<h3 class="anchored" data-anchor-id="dynamical-systems">Dynamical systems</h3>
-<p>Dynamical systems studies change: how a system evolves, what states remain steady, and how its behaviour responds to a small disturbance. I am working through ordinary differential equations, equilibria, linearisation, parameter dependence, perturbation, and stability.</p>
-<p>This subject gives me a firmer language for reasoning about stability. It also lays groundwork for later study of learning dynamics and state-space models, although I do not assume that every part of it will be needed for the present image-analysis problem.</p>
-</section>
-</div>
-<div class="study-topic">
-<div class="study-topic-image">
-<p><img src="../assets/images/research/functional-analysis-abstract.png" class="study-topic-art img-fluid" alt="Abstract illustration of families of curves passing through an operator and emerging smoother."></p>
-</div>
-<section id="functional-analysis" class="level3 study-topic-copy">
-<h3 class="anchored" data-anchor-id="functional-analysis">Functional analysis</h3>
-<p>Functional analysis studies spaces of functions and the operations that act on them. This is useful in imaging because blur, filtering, and convolution can be treated as mathematical operators rather than as a loose collection of software effects.</p>
-<p>My current work includes normed and Banach spaces, bounded linear operators, operator norms, differentiation, and Hilbert spaces. These ideas help turn questions such as “How much did this operation change the image?” into statements that can be defined and tested carefully.</p>
-</section>
-</div>
-<div class="study-topic">
-<div class="study-topic-image">
-<p><img src="../assets/images/research/measure-theory-probability-abstract.png" class="study-topic-art img-fluid" alt="Abstract illustration of measurable regions, sampled points, and a probability distribution."></p>
-</div>
-<section id="measure-theory-and-probability" class="level3 study-topic-copy">
-<h3 class="anchored" data-anchor-id="measure-theory-and-probability">Measure theory and probability</h3>
-<p>Measure theory supplies a rigorous basis for integration, probability, and different ways of measuring error. I am studying measurable functions, Lebesgue integration, convergence, expectation, <span class="math inline">\(L^p\)</span> spaces, product measures, and stochastic models.</p>
-<p>This strand matters when degradation is random rather than fixed. It provides tools for describing sensor noise, combining more than one source of uncertainty, and asking what can be said on average or with a stated probability.</p>
-</section>
-</div>
-<div id="fig-y4h1-study-flow" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Flowchart beginning with Nieto — Computational Stability of Cubical Homology and its deliberately coarse bound. It branches into dynamical systems and stability, functional analysis, and measure theory and probability. These strands meet in the study of image-acquisition operators and several notions of perturbation, leading to possible theoretical, negative, or empirical results with applications to biomedical and industrial image analysis.">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-y4h1-study-flow-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="../assets/images/mathematics/y4h1-study-flow.png" class="img-fluid figure-img" style="width:100.0%" alt="Flowchart beginning with Nieto — Computational Stability of Cubical Homology and its deliberately coarse bound. It branches into dynamical systems and stability, functional analysis, and measure theory and probability. These strands meet in the study of image-acquisition operators and several notions of perturbation, leading to possible theoretical, negative, or empirical results with applications to biomedical and industrial image analysis.">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-y4h1-study-flow-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;5: How the July–December 2026 study programme develops the questions raised by my thesis.
-</figcaption>
-</figure>
-</div>
-<p>The project provides the immediate mission, but it does not limit what I may learn from it. The mathematics may lead into other areas of computer vision, machine learning, and the use of topological data analysis on non-image data after it has been given a suitable geometric representation. Any such embedding would need to preserve the structure relevant to the problem. These possibilities remain exploratory and are not claims of the present study programme.</p>
-<p>An unexpected experimental result exposed a specific mathematical problem. The present study programme is my attempt to assemble the tools needed to investigate it properly. I will add public notes when there is enough material to be useful to other readers.</p>
+<section id="where-the-work-is-heading" class="level2">
+<h2 class="anchored" data-anchor-id="where-the-work-is-heading">Where the work is heading</h2>
+<p>I am continuing to develop the mathematical foundations of this work, with a particular interest in making the system’s behaviour more explainable. Broadly, this means understanding why its components respond differently when an image changes, stating their assumptions and limitations more clearly, and improving how uncertainty and possible failures are communicated.</p>
+<p>The work draws on topology, mathematical analysis, probability, and statistical machine learning. I am using these subjects to examine the pipeline from different angles rather than committing in advance to a particular theorem, model, or technical extension. The direction remains exploratory, and I will share further results when they are sufficiently developed.</p>
 
 
 </section>
