@@ -19,8 +19,8 @@ This supports my continuing research in topology-informed computer vision,
 where I am studying the reliability of measurements derived from retinal
 images and possible applications in biomedical and industrial imaging.
 
-I first studied mathematics formally at UP Diliman, leaving before completing
-the degree because of financial hardship.
+More than two decades ago, I first studied mathematics formally at UP Diliman,
+but left before completing the degree because of financial hardship.
 
 Before returning to mathematics, I worked in journalism, broadcasting, public
 affairs, technical writing, and government communications.
