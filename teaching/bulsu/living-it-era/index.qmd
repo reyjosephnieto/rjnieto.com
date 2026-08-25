@@ -46,12 +46,12 @@ the course)<br>
 
 ## Printable lecture notes
 
-The current release contains the Introduction and Chapters 1--2. Further
+The current release contains the Introduction and Chapters 1--3. Further
 chapters will be added as the course progresses.
 
-[Open the MST 101d lecture notes](lecture-notes/MST101d_Lecture_Notes_20260813.pdf){.btn .btn-primary target="_blank" rel="noopener"}
+[Open the MST 101d lecture notes](lecture-notes/MST101d_Lecture_Notes_20260825.pdf){.btn .btn-primary target="_blank" rel="noopener"}
 
-*Current version: 13 August 2026*
+*Current version: 25 August 2026*
 
 ## How classes will work
 
