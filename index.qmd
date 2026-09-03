@@ -8,10 +8,12 @@ toc: false
 ::: {.home-intro-copy}
 Hi, I’m Rey Joseph “RJ” Nieto.
 
-I am a mathematician and university instructor with a First Class Honours BSc
-in Mathematics from the [University of Bristol](https://www.bristol.ac.uk/). I
-currently teach mathematics and information technology at Bulacan State
-University (BulSU) in the Philippines.
+I am a mathematician and university instructor studying for an MSc in Science,
+Technology, Engineering and Public Policy at [University College London
+(UCL)](https://www.ucl.ac.uk/). I hold a First Class Honours BSc in Mathematics
+from the [University of Bristol](https://www.bristol.ac.uk/) and currently teach
+mathematics and information technology at Bulacan State University (BulSU) in
+the Philippines.
 
 Alongside my teaching, I am undertaking structured independent study in
 dynamical systems, functional analysis, and measure theory and probability.

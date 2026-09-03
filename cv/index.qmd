@@ -1,7 +1,7 @@
 ---
 title: "Curriculum Vitae"
 subtitle: "Rey Joseph Nieto"
-description-meta: "The curriculum vitae of Rey Joseph Nieto, a mathematician, university instructor, and communications professional in the Philippines."
+description-meta: "The curriculum vitae of Rey Joseph Nieto, an MSc student, mathematician, university instructor, and communications professional in the Philippines."
 toc: true
 toc-depth: 2
 ---
@@ -13,13 +13,15 @@ toc-depth: 2
 
 ## Profile
 
-I hold a First Class Honours BSc in Mathematics from the University of Bristol
-and currently teach mathematics and information technology at Bulacan State
-University. My research interests are in computational algebraic topology,
-persistent homology, and topology-informed computation, with a particular
-interest in the stability of measurements derived from images. I am also
-undertaking structured independent study in dynamical systems, functional
-analysis, and measure theory and probability.
+I am studying for an MSc in Science, Technology, Engineering and Public Policy
+at University College London (UCL). I hold a First Class Honours BSc in
+Mathematics from the University of Bristol and currently teach mathematics and
+information technology at Bulacan State University. My research interests are
+in computational algebraic topology, persistent homology, and
+topology-informed computation, with a particular interest in the stability of
+measurements derived from images. I am also undertaking structured independent
+study in dynamical systems, functional analysis, and measure theory and
+probability.
 
 Before returning to formal study in mathematics, I worked for many years in
 public affairs, journalism, broadcasting, technical writing, and strategic
@@ -27,6 +29,16 @@ communications, including roles in government, national media, and digital
 publishing.
 
 ## Education
+
+### MSc Science, Technology, Engineering and Public Policy
+
+**[University College London (UCL)](https://www.ucl.ac.uk/){.cv-institution}**<br>
+September 2026–Present
+
+My focus is the path from scientific and technical evidence to policy design,
+institutional implementation, and public communication, particularly in
+science and engineering advice, emerging-technology governance, risk, and
+responsible AI policy in the Philippines.
 
 ### BSc Mathematics
 
