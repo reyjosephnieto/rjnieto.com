@@ -98,7 +98,7 @@ ul.task-list li input[type="checkbox"] {
       "@id": "https://rjnieto.com/#website",
       "url": "https://rjnieto.com/",
       "name": "RJ Nieto",
-      "description": "The personal website of Rey Joseph Nieto, featuring mathematics, research, teaching, and professional work.",
+      "description": "The personal website of Rey Joseph Nieto, featuring mathematics, research, teaching, writing, and professional work.",
       "inLanguage": "en-GB",
       "author": { "@id": "https://rjnieto.com/#rey-joseph-nieto" }
     }
@@ -167,6 +167,10 @@ ul.task-list li input[type="checkbox"] {
   </li>  
     </ul>
   </li>
+  <li class="nav-item">
+    <a class="nav-link" href="../calculated/index.html"> 
+<span class="menu-text">Writing</span></a>
+  </li>  
   <li class="nav-item">
     <a class="nav-link active" href="../research/index.html" aria-current="page"> 
 <span class="menu-text">Research</span></a>
@@ -244,7 +248,7 @@ Figure&nbsp;2: A diabetic-retinopathy fundus image, annotated for my thesis to e
 </figcaption>
 </figure>
 </div>
-<p>As the number of people requiring screening grows, so does the grading workload. Expanding trained grading capacity also takes time. The UK National Screening Committee is therefore <a href="https://nationalscreening.blog.gov.uk/2026/05/11/uk-nsc-consults-on-use-of-artificial-intelligence-in-the-diabetic-eye-screening-programme/" target="_blank" rel="noopener">reviewing automated retinal-image analysis</a> as a possible way to triage images before human grading, although it does not currently recommend introducing automated grading into the programme. A conservative role for such systems is to support trained graders and clinical teams by handling suitable routine images and flagging abnormal, uncertain, or ungradable cases for human review. The research question is what mathematical and technical assurances would be needed before that assistance could be trusted at screening scale.</p>
+<p>As the number of people requiring screening grows, so does the grading workload. Expanding trained grading capacity also takes time. The UK National Screening Committee recently <a href="https://nationalscreening.blog.gov.uk/2026/05/11/uk-nsc-consults-on-use-of-artificial-intelligence-in-the-diabetic-eye-screening-programme/" target="_blank" rel="noopener">consulted on automated retinal-image analysis</a> as a possible way to triage images before human grading. At the time of the consultation, it did not recommend introducing automated grading into the programme. A conservative role for such systems is to support trained graders and clinical teams by handling suitable routine images and flagging abnormal, uncertain, or ungradable cases for human review. The research question is what mathematical and technical assurances would be needed before that assistance could be trusted at screening scale.</p>
 <p>The same concern with reliability has a second practical direction: more informative quality checks and fault investigation in medical or industrial imaging systems. Some faults might eventually be assessed remotely before a specialist travels onsite. This is a direction for the research, not a capability of the present work.</p>
 <section id="how-the-project-changed-direction" class="level3">
 <h3 class="anchored" data-anchor-id="how-the-project-changed-direction">How the project changed direction</h3>
@@ -262,7 +266,7 @@ Figure&nbsp;3: A schematic DR-related vascular loop used to illustrate grid shat
 </div>
 <p>Once the ablation tests exposed this limitation, the project changed direction. Instead of treating the result as an inconvenience to the proposed classifier, I made it part of the research question and asked whether the contrasting failure behaviour could itself be useful.</p>
 <p>In my thesis experiments, the same topological summaries were comparatively robust under several photometric changes, including exposure drift and quantisation, although not under every form of noise. Log-transformed Hu moments, which are geometric descriptors based on an image’s overall shape, showed a broadly reverse profile: they were comparatively strong under mechanical transformations but weaker under changes in intensity. Instead of asking either representation to serve as the classifier by itself, I treated them as two complementary, or “orthogonal”, controls.</p>
-<p>Their contrasting failure profiles became the Differential Failure Matrix. It was designed to test whether signatures associated with alignment and resampling could be distinguished from signatures associated with radiometric degradation. The final project was therefore not the classifier I had originally planned. It treated an apparent weakness of the cubical-persistence pipeline as a possible signal for a coarse fault-isolation heuristic. The code and supporting material are available in the project’s <a href="https://github.com/reyjosephnieto/ph" target="_blank" rel="noopener">GitHub repository</a>.</p>
+<p>I organised their contrasting failure profiles into what I called the Differential Failure Matrix. It was designed to test whether signatures associated with alignment and resampling could be distinguished from signatures associated with radiometric degradation. The final project was therefore not the classifier I had originally planned. It treated an apparent weakness of the cubical-persistence pipeline as a possible signal for a coarse fault-isolation heuristic. The code and supporting material are available in the project’s <a href="https://github.com/reyjosephnieto/ph" target="_blank" rel="noopener">GitHub repository</a>.</p>
 </section>
 <section id="why-i-am-returning-to-it" class="level3">
 <h3 class="anchored" data-anchor-id="why-i-am-returning-to-it">Why I am returning to it</h3>

@@ -6,7 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="description" content="The personal website of Rey Joseph Nieto, featuring mathematics, research, teaching, and professional work.">
+<meta name="description" content="The personal website of Rey Joseph Nieto, featuring mathematics, research, teaching, writing, and professional work.">
 
 <title>RJ Nieto</title>
 <style>
@@ -98,7 +98,7 @@ ul.task-list li input[type="checkbox"] {
       "@id": "https://rjnieto.com/#website",
       "url": "https://rjnieto.com/",
       "name": "RJ Nieto",
-      "description": "The personal website of Rey Joseph Nieto, featuring mathematics, research, teaching, and professional work.",
+      "description": "The personal website of Rey Joseph Nieto, featuring mathematics, research, teaching, writing, and professional work.",
       "inLanguage": "en-GB",
       "author": { "@id": "https://rjnieto.com/#rey-joseph-nieto" }
     }
@@ -109,13 +109,13 @@ ul.task-list li input[type="checkbox"] {
 
 <link rel="stylesheet" href="styles.css">
 <meta property="og:title" content="RJ Nieto">
-<meta property="og:description" content="The personal website of Rey Joseph Nieto, featuring mathematics, research, teaching, and professional work.">
+<meta property="og:description" content="The personal website of Rey Joseph Nieto, featuring mathematics, research, teaching, writing, and professional work.">
 <meta property="og:image" content="https://rjnieto.com/assets/images/profile-pic.jpg">
 <meta property="og:site_name" content="RJ Nieto">
 <meta property="og:locale" content="en_GB">
 <meta property="og:image:alt" content="Portrait of Rey Joseph RJ Nieto">
 <meta name="twitter:title" content="RJ Nieto">
-<meta name="twitter:description" content="The personal website of Rey Joseph Nieto, featuring mathematics, research, teaching, and professional work.">
+<meta name="twitter:description" content="The personal website of Rey Joseph Nieto, featuring mathematics, research, teaching, writing, and professional work.">
 <meta name="twitter:image" content="https://rjnieto.com/assets/images/profile-pic.jpg">
 <meta name="twitter:creator" content="@rjosephnieto">
 <meta name="twitter:site" content="@rjosephnieto">
@@ -164,6 +164,10 @@ ul.task-list li input[type="checkbox"] {
     </ul>
   </li>
   <li class="nav-item">
+    <a class="nav-link" href="./calculated/index.html"> 
+<span class="menu-text">Writing</span></a>
+  </li>  
+  <li class="nav-item">
     <a class="nav-link" href="./research/index.html"> 
 <span class="menu-text">Research</span></a>
   </li>  
@@ -208,9 +212,9 @@ ul.task-list li input[type="checkbox"] {
 <div class="home-intro">
 <div class="home-intro-copy">
 <p>Hi, I’m Rey Joseph “RJ” Nieto.</p>
-<p>I am a mathematician and university instructor studying for an MSc in Science, Technology, Engineering and Public Policy at <a href="https://www.ucl.ac.uk/">University College London (UCL)</a>. I hold a First Class Honours BSc in Mathematics from the <a href="https://www.bristol.ac.uk/">University of Bristol</a> and currently teach mathematics and information technology at Bulacan State University (BulSU) in the Philippines.</p>
-<p>Alongside my teaching, I am undertaking structured independent study in dynamical systems, functional analysis, and measure theory and probability. This supports my continuing research in topology-informed computer vision, where I am studying the reliability of measurements derived from retinal images and possible applications in biomedical and industrial imaging.</p>
-<p>Before returning to mathematics, I worked in journalism, broadcasting, public affairs, technical writing, and government communications.</p>
+<p>I am a mathematician, university instructor, and columnist for the <em>Manila Bulletin</em>. I am studying for an MSc in Science, Technology, Engineering and Public Policy at <a href="https://www.ucl.ac.uk/">University College London (UCL)</a>. I hold a First Class Honours BSc in Mathematics from the <a href="https://www.bristol.ac.uk/">University of Bristol</a> and <a href="./teaching/index.html">teach mathematics and information technology</a> at <a href="https://bulsu.edu.ph/">Bulacan State University (BulSU)</a> in the Philippines.</p>
+<p>Alongside my teaching, I am studying dynamical systems, functional analysis, and measure theory and probability. These subjects support my <a href="./research/index.html">continuing research in topology-informed computer vision</a>, where I am examining the reliability of measurements derived from retinal images and possible applications in biomedical and industrial imaging.</p>
+<p>Before returning to mathematics, I worked in journalism, broadcasting, public affairs, technical writing, and government communications. My current column, <a href="./calculated/index.html"><em>Calculated</em></a>, marks my return to public commentary.</p>
 </div>
 <div class="home-intro-photo">
 <p><img src="assets/images/profile-pic.jpg" class="profile-photo img-fluid" alt="Portrait of Rey Joseph RJ Nieto"></p>
@@ -221,16 +225,20 @@ ul.task-list li input[type="checkbox"] {
 <p>Course materials for general education subjects <a href="./teaching/bulsu/math-modern-world/index.html">Mathematics in the Modern World</a> and <a href="./teaching/bulsu/living-it-era/index.html">Living in the IT Era</a>, which I teach at BulSU.</p>
 <p><a href="./teaching/index.html" class="btn btn-primary">Teaching materials</a> <a href="./teaching/bulsu/math-modern-world/index.html" class="btn btn-outline-primary">MMW 101</a> <a href="./teaching/bulsu/living-it-era/index.html" class="btn btn-outline-primary">MST 101d</a></p>
 </section>
+<section id="writing" class="level2">
+<h2 class="anchored" data-anchor-id="writing">Writing</h2>
+<p>The column began in September 2026. Its index includes excerpts and links to the complete pieces on the <em>Manila Bulletin</em> website.</p>
+<p><a href="./calculated/index.html" class="btn btn-primary">View columns</a></p>
+</section>
 <section id="research" class="level2">
 <h2 class="anchored" data-anchor-id="research">Research</h2>
-<p>My final-year project began as a topology-informed classifier for diabetic retinopathy. During testing, a simulated rotation of roughly three degrees drove the topology-based version close to chance performance. Rather than set that failure aside, I changed direction and studied whether the different ways mathematical measurements respond to blur, rotation, resolution changes, and sensor noise could help identify what had happened to an image.</p>
-<p>The work used cubical persistent homology, a computable but conservative stability bound, and a parallelised Python pipeline to examine retinal images under simulated acquisition errors.</p>
-<p>I am now returning to a question left open by that project: whether the effects of sampling and interpolation on a pixel grid can be described more precisely than the conservative general bound used in the thesis. I am also examining whether the contrasting responses of topological and geometric measurements can help distinguish different degradation signatures. This is ongoing research; I am not assuming in advance that either question will yield a new theorem.</p>
+<p>My final-year project began as a topology-informed classifier for diabetic retinopathy. During testing, however, a simulated rotation of roughly three degrees drove it close to chance performance. That failure became the interesting part: I began asking whether the different ways mathematical measurements respond to blur, rotation, resolution changes, and sensor noise could reveal what had happened to an image.</p>
+<p>I am now examining how sampling and interpolation on a pixel grid affect those measurements, and whether topological and geometric measurements leave different signatures when an image degrades. This remains ongoing research.</p>
 <p><a href="./research/index.html" class="btn btn-primary">Current research</a> <a href="https://github.com/reyjosephnieto/ph" class="btn btn-outline-primary" target="_blank" rel="noopener">View the repo</a> <a href="https://github.com/reyjosephnieto/ph/blob/main/Nieto_TDA_Public_20260430.pdf" class="btn btn-outline-primary" target="_blank" rel="noopener">View thesis PDF</a></p>
 </section>
-<section id="professional-background" class="level2">
-<h2 class="anchored" data-anchor-id="professional-background">Professional Background</h2>
-<p>My earlier career spans journalism, broadcasting, public affairs, government communications, and digital publishing.</p>
+<section id="cv" class="level2">
+<h2 class="anchored" data-anchor-id="cv">CV</h2>
+<p>My professional background spans journalism, broadcasting, public affairs, government communications, and digital publishing.</p>
 <p><a href="./cv/index.html" class="btn btn-primary">View my CV</a> <a href="https://www.linkedin.com/in/reyjosephnieto/" class="btn btn-outline-primary">LinkedIn profile</a></p>
 
 
