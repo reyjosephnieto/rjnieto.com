@@ -1,6 +1,6 @@
 ---
 title: "RJ Nieto"
-description-meta: "The personal website of Rey Joseph Nieto, featuring mathematics, research, teaching, and professional work."
+description-meta: "The personal website of Rey Joseph Nieto, featuring mathematics, research, teaching, writing, and professional work."
 toc: false
 ---
 
@@ -8,21 +8,23 @@ toc: false
 ::: {.home-intro-copy}
 Hi, I’m Rey Joseph “RJ” Nieto.
 
-I am a mathematician and university instructor studying for an MSc in Science,
-Technology, Engineering and Public Policy at [University College London
-(UCL)](https://www.ucl.ac.uk/). I hold a First Class Honours BSc in Mathematics
-from the [University of Bristol](https://www.bristol.ac.uk/) and currently teach
-mathematics and information technology at Bulacan State University (BulSU) in
-the Philippines.
+I am a mathematician, university instructor, and columnist for the *Manila
+Bulletin*. I am studying for an MSc in Science, Technology, Engineering and
+Public Policy at [University College London (UCL)](https://www.ucl.ac.uk/). I
+hold a First Class Honours BSc in Mathematics from the [University of
+Bristol](https://www.bristol.ac.uk/) and [teach mathematics and information
+technology](teaching/index.qmd) at [Bulacan State University
+(BulSU)](https://bulsu.edu.ph/) in the Philippines.
 
-Alongside my teaching, I am undertaking structured independent study in
-dynamical systems, functional analysis, and measure theory and probability.
-This supports my continuing research in topology-informed computer vision,
-where I am studying the reliability of measurements derived from retinal
-images and possible applications in biomedical and industrial imaging.
+Alongside my teaching, I am studying dynamical systems, functional analysis,
+and measure theory and probability. These subjects support my [continuing
+research in topology-informed computer vision](research/index.qmd), where I am
+examining the reliability of measurements derived from retinal images and
+possible applications in biomedical and industrial imaging.
 
 Before returning to mathematics, I worked in journalism, broadcasting, public
-affairs, technical writing, and government communications.
+affairs, technical writing, and government communications. My current column,
+[*Calculated*](calculated/index.qmd), marks my return to public commentary.
 :::
 
 ::: {.home-intro-photo}
@@ -40,34 +42,33 @@ Era](teaching/bulsu/living-it-era/index.qmd), which I teach at BulSU.
 [MMW 101](teaching/bulsu/math-modern-world/index.qmd){.btn .btn-outline-primary}
 [MST 101d](teaching/bulsu/living-it-era/index.qmd){.btn .btn-outline-primary}
 
+## Writing
+
+The column began in September 2026. Its index includes excerpts and links to
+the complete pieces on the *Manila Bulletin* website.
+
+[View columns](calculated/index.qmd){.btn .btn-primary}
+
 ## Research
 
 My final-year project began as a topology-informed classifier for diabetic
-retinopathy. During testing, a simulated rotation of roughly three degrees
-drove the topology-based version close to chance performance. Rather than set
-that failure aside, I changed direction and studied whether the different ways
-mathematical measurements respond to blur, rotation, resolution changes, and
-sensor noise could help identify what had happened to an image.
+retinopathy. During testing, however, a simulated rotation of roughly three
+degrees drove it close to chance performance. That failure became the
+interesting part: I began asking whether the different ways mathematical
+measurements respond to blur, rotation, resolution changes, and sensor noise
+could reveal what had happened to an image.
 
-The work used cubical persistent homology, a computable but conservative
-stability bound, and a parallelised Python pipeline to examine retinal images
-under simulated acquisition errors.
-
-I am now returning to a question left open by that project: whether the effects
-of sampling and interpolation on a pixel grid can be described more precisely
-than the conservative general bound used in the thesis. I am also examining
-whether the contrasting responses of topological and geometric measurements
-can help distinguish different degradation signatures. This is ongoing
-research; I am not assuming in advance that either question will yield a new
-theorem.
+I am now examining how sampling and interpolation on a pixel grid affect those
+measurements, and whether topological and geometric measurements leave
+different signatures when an image degrades. This remains ongoing research.
 
 [Current research](research/index.qmd){.btn .btn-primary}
 [View the repo](https://github.com/reyjosephnieto/ph){.btn .btn-outline-primary target="_blank" rel="noopener"}
 [View thesis PDF](https://github.com/reyjosephnieto/ph/blob/main/Nieto_TDA_Public_20260430.pdf){.btn .btn-outline-primary target="_blank" rel="noopener"}
 
-## Professional Background
+## CV
 
-My earlier career spans journalism, broadcasting, public affairs, government
+My professional background spans journalism, broadcasting, public affairs, government
 communications, and digital publishing.
 
 [View my CV](cv/index.qmd){.btn .btn-primary}

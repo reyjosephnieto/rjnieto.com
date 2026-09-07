@@ -31,6 +31,5 @@ digital life, and emerging technologies.
 
 [Open the course page](bulsu/living-it-era/index.qmd){.btn .btn-outline-primary}
 
-These are personal teaching materials. Unless expressly stated otherwise,
-they should not be treated as official publications or policies of Bulacan
-State University.
+These are personal teaching materials, not official publications or policies of
+Bulacan State University.

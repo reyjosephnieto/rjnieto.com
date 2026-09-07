@@ -11,7 +11,7 @@ project:
 website:
   title: "RJ Nieto"
   site-url: "https://rjnieto.com"
-  description: "The personal website of Rey Joseph Nieto, featuring mathematics, research, teaching, and professional work."
+  description: "The personal website of Rey Joseph Nieto, featuring mathematics, research, teaching, writing, and professional work."
   favicon: assets/branding/rj-logo.png
   open-graph:
     site-name: "RJ Nieto"
@@ -33,6 +33,8 @@ website:
             text: MMW101
           - href: teaching/bulsu/living-it-era/index.qmd
             text: MST101d
+      - href: calculated/index.qmd
+        text: Writing
       - href: research/index.qmd
         text: Research
       - href: cv/index.qmd

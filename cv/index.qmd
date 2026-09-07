@@ -1,14 +1,15 @@
 ---
 title: "Curriculum Vitae"
 subtitle: "Rey Joseph Nieto"
-description-meta: "The curriculum vitae of Rey Joseph Nieto, an MSc student, mathematician, university instructor, and communications professional in the Philippines."
+description-meta: "The curriculum vitae of Rey Joseph Nieto, an MSc student, mathematician, university instructor, columnist, and communications professional in the Philippines."
 toc: true
 toc-depth: 2
 ---
 
 ## Contact
 
-- **Academic email:** zo23232 (at) alumni (dot) bristol (dot) ac (dot) uk
+- **UCL email:** rey (dot) nieto (dot) 26 (at) ucl (dot) ac (dot) uk
+- **Bristol alumni email:** zo23232 (at) alumni (dot) bristol (dot) ac (dot) uk
 - **Personal email:** rj (at) rjnieto (dot) com
 
 ## Profile
@@ -23,6 +24,9 @@ measurements derived from images. I am also undertaking structured independent
 study in dynamical systems, functional analysis, and measure theory and
 probability.
 
+I also write [*Calculated*](../calculated/index.qmd), a column for the *Manila
+Bulletin*.
+
 Before returning to formal study in mathematics, I worked for many years in
 public affairs, journalism, broadcasting, technical writing, and strategic
 communications, including roles in government, national media, and digital
@@ -35,10 +39,9 @@ publishing.
 **[University College London (UCL)](https://www.ucl.ac.uk/){.cv-institution}**<br>
 September 2026–Present
 
-My focus is the path from scientific and technical evidence to policy design,
-institutional implementation, and public communication, particularly in
-science and engineering advice, emerging-technology governance, risk, and
-responsible AI policy in the Philippines.
+I am interested in how scientific and technical evidence becomes public policy,
+particularly in science and engineering advice, emerging technologies, risk,
+and responsible AI in the Philippines.
 
 ### BSc Mathematics
 
@@ -81,14 +84,23 @@ supplementary materials covering mathematical reasoning, quantitative literacy,
 computing, online safety, and emerging technologies, with examples drawn from
 biology, health, and data analysis.
 
-### Mathematical Programming Demonstrator
+### Columnist
 
-**University of Bristol**<br>
+**Manila Bulletin**<br>
+2026–Present
+
+Write [*Calculated*](../calculated/index.qmd), a column of essays and commentary
+on public affairs, policy, society, and contemporary life.
+
+### Teaching Assistant
+
+**University of Bristol, School of Mathematics**<br>
 2025–2026
 
-Supported second-year mathematics students in computational problem-solving,
-numerical methods, debugging, and Python programming. Helped students translate
-mathematical ideas into working computational implementations.
+Supported second-year students in the *Mathematical Programming* unit with
+computational problem-solving, numerical methods, debugging, and Python
+programming. Helped students translate mathematical ideas into working
+computational implementations.
 
 ### Television Host
 

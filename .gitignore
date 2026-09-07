@@ -1,6 +1,7 @@
 /.quarto/
 /_site/
 /README.md
+/codex_*
 # Private working notes, source files, books, and project context.
 /source-material/
 **/*.quarto_ipynb

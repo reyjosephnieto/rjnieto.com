@@ -42,10 +42,11 @@ A diabetic-retinopathy fundus image, annotated for my thesis to enlarge a connec
 
 As the number of people requiring screening grows, so does the grading
 workload. Expanding trained grading capacity also takes time. The UK National
-Screening Committee is therefore
-[reviewing automated retinal-image analysis](https://nationalscreening.blog.gov.uk/2026/05/11/uk-nsc-consults-on-use-of-artificial-intelligence-in-the-diabetic-eye-screening-programme/){target="_blank" rel="noopener"}
-as a possible way to triage images before human grading, although it does not
-currently recommend introducing automated grading into the programme. A
+Screening Committee recently
+[consulted on automated retinal-image analysis](https://nationalscreening.blog.gov.uk/2026/05/11/uk-nsc-consults-on-use-of-artificial-intelligence-in-the-diabetic-eye-screening-programme/){target="_blank" rel="noopener"}
+as a possible way to triage images before human grading. At the time of the
+consultation, it did not recommend introducing automated grading into the
+programme. A
 conservative role for such systems is to support trained graders and clinical
 teams by handling suitable routine images and flagging abnormal, uncertain, or
 ungradable cases for human review. The research question is what mathematical
@@ -97,13 +98,14 @@ mechanical transformations but weaker under changes in intensity. Instead of
 asking either representation to serve as the classifier by itself, I treated
 them as two complementary, or “orthogonal”, controls.
 
-Their contrasting failure profiles became the Differential Failure Matrix. It
-was designed to test whether signatures associated with alignment and
-resampling could be distinguished from signatures associated with radiometric
-degradation. The final project was therefore not the classifier I had
-originally planned. It treated an apparent weakness of the cubical-persistence
-pipeline as a possible signal for a coarse fault-isolation heuristic. The code
-and supporting material are available in the project's [GitHub repository](https://github.com/reyjosephnieto/ph){target="_blank" rel="noopener"}.
+I organised their contrasting failure profiles into what I called the
+Differential Failure Matrix. It was designed to test whether signatures
+associated with alignment and resampling could be distinguished from signatures
+associated with radiometric degradation. The final project was therefore not
+the classifier I had originally planned. It treated an apparent weakness of the
+cubical-persistence pipeline as a possible signal for a coarse fault-isolation
+heuristic. The code and supporting material are available in the project's
+[GitHub repository](https://github.com/reyjosephnieto/ph){target="_blank" rel="noopener"}.
 
 ### Why I am returning to it
 

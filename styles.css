@@ -267,6 +267,47 @@ img.profile-photo {
   margin-bottom: 0;
 }
 
+.calculated-archive {
+  margin-top: 1.5rem;
+  border-top: 1px solid var(--rule);
+}
+
+.calculated-entry {
+  padding: 1.25rem 0;
+  border-bottom: 1px solid var(--rule);
+}
+
+.calculated-entry h3 {
+  margin: 0 0 0.2rem;
+  font-size: 1.35rem;
+}
+
+.calculated-entry > p:first-of-type {
+  margin: 0;
+  color: var(--muted-ink);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.9rem;
+}
+
+.calculated-excerpt {
+  max-width: 46rem;
+  margin-top: 0.65rem;
+  color: var(--ink);
+}
+
+.calculated-excerpt p {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1rem;
+}
+
+.calculated-read-more {
+  display: inline-block;
+  margin-top: 0.7rem;
+  white-space: nowrap;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
 @media (max-width: 768px) {
   body {
     font-size: 1rem;

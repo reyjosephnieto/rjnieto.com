@@ -1,0 +1,24 @@
+---
+title: "Calculated"
+subtitle: "Essays and commentary for the Manila Bulletin"
+description-meta: "Calculated, RJ Nieto's Manila Bulletin column, with essays on public affairs, policy, society, and contemporary life."
+toc: false
+---
+
+::: {.calculated-archive}
+::: {.calculated-entry}
+### [There's something about Alex](https://mb.com.ph/2026/09/05/theres-something-about-alex){target="_blank" rel="noopener"}
+
+5 September 2026 · *Manila Bulletin*
+
+::: {.calculated-excerpt}
+Alex(andra Eala) seems remarkably composed through all of it. She speaks carefully about
+representing the Philippines and about staying herself despite the attention.
+Frankly, I find that a little embarrassing. I did not have that kind of
+self-awareness at her age. I am not sure I had it even much later, when I
+already had an audience of my own.
+
+[Read more](https://mb.com.ph/2026/09/05/theres-something-about-alex){.btn .btn-outline-primary .btn-sm .calculated-read-more target="_blank" rel="noopener"}
+:::
+:::
+:::
