@@ -16,12 +16,6 @@ Bristol](https://www.bristol.ac.uk/) and [teach mathematics and information
 technology](teaching/index.qmd) at [Bulacan State University
 (BulSU)](https://bulsu.edu.ph/) in the Philippines.
 
-Alongside my teaching, I am studying dynamical systems, functional analysis,
-and measure theory and probability. These subjects support my [continuing
-research in topology-informed computer vision](research/index.qmd), where I am
-examining the reliability of measurements derived from retinal images and
-possible applications in biomedical and industrial imaging.
-
 Before returning to mathematics, I worked in journalism, broadcasting, public
 affairs, technical writing, and government communications. My current column,
 [*Calculated*](calculated/index.qmd), marks my return to public commentary.
@@ -44,8 +38,9 @@ Era](teaching/bulsu/living-it-era/index.qmd), which I teach at BulSU.
 
 ## Writing
 
-The column began in September 2026. Its index includes excerpts and links to
-the complete pieces on the *Manila Bulletin* website.
+The column began in September 2026 and appears in the *Manila Bulletin*
+broadsheet and online. Its index includes excerpts and links to the online
+versions.
 
 [View columns](calculated/index.qmd){.btn .btn-primary}
 
