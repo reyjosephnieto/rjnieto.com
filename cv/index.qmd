@@ -1,7 +1,7 @@
 ---
 title: "Curriculum Vitae"
-subtitle: "Rey Joseph Nieto"
-description-meta: "The curriculum vitae of Rey Joseph Nieto, an MSc student, mathematician, university instructor, columnist, and communications professional in the Philippines."
+subtitle: "Rey Joseph \"RJ\" Nieto"
+description-meta: "The curriculum vitae of Rey Joseph Nieto, covering mathematics, quantitative research, university teaching, journalism, and strategic communications in the Philippines."
 toc: true
 toc-depth: 2
 ---
@@ -11,237 +11,171 @@ toc-depth: 2
 - **UCL email:** rey (dot) nieto (dot) 26 (at) ucl (dot) ac (dot) uk
 - **Bristol alumni email:** zo23232 (at) alumni (dot) bristol (dot) ac (dot) uk
 - **Personal email:** rj (at) rjnieto (dot) com
-
-## Profile
-
-I am studying for an MSc in Science, Technology, Engineering and Public Policy
-at University College London (UCL). I hold a First Class Honours BSc in
-Mathematics from the University of Bristol and currently teach mathematics and
-information technology at Bulacan State University. My research interests are
-in computational algebraic topology, persistent homology, and
-topology-informed computation, with a particular interest in the stability of
-measurements derived from images. I am also undertaking structured independent
-study in dynamical systems, functional analysis, and measure theory and
-probability.
-
-I also write [*Calculated*](../calculated/index.qmd), a column for the *Manila
-Bulletin*.
-
-Before returning to formal study in mathematics, I worked for many years in
-public affairs, journalism, broadcasting, technical writing, and strategic
-communications, including roles in government, national media, and digital
-publishing.
+- **LinkedIn:** [linkedin.com/in/rjosephnieto](https://www.linkedin.com/in/rjosephnieto/)
 
 ## Education
 
 ### MSc Science, Technology, Engineering and Public Policy
 
-**[University College London (UCL)](https://www.ucl.ac.uk/){.cv-institution}**<br>
+**[University College London
+(UCL)](https://www.ucl.ac.uk/prospective-students/graduate/taught-degrees/science-technology-engineering-and-public-policy-msc){.cv-institution}** ·
+*London, United Kingdom*<br>
 September 2026–Present
 
-I am interested in how scientific and technical evidence becomes public policy,
-particularly in science and engineering advice, emerging technologies, risk,
-and responsible AI in the Philippines.
+This flexible distance-learning programme examines how scientific and
+technical evidence informs public policy, including emerging technologies,
+risk, and responsible AI.
 
-### BSc Mathematics
+### BSc Mathematics, First Class Honours
 
-**[University of Bristol](https://www.bristol.ac.uk/){.cv-institution}**<br>
-*Bristol, England, United Kingdom*<br>
-September 2023–June 2026 · First Class Honours
+**[University of Bristol](https://www.bristol.ac.uk/){.cv-institution}** ·
+*Bristol, United Kingdom*<br>
+September 2023–June 2026
 
-Final-year work focused on topological data analysis, applied machine learning,
-and computer vision. Alongside the mathematics programme, I completed a
-40-credit first-year unit in Economics.
+Selected advanced study included persistent homology and algebraic stability;
+Gödel's incompleteness theorems; group actions and Sylow's theorems;
+combinatorics and graph theory; Jordan and Smith normal forms; metric-space
+topology; and martingales and Brownian motion.
 
-Final-year project: *Computational Stability of Cubical Homology: Orthogonal
-Controls for Fault Isolation in Retinal Diagnostics*.
-Developed a topology-informed framework for measuring acquisition stability and
-exploring a fault-isolation heuristic in digital images. Used a computable but
-conservative stability bound for the cubical-persistence model and built a
-parallelised Python pipeline to test simulated mechanical and radiometric
-degradations in retinal images.
+Selected computational study included generalised linear models; statistical
+machine learning; neural networks and LLMs; convex duality; dynamic
+programming; and cryptography. I also completed a 40-credit Economics unit in
+microeconomics and macroeconomics.
 
-[View the public version of the project](https://github.com/reyjosephnieto/ph).
+### Foundation Certificate in Business, Law and Social Sciences, Distinction
 
-### Foundation Certificate in Business, Law and Social Sciences
+**[Kaplan International College London](https://www.kaplanpathways.com/where-to-study/kaplan-international-college-london/){.cv-institution}** ·
+*London, United Kingdom*<br>
+March–August 2023
 
-**[Kaplan International College London](https://www.kaplanpathways.com/where-to-study/kaplan-international-college-london/){.cv-institution}**<br>
-*London, England, United Kingdom*<br>
-March–August 2023 · Distinction
+## Professional experience
 
-## Experience
+### Opinion Columnist
 
-### Instructor (Mathematics and Information Technology)
+***Manila Bulletin*** · Philippine broadsheet newspaper<br>
+2020–2021; 2026–Present
 
-**Bulacan State University**<br>
+I write [*Calculated*](../calculated/index.qmd), a weekly Saturday opinion
+column. I previously wrote the weekly *Thinking Pinoy* column from 2020 to 2021.
+
+### Instructor (Mathematics and IT)
+
+**Bulacan State University** · *San Rafael, Bulacan, Philippines*<br>
 2026–Present
 
-Teach *Mathematics in the Modern World* and *Living in the IT Era* to
-undergraduate biology students. Develop original lecture notes, exercises, and
-supplementary materials covering mathematical reasoning, quantitative literacy,
-computing, online safety, and emerging technologies, with examples drawn from
-biology, health, and data analysis.
+I teach part-time undergraduate Saturday classes in
+[*Mathematics in the Modern World*](../teaching/bulsu/math-modern-world/index.qmd)
+and [*Living in the IT Era*](../teaching/bulsu/living-it-era/index.qmd), covering
+quantitative reasoning, data analysis, online safety, and emerging technologies.
 
-### Columnist
+### Teaching Assistant (Mathematics)
 
-**Manila Bulletin**<br>
-2026–Present
+**University of Bristol** · *Bristol, United Kingdom*<br>
+2025–2026<br>
+Official title: *Mathematical Programming Demonstrator*
 
-Write [*Calculated*](../calculated/index.qmd), a column of essays and commentary
-on public affairs, policy, society, and contemporary life.
+I supported second-year mathematics students with Python, numerical methods,
+debugging, and computational problem-solving.
 
-### Teaching Assistant
+### Host, *PTV-4 Pre-SONA Special*
 
-**University of Bristol, School of Mathematics**<br>
-2025–2026
-
-Supported second-year students in the *Mathematical Programming* unit with
-computational problem-solving, numerical methods, debugging, and Python
-programming. Helped students translate mathematical ideas into working
-computational implementations.
-
-### Television Host
-
-**People's Television Network**<br>
+**People's Television Network** · Philippine national broadcaster<br>
 2024
 
-Hosted the *PTV-4 Pre-SONA Special with RJ Nieto*, interviewing Cabinet
-officials regarding government programmes, policy implementation, and
-departmental performance.
-
-### Columnist
-
-**Manila Bulletin**<br>
-2019–2023
-
-Wrote the weekly opinion column *Thinking Pinoy*, covering government, politics,
-public policy, and socioeconomic affairs.
+I hosted coverage ahead of the Philippine President's State of the Nation
+Address, interviewing Cabinet officials about government programmes,
+departmental performance, and policy implementation.
 
 ### Founder and Editor-in-Chief
 
-**Thinking Pinoy**<br>
+***Thinking Pinoy*** · Philippine public-affairs platform<br>
 2015–2023
 
-Founded and managed a digital public-affairs platform with more than two
-million followers across its social-media channels. Directed editorial work
-and produced commentary on governance, economic policy, foreign affairs, and
-national political developments.
+I founded and managed a platform reaching an aggregate audience of more than
+two million followers across its social-media channels and directed editorial
+work on government, economic policy, foreign affairs, and national developments.
 
 ### Television Host and Commentator
 
-**SMNI News**<br>
+**SMNI News** · Philippine television network<br>
 2020–2022
 
-Hosted a weekday current-affairs programme featuring policy analysis and
-interviews with government officials, public figures, and subject-matter
-specialists.
+I hosted a weekday current-affairs programme featuring commentary and
+interviews with officials, public figures, and subject specialists.
+
+### Project Co-Lead, PPEniTP Initiative
+
+**Private nationwide COVID-19 civic initiative**<br>
+2020–2021
+
+I coordinated donors, hospitals, distribution partners, local government
+units, and nationwide logistics. Collectively, the initiative delivered more
+than PHP 25 million in personal protective equipment to over 100 hospitals.
 
 ### Radio Programme Co-host
 
-**Aliw Broadcasting Corporation**<br>
+**Aliw Broadcasting Corporation (DWIZ 882 AM)**<br>
 2017–2020
 
-Provided political and public-policy analysis on *Karambola*, a daily
-current-affairs programme broadcast on DWIZ 882 AM.
+I provided political and public-policy commentary on *Karambola*, a daily
+current-affairs programme.
 
-### Head of Strategic Communications (Content)
+### Consultant, Strategic Communications (Content)
 
 **Department of Foreign Affairs, Office of the Undersecretary for Migrant Workers' Affairs**<br>
 2017
 
-Developed content and digital communication materials for the Department's
-outreach to overseas Filipino workers. Helped present government policies,
-programmes, and consular information in accessible formats and supported
-engagement with the Filipino diaspora.
+I produced digital material explaining policies, programmes, and consular
+information for overseas Filipinos.
 
-### News Reporter
+### Earlier Writing and Communications Experience
 
-**Sun.Star Davao**<br>
-2009–2010
+**Ability with Innovation LLC; international clients; *Sun.Star Davao***<br>
+2009–2015
 
-Conducted field reporting and interviews and wrote daily news and feature
-stories on government, community affairs, and other matters of public
-interest.
+I prepared technical and commercial proposals for government, supranational,
+and energy-sector clients; completed writing and editing assignments for more
+than 30 clients across North America, Europe, and Australia; and reported on
+government and community affairs.
 
-## Selected public service and professional engagements
+## Selected technical and research projects
 
-### Project Lead
+### Computational Stability of Cubical Homology
 
-**PPEniTP Initiative**<br>
-2020–2021
+*Final-year BSc dissertation, University of Bristol · 2026 · Mark: 90%*
 
-Coordinated a civic initiative that distributed more than PHP 25 million worth
-of personal protective equipment to over 100 public and private hospitals
-during the COVID-19 pandemic. Worked with donors, partner organisations,
-beneficiary institutions, and distribution teams.
+I developed and tested a reproducible, parallelised Python pipeline for
+cubical persistent homology on 400 retinal images across ten perturbation
+protocols and 170 settings, separating spatial misalignment from sensor
+corruption for fault isolation in human-led diagnostic workflows.
 
-### Guest Lecturer
+[View the public dissertation and implementation](https://github.com/reyjosephnieto/ph).
 
-**San Miguel Corporation Campus ED**<br>
-2021
+### Cryptographic Implementation and Security Analysis
 
-Delivered lecture-workshops on digital research for multimedia platforms to
-journalism and communication students at universities in Bulacan.
+*Vigenère–RSA with bigram encoding · Second-year BSc Python project, University
+of Bristol · 2024*
 
-### Guest Speaker
+I built and stress-tested a Python implementation combining RSA key exchange
+with randomised bigram encoding and documented weaknesses arising from design
+and implementation choices.
 
-**Armed Forces of the Philippines**<br>
-2020
+### Sovereign-Investment Safeguards Analysis
 
-Delivered training to Media and Civil Affairs Group personnel on digital
-communications, social-media engagement, crisis messaging, community
-relations, and responsible public communication.
+*Foundation Certificate extended project, Kaplan International College London ·
+2023*
 
-### Guest Speaker
+I synthesised legal, economic, and public-source evidence to compare proposed
+safeguards for the Philippine Maharlika Investment Fund with institutional
+failures identified in the 1MDB case. Kaplan selected the paper as an anonymised
+model for future cohorts.
 
-**AboitizPower**<br>
-2017
+## Technical and language skills
 
-Presented digital communication and audience-engagement strategies to the
-company's marketing and communications personnel.
-
-## Other professional experience
-
-### Proposal Writer
-
-**Ability with Innovation LLC, Dubai, UAE**<br>
-2012–2015
-
-Prepared technical and commercial proposals for government, supranational, and
-energy-sector clients. Edited colleagues' work, helped train new members of the
-proposal team, coordinated input from subject-matter specialists, and supported
-regulatory compliance.
-
-### Freelance Technical Writer and Editor
-
-**oDesk and other platforms**<br>
-2010–2015
-
-Completed research, technical writing, editing, and digital-content assignments
-for more than 30 clients in North America, Europe, and Australia.
-
-## Skills
-
-- **Mathematical background:** Analysis and metric spaces, linear algebra and
-  linear models, probability and statistics, optimisation, combinatorics, group
-  theory, logic, mathematical modelling, applied algebraic topology, and
-  category-theoretic methods for filtrations and persistent homology
-- **Statistical machine learning and image analysis:** Artificial intelligence,
-  linear classification, feature standardisation, stratified cross-validation,
-  computer vision, controlled ablation studies, and model evaluation
-- **Programming and scientific computing:** Python, R, NumPy, SciPy,
-  scikit-learn, OpenCV, GUDHI, Matplotlib, parallel processing, computational
-  experimentation, and data visualisation
-- **Technical publishing and reproducibility:** LaTeX, Quarto, Markdown, Git
-  and GitHub, reproducible research workflows, and technical documentation
-- **Teaching and research:** Curriculum and lecture-note development,
-  mathematical exposition, literature review, and undergraduate instruction
-- **Communications:** Public affairs, journalism, broadcasting, interviewing,
-  editorial work, public speaking, and digital communications
-- **Programme delivery:** Stakeholder engagement, proposal development, team
-  training, and project coordination
-
-## Additional information
-
-- **Languages:** English (fluent), Tagalog (fluent), Cebuano (elementary), and
-  German (elementary)
+- **Programming languages:** Python; working knowledge of R, MATLAB, and Java
+- **Python ecosystem:** scientific computing and machine learning (NumPy,
+  SciPy, scikit-learn, PyTorch, and TensorFlow); computer vision and
+  visualisation (OpenCV and Matplotlib); topological data analysis (GUDHI and
+  Ripser)
+- **Development and publishing:** Git/GitHub, Quarto, and LaTeX
+- **Spoken languages:** English and Tagalog (fluent)

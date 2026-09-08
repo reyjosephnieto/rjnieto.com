@@ -1,6 +1,6 @@
 ---
 title: "RJ Nieto"
-description-meta: "The personal website of Rey Joseph Nieto, featuring mathematics, research, teaching, writing, and professional work."
+description-meta: "The personal website of Rey Joseph Nieto, featuring mathematics, quantitative research, university teaching, writing, and professional work."
 toc: false
 ---
 
@@ -8,17 +8,21 @@ toc: false
 ::: {.home-intro-copy}
 Hi, I’m Rey Joseph “RJ” Nieto.
 
-I am a mathematician, university instructor, and columnist for the *Manila
-Bulletin*. I am studying for an MSc in Science, Technology, Engineering and
-Public Policy at [University College London (UCL)](https://www.ucl.ac.uk/). I
-hold a First Class Honours BSc in Mathematics from the [University of
-Bristol](https://www.bristol.ac.uk/) and [teach mathematics and information
-technology](teaching/index.qmd) at [Bulacan State University
-(BulSU)](https://bulsu.edu.ph/) in the Philippines.
+I am a first-class mathematics graduate of the [University of
+Bristol](https://www.bristol.ac.uk/), a part-time Saturday instructor at
+[Bulacan State University](https://bulsu.edu.ph/), and a columnist for the
+[*Manila Bulletin*](https://mb.com.ph/author/rj-nieto). I am pursuing an MSc in
+Science, Technology, Engineering and
+Public Policy at [University College London
+(UCL)](https://www.ucl.ac.uk/prospective-students/graduate/taught-degrees/science-technology-engineering-and-public-policy-msc)
+through flexible distance learning. My quantitative work includes statistical
+analysis, machine learning, computer vision, and topological data analysis.
 
-Before returning to mathematics, I worked in journalism, broadcasting, public
-affairs, technical writing, and government communications. My current column,
-[*Calculated*](calculated/index.qmd), marks my return to public commentary.
+My early career developed from technical writing into journalism, national
+broadcasting, public affairs, government communications, and programme
+delivery. After nearly a decade in political media, I returned to mathematics;
+the UCL MSc now brings those strands together through science and technology
+policy.
 :::
 
 ::: {.home-intro-photo}
@@ -26,45 +30,31 @@ affairs, technical writing, and government communications. My current column,
 :::
 :::
 
-## Teaching
+I teach [*Mathematics in the Modern
+World*](teaching/bulsu/math-modern-world/index.qmd) and [*Living in the IT
+Era*](teaching/bulsu/living-it-era/index.qmd) at Bulacan State University. My
+[teaching materials](teaching/index.qmd) include original lecture notes,
+exercises, and supplementary resources developed primarily for biology
+students.
 
-Course materials for general education subjects [Mathematics in the Modern
-World](teaching/bulsu/math-modern-world/index.qmd) and [Living in the IT
-Era](teaching/bulsu/living-it-era/index.qmd), which I teach at BulSU.
+My [current independent research](research/index.qmd) continues my University
+of Bristol dissertation, *Computational Stability of Cubical Homology*, which
+received a mark of 90%. The [public
+thesis](https://github.com/reyjosephnieto/ph/blob/main/Nieto_TDA_Public_20260430.pdf){target="_blank" rel="noopener"}
+and [Python implementation](https://github.com/reyjosephnieto/ph){target="_blank" rel="noopener"}
+document a reproducible, parallelised pipeline tested on 400 retinal images
+across ten perturbation protocols and 170 settings. The experiments examined
+whether contrasting topological and geometric response profiles could help
+distinguish spatial misalignment from radiometric corruption, as a possible
+basis for fault isolation in human-led diagnostic workflows.
 
-[Teaching materials](teaching/index.qmd){.btn .btn-primary}
-[MMW 101](teaching/bulsu/math-modern-world/index.qmd){.btn .btn-outline-primary}
-[MST 101d](teaching/bulsu/living-it-era/index.qmd){.btn .btn-outline-primary}
+I write [*Calculated*](calculated/index.qmd), a weekly Saturday column for the
+*Manila Bulletin*. The newspaper's [author
+archive](https://mb.com.ph/author/rj-nieto){target="_blank" rel="noopener"}
+provides links to the published essays.
 
-## Writing
-
-The column began in September 2026 and appears in the *Manila Bulletin*
-broadsheet and online. Its index includes excerpts and links to the online
-versions.
-
-[View columns](calculated/index.qmd){.btn .btn-primary}
-
-## Research
-
-My final-year project began as a topology-informed classifier for diabetic
-retinopathy. During testing, however, a simulated rotation of roughly three
-degrees drove it close to chance performance. That failure became the
-interesting part: I began asking whether the different ways mathematical
-measurements respond to blur, rotation, resolution changes, and sensor noise
-could reveal what had happened to an image.
-
-I am now examining how sampling and interpolation on a pixel grid affect those
-measurements, and whether topological and geometric measurements leave
-different signatures when an image degrades. This remains ongoing research.
-
-[Current research](research/index.qmd){.btn .btn-primary}
-[View the repo](https://github.com/reyjosephnieto/ph){.btn .btn-outline-primary target="_blank" rel="noopener"}
-[View thesis PDF](https://github.com/reyjosephnieto/ph/blob/main/Nieto_TDA_Public_20260430.pdf){.btn .btn-outline-primary target="_blank" rel="noopener"}
-
-## CV
-
-My professional background spans journalism, broadcasting, public affairs, government
-communications, and digital publishing.
-
-[View my CV](cv/index.qmd){.btn .btn-primary}
-[LinkedIn profile](https://www.linkedin.com/in/reyjosephnieto/){.btn .btn-outline-primary}
+Earlier in my career, I hosted national current-affairs programmes and co-led a
+nationwide COVID-19 initiative that delivered more than PHP 25 million in
+personal protective equipment to over 100 hospitals. Further details are
+available in my [CV](cv/index.qmd) and on
+[LinkedIn](https://www.linkedin.com/in/reyjosephnieto/){target="_blank" rel="noopener"}.

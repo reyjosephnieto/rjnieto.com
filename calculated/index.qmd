@@ -5,6 +5,12 @@ description-meta: "Calculated, RJ Nieto's Manila Bulletin column, with essays on
 toc: false
 ---
 
+The column appears in the *Manila Bulletin* every Saturday. The entries below
+link to individual columns; the newspaper also maintains an
+[author archive](https://mb.com.ph/author/rj-nieto){target="_blank" rel="noopener"}.
+
+[View the Manila Bulletin archive](https://mb.com.ph/author/rj-nieto){.btn .btn-primary target="_blank" rel="noopener"}
+
 ::: {.calculated-archive}
 ::: {.calculated-entry}
 ### [There's something about Alex](https://mb.com.ph/2026/09/05/theres-something-about-alex){target="_blank" rel="noopener"}

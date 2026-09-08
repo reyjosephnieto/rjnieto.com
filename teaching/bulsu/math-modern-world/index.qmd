@@ -29,16 +29,12 @@ mathematical and computational approaches helps them recognise what a problem
 calls for—and whom they might ask to collaborate with, whether a statistician,
 mathematical modeller, computer scientist, or another specialist.
 
-I generally think of this as a challenging but enjoyable course. At a time
-when so much can feel uncertain, I hope students can find, as I do, some solace
-in mathematics: definitions can be made clear, assumptions stated, and
-conclusions followed step by step. Mathematics has easy and difficult parts,
-just like any other field, but it has acquired an undeservedly nasty
-reputation. Much of the fear surrounding it begins with that reputation,
-unfamiliar notation, or an earlier bad experience rather than with the subject
-itself. It takes practice, but it is not reserved for geniuses. I am not a
-genius; I learnt mathematics in the same way most people learn anything
-difficult—by studying, making mistakes, and trying again.
+I think of this as a challenging but enjoyable course. Mathematics makes it
+possible to define terms clearly, state assumptions, and follow conclusions
+step by step. Its reputation, unfamiliar notation, or an earlier bad experience
+can make it appear less approachable than it is. Like any demanding subject,
+it becomes more manageable through careful study, practice, and learning from
+mistakes.
 
 ## Logistics
 
@@ -47,16 +43,10 @@ difficult—by studying, making mistakes, and trying again.
 **Term:** First Semester, A.Y. 2026–2027<br>
 **Instructor's name:** Rey Joseph Nieto<br>
 **Email:** rj (at) rjnieto (dot) com (for questions or
-inquiries related to the course)<br>
-**Consultation hours:** To be announced through official class channels<br>
-**Class schedule and room:** Refer to the official class schedule
+inquiries related to the course)
 
-**Important dates**
-
-| Assessment | Date |
-|---|---|
-| Midterm examinations | To be announced through official class channels |
-| Final examinations | To be announced through official class channels |
+Class schedules, rooms, assessment dates, consultation arrangements, and
+course updates are communicated through official class channels.
 
 ## Printable lecture notes
 

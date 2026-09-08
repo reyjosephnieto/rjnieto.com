@@ -1,5 +1,6 @@
 /.quarto/
 /_site/
+/.vscode/
 /README.md
 /codex_*
 # Private working notes, source files, books, and project context.

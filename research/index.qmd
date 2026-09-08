@@ -12,6 +12,8 @@ My current research asks a practical question: when an image is blurred,
 rotated, resized, poorly exposed, or corrupted by sensor noise, how does the
 information extracted by a computer change? I want to understand whether the
 pattern of those changes can help identify what went wrong during acquisition.
+This is independent research continuing the work begun in my University of
+Bristol final-year dissertation.
 
 ## The initial motivation
 
