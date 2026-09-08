@@ -25,7 +25,7 @@
     "href": "teaching/bulsu/living-it-era/index.html#logistics",
     "title": "Living in the IT Era",
     "section": "Logistics",
-    "text": "Logistics\nCourse title: Living in the IT Era Course number: MST 101d Term: First Semester, A.Y. 2026–2027 Instructor’s name: Rey Joseph Nieto Email: rj (at) rjnieto (dot) com (for questions or inquiries related to the course) Consultation hours: To be announced through official class channels Class schedule and room: Refer to the official class schedule\nImportant dates\n\n\n\n\n\n\n\nAssessment\nDate\n\n\n\n\nMidterm examinations\nTo be announced through official class channels\n\n\nFinal examinations\nTo be announced through official class channels"
+    "text": "Logistics\nCourse title: Living in the IT Era Course number: MST 101d Term: First Semester, A.Y. 2026–2027 Instructor’s name: Rey Joseph Nieto Email: rj (at) rjnieto (dot) com (for questions or inquiries related to the course)\nClass schedules, rooms, assessment dates, consultation arrangements, and course updates are communicated through official class channels."
   },
   {
     "objectID": "teaching/bulsu/living-it-era/index.html#printable-lecture-notes",
@@ -53,112 +53,63 @@
     "href": "index.html",
     "title": "RJ Nieto",
     "section": "",
-    "text": "Hi, I’m Rey Joseph “RJ” Nieto.\nI am a mathematician, university instructor, and columnist for the Manila Bulletin. I am studying for an MSc in Science, Technology, Engineering and Public Policy at University College London (UCL). I hold a First Class Honours BSc in Mathematics from the University of Bristol and teach mathematics and information technology at Bulacan State University (BulSU) in the Philippines.\nBefore returning to mathematics, I worked in journalism, broadcasting, public affairs, technical writing, and government communications. My current column, Calculated, marks my return to public commentary."
-  },
-  {
-    "objectID": "index.html#teaching",
-    "href": "index.html#teaching",
-    "title": "RJ Nieto",
-    "section": "Teaching",
-    "text": "Teaching\nCourse materials for general education subjects Mathematics in the Modern World and Living in the IT Era, which I teach at BulSU.\nTeaching materials MMW 101 MST 101d"
-  },
-  {
-    "objectID": "index.html#writing",
-    "href": "index.html#writing",
-    "title": "RJ Nieto",
-    "section": "Writing",
-    "text": "Writing\nThe column began in September 2026 and appears in the Manila Bulletin broadsheet and online. Its index includes excerpts and links to the online versions.\nView columns"
-  },
-  {
-    "objectID": "index.html#research",
-    "href": "index.html#research",
-    "title": "RJ Nieto",
-    "section": "Research",
-    "text": "Research\nMy final-year project began as a topology-informed classifier for diabetic retinopathy. During testing, however, a simulated rotation of roughly three degrees drove it close to chance performance. That failure became the interesting part: I began asking whether the different ways mathematical measurements respond to blur, rotation, resolution changes, and sensor noise could reveal what had happened to an image.\nI am now examining how sampling and interpolation on a pixel grid affect those measurements, and whether topological and geometric measurements leave different signatures when an image degrades. This remains ongoing research.\nCurrent research View the repo View thesis PDF"
-  },
-  {
-    "objectID": "index.html#cv",
-    "href": "index.html#cv",
-    "title": "RJ Nieto",
-    "section": "CV",
-    "text": "CV\nMy professional background spans journalism, broadcasting, public affairs, government communications, and digital publishing.\nView my CV LinkedIn profile"
+    "text": "Hi, I’m Rey Joseph “RJ” Nieto.\nI am a first-class mathematics graduate of the University of Bristol, a part-time Saturday instructor at Bulacan State University, and a columnist for the Manila Bulletin. I am pursuing an MSc in Science, Technology, Engineering and Public Policy at University College London (UCL) through flexible distance learning. My quantitative work includes statistical analysis, machine learning, computer vision, and topological data analysis.\nMy early career developed from technical writing into journalism, national broadcasting, public affairs, government communications, and programme delivery. After nearly a decade in political media, I returned to mathematics; the UCL MSc now brings those strands together through science and technology policy.\n\n\n\n\n\nI teach Mathematics in the Modern World and Living in the IT Era at Bulacan State University. My teaching materials include original lecture notes, exercises, and supplementary resources developed primarily for biology students.\nMy current independent research continues my University of Bristol dissertation, Computational Stability of Cubical Homology, which received a mark of 90%. The public thesis and Python implementation document a reproducible, parallelised pipeline tested on 400 retinal images across ten perturbation protocols and 170 settings. The experiments examined whether contrasting topological and geometric response profiles could help distinguish spatial misalignment from radiometric corruption, as a possible basis for fault isolation in human-led diagnostic workflows.\nI write Calculated, a weekly Saturday column for the Manila Bulletin. The newspaper’s author archive provides links to the published essays.\nEarlier in my career, I hosted national current-affairs programmes and co-led a nationwide COVID-19 initiative that delivered more than PHP 25 million in personal protective equipment to over 100 hospitals. Further details are available in my CV and on LinkedIn.\n\n\n\n Back to top"
   },
   {
     "objectID": "calculated/index.html",
     "href": "calculated/index.html",
     "title": "Calculated",
     "section": "",
-    "text": "There’s something about Alex\n5 September 2026 · Manila Bulletin\n\nAlex(andra Eala) seems remarkably composed through all of it. She speaks carefully about representing the Philippines and about staying herself despite the attention. Frankly, I find that a little embarrassing. I did not have that kind of self-awareness at her age. I am not sure I had it even much later, when I already had an audience of my own.\nRead more\n\n\n\n\n\n\n Back to top"
+    "text": "The column appears in the Manila Bulletin every Saturday. The entries below link to individual columns; the newspaper also maintains an author archive.\nView the Manila Bulletin archive\n\n\nThere’s something about Alex\n5 September 2026 · Manila Bulletin\n\nAlex(andra Eala) seems remarkably composed through all of it. She speaks carefully about representing the Philippines and about staying herself despite the attention. Frankly, I find that a little embarrassing. I did not have that kind of self-awareness at her age. I am not sure I had it even much later, when I already had an audience of my own.\nRead more\n\n\n\n\n\n\n Back to top"
   },
   {
     "objectID": "cv/index.html",
     "href": "cv/index.html",
     "title": "Curriculum Vitae",
     "section": "",
-    "text": "UCL email: rey (dot) nieto (dot) 26 (at) ucl (dot) ac (dot) uk\nBristol alumni email: zo23232 (at) alumni (dot) bristol (dot) ac (dot) uk\nPersonal email: rj (at) rjnieto (dot) com"
+    "text": "UCL email: rey (dot) nieto (dot) 26 (at) ucl (dot) ac (dot) uk\nBristol alumni email: zo23232 (at) alumni (dot) bristol (dot) ac (dot) uk\nPersonal email: rj (at) rjnieto (dot) com\nLinkedIn: linkedin.com/in/rjosephnieto"
   },
   {
     "objectID": "cv/index.html#contact",
     "href": "cv/index.html#contact",
     "title": "Curriculum Vitae",
     "section": "",
-    "text": "UCL email: rey (dot) nieto (dot) 26 (at) ucl (dot) ac (dot) uk\nBristol alumni email: zo23232 (at) alumni (dot) bristol (dot) ac (dot) uk\nPersonal email: rj (at) rjnieto (dot) com"
-  },
-  {
-    "objectID": "cv/index.html#profile",
-    "href": "cv/index.html#profile",
-    "title": "Curriculum Vitae",
-    "section": "Profile",
-    "text": "Profile\nI am studying for an MSc in Science, Technology, Engineering and Public Policy at University College London (UCL). I hold a First Class Honours BSc in Mathematics from the University of Bristol and currently teach mathematics and information technology at Bulacan State University. My research interests are in computational algebraic topology, persistent homology, and topology-informed computation, with a particular interest in the stability of measurements derived from images. I am also undertaking structured independent study in dynamical systems, functional analysis, and measure theory and probability.\nI also write Calculated, a column for the Manila Bulletin.\nBefore returning to formal study in mathematics, I worked for many years in public affairs, journalism, broadcasting, technical writing, and strategic communications, including roles in government, national media, and digital publishing."
+    "text": "UCL email: rey (dot) nieto (dot) 26 (at) ucl (dot) ac (dot) uk\nBristol alumni email: zo23232 (at) alumni (dot) bristol (dot) ac (dot) uk\nPersonal email: rj (at) rjnieto (dot) com\nLinkedIn: linkedin.com/in/rjosephnieto"
   },
   {
     "objectID": "cv/index.html#education",
     "href": "cv/index.html#education",
     "title": "Curriculum Vitae",
     "section": "Education",
-    "text": "Education\n\nMSc Science, Technology, Engineering and Public Policy\nUniversity College London (UCL) September 2026–Present\nI am interested in how scientific and technical evidence becomes public policy, particularly in science and engineering advice, emerging technologies, risk, and responsible AI in the Philippines.\n\n\nBSc Mathematics\nUniversity of Bristol Bristol, England, United Kingdom September 2023–June 2026 · First Class Honours\nFinal-year work focused on topological data analysis, applied machine learning, and computer vision. Alongside the mathematics programme, I completed a 40-credit first-year unit in Economics.\nFinal-year project: Computational Stability of Cubical Homology: Orthogonal Controls for Fault Isolation in Retinal Diagnostics. Developed a topology-informed framework for measuring acquisition stability and exploring a fault-isolation heuristic in digital images. Used a computable but conservative stability bound for the cubical-persistence model and built a parallelised Python pipeline to test simulated mechanical and radiometric degradations in retinal images.\nView the public version of the project.\n\n\nFoundation Certificate in Business, Law and Social Sciences\nKaplan International College London London, England, United Kingdom March–August 2023 · Distinction"
+    "text": "Education\n\nMSc Science, Technology, Engineering and Public Policy\nUniversity College London (UCL) · London, United Kingdom September 2026–Present\nThis flexible distance-learning programme examines how scientific and technical evidence informs public policy, including emerging technologies, risk, and responsible AI.\n\n\nBSc Mathematics, First Class Honours\nUniversity of Bristol · Bristol, United Kingdom September 2023–June 2026\nSelected advanced study included persistent homology and algebraic stability; Gödel’s incompleteness theorems; group actions and Sylow’s theorems; combinatorics and graph theory; Jordan and Smith normal forms; metric-space topology; and martingales and Brownian motion.\nSelected computational study included generalised linear models; statistical machine learning; neural networks and LLMs; convex duality; dynamic programming; and cryptography. I also completed a 40-credit Economics unit in microeconomics and macroeconomics.\n\n\nFoundation Certificate in Business, Law and Social Sciences, Distinction\nKaplan International College London · London, United Kingdom March–August 2023"
   },
   {
-    "objectID": "cv/index.html#experience",
-    "href": "cv/index.html#experience",
+    "objectID": "cv/index.html#professional-experience",
+    "href": "cv/index.html#professional-experience",
     "title": "Curriculum Vitae",
-    "section": "Experience",
-    "text": "Experience\n\nInstructor (Mathematics and Information Technology)\nBulacan State University 2026–Present\nTeach Mathematics in the Modern World and Living in the IT Era to undergraduate biology students. Develop original lecture notes, exercises, and supplementary materials covering mathematical reasoning, quantitative literacy, computing, online safety, and emerging technologies, with examples drawn from biology, health, and data analysis.\n\n\nColumnist\nManila Bulletin 2026–Present\nWrite Calculated, a column of essays and commentary on public affairs, policy, society, and contemporary life.\n\n\nTeaching Assistant\nUniversity of Bristol, School of Mathematics 2025–2026\nSupported second-year students in the Mathematical Programming unit with computational problem-solving, numerical methods, debugging, and Python programming. Helped students translate mathematical ideas into working computational implementations.\n\n\nTelevision Host\nPeople’s Television Network 2024\nHosted the PTV-4 Pre-SONA Special with RJ Nieto, interviewing Cabinet officials regarding government programmes, policy implementation, and departmental performance.\n\n\nColumnist\nManila Bulletin 2019–2023\nWrote the weekly opinion column Thinking Pinoy, covering government, politics, public policy, and socioeconomic affairs.\n\n\nFounder and Editor-in-Chief\nThinking Pinoy 2015–2023\nFounded and managed a digital public-affairs platform with more than two million followers across its social-media channels. Directed editorial work and produced commentary on governance, economic policy, foreign affairs, and national political developments.\n\n\nTelevision Host and Commentator\nSMNI News 2020–2022\nHosted a weekday current-affairs programme featuring policy analysis and interviews with government officials, public figures, and subject-matter specialists.\n\n\nRadio Programme Co-host\nAliw Broadcasting Corporation 2017–2020\nProvided political and public-policy analysis on Karambola, a daily current-affairs programme broadcast on DWIZ 882 AM.\n\n\nHead of Strategic Communications (Content)\nDepartment of Foreign Affairs, Office of the Undersecretary for Migrant Workers’ Affairs 2017\nDeveloped content and digital communication materials for the Department’s outreach to overseas Filipino workers. Helped present government policies, programmes, and consular information in accessible formats and supported engagement with the Filipino diaspora.\n\n\nNews Reporter\nSun.Star Davao 2009–2010\nConducted field reporting and interviews and wrote daily news and feature stories on government, community affairs, and other matters of public interest."
+    "section": "Professional experience",
+    "text": "Professional experience\n\nOpinion Columnist\nManila Bulletin · Philippine broadsheet newspaper 2020–2021; 2026–Present\nI write Calculated, a weekly Saturday opinion column. I previously wrote the weekly Thinking Pinoy column from 2020 to 2021.\n\n\nInstructor (Mathematics and IT)\nBulacan State University · San Rafael, Bulacan, Philippines 2026–Present\nI teach part-time undergraduate Saturday classes in Mathematics in the Modern World and Living in the IT Era, covering quantitative reasoning, data analysis, online safety, and emerging technologies.\n\n\nTeaching Assistant (Mathematics)\nUniversity of Bristol · Bristol, United Kingdom 2025–2026 Official title: Mathematical Programming Demonstrator\nI supported second-year mathematics students with Python, numerical methods, debugging, and computational problem-solving.\n\n\nHost, PTV-4 Pre-SONA Special\nPeople’s Television Network · Philippine national broadcaster 2024\nI hosted coverage ahead of the Philippine President’s State of the Nation Address, interviewing Cabinet officials about government programmes, departmental performance, and policy implementation.\n\n\nFounder and Editor-in-Chief\nThinking Pinoy · Philippine public-affairs platform 2015–2023\nI founded and managed a platform reaching an aggregate audience of more than two million followers across its social-media channels and directed editorial work on government, economic policy, foreign affairs, and national developments.\n\n\nTelevision Host and Commentator\nSMNI News · Philippine television network 2020–2022\nI hosted a weekday current-affairs programme featuring commentary and interviews with officials, public figures, and subject specialists.\n\n\nProject Co-Lead, PPEniTP Initiative\nPrivate nationwide COVID-19 civic initiative 2020–2021\nI coordinated donors, hospitals, distribution partners, local government units, and nationwide logistics. Collectively, the initiative delivered more than PHP 25 million in personal protective equipment to over 100 hospitals.\n\n\nRadio Programme Co-host\nAliw Broadcasting Corporation (DWIZ 882 AM) 2017–2020\nI provided political and public-policy commentary on Karambola, a daily current-affairs programme.\n\n\nConsultant, Strategic Communications (Content)\nDepartment of Foreign Affairs, Office of the Undersecretary for Migrant Workers’ Affairs 2017\nI produced digital material explaining policies, programmes, and consular information for overseas Filipinos.\n\n\nEarlier Writing and Communications Experience\nAbility with Innovation LLC; international clients; Sun.Star Davao 2009–2015\nI prepared technical and commercial proposals for government, supranational, and energy-sector clients; completed writing and editing assignments for more than 30 clients across North America, Europe, and Australia; and reported on government and community affairs."
   },
   {
-    "objectID": "cv/index.html#selected-public-service-and-professional-engagements",
-    "href": "cv/index.html#selected-public-service-and-professional-engagements",
+    "objectID": "cv/index.html#selected-technical-and-research-projects",
+    "href": "cv/index.html#selected-technical-and-research-projects",
     "title": "Curriculum Vitae",
-    "section": "Selected public service and professional engagements",
-    "text": "Selected public service and professional engagements\n\nProject Lead\nPPEniTP Initiative 2020–2021\nCoordinated a civic initiative that distributed more than PHP 25 million worth of personal protective equipment to over 100 public and private hospitals during the COVID-19 pandemic. Worked with donors, partner organisations, beneficiary institutions, and distribution teams.\n\n\nGuest Lecturer\nSan Miguel Corporation Campus ED 2021\nDelivered lecture-workshops on digital research for multimedia platforms to journalism and communication students at universities in Bulacan.\n\n\nGuest Speaker\nArmed Forces of the Philippines 2020\nDelivered training to Media and Civil Affairs Group personnel on digital communications, social-media engagement, crisis messaging, community relations, and responsible public communication.\n\n\nGuest Speaker\nAboitizPower 2017\nPresented digital communication and audience-engagement strategies to the company’s marketing and communications personnel."
+    "section": "Selected technical and research projects",
+    "text": "Selected technical and research projects\n\nComputational Stability of Cubical Homology\nFinal-year BSc dissertation, University of Bristol · 2026 · Mark: 90%\nI developed and tested a reproducible, parallelised Python pipeline for cubical persistent homology on 400 retinal images across ten perturbation protocols and 170 settings, separating spatial misalignment from sensor corruption for fault isolation in human-led diagnostic workflows.\nView the public dissertation and implementation.\n\n\nCryptographic Implementation and Security Analysis\nVigenère–RSA with bigram encoding · Second-year BSc Python project, University of Bristol · 2024\nI built and stress-tested a Python implementation combining RSA key exchange with randomised bigram encoding and documented weaknesses arising from design and implementation choices.\n\n\nSovereign-Investment Safeguards Analysis\nFoundation Certificate extended project, Kaplan International College London · 2023\nI synthesised legal, economic, and public-source evidence to compare proposed safeguards for the Philippine Maharlika Investment Fund with institutional failures identified in the 1MDB case. Kaplan selected the paper as an anonymised model for future cohorts."
   },
   {
-    "objectID": "cv/index.html#other-professional-experience",
-    "href": "cv/index.html#other-professional-experience",
+    "objectID": "cv/index.html#technical-and-language-skills",
+    "href": "cv/index.html#technical-and-language-skills",
     "title": "Curriculum Vitae",
-    "section": "Other professional experience",
-    "text": "Other professional experience\n\nProposal Writer\nAbility with Innovation LLC, Dubai, UAE 2012–2015\nPrepared technical and commercial proposals for government, supranational, and energy-sector clients. Edited colleagues’ work, helped train new members of the proposal team, coordinated input from subject-matter specialists, and supported regulatory compliance.\n\n\nFreelance Technical Writer and Editor\noDesk and other platforms 2010–2015\nCompleted research, technical writing, editing, and digital-content assignments for more than 30 clients in North America, Europe, and Australia."
-  },
-  {
-    "objectID": "cv/index.html#skills",
-    "href": "cv/index.html#skills",
-    "title": "Curriculum Vitae",
-    "section": "Skills",
-    "text": "Skills\n\nMathematical background: Analysis and metric spaces, linear algebra and linear models, probability and statistics, optimisation, combinatorics, group theory, logic, mathematical modelling, applied algebraic topology, and category-theoretic methods for filtrations and persistent homology\nStatistical machine learning and image analysis: Artificial intelligence, linear classification, feature standardisation, stratified cross-validation, computer vision, controlled ablation studies, and model evaluation\nProgramming and scientific computing: Python, R, NumPy, SciPy, scikit-learn, OpenCV, GUDHI, Matplotlib, parallel processing, computational experimentation, and data visualisation\nTechnical publishing and reproducibility: LaTeX, Quarto, Markdown, Git and GitHub, reproducible research workflows, and technical documentation\nTeaching and research: Curriculum and lecture-note development, mathematical exposition, literature review, and undergraduate instruction\nCommunications: Public affairs, journalism, broadcasting, interviewing, editorial work, public speaking, and digital communications\nProgramme delivery: Stakeholder engagement, proposal development, team training, and project coordination"
-  },
-  {
-    "objectID": "cv/index.html#additional-information",
-    "href": "cv/index.html#additional-information",
-    "title": "Curriculum Vitae",
-    "section": "Additional information",
-    "text": "Additional information\n\nLanguages: English (fluent), Tagalog (fluent), Cebuano (elementary), and German (elementary)"
+    "section": "Technical and language skills",
+    "text": "Technical and language skills\n\nProgramming languages: Python; working knowledge of R, MATLAB, and Java\nPython ecosystem: scientific computing and machine learning (NumPy, SciPy, scikit-learn, PyTorch, and TensorFlow); computer vision and visualisation (OpenCV and Matplotlib); topological data analysis (GUDHI and Ripser)\nDevelopment and publishing: Git/GitHub, Quarto, and LaTeX\nSpoken languages: English and Tagalog (fluent)"
   },
   {
     "objectID": "research/index.html",
     "href": "research/index.html",
     "title": "Current Research",
     "section": "",
-    "text": "My current research asks a practical question: when an image is blurred, rotated, resized, poorly exposed, or corrupted by sensor noise, how does the information extracted by a computer change? I want to understand whether the pattern of those changes can help identify what went wrong during acquisition."
+    "text": "My current research asks a practical question: when an image is blurred, rotated, resized, poorly exposed, or corrupted by sensor noise, how does the information extracted by a computer change? I want to understand whether the pattern of those changes can help identify what went wrong during acquisition. This is independent research continuing the work begun in my University of Bristol final-year dissertation."
   },
   {
     "objectID": "research/index.html#the-initial-motivation",
@@ -179,14 +130,14 @@
     "href": "teaching/bulsu/math-modern-world/index.html",
     "title": "Mathematics in the Modern World",
     "section": "",
-    "text": "This page contains lecture notes, examples, exercises, and supplementary material for Mathematics in the Modern World, prepared primarily for the BS Biology students whom I teach. This version of MMW combines mathematical appreciation with more calculation and reasoning than students may expect from a general-education course. It may feel challenging at times, but the work is intended to stretch students rather than overwhelm them. This emphasis follows the broad scope of Mathematics in the Modern World described in CHED Memorandum Order No. 20, series of 2013, while adapting the material to the needs of biology students.\nThe course has two aims. The first is to develop practical mathematical literacy—including financial literacy—that students can use in everyday life. The second is to introduce a little of several areas of mathematics in preparation for more advanced quantitative courses. Contrary to popular opinion, there is a great deal of mathematics in biology, so examples are drawn whenever possible from biology, ecology, health, and data analysis.\nBiological and medical research is highly interdisciplinary. Students are not expected to master every field, but knowing something about different mathematical and computational approaches helps them recognise what a problem calls for—and whom they might ask to collaborate with, whether a statistician, mathematical modeller, computer scientist, or another specialist.\nI generally think of this as a challenging but enjoyable course. At a time when so much can feel uncertain, I hope students can find, as I do, some solace in mathematics: definitions can be made clear, assumptions stated, and conclusions followed step by step. Mathematics has easy and difficult parts, just like any other field, but it has acquired an undeservedly nasty reputation. Much of the fear surrounding it begins with that reputation, unfamiliar notation, or an earlier bad experience rather than with the subject itself. It takes practice, but it is not reserved for geniuses. I am not a genius; I learnt mathematics in the same way most people learn anything difficult—by studying, making mistakes, and trying again."
+    "text": "This page contains lecture notes, examples, exercises, and supplementary material for Mathematics in the Modern World, prepared primarily for the BS Biology students whom I teach. This version of MMW combines mathematical appreciation with more calculation and reasoning than students may expect from a general-education course. It may feel challenging at times, but the work is intended to stretch students rather than overwhelm them. This emphasis follows the broad scope of Mathematics in the Modern World described in CHED Memorandum Order No. 20, series of 2013, while adapting the material to the needs of biology students.\nThe course has two aims. The first is to develop practical mathematical literacy—including financial literacy—that students can use in everyday life. The second is to introduce a little of several areas of mathematics in preparation for more advanced quantitative courses. Contrary to popular opinion, there is a great deal of mathematics in biology, so examples are drawn whenever possible from biology, ecology, health, and data analysis.\nBiological and medical research is highly interdisciplinary. Students are not expected to master every field, but knowing something about different mathematical and computational approaches helps them recognise what a problem calls for—and whom they might ask to collaborate with, whether a statistician, mathematical modeller, computer scientist, or another specialist.\nI think of this as a challenging but enjoyable course. Mathematics makes it possible to define terms clearly, state assumptions, and follow conclusions step by step. Its reputation, unfamiliar notation, or an earlier bad experience can make it appear less approachable than it is. Like any demanding subject, it becomes more manageable through careful study, practice, and learning from mistakes."
   },
   {
     "objectID": "teaching/bulsu/math-modern-world/index.html#logistics",
     "href": "teaching/bulsu/math-modern-world/index.html#logistics",
     "title": "Mathematics in the Modern World",
     "section": "Logistics",
-    "text": "Logistics\nCourse title: Mathematics in the Modern World Course number: MMW 101 Term: First Semester, A.Y. 2026–2027 Instructor’s name: Rey Joseph Nieto Email: rj (at) rjnieto (dot) com (for questions or inquiries related to the course) Consultation hours: To be announced through official class channels Class schedule and room: Refer to the official class schedule\nImportant dates\n\n\n\n\n\n\n\nAssessment\nDate\n\n\n\n\nMidterm examinations\nTo be announced through official class channels\n\n\nFinal examinations\nTo be announced through official class channels"
+    "text": "Logistics\nCourse title: Mathematics in the Modern World Course number: MMW 101 Term: First Semester, A.Y. 2026–2027 Instructor’s name: Rey Joseph Nieto Email: rj (at) rjnieto (dot) com (for questions or inquiries related to the course)\nClass schedules, rooms, assessment dates, consultation arrangements, and course updates are communicated through official class channels."
   },
   {
     "objectID": "teaching/bulsu/math-modern-world/index.html#printable-lecture-notes",
