@@ -1,156 +1,177 @@
 [
   {
-    "objectID": "teaching/index.html",
-    "href": "teaching/index.html",
-    "title": "Teaching",
-    "section": "",
-    "text": "I use these materials in my university classes and make them available here so students can read ahead, revisit a topic, or catch up after an absence."
+    "href" : "teaching/",
+    "objectID" : "teaching/index.html",
+    "section" : "",
+    "text" : "I use these materials in my university classes and make them available here so students can read ahead, revisit a topic, or catch up after an absence.",
+    "title" : "Teaching"
   },
   {
-    "objectID": "teaching/index.html#courses",
-    "href": "teaching/index.html#courses",
-    "title": "Teaching",
-    "section": "Courses",
-    "text": "Courses\n\nMathematics in the Modern World\nLecture notes, examples, exercises, and supplementary materials for Mathematics in the Modern World, developed specifically for biology majors at Bulacan State University.\nOpen the course page\n\n\nLiving in the IT Era\nLecture notes and course materials for Living in the IT Era, developed for first-year biology majors at Bulacan State University. The course provides practical working knowledge of computers, networks, software, online safety, digital life, and emerging technologies.\nOpen the course page\nThese are personal teaching materials, not official publications or policies of Bulacan State University."
+    "href" : "teaching/#courses",
+    "objectID" : "teaching/index.html#courses",
+    "section" : "Courses",
+    "text" : "Courses\n\nMathematics in the Modern World\nLecture notes, examples, exercises, and supplementary materials for Mathematics in the Modern World, developed specifically for biology majors at Bulacan State University.\nOpen the course page\n\n\nLiving in the IT Era\nLecture notes and course materials for Living in the IT Era, developed for first-year biology majors at Bulacan State University. The course provides practical working knowledge of computers, networks, software, online safety, digital life, and emerging technologies.\nOpen the course page\nThese are personal teaching materials, not official publications or policies of Bulacan State University.",
+    "title" : "Teaching"
   },
   {
-    "objectID": "teaching/bulsu/living-it-era/index.html",
-    "href": "teaching/bulsu/living-it-era/index.html",
-    "title": "Living in the IT Era",
-    "section": "",
-    "text": "This page contains lecture notes, exercises, and supplementary material for Living in the IT Era, prepared primarily for the first-year BS Biology students whom I teach. The course is not intended to turn students into computer technicians or make them memorise catalogues of devices, inventors, and fashionable technologies. Its purpose is to provide enough working knowledge to make better decisions about computers, internet services, software, privacy, security, online conduct, AI, and other technologies that students encounter in ordinary life and scientific work.\nMuch of the subject will already be familiar in fragments. A student may know one part from using a phone, another from connecting to Wi-Fi, and another from hearing about online scams or AI. The course brings those pieces together, fills important gaps, and explains how they are related. Examples are drawn whenever practicable from biology, health, research, and Philippine digital life.\nThe ten-chapter plan is my working interpretation of the course’s assigned scope, adapted for biology students and current technological concerns. The notes will be developed as the course proceeds and may change in response to students’ questions, suggestions, and practical needs."
+    "href" : "teaching/bulsu/living-it-era/",
+    "objectID" : "teaching/bulsu/living-it-era/index.html",
+    "section" : "",
+    "text" : "This page contains lecture notes, exercises, and supplementary material for Living in the IT Era, prepared primarily for the first-year BS Biology students whom I teach. The course is not intended to turn students into computer technicians or make them memorise catalogues of devices, inventors, and fashionable technologies. Its purpose is to provide enough working knowledge to make better decisions about computers, internet services, software, privacy, security, online conduct, AI, and other technologies that students encounter in ordinary life and scientific work.\nMuch of the subject will already be familiar in fragments. A student may know one part from using a phone, another from connecting to Wi-Fi, and another from hearing about online scams or AI. The course brings those pieces together, fills important gaps, and explains how they are related. Examples are drawn whenever practicable from biology, health, research, and Philippine digital life.\nThe ten-chapter plan is my working interpretation of the course’s assigned scope, adapted for biology students and current technological concerns. The notes will be developed as the course proceeds and may change in response to students’ questions, suggestions, and practical needs.",
+    "title" : "Living in the IT Era"
   },
   {
-    "objectID": "teaching/bulsu/living-it-era/index.html#logistics",
-    "href": "teaching/bulsu/living-it-era/index.html#logistics",
-    "title": "Living in the IT Era",
-    "section": "Logistics",
-    "text": "Logistics\nCourse title: Living in the IT Era Course number: MST 101d Term: First Semester, A.Y. 2026–2027 Instructor’s name: Rey Joseph Nieto Email: rj (at) rjnieto (dot) com (for questions or inquiries related to the course)\nClass schedules, rooms, assessment dates, consultation arrangements, and course updates are communicated through official class channels."
+    "href" : "teaching/bulsu/living-it-era/#logistics",
+    "objectID" : "teaching/bulsu/living-it-era/index.html#logistics",
+    "section" : "Logistics",
+    "text" : "Logistics\nCourse title: Living in the IT Era Course number: MST 101d Term: First Semester, A.Y. 2026–2027 Instructor’s name: Rey Joseph Nieto Email: rj (at) rjnieto (dot) com (for questions or inquiries related to the course)\nClass schedules, rooms, assessment dates, consultation arrangements, and course updates are communicated through official class channels.",
+    "title" : "Living in the IT Era"
   },
   {
-    "objectID": "teaching/bulsu/living-it-era/index.html#printable-lecture-notes",
-    "href": "teaching/bulsu/living-it-era/index.html#printable-lecture-notes",
-    "title": "Living in the IT Era",
-    "section": "Printable lecture notes",
-    "text": "Printable lecture notes\nThe current release contains the Introduction and Chapters 1–3. Further chapters will be added as the course progresses.\nOpen the MST 101d lecture notes\nCurrent version: 25 August 2026"
+    "href" : "teaching/bulsu/living-it-era/#printable-lecture-notes",
+    "objectID" : "teaching/bulsu/living-it-era/index.html#printable-lecture-notes",
+    "section" : "Printable lecture notes",
+    "text" : "Printable lecture notes\nThe current release contains the Introduction and Chapters 1–3. Further chapters will be added as the course progresses.\nOpen the MST 101d lecture notes\nCurrent version: 25 August 2026",
+    "title" : "Living in the IT Era"
   },
   {
-    "objectID": "teaching/bulsu/living-it-era/index.html#how-classes-will-work",
-    "href": "teaching/bulsu/living-it-era/index.html#how-classes-will-work",
-    "title": "Living in the IT Era",
-    "section": "How classes will work",
-    "text": "How classes will work\nWe shall use a flipped-classroom approach. Students first encounter the assigned material by reading the announced pages or sections before class. Class meetings will provide a bird’s-eye view of the chapter and concentrate on questions, discussion, examples, and practical applications rather than repeat the notes line by line.\nThe assigned reading will not usually be terribly long, and students are not expected to master it before class. They are, however, expected to read the assigned sections carefully rather than skim only the headings and examples. They should arrive familiar with the main ideas and ready to say what was clear, what was confusing, and what deserves further discussion. Reading before class is part of the course rather than optional preparation for it."
+    "href" : "teaching/bulsu/living-it-era/#how-classes-will-work",
+    "objectID" : "teaching/bulsu/living-it-era/index.html#how-classes-will-work",
+    "section" : "How classes will work",
+    "text" : "How classes will work\nWe shall use a flipped-classroom approach. Students first encounter the assigned material by reading the announced pages or sections before class. Class meetings will provide a bird’s-eye view of the chapter and concentrate on questions, discussion, examples, and practical applications rather than repeat the notes line by line.\nThe assigned reading will not usually be terribly long, and students are not expected to master it before class. They are, however, expected to read the assigned sections carefully rather than skim only the headings and examples. They should arrive familiar with the main ideas and ready to say what was clear, what was confusing, and what deserves further discussion. Reading before class is part of the course rather than optional preparation for it.",
+    "title" : "Living in the IT Era"
   },
   {
-    "objectID": "teaching/bulsu/living-it-era/index.html#course-policies",
-    "href": "teaching/bulsu/living-it-era/index.html#course-policies",
-    "title": "Living in the IT Era",
-    "section": "Course policies",
-    "text": "Course policies\nPlease refer to the approved course syllabus and applicable university guidelines for policies on attendance, assessment, classroom conduct, academic integrity, and related matters. Course-specific arrangements and updates will be communicated through official class channels."
+    "href" : "teaching/bulsu/living-it-era/#course-policies",
+    "objectID" : "teaching/bulsu/living-it-era/index.html#course-policies",
+    "section" : "Course policies",
+    "text" : "Course policies\nPlease refer to the approved course syllabus and applicable university guidelines for policies on attendance, assessment, classroom conduct, academic integrity, and related matters. Course-specific arrangements and updates will be communicated through official class channels.",
+    "title" : "Living in the IT Era"
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "RJ Nieto",
-    "section": "",
-    "text": "Hi, I’m Rey Joseph “RJ” Nieto.\nI am a first-class mathematics graduate of the University of Bristol, a part-time Saturday instructor at Bulacan State University, and a columnist for the Manila Bulletin. I am pursuing an MSc in Science, Technology, Engineering and Public Policy at University College London (UCL) through flexible distance learning. My quantitative work includes statistical analysis, machine learning, computer vision, and topological data analysis.\nMy early career developed from technical writing into journalism, national broadcasting, public affairs, government communications, and programme delivery. After nearly a decade in political media, I returned to mathematics; the UCL MSc now brings those strands together through science and technology policy.\n\n\n\n\n\nI teach Mathematics in the Modern World and Living in the IT Era at Bulacan State University. My teaching materials include original lecture notes, exercises, and supplementary resources developed primarily for biology students.\nMy current independent research continues my University of Bristol dissertation, Computational Stability of Cubical Homology, which received a mark of 90%. The public thesis and Python implementation document a reproducible, parallelised pipeline tested on 400 retinal images across ten perturbation protocols and 170 settings. The experiments examined whether contrasting topological and geometric response profiles could help distinguish spatial misalignment from radiometric corruption, as a possible basis for fault isolation in human-led diagnostic workflows.\nI write Calculated, a weekly Saturday column for the Manila Bulletin. The newspaper’s author archive provides links to the published essays.\nEarlier in my career, I hosted national current-affairs programmes and co-led a nationwide COVID-19 initiative that delivered more than PHP 25 million in personal protective equipment to over 100 hospitals. Further details are available in my CV and on LinkedIn.\n\n\n\n Back to top"
+    "href" : "/#teaching",
+    "objectID" : "index.html#teaching",
+    "section" : "Teaching",
+    "text" : "Teaching\nI teach Mathematics in the Modern World and Living in the IT Era part-time at Bulacan State University. My teaching materials include original lecture notes, exercises, and supplementary resources developed primarily for biology students.",
+    "title" : "Rey Joseph “RJ” Nieto"
   },
   {
-    "objectID": "calculated/index.html",
-    "href": "calculated/index.html",
-    "title": "Calculated",
-    "section": "",
-    "text": "The column appears in the Manila Bulletin every Saturday. The entries below link to individual columns; the newspaper also maintains an author archive.\nView the Manila Bulletin archive\n\n\nThere’s something about Alex\n5 September 2026 · Manila Bulletin\n\nAlex(andra Eala) seems remarkably composed through all of it. She speaks carefully about representing the Philippines and about staying herself despite the attention. Frankly, I find that a little embarrassing. I did not have that kind of self-awareness at her age. I am not sure I had it even much later, when I already had an audience of my own.\nRead more\n\n\n\n\n\n\n Back to top"
+    "href" : "/#writing",
+    "objectID" : "index.html#writing",
+    "section" : "Writing",
+    "text" : "Writing\nI write Calculated, a weekly Saturday column for the Manila Bulletin. The newspaper’s author archive provides links to the published essays.",
+    "title" : "Rey Joseph “RJ” Nieto"
   },
   {
-    "objectID": "cv/index.html",
-    "href": "cv/index.html",
-    "title": "Curriculum Vitae",
-    "section": "",
-    "text": "UCL email: rey (dot) nieto (dot) 26 (at) ucl (dot) ac (dot) uk\nBristol alumni email: zo23232 (at) alumni (dot) bristol (dot) ac (dot) uk\nPersonal email: rj (at) rjnieto (dot) com\nLinkedIn: linkedin.com/in/rjosephnieto"
+    "href" : "/#research",
+    "objectID" : "index.html#research",
+    "section" : "Research",
+    "text" : "Research\nMy independent research asks how image-analysis methods respond when images are rotated, resized, poorly exposed, or degraded by sensor noise, and whether those response patterns can help identify acquisition problems. The work continues my University of Bristol dissertation, Computational Stability of Cubical Homology; the thesis and Python implementation are publicly available.",
+    "title" : "Rey Joseph “RJ” Nieto"
   },
   {
-    "objectID": "cv/index.html#contact",
-    "href": "cv/index.html#contact",
-    "title": "Curriculum Vitae",
-    "section": "",
-    "text": "UCL email: rey (dot) nieto (dot) 26 (at) ucl (dot) ac (dot) uk\nBristol alumni email: zo23232 (at) alumni (dot) bristol (dot) ac (dot) uk\nPersonal email: rj (at) rjnieto (dot) com\nLinkedIn: linkedin.com/in/rjosephnieto"
+    "href" : "/#earlier-work",
+    "objectID" : "index.html#earlier-work",
+    "section" : "Earlier work",
+    "text" : "Earlier work\nMy earlier work spans technical writing, journalism, national broadcasting, public affairs, government communications, and programme delivery. Further details are available in my CV and on LinkedIn.",
+    "title" : "Rey Joseph “RJ” Nieto"
   },
   {
-    "objectID": "cv/index.html#education",
-    "href": "cv/index.html#education",
-    "title": "Curriculum Vitae",
-    "section": "Education",
-    "text": "Education\n\nMSc Science, Technology, Engineering and Public Policy\nUniversity College London (UCL) · London, United Kingdom September 2026–Present\nThis flexible distance-learning programme examines how scientific and technical evidence informs public policy, including emerging technologies, risk, and responsible AI.\n\n\nBSc Mathematics, First Class Honours\nUniversity of Bristol · Bristol, United Kingdom September 2023–June 2026\nSelected advanced study included persistent homology and algebraic stability; Gödel’s incompleteness theorems; group actions and Sylow’s theorems; combinatorics and graph theory; Jordan and Smith normal forms; metric-space topology; and martingales and Brownian motion.\nSelected computational study included generalised linear models; statistical machine learning; neural networks and LLMs; convex duality; dynamic programming; and cryptography. I also completed a 40-credit Economics unit in microeconomics and macroeconomics.\n\n\nFoundation Certificate in Business, Law and Social Sciences, Distinction\nKaplan International College London · London, United Kingdom March–August 2023"
+    "href" : "calculated/",
+    "objectID" : "calculated/index.html",
+    "section" : "",
+    "text" : "Skip to main content\n\n\n\n\nThe column appears in the Manila Bulletin every Saturday. The entries below link to individual columns; the newspaper also maintains an author archive.\nView the Manila Bulletin archive\n\n\nThere’s something about Alex\n5 September 2026 · Manila Bulletin\n\nAlex(andra Eala) seems remarkably composed through all of it. She speaks carefully about representing the Philippines and about staying herself despite the attention. Frankly, I find that a little embarrassing. I did not have that kind of self-awareness at her age. I am not sure I had it even much later, when I already had an audience of my own.\nRead more\n\n\n\n\n\n\n Back to top",
+    "title" : "Calculated"
   },
   {
-    "objectID": "cv/index.html#professional-experience",
-    "href": "cv/index.html#professional-experience",
-    "title": "Curriculum Vitae",
-    "section": "Professional experience",
-    "text": "Professional experience\n\nOpinion Columnist\nManila Bulletin · Philippine broadsheet newspaper 2020–2021; 2026–Present\nI write Calculated, a weekly Saturday opinion column. I previously wrote the weekly Thinking Pinoy column from 2020 to 2021.\n\n\nInstructor (Mathematics and IT)\nBulacan State University · San Rafael, Bulacan, Philippines 2026–Present\nI teach part-time undergraduate Saturday classes in Mathematics in the Modern World and Living in the IT Era, covering quantitative reasoning, data analysis, online safety, and emerging technologies.\n\n\nTeaching Assistant (Mathematics)\nUniversity of Bristol · Bristol, United Kingdom 2025–2026 Official title: Mathematical Programming Demonstrator\nI supported second-year mathematics students with Python, numerical methods, debugging, and computational problem-solving.\n\n\nHost, PTV-4 Pre-SONA Special\nPeople’s Television Network · Philippine national broadcaster 2024\nI hosted coverage ahead of the Philippine President’s State of the Nation Address, interviewing Cabinet officials about government programmes, departmental performance, and policy implementation.\n\n\nFounder and Editor-in-Chief\nThinking Pinoy · Philippine public-affairs platform 2015–2023\nI founded and managed a platform reaching an aggregate audience of more than two million followers across its social-media channels and directed editorial work on government, economic policy, foreign affairs, and national developments.\n\n\nTelevision Host and Commentator\nSMNI News · Philippine television network 2020–2022\nI hosted a weekday current-affairs programme featuring commentary and interviews with officials, public figures, and subject specialists.\n\n\nProject Co-Lead, PPEniTP Initiative\nPrivate nationwide COVID-19 civic initiative 2020–2021\nI coordinated donors, hospitals, distribution partners, local government units, and nationwide logistics. Collectively, the initiative delivered more than PHP 25 million in personal protective equipment to over 100 hospitals.\n\n\nRadio Programme Co-host\nAliw Broadcasting Corporation (DWIZ 882 AM) 2017–2020\nI provided political and public-policy commentary on Karambola, a daily current-affairs programme.\n\n\nConsultant, Strategic Communications (Content)\nDepartment of Foreign Affairs, Office of the Undersecretary for Migrant Workers’ Affairs 2017\nI produced digital material explaining policies, programmes, and consular information for overseas Filipinos.\n\n\nEarlier Writing and Communications Experience\nAbility with Innovation LLC; international clients; Sun.Star Davao 2009–2015\nI prepared technical and commercial proposals for government, supranational, and energy-sector clients; completed writing and editing assignments for more than 30 clients across North America, Europe, and Australia; and reported on government and community affairs."
+    "href" : "cv/",
+    "objectID" : "cv/index.html",
+    "section" : "",
+    "text" : "Public servant and mathematician with a background in quantitative research, university teaching, journalism, and strategic communications.\nEmail: rj (at) rjnieto (dot) com · LinkedIn: linkedin.com/in/rjosephnieto",
+    "title" : "Rey Joseph “RJ” Nieto"
   },
   {
-    "objectID": "cv/index.html#selected-technical-and-research-projects",
-    "href": "cv/index.html#selected-technical-and-research-projects",
-    "title": "Curriculum Vitae",
-    "section": "Selected technical and research projects",
-    "text": "Selected technical and research projects\n\nComputational Stability of Cubical Homology\nFinal-year BSc dissertation, University of Bristol · 2026 · Mark: 90%\nI developed and tested a reproducible, parallelised Python pipeline for cubical persistent homology on 400 retinal images across ten perturbation protocols and 170 settings, separating spatial misalignment from sensor corruption for fault isolation in human-led diagnostic workflows.\nView the public dissertation and implementation.\n\n\nCryptographic Implementation and Security Analysis\nVigenère–RSA with bigram encoding · Second-year BSc Python project, University of Bristol · 2024\nI built and stress-tested a Python implementation combining RSA key exchange with randomised bigram encoding and documented weaknesses arising from design and implementation choices.\n\n\nSovereign-Investment Safeguards Analysis\nFoundation Certificate extended project, Kaplan International College London · 2023\nI synthesised legal, economic, and public-source evidence to compare proposed safeguards for the Philippine Maharlika Investment Fund with institutional failures identified in the 1MDB case. Kaplan selected the paper as an anonymised model for future cohorts."
+    "href" : "cv/#professional-experience",
+    "objectID" : "cv/index.html#professional-experience",
+    "section" : "Professional experience",
+    "text" : "Professional experience\n\nAssistant Secretary for Policy Analytics and Technical Assessment\nOffice of the Cabinet Secretary Office of the President of the Philippines Manila, Philippines September 2026–Present\nI provide the Cabinet Secretary with evidence-based analysis of selected policy and implementation issues, drawing on government data, programme results, implementation gaps, risks, and cross-agency concerns. I prepare concise policy briefs, technical assessments, options, and recommendations, using quantitative analysis, interagency consultation, and field validation where appropriate.\n\n\nOpinion Columnist\nManila Bulletin · Philippine broadsheet newspaper 2020–2021; 2026–Present\nI write Calculated, a weekly Saturday opinion column. I previously wrote the weekly Thinking Pinoy column from 2020 to 2021.\n\n\nInstructor (Mathematics and IT)\nBulacan State University · San Rafael, Bulacan, Philippines 2026–Present\nI teach part-time undergraduate Saturday classes in Mathematics in the Modern World and Living in the IT Era, covering quantitative reasoning, data analysis, online safety, and emerging technologies.\n\n\nTeaching Assistant (Mathematics)\nUniversity of Bristol · Bristol, United Kingdom 2025–2026 Official title: Mathematical Programming Demonstrator\nI supported second-year mathematics students with Python, numerical methods, debugging, and computational problem-solving.\n\n\nHost, PTV-4 Pre-SONA Special\nPeople’s Television Network · Philippine national broadcaster 2024\nI hosted coverage ahead of the Philippine President’s State of the Nation Address, interviewing Cabinet officials about government programmes, departmental performance, and policy implementation.\n\n\nFounder and Editor-in-Chief\nThinking Pinoy · Philippine public-affairs platform 2015–2023\nI founded and managed a platform reaching an aggregate audience of more than two million followers across its social-media channels and directed editorial work on government, economic policy, foreign affairs, and national developments.\n\n\nTelevision Host and Commentator\nSMNI News · Philippine television network 2020–2022\nI hosted a weekday current-affairs programme featuring commentary and interviews with officials, public figures, and subject specialists.\n\n\nProject Co-Lead, PPEniTP Initiative\nPrivate nationwide COVID-19 civic initiative 2020–2021\nI coordinated donors, hospitals, distribution partners, local government units, and nationwide logistics. Collectively, the initiative delivered more than PHP 25 million in personal protective equipment to over 100 hospitals.\n\n\nRadio Programme Co-host\nAliw Broadcasting Corporation (DWIZ 882 AM) 2017–2020\nI provided political and public-policy commentary on Karambola, a daily current-affairs programme.\n\n\nConsultant, Strategic Communications (Content)\nDepartment of Foreign Affairs, Office of the Undersecretary for Migrant Workers’ Affairs 2017\nI produced digital material explaining policies, programmes, and consular information for overseas Filipinos.\n\n\nEarlier Writing and Communications Experience\nAbility with Innovation LLC; international clients; Sun.Star Davao 2009–2015\nI prepared technical and commercial proposals for government, supranational, and energy-sector clients; completed writing and editing assignments for more than 30 clients across North America, Europe, and Australia; and reported on government and community affairs.",
+    "title" : "Rey Joseph “RJ” Nieto"
   },
   {
-    "objectID": "cv/index.html#technical-and-language-skills",
-    "href": "cv/index.html#technical-and-language-skills",
-    "title": "Curriculum Vitae",
-    "section": "Technical and language skills",
-    "text": "Technical and language skills\n\nProgramming languages: Python; working knowledge of R, MATLAB, and Java\nPython ecosystem: scientific computing and machine learning (NumPy, SciPy, scikit-learn, PyTorch, and TensorFlow); computer vision and visualisation (OpenCV and Matplotlib); topological data analysis (GUDHI and Ripser)\nDevelopment and publishing: Git/GitHub, Quarto, and LaTeX\nSpoken languages: English and Tagalog (fluent)"
+    "href" : "cv/#education",
+    "objectID" : "cv/index.html#education",
+    "section" : "Education",
+    "text" : "Education\n\nMSc Science, Technology, Engineering and Public Policy\nUniversity College London (UCL) · London, United Kingdom September 2026–Present\nThis flexible distance-learning programme examines how scientific and technical evidence informs public policy, including emerging technologies, risk, and responsible AI.\n\n\nBSc Mathematics with First Class Honours\nUniversity of Bristol · Bristol, United Kingdom September 2023–June 2026\nSelected advanced and computational study included persistent homology and algebraic stability; mathematical logic and group theory; combinatorics, graph theory, and linear algebra; metric-space topology and stochastic processes; generalised linear models and statistical machine learning; neural networks and large language models; optimisation and dynamic programming; and cryptography. I also completed a 40-credit Economics unit in microeconomics and macroeconomics.\n\n\nFoundation Certificate in Business, Law and Social Sciences, Distinction\nKaplan International College London · London, United Kingdom March–August 2023",
+    "title" : "Rey Joseph “RJ” Nieto"
   },
   {
-    "objectID": "research/index.html",
-    "href": "research/index.html",
-    "title": "Current Research",
-    "section": "",
-    "text": "My current research asks a practical question: when an image is blurred, rotated, resized, poorly exposed, or corrupted by sensor noise, how does the information extracted by a computer change? I want to understand whether the pattern of those changes can help identify what went wrong during acquisition. This is independent research continuing the work begun in my University of Bristol final-year dissertation."
+    "href" : "cv/#selected-technical-and-research-projects",
+    "objectID" : "cv/index.html#selected-technical-and-research-projects",
+    "section" : "Selected technical and research projects",
+    "text" : "Selected technical and research projects\n\nComputational Stability of Cubical Homology\nFinal-year BSc dissertation, University of Bristol · 2026 · Mark: 90%\nI developed and tested a reproducible, parallelised Python pipeline for cubical persistent homology on 400 retinal images across ten perturbation protocols and 170 settings. The study examined whether contrasting topological and geometric response profiles could help distinguish spatial misalignment from radiometric corruption.\nView the public dissertation and implementation.\n\n\nCryptographic Implementation and Security Analysis\nVigenère–RSA with bigram encoding · Second-year BSc Python project, University of Bristol · 2024\nI built and stress-tested a Python implementation combining RSA key exchange with randomised bigram encoding and documented weaknesses arising from design and implementation choices.\n\n\nSovereign-Investment Safeguards Analysis\nFoundation Certificate extended project, Kaplan International College London · 2023\nI synthesised legal, economic, and public-source evidence to compare proposed safeguards for the Philippine Maharlika Investment Fund with institutional failures identified in the 1MDB case. Kaplan selected the paper as an anonymised model for future cohorts.",
+    "title" : "Rey Joseph “RJ” Nieto"
   },
   {
-    "objectID": "research/index.html#the-initial-motivation",
-    "href": "research/index.html#the-initial-motivation",
-    "title": "Current Research",
-    "section": "The initial motivation",
-    "text": "The initial motivation\nMy interest in retinal imaging has a personal origin in an experience with diabetic retinopathy. It led me to take a particular interest in the reliability of retinal-image analysis.\n\n\n\n\n\n\nFigure 1: An illustration of what is at stake: being able to see ordinary moments as children grow up. The second view represents one possible experience of sight loss associated with advanced diabetic retinopathy. The condition usually has no noticeable symptoms at first, and its later effects on vision vary. This is an explanatory illustration, not a clinical simulation. See the NHS overview of diabetic retinopathy.\n\n\n\nThe NHS Diabetic Eye Screening Programme shows why this problem matters. Fundus photographs are assessed against defined feature-based criteria within a structured grading and referral pathway. Trained graders inspect the images, uncertain or referable findings receive further review, and people who may need treatment are referred for clinical assessment.\n\n\n\n\n\n\nFigure 2: A diabetic-retinopathy fundus image, annotated for my thesis to enlarge a connected lesion and examples of vascular loops. Source: image 214_D from the FIVES fundus-image dataset; reused and adapted under CC BY 4.0.\n\n\n\nAs the number of people requiring screening grows, so does the grading workload. Expanding trained grading capacity also takes time. The UK National Screening Committee recently consulted on automated retinal-image analysis as a possible way to triage images before human grading. At the time of the consultation, it did not recommend introducing automated grading into the programme. A conservative role for such systems is to support trained graders and clinical teams by handling suitable routine images and flagging abnormal, uncertain, or ungradable cases for human review. The research question is what mathematical and technical assurances would be needed before that assistance could be trusted at screening scale.\nThe same concern with reliability has a second practical direction: more informative quality checks and fault investigation in medical or industrial imaging systems. Some faults might eventually be assessed remotely before a specialist travels onsite. This is a direction for the research, not a capability of the present work.\n\nHow the project changed direction\nMy original intention was to produce a topology-informed classifier for diabetic retinopathy. Classifiers of this kind already existed, but reproducing and extending established work would still have been a useful objective for a four-month undergraduate project.\nThe direction changed during ablation testing, when I deliberately subjected the images to individual forms of degradation. A simulated rotation of roughly three degrees was enough to drive the selected topology-based classifier close to chance performance. That raised a practical question: what value would the classifier have if a slight change in the subject’s head alignment could cause it to fail? The topological vectors were highly sensitive to rotation and other mechanical changes that required the image to be resampled. Interpolation on the pixel grid could create or destroy topological features even when the underlying subject had changed very little. My undergraduate thesis described this behaviour as grid shattering.\n\n\n\n\n\n\nFigure 3: A schematic DR-related vascular loop used to illustrate grid shattering. Above, alignment with the sampling grid preserves one cubical loop. Below, a small rotation followed by resampling fragments the pixel representation and destroys the detected loop, even though the underlying continuous vascular structure has not changed.\n\n\n\nOnce the ablation tests exposed this limitation, the project changed direction. Instead of treating the result as an inconvenience to the proposed classifier, I made it part of the research question and asked whether the contrasting failure behaviour could itself be useful.\nIn my thesis experiments, the same topological summaries were comparatively robust under several photometric changes, including exposure drift and quantisation, although not under every form of noise. Log-transformed Hu moments, which are geometric descriptors based on an image’s overall shape, showed a broadly reverse profile: they were comparatively strong under mechanical transformations but weaker under changes in intensity. Instead of asking either representation to serve as the classifier by itself, I treated them as two complementary, or “orthogonal”, controls.\nI organised their contrasting failure profiles into what I called the Differential Failure Matrix. It was designed to test whether signatures associated with alignment and resampling could be distinguished from signatures associated with radiometric degradation. The final project was therefore not the classifier I had originally planned. It treated an apparent weakness of the cubical-persistence pipeline as a possible signal for a coarse fault-isolation heuristic. The code and supporting material are available in the project’s GitHub repository.\n\n\nWhy I am returning to it\nThe thesis was completed over four months. That was enough to establish and test the framework, but not to exhaust the questions it raised. The decomposition was descriptive and produced a suggestive empirical pattern, but it was mathematically coarse: its stability bound was conservative, and the final fault-isolation stage necessarily relied in part on empirical thresholds and heuristics. Time did not permit a deeper investigation of those mechanisms.\nIn a biomedical setting, a promising experimental result is not enough. The intended use, assumptions, limitations, performance, and possible failure modes of a method must be described and validated. My purpose in returning to the mathematics is to understand the underlying mechanisms more fully and to determine whether the heuristic parts of the pipeline can be replaced, constrained, or justified by stronger mathematical and empirical support. The longer-term aim is a pipeline whose assumptions and failure modes are more transparent and therefore easier to examine in technical and regulatory review. This is not a claim that the present work is a clinically validated or regulator-approved system.\nRetinal imaging remains the immediate problem, and similar acquisition issues arise in industrial inspection and other computer-vision systems. My earlier experiments were confined to retinal images, so industrial applications remain a direction for further work."
+    "href" : "cv/#technical-and-language-skills",
+    "objectID" : "cv/index.html#technical-and-language-skills",
+    "section" : "Technical and language skills",
+    "text" : "Technical and language skills\n\nProgramming languages: Python; working knowledge of R, MATLAB, and Java\nPython ecosystem: scientific computing and machine learning (NumPy, SciPy, scikit-learn, PyTorch, and TensorFlow); computer vision and visualisation (OpenCV and Matplotlib); topological data analysis (GUDHI and Ripser)\nDevelopment and publishing: Git/GitHub, Quarto, and LaTeX\nSpoken languages: English and Tagalog (fluent)",
+    "title" : "Rey Joseph “RJ” Nieto"
   },
   {
-    "objectID": "research/index.html#where-the-work-is-heading",
-    "href": "research/index.html#where-the-work-is-heading",
-    "title": "Current Research",
-    "section": "Where the work is heading",
-    "text": "Where the work is heading\nI am continuing to develop the mathematical foundations of this work, with a particular interest in making the system’s behaviour more explainable. Broadly, this means understanding why its components respond differently when an image changes, stating their assumptions and limitations more clearly, and improving how uncertainty and possible failures are communicated.\nThe work draws on topology, mathematical analysis, probability, and statistical machine learning. I am using these subjects to examine the pipeline from different angles rather than committing in advance to a particular theorem, model, or technical extension. The direction remains exploratory, and I will share further results when they are sufficiently developed."
+    "href" : "cv/#contact",
+    "objectID" : "cv/index.html#contact",
+    "section" : "Contact",
+    "text" : "Contact\n\nPreferred email: rj (at) rjnieto (dot) com\nUCL email: rey (dot) nieto (dot) 26 (at) ucl (dot) ac (dot) uk\nBristol alumni email: zo23232 (at) alumni (dot) bristol (dot) ac (dot) uk\nLinkedIn: linkedin.com/in/rjosephnieto",
+    "title" : "Rey Joseph “RJ” Nieto"
   },
   {
-    "objectID": "teaching/bulsu/math-modern-world/index.html",
-    "href": "teaching/bulsu/math-modern-world/index.html",
-    "title": "Mathematics in the Modern World",
-    "section": "",
-    "text": "This page contains lecture notes, examples, exercises, and supplementary material for Mathematics in the Modern World, prepared primarily for the BS Biology students whom I teach. This version of MMW combines mathematical appreciation with more calculation and reasoning than students may expect from a general-education course. It may feel challenging at times, but the work is intended to stretch students rather than overwhelm them. This emphasis follows the broad scope of Mathematics in the Modern World described in CHED Memorandum Order No. 20, series of 2013, while adapting the material to the needs of biology students.\nThe course has two aims. The first is to develop practical mathematical literacy—including financial literacy—that students can use in everyday life. The second is to introduce a little of several areas of mathematics in preparation for more advanced quantitative courses. Contrary to popular opinion, there is a great deal of mathematics in biology, so examples are drawn whenever possible from biology, ecology, health, and data analysis.\nBiological and medical research is highly interdisciplinary. Students are not expected to master every field, but knowing something about different mathematical and computational approaches helps them recognise what a problem calls for—and whom they might ask to collaborate with, whether a statistician, mathematical modeller, computer scientist, or another specialist.\nI think of this as a challenging but enjoyable course. Mathematics makes it possible to define terms clearly, state assumptions, and follow conclusions step by step. Its reputation, unfamiliar notation, or an earlier bad experience can make it appear less approachable than it is. Like any demanding subject, it becomes more manageable through careful study, practice, and learning from mistakes."
+    "href" : "research/",
+    "objectID" : "research/index.html",
+    "section" : "",
+    "text" : "My current research asks a practical question: when an image is blurred, rotated, resized, poorly exposed, or corrupted by sensor noise, how does the information extracted by a computer change? I want to understand whether the pattern of those changes can help identify what went wrong during acquisition. This is independent research continuing the work begun in my University of Bristol final-year dissertation.",
+    "title" : "Current Research"
   },
   {
-    "objectID": "teaching/bulsu/math-modern-world/index.html#logistics",
-    "href": "teaching/bulsu/math-modern-world/index.html#logistics",
-    "title": "Mathematics in the Modern World",
-    "section": "Logistics",
-    "text": "Logistics\nCourse title: Mathematics in the Modern World Course number: MMW 101 Term: First Semester, A.Y. 2026–2027 Instructor’s name: Rey Joseph Nieto Email: rj (at) rjnieto (dot) com (for questions or inquiries related to the course)\nClass schedules, rooms, assessment dates, consultation arrangements, and course updates are communicated through official class channels."
+    "href" : "research/#the-initial-motivation",
+    "objectID" : "research/index.html#the-initial-motivation",
+    "section" : "The initial motivation",
+    "text" : "The initial motivation\nMy interest in retinal imaging has a personal origin in an experience with diabetic retinopathy. It led me to take a particular interest in the reliability of retinal-image analysis.\n\n\n\n\n\n\nFigure 1: An illustration of what is at stake: being able to see ordinary moments as children grow up. The second view represents one possible experience of sight loss associated with advanced diabetic retinopathy. The condition usually has no noticeable symptoms at first, and its later effects on vision vary. This is an explanatory illustration, not a clinical simulation. See the NHS overview of diabetic retinopathy.\n\n\n\nThe NHS Diabetic Eye Screening Programme shows why this problem matters. Fundus photographs are assessed against defined feature-based criteria within a structured grading and referral pathway. Trained graders inspect the images, uncertain or referable findings receive further review, and people who may need treatment are referred for clinical assessment.\n\n\n\n\n\n\nFigure 2: A diabetic-retinopathy fundus image, annotated for my thesis to enlarge a connected lesion and examples of vascular loops. Source: image 214_D from the FIVES fundus-image dataset; reused and adapted under CC BY 4.0.\n\n\n\nAs the number of people requiring screening grows, so does the grading workload. Expanding trained grading capacity also takes time. The UK National Screening Committee recently consulted on automated retinal-image analysis as a possible way to triage images before human grading. At the time of the consultation, it did not recommend introducing automated grading into the programme. A conservative role for such systems is to support trained graders and clinical teams by handling suitable routine images and flagging abnormal, uncertain, or ungradable cases for human review. The research question is what mathematical and technical assurances would be needed before that assistance could be trusted at screening scale.\nThe same concern with reliability has a second practical direction: more informative quality checks and fault investigation in medical or industrial imaging systems. Some faults might eventually be assessed remotely before a specialist travels onsite. This is a direction for the research, not a capability of the present work.\n\nHow the project changed direction\nMy original intention was to produce a topology-informed classifier for diabetic retinopathy. Classifiers of this kind already existed, but reproducing and extending established work would still have been a useful objective for a four-month undergraduate project.\nThe direction changed during ablation testing, when I deliberately subjected the images to individual forms of degradation. A simulated rotation of roughly three degrees was enough to drive the selected topology-based classifier close to chance performance. That raised a practical question: what value would the classifier have if a slight change in the subject’s head alignment could cause it to fail? The topological vectors were highly sensitive to rotation and other mechanical changes that required the image to be resampled. Interpolation on the pixel grid could create or destroy topological features even when the underlying subject had changed very little. My undergraduate thesis described this behaviour as grid shattering.\n\n\n\n\n\n\nFigure 3: A schematic DR-related vascular loop used to illustrate grid shattering. Above, alignment with the sampling grid preserves one cubical loop. Below, a small rotation followed by resampling fragments the pixel representation and destroys the detected loop, even though the underlying continuous vascular structure has not changed.\n\n\n\nOnce the ablation tests exposed this limitation, the project changed direction. Instead of treating the result as an inconvenience to the proposed classifier, I made it part of the research question and asked whether the contrasting failure behaviour could itself be useful.\nIn my thesis experiments, the same topological summaries were comparatively robust under several photometric changes, including exposure drift and quantisation, although not under every form of noise. Log-transformed Hu moments, which are geometric descriptors based on an image’s overall shape, showed a broadly reverse profile: they were comparatively strong under mechanical transformations but weaker under changes in intensity. Instead of asking either representation to serve as the classifier by itself, I treated them as two complementary, or “orthogonal”, controls.\nI organised their contrasting failure profiles into what I called the Differential Failure Matrix. It was designed to test whether signatures associated with alignment and resampling could be distinguished from signatures associated with radiometric degradation. The final project was therefore not the classifier I had originally planned. It treated an apparent weakness of the cubical-persistence pipeline as a possible signal for a coarse fault-isolation heuristic. The code and supporting material are available in the project’s GitHub repository.\n\n\nWhy I am returning to it\nThe thesis was completed over four months. That was enough to establish and test the framework, but not to exhaust the questions it raised. The decomposition was descriptive and produced a suggestive empirical pattern, but it was mathematically coarse: its stability bound was conservative, and the final fault-isolation stage necessarily relied in part on empirical thresholds and heuristics. Time did not permit a deeper investigation of those mechanisms.\nIn a biomedical setting, a promising experimental result is not enough. The intended use, assumptions, limitations, performance, and possible failure modes of a method must be described and validated. My purpose in returning to the mathematics is to understand the underlying mechanisms more fully and to determine whether the heuristic parts of the pipeline can be replaced, constrained, or justified by stronger mathematical and empirical support. The longer-term aim is a pipeline whose assumptions and failure modes are more transparent and therefore easier to examine in technical and regulatory review. This is not a claim that the present work is a clinically validated or regulator-approved system.\nRetinal imaging remains the immediate problem, and similar acquisition issues arise in industrial inspection and other computer-vision systems. My earlier experiments were confined to retinal images, so industrial applications remain a direction for further work.",
+    "title" : "Current Research"
   },
   {
-    "objectID": "teaching/bulsu/math-modern-world/index.html#printable-lecture-notes",
-    "href": "teaching/bulsu/math-modern-world/index.html#printable-lecture-notes",
-    "title": "Mathematics in the Modern World",
-    "section": "Printable lecture notes",
-    "text": "Printable lecture notes\nThe current version of the complete lecture notes is available as a PDF.\nOpen the MMW 101 lecture notes\nCurrent version: 22 August 2026"
+    "href" : "research/#where-the-work-is-heading",
+    "objectID" : "research/index.html#where-the-work-is-heading",
+    "section" : "Where the work is heading",
+    "text" : "Where the work is heading\nI am continuing to develop the mathematical foundations of this work, with a particular interest in making the system’s behaviour more explainable. Broadly, this means understanding why its components respond differently when an image changes, stating their assumptions and limitations more clearly, and improving how uncertainty and possible failures are communicated.\nThe work draws on topology, mathematical analysis, probability, and statistical machine learning. I am using these subjects to examine the pipeline from different angles rather than committing in advance to a particular theorem, model, or technical extension. The direction remains exploratory, and I will share further results when they are sufficiently developed.",
+    "title" : "Current Research"
   },
   {
-    "objectID": "teaching/bulsu/math-modern-world/index.html#course-policies",
-    "href": "teaching/bulsu/math-modern-world/index.html#course-policies",
-    "title": "Mathematics in the Modern World",
-    "section": "Course policies",
-    "text": "Course policies\nPlease refer to the approved course syllabus and applicable university guidelines for policies on attendance, assessment, classroom conduct, academic integrity, and related matters. Course-specific arrangements and updates will be communicated through official class channels."
+    "href" : "teaching/bulsu/math-modern-world/",
+    "objectID" : "teaching/bulsu/math-modern-world/index.html",
+    "section" : "",
+    "text" : "This page contains lecture notes, examples, exercises, and supplementary material for Mathematics in the Modern World, prepared primarily for the BS Biology students whom I teach. This version of MMW combines mathematical appreciation with more calculation and reasoning than students may expect from a general-education course. It may feel challenging at times, but the work is intended to stretch students rather than overwhelm them. This emphasis follows the broad scope of Mathematics in the Modern World described in CHED Memorandum Order No. 20, series of 2013, while adapting the material to the needs of biology students.\nThe course has two aims. The first is to develop practical mathematical literacy—including financial literacy—that students can use in everyday life. The second is to introduce a little of several areas of mathematics in preparation for more advanced quantitative courses. Contrary to popular opinion, there is a great deal of mathematics in biology, so examples are drawn whenever possible from biology, ecology, health, and data analysis.\nBiological and medical research is highly interdisciplinary. Students are not expected to master every field, but knowing something about different mathematical and computational approaches helps them recognise what a problem calls for—and whom they might ask to collaborate with, whether a statistician, mathematical modeller, computer scientist, or another specialist.\nI think of this as a challenging but enjoyable course. Mathematics makes it possible to define terms clearly, state assumptions, and follow conclusions step by step. Its reputation, unfamiliar notation, or an earlier bad experience can make it appear less approachable than it is. Like any demanding subject, it becomes more manageable through careful study, practice, and learning from mistakes.",
+    "title" : "Mathematics in the Modern World"
+  },
+  {
+    "href" : "teaching/bulsu/math-modern-world/#logistics",
+    "objectID" : "teaching/bulsu/math-modern-world/index.html#logistics",
+    "section" : "Logistics",
+    "text" : "Logistics\nCourse title: Mathematics in the Modern World Course number: MMW 101 Term: First Semester, A.Y. 2026–2027 Instructor’s name: Rey Joseph Nieto Email: rj (at) rjnieto (dot) com (for questions or inquiries related to the course)\nClass schedules, rooms, assessment dates, consultation arrangements, and course updates are communicated through official class channels.",
+    "title" : "Mathematics in the Modern World"
+  },
+  {
+    "href" : "teaching/bulsu/math-modern-world/#printable-lecture-notes",
+    "objectID" : "teaching/bulsu/math-modern-world/index.html#printable-lecture-notes",
+    "section" : "Printable lecture notes",
+    "text" : "Printable lecture notes\nThe current version of the complete lecture notes is available as a PDF.\nOpen the MMW 101 lecture notes\nCurrent version: 22 August 2026",
+    "title" : "Mathematics in the Modern World"
+  },
+  {
+    "href" : "teaching/bulsu/math-modern-world/#course-policies",
+    "objectID" : "teaching/bulsu/math-modern-world/index.html#course-policies",
+    "section" : "Course policies",
+    "text" : "Course policies\nPlease refer to the approved course syllabus and applicable university guidelines for policies on attendance, assessment, classroom conduct, academic integrity, and related matters. Course-specific arrangements and updates will be communicated through official class channels.",
+    "title" : "Mathematics in the Modern World"
   }
 ]
