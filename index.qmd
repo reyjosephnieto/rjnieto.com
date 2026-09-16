@@ -1,60 +1,105 @@
 ---
-title: "RJ Nieto"
-description-meta: "The personal website of Rey Joseph Nieto, featuring mathematics, quantitative research, university teaching, writing, and professional work."
+title: "Rey Joseph \"RJ\" Nieto"
+pagetitle: "Rey Joseph \"RJ\" Nieto"
+title-prefix: ""
+description: "Rey Joseph “RJ” Nieto is Assistant Secretary for Policy Analytics and Technical Assessment in the Office of the Cabinet Secretary, Philippines."
+image: "assets/images/rey-joseph-nieto-social-preview.png"
+image-alt: "Portrait of Rey Joseph RJ Nieto on an ivory background with burgundy analytical motifs"
+canonical-url: "https://rjnieto.com/"
+header-includes: |
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta property="og:url" content="https://rjnieto.com/">
+  <meta property="og:type" content="profile">
+  <meta property="profile:first_name" content="Rey Joseph">
+  <meta property="profile:last_name" content="Nieto">
+  <meta property="profile:username" content="rjosephnieto">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://rjnieto.com/#website",
+        "url": "https://rjnieto.com/",
+        "name": "RJ Nieto",
+        "alternateName": ["Rey Joseph Nieto", "Rey Joseph “RJ” Nieto", "rjnieto.com"],
+        "description": "The personal website of Rey Joseph Nieto, featuring public service, mathematics, research, teaching, and writing.",
+        "inLanguage": "en-GB",
+        "author": { "@id": "https://rjnieto.com/#rey-joseph-nieto" }
+      },
+      {
+        "@type": "ProfilePage",
+        "@id": "https://rjnieto.com/#profile-page",
+        "url": "https://rjnieto.com/",
+        "name": "Rey Joseph “RJ” Nieto",
+        "description": "Rey Joseph “RJ” Nieto is Assistant Secretary for Policy Analytics and Technical Assessment in the Office of the Cabinet Secretary, Philippines.",
+        "inLanguage": "en-GB",
+        "isPartOf": { "@id": "https://rjnieto.com/#website" },
+        "mainEntity": { "@id": "https://rjnieto.com/#rey-joseph-nieto" },
+        "primaryImageOfPage": {
+          "@type": "ImageObject",
+          "url": "https://rjnieto.com/assets/images/rey-joseph-nieto-social-preview.png",
+          "width": 1200,
+          "height": 630,
+          "caption": "Portrait of Rey Joseph RJ Nieto"
+        }
+      }
+    ]
+  }
+  </script>
 toc: false
 ---
 
 ::: {.home-intro}
 ::: {.home-intro-copy}
-Hi, I’m Rey Joseph “RJ” Nieto.
+I serve as Assistant Secretary for Policy Analytics and Technical Assessment in
+the Office of the Cabinet Secretary, Office of the President of the Philippines.
+My work focuses on evidence-based analysis of policy and implementation issues
+and the preparation of policy briefs, technical assessments, options, and
+recommendations.
 
-I am a first-class mathematics graduate of the [University of
-Bristol](https://www.bristol.ac.uk/), a part-time Saturday instructor at
-[Bulacan State University](https://bulsu.edu.ph/), and a columnist for the
-[*Manila Bulletin*](https://mb.com.ph/author/rj-nieto). I am pursuing an MSc in
-Science, Technology, Engineering and
-Public Policy at [University College London
-(UCL)](https://www.ucl.ac.uk/prospective-students/graduate/taught-degrees/science-technology-engineering-and-public-policy-msc)
-through flexible distance learning. My quantitative work includes statistical
-analysis, machine learning, computer vision, and topological data analysis.
-
-My early career developed from technical writing into journalism, national
-broadcasting, public affairs, government communications, and programme
-delivery. After nearly a decade in political media, I returned to mathematics;
-the UCL MSc now brings those strands together through science and technology
-policy.
+I hold a BSc in Mathematics with First Class Honours from the [University of
+Bristol](https://www.bristol.ac.uk/){target="_blank" rel="noopener"} and am pursuing an MSc in Science,
+Technology, Engineering and Public Policy at [University College London
+(UCL)](https://www.ucl.ac.uk/prospective-students/graduate/taught-degrees/science-technology-engineering-and-public-policy-msc){target="_blank" rel="noopener"}
+through flexible distance learning.
 :::
 
 ::: {.home-intro-photo}
-![](assets/images/profile-pic.jpg){.profile-photo fig-alt="Portrait of Rey Joseph RJ Nieto"}
+![](assets/images/rey-joseph-nieto-portrait.jpg){.profile-photo fig-alt="Portrait of Rey Joseph RJ Nieto" width=824 height=824}
 :::
 :::
+
+## Teaching
 
 I teach [*Mathematics in the Modern
 World*](teaching/bulsu/math-modern-world/index.qmd) and [*Living in the IT
-Era*](teaching/bulsu/living-it-era/index.qmd) at Bulacan State University. My
-[teaching materials](teaching/index.qmd) include original lecture notes,
-exercises, and supplementary resources developed primarily for biology
-students.
+Era*](teaching/bulsu/living-it-era/index.qmd) part-time at [Bulacan State
+University](https://bulsu.edu.ph/){target="_blank" rel="noopener"}. My [teaching
+materials](teaching/index.qmd) include original lecture notes, exercises, and
+supplementary resources developed primarily for biology students.
 
-My [current independent research](research/index.qmd) continues my University
-of Bristol dissertation, *Computational Stability of Cubical Homology*, which
-received a mark of 90%. The [public
-thesis](https://github.com/reyjosephnieto/ph/blob/main/Nieto_TDA_Public_20260430.pdf){target="_blank" rel="noopener"}
-and [Python implementation](https://github.com/reyjosephnieto/ph){target="_blank" rel="noopener"}
-document a reproducible, parallelised pipeline tested on 400 retinal images
-across ten perturbation protocols and 170 settings. The experiments examined
-whether contrasting topological and geometric response profiles could help
-distinguish spatial misalignment from radiometric corruption, as a possible
-basis for fault isolation in human-led diagnostic workflows.
+## Writing
 
 I write [*Calculated*](calculated/index.qmd), a weekly Saturday column for the
 *Manila Bulletin*. The newspaper's [author
 archive](https://mb.com.ph/author/rj-nieto){target="_blank" rel="noopener"}
 provides links to the published essays.
 
-Earlier in my career, I hosted national current-affairs programmes and co-led a
-nationwide COVID-19 initiative that delivered more than PHP 25 million in
-personal protective equipment to over 100 hospitals. Further details are
-available in my [CV](cv/index.qmd) and on
-[LinkedIn](https://www.linkedin.com/in/reyjosephnieto/){target="_blank" rel="noopener"}.
+## Research
+
+My [independent research](research/index.qmd) asks how image-analysis methods
+respond when images are rotated, resized, poorly exposed, or degraded by sensor
+noise, and whether those response patterns can help identify acquisition
+problems. The work continues my University of Bristol dissertation,
+*Computational Stability of Cubical Homology*; the
+[thesis](https://github.com/reyjosephnieto/ph/blob/main/Nieto_TDA_Public_20260430.pdf){target="_blank" rel="noopener"}
+and [Python implementation](https://github.com/reyjosephnieto/ph){target="_blank" rel="noopener"}
+are publicly available.
+
+## Earlier work
+
+My earlier work spans technical writing, journalism, national broadcasting,
+public affairs, government communications, and programme delivery. Further
+details are available in my [CV](cv/index.qmd) and on
+[LinkedIn](https://www.linkedin.com/in/rjosephnieto/){target="_blank" rel="noopener"}.

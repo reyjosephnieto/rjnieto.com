@@ -1,9 +1,14 @@
 ---
 title: "Current Research"
 subtitle: "Mathematical foundations for reliable image analysis"
-description-meta: "RJ Nieto's current research and independent study in the mathematics of stability, uncertainty and image analysis."
-aliases:
-  - /mathematics/year-4-h1/
+description: "RJ Nieto's current research and independent study in the mathematics of stability, uncertainty and image analysis."
+image: "/assets/images/research/diabetic-retinopathy-visual-field.webp"
+image-alt: "A clear view of children playing football beside a blurred and obscured view representing possible sight loss"
+canonical-url: "https://rjnieto.com/research/"
+header-includes: |
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta property="og:url" content="https://rjnieto.com/research/">
+  <meta property="og:type" content="article">
 toc: true
 toc-depth: 2
 ---
@@ -22,7 +27,7 @@ diabetic retinopathy. It led me to take a particular interest in the reliability
 of retinal-image analysis.
 
 ::: {#fig-dr-visual-field}
-![](../assets/images/research/diabetic-retinopathy-visual-field.png){fig-alt="Two illustrated views of the same children playing football in a park, as if seen by a parent. The first is clear. The second is blurred and partly obscured by soft dark patches and floaters to suggest one possible experience of sight loss associated with advanced diabetic retinopathy." width="100%"}
+![](../assets/images/research/diabetic-retinopathy-visual-field.webp){fig-alt="Two illustrated views of the same children playing football in a park, as if seen by a parent. The first is clear. The second is blurred and partly obscured by soft dark patches and floaters to suggest one possible experience of sight loss associated with advanced diabetic retinopathy." width=1536 height=1024 style="width:100%"}
 
 An illustration of what is at stake: being able to see ordinary moments as children grow up. The second view represents one possible experience of sight loss associated with advanced diabetic retinopathy. The condition usually has no noticeable symptoms at first, and its later effects on vision vary. This is an explanatory illustration, not a clinical simulation. See the [NHS overview of diabetic retinopathy](https://www.nhs.uk/conditions/diabetic-retinopathy/){target="_blank" rel="noopener"}.
 :::
@@ -37,7 +42,7 @@ further review, and people who may need treatment are referred for clinical
 assessment.
 
 ::: {#fig-retinal-motivation}
-![](../assets/images/research/fives-214d-blobs-loops.png){fig-alt="A colour retinal fundus photograph with two boxed regions enlarged alongside it. One enlargement marks a red lesion as a connected blob; the other marks several loops in the retinal vasculature." width="92%"}
+![](../assets/images/research/fives-214d-blobs-loops.webp){fig-alt="A colour retinal fundus photograph with two boxed regions enlarged alongside it. One enlargement marks a red lesion as a connected blob; the other marks several loops in the retinal vasculature." width=900 height=439 style="width:92%" loading="lazy" decoding="async"}
 
 A diabetic-retinopathy fundus image, annotated for my thesis to enlarge a connected lesion and examples of vascular loops. Source: image `214_D` from the [FIVES fundus-image dataset](https://doi.org/10.1038/s41597-022-01564-3){target="_blank" rel="noopener"}; reused and adapted under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/){target="_blank" rel="noopener"}.
 :::
@@ -81,7 +86,7 @@ even when the underlying subject had changed very little. My
 described this behaviour as *grid shattering*.
 
 ::: {#fig-grid-shattering}
-![](../assets/images/research/grid-shattering-abstract.png){fig-alt="Four-panel schematic of a continuous retinal vascular loop and its sampled pixel representation. When aligned, the sampled pixels retain an intact loop. After a slight rotation and resampling, the same underlying vascular structure becomes fragmented on the pixel grid." width="100%"}
+![](../assets/images/research/grid-shattering-abstract.webp){fig-alt="Four-panel schematic of a continuous retinal vascular loop and its sampled pixel representation. When aligned, the sampled pixels retain an intact loop. After a slight rotation and resampling, the same underlying vascular structure becomes fragmented on the pixel grid." width=1254 height=1254 style="width:100%" loading="lazy" decoding="async"}
 
 A schematic DR-related vascular loop used to illustrate grid shattering. Above, alignment with the sampling grid preserves one cubical loop. Below, a small rotation followed by resampling fragments the pixel representation and destroys the detected loop, even though the underlying continuous vascular structure has not changed.
 :::

@@ -1,17 +1,22 @@
 project:
   type: website
+  post-render:
+    - scripts/normalize-pretty-urls.sh
   render:
     - "*.qmd"
     - "**/*.qmd"
     - "!source-material/**"
   resources:
     - about.html
+    - computational-topology/index.html
+    - mathematics/year-4-h1/index.html
     - mmw/index.html
 
 website:
   title: "RJ Nieto"
   site-url: "https://rjnieto.com"
-  description: "The personal website of Rey Joseph Nieto, featuring mathematics, research, teaching, writing, and professional work."
+  description: "The personal website of Rey Joseph Nieto, featuring public service, mathematics, research, teaching, and writing."
+  image: /assets/images/rey-joseph-nieto-social-preview.png
   favicon: assets/branding/rj-logo.png
   open-graph:
     site-name: "RJ Nieto"
@@ -19,6 +24,7 @@ website:
   twitter-card:
     creator: "@rjosephnieto"
     site: "@rjosephnieto"
+    card-style: summary_large_image
 
   navbar:
     background: light
@@ -53,6 +59,8 @@ format:
     theme: cosmo
     css: styles.css
     include-in-header: includes/identity-metadata.html
+    include-before-body: includes/accessibility-before-body.html
+    include-after-body: includes/accessibility-after-body.html
     toc: true
     toc-depth: 3
     code-copy: true
@@ -63,3 +71,8 @@ execute:
   freeze: auto
 
 lang: en-GB
+
+# Keep page descriptions in search and social metadata without repeating them
+# in the visible title block.
+hide-description: true
+canonical-url: true

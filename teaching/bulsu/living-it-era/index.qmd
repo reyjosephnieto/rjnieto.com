@@ -1,7 +1,14 @@
 ---
 title: "Living in the IT Era"
 subtitle: "Bulacan State University<br><em>San Rafael Campus</em>"
-description-meta: "Lecture notes, exercises, course information, and class policies for Living in the IT Era, prepared primarily for first-year BS Biology students."
+description: "Lecture notes, exercises, course information, and class policies for Living in the IT Era, prepared primarily for first-year BS Biology students."
+image: "/assets/images/rey-joseph-nieto-social-preview.png"
+image-alt: "Portrait of Rey Joseph RJ Nieto on an ivory background with burgundy analytical motifs"
+canonical-url: "https://rjnieto.com/teaching/bulsu/living-it-era/"
+header-includes: |
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta property="og:url" content="https://rjnieto.com/teaching/bulsu/living-it-era/">
+  <meta property="og:type" content="article">
 toc: true
 ---
 

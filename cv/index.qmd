@@ -1,54 +1,62 @@
 ---
-title: "Curriculum Vitae"
-subtitle: "Rey Joseph \"RJ\" Nieto"
-description-meta: "The curriculum vitae of Rey Joseph Nieto, covering mathematics, quantitative research, university teaching, journalism, and strategic communications in the Philippines."
+title: "Rey Joseph \"RJ\" Nieto"
+subtitle: "Curriculum Vitae"
+pagetitle: "Rey Joseph \"RJ\" Nieto – Curriculum Vitae"
+title-prefix: ""
+description: "Curriculum vitae of Rey Joseph “RJ” Nieto, Assistant Secretary for Policy Analytics and Technical Assessment."
+image: "../assets/images/rey-joseph-nieto-social-preview.png"
+image-alt: "Portrait of Rey Joseph RJ Nieto on an ivory background with burgundy analytical motifs"
+canonical-url: "https://rjnieto.com/cv/"
+header-includes: |
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta property="og:url" content="https://rjnieto.com/cv/">
+  <meta property="og:type" content="profile">
+  <meta property="profile:first_name" content="Rey Joseph">
+  <meta property="profile:last_name" content="Nieto">
+  <meta property="profile:username" content="rjosephnieto">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": "https://rjnieto.com/cv/#webpage",
+    "url": "https://rjnieto.com/cv/",
+    "name": "Rey Joseph “RJ” Nieto – Curriculum Vitae",
+    "description": "Curriculum vitae of Rey Joseph “RJ” Nieto, Assistant Secretary for Policy Analytics and Technical Assessment.",
+    "inLanguage": "en-GB",
+    "about": { "@id": "https://rjnieto.com/#rey-joseph-nieto" },
+    "primaryImageOfPage": {
+      "@type": "ImageObject",
+      "url": "https://rjnieto.com/assets/images/rey-joseph-nieto-social-preview.png",
+      "width": 1200,
+      "height": 630,
+      "caption": "Portrait of Rey Joseph RJ Nieto"
+    }
+  }
+  </script>
 toc: true
 toc-depth: 2
 ---
 
-## Contact
+Public servant and mathematician with a background in quantitative research,
+university teaching, journalism, and strategic communications.
 
-- **UCL email:** rey (dot) nieto (dot) 26 (at) ucl (dot) ac (dot) uk
-- **Bristol alumni email:** zo23232 (at) alumni (dot) bristol (dot) ac (dot) uk
-- **Personal email:** rj (at) rjnieto (dot) com
-- **LinkedIn:** [linkedin.com/in/rjosephnieto](https://www.linkedin.com/in/rjosephnieto/)
-
-## Education
-
-### MSc Science, Technology, Engineering and Public Policy
-
-**[University College London
-(UCL)](https://www.ucl.ac.uk/prospective-students/graduate/taught-degrees/science-technology-engineering-and-public-policy-msc){.cv-institution}** ·
-*London, United Kingdom*<br>
-September 2026–Present
-
-This flexible distance-learning programme examines how scientific and
-technical evidence informs public policy, including emerging technologies,
-risk, and responsible AI.
-
-### BSc Mathematics, First Class Honours
-
-**[University of Bristol](https://www.bristol.ac.uk/){.cv-institution}** ·
-*Bristol, United Kingdom*<br>
-September 2023–June 2026
-
-Selected advanced study included persistent homology and algebraic stability;
-Gödel's incompleteness theorems; group actions and Sylow's theorems;
-combinatorics and graph theory; Jordan and Smith normal forms; metric-space
-topology; and martingales and Brownian motion.
-
-Selected computational study included generalised linear models; statistical
-machine learning; neural networks and LLMs; convex duality; dynamic
-programming; and cryptography. I also completed a 40-credit Economics unit in
-microeconomics and macroeconomics.
-
-### Foundation Certificate in Business, Law and Social Sciences, Distinction
-
-**[Kaplan International College London](https://www.kaplanpathways.com/where-to-study/kaplan-international-college-london/){.cv-institution}** ·
-*London, United Kingdom*<br>
-March–August 2023
+**Email:** rj (at) rjnieto (dot) com ·
+**LinkedIn:** [linkedin.com/in/rjosephnieto](https://www.linkedin.com/in/rjosephnieto/){target="_blank" rel="noopener"}
 
 ## Professional experience
+
+### Assistant Secretary for Policy Analytics and Technical Assessment
+
+**Office of the Cabinet Secretary**<br>
+**Office of the President of the Philippines**<br>
+*Manila, Philippines*<br>
+September 2026–Present
+
+I provide the Cabinet Secretary with evidence-based analysis of selected policy
+and implementation issues, drawing on government data, programme results,
+implementation gaps, risks, and cross-agency concerns. I prepare concise policy
+briefs, technical assessments, options, and recommendations, using quantitative
+analysis, interagency consultation, and field validation where appropriate.
 
 ### Opinion Columnist
 
@@ -138,6 +146,39 @@ and energy-sector clients; completed writing and editing assignments for more
 than 30 clients across North America, Europe, and Australia; and reported on
 government and community affairs.
 
+## Education
+
+### MSc Science, Technology, Engineering and Public Policy
+
+**[University College London
+(UCL)](https://www.ucl.ac.uk/prospective-students/graduate/taught-degrees/science-technology-engineering-and-public-policy-msc){.cv-institution target="_blank" rel="noopener"}** ·
+*London, United Kingdom*<br>
+September 2026–Present
+
+This flexible distance-learning programme examines how scientific and
+technical evidence informs public policy, including emerging technologies,
+risk, and responsible AI.
+
+### BSc Mathematics with First Class Honours
+
+**[University of Bristol](https://www.bristol.ac.uk/){.cv-institution target="_blank" rel="noopener"}** ·
+*Bristol, United Kingdom*<br>
+September 2023–June 2026
+
+Selected advanced and computational study included persistent homology and
+algebraic stability; mathematical logic and group theory; combinatorics, graph
+theory, and linear algebra; metric-space topology and stochastic processes;
+generalised linear models and statistical machine learning; neural networks and
+large language models; optimisation and dynamic programming; and cryptography.
+I also completed a 40-credit Economics unit in microeconomics and
+macroeconomics.
+
+### Foundation Certificate in Business, Law and Social Sciences, Distinction
+
+**[Kaplan International College London](https://www.kaplanpathways.com/where-to-study/kaplan-international-college-london/){.cv-institution target="_blank" rel="noopener"}** ·
+*London, United Kingdom*<br>
+March–August 2023
+
 ## Selected technical and research projects
 
 ### Computational Stability of Cubical Homology
@@ -146,10 +187,11 @@ government and community affairs.
 
 I developed and tested a reproducible, parallelised Python pipeline for
 cubical persistent homology on 400 retinal images across ten perturbation
-protocols and 170 settings, separating spatial misalignment from sensor
-corruption for fault isolation in human-led diagnostic workflows.
+protocols and 170 settings. The study examined whether contrasting topological
+and geometric response profiles could help distinguish spatial misalignment
+from radiometric corruption.
 
-[View the public dissertation and implementation](https://github.com/reyjosephnieto/ph).
+[View the public dissertation and implementation](https://github.com/reyjosephnieto/ph){target="_blank" rel="noopener"}.
 
 ### Cryptographic Implementation and Security Analysis
 
@@ -179,3 +221,10 @@ model for future cohorts.
   Ripser)
 - **Development and publishing:** Git/GitHub, Quarto, and LaTeX
 - **Spoken languages:** English and Tagalog (fluent)
+
+## Contact
+
+- **Preferred email:** rj (at) rjnieto (dot) com
+- **UCL email:** rey (dot) nieto (dot) 26 (at) ucl (dot) ac (dot) uk
+- **Bristol alumni email:** zo23232 (at) alumni (dot) bristol (dot) ac (dot) uk
+- **LinkedIn:** [linkedin.com/in/rjosephnieto](https://www.linkedin.com/in/rjosephnieto/){target="_blank" rel="noopener"}

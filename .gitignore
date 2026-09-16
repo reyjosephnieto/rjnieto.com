@@ -7,3 +7,10 @@
 /source-material/
 **/*.quarto_ipynb
 .DS_Store
+
+# Private draft papers, bibliographies, and assessment material.
+/cif_receipts_white_paper.*
+/ref.bib
+/simple_math_paper.*
+/teaching/bulsu/living-it-era/exam/
+/teaching/bulsu/math-modern-world/exam/

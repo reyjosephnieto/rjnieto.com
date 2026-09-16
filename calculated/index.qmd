@@ -1,7 +1,14 @@
 ---
 title: "Calculated"
 subtitle: "Essays and commentary for the Manila Bulletin"
-description-meta: "Calculated, RJ Nieto's Manila Bulletin column, with essays on public affairs, policy, society, and contemporary life."
+description: "Calculated, RJ Nieto's Manila Bulletin column, with essays on public affairs, policy, society, and contemporary life."
+image: "/assets/images/rey-joseph-nieto-social-preview.png"
+image-alt: "Portrait of Rey Joseph RJ Nieto on an ivory background with burgundy analytical motifs"
+canonical-url: "https://rjnieto.com/calculated/"
+header-includes: |
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta property="og:url" content="https://rjnieto.com/calculated/">
+  <meta property="og:type" content="website">
 toc: false
 ---
 
