@@ -245,6 +245,11 @@ img.profile-photo {
   border-radius: 50%;
 }
 
+.quarto-figure .figure-img {
+  max-width: 100%;
+  height: auto;
+}
+
 .social-links {
   display: flex;
   flex-direction: column;
