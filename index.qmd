@@ -54,9 +54,9 @@ toc: false
 ::: {.home-intro-copy}
 I serve as Assistant Secretary for Policy Analytics and Technical Assessment in
 the Office of the Cabinet Secretary, Office of the President of the Philippines.
-My work focuses on evidence-based analysis of policy and implementation issues
-and the preparation of policy briefs, technical assessments, options, and
-recommendations.
+The Office of the Cabinet Secretary is tasked with monitoring the implementation
+of government programmes and helping to ensure that public services reach the
+people for whom they are intended.
 
 I hold a BSc in Mathematics with First Class Honours from the [University of
 Bristol](https://www.bristol.ac.uk/){target="_blank" rel="noopener"} and am pursuing an MSc in Science,
