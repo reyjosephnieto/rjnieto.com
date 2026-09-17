@@ -15,7 +15,7 @@ project:
 website:
   title: "RJ Nieto"
   site-url: "https://rjnieto.com"
-  description: "The personal website of Rey Joseph Nieto, featuring public service, mathematics, research, teaching, and writing."
+  description: "The personal website of Rey Joseph Nieto, featuring public service, teaching, writing, and independent mathematics, AI, and machine-learning research as a hobby."
   image: /assets/images/rey-joseph-nieto-social-preview.png
   favicon: assets/branding/rj-logo.png
   open-graph:
@@ -31,6 +31,8 @@ website:
     left:
       - href: index.qmd
         text: Home
+      - href: cv/index.qmd
+        text: CV
       - text: Teaching
         menu:
           - href: teaching/index.qmd
@@ -42,9 +44,7 @@ website:
       - href: calculated/index.qmd
         text: Writing
       - href: research/index.qmd
-        text: Research
-      - href: cv/index.qmd
-        text: CV
+        text: Hobby
 
   page-navigation: true
   back-to-top-navigation: true

@@ -1,7 +1,7 @@
 ---
-title: "Current Research"
-subtitle: "Mathematical foundations for reliable image analysis"
-description: "RJ Nieto's current research and independent study in the mathematics of stability, uncertainty and image analysis."
+title: "Hobby"
+subtitle: "Independent mathematics, AI, and machine-learning research"
+description: "RJ Nieto's hobby is independent mathematics, artificial intelligence, and machine-learning research."
 image: "/assets/images/research/diabetic-retinopathy-visual-field.webp"
 image-alt: "A clear view of children playing football beside a blurred and obscured view representing possible sight loss"
 canonical-url: "https://rjnieto.com/research/"
@@ -13,14 +13,15 @@ toc: true
 toc-depth: 2
 ---
 
-My current research asks a practical question: when an image is blurred,
-rotated, resized, poorly exposed, or corrupted by sensor noise, how does the
-information extracted by a computer change? I want to understand whether the
-pattern of those changes can help identify what went wrong during acquisition.
-This is independent research continuing the work begun in my University of
-Bristol final-year dissertation.
+My hobby is independent mathematics, artificial intelligence, and
+machine-learning research. My current project asks a practical question: when
+an image is blurred, rotated, resized, poorly exposed, or corrupted by sensor
+noise, how does the information extracted by a computer change? I want to
+understand whether the pattern of those changes can help identify what went
+wrong during acquisition. This project continues the work begun in my
+University of Bristol final-year dissertation.
 
-## The initial motivation
+## Retinal imaging and diabetic retinopathy
 
 My interest in retinal imaging has a personal origin in an experience with
 diabetic retinopathy. It led me to take a particular interest in the reliability
@@ -29,11 +30,11 @@ of retinal-image analysis.
 ::: {#fig-dr-visual-field}
 ![](../assets/images/research/diabetic-retinopathy-visual-field.webp){fig-alt="Two illustrated views of the same children playing football in a park, as if seen by a parent. The first is clear. The second is blurred and partly obscured by soft dark patches and floaters to suggest one possible experience of sight loss associated with advanced diabetic retinopathy." width=1536 height=1024 style="width:100%"}
 
-An illustration of what is at stake: being able to see ordinary moments as children grow up. The second view represents one possible experience of sight loss associated with advanced diabetic retinopathy. The condition usually has no noticeable symptoms at first, and its later effects on vision vary. This is an explanatory illustration, not a clinical simulation. See the [NHS overview of diabetic retinopathy](https://www.nhs.uk/conditions/diabetic-retinopathy/){target="_blank" rel="noopener"}.
+An ordinary moment as children grow up. The second view represents one possible experience of sight loss associated with advanced diabetic retinopathy. The condition usually has no noticeable symptoms at first, and its later effects on vision vary. This is an explanatory illustration, not a clinical simulation. See the [NHS overview of diabetic retinopathy](https://www.nhs.uk/conditions/diabetic-retinopathy/){target="_blank" rel="noopener"}.
 :::
 
-The NHS Diabetic Eye Screening Programme shows why this problem matters.
-Fundus photographs are assessed against defined
+The NHS Diabetic Eye Screening Programme offers a practical setting for this
+question. Fundus photographs are assessed against defined
 [feature-based criteria](https://www.gov.uk/government/publications/diabetic-eye-screening-retinal-image-grading-criteria){target="_blank" rel="noopener"}
 within a structured
 [grading and referral pathway](https://www.gov.uk/government/publications/diabetic-eye-screening-pathway-requirements-specification/diabetic-eye-screening-pathway-requirements-specification){target="_blank" rel="noopener"}.
@@ -114,7 +115,7 @@ cubical-persistence pipeline as a possible signal for a coarse fault-isolation
 heuristic. The code and supporting material are available in the project's
 [GitHub repository](https://github.com/reyjosephnieto/ph){target="_blank" rel="noopener"}.
 
-### Why I am returning to it
+### Questions left by the dissertation
 
 The thesis was completed over four months. That was enough to establish and
 test the framework, but not to exhaust the questions it raised. The
@@ -139,7 +140,7 @@ arise in industrial inspection and other computer-vision systems. My earlier
 experiments were confined to retinal images, so industrial applications remain
 a direction for further work.
 
-## Where the work is heading
+## Current focus
 
 I am continuing to develop the mathematical foundations of this work, with a
 particular interest in making the system's behaviour more explainable. Broadly,

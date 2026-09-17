@@ -3,7 +3,7 @@ title: "Rey Joseph \"RJ\" Nieto"
 subtitle: "Curriculum Vitae"
 pagetitle: "Rey Joseph \"RJ\" Nieto – Curriculum Vitae"
 title-prefix: ""
-description: "Curriculum vitae of Rey Joseph “RJ” Nieto, Assistant Secretary for Policy Analytics and Technical Assessment."
+description: "Curriculum vitae of Rey Joseph “RJ” Nieto, Assistant Secretary."
 image: "../assets/images/rey-joseph-nieto-social-preview.png"
 image-alt: "Portrait of Rey Joseph RJ Nieto on an ivory background with burgundy analytical motifs"
 canonical-url: "https://rjnieto.com/cv/"
@@ -21,7 +21,7 @@ header-includes: |
     "@id": "https://rjnieto.com/cv/#webpage",
     "url": "https://rjnieto.com/cv/",
     "name": "Rey Joseph “RJ” Nieto – Curriculum Vitae",
-    "description": "Curriculum vitae of Rey Joseph “RJ” Nieto, Assistant Secretary for Policy Analytics and Technical Assessment.",
+    "description": "Curriculum vitae of Rey Joseph “RJ” Nieto, Assistant Secretary.",
     "inLanguage": "en-GB",
     "about": { "@id": "https://rjnieto.com/#rey-joseph-nieto" },
     "primaryImageOfPage": {
@@ -45,7 +45,7 @@ university teaching, journalism, and strategic communications.
 
 ## Professional experience
 
-### Assistant Secretary for Policy Analytics and Technical Assessment
+### Assistant Secretary
 
 **Office of the Cabinet Secretary**<br>
 **Office of the President of the Philippines**<br>

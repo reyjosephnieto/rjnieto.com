@@ -2,7 +2,7 @@
 title: "Rey Joseph \"RJ\" Nieto"
 pagetitle: "Rey Joseph \"RJ\" Nieto"
 title-prefix: ""
-description: "Rey Joseph “RJ” Nieto is Assistant Secretary for Policy Analytics and Technical Assessment in the Office of the Cabinet Secretary, Philippines."
+description: "Rey Joseph “RJ” Nieto is Assistant Secretary in the Office of the Cabinet Secretary, Philippines."
 image: "assets/images/rey-joseph-nieto-social-preview.png"
 image-alt: "Portrait of Rey Joseph RJ Nieto on an ivory background with burgundy analytical motifs"
 canonical-url: "https://rjnieto.com/"
@@ -23,7 +23,7 @@ header-includes: |
         "url": "https://rjnieto.com/",
         "name": "RJ Nieto",
         "alternateName": ["Rey Joseph Nieto", "Rey Joseph “RJ” Nieto", "rjnieto.com"],
-        "description": "The personal website of Rey Joseph Nieto, featuring public service, mathematics, research, teaching, and writing.",
+      "description": "The personal website of Rey Joseph Nieto, featuring public service, teaching, writing, and independent mathematics, AI, and machine-learning research as a hobby.",
         "inLanguage": "en-GB",
         "author": { "@id": "https://rjnieto.com/#rey-joseph-nieto" }
       },
@@ -32,7 +32,7 @@ header-includes: |
         "@id": "https://rjnieto.com/#profile-page",
         "url": "https://rjnieto.com/",
         "name": "Rey Joseph “RJ” Nieto",
-        "description": "Rey Joseph “RJ” Nieto is Assistant Secretary for Policy Analytics and Technical Assessment in the Office of the Cabinet Secretary, Philippines.",
+        "description": "Rey Joseph “RJ” Nieto is Assistant Secretary in the Office of the Cabinet Secretary, Philippines.",
         "inLanguage": "en-GB",
         "isPartOf": { "@id": "https://rjnieto.com/#website" },
         "mainEntity": { "@id": "https://rjnieto.com/#rey-joseph-nieto" },
@@ -52,11 +52,10 @@ toc: false
 
 ::: {.home-intro}
 ::: {.home-intro-copy}
-I serve as Assistant Secretary for Policy Analytics and Technical Assessment in
-the Office of the Cabinet Secretary, Office of the President of the Philippines.
-The Office of the Cabinet Secretary is tasked with monitoring the implementation
-of government programmes and helping to ensure that public services reach the
-people for whom they are intended.
+I serve as Assistant Secretary in the Office of the Cabinet Secretary, under the
+Office of the President of the Philippines. The office monitors the
+implementation of government programmes and helps ensure that public services
+reach their intended beneficiaries.
 
 I hold a BSc in Mathematics with First Class Honours from the [University of
 Bristol](https://www.bristol.ac.uk/){target="_blank" rel="noopener"} and am pursuing an MSc in Science,
@@ -86,12 +85,13 @@ I write [*Calculated*](calculated/index.qmd), a weekly Saturday column for the
 archive](https://mb.com.ph/author/rj-nieto){target="_blank" rel="noopener"}
 provides links to the published essays.
 
-## Research
+## Hobby
 
-My [independent research](research/index.qmd) asks how image-analysis methods
-respond when images are rotated, resized, poorly exposed, or degraded by sensor
-noise, and whether those response patterns can help identify acquisition
-problems. The work continues my University of Bristol dissertation,
+My hobby is [independent mathematics, artificial intelligence, and
+machine-learning research](research/index.qmd). My current project asks how
+image-analysis methods respond when images are rotated, resized, poorly
+exposed, or degraded by sensor noise, and whether those response patterns can
+help identify acquisition problems. The work continues my University of Bristol dissertation,
 *Computational Stability of Cubical Homology*; the
 [thesis](https://github.com/reyjosephnieto/ph/blob/main/Nieto_TDA_Public_20260430.pdf){target="_blank" rel="noopener"}
 and [Python implementation](https://github.com/reyjosephnieto/ph){target="_blank" rel="noopener"}
