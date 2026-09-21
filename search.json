@@ -24,14 +24,21 @@
     "href" : "teaching/bulsu/living-it-era/#logistics",
     "objectID" : "teaching/bulsu/living-it-era/index.html#logistics",
     "section" : "Logistics",
-    "text" : "Logistics\nCourse title: Living in the IT Era Course number: MST 101d Term: First Semester, A.Y. 2026–2027 Instructor’s name: Rey Joseph Nieto Email: rj (at) rjnieto (dot) com (for questions or inquiries related to the course)\nClass schedules, rooms, assessment dates, consultation arrangements, and course updates are communicated through official class channels.",
+    "text" : "Logistics\nCourse title: Living in the IT Era Course number: MST 101d Term: First Semester, A.Y. 2026–2027 Instructor’s name: Rey Joseph Nieto Email: rj (at) rjnieto (dot) com (for questions or inquiries related to the course)\nRooms, consultation arrangements, and any changes to the schedule below are communicated through official class channels.",
+    "title" : "Living in the IT Era"
+  },
+  {
+    "href" : "teaching/bulsu/living-it-era/#course-schedule",
+    "objectID" : "teaching/bulsu/living-it-era/index.html#course-schedule",
+    "section" : "Course schedule",
+    "text" : "Course schedule\n\n\n\n\n\n\n\n\nDate\nTopic\nAssessment\n\n\n\n\n12 September 2026\nMidterm Revision\n—\n\n\n19 September 2026\nMidterm Exam\n—\n\n\n26 September 2026\nSoftware, Cloud Services, and Digital Work\n—\n\n\n3 October 2026\nDigital Platforms, Information, and Online Life\nShort quiz\n\n\n10 October 2026\nSecurity, Identity, Privacy, and Cybercrime\nShort quiz\n\n\n17 October 2026\nArtificial Intelligence: How It Works and Fails\nShort quiz\n\n\n24 October 2026\nResponsible AI and the Future of Computing\nShort quiz\n\n\n31 October 2026\nFinals Revision\nLong quiz\n\n\n7 November 2026\n—\nFinal Exam",
     "title" : "Living in the IT Era"
   },
   {
     "href" : "teaching/bulsu/living-it-era/#printable-lecture-notes",
     "objectID" : "teaching/bulsu/living-it-era/index.html#printable-lecture-notes",
     "section" : "Printable lecture notes",
-    "text" : "Printable lecture notes\nThe current release contains the Introduction and Chapters 1–3. Further chapters will be added as the course progresses.\nOpen the MST 101d lecture notes\nCurrent version: 25 August 2026",
+    "text" : "Printable lecture notes\nThe current release contains the Introduction and Chapters 1–5. Further chapters will be added as the course progresses.\nOpen the MST 101d lecture notes\nCurrent version: 21 September 2026",
     "title" : "Living in the IT Era"
   },
   {
@@ -80,7 +87,7 @@
     "href" : "calculated/",
     "objectID" : "calculated/index.html",
     "section" : "",
-    "text" : "Skip to main content\n\n\n\n\nThe column appears in the Manila Bulletin every Saturday. The entries below link to individual columns; the newspaper also maintains an author archive.\nView the Manila Bulletin archive\n\n\nThere’s something about Alex\n5 September 2026 · Manila Bulletin\n\nAlex(andra Eala) seems remarkably composed through all of it. She speaks carefully about representing the Philippines and about staying herself despite the attention. Frankly, I find that a little embarrassing. I did not have that kind of self-awareness at her age. I am not sure I had it even much later, when I already had an audience of my own.\nRead more\n\n\n\n\n\n\n Back to top",
+    "text" : "Skip to main content\n\n\n\n\nThe column appears in the Manila Bulletin every Saturday. The entries below link to individual columns; the newspaper also maintains an author archive.\nView the Manila Bulletin archive\n\n\nCan the world even afford an AI apocalypse?\n19 September 2026 · Manila Bulletin\n\nThe lever is not merely unaffordable; under the present AI paradigm, it may not yet exist. Smaller models that run locally remain useful, and a new architecture may offer a better path. What remains doubtful is whether today’s large language models can become superintelligent simply by feeding them ever more chips, electricity, and capital.\nRead more\n\n\n\nInjecting more diskarte into the diploma\n12 September 2026 · Manila Bulletin\n\nDoes entering adulthood really have to involve this much guesswork? We often say education prepares students for life. Perhaps that preparation can include practical matters such as opening a bank account, reading a payslip, dealing with government agencies, and starting a small business.\nRead more\n\n\n\nThere’s something about Alex\n5 September 2026 · Manila Bulletin\n\nAlex(andra Eala) seems remarkably composed through all of it. She speaks carefully about representing the Philippines and about staying herself despite the attention. Frankly, I find that a little embarrassing. I did not have that kind of self-awareness at her age. I am not sure I had it even much later, when I already had an audience of my own.\nRead more\n\n\n\n\n\n\n Back to top",
     "title" : "Calculated"
   },
   {
@@ -157,7 +164,14 @@
     "href" : "teaching/bulsu/math-modern-world/#logistics",
     "objectID" : "teaching/bulsu/math-modern-world/index.html#logistics",
     "section" : "Logistics",
-    "text" : "Logistics\nCourse title: Mathematics in the Modern World Course number: MMW 101 Term: First Semester, A.Y. 2026–2027 Instructor’s name: Rey Joseph Nieto Email: rj (at) rjnieto (dot) com (for questions or inquiries related to the course)\nClass schedules, rooms, assessment dates, consultation arrangements, and course updates are communicated through official class channels.",
+    "text" : "Logistics\nCourse title: Mathematics in the Modern World Course number: MMW 101 Term: First Semester, A.Y. 2026–2027 Instructor’s name: Rey Joseph Nieto Email: rj (at) rjnieto (dot) com (for questions or inquiries related to the course)\nRooms, consultation arrangements, and course updates are communicated through official class channels.",
+    "title" : "Mathematics in the Modern World"
+  },
+  {
+    "href" : "teaching/bulsu/math-modern-world/#schedule",
+    "objectID" : "teaching/bulsu/math-modern-world/index.html#schedule",
+    "section" : "Schedule",
+    "text" : "Schedule\n\n\n\nDate\nTopic\nAssessments\n\n\n\n\n9/12/2026\nMidterm Revision\n\n\n\n9/19/2026\nMidterm Exam\n\n\n\n9/26/2026\nReasoning, Evidence, and Proof\n\n\n\n10/3/2026\nProbability and Statistics\nShort quiz\n\n\n10/10/2026\nInterest, Credit, and Consumer Loans\nShort quiz\n\n\n10/17/2026\nInvestments and Home Ownership\nShort quiz\n\n\n10/24/2026\nMathematics of Graphs\nShort quiz\n\n\n10/31/2026\nFinals Revision\nLong quiz\n\n\n11/7/2026\n\nFinal Exam\n\n\n\nEach short quiz covers the topic taught in the preceding class. For example, the short quiz on 3 October covers Reasoning, Evidence, and Proof.",
     "title" : "Mathematics in the Modern World"
   },
   {
