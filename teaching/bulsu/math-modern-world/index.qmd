@@ -52,8 +52,25 @@ mistakes.
 **Email:** rj (at) rjnieto (dot) com (for questions or
 inquiries related to the course)
 
-Class schedules, rooms, assessment dates, consultation arrangements, and
-course updates are communicated through official class channels.
+Rooms, consultation arrangements, and course updates are communicated through
+official class channels.
+
+## Schedule
+
+| Date       | Topic                                | Assessments |
+|------------|--------------------------------------|-------------|
+| 9/12/2026  | Midterm Revision                     |             |
+| 9/19/2026  | Midterm Exam                         |             |
+| 9/26/2026  | Reasoning, Evidence, and Proof       |             |
+| 10/3/2026  | Probability and Statistics           | Short quiz  |
+| 10/10/2026 | Interest, Credit, and Consumer Loans | Short quiz  |
+| 10/17/2026 | Investments and Home Ownership       | Short quiz  |
+| 10/24/2026 | Mathematics of Graphs                | Short quiz  |
+| 10/31/2026 | Finals Revision                      | Long quiz   |
+| 11/7/2026  |                                      | Final Exam  |
+
+*Each short quiz covers the topic taught in the preceding class. For example,
+the short quiz on 3 October covers Reasoning, Evidence, and Proof.*
 
 ## Printable lecture notes
 

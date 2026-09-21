@@ -20,6 +20,37 @@ link to individual columns; the newspaper also maintains an
 
 ::: {.calculated-archive}
 ::: {.calculated-entry}
+### [Can the world even afford an AI apocalypse?](https://mb.com.ph/2026/09/18/can-the-world-even-afford-an-ai-apocalypse){target="_blank" rel="noopener"}
+
+19 September 2026 · *Manila Bulletin*
+
+::: {.calculated-excerpt}
+The lever is not merely unaffordable; under the present AI paradigm, it may not
+yet exist. Smaller models that run locally remain useful, and a new architecture
+may offer a better path. What remains doubtful is whether today’s large language
+models can become superintelligent simply by feeding them ever more chips,
+electricity, and capital.
+
+[Read more](https://mb.com.ph/2026/09/18/can-the-world-even-afford-an-ai-apocalypse){.btn .btn-outline-primary .btn-sm .calculated-read-more target="_blank" rel="noopener"}
+:::
+:::
+
+::: {.calculated-entry}
+### [Injecting more diskarte into the diploma](https://mb.com.ph/2026/09/12/injecting-more-diskarte-into-the-diploma){target="_blank" rel="noopener"}
+
+12 September 2026 · *Manila Bulletin*
+
+::: {.calculated-excerpt}
+Does entering adulthood really have to involve this much guesswork? We often
+say education prepares students for life. Perhaps that preparation can include
+practical matters such as opening a bank account, reading a payslip, dealing
+with government agencies, and starting a small business.
+
+[Read more](https://mb.com.ph/2026/09/12/injecting-more-diskarte-into-the-diploma){.btn .btn-outline-primary .btn-sm .calculated-read-more target="_blank" rel="noopener"}
+:::
+:::
+
+::: {.calculated-entry}
 ### [There's something about Alex](https://mb.com.ph/2026/09/05/theres-something-about-alex){target="_blank" rel="noopener"}
 
 5 September 2026 · *Manila Bulletin*

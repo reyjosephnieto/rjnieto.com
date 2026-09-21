@@ -42,17 +42,31 @@ students' questions, suggestions, and practical needs.
 **Email:** rj (at) rjnieto (dot) com (for questions or inquiries related to
 the course)
 
-Class schedules, rooms, assessment dates, consultation arrangements, and
-course updates are communicated through official class channels.
+Rooms, consultation arrangements, and any changes to the schedule below are
+communicated through official class channels.
+
+## Course schedule
+
+| Date | Topic | Assessment |
+|---|---|---|
+| 12 September 2026 | Midterm Revision | — |
+| 19 September 2026 | Midterm Exam | — |
+| 26 September 2026 | Software, Cloud Services, and Digital Work | — |
+| 3 October 2026 | Digital Platforms, Information, and Online Life | Short quiz |
+| 10 October 2026 | Security, Identity, Privacy, and Cybercrime | Short quiz |
+| 17 October 2026 | Artificial Intelligence: How It Works and Fails | Short quiz |
+| 24 October 2026 | Responsible AI and the Future of Computing | Short quiz |
+| 31 October 2026 | Finals Revision | Long quiz |
+| 7 November 2026 | — | Final Exam |
 
 ## Printable lecture notes
 
-The current release contains the Introduction and Chapters 1--3. Further
+The current release contains the Introduction and Chapters 1--5. Further
 chapters will be added as the course progresses.
 
-[Open the MST 101d lecture notes](lecture-notes/MST101d_Lecture_Notes_20260825.pdf){.btn .btn-primary target="_blank" rel="noopener"}
+[Open the MST 101d lecture notes](lecture-notes/MST101d_Lecture_Notes_20260921.pdf){.btn .btn-primary target="_blank" rel="noopener"}
 
-*Current version: 25 August 2026*
+*Current version: 21 September 2026*
 
 ## How classes will work
 
