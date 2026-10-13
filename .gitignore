@@ -3,8 +3,11 @@
 /.vscode/
 /README.md
 /codex_*
+# Local reference repositories used for analysis; never commit them here.
+/local-repos/
 # Private working notes, source files, books, and project context.
 /source-material/
+/columns/
 **/*.quarto_ipynb
 .DS_Store
 
@@ -13,3 +16,5 @@
 /cif_receipts_white_paper.*
 /ref.bib
 /simple_math_paper.*
+/ocs/
+/openAI/

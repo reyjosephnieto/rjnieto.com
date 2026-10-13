@@ -57,20 +57,17 @@ official class channels.
 
 ## Schedule
 
-| Date       | Topic                                | Assessments |
-|------------|--------------------------------------|-------------|
-| 9/12/2026  | Midterm Revision                     |             |
-| 9/19/2026  | Midterm Exam                         |             |
-| 9/26/2026  | Reasoning, Evidence, and Proof       |             |
-| 10/3/2026  | Probability and Statistics           | Short quiz  |
-| 10/10/2026 | Interest, Credit, and Consumer Loans | Short quiz  |
-| 10/17/2026 | Investments and Home Ownership       | Short quiz  |
-| 10/24/2026 | Mathematics of Graphs                | Short quiz  |
-| 10/31/2026 | Finals Revision                      | Long quiz   |
-| 11/7/2026  |                                      | Final Exam  |
-
-*Each short quiz covers the topic taught in the preceding class. For example,
-the short quiz on 3 October covers Reasoning, Evidence, and Proof.*
+| Date | Topic |
+| ------------ | -------------------------------------- |
+| 9/12/2026 | Midterm Revision |
+| 9/19/2026 | Midterm Exam |
+| 9/26/2026 | Reasoning, Evidence, and Proof |
+| 10/3/2026 | Probability and Statistics |
+| 10/10/2026 | Interest, Credit, and Consumer Loans |
+| 10/17/2026 | Investments and Home Ownership |
+| 10/24/2026 | Mathematics of Graphs |
+| 10/31/2026 | Finals Revision |
+| 11/7/2026 | Final Exam |
 
 ## Printable lecture notes
 
@@ -79,6 +76,10 @@ The current version of the complete lecture notes is available as a PDF.
 [Open the MMW 101 lecture notes](lecture-notes/MMW101_Lecture_Notes_20260822.pdf){.btn .btn-primary target="_blank" rel="noopener"}
 
 *Current version: 22 August 2026*
+
+## Problem Sheets
+
+[Problem Sheet 1](problem-sheets/mmw101_PS1.pdf){target="_blank" rel="noopener"}
 
 ## Course policies
 

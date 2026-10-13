@@ -47,17 +47,17 @@ communicated through official class channels.
 
 ## Course schedule
 
-| Date | Topic | Assessment |
-|---|---|---|
-| 12 September 2026 | Midterm Revision | — |
-| 19 September 2026 | Midterm Exam | — |
-| 26 September 2026 | Software, Cloud Services, and Digital Work | — |
-| 3 October 2026 | Digital Platforms, Information, and Online Life | Short quiz |
-| 10 October 2026 | Security, Identity, Privacy, and Cybercrime | Short quiz |
-| 17 October 2026 | Artificial Intelligence: How It Works and Fails | Short quiz |
-| 24 October 2026 | Responsible AI and the Future of Computing | Short quiz |
-| 31 October 2026 | Finals Revision | Long quiz |
-| 7 November 2026 | — | Final Exam |
+| Date | Topic |
+| --- | --- |
+| 12 September 2026 | Midterm Revision |
+| 19 September 2026 | Midterm Exam |
+| 26 September 2026 | Software, Cloud Services, and Digital Work |
+| 3 October 2026 | Digital Platforms, Information, and Online Life |
+| 10 October 2026 | Security, Identity, Privacy, and Cybercrime |
+| 17 October 2026 | Artificial Intelligence: How It Works and Fails |
+| 24 October 2026 | Responsible AI and the Future of Computing |
+| 31 October 2026 | Finals Revision |
+| 7 November 2026 | Final Exam |
 
 ## Printable lecture notes
 
@@ -67,6 +67,10 @@ chapters will be added as the course progresses.
 [Open the MST 101d lecture notes](lecture-notes/MST101d_Lecture_Notes_20260921.pdf){.btn .btn-primary target="_blank" rel="noopener"}
 
 *Current version: 21 September 2026*
+
+## Problem Sheets
+
+[Problem Sheet 1](problem-sheets/mst101d_PS1.pdf){target="_blank" rel="noopener"}
 
 ## How classes will work
 

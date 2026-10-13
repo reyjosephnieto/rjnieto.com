@@ -146,16 +146,11 @@ government and community affairs.
 
 ## Education
 
-### MSc Science, Technology, Engineering and Public Policy
+### MSc Applied and Computational Mathematics
 
-**[University College London
-(UCL)](https://www.ucl.ac.uk/prospective-students/graduate/taught-degrees/science-technology-engineering-and-public-policy-msc){.cv-institution target="_blank" rel="noopener"}** ·
-*London, United Kingdom*<br>
-September 2026–Present
-
-This flexible distance-learning programme examines how scientific and
-technical evidence informs public policy, including emerging technologies,
-risk, and responsible AI.
+**[The Johns Hopkins University
+(JHU)](https://ep.jhu.edu/programs/applied-and-computational-mathematics/){.cv-institution target="_blank" rel="noopener"}**<br>
+2026–Present
 
 ### BSc Mathematics with First Class Honours
 
@@ -212,7 +207,7 @@ model for future cohorts.
 
 ## Technical and language skills
 
-- **Programming languages:** Python; working knowledge of R, MATLAB, and Java
+- **Programming languages:** Python, R, MATLAB, and Java
 - **Python ecosystem:** scientific computing and machine learning (NumPy,
   SciPy, scikit-learn, PyTorch, and TensorFlow); computer vision and
   visualisation (OpenCV and Matplotlib); topological data analysis (GUDHI and
@@ -223,6 +218,5 @@ model for future cohorts.
 ## Contact
 
 - **Preferred email:** rj (at) rjnieto (dot) com
-- **UCL email:** rey (dot) nieto (dot) 26 (at) ucl (dot) ac (dot) uk
 - **Bristol alumni email:** zo23232 (at) alumni (dot) bristol (dot) ac (dot) uk
 - **LinkedIn:** [linkedin.com/in/rjosephnieto](https://www.linkedin.com/in/rjosephnieto/){target="_blank" rel="noopener"}

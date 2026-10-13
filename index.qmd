@@ -58,10 +58,11 @@ implementation of government programmes and helps ensure that public services
 reach their intended beneficiaries.
 
 I hold a BSc in Mathematics with First Class Honours from the [University of
-Bristol](https://www.bristol.ac.uk/){target="_blank" rel="noopener"} and am pursuing an MSc in Science,
-Technology, Engineering and Public Policy at [University College London
-(UCL)](https://www.ucl.ac.uk/prospective-students/graduate/taught-degrees/science-technology-engineering-and-public-policy-msc){target="_blank" rel="noopener"}
-through flexible distance learning.
+Bristol](https://www.bristol.ac.uk/){target="_blank" rel="noopener"} and am pursuing an MSc in Applied and
+Computational Mathematics at [The Johns Hopkins University
+(JHU)](https://ep.jhu.edu/programs/applied-and-computational-mathematics/){target="_blank" rel="noopener"}.
+My planned studies connect network science with probabilistic modelling,
+optimisation, machine learning, and causal inference.
 :::
 
 ::: {.home-intro-photo}
