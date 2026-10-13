@@ -63,38 +63,10 @@
     "title" : "Living in the IT Era"
   },
   {
-    "href" : "/#teaching",
-    "objectID" : "index.html#teaching",
-    "section" : "Teaching",
-    "text" : "Teaching\nI teach Mathematics in the Modern World and Living in the IT Era part-time at Bulacan State University. My teaching materials include original lecture notes, exercises, and supplementary resources developed primarily for biology students.",
-    "title" : "Rey Joseph “RJ” Nieto"
-  },
-  {
-    "href" : "/#writing",
-    "objectID" : "index.html#writing",
-    "section" : "Writing",
-    "text" : "Writing\nI write Calculated, a weekly Saturday column for the Manila Bulletin. The newspaper’s author archive provides links to the published essays.",
-    "title" : "Rey Joseph “RJ” Nieto"
-  },
-  {
-    "href" : "/#hobby",
-    "objectID" : "index.html#hobby",
-    "section" : "Hobby",
-    "text" : "Hobby\nMy hobby is independent mathematics, artificial intelligence, and machine-learning research. My current project asks how image-analysis methods respond when images are rotated, resized, poorly exposed, or degraded by sensor noise, and whether those response patterns can help identify acquisition problems. The work continues my University of Bristol dissertation, Computational Stability of Cubical Homology; the thesis and Python implementation are publicly available.",
-    "title" : "Rey Joseph “RJ” Nieto"
-  },
-  {
-    "href" : "/#earlier-work",
-    "objectID" : "index.html#earlier-work",
-    "section" : "Earlier work",
-    "text" : "Earlier work\nMy earlier work spans technical writing, journalism, national broadcasting, public affairs, government communications, and programme delivery. Further details are available in my CV and on LinkedIn.",
-    "title" : "Rey Joseph “RJ” Nieto"
-  },
-  {
     "href" : "calculated/",
     "objectID" : "calculated/index.html",
     "section" : "",
-    "text" : "Skip to main content\n\n\n\n\nThe column appears in the Manila Bulletin every Saturday. The entries below link to individual columns; the newspaper also maintains an author archive.\nView the Manila Bulletin archive\n\n\nCan the world even afford an AI apocalypse?\n19 September 2026 · Manila Bulletin\n\nThe lever is not merely unaffordable; under the present AI paradigm, it may not yet exist. Smaller models that run locally remain useful, and a new architecture may offer a better path. What remains doubtful is whether today’s large language models can become superintelligent simply by feeding them ever more chips, electricity, and capital.\nRead more\n\n\n\nInjecting more diskarte into the diploma\n12 September 2026 · Manila Bulletin\n\nDoes entering adulthood really have to involve this much guesswork? We often say education prepares students for life. Perhaps that preparation can include practical matters such as opening a bank account, reading a payslip, dealing with government agencies, and starting a small business.\nRead more\n\n\n\nThere’s something about Alex\n5 September 2026 · Manila Bulletin\n\nAlex(andra Eala) seems remarkably composed through all of it. She speaks carefully about representing the Philippines and about staying herself despite the attention. Frankly, I find that a little embarrassing. I did not have that kind of self-awareness at her age. I am not sure I had it even much later, when I already had an audience of my own.\nRead more\n\n\n\n\n\n\n Back to top",
+    "text" : "Skip to main content\n\n\n\n\nThe column appears in the Manila Bulletin every Saturday. The entries below link to individual columns; the newspaper also maintains an author archive.\nView the Manila Bulletin archive\n\n\nThe Oracle of DelphAI\n10 October 2026 · Manila Bulletin\n\nWhat happens when AI supplies answers we can no longer judge for ourselves? Schools and workplaces may gain efficiency by automating difficult tasks, but those same tasks help beginners develop expertise. If we stop training people to think independently, dependence on imported intelligence could become as costly as dependence on imported oil.\nRead more\n\n\n\nAI seeks priests\n3 October 2026 · Manila Bulletin\n\nAn AI that learns to improve itself may also get better at exploiting the gaps in our instructions. Who decides whether each change is an improvement, and who can stop it when it defeats the purpose of the rules? Effective oversight requires people and institutions capable of checking those claims and acting when safeguards fail.\nRead more\n\n\n\nWhen AI decides who is human\n26 September 2026 · Manila Bulletin\n\nAn AI agent can follow an instruction while defeating the purpose behind it. Even a rule against harming people raises a difficult question: who does the system count as human? As we give machines more information and authority, the gaps between our intentions and their instructions become harder to dismiss as merely technical problems.\nRead more\n\n\n\nCan the world even afford an AI apocalypse?\n19 September 2026 · Manila Bulletin\n\nThe lever is not merely unaffordable; under the present AI paradigm, it may not yet exist. Smaller models that run locally remain useful, and a new architecture may offer a better path. What remains doubtful is whether today’s large language models can become superintelligent simply by feeding them ever more chips, electricity, and capital.\nRead more\n\n\n\nInjecting more diskarte into the diploma\n12 September 2026 · Manila Bulletin\n\nDoes entering adulthood really have to involve this much guesswork? We often say education prepares students for life. Perhaps that preparation can include practical matters such as opening a bank account, reading a payslip, dealing with government agencies, and starting a small business.\nRead more\n\n\n\nThere’s something about Alex\n5 September 2026 · Manila Bulletin\n\nAlex(andra Eala) seems remarkably composed through all of it. She speaks carefully about representing the Philippines and about staying herself despite the attention. Frankly, I find that a little embarrassing. I did not have that kind of self-awareness at her age. I am not sure I had it even much later, when I already had an audience of my own.\nRead more\n\n\n\n\n\n\n Back to top",
     "title" : "Calculated"
   },
   {
@@ -115,7 +87,7 @@
     "href" : "cv/#education",
     "objectID" : "cv/index.html#education",
     "section" : "Education",
-    "text" : "Education\n\nMSc Science, Technology, Engineering and Public Policy\nUniversity College London (UCL) · London, United Kingdom September 2026–Present\nThis flexible distance-learning programme examines how scientific and technical evidence informs public policy, including emerging technologies, risk, and responsible AI.\n\n\nBSc Mathematics with First Class Honours\nUniversity of Bristol · Bristol, United Kingdom September 2023–June 2026\nSelected advanced and computational study included persistent homology and algebraic stability; mathematical logic and group theory; combinatorics, graph theory, and linear algebra; metric-space topology and stochastic processes; generalised linear models and statistical machine learning; neural networks and large language models; optimisation and dynamic programming; and cryptography. I also completed a 40-credit Economics unit in microeconomics and macroeconomics.\n\n\nFoundation Certificate in Business, Law and Social Sciences, Distinction\nKaplan International College London · London, United Kingdom March–August 2023",
+    "text" : "Education\n\nMSc Applied and Computational Mathematics\nThe Johns Hopkins University (JHU) 2026–Present\n\n\nBSc Mathematics with First Class Honours\nUniversity of Bristol · Bristol, United Kingdom September 2023–June 2026\nSelected advanced and computational study included persistent homology and algebraic stability; mathematical logic and group theory; combinatorics, graph theory, and linear algebra; metric-space topology and stochastic processes; generalised linear models and statistical machine learning; neural networks and large language models; optimisation and dynamic programming; and cryptography. I also completed a 40-credit Economics unit in microeconomics and macroeconomics.\n\n\nFoundation Certificate in Business, Law and Social Sciences, Distinction\nKaplan International College London · London, United Kingdom March–August 2023",
     "title" : "Rey Joseph “RJ” Nieto"
   },
   {
@@ -129,14 +101,14 @@
     "href" : "cv/#technical-and-language-skills",
     "objectID" : "cv/index.html#technical-and-language-skills",
     "section" : "Technical and language skills",
-    "text" : "Technical and language skills\n\nProgramming languages: Python; working knowledge of R, MATLAB, and Java\nPython ecosystem: scientific computing and machine learning (NumPy, SciPy, scikit-learn, PyTorch, and TensorFlow); computer vision and visualisation (OpenCV and Matplotlib); topological data analysis (GUDHI and Ripser)\nDevelopment and publishing: Git/GitHub, Quarto, and LaTeX\nSpoken languages: English and Tagalog (fluent)",
+    "text" : "Technical and language skills\n\nProgramming languages: Python, R, MATLAB, and Java\nPython ecosystem: scientific computing and machine learning (NumPy, SciPy, scikit-learn, PyTorch, and TensorFlow); computer vision and visualisation (OpenCV and Matplotlib); topological data analysis (GUDHI and Ripser)\nDevelopment and publishing: Git/GitHub, Quarto, and LaTeX\nSpoken languages: English and Tagalog (fluent)",
     "title" : "Rey Joseph “RJ” Nieto"
   },
   {
     "href" : "cv/#contact",
     "objectID" : "cv/index.html#contact",
     "section" : "Contact",
-    "text" : "Contact\n\nPreferred email: rj (at) rjnieto (dot) com\nUCL email: rey (dot) nieto (dot) 26 (at) ucl (dot) ac (dot) uk\nBristol alumni email: zo23232 (at) alumni (dot) bristol (dot) ac (dot) uk\nLinkedIn: linkedin.com/in/rjosephnieto",
+    "text" : "Contact\n\nPreferred email: rj (at) rjnieto (dot) com\nBristol alumni email: zo23232 (at) alumni (dot) bristol (dot) ac (dot) uk\nLinkedIn: linkedin.com/in/rjosephnieto",
     "title" : "Rey Joseph “RJ” Nieto"
   },
   {
@@ -201,5 +173,33 @@
     "section" : "Course policies",
     "text" : "Course policies\nPlease refer to the approved course syllabus and applicable university guidelines for policies on attendance, assessment, classroom conduct, academic integrity, and related matters. Course-specific arrangements and updates will be communicated through official class channels.",
     "title" : "Mathematics in the Modern World"
+  },
+  {
+    "href" : "/#teaching",
+    "objectID" : "index.html#teaching",
+    "section" : "Teaching",
+    "text" : "Teaching\nI teach Mathematics in the Modern World and Living in the IT Era part-time at Bulacan State University. My teaching materials include original lecture notes, exercises, and supplementary resources developed primarily for biology students.",
+    "title" : "Rey Joseph “RJ” Nieto"
+  },
+  {
+    "href" : "/#writing",
+    "objectID" : "index.html#writing",
+    "section" : "Writing",
+    "text" : "Writing\nI write Calculated, a weekly Saturday column for the Manila Bulletin. The newspaper’s author archive provides links to the published essays.",
+    "title" : "Rey Joseph “RJ” Nieto"
+  },
+  {
+    "href" : "/#hobby",
+    "objectID" : "index.html#hobby",
+    "section" : "Hobby",
+    "text" : "Hobby\nMy hobby is independent mathematics, artificial intelligence, and machine-learning research. My current project asks how image-analysis methods respond when images are rotated, resized, poorly exposed, or degraded by sensor noise, and whether those response patterns can help identify acquisition problems. The work continues my University of Bristol dissertation, Computational Stability of Cubical Homology; the thesis and Python implementation are publicly available.",
+    "title" : "Rey Joseph “RJ” Nieto"
+  },
+  {
+    "href" : "/#earlier-work",
+    "objectID" : "index.html#earlier-work",
+    "section" : "Earlier work",
+    "text" : "Earlier work\nMy earlier work spans technical writing, journalism, national broadcasting, public affairs, government communications, and programme delivery. Further details are available in my CV and on LinkedIn.",
+    "title" : "Rey Joseph “RJ” Nieto"
   }
 ]
