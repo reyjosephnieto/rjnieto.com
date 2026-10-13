@@ -39,6 +39,8 @@ toc-depth: 2
 
 Public servant and mathematician with a background in quantitative research,
 university teaching, journalism, and strategic communications.
+I aim to apply network science, probabilistic modelling, and causal inference
+to the study of complex systems and public policy.
 
 **Email:** rj (at) rjnieto (dot) com ·
 **LinkedIn:** [linkedin.com/in/rjosephnieto](https://www.linkedin.com/in/rjosephnieto/){target="_blank" rel="noopener"}
@@ -151,6 +153,9 @@ government and community affairs.
 **[The Johns Hopkins University
 (JHU)](https://ep.jhu.edu/programs/applied-and-computational-mathematics/){.cv-institution target="_blank" rel="noopener"}**<br>
 2026–Present
+
+My planned studies connect network science with probabilistic modelling,
+optimisation, machine learning, and causal inference.
 
 ### BSc Mathematics with First Class Honours
 
