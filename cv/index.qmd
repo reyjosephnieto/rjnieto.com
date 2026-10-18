@@ -35,6 +35,7 @@ header-includes: |
   </script>
 toc: true
 toc-depth: 2
+body-classes: cv-page
 ---
 
 Public servant and mathematician with a background in quantitative research,
@@ -42,7 +43,6 @@ university teaching, journalism, and strategic communications.
 I aim to apply network science, probabilistic modelling, and causal inference
 to the study of complex systems and public policy.
 
-**Email:** rj (at) rjnieto (dot) com ·
 **LinkedIn:** [linkedin.com/in/rjosephnieto](https://www.linkedin.com/in/rjosephnieto/){target="_blank" rel="noopener"}
 
 ## Professional experience
@@ -50,17 +50,19 @@ to the study of complex systems and public policy.
 ### Assistant Secretary
 
 **Office of the Cabinet Secretary**<br>
-**Office of the President of the Philippines**<br>
+**[Office of the President of the Philippines](https://president.gov.ph/){.cv-institution target="_blank" rel="noopener"}**<br>
 *Manila, Philippines*<br>
 September 2026–Present
 
-The Office of the Cabinet Secretary is tasked with monitoring the implementation
-of government programmes and helping to ensure that public services reach the
-people for whom they are intended.
+I analyse policy and implementation issues for the Cabinet Secretary, drawing
+on government data, agency inputs, and field validation. I prepare policy
+briefs, technical assessments, options, and recommendations, and support
+interagency coordination. The role is advisory and analytical; decisions and implementation remain with
+the responsible offices.
 
 ### Opinion Columnist
 
-***Manila Bulletin*** · Philippine broadsheet newspaper<br>
+**[*Manila Bulletin*](https://mb.com.ph/){.cv-institution target="_blank" rel="noopener"}**<br>
 2020–2021; 2026–Present
 
 I write [*Calculated*](../calculated/index.qmd), a weekly Saturday opinion
@@ -68,7 +70,7 @@ column. I previously wrote the weekly *Thinking Pinoy* column from 2020 to 2021.
 
 ### Instructor (Mathematics and IT)
 
-**Bulacan State University** · *San Rafael, Bulacan, Philippines*<br>
+**[Bulacan State University](https://bulsu.edu.ph/){.cv-institution target="_blank" rel="noopener"}** · *San Rafael, Bulacan, Philippines*<br>
 2026–Present
 
 I teach part-time undergraduate Saturday classes in
@@ -78,7 +80,7 @@ quantitative reasoning, data analysis, online safety, and emerging technologies.
 
 ### Teaching Assistant (Mathematics)
 
-**University of Bristol** · *Bristol, United Kingdom*<br>
+**[University of Bristol](https://www.bristol.ac.uk/){.cv-institution target="_blank" rel="noopener"}** · *Bristol, United Kingdom*<br>
 2025–2026<br>
 Official title: *Mathematical Programming Demonstrator*
 
@@ -87,7 +89,7 @@ debugging, and computational problem-solving.
 
 ### Host, *PTV-4 Pre-SONA Special*
 
-**People's Television Network** · Philippine national broadcaster<br>
+**[People's Television Network](https://ptni.gov.ph/){.cv-institution target="_blank" rel="noopener"}**<br>
 2024
 
 I hosted coverage ahead of the Philippine President's State of the Nation
@@ -96,7 +98,7 @@ departmental performance, and policy implementation.
 
 ### Founder and Editor-in-Chief
 
-***Thinking Pinoy*** · Philippine public-affairs platform<br>
+***Thinking Pinoy***<br>
 2015–2023
 
 I founded and managed a platform reaching an aggregate audience of more than
@@ -105,7 +107,7 @@ work on government, economic policy, foreign affairs, and national developments.
 
 ### Television Host and Commentator
 
-**SMNI News** · Philippine television network<br>
+**[SMNI News](https://smninewschannel.com/){.cv-institution target="_blank" rel="noopener"}**<br>
 2020–2022
 
 I hosted a weekday current-affairs programme featuring commentary and
@@ -113,7 +115,7 @@ interviews with officials, public figures, and subject specialists.
 
 ### Project Co-Lead, PPEniTP Initiative
 
-**Private nationwide COVID-19 civic initiative**<br>
+**PPEniTP Initiative**<br>
 2020–2021
 
 I coordinated donors, hospitals, distribution partners, local government
@@ -122,7 +124,7 @@ than PHP 25 million in personal protective equipment to over 100 hospitals.
 
 ### Radio Programme Co-host
 
-**Aliw Broadcasting Corporation (DWIZ 882 AM)**<br>
+**[Aliw Broadcasting Corporation](https://www.aliw.ph/){.cv-institution target="_blank" rel="noopener"} (DWIZ 882 AM)**<br>
 2017–2020
 
 I provided political and public-policy commentary on *Karambola*, a daily
@@ -130,7 +132,7 @@ current-affairs programme.
 
 ### Consultant, Strategic Communications (Content)
 
-**Department of Foreign Affairs, Office of the Undersecretary for Migrant Workers' Affairs**<br>
+**[Department of Foreign Affairs](https://dfa.gov.ph/){.cv-institution target="_blank" rel="noopener"}, Office of the Undersecretary for Migrant Workers' Affairs**<br>
 2017
 
 I produced digital material explaining policies, programmes, and consular
@@ -138,7 +140,7 @@ information for overseas Filipinos.
 
 ### Earlier Writing and Communications Experience
 
-**Ability with Innovation LLC; international clients; *Sun.Star Davao***<br>
+**[Ability with Innovation LLC](https://awi.com/){.cv-institution target="_blank" rel="noopener"}; international clients; [*Sun.Star Davao*](https://www.sunstar.com.ph/davao){.cv-institution target="_blank" rel="noopener"}**<br>
 2009–2015
 
 I prepared technical and commercial proposals for government, supranational,
@@ -154,14 +156,24 @@ government and community affairs.
 (JHU)](https://ep.jhu.edu/programs/applied-and-computational-mathematics/){.cv-institution target="_blank" rel="noopener"}**<br>
 2026–Present
 
-My planned studies connect network science with probabilistic modelling,
-optimisation, machine learning, and causal inference.
+My planned studies focus on statistical and causal inference, network science,
+game theory, and the mathematical foundations of machine learning, with applied
+work in social media analytics and an introduction to generative AI.
+
+### MSc Science, Technology, Engineering and Public Policy
+
+**[University College London
+(UCL)](https://www.ucl.ac.uk/study/prospective-students/graduate/courses/science-technology-engineering-and-public-policy-msc){.cv-institution target="_blank" rel="noopener"}**<br>
+2026–Present
+
+My aim is to consolidate my technical knowledge in science, technology,
+engineering, and mathematics and apply it to actionable public policy.
 
 ### BSc Mathematics with First Class Honours
 
 **[University of Bristol](https://www.bristol.ac.uk/){.cv-institution target="_blank" rel="noopener"}** ·
 *Bristol, United Kingdom*<br>
-September 2023–June 2026
+2023–2026
 
 Selected advanced and computational study included persistent homology and
 algebraic stability; mathematical logic and group theory; combinatorics, graph
@@ -175,7 +187,7 @@ macroeconomics.
 
 **[Kaplan International College London](https://www.kaplanpathways.com/where-to-study/kaplan-international-college-london/){.cv-institution target="_blank" rel="noopener"}** ·
 *London, United Kingdom*<br>
-March–August 2023
+2023
 
 ## Selected technical and research projects
 
@@ -220,8 +232,9 @@ model for future cohorts.
 - **Development and publishing:** Git/GitHub, Quarto, and LaTeX
 - **Spoken languages:** English and Tagalog (fluent)
 
-## Contact
+## Email
 
-- **Preferred email:** rj (at) rjnieto (dot) com
-- **Bristol alumni email:** zo23232 (at) alumni (dot) bristol (dot) ac (dot) uk
-- **LinkedIn:** [linkedin.com/in/rjosephnieto](https://www.linkedin.com/in/rjosephnieto/){target="_blank" rel="noopener"}
+- **Preferred:** rj (at) rjnieto (dot) com
+- **UCL:** rey.nieto.26 (at) ucl (dot) ac (dot) uk
+- **Johns Hopkins:** rnieto4 (at) jhu (dot) edu
+- **Bristol:** zo23232 (at) alumni (dot) bristol (dot) ac (dot) uk

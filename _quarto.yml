@@ -5,7 +5,7 @@ project:
   render:
     - "*.qmd"
     - "**/*.qmd"
-    - "!source-material/**"
+    - "!source-material/**/*.qmd"
   resources:
     - about.html
     - computational-topology/index.html

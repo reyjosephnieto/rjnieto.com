@@ -28,7 +28,7 @@ fills important gaps, and explains how they are related. Examples are drawn
 whenever practicable from biology, health, research, and Philippine digital
 life.
 
-The ten-chapter plan is my working interpretation of the course's assigned
+The eight-chapter plan is my working interpretation of the course's assigned
 scope, adapted for biology students and current technological concerns. The
 notes will be developed as the course proceeds and may change in response to
 students' questions, suggestions, and practical needs.
@@ -61,8 +61,8 @@ communicated through official class channels.
 
 ## Printable lecture notes
 
-The current release contains the Introduction and Chapters 1--5. Further
-chapters will be added as the course progresses.
+The current release contains the Introduction and Chapters 1--8. The notes
+will be revised as the course progresses.
 
 [Open the MST 101d lecture notes](lecture-notes/MST101d_Lecture_Notes_20260921.pdf){.btn .btn-primary target="_blank" rel="noopener"}
 

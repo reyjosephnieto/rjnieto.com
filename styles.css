@@ -130,6 +130,33 @@ a.cv-institution {
   font-weight: 700;
 }
 
+/* Compact CV entries while keeping institutions and dates prominent. */
+.cv-page main h2 {
+  margin-top: 1.9rem;
+  font-size: 1.65rem;
+}
+
+.cv-page main h3 {
+  margin-top: 1.25rem;
+  margin-bottom: 0.35rem;
+  font-size: 1.25rem;
+}
+
+.cv-page main section.level3 > p {
+  margin-bottom: 0.65rem;
+  line-height: 1.6;
+}
+
+.cv-page main section.level3 > p:first-of-type {
+  margin-bottom: 0.5rem;
+  line-height: 1.5;
+}
+
+.cv-page main section.level3 > p:not(:first-of-type) {
+  margin-left: 1rem;
+  font-size: 0.95em;
+}
+
 #title-block-header .quarto-title-meta {
   display: none;
 }
@@ -357,6 +384,10 @@ img.profile-photo {
 }
 
 @media (max-width: 768px) {
+  .cv-page main section.level3 > p:not(:first-of-type) {
+    margin-left: 0;
+  }
+
   body {
     font-size: 1rem;
   }
