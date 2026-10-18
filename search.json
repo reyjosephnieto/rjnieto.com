@@ -17,7 +17,7 @@
     "href" : "teaching/bulsu/living-it-era/",
     "objectID" : "teaching/bulsu/living-it-era/index.html",
     "section" : "",
-    "text" : "This page contains lecture notes, exercises, and supplementary material for Living in the IT Era, prepared primarily for the first-year BS Biology students whom I teach. The course is not intended to turn students into computer technicians or make them memorise catalogues of devices, inventors, and fashionable technologies. Its purpose is to provide enough working knowledge to make better decisions about computers, internet services, software, privacy, security, online conduct, AI, and other technologies that students encounter in ordinary life and scientific work.\nMuch of the subject will already be familiar in fragments. A student may know one part from using a phone, another from connecting to Wi-Fi, and another from hearing about online scams or AI. The course brings those pieces together, fills important gaps, and explains how they are related. Examples are drawn whenever practicable from biology, health, research, and Philippine digital life.\nThe ten-chapter plan is my working interpretation of the course’s assigned scope, adapted for biology students and current technological concerns. The notes will be developed as the course proceeds and may change in response to students’ questions, suggestions, and practical needs.",
+    "text" : "This page contains lecture notes, exercises, and supplementary material for Living in the IT Era, prepared primarily for the first-year BS Biology students whom I teach. The course is not intended to turn students into computer technicians or make them memorise catalogues of devices, inventors, and fashionable technologies. Its purpose is to provide enough working knowledge to make better decisions about computers, internet services, software, privacy, security, online conduct, AI, and other technologies that students encounter in ordinary life and scientific work.\nMuch of the subject will already be familiar in fragments. A student may know one part from using a phone, another from connecting to Wi-Fi, and another from hearing about online scams or AI. The course brings those pieces together, fills important gaps, and explains how they are related. Examples are drawn whenever practicable from biology, health, research, and Philippine digital life.\nThe eight-chapter plan is my working interpretation of the course’s assigned scope, adapted for biology students and current technological concerns. The notes will be developed as the course proceeds and may change in response to students’ questions, suggestions, and practical needs.",
     "title" : "Living in the IT Era"
   },
   {
@@ -38,7 +38,7 @@
     "href" : "teaching/bulsu/living-it-era/#printable-lecture-notes",
     "objectID" : "teaching/bulsu/living-it-era/index.html#printable-lecture-notes",
     "section" : "Printable lecture notes",
-    "text" : "Printable lecture notes\nThe current release contains the Introduction and Chapters 1–5. Further chapters will be added as the course progresses.\nOpen the MST 101d lecture notes\nCurrent version: 21 September 2026",
+    "text" : "Printable lecture notes\nThe current release contains the Introduction and Chapters 1–8. The notes will be revised as the course progresses.\nOpen the MST 101d lecture notes\nCurrent version: 21 September 2026",
     "title" : "Living in the IT Era"
   },
   {
@@ -96,6 +96,48 @@
     "section" : "",
     "text" : "Skip to main content\n\n\n\n\nThe column appears in the Manila Bulletin every Saturday. The entries below link to individual columns; the newspaper also maintains an author archive.\nView the Manila Bulletin archive\n\n\nThe Oracle of DelphAI\n10 October 2026 · Manila Bulletin\n\nWhat happens when AI supplies answers we can no longer judge for ourselves? Schools and workplaces may gain efficiency by automating difficult tasks, but those same tasks help beginners develop expertise. If we stop training people to think independently, dependence on imported intelligence could become as costly as dependence on imported oil.\nRead more\n\n\n\nAI seeks priests\n3 October 2026 · Manila Bulletin\n\nAn AI that learns to improve itself may also get better at exploiting the gaps in our instructions. Who decides whether each change is an improvement, and who can stop it when it defeats the purpose of the rules? Effective oversight requires people and institutions capable of checking those claims and acting when safeguards fail.\nRead more\n\n\n\nWhen AI decides who is human\n26 September 2026 · Manila Bulletin\n\nAn AI agent can follow an instruction while defeating the purpose behind it. Even a rule against harming people raises a difficult question: who does the system count as human? As we give machines more information and authority, the gaps between our intentions and their instructions become harder to dismiss as merely technical problems.\nRead more\n\n\n\nCan the world even afford an AI apocalypse?\n19 September 2026 · Manila Bulletin\n\nThe lever is not merely unaffordable; under the present AI paradigm, it may not yet exist. Smaller models that run locally remain useful, and a new architecture may offer a better path. What remains doubtful is whether today’s large language models can become superintelligent simply by feeding them ever more chips, electricity, and capital.\nRead more\n\n\n\nInjecting more diskarte into the diploma\n12 September 2026 · Manila Bulletin\n\nDoes entering adulthood really have to involve this much guesswork? We often say education prepares students for life. Perhaps that preparation can include practical matters such as opening a bank account, reading a payslip, dealing with government agencies, and starting a small business.\nRead more\n\n\n\nThere’s something about Alex\n5 September 2026 · Manila Bulletin\n\nAlex(andra Eala) seems remarkably composed through all of it. She speaks carefully about representing the Philippines and about staying herself despite the attention. Frankly, I find that a little embarrassing. I did not have that kind of self-awareness at her age. I am not sure I had it even much later, when I already had an audience of my own.\nRead more\n\n\n\n\n\n\n Back to top",
     "title" : "Calculated"
+  },
+  {
+    "href" : "cv/",
+    "objectID" : "cv/index.html",
+    "section" : "",
+    "text" : "Public servant and mathematician with a background in quantitative research, university teaching, journalism, and strategic communications. I aim to apply network science, probabilistic modelling, and causal inference to the study of complex systems and public policy.\nLinkedIn: linkedin.com/in/rjosephnieto",
+    "title" : "Rey Joseph “RJ” Nieto"
+  },
+  {
+    "href" : "cv/#professional-experience",
+    "objectID" : "cv/index.html#professional-experience",
+    "section" : "Professional experience",
+    "text" : "Professional experience\n\nAssistant Secretary\nOffice of the Cabinet Secretary Office of the President of the Philippines Manila, Philippines September 2026–Present\nI analyse policy and implementation issues for the Cabinet Secretary, drawing on government data, agency inputs, and field validation. I prepare policy briefs, technical assessments, options, and recommendations, and support interagency coordination. The role is advisory and analytical; decisions and implementation remain with the responsible offices.\n\n\nOpinion Columnist\nManila Bulletin 2020–2021; 2026–Present\nI write Calculated, a weekly Saturday opinion column. I previously wrote the weekly Thinking Pinoy column from 2020 to 2021.\n\n\nInstructor (Mathematics and IT)\nBulacan State University · San Rafael, Bulacan, Philippines 2026–Present\nI teach part-time undergraduate Saturday classes in Mathematics in the Modern World and Living in the IT Era, covering quantitative reasoning, data analysis, online safety, and emerging technologies.\n\n\nTeaching Assistant (Mathematics)\nUniversity of Bristol · Bristol, United Kingdom 2025–2026 Official title: Mathematical Programming Demonstrator\nI supported second-year mathematics students with Python, numerical methods, debugging, and computational problem-solving.\n\n\nHost, PTV-4 Pre-SONA Special\nPeople’s Television Network 2024\nI hosted coverage ahead of the Philippine President’s State of the Nation Address, interviewing Cabinet officials about government programmes, departmental performance, and policy implementation.\n\n\nFounder and Editor-in-Chief\nThinking Pinoy 2015–2023\nI founded and managed a platform reaching an aggregate audience of more than two million followers across its social-media channels and directed editorial work on government, economic policy, foreign affairs, and national developments.\n\n\nTelevision Host and Commentator\nSMNI News 2020–2022\nI hosted a weekday current-affairs programme featuring commentary and interviews with officials, public figures, and subject specialists.\n\n\nProject Co-Lead, PPEniTP Initiative\nPPEniTP Initiative 2020–2021\nI coordinated donors, hospitals, distribution partners, local government units, and nationwide logistics. Collectively, the initiative delivered more than PHP 25 million in personal protective equipment to over 100 hospitals.\n\n\nRadio Programme Co-host\nAliw Broadcasting Corporation (DWIZ 882 AM) 2017–2020\nI provided political and public-policy commentary on Karambola, a daily current-affairs programme.\n\n\nConsultant, Strategic Communications (Content)\nDepartment of Foreign Affairs, Office of the Undersecretary for Migrant Workers’ Affairs 2017\nI produced digital material explaining policies, programmes, and consular information for overseas Filipinos.\n\n\nEarlier Writing and Communications Experience\nAbility with Innovation LLC; international clients; Sun.Star Davao 2009–2015\nI prepared technical and commercial proposals for government, supranational, and energy-sector clients; completed writing and editing assignments for more than 30 clients across North America, Europe, and Australia; and reported on government and community affairs.",
+    "title" : "Rey Joseph “RJ” Nieto"
+  },
+  {
+    "href" : "cv/#education",
+    "objectID" : "cv/index.html#education",
+    "section" : "Education",
+    "text" : "Education\n\nMSc Applied and Computational Mathematics\nThe Johns Hopkins University (JHU) 2026–Present\nMy planned studies focus on statistical and causal inference, network science, game theory, and the mathematical foundations of machine learning, with applied work in social media analytics and an introduction to generative AI.\n\n\nMSc Science, Technology, Engineering and Public Policy\nUniversity College London (UCL) 2026–Present\nMy aim is to consolidate my technical knowledge in science, technology, engineering, and mathematics and apply it to actionable public policy.\n\n\nBSc Mathematics with First Class Honours\nUniversity of Bristol · Bristol, United Kingdom 2023–2026\nSelected advanced and computational study included persistent homology and algebraic stability; mathematical logic and group theory; combinatorics, graph theory, and linear algebra; metric-space topology and stochastic processes; generalised linear models and statistical machine learning; neural networks and large language models; optimisation and dynamic programming; and cryptography. I also completed a 40-credit Economics unit in microeconomics and macroeconomics.\n\n\nFoundation Certificate in Business, Law and Social Sciences, Distinction\nKaplan International College London · London, United Kingdom 2023",
+    "title" : "Rey Joseph “RJ” Nieto"
+  },
+  {
+    "href" : "cv/#selected-technical-and-research-projects",
+    "objectID" : "cv/index.html#selected-technical-and-research-projects",
+    "section" : "Selected technical and research projects",
+    "text" : "Selected technical and research projects\n\nComputational Stability of Cubical Homology\nFinal-year BSc dissertation, University of Bristol · 2026 · Mark: 90%\nI developed and tested a reproducible, parallelised Python pipeline for cubical persistent homology on 400 retinal images across ten perturbation protocols and 170 settings. The study examined whether contrasting topological and geometric response profiles could help distinguish spatial misalignment from radiometric corruption.\nView the public dissertation and implementation.\n\n\nCryptographic Implementation and Security Analysis\nVigenère–RSA with bigram encoding · Second-year BSc Python project, University of Bristol · 2024\nI built and stress-tested a Python implementation combining RSA key exchange with randomised bigram encoding and documented weaknesses arising from design and implementation choices.\n\n\nSovereign-Investment Safeguards Analysis\nFoundation Certificate extended project, Kaplan International College London · 2023\nI synthesised legal, economic, and public-source evidence to compare proposed safeguards for the Philippine Maharlika Investment Fund with institutional failures identified in the 1MDB case. Kaplan selected the paper as an anonymised model for future cohorts.",
+    "title" : "Rey Joseph “RJ” Nieto"
+  },
+  {
+    "href" : "cv/#technical-and-language-skills",
+    "objectID" : "cv/index.html#technical-and-language-skills",
+    "section" : "Technical and language skills",
+    "text" : "Technical and language skills\n\nProgramming languages: Python, R, MATLAB, and Java\nPython ecosystem: scientific computing and machine learning (NumPy, SciPy, scikit-learn, PyTorch, and TensorFlow); computer vision and visualisation (OpenCV and Matplotlib); topological data analysis (GUDHI and Ripser)\nDevelopment and publishing: Git/GitHub, Quarto, and LaTeX\nSpoken languages: English and Tagalog (fluent)",
+    "title" : "Rey Joseph “RJ” Nieto"
+  },
+  {
+    "href" : "cv/#email",
+    "objectID" : "cv/index.html#email",
+    "section" : "Email",
+    "text" : "Email\n\nPreferred: rj (at) rjnieto (dot) com\nUCL: rey.nieto.26 (at) ucl (dot) ac (dot) uk\nJohns Hopkins: rnieto4 (at) jhu (dot) edu\nBristol: zo23232 (at) alumni (dot) bristol (dot) ac (dot) uk",
+    "title" : "Rey Joseph “RJ” Nieto"
   },
   {
     "href" : "research/",
@@ -159,47 +201,5 @@
     "section" : "Course policies",
     "text" : "Course policies\nPlease refer to the approved course syllabus and applicable university guidelines for policies on attendance, assessment, classroom conduct, academic integrity, and related matters. Course-specific arrangements and updates will be communicated through official class channels.",
     "title" : "Mathematics in the Modern World"
-  },
-  {
-    "href" : "cv/",
-    "objectID" : "cv/index.html",
-    "section" : "",
-    "text" : "Public servant and mathematician with a background in quantitative research, university teaching, journalism, and strategic communications. I aim to apply network science, probabilistic modelling, and causal inference to the study of complex systems and public policy.\nEmail: rj (at) rjnieto (dot) com · LinkedIn: linkedin.com/in/rjosephnieto",
-    "title" : "Rey Joseph “RJ” Nieto"
-  },
-  {
-    "href" : "cv/#professional-experience",
-    "objectID" : "cv/index.html#professional-experience",
-    "section" : "Professional experience",
-    "text" : "Professional experience\n\nAssistant Secretary\nOffice of the Cabinet Secretary Office of the President of the Philippines Manila, Philippines September 2026–Present\nThe Office of the Cabinet Secretary is tasked with monitoring the implementation of government programmes and helping to ensure that public services reach the people for whom they are intended.\n\n\nOpinion Columnist\nManila Bulletin · Philippine broadsheet newspaper 2020–2021; 2026–Present\nI write Calculated, a weekly Saturday opinion column. I previously wrote the weekly Thinking Pinoy column from 2020 to 2021.\n\n\nInstructor (Mathematics and IT)\nBulacan State University · San Rafael, Bulacan, Philippines 2026–Present\nI teach part-time undergraduate Saturday classes in Mathematics in the Modern World and Living in the IT Era, covering quantitative reasoning, data analysis, online safety, and emerging technologies.\n\n\nTeaching Assistant (Mathematics)\nUniversity of Bristol · Bristol, United Kingdom 2025–2026 Official title: Mathematical Programming Demonstrator\nI supported second-year mathematics students with Python, numerical methods, debugging, and computational problem-solving.\n\n\nHost, PTV-4 Pre-SONA Special\nPeople’s Television Network · Philippine national broadcaster 2024\nI hosted coverage ahead of the Philippine President’s State of the Nation Address, interviewing Cabinet officials about government programmes, departmental performance, and policy implementation.\n\n\nFounder and Editor-in-Chief\nThinking Pinoy · Philippine public-affairs platform 2015–2023\nI founded and managed a platform reaching an aggregate audience of more than two million followers across its social-media channels and directed editorial work on government, economic policy, foreign affairs, and national developments.\n\n\nTelevision Host and Commentator\nSMNI News · Philippine television network 2020–2022\nI hosted a weekday current-affairs programme featuring commentary and interviews with officials, public figures, and subject specialists.\n\n\nProject Co-Lead, PPEniTP Initiative\nPrivate nationwide COVID-19 civic initiative 2020–2021\nI coordinated donors, hospitals, distribution partners, local government units, and nationwide logistics. Collectively, the initiative delivered more than PHP 25 million in personal protective equipment to over 100 hospitals.\n\n\nRadio Programme Co-host\nAliw Broadcasting Corporation (DWIZ 882 AM) 2017–2020\nI provided political and public-policy commentary on Karambola, a daily current-affairs programme.\n\n\nConsultant, Strategic Communications (Content)\nDepartment of Foreign Affairs, Office of the Undersecretary for Migrant Workers’ Affairs 2017\nI produced digital material explaining policies, programmes, and consular information for overseas Filipinos.\n\n\nEarlier Writing and Communications Experience\nAbility with Innovation LLC; international clients; Sun.Star Davao 2009–2015\nI prepared technical and commercial proposals for government, supranational, and energy-sector clients; completed writing and editing assignments for more than 30 clients across North America, Europe, and Australia; and reported on government and community affairs.",
-    "title" : "Rey Joseph “RJ” Nieto"
-  },
-  {
-    "href" : "cv/#education",
-    "objectID" : "cv/index.html#education",
-    "section" : "Education",
-    "text" : "Education\n\nMSc Applied and Computational Mathematics\nThe Johns Hopkins University (JHU) 2026–Present\nMy planned studies connect network science with probabilistic modelling, optimisation, machine learning, and causal inference.\n\n\nBSc Mathematics with First Class Honours\nUniversity of Bristol · Bristol, United Kingdom September 2023–June 2026\nSelected advanced and computational study included persistent homology and algebraic stability; mathematical logic and group theory; combinatorics, graph theory, and linear algebra; metric-space topology and stochastic processes; generalised linear models and statistical machine learning; neural networks and large language models; optimisation and dynamic programming; and cryptography. I also completed a 40-credit Economics unit in microeconomics and macroeconomics.\n\n\nFoundation Certificate in Business, Law and Social Sciences, Distinction\nKaplan International College London · London, United Kingdom March–August 2023",
-    "title" : "Rey Joseph “RJ” Nieto"
-  },
-  {
-    "href" : "cv/#selected-technical-and-research-projects",
-    "objectID" : "cv/index.html#selected-technical-and-research-projects",
-    "section" : "Selected technical and research projects",
-    "text" : "Selected technical and research projects\n\nComputational Stability of Cubical Homology\nFinal-year BSc dissertation, University of Bristol · 2026 · Mark: 90%\nI developed and tested a reproducible, parallelised Python pipeline for cubical persistent homology on 400 retinal images across ten perturbation protocols and 170 settings. The study examined whether contrasting topological and geometric response profiles could help distinguish spatial misalignment from radiometric corruption.\nView the public dissertation and implementation.\n\n\nCryptographic Implementation and Security Analysis\nVigenère–RSA with bigram encoding · Second-year BSc Python project, University of Bristol · 2024\nI built and stress-tested a Python implementation combining RSA key exchange with randomised bigram encoding and documented weaknesses arising from design and implementation choices.\n\n\nSovereign-Investment Safeguards Analysis\nFoundation Certificate extended project, Kaplan International College London · 2023\nI synthesised legal, economic, and public-source evidence to compare proposed safeguards for the Philippine Maharlika Investment Fund with institutional failures identified in the 1MDB case. Kaplan selected the paper as an anonymised model for future cohorts.",
-    "title" : "Rey Joseph “RJ” Nieto"
-  },
-  {
-    "href" : "cv/#technical-and-language-skills",
-    "objectID" : "cv/index.html#technical-and-language-skills",
-    "section" : "Technical and language skills",
-    "text" : "Technical and language skills\n\nProgramming languages: Python, R, MATLAB, and Java\nPython ecosystem: scientific computing and machine learning (NumPy, SciPy, scikit-learn, PyTorch, and TensorFlow); computer vision and visualisation (OpenCV and Matplotlib); topological data analysis (GUDHI and Ripser)\nDevelopment and publishing: Git/GitHub, Quarto, and LaTeX\nSpoken languages: English and Tagalog (fluent)",
-    "title" : "Rey Joseph “RJ” Nieto"
-  },
-  {
-    "href" : "cv/#contact",
-    "objectID" : "cv/index.html#contact",
-    "section" : "Contact",
-    "text" : "Contact\n\nPreferred email: rj (at) rjnieto (dot) com\nBristol alumni email: zo23232 (at) alumni (dot) bristol (dot) ac (dot) uk\nLinkedIn: linkedin.com/in/rjosephnieto",
-    "title" : "Rey Joseph “RJ” Nieto"
   }
 ]
