@@ -50,7 +50,7 @@ mistakes.
 **Term:** First Semester, A.Y. 2026–2027<br>
 **Instructor's name:** Rey Joseph Nieto<br>
 **Email:** rj (at) rjnieto (dot) com (for questions or
-inquiries related to the course)
+enquiries related to the course)
 
 Rooms, consultation arrangements, and course updates are communicated through
 official class channels.
@@ -59,15 +59,15 @@ official class channels.
 
 | Date | Topic |
 | ------------ | -------------------------------------- |
-| 9/12/2026 | Midterm Revision |
-| 9/19/2026 | Midterm Exam |
-| 9/26/2026 | Reasoning, Evidence, and Proof |
-| 10/3/2026 | Probability and Statistics |
-| 10/10/2026 | Interest, Credit, and Consumer Loans |
-| 10/17/2026 | Investments and Home Ownership |
-| 10/24/2026 | Mathematics of Graphs |
-| 10/31/2026 | Finals Revision |
-| 11/7/2026 | Final Exam |
+| 12 September 2026 | Midterm Revision |
+| 19 September 2026 | Midterm Exam |
+| 26 September 2026 | Reasoning, Evidence, and Proof |
+| 3 October 2026 | Probability and Statistics |
+| 10 October 2026 | Interest, Credit, and Consumer Loans |
+| 17 October 2026 | Investments and Home Ownership |
+| 24 October 2026 | Mathematics of Graphs |
+| 31 October 2026 | Finals Revision |
+| 7 November 2026 | Final Exam |
 
 ## Printable lecture notes
 
