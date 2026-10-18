@@ -193,7 +193,7 @@ macroeconomics.
 
 ### Computational Stability of Cubical Homology
 
-*Final-year BSc dissertation, University of Bristol · 2026 · Mark: 90%*
+*Final-year BSc dissertation, University of Bristol · 2026 · Paper Mark: 90%*
 
 I developed and tested a reproducible, parallelised Python pipeline for
 cubical persistent homology on 400 retinal images across ten perturbation

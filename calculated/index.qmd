@@ -20,6 +20,23 @@ link to individual columns; the newspaper also maintains an
 
 ::: {.calculated-archive}
 ::: {.calculated-entry}
+### [Who owns the future of work?](https://mb.com.ph/2026/10/17/who-owns-the-future-of-work){target="_blank" rel="noopener"}
+
+17 October 2026 · *Manila Bulletin*
+
+::: {.calculated-excerpt}
+AI may make workers more productive without making their livelihoods more
+secure. As machines take on more professional tasks, the gains could flow to
+those who own the technology while workers and smaller businesses pay for
+access. Education and retraining matter, but so do bargaining power,
+competitive technology markets, and opportunities to build assets alongside
+skills.
+
+[Read more](https://mb.com.ph/2026/10/17/who-owns-the-future-of-work){.btn .btn-outline-primary .btn-sm .calculated-read-more target="_blank" rel="noopener"}
+:::
+:::
+
+::: {.calculated-entry}
 ### [The Oracle of DelphAI](https://mb.com.ph/2026/10/10/the-oracle-of-delphai){target="_blank" rel="noopener"}
 
 10 October 2026 · *Manila Bulletin*

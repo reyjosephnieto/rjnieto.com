@@ -1,0 +1,27 @@
+---
+title: "Discrete Mathematics"
+subtitle: "Bulacan State University<br><em>Bustos Campus</em>"
+description: "Course information and teaching materials for Discrete Mathematics for BS Information Technology students at Bulacan State University's Bustos Campus."
+image: "/assets/images/rey-joseph-nieto-social-preview.png"
+image-alt: "Portrait of Rey Joseph RJ Nieto on an ivory background with burgundy analytical motifs"
+canonical-url: "https://rjnieto.com/teaching/bulsu/discrete-mathematics/"
+header-includes: |
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta property="og:url" content="https://rjnieto.com/teaching/bulsu/discrete-mathematics/">
+  <meta property="og:type" content="article">
+toc: false
+---
+
+I will teach *Discrete Mathematics* to BS Information Technology students at
+Bulacan State University's
+[Bustos Campus](https://bulsu.edu.ph/academics/campus/Bustos){target="_blank" rel="noopener"}
+in the Second Semester of A.Y. 2026–2027.
+
+Discrete mathematics studies finite and countable structures and develops
+reasoning used throughout computing. It provides a foundation for working with
+logic, algorithms, data structures, and networks.
+
+## Course materials
+
+Lecture notes, exercises, and supplementary materials will be added here as
+they are prepared.

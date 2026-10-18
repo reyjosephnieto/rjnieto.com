@@ -19,6 +19,14 @@ students can read ahead, revisit a topic, or catch up after an absence.
 
 ## Courses
 
+### Discrete Mathematics
+
+For BS Information Technology students at Bustos Campus, starting in the
+Second Semester of A.Y. 2026–2027. Course materials will be added as they are
+prepared.
+
+[Open the course page](bulsu/discrete-mathematics/index.qmd){.btn .btn-outline-primary}
+
 ### Mathematics in the Modern World
 
 Lecture notes, examples, exercises, and supplementary materials for
