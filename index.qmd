@@ -62,9 +62,14 @@ I hold a BSc in Mathematics with First Class Honours from the [University of
 Bristol](https://www.bristol.ac.uk/study/undergraduate/2027/maths/bsc-mathematics/){target="_blank" rel="noopener"} and am pursuing an MSc in Applied and
 Computational Mathematics at [The Johns Hopkins University
 (JHU)](https://ep.jhu.edu/programs/applied-and-computational-mathematics/){target="_blank" rel="noopener"}.
-My studies focus on statistical and causal inference, network science, game
+My JHU studies focus on statistical and causal inference, network science, game
 theory, and the mathematical foundations of machine learning, with applied work
 in social media analytics and an introduction to generative AI.
+
+I am also pursuing an MSc in Science, Technology, Engineering and Public Policy
+at [University College London
+(UCL)](https://www.ucl.ac.uk/study/prospective-students/graduate/courses/science-technology-engineering-and-public-policy-msc){target="_blank" rel="noopener"}.
+My UCL studies are currently on hold while I prioritise the JHU programme.
 :::
 
 ::: {.home-intro-photo}
@@ -77,7 +82,7 @@ in social media analytics and an introduction to generative AI.
 I teach part-time at [Bulacan State
 University](https://bulsu.edu.ph/){target="_blank" rel="noopener"}. Next semester,
 I will teach
-[*Discrete Mathematics*](teaching/bulsu/discrete-mathematics/index.qmd) at the
+[*Discrete Structures*](teaching/bulsu/discrete-mathematics/index.qmd) at the
 [Bustos](https://bulsu.edu.ph/academics/campus/Bustos){target="_blank" rel="noopener"}
 Campus. I currently teach
 [*Mathematics in the Modern World*](teaching/bulsu/math-modern-world/index.qmd)

@@ -38,7 +38,7 @@ website:
           - href: teaching/index.qmd
             text: Overview
           - href: teaching/bulsu/discrete-mathematics/index.qmd
-            text: Discrete Math
+            text: Discrete Structures
           - href: teaching/bulsu/math-modern-world/index.qmd
             text: GenEd Math
           - href: teaching/bulsu/living-it-era/index.qmd

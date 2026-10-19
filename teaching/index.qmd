@@ -19,7 +19,7 @@ students can read ahead, revisit a topic, or catch up after an absence.
 
 ## Courses
 
-### Discrete Mathematics
+### Discrete Structures
 
 For BS Information Technology students at Bustos Campus, starting in the
 Second Semester of A.Y. 2026–2027. Course materials will be added as they are
