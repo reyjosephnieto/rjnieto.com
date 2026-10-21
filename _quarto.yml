@@ -6,11 +6,15 @@ project:
     - "*.qmd"
     - "**/*.qmd"
     - "!source-material/**/*.qmd"
+    - "!kitchen/**"
   resources:
     - about.html
     - computational-topology/index.html
     - mathematics/year-4-h1/index.html
     - mmw/index.html
+    - "!kitchen/**"
+    - "!agents.md"
+    - "!AGENTS.md"
 
 website:
   title: "RJ Nieto"

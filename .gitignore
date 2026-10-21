@@ -1,6 +1,11 @@
 /.quarto/
 /_site/
 /.vscode/
+# Consolidated private working material; never commit or publish.
+/kitchen/
+# Private workspace instructions (both spellings for portability).
+/agents.md
+/AGENTS.md
 /README.md
 /codex_*
 # Local reference repositories used for analysis; never commit them here.
