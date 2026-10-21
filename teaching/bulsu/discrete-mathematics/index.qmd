@@ -277,12 +277,13 @@ topological data analysis, artificial intelligence and machine learning,
 network science, and combinatorics to problems in healthcare,
 industry, and public policy.
 
-In the previous semester, I taught MMW and MST at Bulacan State University's
-San Rafael Campus. Before that, I was a teaching assistant for Mathematical
+In the previous semester, I taught Mathematics in the Modern World and
+Living in the IT Era at Bulacan State University's San Rafael Campus.
+Before that, I was a teaching assistant for Mathematical
 Programming at the University of Bristol.
 
 During weekdays, I serve as an Assistant
-Secretary at the Office of the Cabinet Secretary,
+Secretary at the Office of the Cabinet Secretary in the Office of the President,
 Government of the Philippines. My work includes policy analytics, where I use
 mathematical methods, among other tools, to assess the feasibility and
 reasonableness of proposed and existing government policies.
