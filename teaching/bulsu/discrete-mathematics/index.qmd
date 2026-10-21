@@ -140,6 +140,7 @@ accordance with the BulSU Undergraduate Student Manual, Part II, Section J.5.
 **Course number:** IT 107<br>
 **Programme:** BS Information Technology, Year 1<br>
 **Term:** Second Semester, A.Y. 2026–2027<br>
+**Last day to drop subjects:** 22 January 2027<br>
 **Class meetings:** Saturdays, one three-hour session per week<br>
 **Instructor:** Rey Joseph Nieto<br>
 **Email:** rj [at] rjnieto [dot] com (for course-related enquiries)
