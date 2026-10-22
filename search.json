@@ -133,76 +133,6 @@
     "title" : "Calculated"
   },
   {
-    "href" : "/#teaching",
-    "objectID" : "index.html#teaching",
-    "section" : "Teaching",
-    "text" : "Teaching\nI teach part-time at Bulacan State University. Next semester, I will teach Discrete Structures at the Bustos Campus. I currently teach Mathematics in the Modern World and Living in the IT Era at the San Rafael Campus. My teaching materials include original lecture notes, exercises, and supplementary resources developed primarily for biology students.",
-    "title" : "Rey Joseph “RJ” Nieto"
-  },
-  {
-    "href" : "/#writing",
-    "objectID" : "index.html#writing",
-    "section" : "Writing",
-    "text" : "Writing\nI write Calculated, a weekly Saturday column for the Manila Bulletin. The newspaper’s author archive provides links to the published essays.",
-    "title" : "Rey Joseph “RJ” Nieto"
-  },
-  {
-    "href" : "/#hobby",
-    "objectID" : "index.html#hobby",
-    "section" : "Hobby",
-    "text" : "Hobby\nMy hobby is independent mathematics, artificial intelligence, and machine-learning research. My current project asks how image-analysis methods respond when images are rotated, resized, poorly exposed, or degraded by sensor noise, and whether those response patterns can help identify acquisition problems. The work continues my University of Bristol dissertation, Computational Stability of Cubical Homology; the thesis and Python implementation are publicly available.",
-    "title" : "Rey Joseph “RJ” Nieto"
-  },
-  {
-    "href" : "/#earlier-work",
-    "objectID" : "index.html#earlier-work",
-    "section" : "Earlier work",
-    "text" : "Earlier work\nMy earlier work spans technical writing, journalism, national broadcasting, public affairs, government communications, and programme delivery. Further details are available in my CV and on LinkedIn.",
-    "title" : "Rey Joseph “RJ” Nieto"
-  },
-  {
-    "href" : "teaching/bulsu/math-modern-world/",
-    "objectID" : "teaching/bulsu/math-modern-world/index.html",
-    "section" : "",
-    "text" : "This page contains lecture notes, examples, exercises, and supplementary material for Mathematics in the Modern World, prepared primarily for the BS Biology students whom I teach. This version of MMW combines mathematical appreciation with more calculation and reasoning than students may expect from a general-education course. It may feel challenging at times, but the work is intended to stretch students rather than overwhelm them. This emphasis follows the broad scope of Mathematics in the Modern World described in CHED Memorandum Order No. 20, series of 2013, while adapting the material to the needs of biology students.\nThe course has two aims. The first is to develop practical mathematical literacy—including financial literacy—that students can use in everyday life. The second is to introduce a little of several areas of mathematics in preparation for more advanced quantitative courses. Contrary to popular opinion, there is a great deal of mathematics in biology, so examples are drawn whenever possible from biology, ecology, health, and data analysis.\nBiological and medical research is highly interdisciplinary. Students are not expected to master every field, but knowing something about different mathematical and computational approaches helps them recognise what a problem calls for—and whom they might ask to collaborate with, whether a statistician, mathematical modeller, computer scientist, or another specialist.\nI think of this as a challenging but enjoyable course. Mathematics makes it possible to define terms clearly, state assumptions, and follow conclusions step by step. Its reputation, unfamiliar notation, or an earlier bad experience can make it appear less approachable than it is. Like any demanding subject, it becomes more manageable through careful study, practice, and learning from mistakes.",
-    "title" : "Mathematics in the Modern World"
-  },
-  {
-    "href" : "teaching/bulsu/math-modern-world/#logistics",
-    "objectID" : "teaching/bulsu/math-modern-world/index.html#logistics",
-    "section" : "Logistics",
-    "text" : "Logistics\nCourse title: Mathematics in the Modern World Course number: MMW 101 Term: First Semester, A.Y. 2026–2027 Instructor’s name: Rey Joseph Nieto Email: rj (at) rjnieto (dot) com (for questions or enquiries related to the course)\nRooms, consultation arrangements, and course updates are communicated through official class channels.",
-    "title" : "Mathematics in the Modern World"
-  },
-  {
-    "href" : "teaching/bulsu/math-modern-world/#schedule",
-    "objectID" : "teaching/bulsu/math-modern-world/index.html#schedule",
-    "section" : "Schedule",
-    "text" : "Schedule\n\n\n\nDate\nTopic\n\n\n\n\n12 September 2026\nMidterm Revision\n\n\n19 September 2026\nMidterm Exam\n\n\n26 September 2026\nReasoning, Evidence, and Proof\n\n\n3 October 2026\nProbability and Statistics\n\n\n10 October 2026\nInterest, Credit, and Consumer Loans\n\n\n17 October 2026\nInvestments and Home Ownership\n\n\n24 October 2026\nMathematics of Graphs\n\n\n31 October 2026\nFinals Revision\n\n\n7 November 2026\nFinal Exam",
-    "title" : "Mathematics in the Modern World"
-  },
-  {
-    "href" : "teaching/bulsu/math-modern-world/#printable-lecture-notes",
-    "objectID" : "teaching/bulsu/math-modern-world/index.html#printable-lecture-notes",
-    "section" : "Printable lecture notes",
-    "text" : "Printable lecture notes\nThe current version of the complete lecture notes is available as a PDF.\nOpen the MMW 101 lecture notes\nCurrent version: 22 August 2026",
-    "title" : "Mathematics in the Modern World"
-  },
-  {
-    "href" : "teaching/bulsu/math-modern-world/#problem-sheets",
-    "objectID" : "teaching/bulsu/math-modern-world/index.html#problem-sheets",
-    "section" : "Problem Sheets",
-    "text" : "Problem Sheets\nProblem Sheet 1",
-    "title" : "Mathematics in the Modern World"
-  },
-  {
-    "href" : "teaching/bulsu/math-modern-world/#course-policies",
-    "objectID" : "teaching/bulsu/math-modern-world/index.html#course-policies",
-    "section" : "Course policies",
-    "text" : "Course policies\nPlease refer to the approved course syllabus and applicable university guidelines for policies on attendance, assessment, classroom conduct, academic integrity, and related matters. Course-specific arrangements and updates will be communicated through official class channels.",
-    "title" : "Mathematics in the Modern World"
-  },
-  {
     "href" : "teaching/bulsu/discrete-mathematics/",
     "objectID" : "teaching/bulsu/discrete-mathematics/index.html",
     "section" : "",
@@ -278,5 +208,75 @@
     "section" : "About me",
     "text" : "About me\nI graduated with a BSc in Mathematics with first-class honours from the University of Bristol in the United Kingdom. My interests lie in applying probability, topological data analysis, artificial intelligence and machine learning, network science, and combinatorics to problems in healthcare, industry, and public policy.\nIn the previous semester, I taught Mathematics in the Modern World and Living in the IT Era at Bulacan State University’s San Rafael Campus. Before that, I was a teaching assistant for Mathematical Programming at the University of Bristol.\nDuring weekdays, I serve as an Assistant Secretary at the Office of the Cabinet Secretary in the Office of the President, Government of the Philippines. My work includes policy analytics, where I use mathematical methods, among other tools, to assess the feasibility and reasonableness of proposed and existing government policies. On Saturdays, I teach you. On Sundays, I study for my MSc in Applied and Computational Mathematics at The Johns Hopkins University in the United States. In what little spare time I have, I catch Pokémon.\n\nYou can call me RJ, Kuya RJ, or Sir—though “Sir” sounds a little icky because I have not been knighted by King Charles. Call me Tito RJ or Daddy RJ and I will automatically fail you. But seriously, just call me RJ (no honorifics), and that’s totally fine.",
     "title" : "Discrete Structures for IT"
+  },
+  {
+    "href" : "teaching/bulsu/math-modern-world/",
+    "objectID" : "teaching/bulsu/math-modern-world/index.html",
+    "section" : "",
+    "text" : "This page contains lecture notes, examples, exercises, and supplementary material for Mathematics in the Modern World, prepared primarily for the BS Biology students whom I teach. This version of MMW combines mathematical appreciation with more calculation and reasoning than students may expect from a general-education course. It may feel challenging at times, but the work is intended to stretch students rather than overwhelm them. This emphasis follows the broad scope of Mathematics in the Modern World described in CHED Memorandum Order No. 20, series of 2013, while adapting the material to the needs of biology students.\nThe course has two aims. The first is to develop practical mathematical literacy—including financial literacy—that students can use in everyday life. The second is to introduce a little of several areas of mathematics in preparation for more advanced quantitative courses. Contrary to popular opinion, there is a great deal of mathematics in biology, so examples are drawn whenever possible from biology, ecology, health, and data analysis.\nBiological and medical research is highly interdisciplinary. Students are not expected to master every field, but knowing something about different mathematical and computational approaches helps them recognise what a problem calls for—and whom they might ask to collaborate with, whether a statistician, mathematical modeller, computer scientist, or another specialist.\nI think of this as a challenging but enjoyable course. Mathematics makes it possible to define terms clearly, state assumptions, and follow conclusions step by step. Its reputation, unfamiliar notation, or an earlier bad experience can make it appear less approachable than it is. Like any demanding subject, it becomes more manageable through careful study, practice, and learning from mistakes.",
+    "title" : "Mathematics in the Modern World"
+  },
+  {
+    "href" : "teaching/bulsu/math-modern-world/#logistics",
+    "objectID" : "teaching/bulsu/math-modern-world/index.html#logistics",
+    "section" : "Logistics",
+    "text" : "Logistics\nCourse title: Mathematics in the Modern World Course number: MMW 101 Term: First Semester, A.Y. 2026–2027 Instructor’s name: Rey Joseph Nieto Email: rj (at) rjnieto (dot) com (for questions or enquiries related to the course)\nRooms, consultation arrangements, and course updates are communicated through official class channels.",
+    "title" : "Mathematics in the Modern World"
+  },
+  {
+    "href" : "teaching/bulsu/math-modern-world/#schedule",
+    "objectID" : "teaching/bulsu/math-modern-world/index.html#schedule",
+    "section" : "Schedule",
+    "text" : "Schedule\n\n\n\nDate\nTopic\n\n\n\n\n12 September 2026\nMidterm Revision\n\n\n19 September 2026\nMidterm Exam\n\n\n26 September 2026\nReasoning, Evidence, and Proof\n\n\n3 October 2026\nProbability and Statistics\n\n\n10 October 2026\nInterest, Credit, and Consumer Loans\n\n\n17 October 2026\nInvestments and Home Ownership\n\n\n24 October 2026\nMathematics of Graphs\n\n\n31 October 2026\nFinals Revision\n\n\n7 November 2026\nFinal Exam",
+    "title" : "Mathematics in the Modern World"
+  },
+  {
+    "href" : "teaching/bulsu/math-modern-world/#printable-lecture-notes",
+    "objectID" : "teaching/bulsu/math-modern-world/index.html#printable-lecture-notes",
+    "section" : "Printable lecture notes",
+    "text" : "Printable lecture notes\nThe current version of the complete lecture notes is available as a PDF.\nOpen the MMW 101 lecture notes\nCurrent version: 22 August 2026",
+    "title" : "Mathematics in the Modern World"
+  },
+  {
+    "href" : "teaching/bulsu/math-modern-world/#problem-sheets",
+    "objectID" : "teaching/bulsu/math-modern-world/index.html#problem-sheets",
+    "section" : "Problem Sheets",
+    "text" : "Problem Sheets\nProblem Sheet 1",
+    "title" : "Mathematics in the Modern World"
+  },
+  {
+    "href" : "teaching/bulsu/math-modern-world/#course-policies",
+    "objectID" : "teaching/bulsu/math-modern-world/index.html#course-policies",
+    "section" : "Course policies",
+    "text" : "Course policies\nPlease refer to the approved course syllabus and applicable university guidelines for policies on attendance, assessment, classroom conduct, academic integrity, and related matters. Course-specific arrangements and updates will be communicated through official class channels.",
+    "title" : "Mathematics in the Modern World"
+  },
+  {
+    "href" : "/#teaching",
+    "objectID" : "index.html#teaching",
+    "section" : "Teaching",
+    "text" : "Teaching\nI teach part-time at Bulacan State University. Next semester, I will teach Discrete Structures at the Bustos Campus. I currently teach Mathematics in the Modern World and Living in the IT Era at the San Rafael Campus. My teaching materials include original lecture notes, exercises, and supplementary resources developed primarily for biology students.",
+    "title" : "Rey Joseph “RJ” Nieto"
+  },
+  {
+    "href" : "/#writing",
+    "objectID" : "index.html#writing",
+    "section" : "Writing",
+    "text" : "Writing\nI write Calculated, a weekly Saturday column for the Manila Bulletin. The newspaper’s author archive provides links to the published essays.",
+    "title" : "Rey Joseph “RJ” Nieto"
+  },
+  {
+    "href" : "/#hobby",
+    "objectID" : "index.html#hobby",
+    "section" : "Hobby",
+    "text" : "Hobby\nMy hobby is independent mathematics, artificial intelligence, and machine-learning research. My current project asks how image-analysis methods respond when images are rotated, resized, poorly exposed, or degraded by sensor noise, and whether those response patterns can help identify acquisition problems. The work continues my University of Bristol dissertation, Computational Stability of Cubical Homology; the thesis and Python implementation are publicly available.",
+    "title" : "Rey Joseph “RJ” Nieto"
+  },
+  {
+    "href" : "/#earlier-work",
+    "objectID" : "index.html#earlier-work",
+    "section" : "Earlier work",
+    "text" : "Earlier work\nMy earlier work spans technical writing, journalism, national broadcasting, public affairs, government communications, and programme delivery. Further details are available in my CV and on LinkedIn.",
+    "title" : "Rey Joseph “RJ” Nieto"
   }
 ]
