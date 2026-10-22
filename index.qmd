@@ -62,9 +62,8 @@ I hold a BSc in Mathematics with First Class Honours from the [University of
 Bristol](https://www.bristol.ac.uk/study/undergraduate/2027/maths/bsc-mathematics/){target="_blank" rel="noopener"} and am pursuing an MSc in Applied and
 Computational Mathematics at [The Johns Hopkins University
 (JHU)](https://ep.jhu.edu/programs/applied-and-computational-mathematics/){target="_blank" rel="noopener"}.
-My JHU studies focus on statistical and causal inference, network science, game
-theory, and the mathematical foundations of machine learning, with applied work
-in social media analytics and an introduction to generative AI.
+My interests lie in applying mathematics and computational methods to problems
+in healthcare, industry and public policy.
 
 I am also pursuing an MSc in Science, Technology, Engineering and Public Policy
 at [University College London
