@@ -133,6 +133,34 @@
     "title" : "Calculated"
   },
   {
+    "href" : "/#teaching",
+    "objectID" : "index.html#teaching",
+    "section" : "Teaching",
+    "text" : "Teaching\nI teach part-time at Bulacan State University. Next semester, I will teach Discrete Structures at the Bustos Campus. I currently teach Mathematics in the Modern World and Living in the IT Era at the San Rafael Campus. My teaching materials include original lecture notes, exercises, and supplementary resources developed primarily for biology students.",
+    "title" : "Rey Joseph “RJ” Nieto"
+  },
+  {
+    "href" : "/#writing",
+    "objectID" : "index.html#writing",
+    "section" : "Writing",
+    "text" : "Writing\nI write Calculated, a weekly Saturday column for the Manila Bulletin. The newspaper’s author archive provides links to the published essays.",
+    "title" : "Rey Joseph “RJ” Nieto"
+  },
+  {
+    "href" : "/#hobby",
+    "objectID" : "index.html#hobby",
+    "section" : "Hobby",
+    "text" : "Hobby\nMy hobby is independent mathematics, artificial intelligence, and machine-learning research. My current project asks how image-analysis methods respond when images are rotated, resized, poorly exposed, or degraded by sensor noise, and whether those response patterns can help identify acquisition problems. The work continues my University of Bristol dissertation, Computational Stability of Cubical Homology; the thesis and Python implementation are publicly available.",
+    "title" : "Rey Joseph “RJ” Nieto"
+  },
+  {
+    "href" : "/#earlier-work",
+    "objectID" : "index.html#earlier-work",
+    "section" : "Earlier work",
+    "text" : "Earlier work\nMy earlier work spans technical writing, journalism, national broadcasting, public affairs, government communications, and programme delivery. Further details are available in my CV and on LinkedIn.",
+    "title" : "Rey Joseph “RJ” Nieto"
+  },
+  {
     "href" : "teaching/bulsu/discrete-mathematics/",
     "objectID" : "teaching/bulsu/discrete-mathematics/index.html",
     "section" : "",
@@ -234,7 +262,7 @@
     "href" : "teaching/bulsu/math-modern-world/#printable-lecture-notes",
     "objectID" : "teaching/bulsu/math-modern-world/index.html#printable-lecture-notes",
     "section" : "Printable lecture notes",
-    "text" : "Printable lecture notes\nThe current version of the complete lecture notes is available as a PDF.\nOpen the MMW 101 lecture notes\nCurrent version: 22 August 2026",
+    "text" : "Printable lecture notes\nThe current version of the complete lecture notes is available as a PDF.\nOpen the MMW 101 lecture notes\nCurrent version: 24 October 2026",
     "title" : "Mathematics in the Modern World"
   },
   {
@@ -250,33 +278,5 @@
     "section" : "Course policies",
     "text" : "Course policies\nPlease refer to the approved course syllabus and applicable university guidelines for policies on attendance, assessment, classroom conduct, academic integrity, and related matters. Course-specific arrangements and updates will be communicated through official class channels.",
     "title" : "Mathematics in the Modern World"
-  },
-  {
-    "href" : "/#teaching",
-    "objectID" : "index.html#teaching",
-    "section" : "Teaching",
-    "text" : "Teaching\nI teach part-time at Bulacan State University. Next semester, I will teach Discrete Structures at the Bustos Campus. I currently teach Mathematics in the Modern World and Living in the IT Era at the San Rafael Campus. My teaching materials include original lecture notes, exercises, and supplementary resources developed primarily for biology students.",
-    "title" : "Rey Joseph “RJ” Nieto"
-  },
-  {
-    "href" : "/#writing",
-    "objectID" : "index.html#writing",
-    "section" : "Writing",
-    "text" : "Writing\nI write Calculated, a weekly Saturday column for the Manila Bulletin. The newspaper’s author archive provides links to the published essays.",
-    "title" : "Rey Joseph “RJ” Nieto"
-  },
-  {
-    "href" : "/#hobby",
-    "objectID" : "index.html#hobby",
-    "section" : "Hobby",
-    "text" : "Hobby\nMy hobby is independent mathematics, artificial intelligence, and machine-learning research. My current project asks how image-analysis methods respond when images are rotated, resized, poorly exposed, or degraded by sensor noise, and whether those response patterns can help identify acquisition problems. The work continues my University of Bristol dissertation, Computational Stability of Cubical Homology; the thesis and Python implementation are publicly available.",
-    "title" : "Rey Joseph “RJ” Nieto"
-  },
-  {
-    "href" : "/#earlier-work",
-    "objectID" : "index.html#earlier-work",
-    "section" : "Earlier work",
-    "text" : "Earlier work\nMy earlier work spans technical writing, journalism, national broadcasting, public affairs, government communications, and programme delivery. Further details are available in my CV and on LinkedIn.",
-    "title" : "Rey Joseph “RJ” Nieto"
   }
 ]
