@@ -208,6 +208,12 @@ course content the attention it deserves.
 1. **Electronic devices:** Phones and other personal electronic devices must
    be switched off and put away during class. Approved accessibility
    arrangements and university-required exceptions take precedence.
+
+   Bring a **notebook, paper and a pen or pencil** to every class. Use your
+   eyes to follow the mathematics, your ears to listen to the explanation,
+   and your hand to work through it. The lecture notes will provide a
+   skeleton; add your own explanations, worked solutions and observations
+   during class.
 2. **Photo:** Please bring a **recent 1×1 photo** to our first class so I can
    identify you when recording attendance.
 3. **Seating:** We will use a **fixed seating plan** to help me record
@@ -287,8 +293,7 @@ Secretary at the Office of the Cabinet Secretary in the Office of the President,
 Government of the Philippines. My work includes policy analytics, where I use
 mathematical methods, among other tools, to assess the feasibility and
 reasonableness of proposed and existing government policies.
-On Saturdays, I teach you. On Sundays, I study for my MSc in Applied and
-Computational Mathematics at The Johns Hopkins University in the United States.
+On Saturdays, I teach you.
 In what little spare time I have, I catch Pokémon.
 
 ![](/assets/images/pikachu.jpg){fig-alt="Pikachu smiling and winking" width=240 height=240 style="display:block; margin-inline:auto; max-width:100%; height:auto;"}

@@ -146,27 +146,6 @@ government and community affairs.
 
 ## Education
 
-### MSc Applied and Computational Mathematics
-
-**[The Johns Hopkins University
-(JHU)](https://ep.jhu.edu/programs/applied-and-computational-mathematics/){.cv-institution target="_blank" rel="noopener"}**<br>
-2026–Present
-
-My planned studies focus on statistical and causal inference, network science,
-game theory, and the mathematical foundations of machine learning, with applied
-work in social media analytics and an introduction to generative AI.
-
-### MSc Science, Technology, Engineering and Public Policy
-
-**[University College London
-(UCL)](https://www.ucl.ac.uk/study/prospective-students/graduate/courses/science-technology-engineering-and-public-policy-msc){.cv-institution target="_blank" rel="noopener"}**<br>
-2026–Present
-
-My aim is to consolidate my technical knowledge in science, technology,
-engineering, and mathematics and apply it to actionable public policy. My UCL
-studies are currently on hold while I prioritise the JHU programme; I have until
-2031 to complete the degree.
-
 ### BSc Mathematics with First Class Honours
 
 **[University of Bristol](https://www.bristol.ac.uk/){.cv-institution target="_blank" rel="noopener"}** ·

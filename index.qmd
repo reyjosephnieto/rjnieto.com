@@ -56,16 +56,9 @@ I serve as Assistant Secretary in the Office of the Cabinet Secretary, under the
 Office of the President of the Philippines, where I work on policy analytics.
 
 I hold a BSc in Mathematics with First Class Honours from the [University of
-Bristol](https://www.bristol.ac.uk/study/undergraduate/2027/maths/bsc-mathematics/){target="_blank" rel="noopener"} and am pursuing an MSc in Applied and
-Computational Mathematics at [The Johns Hopkins University
-(JHU)](https://ep.jhu.edu/programs/applied-and-computational-mathematics/){target="_blank" rel="noopener"}.
+Bristol](https://www.bristol.ac.uk/study/undergraduate/2027/maths/bsc-mathematics/){target="_blank" rel="noopener"}.
 My interests lie in applying mathematics and computational methods to problems
 in healthcare, industry and public policy.
-
-I am also pursuing an MSc in Science, Technology, Engineering and Public Policy
-at [University College London
-(UCL)](https://www.ucl.ac.uk/study/prospective-students/graduate/courses/science-technology-engineering-and-public-policy-msc){target="_blank" rel="noopener"}.
-My UCL studies are currently on hold while I prioritise the JHU programme.
 :::
 
 ::: {.home-intro-photo}
