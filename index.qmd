@@ -71,7 +71,7 @@ in healthcare, industry and public policy.
 I teach part-time at [Bulacan State
 University](https://bulsu.edu.ph/){target="_blank" rel="noopener"}. Next semester,
 I will teach
-[*Discrete Structures*](teaching/bulsu/discrete-mathematics/index.qmd) at the
+[*Discrete Structures*](teaching/bulsu/discrete-structures/index.qmd) at the
 [Bustos](https://bulsu.edu.ph/academics/campus/Bustos){target="_blank" rel="noopener"}
 Campus. I currently teach
 [*Mathematics in the Modern World*](teaching/bulsu/math-modern-world/index.qmd)

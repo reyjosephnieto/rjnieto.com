@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="robots" content="noindex, follow">
+  <script>
+    const destination = new URL('/teaching/bulsu/discrete-structures/', window.location.origin);
+    const anchors = {
+      'the-course': 'logistics',
+      'tentative-course-outline': 'course-outline',
+      'primary-textbook': 'course-outline',
+      'printable-lecture-notes': 'course-outline',
+      'respect-for-learning': 'course-policies'
+    };
+    const fragment = window.location.hash.slice(1);
+    destination.search = window.location.search;
+    destination.hash = Object.prototype.hasOwnProperty.call(anchors, fragment)
+      ? anchors[fragment] : fragment;
+    window.location.replace(destination.href);
+  </script>
+  <meta http-equiv="refresh" content="0; url=/teaching/bulsu/discrete-structures/">
+  <link rel="canonical" href="https://rjnieto.com/teaching/bulsu/discrete-structures/">
+  <title>Discrete Structures for IT</title>
+</head>
+<body>
+  <p>This page has moved to <a href="/teaching/bulsu/discrete-structures/">Discrete Structures for IT</a>.</p>
+</body>
+</html>

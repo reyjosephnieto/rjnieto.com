@@ -7,14 +7,17 @@ project:
     - "**/*.qmd"
     - "!source-material/**/*.qmd"
     - "!kitchen/**"
+    - "!agents2.md"
   resources:
     - about.html
     - computational-topology/index.html
     - mathematics/year-4-h1/index.html
     - mmw/index.html
+    - teaching/bulsu/discrete-mathematics/index.html
     - "!kitchen/**"
     - "!agents.md"
     - "!AGENTS.md"
+    - "!agents2.md"
 
 website:
   title: "RJ Nieto"
@@ -41,7 +44,7 @@ website:
         menu:
           - href: teaching/index.qmd
             text: Overview
-          - href: teaching/bulsu/discrete-mathematics/index.qmd
+          - href: teaching/bulsu/discrete-structures/index.qmd
             text: Discrete Structures
           - href: teaching/bulsu/math-modern-world/index.qmd
             text: GenEd Math

@@ -6,6 +6,7 @@
 # Private workspace instructions (both spellings for portability).
 /agents.md
 /AGENTS.md
+/agents2.md
 /README.md
 /codex_*
 # Local reference repositories used for analysis; never commit them here.
