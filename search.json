@@ -10,7 +10,7 @@
     "href" : "teaching/#courses",
     "objectID" : "teaching/index.html#courses",
     "section" : "Courses",
-    "text" : "Courses\n\nDiscrete Structures\nFor BS Information Technology students at Bustos Campus, starting in the Second Semester of A.Y. 2026–2027. Course materials will be added as they are prepared.\nOpen the course page\n\n\nMathematics in the Modern World\nLecture notes, examples, exercises, and supplementary materials for Mathematics in the Modern World, developed specifically for biology majors at Bulacan State University.\nOpen the course page\n\n\nLiving in the IT Era\nLecture notes and course materials for Living in the IT Era, developed for first-year biology majors at Bulacan State University. The course provides practical working knowledge of computers, networks, software, online safety, digital life, and emerging technologies.\nOpen the course page\nThese are personal teaching materials, not official publications or policies of Bulacan State University.",
+    "text" : "Courses\n\nDiscrete Structures\nFor BS Information Technology students at Bustos Campus, starting in the Second Semester of A.Y. 2026–2027. Chapter notes, class schedule and assessments.\nOpen the course page\n\n\nMathematics in the Modern World\nLecture notes, examples, exercises, and supplementary materials for Mathematics in the Modern World, developed specifically for biology majors at Bulacan State University.\nOpen the course page\n\n\nLiving in the IT Era\nLecture notes and course materials for Living in the IT Era, developed for first-year biology majors at Bulacan State University. The course provides practical working knowledge of computers, networks, software, online safety, digital life, and emerging technologies.\nOpen the course page\nThese are personal teaching materials, not official publications or policies of Bulacan State University.",
     "title" : "Teaching"
   },
   {
@@ -24,7 +24,7 @@
     "href" : "teaching/bulsu/living-it-era/#logistics",
     "objectID" : "teaching/bulsu/living-it-era/index.html#logistics",
     "section" : "Logistics",
-    "text" : "Logistics\nCourse title: Living in the IT Era Course number: MST 101d Term: First Semester, A.Y. 2026–2027 Instructor’s name: Rey Joseph Nieto Email: rj (at) rjnieto (dot) com (for questions or enquiries related to the course)\nRooms, consultation arrangements, and any changes to the schedule below are communicated through official class channels.",
+    "text" : "Logistics\nCourse title: Living in the IT Era Course number: MST 101d Term: First Semester, A.Y. 2026–2027 Instructor’s name: Rey Joseph Nieto Email: reyjoseph [dot] nieto [at] bulsu [dot] edu [dot] ph\nRooms, consultation arrangements, and any changes to the schedule below are communicated through official class channels.",
     "title" : "Living in the IT Era"
   },
   {
@@ -161,83 +161,6 @@
     "title" : "Rey Joseph “RJ” Nieto"
   },
   {
-    "href" : "teaching/bulsu/discrete-mathematics/",
-    "objectID" : "teaching/bulsu/discrete-mathematics/index.html",
-    "section" : "",
-    "text" : "Hi, I am RJ Nieto, and I will be your instructor for this module.",
-    "title" : "Discrete Structures for IT"
-  },
-  {
-    "href" : "teaching/bulsu/discrete-mathematics/#the-course",
-    "objectID" : "teaching/bulsu/discrete-mathematics/index.html#the-course",
-    "section" : "The Course",
-    "text" : "The Course\nI will use this page to share course information, lecture notes, examples, exercises and supplementary material for our Discrete Structures for IT module at Bulacan State University’s Bustos Campus.\nTo be clear, this is a demanding first-year course in discrete mathematics. I expect everyone to engage deeply with the material. The keys to mastering mathematics are:\n\nPractice, constant practice. Work through problems yourself and revisit the ones you find difficult.\nCuriosity. Ask questions, even when they sound silly to you.\nDiligence. Keep up with the material and work through your mistakes.\n\nWe will not be tackling Olympiad-level problems, and you do not need exceptional mathematical aptitude to do well. Think of this module as functional mathematical literacy for future IT specialists. We will work with logic, sets, functions, relations, counting, integers, induction, recursion, graphs and trees, connecting these ideas to organising records, expressing access rules and modelling networks.\nThis course prioritises depth over breadth. We will focus on selected topics and spend enough time on explanation, practice and feedback for you to become confident in using them. The aim is to develop lasting mathematical skills, rather than rush through a long list of topics that you only partly understand.\nIf you want to learn how to wrangle information, mathematics will give you the tools to do it precisely and systematically.\nBulSU aims to be a globally competitive university, and I want you to take pride in your studies. Drawing on my experience at Bristol, I will expect the same independent study, careful reasoning and active participation that I encountered as a student there.",
-    "title" : "Discrete Structures for IT"
-  },
-  {
-    "href" : "teaching/bulsu/discrete-mathematics/#primary-textbook",
-    "objectID" : "teaching/bulsu/discrete-mathematics/index.html#primary-textbook",
-    "section" : "Primary textbook",
-    "text" : "Primary textbook\nOscar Levin’s Discrete Mathematics: An Open Introduction, fourth edition, is our primary textbook. You can read it online or download the PDF for free. We will use selected sections, with supplementary examples where needed.\nOpen Levin’s textbook — fourth edition",
-    "title" : "Discrete Structures for IT"
-  },
-  {
-    "href" : "teaching/bulsu/discrete-mathematics/#tentative-course-outline",
-    "objectID" : "teaching/bulsu/discrete-mathematics/index.html#tentative-course-outline",
-    "section" : "Tentative course outline",
-    "text" : "Tentative course outline\nThe thirteen teaching weeks follow Levin’s progression through logic and proofs, graphs, counting, sequences, and sets and functions. Each chapter in our lecture notes corresponds to one teaching week; these chapter numbers are separate from Levin’s. We will study selected material within the sections listed below.\n\n\n\n\n\n\n\n\nCh.\nTopics\nLevin, fourth edition\n\n\n\n\n1\nMathematical statements, predicates and quantifiers\n§1.1; definitions from §0.2 as needed\n\n\n2\nImplications, logical equivalence and valid arguments\n§§1.2–1.3\n\n\n3\nDirect proof, contrapositive and contradiction\n§1.4\n\n\n4\nProofs about sets, functions and relations\n§§1.5.2–1.5.4\n\n\n5\nGraphs and trees\n§§2.1–2.2\n\n\n6\nRelations, their properties, equivalence classes and partitions\n§2.6\n\n\n7\nCounting outcomes: sum and product rules, inclusion–exclusion\n§§3.1–3.3\n\n\n8\nCombinations, permutations and combinatorial proofs\n§§3.4 and 3.6\n\n\n9\nSequences: explicit and recursive descriptions, initial conditions, arithmetic and geometric sequences\n§§4.1–4.2\n\n\n10\nOrdinary (weak) mathematical induction\n§4.5\n\n\n11\nStrong induction\n§4.6\n\n\n12\nSets and functions revisited: operations, function properties and recursive definitions\n§§5.1–5.2\n\n\n13\nStructural induction on recursively defined objects, including expressions and rooted trees\nSupplementary material drawing on earlier topics\n\n\n\nThere will be no coding assignments, but pseudocode may be used to explain mathematical ideas and algorithms. Recursive functions will be studied through their domains, initial values, defining rules and mathematical evaluation. Structural induction will receive a supplementary explanation and exercises.",
-    "title" : "Discrete Structures for IT"
-  },
-  {
-    "href" : "teaching/bulsu/discrete-mathematics/#class-format",
-    "objectID" : "teaching/bulsu/discrete-mathematics/index.html#class-format",
-    "section" : "Class format",
-    "text" : "Class format\nI expect you to read ahead on the topic we will cover. You do not need to have mastered it before class, but you should come prepared to participate. I will guide you through questions rather than put you on the spot; expecting you to produce a polished answer without support would be unfair. Recitation is graded at every class meeting. Students who participate very actively will receive extra credit towards other coursework.\nEach regular three-hour session is divided as follows:\n\n\n\n\n\n\n\nTime from the start of class\nActivity\n\n\n\n\n0:00–0:50\nProblem class: we work through problems covering the previous week’s topics\n\n\n0:50–1:00\nBreak\n\n\n1:00–1:50\nLecture\n\n\n1:50–2:00\nBreak\n\n\n2:00–2:50\nLecture\n\n\n2:50–3:00\nDismissal and consultations for students who wish to stay\n\n\n\nAfter dismissal, I will remain in the room for questions and consultations. If nobody approaches within five minutes, I will leave. I strongly encourage you to ask questions. If a question occurs to you later, you can email me at rj [at] rjnieto [dot] com.",
-    "title" : "Discrete Structures for IT"
-  },
-  {
-    "href" : "teaching/bulsu/discrete-mathematics/#assessment",
-    "objectID" : "teaching/bulsu/discrete-mathematics/index.html#assessment",
-    "section" : "Assessment",
-    "text" : "Assessment\n\n\n\nComponent\nWeight\n\n\n\n\nMidterm examination\n20%\n\n\nFinal examination\n20%\n\n\nLong Test 1\n10%\n\n\nLong Test 2\n10%\n\n\nProblem sets: best three of four, at 5% each\n15%\n\n\nParticipation and recitation\n20%\n\n\nPromptness and attendance\n5%\n\n\nTotal\n100%\n\n\n\nThere will be four problem sets. Your three highest percentage scores will each contribute 5% of your course mark; the lowest score will be excluded.\nFinal examination exemption: In this course, students with a pre-final grade of 1.50 or better who have completed all subject requirements may choose not to take the final examination. This exemption is offered in accordance with the BulSU Undergraduate Student Manual, Part II, Section J.5.",
-    "title" : "Discrete Structures for IT"
-  },
-  {
-    "href" : "teaching/bulsu/discrete-mathematics/#logistics",
-    "objectID" : "teaching/bulsu/discrete-mathematics/index.html#logistics",
-    "section" : "Logistics",
-    "text" : "Logistics\nCourse title: Discrete Structures for IT Course number: IT 107 Programme: BS Information Technology, Year 1 Term: Second Semester, A.Y. 2026–2027 Last day to drop subjects: 22 January 2027 Class meetings: Saturdays, one three-hour session per week Instructor: Rey Joseph Nieto Email: rj [at] rjnieto [dot] com (for course-related enquiries)\n\n\n\n\n\n\n\n\n\nSaturday\nTeaching Week / status\nAssessment\n\n\n\n\n21 November 2026\nTeaching Week: Chapter 1\n—\n\n\n28 November 2026\nTeaching Week: Chapter 2\n—\n\n\n5 December 2026\nTeaching Week: Chapter 3\nProblem Set 1 due\n\n\n12 December 2026\nTeaching Week: Chapter 4\n—\n\n\n19 December 2026\nTeaching Week: Chapter 5\nProblem Set 2 due\n\n\n26 December 2026\nNo classes — Christmas break\n—\n\n\n2 January 2027\nNo classes — Christmas break\n—\n\n\n9 January 2027\nTeaching Week: Chapter 6\n—\n\n\n16 January 2027\nTeaching Week: Chapter 7\nLong Test 1\n\n\n23 January 2027\nNo classes — First Philippine Republic anniversary, assumed holiday\n—\n\n\n30 January 2027\nNo regular classes — midterm examination\nMidterm examination\n\n\n6 February 2027\nNo classes — Chinese New Year\n—\n\n\n13 February 2027\nTeaching Week: Chapter 8\n—\n\n\n20 February 2027\nTeaching Week: Chapter 9\nProblem Set 3 due\n\n\n27 February 2027\nTeaching Week: Chapter 10\n—\n\n\n6 March 2027\nTeaching Week: Chapter 11\nProblem Set 4 due\n\n\n13 March 2027\nTeaching Week: Chapter 12\n—\n\n\n20 March 2027\nTeaching Week: Chapter 13\nLong Test 2\n\n\n27 March 2027\nNo classes — Black Saturday\n—\n\n\n3 April 2027\nNo regular classes — final examination\nFinal examination",
-    "title" : "Discrete Structures for IT"
-  },
-  {
-    "href" : "teaching/bulsu/discrete-mathematics/#printable-lecture-notes",
-    "objectID" : "teaching/bulsu/discrete-mathematics/index.html#printable-lecture-notes",
-    "section" : "Printable lecture notes",
-    "text" : "Printable lecture notes\nLecture notes are in preparation. They will draw primarily on Levin’s textbook, with worked examples and exercises suited to this class and supplementary explanations where needed. PDFs will be added here as they become available.",
-    "title" : "Discrete Structures for IT"
-  },
-  {
-    "href" : "teaching/bulsu/discrete-mathematics/#problem-sheets",
-    "objectID" : "teaching/bulsu/discrete-mathematics/index.html#problem-sheets",
-    "section" : "Problem sets",
-    "text" : "Problem sets\nProblem sets and supplementary exercises will be added here as they become available.",
-    "title" : "Discrete Structures for IT"
-  },
-  {
-    "href" : "teaching/bulsu/discrete-mathematics/#course-policies",
-    "objectID" : "teaching/bulsu/discrete-mathematics/index.html#course-policies",
-    "section" : "Course policies",
-    "text" : "Course policies\nThese class arrangements should be read alongside the BulSU Undergraduate Student Manual (Part II, Sections F–G and J–L) and the Enhanced Guidelines on Student Conduct, Discipline, and Grievance Intervention, which BulSU identifies as approved under BOR Resolution No. 34, series of 2022. The approved syllabus and applicable university policies take precedence over these class arrangements.\n\n\n\n\n\n\nNoteRespect for learning\n\n\n\nThere is room for humour in this class—you can even joke about me, and I will happily laugh along. But please take the subject seriously. Making a mistake or struggling to understand is part of learning; treating a lack of understanding as something to celebrate is another matter. Take pride in your studies, respect the effort your classmates put into learning, and give the course content the attention it deserves.\n\n\n\nElectronic devices: Phones and other personal electronic devices must be switched off and put away during class. Approved accessibility arrangements and university-required exceptions take precedence.\nBring a notebook, paper and a pen or pencil to every class. Use your eyes to follow the mathematics, your ears to listen to the explanation, and your hand to work through it. The lecture notes will provide a skeleton; add your own explanations, worked solutions and observations during class.\nPhoto: Please bring a recent 1×1 photo to our first class so I can identify you when recording attendance.\nSeating: We will use a fixed seating plan to help me record attendance and class recitation.\nAttention and classroom conduct: We meet only once a week for three hours, so each session can be more demanding than shorter classes spread across the week. I expect everyone to listen carefully and stay focused, even when the material gets difficult. If you are struggling to follow, please interrupt me and ask, or raise your questions during consultations. Disruptive chatting, excessive noise, and other misbehaviour are unacceptable and will be addressed through the university’s prescribed disciplinary procedures. Participation marks follow the approved assessment criteria. I am preparing you for life beyond university, where discipline matters.\nCoursework and deadlines: Submit coursework by the stated deadline. Work not submitted by the deadline receives zero marks, unless an excused absence or another university-approved arrangement applies. An unexcused absence does not extend a deadline or entitle you to a make-up assessment. Work submitted on time is assessed under the published criteria.\nAttendance and punctuality: Attend regularly and arrive on time. Under the handbook, arrival 15 minutes after the scheduled start is recorded as tardy, and arrival 20 minutes after the start is recorded as absent. Being marked absent does not prevent you from attending the lesson. Unexcused absences exceeding 20% of required class time before midterms trigger automatic dropping, recorded as FDA (failure due to absences) or UD (unofficially dropped). My course policy allows a maximum of three unexcused absences, subject to university attendance rules. Given the pace of this course, I strongly recommend perfect attendance. The official attendance calculation uses the required semester contact hours, and the count does not reset after midterms. Attendance classifications and grades follow university rules; FDA/UD and a numerical grade of 5.0 are distinct classifications.\nMissed examinations: If you miss an examination for an excused reason, contact me promptly with supporting documentation. Special examinations require the instructor’s recommendation and the unit head’s approval under Part II, Section J. Your final examination is not automatically double-weighted. An unexcused missed examination receives zero marks under the course assessment arrangements, subject to applicable university policies.\nExcused absences: The handbook recognises official university representation, medically certified sickness, and force majeure as excused reasons. Notify me promptly and provide the relevant documentation. An excused absence does not waive coursework requirements; arrange to complete any missed work. The handbook also sets a 30% limit on excused absences.\nAssessment and concerns: Assessment components, weights, and marking criteria follow the approved syllabus. You may ask how your marks were calculated and request a review of your class standing. Raise concerns with me or use the university’s student grievance procedure.\nBorderline marks: I may extend consideration to students with borderline failing marks who have perfect attendance, where permitted by the approved assessment rules. This is discretionary and does not guarantee a passing grade or waive academic requirements.\nUse of AI: I strongly encourage you to use AI for revision, but not to solve your problem sets. If AI does the work for you, you are likely to fail the midterm and final examinations, which use zero-based grading.\n\nCourse-specific arrangements and updates will be communicated through official class channels.",
-    "title" : "Discrete Structures for IT"
-  },
-  {
-    "href" : "teaching/bulsu/discrete-mathematics/#about-me",
-    "objectID" : "teaching/bulsu/discrete-mathematics/index.html#about-me",
-    "section" : "About me",
-    "text" : "About me\nI graduated with a BSc in Mathematics with first-class honours from the University of Bristol in the United Kingdom. My interests lie in applying probability, topological data analysis, artificial intelligence and machine learning, network science, and combinatorics to problems in healthcare, industry, and public policy.\nIn the previous semester, I taught Mathematics in the Modern World and Living in the IT Era at Bulacan State University’s San Rafael Campus. Before that, I was a teaching assistant for Mathematical Programming at the University of Bristol.\nDuring weekdays, I serve as an Assistant Secretary at the Office of the Cabinet Secretary in the Office of the President, Government of the Philippines. My work includes policy analytics, where I use mathematical methods, among other tools, to assess the feasibility and reasonableness of proposed and existing government policies. On Saturdays, I teach you. In what little spare time I have, I catch Pokémon.\n\nYou can call me RJ, Kuya RJ, or Sir—though “Sir” sounds a little icky because I have not been knighted by King Charles. Call me Tito RJ or Daddy RJ and I will automatically fail you. But seriously, just call me RJ (no honorifics), and that’s totally fine.",
-    "title" : "Discrete Structures for IT"
-  },
-  {
     "href" : "teaching/bulsu/math-modern-world/",
     "objectID" : "teaching/bulsu/math-modern-world/index.html",
     "section" : "",
@@ -248,7 +171,7 @@
     "href" : "teaching/bulsu/math-modern-world/#logistics",
     "objectID" : "teaching/bulsu/math-modern-world/index.html#logistics",
     "section" : "Logistics",
-    "text" : "Logistics\nCourse title: Mathematics in the Modern World Course number: MMW 101 Term: First Semester, A.Y. 2026–2027 Instructor’s name: Rey Joseph Nieto Email: rj (at) rjnieto (dot) com (for questions or enquiries related to the course)\nRooms, consultation arrangements, and course updates are communicated through official class channels.",
+    "text" : "Logistics\nCourse title: Mathematics in the Modern World Course number: MMW 101 Term: First Semester, A.Y. 2026–2027 Instructor’s name: Rey Joseph Nieto Email: reyjoseph [dot] nieto [at] bulsu [dot] edu [dot] ph\nRooms, consultation arrangements, and course updates are communicated through official class channels.",
     "title" : "Mathematics in the Modern World"
   },
   {
@@ -278,5 +201,61 @@
     "section" : "Course policies",
     "text" : "Course policies\nPlease refer to the approved course syllabus and applicable university guidelines for policies on attendance, assessment, classroom conduct, academic integrity, and related matters. Course-specific arrangements and updates will be communicated through official class channels.",
     "title" : "Mathematics in the Modern World"
+  },
+  {
+    "href" : "teaching/bulsu/discrete-structures/#logistics",
+    "objectID" : "teaching/bulsu/discrete-structures/index.html#logistics",
+    "section" : "Course information",
+    "text" : "Course information\nIT 107 · 2nd Semester, A.Y. ’26 – ’27\n\nInstructor: Rey Joseph Nieto.\nEmail: reyjoseph [dot] nieto [at] bulsu [dot] edu [dot] ph\nLast day to drop subjects: 22 January 2027.\nAssumed background: completion of, or familiarity with, Mathematics in the Modern World (MMW).\n\n\n\n\n\n\n\nImportantFirst meeting: 28 November 2026\n\n\n\n\nWe will not meet on 21 November 2026, to allow time for students registering late to complete their enrolment.\nBefore our first meeting on 28 November 2026, read the Introduction, Chapter 1 and Chapter 2 carefully.\nChapters 1 and 2 revisit mathematical language and logic from MMW and develop the ideas further.\nBring a recent 1×1 photo to our first meeting on 28 November. I will attach it to our fixed seating plan so I can identify you, check attendance more quickly and record your recitation marks.",
+    "title" : "Discrete Structures for IT"
+  },
+  {
+    "href" : "teaching/bulsu/discrete-structures/#course-outline",
+    "objectID" : "teaching/bulsu/discrete-structures/index.html#course-outline",
+    "section" : "Course outline and printable lecture notes",
+    "text" : "Course outline and printable lecture notes\n\nI have planned twelve self-contained chapters across thirteen teaching weeks, including the opening self-study week, to allow for class suspensions and catch-up work. Chapter numbers match the numbered teaching weeks.\nIf we stay on schedule, we may also discuss introductory automata theory and mathematical ways of describing computer programs and their behaviour.\nThere are no coding assignments; pseudocode may be used.\n\n\n\n\n\n\nDate\nTopic\nAssessment Due\n\n\n\n\n\nPDF Introduction\n\n\n\n21 Nov 2026\nPDF 1 · Statements and quantifiersSelf-study; no face-to-face class.\n—\n\n\n28 Nov 2026\nPDF 2 · Propositional logic\n—\n\n\n5 Dec 2026\nPDF 3 · Proof methods\n—\n\n\n12 Dec 2026\nPDF 4 · Sets and mappings\n—\n\n\n19 Dec 2026\nPDF 5 · Induction\nProblem Set 1\n\n\n26 Dec 2026\nChristmas break\n—\n\n\n2 Jan 2027\nChristmas break\n—\n\n\n9 Jan 2027\nPDF 6 · Graphs\nProblem Set 2\n\n\n16 Jan 2027\nPDF 7 · Equivalence relations\n—\n\n\n23 Jan 2027\nFirst Philippine Republic anniversary (assumed holiday)\n—\n\n\n30 Jan 2027\nMidterm examination\n—\n\n\n6 Feb 2027\nChinese New Year (no classes)\n—\n\n\n13 Feb 2027\nPDF 8 · Modular arithmetic\nProblem Set 3\n\n\n20 Feb 2027\nPDF 9 · Counting principles\n—\n\n\n27 Feb 2027\nPDF 10 · Permutations and combinations\nProblem Set 4\n\n\n6 Mar 2027\nPDF 11 · Sequences\n—\n\n\n13 Mar 2027\nPDF 12 · Recursion\nProblem Set 5\n\n\n20 Mar 2027\nChapter 12 problem class and course revision\n—\n\n\n27 Mar 2027\nBlack Saturday (no classes)\n—\n\n\n3 Apr 2027\nFinal examination\n—",
+    "title" : "Discrete Structures for IT"
+  },
+  {
+    "href" : "teaching/bulsu/discrete-structures/#entire-book",
+    "objectID" : "teaching/bulsu/discrete-structures/index.html#entire-book",
+    "section" : "The entire book as of 17 November 2026",
+    "text" : "The entire book as of 17 November 2026\n\n\nDownload the entire book (PDF)",
+    "title" : "Discrete Structures for IT"
+  },
+  {
+    "href" : "teaching/bulsu/discrete-structures/#class-format",
+    "objectID" : "teaching/bulsu/discrete-structures/index.html#class-format",
+    "section" : "Class format",
+    "text" : "Class format\nSaturday Meeting Timetable\n\n10:30 a.m.–12 noon: lecture on the current chapter.\n12 noon–1:00 p.m.: lunch break.\n1:00–1:30 p.m.: recap of the previous chapter.\n1:30–2:30 p.m.: problems on the previous chapter.\n\nPreparation and participation\n\nRead the assigned chapter before class and attempt the previous chapter’s problems. You need not have mastered the material; identify where you need help. Questions will draw on the reading, with guidance as needed.\nRecitation is graded at every meeting on the quality of your reasoning, rather than how often you speak. There are no traditional quizzes.\nConsultations: I am available after class; if nobody approaches within five minutes of dismissal, I will leave. You may also email questions.",
+    "title" : "Discrete Structures for IT"
+  },
+  {
+    "href" : "teaching/bulsu/discrete-structures/#assessment",
+    "objectID" : "teaching/bulsu/discrete-structures/index.html#assessment",
+    "section" : "Assessment",
+    "text" : "Assessment\n\n\n\n\nComponent\nWeight\n\n\n\n\nProblem sets (best four of five)\n50%\n\n\nAttendance\n5%\n\n\nRecitation\n15%\n\n\nMidterm examination\n15%\n\n\nFinal examination\n15%\n\n\nTotal\n100%\n\n\n\n\n\nProblem-set scores are converted to percentages. The lowest is dropped; the remaining four are averaged, with each retained set accounting for 12.5% of the course mark.\nTerm examinations use zero-based grading.\nThe minimum passing percentage is 75%, equivalent to 3.00 (Student Manual, Part II, Section K).\n\n\nBonus for Mathematical Corrections\n\nQuestion my reasoning and raise suspected mistakes.\nEach confirmed significant error in the notes or lectures earns five percentage points on one examination mark (for example, 70% becomes 75%).\nA significant error affects a claim, calculation or reasoning; harmless typographical errors do not qualify.\nI will choose the examination and redirect any credit above 100% to other components in whichever way benefits you most.\nRaw marks and bonus adjustments are recorded separately.\n\n\n\nFinal examination exemption\nTo qualify:\n\nPre-final standing: 1.50 or better.\nCoursework: all course requirements completed.\nAttendance: perfect attendance, as an additional course condition; valid excused absences do not count against this requirement.\n\nThe academic conditions follow the Student Manual, Part II, Section J.5.\nLet \\(P\\) be your best-four problem-set average, \\(A\\) your attendance score, \\(R\\) your recitation score and \\(M\\) your midterm score, all percentages after any bonus credit. Your pre-final percentage is\n\\[\nS=\\frac{50P+5A+15R+15M}{85}.\n\\]\n\nConvert \\(S\\) using the University’s grading scale to obtain your pre-final standing.\nIf exempt and not taking the final: I will record the exemption and use \\(S\\) as the placeholder for its 15% component, preserving your pre-final percentage and grade.\nIf exempt and choosing to take the final: You waive the exemption. I will record your actual examination score, including any bonus credit, and use it at the usual 15% weight to calculate your course grade, as for a student without an exemption. Your final course grade may be better or worse than your pre-final standing.",
+    "title" : "Discrete Structures for IT"
+  },
+  {
+    "href" : "teaching/bulsu/discrete-structures/#problem-sheets",
+    "objectID" : "teaching/bulsu/discrete-structures/index.html#problem-sheets",
+    "section" : "Problem sets",
+    "text" : "Problem sets\n\nAll submissions must be handwritten.\nEach problem set will allow at least two weeks for completion.\nLate or missing submissions receive zero unless an accepted excuse or university-approved arrangement applies.\nAn unexcused absence does not extend a deadline or entitle you to a make-up assessment.\n\nAI and face-to-face checks\n\nYou may use AI for revision, but not to solve assigned problem sets.\nExaminations and recitations require independent answers without AI.\nI may ask you to explain your submitted solution in person: your approach, notation and reasons for particular steps.\nThese discussions will not include unrelated or trick questions, or require a different solution.\nIf you cannot give even a basic account of your own reasoning, the problem set receives zero.\n\nProblem sets will be posted here when issued.",
+    "title" : "Discrete Structures for IT"
+  },
+  {
+    "href" : "teaching/bulsu/discrete-structures/#course-policies",
+    "objectID" : "teaching/bulsu/discrete-structures/index.html#course-policies",
+    "section" : "Course policies",
+    "text" : "Course policies\nThe approved syllabus and university rules take precedence. See the Student Manual, Part II, Sections F–G and J–L and the Student Conduct, Discipline and Grievance Guidelines (BOR Resolution No. 34, series of 2022).\nDevices and notes\n\nPhones and other personal electronic devices must be switched off and put away, including when consulting notes.\nIf you have a device out or in use, you will be marked absent for that class.\nApproved accessibility arrangements and university-required exceptions take precedence.\nUse printed notes or, preferably, your own handwritten notes; bring paper and a pen or pencil.\n\nParticipation and conduct\n\nDifficulty understanding is not a reason for exclusion; ask for help.\nA clear and persistent unwillingness to engage will lead to being asked to step outside and return when ready to participate.\nDisruptive behaviour will be addressed under university disciplinary procedures. Participation marks follow the approved assessment criteria.\n\nAttendance and punctuality\n\nAttend regularly. Arrival 15 minutes after the start is recorded as tardy; arrival 20 minutes after the start is recorded as absent.\nBeing marked absent does not prevent attendance at the lesson.\nBefore midterms, unexcused absences exceeding 20% of required semester contact hours trigger automatic dropping, recorded as FDA (failure due to absences) or UD (unofficially dropped).\nThe absence total does not reset after midterms. These classifications are distinct from a numerical grade of 5.0.\nIf absent, read the missed notes and attempt the problems before the next class; seek help promptly if needed.\n\nExcused absences\nRecognised grounds:\n\nOfficial university representation in curricular, co-curricular or extracurricular activities.\nIllness certified by your attending doctor or the University physician.\nForce majeure: unavoidable extraordinary events beyond your control.\n\nOther absence rules:\n\nWeddings, parties and similar personal commitments do not qualify.\nNotify me promptly with supporting documentation and arrange to complete missed work.\nThe handbook sets a 30% limit on excused absences.\n\nMissed examinations\n\nFor an excused absence, contact me promptly with supporting documentation.\nSpecial examinations require the instructor’s recommendation and unit head’s approval under the manual’s Section J.\nThe final is not automatically double-weighted.\nAn unexcused missed examination receives zero, subject to university rules.\n\nMarks and concerns\n\nYou may request an explanation or review of your marks and use the university grievance procedure.\nI may consider perfect attendance and meaningful participation when reviewing borderline marks, within university rules. Neither guarantees a pass or replaces required coursework.\n\nCommitment\n\nSpeak with me early if you anticipate difficulty meeting the requirements.\nIf you cannot commit to preparation, attendance, participation and coursework, I recommend official withdrawal under university procedures and deadlines.\n\nProofwriting and abstraction\n\nThis is a proof-based course.\nThe aim is to reason precisely about objects, assumptions and relationships, as you would with code modules, interfaces and network configurations.\nYou will practise explaining why a method works, justifying a claim and finding counterexamples.",
+    "title" : "Discrete Structures for IT"
+  },
+  {
+    "href" : "teaching/bulsu/discrete-structures/#about-me",
+    "objectID" : "teaching/bulsu/discrete-structures/index.html#about-me",
+    "section" : "About me",
+    "text" : "About me\n\nEducation: first-class BSc in Mathematics, University of Bristol, England (2026).\nTeaching: previously taught Mathematics in the Modern World and Living in the IT Era at BulSU San Rafael; formerly a teaching assistant for Mathematical Programming at Bristol.\nWork: Assistant Secretary at the Office of the Cabinet Secretary, Office of the President, working on policy analytics during weekdays.\nInterests: probability, topological data analysis, AI and machine learning, network science and combinatorics, with applications in healthcare, industry and public policy.",
+    "title" : "Discrete Structures for IT"
   }
 ]
