@@ -58,6 +58,8 @@ body-classes: discrete-course-page
   teaching weeks.
 - If we stay on schedule, we may also discuss introductory automata theory
   and mathematical ways of describing computer programs and their behaviour.
+- The notes include **Python coding examples**, all **non-examinable**,
+  with their code, explanations and output contained in separate labelled boxes.
 - There are no coding assignments; pseudocode may be used.
 
 ::: {.discrete-chapter-list}
@@ -373,7 +375,7 @@ body-classes: discrete-course-page
 
 ::: {.discrete-book-details}
 
-**Entire book** · Updated 19 November 2026 · 188 pages
+**Entire book** · Updated 19 November 2026 · 198 pages
 [Download PDF](bulsu/discrete-math/lecture-notes/Nieto_DS.pdf){.discrete-chapter-pdf .btn .btn-outline-primary .btn-sm aria-label="Download the entire Discrete Mathematics book (PDF)"}
 
 :::
