@@ -51,6 +51,14 @@ if [ -f "$site_dir/search.json" ]; then
         $record->{href} =~ s{(^|/)index\.html(?=([?#]|$))}
                             {length($1) ? $1 : "/"}ge;
 
+        # Deleted course sources can leave records in an incremental index.
+        # Exclude their retired page roots, preserving direct asset URLs.
+        next if $record->{href} =~ m{
+          \A/?(?:teaching/bulsu/(?:discrete-math|discrete-structures|
+              discrete-mathematics|math-modern-world|living-it-era)|mmw)
+          /?(?:[?#]|\z)
+        }x;
+
         # A destination anchor should yield one search result. Quarto can
         # retain duplicate records after incremental renders.
         next if $seen_href{$record->{href}}++;
@@ -72,7 +80,35 @@ if [ -f "$site_dir/sitemap.xml" ]; then
   perl -0pi -e '
     s{/index\.html</loc>}{/</loc>}g;
     my %seen;
+    my $retired_course_url = qr{
+      \Ahttps://rjnieto\.com/(?:teaching/bulsu/(?:discrete-math|
+        discrete-structures|discrete-mathematics|math-modern-world|
+        living-it-era)|mmw)/\z
+    }x;
     s{(\s*<url>\s*<loc>([^<]+)</loc>.*?</url>)}
-     {$seen{$2}++ ? "" : $1}gse;
+     {my ($entry, $url) = ($1, $2);
+      $url =~ $retired_course_url ? "" : $seen{$url}++ ? "" : $entry}gse;
   ' "$site_dir/sitemap.xml"
+fi
+
+# Shared course assets retain their existing public paths after the course
+# page moves to /teaching/. Preserve earlier direct PDF and image links from
+# these assets; the retired course HTML pages redirect separately.
+course_dir="$site_dir/teaching/bulsu/discrete-math"
+legacy_course_dir="$site_dir/teaching/bulsu/discrete-structures"
+if [ -d "$course_dir" ]; then
+  for asset_group in lecture-notes images; do
+    if [ -d "$course_dir/$asset_group" ]; then
+      mkdir -p "$legacy_course_dir/$asset_group"
+      for course_asset in "$course_dir/$asset_group"/*.pdf "$course_dir/$asset_group"/*.webp; do
+        [ -f "$course_asset" ] || continue
+        cp "$course_asset" "$legacy_course_dir/$asset_group/"
+      done
+    fi
+  done
+fi
+
+if [ -f "$site_dir/assets/images/discrete-math-feature.png" ]; then
+  cp "$site_dir/assets/images/discrete-math-feature.png" \
+    "$site_dir/assets/images/discrete-structures-feature.png"
 fi

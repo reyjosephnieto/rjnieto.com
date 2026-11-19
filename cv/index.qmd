@@ -66,13 +66,12 @@ column. I previously wrote the weekly *Thinking Pinoy* column from 2020 to 2021.
 
 ### Instructor (Mathematics and IT)
 
-**[Bulacan State University](https://bulsu.edu.ph/){.cv-institution target="_blank" rel="noopener"}** · *San Rafael, Bulacan, Philippines*<br>
+**[Bulacan State University](https://bulsu.edu.ph/){.cv-institution target="_blank" rel="noopener"}** · *Bulacan, Philippines*<br>
 2026–Present
 
 I teach part-time undergraduate Saturday classes in
-[*Mathematics in the Modern World*](../teaching/bulsu/math-modern-world/index.qmd)
-and [*Living in the IT Era*](../teaching/bulsu/living-it-era/index.qmd), covering
-quantitative reasoning, data analysis, online safety, and emerging technologies.
+[*Discrete Mathematics*](../teaching/index.qmd). I previously taught
+*Mathematics in the Modern World* and *Living in the IT Era*.
 
 ### Teaching Assistant (Mathematics)
 

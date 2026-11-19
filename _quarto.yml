@@ -13,7 +13,18 @@ project:
     - computational-topology/index.html
     - mathematics/year-4-h1/index.html
     - mmw/index.html
+    - teaching/bulsu/discrete-math/index.html
     - teaching/bulsu/discrete-mathematics/index.html
+    - teaching/bulsu/discrete-structures/index.html
+    - teaching/bulsu/math-modern-world/index.html
+    - teaching/bulsu/living-it-era/index.html
+    - "teaching/bulsu/discrete-math/lecture-notes/*.pdf"
+    - "teaching/bulsu/discrete-math/images/*.webp"
+    - "teaching/bulsu/discrete-math/images/thumbnails/*.webp"
+    - "teaching/bulsu/math-modern-world/lecture-notes/*.pdf"
+    - "teaching/bulsu/math-modern-world/problem-sheets/*.pdf"
+    - "teaching/bulsu/living-it-era/lecture-notes/*.pdf"
+    - "teaching/bulsu/living-it-era/problem-sheets/*.pdf"
     - "!kitchen/**"
     - "!agents.md"
     - "!AGENTS.md"
@@ -40,16 +51,8 @@ website:
         text: Home
       - href: cv/index.qmd
         text: CV
-      - text: Teaching
-        menu:
-          - href: teaching/index.qmd
-            text: Overview
-          - href: teaching/bulsu/discrete-structures/index.qmd
-            text: Discrete Structures
-          - href: teaching/bulsu/math-modern-world/index.qmd
-            text: GenEd Math
-          - href: teaching/bulsu/living-it-era/index.qmd
-            text: GenEd IT
+      - href: teaching/index.qmd
+        text: Teaching
       - href: calculated/index.qmd
         text: Writing
       - href: research/index.qmd

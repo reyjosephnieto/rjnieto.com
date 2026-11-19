@@ -380,44 +380,103 @@ img.profile-photo {
   min-width: 0;
 }
 
-.discrete-course-page .discrete-cover-collage {
-  display: block;
-  width: 100%;
-  height: auto;
-  margin-block: 0.75rem 1rem;
-}
-
 .discrete-course-page .discrete-book-download {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 0.75rem;
+  display: grid;
+  grid-template-columns: 6rem minmax(0, 1fr);
+  align-items: center;
+  gap: 1rem;
   margin-block: 1rem 1.5rem;
+  font-size: 0.94rem;
+  line-height: 1.5;
 }
 
-.discrete-course-page .discrete-book-download > p {
-  max-width: 100%;
+.discrete-course-page .discrete-book-download > p,
+.discrete-course-page .discrete-book-details > p {
   margin: 0;
 }
 
-.discrete-course-page .discrete-book-cover-link {
-  display: block;
-  max-width: 100%;
+.discrete-course-page .discrete-book-details {
+  min-width: 0;
+  text-align: left;
 }
 
-.discrete-course-page .discrete-book-cover {
+.discrete-course-page .discrete-book-thumbnail,
+.discrete-course-page .discrete-book-thumbnail img {
   display: block;
-  max-width: 100%;
+  width: 100%;
   height: auto;
 }
 
-.discrete-assessment-schedule {
-  overflow-x: auto;
+.discrete-course-page .discrete-book-download .btn {
+  margin-inline-start: 0.5rem;
+  vertical-align: baseline;
+}
+
+.discrete-course-page .discrete-chapter-list {
+  margin-block: 1rem 1.5rem;
+}
+
+.discrete-course-page .discrete-chapter {
+  display: grid;
+  grid-template-columns: 12rem minmax(0, 1fr);
+  align-items: start;
+  gap: 1.5rem;
+  padding-block: 1.5rem;
+  border-bottom: 1px solid var(--rule);
+}
+
+.discrete-course-page .discrete-chapter > p {
+  margin: 0;
+}
+
+.discrete-course-page .discrete-chapter-thumbnail {
+  display: block;
   max-width: 100%;
+}
+
+.discrete-course-page .discrete-chapter-thumbnail img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1;
+}
+
+.discrete-course-page .discrete-chapter-details {
+  min-width: 0;
+  text-align: left;
+}
+
+.discrete-course-page .discrete-chapter-details h3 {
+  margin: 0 0 0.5rem;
+  font-size: 1.35rem;
+}
+
+.discrete-course-page .discrete-chapter-details p {
+  margin-block: 0 0.65rem;
+}
+
+.discrete-course-page .discrete-chapter-date {
+  color: var(--muted-ink);
+  font-size: 0.92rem;
+}
+
+.discrete-course-page .discrete-chapter-details ul {
+  padding-left: 1.15rem;
+  margin-block: 0.65rem;
+  font-size: 0.98rem;
+  line-height: 1.5;
+}
+
+.discrete-course-page .discrete-chapter-pdf {
+  font-size: 0.92rem;
+}
+
+.discrete-course-page .discrete-dates-table {
+  max-width: 36rem;
   margin-block: 0.75rem 1.25rem;
 }
 
-.discrete-assessment-schedule table,
+.discrete-course-page .discrete-dates-table table,
 .discrete-course-page .discrete-grading-table table {
   width: 100%;
   table-layout: fixed;
@@ -425,46 +484,20 @@ img.profile-photo {
   line-height: 1.5;
 }
 
-.discrete-assessment-schedule table :is(th, td),
+.discrete-course-page .discrete-dates-table table :is(th, td),
 .discrete-course-page .discrete-grading-table table :is(th, td) {
   padding: 0.55rem 0.65rem;
   vertical-align: top;
 }
 
-.discrete-assessment-schedule th,
+.discrete-course-page .discrete-dates-table th,
 .discrete-course-page .discrete-grading-table th {
   border-bottom-color: var(--rule);
 }
 
-.discrete-assessment-schedule th {
-  hyphens: auto;
-  overflow-wrap: anywhere;
-}
-
-.discrete-assessment-schedule th:first-child,
-.discrete-assessment-schedule td:first-child {
-  width: 20%;
-  white-space: normal;
-}
-
-.discrete-assessment-schedule th:nth-child(2),
-.discrete-assessment-schedule td:nth-child(2) {
-  width: 58%;
-}
-
-.discrete-assessment-schedule th:nth-child(3),
-.discrete-assessment-schedule td:nth-child(3) {
-  width: 22%;
-  white-space: normal;
-}
-
-.discrete-assessment-schedule .btn {
-  min-width: 2.5rem;
-  margin-inline-end: 0.35rem;
-  padding: 0.15rem 0.45rem;
-  font-size: 0.75rem;
-  vertical-align: baseline;
-  white-space: nowrap;
+.discrete-course-page .discrete-dates-table th:first-child,
+.discrete-course-page .discrete-dates-table td:first-child {
+  width: 45%;
 }
 
 .discrete-course-page .discrete-grading-table {
@@ -485,43 +518,25 @@ img.profile-photo {
 }
 
 @media (max-width: 600px) {
-  .discrete-assessment-schedule table,
+  .discrete-course-page .discrete-chapter {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .discrete-course-page .discrete-chapter-thumbnail {
+    width: 9rem;
+  }
+
+  .discrete-course-page .discrete-dates-table table,
   .discrete-course-page .discrete-grading-table table {
     font-size: 0.9rem;
   }
 
-  .discrete-assessment-schedule table :is(th, td),
+  .discrete-course-page .discrete-dates-table table :is(th, td),
   .discrete-course-page .discrete-grading-table table :is(th, td) {
     padding: 0.5rem 0.4rem;
   }
 
-  .discrete-assessment-schedule th:first-child,
-  .discrete-assessment-schedule td:first-child {
-    width: 24%;
-    white-space: normal;
-  }
-
-  .discrete-assessment-schedule th:nth-child(2),
-  .discrete-assessment-schedule td:nth-child(2) {
-    width: 43%;
-  }
-
-  .discrete-assessment-schedule th:nth-child(3),
-  .discrete-assessment-schedule td:nth-child(3) {
-    width: 33%;
-  }
-}
-
-@media (max-width: 360px) {
-  .discrete-assessment-schedule th:nth-child(2),
-  .discrete-assessment-schedule td:nth-child(2) {
-    width: 46%;
-  }
-
-  .discrete-assessment-schedule th:nth-child(3),
-  .discrete-assessment-schedule td:nth-child(3) {
-    width: 30%;
-  }
 }
 
 .calculated-read-more {
