@@ -346,8 +346,12 @@ P(k+1):\quad &amp;1+3+\cdots+(2k-1)+(2k+1)=(k+1)^2.
 &amp;=(k+1)^2.
 \end{aligned}\]</span> This is <span class="math inline">\(P(k+1)\)</span>. By ordinary induction, the identity holds for every integer <span class="math inline">\(n\geq1\)</span>. <span class="math inline">\(\square\)</span></p>
 <p>The hypothesis was used only to replace the shorter sum by <span class="math inline">\(k^2\)</span>. The remaining algebra established the new target. We did not assume the value of the longer sum.</p>
-<p><img src="../../../teaching/notes/assets/chapter-05/01-next-odd-border.webp" class="ds-note-image img-fluid" loading="lazy" decoding="async" alt="A square enlarged by an odd-numbered border, illustrating the inductive step for a sum of odd numbers."></p>
-<p>At <span class="math inline">\(k=3\)</span>, the next odd number supplies the seven tiles that enlarge a <span class="math inline">\(3\times3\)</span> square to <span class="math inline">\(4\times4\)</span>.</p>
+<figure id="ch05-next-odd-border" class="ds-animation figure">
+<picture> <source media="print, (prefers-reduced-motion: reduce)" srcset="/teaching/notes/assets/chapter-05/01-next-odd-border-poster.png"> <img class="ds-note-image figure-img" src="../../../teaching/notes/assets/chapter-05/01-next-odd-border.gif" alt="Nine blue tiles form a three-by-three square. Seven gold tiles make a new row of four and a new column of three, enlarging the square to four by four. The corner occurs once, illustrating the next-odd-number inductive step." width="1000" height="600" loading="lazy" decoding="async"> </picture>
+<figcaption>
+At <span class="math inline">\(k=3\)</span>, the next odd number supplies the seven tiles that enlarge a <span class="math inline">\(3\times3\)</span> square to <span class="math inline">\(4\times4\)</span>.
+</figcaption>
+</figure>
 <p>Choosing <span class="math inline">\(k=100\)</span> and proving one implication about that case would not establish the required step for every <span class="math inline">\(k\)</span>. In the proof above, no property of <span class="math inline">\(k\)</span> was used beyond <span class="math inline">\(k\geq1\)</span> and the stated inductive hypothesis. The same step therefore works wherever it is needed.</p>
 <div class="ds-box ds-python">
 <div id="python-non-examinable" class="ds-box-title">
@@ -642,7 +646,7 @@ b_{n+2}=3b_{n+1}-2b_n\quad(n\geq0).\]</span> Prove by strong induction that <spa
 </ol>
 </div>
 <div class="ds-chapter-navigation">
-<p><a href="../../../teaching/notes/chapter-04/">← Chapter 4</a> · <a href="../../../teaching/notes/chapter-06/">Chapter 6 →</a></p>
+<p><a href="../../../teaching/notes/chapter-04/">← Chapter 4</a> <a href="../../../teaching/notes/chapter-06/" class="btn btn-primary" rel="next" aria-label="Next chapter: Chapter 6 (HTML)">Next chapter →</a></p>
 </div>
 
 

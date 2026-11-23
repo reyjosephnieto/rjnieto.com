@@ -452,8 +452,12 @@ L(A)
 &amp;=1+\bigl(L(\bullet)+L(\bullet)\bigr)\\
 &amp;=1+(1+1)=3.
 \end{aligned}\]</span> The two leaf calls inside <span class="math inline">\(B\)</span> each return <span class="math inline">\(1\)</span>; the call on <span class="math inline">\(B\)</span> returns <span class="math inline">\(2\)</span>; the outer call returns <span class="math inline">\(1+2=3\)</span>. The matching internal count is <span class="math display">\[I(A)=1+I(\bullet)+I(B)=1+0+(1+0+0)=2.\]</span> The recursive values agree with the drawing.</p>
-<p><img src="../../../teaching/notes/assets/chapter-12/02-recursive-leaf-count.webp" class="ds-note-image img-fluid" loading="lazy" decoding="async" alt="The leaf count of a binary tree obtained by adding the leaf counts of its two subtrees."></p>
-<p>Each node displays its subtree’s leaf count: the right subtree returns <span class="math inline">\(2\)</span> and the root returns <span class="math inline">\(1+2=3\)</span>.</p>
+<figure id="ch12-recursive-leaf-count" class="ds-animation figure">
+<picture> <source media="print, (prefers-reduced-motion: reduce)" srcset="/teaching/notes/assets/chapter-12/01-recursive-leaf-count-poster.png"> <img class="ds-note-image figure-img" src="../../../teaching/notes/assets/chapter-12/01-recursive-leaf-count.gif" alt="A fixed full binary tree has one leaf on the left and two leaves below the right child. Recursive calls reach each leaf and return one; the right subtree returns two and the root adds one plus two to return three leaves." width="1000" height="600" loading="lazy" decoding="async"> </picture>
+<figcaption>
+Each node displays its subtree’s leaf count: the right subtree returns <span class="math inline">\(2\)</span> and the root returns <span class="math inline">\(1+2=3\)</span>.
+</figcaption>
+</figure>
 <div class="ds-box ds-python">
 <div id="python-non-examinable" class="ds-box-title">
 <p><strong>Python (non-examinable)</strong></p>
@@ -660,7 +664,7 @@ L(\operatorname{Node}(S,R))
 </ol>
 </div>
 <div class="ds-chapter-navigation">
-<p><a href="../../../teaching/notes/chapter-11/">← Chapter 11</a></p>
+<p><a href="../../../teaching/notes/chapter-11/">← Chapter 11</a> <a href="../../../teaching/bulsu/discrete-math/lecture-notes/Nieto_DS.pdf" class="btn btn-primary">Entire book PDF</a></p>
 </div>
 
 

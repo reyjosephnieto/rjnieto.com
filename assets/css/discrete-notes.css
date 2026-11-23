@@ -116,6 +116,28 @@
   height: auto;
 }
 
+.ds-lecture-notes .ds-animation {
+  margin: 1.5rem 0;
+}
+
+.ds-lecture-notes .ds-animation picture,
+.ds-lecture-notes .ds-animation img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.ds-lecture-notes .ds-animation img {
+  border-radius: 0.25rem;
+}
+
+.ds-lecture-notes .ds-animation figcaption {
+  margin-top: 0.6rem;
+  color: var(--muted-ink);
+  font-size: 0.9em;
+  line-height: 1.5;
+}
+
 .ds-lecture-notes :is(.ds-diagram img, .ds-diagram svg,
     #quarto-document-content img[src$=".svg"]) {
   display: block;
@@ -235,13 +257,26 @@
 }
 
 .ds-lecture-notes .ds-chapter-navigation > p {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem 1rem;
   margin-bottom: 0.5rem;
   text-indent: 0;
 }
 
 .ds-lecture-notes .ds-chapter-navigation a {
   display: inline-block;
-  margin-inline-end: 1rem;
+  margin: 0;
+}
+
+.ds-lecture-notes .ds-chapter-navigation .btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  margin-inline-start: auto;
+  white-space: normal;
 }
 
 @media (max-width: 600px) {

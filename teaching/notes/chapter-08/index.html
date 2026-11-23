@@ -481,8 +481,12 @@ a\otimes_n b=(ab)\bmod n.\]</span> The symbols <span class="math inline">\(\oplu
 <p>Existence and uniqueness of a remainder ensure exactly one output in <span class="math inline">\(S_n\)</span> for every input pair. Thus both are binary operations on <span class="math inline">\(S_n\)</span>. The notation <span class="math inline">\((S_n,\oplus_n,\otimes_n)\)</span> records the set and its two specified operations.</p>
 <p><span id="example-8.20."><strong>Example&nbsp;8.20.</strong></span> In <span class="math inline">\(S_4=\{0,1,2,3\}\)</span>, <span class="math display">\[2\oplus_4 3=5\bmod4=1,\qquad
 2\otimes_4 3=6\bmod4=2.\]</span> The ordinary intermediate values <span class="math inline">\(5\)</span> and <span class="math inline">\(6\)</span> lie outside <span class="math inline">\(S_4\)</span>; the operation outputs <span class="math inline">\(1\)</span> and <span class="math inline">\(2\)</span> lie inside it. Also, <span class="math inline">\(3\oplus_4 1=0\)</span>. This is an equality of representative labels under the defined operation; it does not assert the ordinary integer equality <span class="math inline">\(3+1=0\)</span>.</p>
-<p><img src="../../../teaching/notes/assets/chapter-08/01-modular-wraparound.webp" class="ds-note-image img-fluid" loading="lazy" decoding="async" alt="Modular arithmetic illustrated by positions wrapping around a cycle."></p>
-<p>Ordinary addition takes <span class="math inline">\(3\)</span> to <span class="math inline">\(4\)</span>; adding <span class="math inline">\(1\)</span> modulo <span class="math inline">\(4\)</span> takes label <span class="math inline">\(3\)</span> back to <span class="math inline">\(0\)</span>.</p>
+<figure id="ch08-modular-wraparound" class="ds-animation figure">
+<picture> <source media="print, (prefers-reduced-motion: reduce)" srcset="/teaching/notes/assets/chapter-08/01-modular-wraparound-poster.png"> <img class="ds-note-image figure-img" src="../../../teaching/notes/assets/chapter-08/01-modular-wraparound.gif" alt="Side by side, adding one moves a marker from 3 to 4 on an integer number line, but from residue label 3 to label 0 on the four-position modular cycle. The modular and ordinary operations are labelled separately." width="1000" height="600" loading="lazy" decoding="async"> </picture>
+<figcaption>
+Ordinary addition takes <span class="math inline">\(3\)</span> to <span class="math inline">\(4\)</span>; adding <span class="math inline">\(1\)</span> modulo <span class="math inline">\(4\)</span> takes label <span class="math inline">\(3\)</span> back to <span class="math inline">\(0\)</span>.
+</figcaption>
+</figure>
 <p><span id="operations-on-residue-classes."><strong>Operations on residue classes.</strong></span> The label <span class="math inline">\(a\in S_n\)</span> represents the class <span class="math inline">\([a]_n\in\mathbb{Z}_n\)</span>. On classes, adding <span class="math inline">\([a]_n\)</span> to <span class="math inline">\([b]_n\)</span> means forming <span class="math inline">\([a+b]_n\)</span>; multiplying means forming <span class="math inline">\([ab]_n\)</span>. These results do not depend on which integers represent the two classes.</p>
 <p>For example, modulo <span class="math inline">\(4\)</span>, <span class="math inline">\([2]_4=[6]_4\)</span>. Adding <span class="math inline">\([3]_4\)</span> using the first representative gives <span class="math inline">\([2+3]_4=[5]_4=[1]_4\)</span>; using <span class="math inline">\(6\)</span> gives <span class="math inline">\([6+3]_4=[9]_4=[1]_4\)</span> again.</p>
 <p>If <span class="math inline">\(a\equiv a'\pmod n\)</span> and <span class="math inline">\(b\equiv b'\pmod n\)</span>, the arithmetic rules give <span class="math display">\[a+b\equiv a'+b'\pmod n,\qquad
@@ -732,7 +736,7 @@ ab\equiv a'b'\pmod n.\]</span> So the resulting classes agree. Our operations on
 </ol>
 </div>
 <div class="ds-chapter-navigation">
-<p><a href="../../../teaching/notes/chapter-07/">← Chapter 7</a> · <a href="../../../teaching/notes/chapter-09/">Chapter 9 →</a></p>
+<p><a href="../../../teaching/notes/chapter-07/">← Chapter 7</a> <a href="../../../teaching/notes/chapter-09/" class="btn btn-primary" rel="next" aria-label="Next chapter: Chapter 9 (HTML)">Next chapter →</a></p>
 </div>
 
 

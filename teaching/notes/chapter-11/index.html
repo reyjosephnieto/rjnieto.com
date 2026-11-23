@@ -417,8 +417,12 @@ v_n=n+1+n(n-1)(n-2).\]</span> At <span class="math inline">\(n=0,1,2\)</span>, a
 <p><span id="example-11.7."><strong>Example&nbsp;11.7.</strong></span> Both sequences below use the rule “double the previous term”, starting at index <span class="math inline">\(0\)</span>: <span class="math display">\[1,2,4,8,\ldots
 \qquad\text{and}\qquad
 3,6,12,24,\ldots.\]</span> They satisfy <span class="math inline">\(a_{n+1}=2a_n\)</span>, but have different initial values. Specifying <span class="math inline">\(a_0=1\)</span> selects the first; specifying <span class="math inline">\(a_0=3\)</span> selects the second. The recurrence equation alone does not distinguish them.</p>
-<p><img src="../../../teaching/notes/assets/chapter-11/01-same-recurrence-different-starts.webp" class="ds-note-image img-fluid" loading="lazy" decoding="async" alt="Sequences following the same recurrence from different initial values."></p>
-<p>Both sequences double the preceding term, but starting at <span class="math inline">\(1\)</span> or <span class="math inline">\(3\)</span> gives different values at every displayed index.</p>
+<figure id="ch11-same-recurrence-different-starts" class="ds-animation figure">
+<picture> <source media="print, (prefers-reduced-motion: reduce)" srcset="/teaching/notes/assets/chapter-11/01-same-recurrence-different-starts-poster.png"> <img class="ds-note-image figure-img" src="../../../teaching/notes/assets/chapter-11/01-same-recurrence-different-starts.gif" alt="Two sequences use the same doubling rule. Starting at index zero with 1 gives 1,2,4,8,16; starting with 3 gives 3,6,12,24,48. Matching indices stay aligned as each new pair of terms is calculated." width="1000" height="600" loading="lazy" decoding="async"> </picture>
+<figcaption>
+Both sequences double the preceding term, but starting at <span class="math inline">\(1\)</span> or <span class="math inline">\(3\)</span> gives different values at every displayed index.
+</figcaption>
+</figure>
 <p><span id="ch11:fibonacci"><strong>Example&nbsp;11.8. The Fibonacci sequence.</strong></span> Define <span class="math display">\[f_0=0,\qquad f_1=1,\qquad
 f_{n+2}=f_{n+1}+f_n\quad(n\geq0).\]</span> This is the Fibonacci sequence with its stated starting indices. First <span class="math inline">\(f_2=f_1+f_0=1\)</span>, then <span class="math inline">\(f_3=f_2+f_1=2\)</span>, and <span class="math inline">\(f_4=f_3+f_2=3\)</span>. Continuing gives:</p>
 <div class="ds-table">
@@ -631,7 +635,7 @@ c_{n+2}=2c_{n+1}-c_n\quad(n\geq0).\]</span> Verify that <span class="math inline
 </ol>
 </div>
 <div class="ds-chapter-navigation">
-<p><a href="../../../teaching/notes/chapter-10/">← Chapter 10</a> · <a href="../../../teaching/notes/chapter-12/">Chapter 12 →</a></p>
+<p><a href="../../../teaching/notes/chapter-10/">← Chapter 10</a> <a href="../../../teaching/notes/chapter-12/" class="btn btn-primary" rel="next" aria-label="Next chapter: Chapter 12 (HTML)">Next chapter →</a></p>
 </div>
 
 

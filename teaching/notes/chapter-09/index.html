@@ -403,8 +403,12 @@ window.Quarto = {
 <p>Choose <span class="math inline">\(f(p)\)</span>, then <span class="math inline">\(f(q)\)</span>, then <span class="math inline">\(f(r)\)</span>. There are two choices each time, so there are <span class="math inline">\(2^3=8\)</span> functions. Each triple of values defines exactly one function, and two different triples define different functions. Nothing requires both servers to be used.</p>
 <p><span id="example-9.10."><strong>Example&nbsp;9.10.</strong></span> Three optional features are labelled <span class="math inline">\(L,S,B\)</span>. Any subset of these features may be enabled, including none. Record three bits in that fixed order: <span class="math inline">\(1\)</span> means enabled and <span class="math inline">\(0\)</span> means disabled. For example, <code>101</code> represents <span class="math inline">\(\{L,B\}\)</span>, and <code>000</code> represents <span class="math inline">\(\varnothing\)</span>.</p>
 <p>Each of the three positions has two choices, giving <span class="math inline">\(2^3=8\)</span> selections. Writing <span class="math inline">\(\{B,L\}\)</span> instead of <span class="math inline">\(\{L,B\}\)</span> does not give another selection: both have the same bit record. The encoding includes every subset exactly once.</p>
-<p><img src="../../../teaching/notes/assets/chapter-09/01-subsets-as-bits.webp" class="ds-note-image img-fluid" loading="lazy" decoding="async" alt="Subsets represented by binary strings, with one inclusion choice for each element."></p>
-<p>In the fixed order <span class="math inline">\(L,S,B\)</span>, the bit string <code>101</code> encodes the subset <span class="math inline">\(\{L,B\}\)</span>. Three independent binary choices give eight subsets.</p>
+<figure id="ch09-subsets-as-bits" class="ds-animation figure">
+<picture> <source media="print, (prefers-reduced-motion: reduce)" srcset="/teaching/notes/assets/chapter-09/01-subsets-as-bits-poster.png"> <img class="ds-note-image figure-img" src="../../../teaching/notes/assets/chapter-09/01-subsets-as-bits.gif" alt="Three optional features L,S,B keep a fixed order. Each of eight three-bit records is paired with its enabled subset: 000 gives the empty set and 101 gives L and B. Two choices in each of three positions give eight subsets." width="1000" height="600" loading="lazy" decoding="async"> </picture>
+<figcaption>
+In the fixed order <span class="math inline">\(L,S,B\)</span>, the bit string <code>101</code> encodes the subset <span class="math inline">\(\{L,B\}\)</span>. Three independent binary choices give eight subsets.
+</figcaption>
+</figure>
 <p>For a set of <span class="math inline">\(n\)</span> labelled features, the same argument gives <span class="math inline">\(2^n\)</span> subsets. When <span class="math inline">\(n=0\)</span>, the empty feature set has one subset, itself, agreeing with <span class="math inline">\(2^0=1\)</span>.</p>
 </section>
 <section id="ch9:cases" class="level2">
@@ -635,7 +639,7 @@ window.Quarto = {
 </ol>
 </div>
 <div class="ds-chapter-navigation">
-<p><a href="../../../teaching/notes/chapter-08/">← Chapter 8</a> · <a href="../../../teaching/notes/chapter-10/">Chapter 10 →</a></p>
+<p><a href="../../../teaching/notes/chapter-08/">← Chapter 8</a> <a href="../../../teaching/notes/chapter-10/" class="btn btn-primary" rel="next" aria-label="Next chapter: Chapter 10 (HTML)">Next chapter →</a></p>
 </div>
 
 

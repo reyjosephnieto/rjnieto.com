@@ -780,8 +780,12 @@ True</code></pre>
 <p>When a predicate has more than one input, a claim may need more than one quantifier. Read the quantifiers from left to right. Their order determines which choices may depend on earlier choices.</p>
 <p>Return to the permission table for <span class="math inline">\(A(u,f)\)</span> in Section&nbsp;<a href="#sec:predicates">1.5</a>. <span class="math display">\[\forall u\in U\,\exists f\in F\,A(u,f)\]</span> says: “For each user, there is at least one file that the user can access.” Choose a user first, then find a suitable file. For Alice we may choose guide; for Bob we may choose report; for Charlie we may choose data. We have considered every user in this finite domain, so the claim is true. There is no requirement to choose the same file for all three users.</p>
 <p>Now reverse the quantifiers: <span class="math display">\[\exists f\in F\,\forall u\in U\,A(u,f).\]</span> This says: “There is a file that every user can access.” We must choose one file that works for all users. Guide fails for Bob, report fails for Charlie, and data fails for Alice. Since those are all the files in <span class="math inline">\(F\)</span>, no file works, and the claim is false.</p>
-<p><img src="../../../teaching/notes/assets/chapter-01/02-quantifier-order-permissions.webp" class="ds-note-image img-fluid" loading="lazy" decoding="async" alt="User and folder permissions illustrating how changing the order of quantifiers changes a claim."></p>
-<p>Every user has access to a file, but no file can be accessed by all three users.</p>
+<figure id="ch01-quantifier-order" class="ds-animation figure">
+<picture> <source media="print, (prefers-reduced-motion: reduce)" srcset="/teaching/notes/assets/chapter-01/01-quantifier-order-permissions-poster.png"> <img class="ds-note-image figure-img" src="../../../teaching/notes/assets/chapter-01/01-quantifier-order-permissions.gif" alt="Six fixed permissions connect Alice, Bob and Charlie to guide, report and data. One accessible file is selected for each user; then each fixed file is rejected by a user without access. The first quantifier order is true and the second false." width="1000" height="600" loading="lazy" decoding="async"> </picture>
+<figcaption>
+Every user has access to a file, but no file can be accessed by all three users.
+</figcaption>
+</figure>
 <div class="ds-box ds-caution">
 <div id="quantifier-order" class="ds-box-title">
 <p><strong>Quantifier order</strong></p>
@@ -1029,7 +1033,7 @@ True</code></pre>
 </ol>
 </div>
 <div class="ds-chapter-navigation">
-<p><a href="../../../teaching/notes/chapter-00/">← Introduction</a> · <a href="../../../teaching/notes/chapter-02/">Chapter 2 →</a></p>
+<p><a href="../../../teaching/notes/chapter-00/">← Introduction</a> <a href="../../../teaching/notes/chapter-02/" class="btn btn-primary" rel="next" aria-label="Next chapter: Chapter 2 (HTML)">Next chapter →</a></p>
 </div>
 
 

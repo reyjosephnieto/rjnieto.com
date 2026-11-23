@@ -472,8 +472,12 @@ Degree sum: 14</code></pre>
 <p><span id="ch6:leaf-deletion"><strong>Example&nbsp;6.15.</strong></span> Let <span class="math inline">\(\ell\)</span> be a leaf of a tree <span class="math inline">\(T\)</span> with at least two vertices. Delete <span class="math inline">\(\ell\)</span> and its single incident edge, obtaining <span class="math inline">\(T'\)</span>.</p>
 <p>The remaining graph is nonempty and contains no cycle, because any cycle in it would already have been in <span class="math inline">\(T\)</span>. For any two remaining vertices, their path in <span class="math inline">\(T\)</span> cannot pass through <span class="math inline">\(\ell\)</span> between its endpoints: doing so would require two different incident path edges, whereas <span class="math inline">\(\ell\)</span> has degree <span class="math inline">\(1\)</span>. Thus their path survives in <span class="math inline">\(T'\)</span>. The remaining graph is connected and acyclic, hence a tree.</p>
 <p>This removes exactly one vertex and one edge. Deleting an arbitrary vertex of higher degree need not preserve connectedness.</p>
-<p><img src="../../../teaching/notes/assets/chapter-06/01-leaf-deletion.webp" class="ds-note-image img-fluid" loading="lazy" decoding="async" alt="A leaf and its incident edge removed from a tree, leaving a smaller tree."></p>
-<p>Deleting leaf <span class="math inline">\(f\)</span> from the example path removes one vertex and one edge; all remaining vertices stay connected.</p>
+<figure id="ch06-leaf-deletion" class="ds-animation figure">
+<picture> <source media="print, (prefers-reduced-motion: reduce)" srcset="/teaching/notes/assets/chapter-06/01-leaf-deletion-poster.png"> <img class="ds-note-image figure-img" src="../../../teaching/notes/assets/chapter-06/01-leaf-deletion.gif" alt="In the undirected path d,b,a,c,e,f, leaf f and edge e-f are removed together. Five vertices and four edges remain connected. Restoring the leaf restores exactly one vertex and one edge." width="1000" height="600" loading="lazy" decoding="async"> </picture>
+<figcaption>
+Deleting leaf <span class="math inline">\(f\)</span> from the example path removes one vertex and one edge; all remaining vertices stay connected.
+</figcaption>
+</figure>
 <p><span id="ch6:tree-count"><strong>Example&nbsp;6.16.</strong></span> Prove that a tree with <span class="math inline">\(n\)</span> vertices has <span class="math inline">\(n-1\)</span> edges.</p>
 <p><em>Proof.</em> For each integer <span class="math inline">\(n\geq1\)</span>, let <span class="math inline">\(P(n)\)</span> say: every tree with <span class="math inline">\(n\)</span> vertices has <span class="math inline">\(n-1\)</span> edges.</p>
 <p><em>Base case.</em> A one-vertex graph has no edges under our simple-graph definition. Thus every one-vertex tree has <span class="math inline">\(0=1-1\)</span> edges.</p>
@@ -727,7 +731,7 @@ E_H=\{\{a,b\},\{a,c\},\{b,d\},\{c,d\},\{d,e\}\}.\]</span></p>
 </ol>
 </div>
 <div class="ds-chapter-navigation">
-<p><a href="../../../teaching/notes/chapter-05/">← Chapter 5</a> · <a href="../../../teaching/notes/chapter-07/">Chapter 7 →</a></p>
+<p><a href="../../../teaching/notes/chapter-05/">← Chapter 5</a> <a href="../../../teaching/notes/chapter-07/" class="btn btn-primary" rel="next" aria-label="Next chapter: Chapter 7 (HTML)">Next chapter →</a></p>
 </div>
 
 

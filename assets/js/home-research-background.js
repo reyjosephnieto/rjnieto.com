@@ -23,17 +23,25 @@
     canvas.dataset.frames = "0";
     canvas.dataset.running = "false";
     canvas.dataset.profile = isHomepage ? "home" : "quiet";
-    canvas.dataset.layout = "sides";
+    canvas.dataset.layout = "balanced";
     backdrop.appendChild(canvas);
     body.insertBefore(backdrop, body.firstChild);
 
     const motion = window.matchMedia ?
       window.matchMedia("(prefers-reduced-motion: reduce)") : { matches: false };
     let width = 0, height = 0, ratio = 1, mobile = false;
-    let contentLeft = 0, contentRight = 0, layoutLeft = 0, layoutRight = 0;
     let nodes = [], faces = [], meshEdges = [], neuralEdges = [], bridgeEdges = [];
     let glow, clock = 0, frames = 0, animation = 0, resizeJob = 0;
     let lastPaint = null, dirty = true, suspended = false;
+
+    // Geometry follows the viewport, independently of the text column.
+    function fieldX(fraction) {
+      return width * (.06 + .88 * fraction);
+    }
+
+    function bridgeX(fraction) {
+      return width * (.08 + .84 * fraction);
+    }
 
     // A seeded cloud keeps the composition stable when its canvas is resized.
     function makeGeometry() {
@@ -72,8 +80,7 @@
       const perLayer = mobile ? 3 : 6, layerStart = nodes.length;
       for (let layer = 0; layer < 3; layer++) {
         for (let j = 0; j < perLayer; j++) {
-          nodes.push({ kind: "neural", side: "right",
-            x: (layoutRight + (width - layoutRight) * (.18 + .32 * layer)) / width,
+          nodes.push({ kind: "neural", x: .12 + .38 * layer,
             y: .12 + .76 * j / (perLayer - 1), radius: 1.6,
             phase: random() * 6.28, weight: random() });
         }
@@ -90,13 +97,15 @@
       const bridgePaths = mobile ? 2 : 3, bridgePoints = mobile ? 4 : 5;
       const cloudCount = Math.min(mobile ? 10 : 24,
         count - nodes.length - bridgePaths * bridgePoints);
+      const gcd = (a, b) => b ? gcd(b, a % b) : a;
+      let stride = Math.max(1, Math.floor(cloudCount * .618));
+      while (gcd(stride, cloudCount) !== 1) stride++;
       for (let i = 0, n = cloudCount; i < n; i++) {
-        const side = i % 2 ? "right" : "left";
-        const fraction = clamp(.5 + normal() * .22, .08, .92);
-        const x = (side === "left" ? layoutLeft * fraction :
-          layoutRight + (width - layoutRight) * fraction) / width;
+        const jitter = clamp(.5 + normal() * .22, .08, .92);
+        const fraction = ((i * stride) % n + jitter) / n;
+        const x = fieldX(fraction) / width;
         const y = clamp(.08 + .84 * (i + .5) / n + normal() * .025, .07, .93);
-        nodes.push({ kind: "cloud", side, x, y, phase: random() * 6.28,
+        nodes.push({ kind: "cloud", x, y, phase: random() * 6.28,
           radius: .9 + random(), class: y > .51 + .10 * Math.sin((x - .3) * 9) });
       }
       // Several sparse paths carry movement through different reading heights.
@@ -104,8 +113,7 @@
         const leftAnchor = Math.floor(path * around / bridgePaths) * across;
         for (let i = 0; i < bridgePoints; i++) {
           const fraction = (i + 1) / (bridgePoints + 1);
-          const x = layoutLeft * .8 +
-            (layoutRight + (width - layoutRight) * .2 - layoutLeft * .8) * fraction;
+          const x = bridgeX(fraction);
           const wave = Math.sin(fraction * Math.PI * 2);
           const y = mobile ? (path ? .80 - .55 * fraction - .045 * wave :
             .20 + .55 * fraction + .045 * wave) :
@@ -119,12 +127,11 @@
         bridgeEdges.push([nodes.length - 1,
           layerStart + Math.round(path * (perLayer - 1) / (bridgePaths - 1))]);
       }
-      while (nodes.length < count) {
-        const side = nodes.length % 2 ? "left" : "right";
-        const fraction = .08 + .84 * random();
-        const x = (side === "left" ? layoutLeft * fraction :
-          layoutRight + (width - layoutRight) * fraction) / width;
-        nodes.push({ kind: "field", side, x, y: .08 + .84 * random(),
+      const fieldCount = count - nodes.length;
+      for (let i = 0; i < fieldCount; i++) {
+        const fraction = (i + .08 + .84 * random()) / fieldCount;
+        const x = fieldX(fraction) / width;
+        nodes.push({ kind: "field", x, y: .08 + .84 * random(),
           phase: random() * 6.28, radius: .8 + random() * .8 });
       }
       canvas.dataset.nodes = String(nodes.length);
@@ -138,8 +145,8 @@
       const drift = .075 * Math.sin(clock * .085);
       const angle = .35 + clock * .032;
       const tilt = .90 + .12 * Math.sin(clock * .07);
-      const scaleX = Math.min(layoutLeft * .34, height * .30);
-      const scaleY = Math.min(height * .34, Math.max(layoutLeft * .72, height * .20));
+      const scaleX = Math.min(width * .34, height * .30);
+      const scaleY = Math.min(height * .34, Math.max(width * .72, height * .20));
       return nodes.map(node => {
         if (node.kind === "mesh") {
           const ring = 1 + node.v * Math.cos(node.u / 2);
@@ -150,11 +157,10 @@
           const ry = y * Math.cos(tilt) - rz * Math.sin(tilt);
           const depth = y * Math.sin(tilt) + rz * Math.cos(tilt);
           const perspective = 2.9 / (2.9 - depth * .30);
-          return { x: layoutLeft * .48 + rx * scaleX * perspective,
+          return { x: width * .48 + rx * scaleX * perspective,
             y: height * (.43 + drift) + ry * scaleY * .69 * perspective, depth };
         }
-        const sideWidth = node.side === "left" ? layoutLeft : width - layoutRight;
-        const movement = node.side ? Math.min(width * .011, sideWidth * .055) : width * .011;
+        const movement = width * .011;
         return { x: Math.max(3, Math.min(width - 3,
           width * node.x + movement * Math.sin(clock * .15 + node.phase))),
           y: height * (node.y + drift + .013 * Math.sin(clock * .18 + node.phase)),
@@ -183,9 +189,11 @@
       const points = positions();
       const flow = height * .075 * Math.sin(clock * .085);
       let left = 0, centre = 0, right = 0, visible = 0;
+      const leftBoundary = width / 3;
+      const rightBoundary = width * 2 / 3;
       for (const point of points) {
-        if (point.x < layoutLeft) left++;
-        else if (point.x > layoutRight) right++;
+        if (point.x < leftBoundary) left++;
+        else if (point.x > rightBoundary) right++;
         else centre++;
         if (point.x >= 0 && point.x <= width && point.y >= 0 && point.y <= height) visible++;
       }
@@ -195,8 +203,9 @@
       canvas.dataset.nodeVisible = String(visible);
 
       // Density contours and a curved classification boundary share the same field.
-      for (const [x, y, span] of [[layoutLeft * .5, height * .68, layoutLeft],
-        [layoutRight + (width - layoutRight) * .5, height * .32, width - layoutRight]]) {
+      const contours = [[width * .32, height * .68, width * .66],
+        [width * .68, height * .32, width * .66]];
+      for (const [x, y, span] of contours) {
         context.save();
         context.translate(x, y + flow);
         context.rotate(-.27 + .03 * Math.sin(clock * .10));
@@ -210,8 +219,7 @@
       context.beginPath();
       for (let i = 0; i <= 28; i++) {
         const fraction = i / 28;
-        const x = layoutLeft * .8 +
-          (layoutRight + (width - layoutRight) * .2 - layoutLeft * .8) * fraction;
+        const x = bridgeX(fraction);
         const y = height * (.25 + .48 * fraction + .06 * Math.sin(fraction * Math.PI * 2)) + flow;
         if (i) context.lineTo(x, y); else context.moveTo(x, y);
       }
@@ -320,26 +328,8 @@
       const nextHeight = Math.max(1, Math.round(window.innerHeight || document.documentElement.clientHeight));
       const nextRatio = Math.min(window.devicePixelRatio || 1, 1.6,
         Math.sqrt(3000000 / (nextWidth * nextHeight)));
-      const main = document.querySelector("#quarto-document-content");
-      const bounds = main ? main.getBoundingClientRect() :
-        { left: nextWidth * .24, right: nextWidth * .76 };
-      const nextLeft = Math.max(0, Math.min(nextWidth, bounds.left));
-      const nextRight = Math.max(nextLeft, Math.min(nextWidth, bounds.right));
-      if (nextWidth !== width || nextHeight !== height || Math.abs(nextRatio - ratio) > .001 ||
-          Math.abs(nextLeft - contentLeft) > .5 || Math.abs(nextRight - contentRight) > .5) {
+      if (nextWidth !== width || nextHeight !== height || Math.abs(nextRatio - ratio) > .001) {
         width = nextWidth; height = nextHeight; ratio = nextRatio; mobile = width < 700;
-        contentLeft = nextLeft; contentRight = nextRight;
-        const minimumBand = mobile ? width * .20 : Math.min(width * .18, 92);
-        layoutLeft = Math.max(contentLeft, minimumBand);
-        layoutRight = Math.min(contentRight, width - minimumBand);
-        for (const target of [document.documentElement, body]) {
-          target.style.setProperty("--research-content-left", contentLeft + "px");
-          target.style.setProperty("--research-content-right", contentRight + "px");
-        }
-        canvas.dataset.contentLeft = contentLeft.toFixed(1);
-        canvas.dataset.contentRight = contentRight.toFixed(1);
-        canvas.dataset.layoutLeft = layoutLeft.toFixed(1);
-        canvas.dataset.layoutRight = layoutRight.toFixed(1);
         canvas.width = Math.max(1, Math.floor(width * ratio));
         canvas.height = Math.max(1, Math.floor(height * ratio));
         document.documentElement.style.setProperty("--home-research-height", height + "px");
@@ -369,8 +359,7 @@
     if (window.visualViewport) {
       window.visualViewport.addEventListener("resize", scheduleMeasure, { passive: true });
     }
-    const main = document.querySelector("#quarto-document-content");
-    if (main && window.ResizeObserver) new ResizeObserver(scheduleMeasure).observe(main);
+    if (window.ResizeObserver) new ResizeObserver(scheduleMeasure).observe(document.documentElement);
     if (document.fonts && document.fonts.ready) document.fonts.ready.then(scheduleMeasure);
   }
 
