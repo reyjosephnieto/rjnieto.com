@@ -15,6 +15,8 @@ from pathlib import Path
 import re
 import subprocess
 
+from discrete_html_animations import apply_animations
+
 ROOT = Path(__file__).resolve().parents[1]
 SOURCES = ROOT / "kitchen/courses/discrete-structures/lec_notes"
 BUILD = ROOT / "kitchen/courses/discrete-structures/website-assets/html-notes"
@@ -326,6 +328,9 @@ def make_page(number, assets):
     assert [x["c"][1] for x in nodes if x["t"] == "CodeBlock"] == [x.rstrip("\n") for x in literal]
     boxes = [x for x in nodes if x["t"] == "Div" and "ds-python" in x["c"][0][1]]
     assert len(boxes) == original.count(r"\begin{pythonexample}")
+    # HTML-only illustrations are applied after all authored-content checks.
+    # Keep the validated source AST and its counts intact for provenance.
+    html_doc, animation_resources, animation_report = apply_animations(doc, number)
     title = "Introduction" if number == 0 else f"Chapter {number}: {chapter.title}"
     route = f"/teaching/notes/chapter-{number:02}/"
     pdf = f"/teaching/bulsu/discrete-math/lecture-notes/chapter_{number:02}.pdf"
@@ -342,21 +347,30 @@ def make_page(number, assets):
         "format": {"html": {"css": ["/assets/css/discrete-notes.css"]}},
         "execute": {"eval": False},
     }
+    if animation_resources:
+        metadata["resources"] = animation_resources
     # JSON is valid YAML and safely quotes mathematical titles and punctuation.
     front = "---\n" + json.dumps(metadata, indent=2, ensure_ascii=False) + "\n---\n\n"
     buttons = f"[Course page](/teaching/){{.btn .btn-outline-secondary .btn-sm}} [PDF]({pdf}){{.btn .btn-outline-primary .btn-sm aria-label=\"Open {title} as PDF\"}}\n\n"
-    content = pandoc(["--from=json", "--to=markdown", "--wrap=none"], json.dumps(doc))
+    content = pandoc(["--from=json", "--to=markdown", "--wrap=none"], json.dumps(html_doc))
     nav = []
     if number > 0: nav.append(f"[← {'Introduction' if number == 1 else 'Chapter ' + str(number-1)}](../chapter-{number-1:02}/index.qmd)")
-    if number < 12: nav.append(f"[Chapter {number+1} →](../chapter-{number+1:02}/index.qmd)")
+    if number < 12:
+        nav.append(f'[Next chapter →](../chapter-{number+1:02}/index.qmd)'
+                   f'{{.btn .btn-primary rel="next" aria-label="Next chapter: Chapter {number+1} (HTML)"}}')
+    else:
+        nav.append('[Entire book PDF](/teaching/bulsu/discrete-math/lecture-notes/Nieto_DS.pdf){.btn .btn-primary}')
     page = front + "<!-- Generated from the corresponding chapter LaTeX. Run scripts/build-discrete-html.py to refresh. -->\n\n" + buttons + content
-    page += "\n::: {.ds-chapter-navigation}\n\n" + " · ".join(nav) + "\n\n:::\n"
+    page += "\n::: {.ds-chapter-navigation}\n\n" + "\n".join(nav) + "\n\n:::\n"
     (BUILD / f"chapter_{number:02}.prepared.tex").write_text(prepared)
     (BUILD / f"chapter_{number:02}.ast.json").write_text(json.dumps(doc, ensure_ascii=False))
     metrics = {"chapter": number, "title": title, "source_sha256": hashlib.sha256(source.read_bytes()).hexdigest(),
                "labels": chapter.labels, "worked_examples": chapter.example, "definitions": chapter.definition,
                "exercises": chapter.exercise_count, "tables": counts["Table"], "images": counts["Image"],
                "python_boxes": len(boxes), "code_blocks": counts["CodeBlock"], "math_expressions": counts["Math"]}
+    if animation_report:
+        metrics["html_animations"] = animation_report
+        metrics["html_images"] = counts["Image"] + sum(item["operation"] == "insert" for item in animation_report)
     return page, metrics
 
 
@@ -364,13 +378,18 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--check", action="store_true", help="Check generated pages without rewriting them")
     parser.add_argument("--skip-assets", action="store_true", help="Reuse the already-verified asset export")
+    parser.add_argument("--chapter", type=int, choices=range(13), action="append",
+                        help="Export only this chapter; repeat to select several")
     args = parser.parse_args()
     BUILD.mkdir(parents=True, exist_ok=True)
     if not args.skip_assets:
         subprocess.run(["python3", str(ROOT / "scripts/discrete_html_assets.py")], check=True, cwd=ROOT)
     assets = json.loads((BUILD / "assets.json").read_text())
-    metrics = []
-    for number in range(13):
+    selected = sorted(set(args.chapter)) if args.chapter is not None else list(range(13))
+    manifest_path = BUILD / "conversion_manifest.json"
+    previous = json.loads(manifest_path.read_text()) if args.chapter is not None and manifest_path.is_file() else []
+    metrics = {item["chapter"]: item for item in previous}
+    for number in selected:
         page, report = make_page(number, assets)
         destination = PAGES / f"chapter-{number:02}" / "index.qmd"
         if args.check:
@@ -378,9 +397,9 @@ def main():
         else:
             destination.parent.mkdir(parents=True, exist_ok=True)
             destination.write_text(page)
-        metrics.append(report)
+        metrics[number] = report
         print(f"Chapter {number:02}: {report['worked_examples']} examples, {report['exercises']} exercises, {report['images']} figures")
-    (BUILD / "conversion_manifest.json").write_text(json.dumps(metrics, ensure_ascii=False, indent=2) + "\n")
+    manifest_path.write_text(json.dumps([metrics[number] for number in sorted(metrics)], ensure_ascii=False, indent=2) + "\n")
 
 
 if __name__ == "__main__":

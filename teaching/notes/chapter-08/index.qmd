@@ -19,7 +19,12 @@
   },
   "execute": {
     "eval": false
-  }
+  },
+  "resources": [
+    "../assets/chapter-08/01-modular-wraparound.gif",
+    "../assets/chapter-08/01-modular-wraparound-poster.png",
+    "../assets/chapter-08/01-modular-wraparound.webp"
+  ]
 }
 ---
 
@@ -266,9 +271,13 @@ Existence and uniqueness of a remainder ensure exactly one output in $S_n$ for e
 [**Example 8.20.**]{#example-8.20.} In $S_4=\{0,1,2,3\}$, $$2\oplus_4 3=5\bmod4=1,\qquad
  2\otimes_4 3=6\bmod4=2.$$ The ordinary intermediate values $5$ and $6$ lie outside $S_4$; the operation outputs $1$ and $2$ lie inside it. Also, $3\oplus_4 1=0$. This is an equality of representative labels under the defined operation; it does not assert the ordinary integer equality $3+1=0$.
 
-![](/teaching/notes/assets/chapter-08/01-modular-wraparound.webp){.ds-note-image fig-alt="Modular arithmetic illustrated by positions wrapping around a cycle." loading="lazy" decoding="async"}
-
-Ordinary addition takes $3$ to $4$; adding $1$ modulo $4$ takes label $3$ back to $0$.
+<figure id="ch08-modular-wraparound" class="ds-animation">
+  <picture>
+    <source media="print, (prefers-reduced-motion: reduce)" srcset="/teaching/notes/assets/chapter-08/01-modular-wraparound-poster.png">
+    <img class="ds-note-image" src="/teaching/notes/assets/chapter-08/01-modular-wraparound.gif" alt="Side by side, adding one moves a marker from 3 to 4 on an integer number line, but from residue label 3 to label 0 on the four-position modular cycle. The modular and ordinary operations are labelled separately." width="1000" height="600" loading="lazy" decoding="async">
+  </picture>
+  <figcaption>Ordinary addition takes $3$ to $4$; adding $1$ modulo $4$ takes label $3$ back to $0$.</figcaption>
+</figure>
 
 [**Operations on residue classes.**]{#operations-on-residue-classes.} The label $a\in S_n$ represents the class $[a]_n\in\mathbb{Z}_n$. On classes, adding $[a]_n$ to $[b]_n$ means forming $[a+b]_n$; multiplying means forming $[ab]_n$. These results do not depend on which integers represent the two classes.
 
@@ -506,6 +515,7 @@ No other label can be a two-sided identity either. If $e$ were such an identity,
 
 ::: {.ds-chapter-navigation}
 
-[← Chapter 7](../chapter-07/index.qmd) · [Chapter 9 →](../chapter-09/index.qmd)
+[← Chapter 7](../chapter-07/index.qmd)
+[Next chapter →](../chapter-09/index.qmd){.btn .btn-primary rel="next" aria-label="Next chapter: Chapter 9 (HTML)"}
 
 :::

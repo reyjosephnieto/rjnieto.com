@@ -1,4 +1,4 @@
-/* Keep oversized inline expressions inside the reader's exercise column. */
+/* Reader footer placement and oversized exercise expressions. */
 (() => {
   "use strict";
 
@@ -6,6 +6,9 @@
     if (!document.body.classList.contains("ds-lecture-notes")) return;
     const main = document.querySelector("#quarto-document-content");
     if (!main) return;
+
+    const navigation = main.querySelector(".ds-chapter-navigation");
+    if (navigation) main.appendChild(navigation);
 
     try { await window.MathJax?.startup?.promise; } catch (_) { /* Keep the text readable if typesetting fails. */ }
     await document.fonts.ready;

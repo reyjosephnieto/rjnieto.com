@@ -19,7 +19,12 @@
   },
   "execute": {
     "eval": false
-  }
+  },
+  "resources": [
+    "../assets/chapter-06/01-leaf-deletion.gif",
+    "../assets/chapter-06/01-leaf-deletion-poster.png",
+    "../assets/chapter-06/01-leaf-deletion.webp"
+  ]
 }
 ---
 
@@ -256,9 +261,13 @@ The remaining graph is nonempty and contains no cycle, because any cycle in it w
 
 This removes exactly one vertex and one edge. Deleting an arbitrary vertex of higher degree need not preserve connectedness.
 
-![](/teaching/notes/assets/chapter-06/01-leaf-deletion.webp){.ds-note-image fig-alt="A leaf and its incident edge removed from a tree, leaving a smaller tree." loading="lazy" decoding="async"}
-
-Deleting leaf $f$ from the example path removes one vertex and one edge; all remaining vertices stay connected.
+<figure id="ch06-leaf-deletion" class="ds-animation">
+  <picture>
+    <source media="print, (prefers-reduced-motion: reduce)" srcset="/teaching/notes/assets/chapter-06/01-leaf-deletion-poster.png">
+    <img class="ds-note-image" src="/teaching/notes/assets/chapter-06/01-leaf-deletion.gif" alt="In the undirected path d,b,a,c,e,f, leaf f and edge e-f are removed together. Five vertices and four edges remain connected. Restoring the leaf restores exactly one vertex and one edge." width="1000" height="600" loading="lazy" decoding="async">
+  </picture>
+  <figcaption>Deleting leaf $f$ from the example path removes one vertex and one edge; all remaining vertices stay connected.</figcaption>
+</figure>
 
 [**Example 6.16.**]{#ch6:tree-count} Prove that a tree with $n$ vertices has $n-1$ edges.
 
@@ -542,6 +551,7 @@ The single-vertex rooted tree is also full binary: it has one leaf and no intern
 
 ::: {.ds-chapter-navigation}
 
-[← Chapter 5](../chapter-05/index.qmd) · [Chapter 7 →](../chapter-07/index.qmd)
+[← Chapter 5](../chapter-05/index.qmd)
+[Next chapter →](../chapter-07/index.qmd){.btn .btn-primary rel="next" aria-label="Next chapter: Chapter 7 (HTML)"}
 
 :::

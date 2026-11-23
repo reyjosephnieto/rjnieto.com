@@ -19,7 +19,12 @@
   },
   "execute": {
     "eval": false
-  }
+  },
+  "resources": [
+    "../assets/chapter-10/01-orders-and-subsets.gif",
+    "../assets/chapter-10/01-orders-and-subsets-poster.png",
+    "../assets/chapter-10/01-orders-and-subsets.webp"
+  ]
 }
 ---
 
@@ -150,9 +155,13 @@ An unordered selection records which objects are included, rather than assigning
 
 Every subset has exactly two orders, so there are $12/2=6$ subsets. In Chapter 7's language, two ordered pairs are equivalent when they contain the same records. The six equivalence classes all have size $2!=2$. Their equal size is what justifies this division.
 
-![](/teaching/notes/assets/chapter-10/01-orders-and-subsets.webp){.ds-note-image fig-alt="Ordered arrangements compared with unordered subsets." loading="lazy" decoding="async"}
-
-The orders $(a,b)$ and $(b,a)$ belong to one group because both select the subset $\{a,b\}$. Each selected pair has $2!$ orders.
+<figure id="ch10-orders-and-subsets" class="ds-animation">
+  <picture>
+    <source media="print, (prefers-reduced-motion: reduce)" srcset="/teaching/notes/assets/chapter-10/01-orders-and-subsets-poster.png">
+    <img class="ds-note-image" src="/teaching/notes/assets/chapter-10/01-orders-and-subsets.gif" alt="The twelve ordered pairs of distinct records a,b,c,d gather into six groups of two. In each group, reversing the pair selects the same two-element subset. Equal group sizes of two justify dividing twelve by two." width="1000" height="600" loading="lazy" decoding="async">
+  </picture>
+  <figcaption>The orders $(a,b)$ and $(b,a)$ belong to one group because both select the subset $\{a,b\}$. Each selected pair has $2!$ orders.</figcaption>
+</figure>
 
 :::: {.ds-box .ds-python}
 ::: {#python-non-examinable .ds-box-title}
@@ -506,6 +515,7 @@ The same method retains signs. For the coefficient of $x^4$ in $(x-2)^5$, choose
 
 ::: {.ds-chapter-navigation}
 
-[← Chapter 9](../chapter-09/index.qmd) · [Chapter 11 →](../chapter-11/index.qmd)
+[← Chapter 9](../chapter-09/index.qmd)
+[Next chapter →](../chapter-11/index.qmd){.btn .btn-primary rel="next" aria-label="Next chapter: Chapter 11 (HTML)"}
 
 :::

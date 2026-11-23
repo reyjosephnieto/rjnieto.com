@@ -19,7 +19,12 @@
   },
   "execute": {
     "eval": false
-  }
+  },
+  "resources": [
+    "../assets/chapter-12/01-recursive-leaf-count.gif",
+    "../assets/chapter-12/01-recursive-leaf-count-poster.png",
+    "../assets/chapter-12/02-recursive-leaf-count.webp"
+  ]
 }
 ---
 
@@ -231,9 +236,13 @@ The new root is an internal vertex, which accounts for the added $1$ in the rule
  &=1+(1+1)=3.
 \end{aligned}$$ The two leaf calls inside $B$ each return $1$; the call on $B$ returns $2$; the outer call returns $1+2=3$. The matching internal count is $$I(A)=1+I(\bullet)+I(B)=1+0+(1+0+0)=2.$$ The recursive values agree with the drawing.
 
-![](/teaching/notes/assets/chapter-12/02-recursive-leaf-count.webp){.ds-note-image fig-alt="The leaf count of a binary tree obtained by adding the leaf counts of its two subtrees." loading="lazy" decoding="async"}
-
-Each node displays its subtree's leaf count: the right subtree returns $2$ and the root returns $1+2=3$.
+<figure id="ch12-recursive-leaf-count" class="ds-animation">
+  <picture>
+    <source media="print, (prefers-reduced-motion: reduce)" srcset="/teaching/notes/assets/chapter-12/01-recursive-leaf-count-poster.png">
+    <img class="ds-note-image" src="/teaching/notes/assets/chapter-12/01-recursive-leaf-count.gif" alt="A fixed full binary tree has one leaf on the left and two leaves below the right child. Recursive calls reach each leaf and return one; the right subtree returns two and the root adds one plus two to return three leaves." width="1000" height="600" loading="lazy" decoding="async">
+  </picture>
+  <figcaption>Each node displays its subtree’s leaf count: the right subtree returns $2$ and the root returns $1+2=3$.</figcaption>
+</figure>
 
 :::: {.ds-box .ds-python}
 ::: {#python-non-examinable .ds-box-title}
@@ -479,5 +488,6 @@ Its leaf count is still an ordinary count, but our two-child constructor and rec
 ::: {.ds-chapter-navigation}
 
 [← Chapter 11](../chapter-11/index.qmd)
+[Entire book PDF](/teaching/bulsu/discrete-math/lecture-notes/Nieto_DS.pdf){.btn .btn-primary}
 
 :::

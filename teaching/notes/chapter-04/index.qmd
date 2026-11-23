@@ -19,7 +19,12 @@
   },
   "execute": {
     "eval": false
-  }
+  },
+  "resources": [
+    "../assets/chapter-04/01-disjoint-inputs-shared-image.gif",
+    "../assets/chapter-04/01-disjoint-inputs-shared-image-poster.png",
+    "../assets/chapter-04/02-disjoint-inputs-shared-image.webp"
+  ]
 }
 ---
 
@@ -272,9 +277,13 @@ Each inclusion starts with an output and finds an appropriate input. The "or" in
 
 [**Example 4.16.**]{#example-4.16.} It is tempting to replace union by intersection in the last equality. For an arbitrary function, the resulting equality can fail. Using the printer function again, take $A=\{\text{Alice}\}$ and $B=\{\text{Bob}\}$. Then $$A\cap B=\varnothing,\qquad d(A\cap B)=\varnothing,$$ but $$d(A)\cap d(B)=\{\text{Printer 1}\}.$$ The output is shared, but the two input sets have no shared user.
 
-![](/teaching/notes/assets/chapter-04/02-disjoint-inputs-shared-image.webp){.ds-note-image fig-alt="Disjoint input sets whose images share an output." loading="lazy" decoding="async"}
-
-$A$ and $B$ are disjoint, but their images share Printer 1.
+<figure id="ch04-disjoint-inputs-shared-image" class="ds-animation">
+  <picture>
+    <source media="print, (prefers-reduced-motion: reduce)" srcset="/teaching/notes/assets/chapter-04/01-disjoint-inputs-shared-image-poster.png">
+    <img class="ds-note-image" src="/teaching/notes/assets/chapter-04/01-disjoint-inputs-shared-image.gif" alt="Alice in A and Bob in B both map to the same Printer 1. Their disjoint input sets have empty intersection, while their image sets both contain Printer 1. The image of the intersection is empty, unlike the intersection of the images." width="1000" height="600" loading="lazy" decoding="async">
+  </picture>
+  <figcaption>$A$ and $B$ are disjoint, but their images share Printer 1.</figcaption>
+</figure>
 
 There is always an inclusion in one direction: $$f(A\cap B)\subseteq f(A)\cap f(B).$$ *Proof.* If $y\in f(A\cap B)$, choose $x\in A\cap B$ with $f(x)=y$. Then $x\in A$ and $x\in B$, so this same $x$ witnesses both $y\in f(A)$ and $y\in f(B)$. Therefore $y\in f(A)\cap f(B)$, as required. $\square$
 
@@ -513,6 +522,7 @@ His proposed counterexample lacks the second premise: Bob $R$ Charlie is false. 
 
 ::: {.ds-chapter-navigation}
 
-[← Chapter 3](../chapter-03/index.qmd) · [Chapter 5 →](../chapter-05/index.qmd)
+[← Chapter 3](../chapter-03/index.qmd)
+[Next chapter →](../chapter-05/index.qmd){.btn .btn-primary rel="next" aria-label="Next chapter: Chapter 5 (HTML)"}
 
 :::

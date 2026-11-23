@@ -19,7 +19,12 @@
   },
   "execute": {
     "eval": false
-  }
+  },
+  "resources": [
+    "../assets/chapter-03/01-odd-plus-odd-pairing.gif",
+    "../assets/chapter-03/01-odd-plus-odd-pairing-poster.png",
+    "../assets/chapter-03/01-odd-plus-odd-pairing.webp"
+  ]
 }
 ---
 
@@ -157,9 +162,13 @@ Writing $a=2k$ and $b=2k$ with the same $k$ would assume $a=b$. The original cla
 
 *Proof.* Let $a,b\in\mathbb{Z}$ be odd. Write $a=2r+1$ and $b=2s+1$ for integers $r,s$. Then $$a+b=(2r+1)+(2s+1)=2r+2s+2=2(r+s+1).$$ The number $r+s+1$ is an integer, so $a+b$ is even. $\square$
 
-![](/teaching/notes/assets/chapter-03/01-odd-plus-odd-pairing.webp){.ds-note-image fig-alt="Two odd collections paired to illustrate why an odd number plus an odd number is even." loading="lazy" decoding="async"}
-
-In the example $5+7$, the two unpaired objects form a sixth pair.
+<figure id="ch03-odd-plus-odd-pairing" class="ds-animation">
+  <picture>
+    <source media="print, (prefers-reduced-motion: reduce)" srcset="/teaching/notes/assets/chapter-03/01-odd-plus-odd-pairing-poster.png">
+    <img class="ds-note-image" src="/teaching/notes/assets/chapter-03/01-odd-plus-odd-pairing.gif" alt="Five objects form two pairs and a singleton; seven form three pairs and a singleton. The two singletons move together, making six pairs from the same twelve objects. This illustrates the algebraic odd-plus-odd proof." width="1000" height="600" loading="lazy" decoding="async">
+  </picture>
+  <figcaption>In the example $5+7$, the two unpaired objects form a sixth pair.</figcaption>
+</figure>
 
 Two odd inputs have produced an even output. The definition needed at the end is the definition of the *conclusion*, not necessarily the one used to describe the inputs.
 
@@ -510,6 +519,7 @@ The contradiction is with the chosen representation being in lowest terms, not w
 
 ::: {.ds-chapter-navigation}
 
-[← Chapter 2](../chapter-02/index.qmd) · [Chapter 4 →](../chapter-04/index.qmd)
+[← Chapter 2](../chapter-02/index.qmd)
+[Next chapter →](../chapter-04/index.qmd){.btn .btn-primary rel="next" aria-label="Next chapter: Chapter 4 (HTML)"}
 
 :::

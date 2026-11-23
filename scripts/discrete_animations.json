@@ -1,0 +1,172 @@
+{
+  "schema": 1,
+  "chapters": {
+    "0": [
+      {
+        "id": "intro-discretisation",
+        "after_paragraph_endswith": "and successive steps.",
+        "gif": "/teaching/notes/assets/chapter-00/01-discretisation.gif",
+        "poster": "/teaching/notes/assets/chapter-00/01-discretisation-poster.png",
+        "width": 1000,
+        "height": 500,
+        "alt": "A continuous interval is divided into twelve adjacent parts; one point is chosen from each part, leaving twelve separate representatives.",
+        "caption": "Choosing one representative from each of twelve parts gives a discrete approximation of the continuous interval."
+      },
+      {
+        "id": "intro-feedforward-evaluation",
+        "replace_image": "/teaching/notes/assets/chapter-00/neural-network.webp",
+        "existing_caption": "A feedforward neural network with three inputs, two hidden layers and one output.",
+        "gif": "/teaching/notes/assets/chapter-00/02-feedforward-evaluation.gif",
+        "poster": "/teaching/notes/assets/chapter-00/02-feedforward-evaluation-poster.png",
+        "width": 1000,
+        "height": 500,
+        "alt": "Values pass from three inputs through hidden layers of four and three units to one output, with the parameters held fixed.",
+        "caption": "Parameters stay fixed while values pass through the layers."
+      }
+    ],
+    "1": [
+      {
+        "id": "ch01-quantifier-order",
+        "replace_image": "/teaching/notes/assets/chapter-01/02-quantifier-order-permissions.webp",
+        "existing_caption": "Every user has access to a file, but no file can be accessed by all three users.",
+        "gif": "/teaching/notes/assets/chapter-01/01-quantifier-order-permissions.gif",
+        "poster": "/teaching/notes/assets/chapter-01/01-quantifier-order-permissions-poster.png",
+        "width": 1000,
+        "height": 600,
+        "alt": "Six fixed permissions connect Alice, Bob and Charlie to guide, report and data. One accessible file is selected for each user; then each fixed file is rejected by a user without access. The first quantifier order is true and the second false."
+      }
+    ],
+    "2": [
+      {
+        "id": "ch02-implication-truth-conditions",
+        "after_paragraph_endswith": "it does not assert that P causes Q.",
+        "gif": "/teaching/notes/assets/chapter-02/01-implication-truth-conditions.gif",
+        "poster": "/teaching/notes/assets/chapter-02/01-implication-truth-conditions-poster.png",
+        "width": 1000,
+        "height": 600,
+        "alt": "The four staff-pass and entry records are highlighted in turn. Alice, Bob and Charlie do not violate the conditional; David has a staff pass but is denied entry, the only false case.",
+        "caption": "The conditional fails only when a staff-pass holder is denied entry."
+      }
+    ],
+    "3": [
+      {
+        "id": "ch03-odd-plus-odd-pairing",
+        "replace_image": "/teaching/notes/assets/chapter-03/01-odd-plus-odd-pairing.webp",
+        "existing_caption": "In the example 5+7, the two unpaired objects form a sixth pair.",
+        "gif": "/teaching/notes/assets/chapter-03/01-odd-plus-odd-pairing.gif",
+        "poster": "/teaching/notes/assets/chapter-03/01-odd-plus-odd-pairing-poster.png",
+        "width": 1000,
+        "height": 600,
+        "alt": "Five objects form two pairs and a singleton; seven form three pairs and a singleton. The two singletons move together, making six pairs from the same twelve objects. This illustrates the algebraic odd-plus-odd proof."
+      }
+    ],
+    "4": [
+      {
+        "id": "ch04-disjoint-inputs-shared-image",
+        "replace_image": "/teaching/notes/assets/chapter-04/02-disjoint-inputs-shared-image.webp",
+        "existing_caption": "A and B are disjoint, but their images share Printer 1.",
+        "gif": "/teaching/notes/assets/chapter-04/01-disjoint-inputs-shared-image.gif",
+        "poster": "/teaching/notes/assets/chapter-04/01-disjoint-inputs-shared-image-poster.png",
+        "width": 1000,
+        "height": 600,
+        "alt": "Alice in A and Bob in B both map to the same Printer 1. Their disjoint input sets have empty intersection, while their image sets both contain Printer 1. The image of the intersection is empty, unlike the intersection of the images."
+      }
+    ],
+    "5": [
+      {
+        "id": "ch05-next-odd-border",
+        "replace_image": "/teaching/notes/assets/chapter-05/01-next-odd-border.webp",
+        "existing_caption": "At k=3, the next odd number supplies the seven tiles that enlarge a 3\\times3 square to 4\\times4.",
+        "gif": "/teaching/notes/assets/chapter-05/01-next-odd-border.gif",
+        "poster": "/teaching/notes/assets/chapter-05/01-next-odd-border-poster.png",
+        "width": 1000,
+        "height": 600,
+        "alt": "Nine blue tiles form a three-by-three square. Seven gold tiles make a new row of four and a new column of three, enlarging the square to four by four. The corner occurs once, illustrating the next-odd-number inductive step."
+      }
+    ],
+    "6": [
+      {
+        "id": "ch06-leaf-deletion",
+        "replace_image": "/teaching/notes/assets/chapter-06/01-leaf-deletion.webp",
+        "existing_caption": "Deleting leaf f from the example path removes one vertex and one edge; all remaining vertices stay connected.",
+        "gif": "/teaching/notes/assets/chapter-06/01-leaf-deletion.gif",
+        "poster": "/teaching/notes/assets/chapter-06/01-leaf-deletion-poster.png",
+        "width": 1000,
+        "height": 600,
+        "alt": "In the undirected path d,b,a,c,e,f, leaf f and edge e-f are removed together. Five vertices and four edges remain connected. Restoring the leaf restores exactly one vertex and one edge."
+      }
+    ],
+    "7": [
+      {
+        "id": "ch07-printer-equivalence-classes",
+        "replace_image": "/teaching/notes/assets/chapter-07/01-printer-equivalence-classes.webp",
+        "existing_caption": "Five students form three classes: Alice and Bob belong to the same class, as do Charlie and David; Eve forms a singleton class.",
+        "gif": "/teaching/notes/assets/chapter-07/01-printer-equivalence-classes.gif",
+        "poster": "/teaching/notes/assets/chapter-07/01-printer-equivalence-classes-poster.png",
+        "width": 1000,
+        "height": 600,
+        "alt": "Five students gather into three classes according to their fixed default printers: Alice and Bob, Charlie and David, and Eve alone. Selecting Alice or Bob highlights the same whole class, while the two students remain distinct."
+      }
+    ],
+    "8": [
+      {
+        "id": "ch08-modular-wraparound",
+        "replace_image": "/teaching/notes/assets/chapter-08/01-modular-wraparound.webp",
+        "existing_caption": "Ordinary addition takes 3 to 4; adding 1 modulo 4 takes label 3 back to 0.",
+        "gif": "/teaching/notes/assets/chapter-08/01-modular-wraparound.gif",
+        "poster": "/teaching/notes/assets/chapter-08/01-modular-wraparound-poster.png",
+        "width": 1000,
+        "height": 600,
+        "alt": "Side by side, adding one moves a marker from 3 to 4 on an integer number line, but from residue label 3 to label 0 on the four-position modular cycle. The modular and ordinary operations are labelled separately."
+      }
+    ],
+    "9": [
+      {
+        "id": "ch09-subsets-as-bits",
+        "replace_image": "/teaching/notes/assets/chapter-09/01-subsets-as-bits.webp",
+        "existing_caption": "In the fixed order L,S,B, the bit string 101 encodes the subset \\{L,B\\}. Three independent binary choices give eight subsets.",
+        "gif": "/teaching/notes/assets/chapter-09/01-subsets-as-bits.gif",
+        "poster": "/teaching/notes/assets/chapter-09/01-subsets-as-bits-poster.png",
+        "width": 1000,
+        "height": 600,
+        "alt": "Three optional features L,S,B keep a fixed order. Each of eight three-bit records is paired with its enabled subset: 000 gives the empty set and 101 gives L and B. Two choices in each of three positions give eight subsets."
+      }
+    ],
+    "10": [
+      {
+        "id": "ch10-orders-and-subsets",
+        "replace_image": "/teaching/notes/assets/chapter-10/01-orders-and-subsets.webp",
+        "existing_caption": "The orders (a,b) and (b,a) belong to one group because both select the subset \\{a,b\\}. Each selected pair has 2! orders.",
+        "gif": "/teaching/notes/assets/chapter-10/01-orders-and-subsets.gif",
+        "poster": "/teaching/notes/assets/chapter-10/01-orders-and-subsets-poster.png",
+        "width": 1000,
+        "height": 600,
+        "alt": "The twelve ordered pairs of distinct records a,b,c,d gather into six groups of two. In each group, reversing the pair selects the same two-element subset. Equal group sizes of two justify dividing twelve by two."
+      }
+    ],
+    "11": [
+      {
+        "id": "ch11-same-recurrence-different-starts",
+        "replace_image": "/teaching/notes/assets/chapter-11/01-same-recurrence-different-starts.webp",
+        "existing_caption": "Both sequences double the preceding term, but starting at 1 or 3 gives different values at every displayed index.",
+        "gif": "/teaching/notes/assets/chapter-11/01-same-recurrence-different-starts.gif",
+        "poster": "/teaching/notes/assets/chapter-11/01-same-recurrence-different-starts-poster.png",
+        "width": 1000,
+        "height": 600,
+        "alt": "Two sequences use the same doubling rule. Starting at index zero with 1 gives 1,2,4,8,16; starting with 3 gives 3,6,12,24,48. Matching indices stay aligned as each new pair of terms is calculated."
+      }
+    ],
+    "12": [
+      {
+        "id": "ch12-recursive-leaf-count",
+        "replace_image": "/teaching/notes/assets/chapter-12/02-recursive-leaf-count.webp",
+        "existing_caption": "Each node displays its subtree’s leaf count: the right subtree returns 2 and the root returns 1+2=3.",
+        "gif": "/teaching/notes/assets/chapter-12/01-recursive-leaf-count.gif",
+        "poster": "/teaching/notes/assets/chapter-12/01-recursive-leaf-count-poster.png",
+        "width": 1000,
+        "height": 600,
+        "alt": "A fixed full binary tree has one leaf on the left and two leaves below the right child. Recursive calls reach each leaf and return one; the right subtree returns two and the root adds one plus two to return three leaves."
+      }
+    ]
+  }
+}

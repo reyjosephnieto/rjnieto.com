@@ -19,7 +19,14 @@
   },
   "execute": {
     "eval": false
-  }
+  },
+  "resources": [
+    "../assets/chapter-00/01-discretisation.gif",
+    "../assets/chapter-00/01-discretisation-poster.png",
+    "../assets/chapter-00/02-feedforward-evaluation.gif",
+    "../assets/chapter-00/02-feedforward-evaluation-poster.png",
+    "../assets/chapter-00/neural-network.webp"
+  ]
 }
 ---
 
@@ -40,6 +47,14 @@ The word **discrete** refers to distinct, separately identifiable objects. A stu
 These notes introduce discrete mathematics at an early undergraduate level for Information Technology and Computer Science majors. They support IT 104, *Discrete Mathematics*, at Bulacan State University.
 
 For comparison, a model of temperature may allow every real value in an interval. A model of enrolment may instead ask which students belong to a class and which pairs of subjects stand in a prerequisite relationship. The questions call for different mathematical descriptions. In this course, we concentrate on the descriptions useful for objects, connections, rules and successive steps.
+
+<figure id="intro-discretisation" class="ds-animation">
+  <picture>
+    <source media="print, (prefers-reduced-motion: reduce)" srcset="/teaching/notes/assets/chapter-00/01-discretisation-poster.png">
+    <img class="ds-note-image" src="/teaching/notes/assets/chapter-00/01-discretisation.gif" alt="A continuous interval is divided into twelve adjacent parts; one point is chosen from each part, leaving twelve separate representatives." width="1000" height="500" loading="lazy" decoding="async">
+  </picture>
+  <figcaption>Choosing one representative from each of twelve parts gives a discrete approximation of the continuous interval.</figcaption>
+</figure>
 
 The renewed prominence of **artificial intelligence (AI)**[^2] makes this broader understanding of IT especially relevant. AI concerns computing methods for tasks such as recognising patterns, reasoning and generating language. Its growing use in organisations brings questions about data, software and system behaviour into more areas of work.[^3]
 
@@ -101,9 +116,13 @@ The most important skill I want you to gain from proofwriting is **abstraction**
 
 Suppose the spam classifier uses an **artificial neural network**, one of the models used in AI. Its interconnected computational units transform numerical inputs into outputs. In a simple feedforward network, information moves through successive layers without feeding back. Numbers called *parameters* control the transformations and are adjusted during training.[^8]
 
-![](/teaching/notes/assets/chapter-00/neural-network.webp){.ds-note-image fig-alt="A layered artificial neural network, with connections carrying information from input through hidden layers to output." loading="lazy" decoding="async"}
-
-A feedforward neural network with three inputs, two hidden layers and one output.
+<figure id="intro-feedforward-evaluation" class="ds-animation">
+  <picture>
+    <source media="print, (prefers-reduced-motion: reduce)" srcset="/teaching/notes/assets/chapter-00/02-feedforward-evaluation-poster.png">
+    <img class="ds-note-image" src="/teaching/notes/assets/chapter-00/02-feedforward-evaluation.gif" alt="Values pass from three inputs through hidden layers of four and three units to one output, with the parameters held fixed." width="1000" height="500" loading="lazy" decoding="async">
+  </picture>
+  <figcaption>A feedforward neural network with three inputs, two hidden layers and one output. Parameters stay fixed while values pass through the layers.</figcaption>
+</figure>
 
 Read the illustration from left to right. The three inputs could record a message's length, number of links and number of occurrences of a chosen word. Units in the hidden layers perform intermediate calculations; each combines numbers from the preceding layer and transforms the result. The output is a single score. A connection's *weight*, one of the parameters adjusted during training, controls its contribution to the receiving unit's calculation.
 
@@ -155,6 +174,6 @@ Modelling a network, specifying a database query and checking a recursive calcul
 
 ::: {.ds-chapter-navigation}
 
-[Chapter 1 →](../chapter-01/index.qmd)
+[Next chapter →](../chapter-01/index.qmd){.btn .btn-primary rel="next" aria-label="Next chapter: Chapter 1 (HTML)"}
 
 :::

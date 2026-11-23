@@ -19,7 +19,12 @@
   },
   "execute": {
     "eval": false
-  }
+  },
+  "resources": [
+    "../assets/chapter-09/01-subsets-as-bits.gif",
+    "../assets/chapter-09/01-subsets-as-bits-poster.png",
+    "../assets/chapter-09/01-subsets-as-bits.webp"
+  ]
 }
 ---
 
@@ -173,9 +178,13 @@ Choose $f(p)$, then $f(q)$, then $f(r)$. There are two choices each time, so the
 
 Each of the three positions has two choices, giving $2^3=8$ selections. Writing $\{B,L\}$ instead of $\{L,B\}$ does not give another selection: both have the same bit record. The encoding includes every subset exactly once.
 
-![](/teaching/notes/assets/chapter-09/01-subsets-as-bits.webp){.ds-note-image fig-alt="Subsets represented by binary strings, with one inclusion choice for each element." loading="lazy" decoding="async"}
-
-In the fixed order $L,S,B$, the bit string `101` encodes the subset $\{L,B\}$. Three independent binary choices give eight subsets.
+<figure id="ch09-subsets-as-bits" class="ds-animation">
+  <picture>
+    <source media="print, (prefers-reduced-motion: reduce)" srcset="/teaching/notes/assets/chapter-09/01-subsets-as-bits-poster.png">
+    <img class="ds-note-image" src="/teaching/notes/assets/chapter-09/01-subsets-as-bits.gif" alt="Three optional features L,S,B keep a fixed order. Each of eight three-bit records is paired with its enabled subset: 000 gives the empty set and 101 gives L and B. Two choices in each of three positions give eight subsets." width="1000" height="600" loading="lazy" decoding="async">
+  </picture>
+  <figcaption>In the fixed order $L,S,B$, the bit string <code>101</code> encodes the subset $\{L,B\}$. Three independent binary choices give eight subsets.</figcaption>
+</figure>
 
 For a set of $n$ labelled features, the same argument gives $2^n$ subsets. When $n=0$, the empty feature set has one subset, itself, agreeing with $2^0=1$.
 
@@ -482,6 +491,7 @@ Now suppose a universe has $30$ elements, $|A|=20$, $|B|=18$ and $|A\cap B|=5$. 
 
 ::: {.ds-chapter-navigation}
 
-[← Chapter 8](../chapter-08/index.qmd) · [Chapter 10 →](../chapter-10/index.qmd)
+[← Chapter 8](../chapter-08/index.qmd)
+[Next chapter →](../chapter-10/index.qmd){.btn .btn-primary rel="next" aria-label="Next chapter: Chapter 10 (HTML)"}
 
 :::

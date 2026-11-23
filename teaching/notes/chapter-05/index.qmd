@@ -19,7 +19,12 @@
   },
   "execute": {
     "eval": false
-  }
+  },
+  "resources": [
+    "../assets/chapter-05/01-next-odd-border.gif",
+    "../assets/chapter-05/01-next-odd-border-poster.png",
+    "../assets/chapter-05/01-next-odd-border.webp"
+  ]
 }
 ---
 
@@ -114,9 +119,13 @@ Assuming $P(k)$ to prove $P(k+1)$ does not assume that $P(n)$ already holds for 
 
 The hypothesis was used only to replace the shorter sum by $k^2$. The remaining algebra established the new target. We did not assume the value of the longer sum.
 
-![](/teaching/notes/assets/chapter-05/01-next-odd-border.webp){.ds-note-image fig-alt="A square enlarged by an odd-numbered border, illustrating the inductive step for a sum of odd numbers." loading="lazy" decoding="async"}
-
-At $k=3$, the next odd number supplies the seven tiles that enlarge a $3\times3$ square to $4\times4$.
+<figure id="ch05-next-odd-border" class="ds-animation">
+  <picture>
+    <source media="print, (prefers-reduced-motion: reduce)" srcset="/teaching/notes/assets/chapter-05/01-next-odd-border-poster.png">
+    <img class="ds-note-image" src="/teaching/notes/assets/chapter-05/01-next-odd-border.gif" alt="Nine blue tiles form a three-by-three square. Seven gold tiles make a new row of four and a new column of three, enlarging the square to four by four. The corner occurs once, illustrating the next-odd-number inductive step." width="1000" height="600" loading="lazy" decoding="async">
+  </picture>
+  <figcaption>At $k=3$, the next odd number supplies the seven tiles that enlarge a $3\times3$ square to $4\times4$.</figcaption>
+</figure>
 
 Choosing $k=100$ and proving one implication about that case would not establish the required step for every $k$. In the proof above, no property of $k$ was used beyond $k\geq1$ and the stated inductive hypothesis. The same step therefore works wherever it is needed.
 
@@ -498,6 +507,7 @@ Instead, we checked $P(0)$ and $P(1)$, then began the general step at $k=1$. Its
 
 ::: {.ds-chapter-navigation}
 
-[← Chapter 4](../chapter-04/index.qmd) · [Chapter 6 →](../chapter-06/index.qmd)
+[← Chapter 4](../chapter-04/index.qmd)
+[Next chapter →](../chapter-06/index.qmd){.btn .btn-primary rel="next" aria-label="Next chapter: Chapter 6 (HTML)"}
 
 :::

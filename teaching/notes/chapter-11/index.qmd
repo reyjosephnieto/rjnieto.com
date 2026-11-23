@@ -19,7 +19,12 @@
   },
   "execute": {
     "eval": false
-  }
+  },
+  "resources": [
+    "../assets/chapter-11/01-same-recurrence-different-starts.gif",
+    "../assets/chapter-11/01-same-recurrence-different-starts-poster.png",
+    "../assets/chapter-11/01-same-recurrence-different-starts.webp"
+  ]
 }
 ---
 
@@ -160,9 +165,13 @@ The last line compares the term obtained by successive updates with the explicit
  \qquad\text{and}\qquad
  3,6,12,24,\ldots.$$ They satisfy $a_{n+1}=2a_n$, but have different initial values. Specifying $a_0=1$ selects the first; specifying $a_0=3$ selects the second. The recurrence equation alone does not distinguish them.
 
-![](/teaching/notes/assets/chapter-11/01-same-recurrence-different-starts.webp){.ds-note-image fig-alt="Sequences following the same recurrence from different initial values." loading="lazy" decoding="async"}
-
-Both sequences double the preceding term, but starting at $1$ or $3$ gives different values at every displayed index.
+<figure id="ch11-same-recurrence-different-starts" class="ds-animation">
+  <picture>
+    <source media="print, (prefers-reduced-motion: reduce)" srcset="/teaching/notes/assets/chapter-11/01-same-recurrence-different-starts-poster.png">
+    <img class="ds-note-image" src="/teaching/notes/assets/chapter-11/01-same-recurrence-different-starts.gif" alt="Two sequences use the same doubling rule. Starting at index zero with 1 gives 1,2,4,8,16; starting with 3 gives 3,6,12,24,48. Matching indices stay aligned as each new pair of terms is calculated." width="1000" height="600" loading="lazy" decoding="async">
+  </picture>
+  <figcaption>Both sequences double the preceding term, but starting at $1$ or $3$ gives different values at every displayed index.</figcaption>
+</figure>
 
 [**Example 11.8. The Fibonacci sequence.**]{#ch11:fibonacci} Define $$f_0=0,\qquad f_1=1,\qquad
  f_{n+2}=f_{n+1}+f_n\quad(n\geq0).$$ This is the Fibonacci sequence with its stated starting indices. First $f_2=f_1+f_0=1$, then $f_3=f_2+f_1=2$, and $f_4=f_3+f_2=3$. Continuing gives:
@@ -436,6 +445,7 @@ More generally, the rules considered here determine later terms from known earli
 
 ::: {.ds-chapter-navigation}
 
-[← Chapter 10](../chapter-10/index.qmd) · [Chapter 12 →](../chapter-12/index.qmd)
+[← Chapter 10](../chapter-10/index.qmd)
+[Next chapter →](../chapter-12/index.qmd){.btn .btn-primary rel="next" aria-label="Next chapter: Chapter 12 (HTML)"}
 
 :::

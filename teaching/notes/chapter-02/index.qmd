@@ -19,7 +19,11 @@
   },
   "execute": {
     "eval": false
-  }
+  },
+  "resources": [
+    "../assets/chapter-02/01-implication-truth-conditions.gif",
+    "../assets/chapter-02/01-implication-truth-conditions-poster.png"
+  ]
 }
 ---
 
@@ -91,6 +95,14 @@ Recall that $P\to Q$ is false exactly when $P$ is true and $Q$ is false. Here $P
 David's record violates the rule: he has a staff pass, but entry is denied. Bob's record does not violate it. The rule has not said that a staff pass is the only route to permission; Bob might have a visitor pass. Charlie's record does not violate it either, because the rule has made no promise of entry for someone without a staff pass.
 
 Bob's and Charlie's records illustrate the two cases with a false antecedent. We are checking whether this conditional rule is violated, not claiming that the consequent has happened. In particular, $P\to Q$ does not by itself assert $P$ or $Q$, and it does not assert that $P$ causes $Q$.
+
+<figure id="ch02-implication-truth-conditions" class="ds-animation">
+  <picture>
+    <source media="print, (prefers-reduced-motion: reduce)" srcset="/teaching/notes/assets/chapter-02/01-implication-truth-conditions-poster.png">
+    <img class="ds-note-image" src="/teaching/notes/assets/chapter-02/01-implication-truth-conditions.gif" alt="The four staff-pass and entry records are highlighted in turn. Alice, Bob and Charlie do not violate the conditional; David has a staff pass but is denied entry, the only false case." width="1000" height="600" loading="lazy" decoding="async">
+  </picture>
+  <figcaption>The conditional fails only when a staff-pass holder is denied entry.</figcaption>
+</figure>
 
 [**"If" and "only if".**]{#if-and-only-if.} The part after "if" gives a sufficient starting condition. The part after "only if" gives a requirement on what precedes it. Compare:
 
@@ -639,6 +651,7 @@ Compare this with modus tollens: that valid pattern starts from $\neg Q$ and con
 
 ::: {.ds-chapter-navigation}
 
-[← Chapter 1](../chapter-01/index.qmd) · [Chapter 3 →](../chapter-03/index.qmd)
+[← Chapter 1](../chapter-01/index.qmd)
+[Next chapter →](../chapter-03/index.qmd){.btn .btn-primary rel="next" aria-label="Next chapter: Chapter 3 (HTML)"}
 
 :::

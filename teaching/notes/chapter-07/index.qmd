@@ -19,7 +19,12 @@
   },
   "execute": {
     "eval": false
-  }
+  },
+  "resources": [
+    "../assets/chapter-07/01-printer-equivalence-classes.gif",
+    "../assets/chapter-07/01-printer-equivalence-classes-poster.png",
+    "../assets/chapter-07/01-printer-equivalence-classes.webp"
+  ]
 }
 ---
 
@@ -289,9 +294,13 @@ The brackets describe a set of elements, not one element or a new name for $a$ a
  [\text{Eve}]&=\{\text{Eve}\}.
 \end{aligned}$$ For instance, $[\text{Alice}]$ consists of all students whose default printer equals $p_1$, namely Alice and Bob. There are five students but only three distinct classes. The equality $[\text{Alice}]=[\text{Bob}]$ is an equality of sets; it does not identify the two students as one person. Either is a representative of the same class.
 
-![](/teaching/notes/assets/chapter-07/01-printer-equivalence-classes.webp){.ds-note-image fig-alt="Students grouped into equivalence classes according to their assigned default printer." loading="lazy" decoding="async"}
-
-Five students form three classes: Alice and Bob belong to the same class, as do Charlie and David; Eve forms a singleton class.
+<figure id="ch07-printer-equivalence-classes" class="ds-animation">
+  <picture>
+    <source media="print, (prefers-reduced-motion: reduce)" srcset="/teaching/notes/assets/chapter-07/01-printer-equivalence-classes-poster.png">
+    <img class="ds-note-image" src="/teaching/notes/assets/chapter-07/01-printer-equivalence-classes.gif" alt="Five students gather into three classes according to their fixed default printers: Alice and Bob, Charlie and David, and Eve alone. Selecting Alice or Bob highlights the same whole class, while the two students remain distinct." width="1000" height="600" loading="lazy" decoding="async">
+  </picture>
+  <figcaption>Five students form three classes: Alice and Bob belong to the same class, as do Charlie and David; Eve forms a singleton class.</figcaption>
+</figure>
 
 :::: {.ds-box .ds-python}
 ::: {#python-non-examinable .ds-box-title}
@@ -537,6 +546,7 @@ Conversely, if we start with an equivalence relation, form its classes and then 
 
 ::: {.ds-chapter-navigation}
 
-[← Chapter 6](../chapter-06/index.qmd) · [Chapter 8 →](../chapter-08/index.qmd)
+[← Chapter 6](../chapter-06/index.qmd)
+[Next chapter →](../chapter-08/index.qmd){.btn .btn-primary rel="next" aria-label="Next chapter: Chapter 8 (HTML)"}
 
 :::

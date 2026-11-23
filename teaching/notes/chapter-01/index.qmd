@@ -19,7 +19,12 @@
   },
   "execute": {
     "eval": false
-  }
+  },
+  "resources": [
+    "../assets/chapter-01/01-quantifier-order-permissions.gif",
+    "../assets/chapter-01/01-quantifier-order-permissions-poster.png",
+    "../assets/chapter-01/02-quantifier-order-permissions.webp"
+  ]
 }
 ---
 
@@ -445,9 +450,13 @@ Return to the permission table for $A(u,f)$ in Section [1.5](#sec:predicates). 
 
 Now reverse the quantifiers: $$\exists f\in F\,\forall u\in U\,A(u,f).$$ This says: "There is a file that every user can access." We must choose one file that works for all users. Guide fails for Bob, report fails for Charlie, and data fails for Alice. Since those are all the files in $F$, no file works, and the claim is false.
 
-![](/teaching/notes/assets/chapter-01/02-quantifier-order-permissions.webp){.ds-note-image fig-alt="User and folder permissions illustrating how changing the order of quantifiers changes a claim." loading="lazy" decoding="async"}
-
-Every user has access to a file, but no file can be accessed by all three users.
+<figure id="ch01-quantifier-order" class="ds-animation">
+  <picture>
+    <source media="print, (prefers-reduced-motion: reduce)" srcset="/teaching/notes/assets/chapter-01/01-quantifier-order-permissions-poster.png">
+    <img class="ds-note-image" src="/teaching/notes/assets/chapter-01/01-quantifier-order-permissions.gif" alt="Six fixed permissions connect Alice, Bob and Charlie to guide, report and data. One accessible file is selected for each user; then each fixed file is rejected by a user without access. The first quantifier order is true and the second false." width="1000" height="600" loading="lazy" decoding="async">
+  </picture>
+  <figcaption>Every user has access to a file, but no file can be accessed by all three users.</figcaption>
+</figure>
 
 :::: {.ds-box .ds-caution}
 ::: {#quantifier-order .ds-box-title}
@@ -722,6 +731,7 @@ In each of these four claims, both the user and the file are quantified. If the 
 
 ::: {.ds-chapter-navigation}
 
-[← Introduction](../chapter-00/index.qmd) · [Chapter 2 →](../chapter-02/index.qmd)
+[← Introduction](../chapter-00/index.qmd)
+[Next chapter →](../chapter-02/index.qmd){.btn .btn-primary rel="next" aria-label="Next chapter: Chapter 2 (HTML)"}
 
 :::
