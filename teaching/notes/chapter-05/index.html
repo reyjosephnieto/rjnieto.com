@@ -1,0 +1,1082 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-GB" xml:lang="en-GB"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.10.18">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="description" content="Chapter 5: Induction. HTML edition of Lecture Notes in Discrete Mathematics.">
+
+<title>Chapter 5: Induction – RJ Nieto</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<link href="../../../assets/branding/rj-logo.png" rel="icon" type="image/png">
+<script src="../../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-dark-b85bc7c33db8c58e0ec93c3465666fed.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap-68e913143d7006db5355610df9e4aed5.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="dark">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<meta name="author" content="Rey Joseph Nieto">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "@id": "https://rjnieto.com/#rey-joseph-nieto",
+  "name": "Rey Joseph Nieto",
+  "alternateName": ["RJ Nieto", "Thinking Pinoy"],
+  "description": "Assistant Secretary in the Office of the Cabinet Secretary, Office of the President of the Philippines.",
+  "url": "https://rjnieto.com/",
+  "image": {
+    "@type": "ImageObject",
+    "@id": "https://rjnieto.com/#portrait",
+    "url": "https://rjnieto.com/assets/images/rey-joseph-nieto-portrait.jpg",
+    "contentUrl": "https://rjnieto.com/assets/images/rey-joseph-nieto-portrait.jpg",
+    "width": 824,
+    "height": 824,
+    "caption": "Portrait of Rey Joseph RJ Nieto"
+  },
+  "jobTitle": "Assistant Secretary",
+  "worksFor": {
+    "@type": "GovernmentOrganization",
+    "name": "Office of the Cabinet Secretary, Office of the President of the Philippines"
+  },
+  "sameAs": [
+    "https://www.linkedin.com/in/rjosephnieto/",
+    "https://www.facebook.com/rjosephnieto",
+    "https://x.com/rjosephnieto"
+  ]
+}
+</script>
+<link rel="preload" href="../../../assets/fonts/ibm-plex-sans/IBMPlexSans-Roman.woff2" as="font" type="font/woff2" crossorigin="">
+<script defer="" src="../../../assets/js/home-research-background.js"></script>
+<script defer="" src="../../../assets/js/discrete-notes-layout.js"></script>
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta property="og:url" content="https://rjnieto.com/teaching/notes/chapter-05/">
+<meta property="og:type" content="article">
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../../../styles.css">
+<link rel="stylesheet" href="../../../assets/css/site-typography.css">
+<link rel="stylesheet" href="../../../assets/css/home-research-background.css">
+<link rel="stylesheet" href="../../../assets/css/discrete-notes.css">
+<meta property="og:title" content="Chapter 5: Induction – RJ Nieto">
+<meta property="og:description" content="Chapter 5: Induction. HTML edition of Lecture Notes in Discrete Mathematics.">
+<meta property="og:image" content="https://rjnieto.com/teaching/bulsu/discrete-math/images/thumbnails/chapter_05.webp">
+<meta property="og:site_name" content="RJ Nieto">
+<meta property="og:locale" content="en_GB">
+<meta name="twitter:title" content="Chapter 5: Induction – RJ Nieto">
+<meta name="twitter:description" content="Chapter 5: Induction. HTML edition of Lecture Notes in Discrete Mathematics.">
+<meta name="twitter:image" content="https://rjnieto.com/teaching/bulsu/discrete-math/images/thumbnails/chapter_05.webp">
+<meta name="twitter:creator" content="@rjosephnieto">
+<meta name="twitter:site" content="@rjosephnieto">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://rjnieto.com/teaching/notes/chapter-05/">
+</head>
+
+<body class="nav-fixed ds-lecture-notes quarto-light">
+<span id="page-top" class="page-top-anchor" aria-hidden="true"></span>
+<a class="skip-link" href="#quarto-document-content">Skip to main content</a>
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../../">
+    <span class="navbar-title">RJ Nieto</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../../"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../cv/"> 
+<span class="menu-text">CV</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../teaching/"> 
+<span class="menu-text">Teaching</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../calculated/"> 
+<span class="menu-text">Writing</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../research/"> 
+<span class="menu-text">Hobby</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul class="collapse">
+  <li><a href="#ch5:indexed" id="toc-ch5:indexed" class="nav-link active" data-scroll-target="#ch5\:indexed">5.1 Indexed claims</a></li>
+  <li><a href="#ch5:weak" id="toc-ch5:weak" class="nav-link" data-scroll-target="#ch5\:weak">5.2 Ordinary (weak) induction</a></li>
+  <li><a href="#ch5:applications" id="toc-ch5:applications" class="nav-link" data-scroll-target="#ch5\:applications">5.3 Sums, divisibility and inequalities</a></li>
+  <li><a href="#ch5:strong" id="toc-ch5:strong" class="nav-link" data-scroll-target="#ch5\:strong">5.4 Strong induction</a></li>
+  <li><a href="#ch5:recursive" id="toc-ch5:recursive" class="nav-link" data-scroll-target="#ch5\:recursive">5.5 Recursive rules</a></li>
+  <li><a href="#ch5:choosing" id="toc-ch5:choosing" class="nav-link" data-scroll-target="#ch5\:choosing">5.6 Choice of hypothesis</a></li>
+  <li><a href="#ch5:checking" id="toc-ch5:checking" class="nav-link" data-scroll-target="#ch5\:checking">5.7 Errors in induction</a></li>
+  <li><a href="#ch5:exercises" id="toc-ch5:exercises" class="nav-link" data-scroll-target="#ch5\:exercises">5.8 Exercises</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content" tabindex="-1">
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Chapter 5: Induction</h1>
+<p class="subtitle lead">Discrete Mathematics · Rey Joseph Nieto</p>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<!-- Generated from the corresponding chapter LaTeX. Run scripts/build-discrete-html.py to refresh. -->
+<p><a href="../../../teaching/" class="btn btn-outline-secondary btn-sm">Course page</a> <a href="../../../teaching/bulsu/discrete-math/lecture-notes/chapter_05.pdf" class="btn btn-outline-primary btn-sm" aria-label="Open Chapter 5: Induction as PDF">PDF</a></p>
+<p><span id="ch5:chapter" data-label="ch5:chapter"></span></p>
+<p>Add the first few positive odd integers: <span class="math display">\[1=1^2,\qquad 1+3=2^2,\qquad 1+3+5=3^2.\]</span> The next sum is <span class="math inline">\(1+3+5+7=16=4^2\)</span>. These calculations suggest that the sum of the first <span class="math inline">\(n\)</span> positive odd integers is always <span class="math inline">\(n^2\)</span>. How could we prove a claim about a sum whose number of terms changes with <span class="math inline">\(n\)</span>?</p>
+<p>Suppose the sum of the first <span class="math inline">\(k\)</span> odd integers really is <span class="math inline">\(k^2\)</span>. The next odd integer is <span class="math inline">\(2k+1\)</span>. Adding it would give <span class="math inline">\(k^2+(2k+1)=(k+1)^2\)</span>, exactly the next square. We have found a way to pass from one case to the next. We also know where to begin: the one-term sum is <span class="math inline">\(1=1^2\)</span>.</p>
+<p>This is the idea of <strong>mathematical induction</strong>. Chapters 3 and 4 taught us to state assumptions carefully and justify a conclusion from them. In an induction proof, the main implication explains how an established case leads to a later one. A starting case allows that implication to begin doing its work.</p>
+<p>We will study ordinary, or weak, induction and strong induction together. They differ in which earlier cases the inductive hypothesis makes available. Both have the same proving power. Choosing a useful hypothesis and checking its range will matter more than the name.</p>
+<div class="ds-box ds-learningoutcomes">
+<div id="what-you-should-be-able-to-do" class="ds-box-title">
+<p><strong>What you should be able to do</strong></p>
+</div>
+<p>After working through this chapter, you should be able to:</p>
+<ul>
+<li><p>state the claim <span class="math inline">\(P(n)\)</span> and its first permitted index;</p></li>
+<li><p>distinguish a base case, an inductive hypothesis and the next target;</p></li>
+<li><p>construct ordinary induction proofs of elementary identities, divisibility claims and inequalities;</p></li>
+<li><p>use strong induction when a proof needs earlier cases beyond the immediately preceding one;</p></li>
+<li><p>justify every earlier index used and check enough starting cases;</p></li>
+<li><p>explain why the two induction principles have equivalent proving power;</p></li>
+<li><p>diagnose missing bases, circular assumptions and steps that skip required indices.</p></li>
+</ul>
+</div>
+<section id="ch5:indexed" class="level2">
+<h2 class="anchored" data-anchor-id="ch5:indexed">5.1 Indexed claims</h2>
+<p>We use <span class="math inline">\(P(n)\)</span> for a statement depending on an integer index <span class="math inline">\(n\)</span>. The goal is to prove <span class="math inline">\(P(n)\)</span> for every integer <span class="math inline">\(n\geq n_0\)</span>, where <span class="math inline">\(n_0\in\mathbb{N}\)</span> is a stated starting index. Recall that <span class="math inline">\(\mathbb{N}=\{0,1,2,\ldots\}\)</span> in these notes. A particular claim may begin at <span class="math inline">\(1\)</span>, <span class="math inline">\(3\)</span> or another index without changing this convention.</p>
+<p>For the opening claim, <span class="math inline">\(P(n)\)</span> is <span class="math display">\[1+3+\cdots+(2n-1)=n^2,\qquad n\geq1.\]</span> The left side means the sum of the first <span class="math inline">\(n\)</span> positive odd integers. For <span class="math inline">\(n=1\)</span>, it has just the term <span class="math inline">\(1\)</span>. The dots indicate the intervening odd integers when there are more terms.</p>
+<p><span id="example-5.1."><strong>Example&nbsp;5.1.</strong></span> For this <span class="math inline">\(P(n)\)</span>, the statements at <span class="math inline">\(k\)</span> and <span class="math inline">\(k+1\)</span> are <span class="math display">\[\begin{aligned}
+P(k):\quad &amp;1+3+\cdots+(2k-1)=k^2,\\
+P(k+1):\quad &amp;1+3+\cdots+(2k-1)+(2k+1)=(k+1)^2.
+\end{aligned}\]</span> Both sides change when the index changes. The last term at index <span class="math inline">\(k+1\)</span> is <span class="math inline">\(2(k+1)-1=2k+1\)</span>, and the proposed value of that longer sum is <span class="math inline">\((k+1)^2\)</span>.</p>
+<p>Writing down <span class="math inline">\(P(k+1)\)</span> identifies the target. It does not give us permission to assume that the displayed equation is true. In the proof, we will start with the shorter sum whose value the hypothesis supplies, then add the new term.</p>
+</section>
+<section id="ch5:weak" class="level2">
+<h2 class="anchored" data-anchor-id="ch5:weak">5.2 Ordinary (weak) induction</h2>
+<div class="ds-box ds-definition">
+<div id="definition-5.1-the-principle-of-ordinary-induction" class="ds-box-title">
+<p><strong>Definition 5.1: The principle of ordinary induction</strong></p>
+</div>
+<p>Let <span class="math inline">\(P(n)\)</span> be a claim for integer indices <span class="math inline">\(n\geq n_0\)</span>, with <span class="math inline">\(n_0\in\mathbb{N}\)</span>. To prove it for all these indices, establish:</p>
+<ol type="1">
+<li><p><strong>Base case:</strong> prove <span class="math inline">\(P(n_0)\)</span>.</p></li>
+<li><p><strong>Inductive step:</strong> for an arbitrary integer <span class="math inline">\(k\geq n_0\)</span>, assume <span class="math inline">\(P(k)\)</span> and prove <span class="math inline">\(P(k+1)\)</span>.</p></li>
+</ol>
+<p>Then <span class="math inline">\(P(n)\)</span> holds for every integer <span class="math inline">\(n\geq n_0\)</span>. The assumption <span class="math inline">\(P(k)\)</span> within the step is the <strong>inductive hypothesis</strong>. This method is also called <strong>weak induction</strong>.</p>
+</div>
+<p>The step proves an implication <span class="math inline">\(P(k)\to P(k+1)\)</span> for every permitted <span class="math inline">\(k\)</span>. It uses the same direct-proof logic as earlier chapters: assume the antecedent within that argument and establish its consequence. The base case supplies an actual true statement to which this implication can first be applied.</p>
+<p>For instance, if <span class="math inline">\(n_0=1\)</span>, the base gives <span class="math inline">\(P(1)\)</span>; the step with <span class="math inline">\(k=1\)</span> gives <span class="math inline">\(P(2)\)</span>; the step with <span class="math inline">\(k=2\)</span> then gives <span class="math inline">\(P(3)\)</span>. Any fixed later index is reached after finitely many such steps. The proof gives one argument for every transition, so we do not have to write each transition separately.</p>
+<div class="ds-box ds-caution">
+<div id="assume-one-case-within-the-step" class="ds-box-title">
+<p><strong>Assume one case within the step</strong></p>
+</div>
+<p>Assuming <span class="math inline">\(P(k)\)</span> to prove <span class="math inline">\(P(k+1)\)</span> does not assume that <span class="math inline">\(P(n)\)</span> already holds for every <span class="math inline">\(n\)</span>. The step is a conditional argument. The base case and the proved implication together establish the universal conclusion. Assuming that conclusion at the outset would leave nothing proved.</p>
+</div>
+<p><span id="ch5:odd-sum"><strong>Example&nbsp;5.2.</strong></span> Prove that <span class="math inline">\(1+3+\cdots+(2n-1)=n^2\)</span> for every integer <span class="math inline">\(n\geq1\)</span>.</p>
+<p><em>Proof.</em> Let <span class="math inline">\(P(n)\)</span> be the stated identity.</p>
+<p><em>Base case.</em> At <span class="math inline">\(n=1\)</span>, the sum is <span class="math inline">\(1\)</span>, which equals <span class="math inline">\(1^2\)</span>. Thus <span class="math inline">\(P(1)\)</span> holds.</p>
+<p><em>Inductive step.</em> Fix an arbitrary integer <span class="math inline">\(k\geq1\)</span> and assume <span class="math inline">\(P(k)\)</span>: <span class="math inline">\(1+3+\cdots+(2k-1)=k^2\)</span>. Adding the next odd integer gives <span class="math display">\[\begin{aligned}
+1+3+\cdots+(2k-1)+(2k+1)
+&amp;=k^2+(2k+1) &amp;&amp;\text{by the inductive hypothesis}\\
+&amp;=(k+1)^2.
+\end{aligned}\]</span> This is <span class="math inline">\(P(k+1)\)</span>. By ordinary induction, the identity holds for every integer <span class="math inline">\(n\geq1\)</span>. <span class="math inline">\(\square\)</span></p>
+<p>The hypothesis was used only to replace the shorter sum by <span class="math inline">\(k^2\)</span>. The remaining algebra established the new target. We did not assume the value of the longer sum.</p>
+<p><img src="../../../teaching/notes/assets/chapter-05/01-next-odd-border.webp" class="ds-note-image img-fluid" loading="lazy" decoding="async" alt="A square enlarged by an odd-numbered border, illustrating the inductive step for a sum of odd numbers."></p>
+<p>At <span class="math inline">\(k=3\)</span>, the next odd number supplies the seven tiles that enlarge a <span class="math inline">\(3\times3\)</span> square to <span class="math inline">\(4\times4\)</span>.</p>
+<p>Choosing <span class="math inline">\(k=100\)</span> and proving one implication about that case would not establish the required step for every <span class="math inline">\(k\)</span>. In the proof above, no property of <span class="math inline">\(k\)</span> was used beyond <span class="math inline">\(k\geq1\)</span> and the stated inductive hypothesis. The same step therefore works wherever it is needed.</p>
+<div class="ds-box ds-python">
+<div id="python-non-examinable" class="ds-box-title">
+<p><strong>Python (non-examinable)</strong></p>
+</div>
+<p>We can calculate the first five odd-integer sums alongside the proposed squares. The variable <code>total</code> stores the running sum; <code>range(1, 6)</code> supplies the indices <span class="math inline">\(1,2,3,4,5\)</span>, stopping before <span class="math inline">\(6\)</span>. In Python, <code>**</code> denotes a power.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>total <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> n <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, <span class="dv">6</span>):</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    total <span class="op">=</span> total <span class="op">+</span> (<span class="dv">2</span> <span class="op">*</span> n <span class="op">-</span> <span class="dv">1</span>)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(n, total, n <span class="op">**</span> <span class="dv">2</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><strong>Output.</strong></p>
+<pre class="text"><code>1 1 1
+2 4 4
+3 9 9
+4 16 16
+5 25 25</code></pre>
+<p>The columns give <span class="math inline">\(n\)</span>, the calculated sum and <span class="math inline">\(n^2\)</span>. These five checks illustrate the identity. The induction proof above establishes it for every permitted <span class="math inline">\(n\)</span>; the finite calculation does not.</p>
+</div>
+</section>
+<section id="ch5:applications" class="level2">
+<h2 class="anchored" data-anchor-id="ch5:applications">5.3 Sums, divisibility and inequalities</h2>
+<p>Induction becomes useful when the expression at the next index can be related to the current one. A sum gains a term; a power gains a factor; a polynomial can be expanded to expose the previous expression.</p>
+<div class="ds-box ds-definition">
+<div id="definition-5.2-finite-summation-notation" class="ds-box-title">
+<p><strong>Definition 5.2: Finite summation notation</strong></p>
+</div>
+<p>The symbol <span class="math inline">\(\sum\)</span> means that the indicated terms are added. For integers <span class="math inline">\(0\leq r\leq s\)</span>, if <span class="math inline">\(a_j\)</span> denotes the term labelled by the index <span class="math inline">\(j\)</span>, then <span class="math display">\[\sum_{j=r}^{s}a_j=a_r+a_{r+1}+\cdots+a_s.\]</span> The lower limit gives the first index and the upper limit the last. If <span class="math inline">\(r=s\)</span>, there is just one term. Throughout these examples the limits include both endpoints.</p>
+</div>
+<p><span id="example-5.3."><strong>Example&nbsp;5.3.</strong></span> We have <span class="math display">\[\sum_{j=1}^{4}(2j+1)=3+5+7+9=24.\]</span> The first three terms give <span class="math inline">\(\sum_{j=1}^{3}(2j+1)=15\)</span>; the term added when the upper limit becomes <span class="math inline">\(4\)</span> is <span class="math inline">\(2(4)+1=9\)</span>. In general, for <span class="math inline">\(k\geq1\)</span>, <span class="math display">\[\sum_{j=1}^{k+1}(2j+1)
+=\sum_{j=1}^{k}(2j+1)+\bigl(2(k+1)+1\bigr).\]</span> The summation index is <span class="math inline">\(j\)</span>, leaving <span class="math inline">\(k\)</span> to name the current upper limit. In contrast, <span class="math inline">\(\sum_{j=0}^{0}2^j\)</span> has one term, <span class="math inline">\(2^0=1\)</span>; it is not an empty sum.</p>
+<p><span id="ch5:power-sum"><strong>Example&nbsp;5.4.</strong></span> Prove that, for every <span class="math inline">\(n\in\mathbb{N}\)</span>, <span class="math display">\[\sum_{j=0}^{n}2^j=2^{n+1}-1.\]</span></p>
+<p><em>Proof.</em> Let <span class="math inline">\(P(n)\)</span> be this identity.</p>
+<p><em>Base case.</em> At <span class="math inline">\(n=0\)</span>, the left side is <span class="math inline">\(2^0=1\)</span> and the right side is <span class="math inline">\(2^1-1=1\)</span>.</p>
+<p><em>Inductive step.</em> Let <span class="math inline">\(k\geq0\)</span> be an integer and suppose <span class="math inline">\(\sum_{j=0}^{k}2^j=2^{k+1}-1\)</span>. Then <span class="math display">\[\begin{aligned}
+\sum_{j=0}^{k+1}2^j
+&amp;=\left(\sum_{j=0}^{k}2^j\right)+2^{k+1}\\
+&amp;=(2^{k+1}-1)+2^{k+1} &amp;&amp;\text{by the inductive hypothesis}\\
+&amp;=2\cdot2^{k+1}-1\\
+&amp;=2^{k+2}-1.
+\end{aligned}\]</span> Since <span class="math inline">\(k+2=(k+1)+1\)</span>, this is the right side required by <span class="math inline">\(P(k+1)\)</span>. Induction proves the claim for all <span class="math inline">\(n\in\mathbb{N}\)</span>. <span class="math inline">\(\square\)</span></p>
+<p>At index <span class="math inline">\(n\)</span>, this sum has <span class="math inline">\(n+1\)</span> terms because it starts at <span class="math inline">\(0\)</span>. Writing the next target first helps prevent replacing its exponent by the wrong expression.</p>
+<p><span id="ch5:power-divisibility"><strong>Example&nbsp;5.5.</strong></span> Prove that <span class="math inline">\(7\mid(8^n-1)\)</span> for every <span class="math inline">\(n\in\mathbb{N}\)</span>. Recall that divisibility requires an integer witness, and that <span class="math inline">\(7\mid0\)</span> is allowed.</p>
+<p><em>Proof.</em> Let <span class="math inline">\(P(n)\)</span> be the claim <span class="math inline">\(7\mid(8^n-1)\)</span>.</p>
+<p><em>Base case.</em> For <span class="math inline">\(n=0\)</span>, <span class="math inline">\(8^0-1=0=7(0)\)</span>.</p>
+<p><em>Inductive step.</em> Fix an integer <span class="math inline">\(k\geq0\)</span> and assume <span class="math inline">\(P(k)\)</span>. Then <span class="math inline">\(8^k-1=7q\)</span> for some <span class="math inline">\(q\in\mathbb{Z}\)</span>. Rewrite the next expression as <span class="math display">\[\begin{aligned}
+8^{k+1}-1
+&amp;=8(8^k-1)+7\\
+&amp;=8(7q)+7\\
+&amp;=7(8q+1).
+\end{aligned}\]</span> The number <span class="math inline">\(8q+1\)</span> is an integer, so <span class="math inline">\(7\mid(8^{k+1}-1)\)</span>. This proves <span class="math inline">\(P(k+1)\)</span>. Hence <span class="math inline">\(P(n)\)</span> holds for every <span class="math inline">\(n\in\mathbb{N}\)</span> by induction. <span class="math inline">\(\square\)</span></p>
+<p>The first rewrite made <span class="math inline">\(8^k-1\)</span> appear, allowing the hypothesis to be used. The witness for the next case was then constructed from the witness for the current one.</p>
+<p><span id="example-5.6."><strong>Example&nbsp;5.6.</strong></span> Prove that <span class="math inline">\(3\mid(n^3-n)\)</span> for all <span class="math inline">\(n\in\mathbb{N}\)</span>.</p>
+<p><em>Proof.</em> Let <span class="math inline">\(P(n)\)</span> be the stated divisibility claim. At <span class="math inline">\(n=0\)</span>, <span class="math inline">\(n^3-n=0\)</span>, which is divisible by <span class="math inline">\(3\)</span>.</p>
+<p>For the inductive step, fix <span class="math inline">\(k\geq0\)</span> and suppose <span class="math inline">\(k^3-k=3q\)</span> for an integer <span class="math inline">\(q\)</span>. Expanding gives <span class="math display">\[\begin{aligned}
+(k+1)^3-(k+1)
+&amp;=k^3+3k^2+3k+1-k-1\\
+&amp;=(k^3-k)+3k(k+1)\\
+&amp;=3\bigl(q+k(k+1)\bigr).
+\end{aligned}\]</span> Since <span class="math inline">\(q+k(k+1)\)</span> is an integer, the next expression is divisible by <span class="math inline">\(3\)</span>. The base case and step establish <span class="math inline">\(P(n)\)</span> for every <span class="math inline">\(n\in\mathbb{N}\)</span>. <span class="math inline">\(\square\)</span></p>
+<p>Here the expression supplied by the hypothesis was obtained by expanding and regrouping. There is no requirement that it appear unchanged before we begin the algebra.</p>
+<p><span id="example-5.7."><strong>Example&nbsp;5.7.</strong></span> Prove that <span class="math inline">\(3^n\geq2n+1\)</span> for all <span class="math inline">\(n\in\mathbb{N}\)</span>.</p>
+<p><em>Proof.</em> The base case <span class="math inline">\(n=0\)</span> gives <span class="math inline">\(1\geq1\)</span>. For an arbitrary integer <span class="math inline">\(k\geq0\)</span>, assume <span class="math inline">\(3^k\geq2k+1\)</span>. Then <span class="math display">\[\begin{aligned}
+3^{k+1}
+&amp;=3\cdot3^k\\
+&amp;\geq3(2k+1) &amp;&amp;\text{by the hypothesis, multiplying by }3&gt;0\\
+&amp;=6k+3\\
+&amp;\geq2k+3 &amp;&amp;\text{since }4k\geq0\\
+&amp;=2(k+1)+1.
+\end{aligned}\]</span> This is the required next inequality. By induction, the claim holds for all <span class="math inline">\(n\in\mathbb{N}\)</span>. <span class="math inline">\(\square\)</span></p>
+<p>We did not need equality at the intermediate steps. We needed estimates in the direction that gives the target lower bound.</p>
+<p><span id="example-5.8."><strong>Example&nbsp;5.8.</strong></span> Prove that <span class="math inline">\(2^n&gt;n+2\)</span> for every integer <span class="math inline">\(n\geq3\)</span>. The claim is false at <span class="math inline">\(n=2\)</span>, where it would say <span class="math inline">\(4&gt;4\)</span>.</p>
+<p><em>Proof.</em> Let <span class="math inline">\(P(n)\)</span> be <span class="math inline">\(2^n&gt;n+2\)</span>, with domain <span class="math inline">\(n\geq3\)</span>. The base case is <span class="math inline">\(P(3)\)</span>: <span class="math inline">\(8&gt;5\)</span>.</p>
+<p>Fix an integer <span class="math inline">\(k\geq3\)</span> and assume <span class="math inline">\(2^k&gt;k+2\)</span>. Then <span class="math display">\[2^{k+1}=2\cdot2^k&gt;2(k+2)=2k+4&gt;k+3=(k+1)+2,\]</span> where <span class="math inline">\(2k+4&gt;k+3\)</span> follows from <span class="math inline">\(k+1&gt;0\)</span>. Thus <span class="math inline">\(P(k+1)\)</span> holds. Induction proves the claim for all integers <span class="math inline">\(n\geq3\)</span>. <span class="math inline">\(\square\)</span></p>
+<p>The proof starts at <span class="math inline">\(3\)</span> because that is the first index in its claim. It does not need <span class="math inline">\(P(0)\)</span>, <span class="math inline">\(P(1)\)</span> or <span class="math inline">\(P(2)\)</span>.</p>
+</section>
+<section id="ch5:strong" class="level2">
+<h2 class="anchored" data-anchor-id="ch5:strong">5.4 Strong induction</h2>
+<p>Ordinary induction makes <span class="math inline">\(P(k)\)</span> available when proving <span class="math inline">\(P(k+1)\)</span>. Sometimes the useful reduction leads to a case further back. Strong induction allows all the earlier cases within the claimed range to be used.</p>
+<div class="ds-box ds-definition">
+<div id="definition-5.3-the-principle-of-strong-induction" class="ds-box-title">
+<p><strong>Definition 5.3: The principle of strong induction</strong></p>
+</div>
+<p>Let <span class="math inline">\(P(n)\)</span> be a claim for integers <span class="math inline">\(n\geq n_0\)</span>, with <span class="math inline">\(n_0\in\mathbb{N}\)</span>. Choose a final base index <span class="math inline">\(r\geq n_0\)</span> and establish:</p>
+<ol type="1">
+<li><p><strong>Base case or cases:</strong> prove every case <span class="math inline">\(P(n_0),P(n_0+1),\ldots,P(r)\)</span>.</p></li>
+<li><p><strong>Inductive step:</strong> for an arbitrary integer <span class="math inline">\(k\geq r\)</span>, assume <span class="math inline">\(P(j)\)</span> for every integer <span class="math inline">\(j\)</span> with <span class="math inline">\(n_0\leq j\leq k\)</span>, and prove <span class="math inline">\(P(k+1)\)</span>.</p></li>
+</ol>
+<p>Then <span class="math inline">\(P(n)\)</span> holds for every integer <span class="math inline">\(n\geq n_0\)</span>. If only one base case is needed, take <span class="math inline">\(r=n_0\)</span>.</p>
+</div>
+<p>The stronger hypothesis still stops before the target. It includes <span class="math inline">\(P(k)\)</span> and any earlier case in the range; it does not include <span class="math inline">\(P(k+1)\)</span>. The base cases must make the first use of the general step possible. Their number depends on which earlier indices the argument needs.</p>
+<p><span id="example-5.9."><strong>Example&nbsp;5.9.</strong></span> Suppose the strong inductive hypothesis is that <span class="math inline">\(P(j)\)</span> holds for every integer <span class="math inline">\(j\)</span> with <span class="math inline">\(3\leq j\leq k\)</span>, where <span class="math inline">\(k\geq5\)</span>. Then <span class="math inline">\(P(3)\)</span> and <span class="math inline">\(P(k)\)</span> are available. So is <span class="math inline">\(P(k-2)\)</span>: the inequality <span class="math inline">\(k\geq5\)</span> gives <span class="math inline">\(k-2\geq3\)</span>, and certainly <span class="math inline">\(k-2\leq k\)</span>.</p>
+<p>The hypothesis does not supply <span class="math inline">\(P(2)\)</span>, which is below its range. It does not supply <span class="math inline">\(P(k+1)\)</span>, which is the target beyond that range. These statements might have truth values for other reasons, but they are not assumptions licensed by this hypothesis.</p>
+<p><span id="ch5:blocks"><strong>Example&nbsp;5.10.</strong></span> In a mathematical model of message construction, a block has length <span class="math inline">\(4\)</span> or <span class="math inline">\(5\)</span> units. Blocks can be joined, but not split. Prove that every integer length <span class="math inline">\(n\geq12\)</span> can be formed. Equivalently, prove that <span class="math inline">\(n=4a+5b\)</span> for some <span class="math inline">\(a,b\in\mathbb{N}\)</span>.</p>
+<p>Adding a <span class="math inline">\(4\)</span>-unit block constructs the target from a length <span class="math inline">\(4\)</span> smaller. This suggests using an earlier case and checking enough starting lengths to leave no gap.</p>
+<p><em>Proof.</em> Let <span class="math inline">\(P(n)\)</span> mean that <span class="math inline">\(n=4a+5b\)</span> for some <span class="math inline">\(a,b\in\mathbb{N}\)</span>.</p>
+<p><em>Base cases.</em> The four lengths <span class="math inline">\(12,13,14,15\)</span> can be formed: <span class="math display">\[\begin{aligned}
+12&amp;=4(3)+5(0),&amp;13&amp;=4(2)+5(1),\\
+14&amp;=4(1)+5(2),&amp;15&amp;=4(0)+5(3).
+\end{aligned}\]</span></p>
+<p><em>Inductive step.</em> Fix an arbitrary integer <span class="math inline">\(k\geq15\)</span> and assume <span class="math inline">\(P(j)\)</span> for every integer <span class="math inline">\(12\leq j\leq k\)</span>. To form length <span class="math inline">\(k+1\)</span>, consider the earlier length <span class="math inline">\(k-3\)</span>. Its index satisfies <span class="math inline">\(12\leq k-3\leq k\)</span>, so the hypothesis gives <span class="math inline">\(k-3=4a+5b\)</span> for some <span class="math inline">\(a,b\in\mathbb{N}\)</span>. Adding a <span class="math inline">\(4\)</span>-unit block yields <span class="math display">\[k+1=(k-3)+4=4(a+1)+5b.\]</span> Both <span class="math inline">\(a+1\)</span> and <span class="math inline">\(b\)</span> are natural numbers. Thus <span class="math inline">\(P(k+1)\)</span> holds. Strong induction proves the claim for every integer <span class="math inline">\(n\geq12\)</span>. <span class="math inline">\(\square\)</span></p>
+<p>The first new length covered by the step is <span class="math inline">\(16\)</span>, obtained from <span class="math inline">\(12\)</span>. The same step gives <span class="math inline">\(17\)</span> from <span class="math inline">\(13\)</span>, <span class="math inline">\(18\)</span> from <span class="math inline">\(14\)</span> and <span class="math inline">\(19\)</span> from <span class="math inline">\(15\)</span>. Checking only <span class="math inline">\(12\)</span> would start one of these chains and leave the others without a starting case. For a later target such as <span class="math inline">\(23\)</span>, the proof can use the already available length <span class="math inline">\(19\)</span>.</p>
+<p><img src="../../../teaching/notes/assets/chapter-05/02-four-starting-chains.webp" class="ds-note-image img-fluid" loading="lazy" decoding="async" alt="Four starting cases extending along separate chains, illustrating an induction step of size four."></p>
+<p>Adding <span class="math inline">\(4\)</span> advances each chain; the bases <span class="math inline">\(12\)</span>, <span class="math inline">\(13\)</span>, <span class="math inline">\(14\)</span> and <span class="math inline">\(15\)</span> start all four.</p>
+</section>
+<section id="ch5:recursive" class="level2">
+<h2 class="anchored" data-anchor-id="ch5:recursive">5.5 Recursive rules</h2>
+<p>A <strong>sequence</strong> is a list of values labelled by integer indices. Here <span class="math inline">\(a_n\)</span> means the value at index <span class="math inline">\(n\)</span>; it does not mean <span class="math inline">\(a\)</span> multiplied by <span class="math inline">\(n\)</span>. A <strong>recursive rule</strong> specifies a new value using earlier values. Initial values tell us where to start. We will study sequences systematically in Chapter 11; the particular rule below needs only these conventions.</p>
+<p>Define integer values by <span class="math display">\[a_0=1,\qquad a_1=3,\qquad
+a_{n+2}=2a_{n+1}-a_n\quad(n\geq0).\]</span> The first two values are specified separately. The rule gives <span class="math inline">\(a_2=2(3)-1=5\)</span> and then <span class="math inline">\(a_3=2(5)-3=7\)</span>. It uses two earlier values each time. Twice one earlier integer minus the other is again an integer.</p>
+<p><span id="ch5:two-term"><strong>Example&nbsp;5.11.</strong></span> Prove that the values defined above satisfy <span class="math inline">\(a_n=2n+1\)</span> for every <span class="math inline">\(n\in\mathbb{N}\)</span>.</p>
+<p><em>Proof.</em> Let <span class="math inline">\(P(n)\)</span> be <span class="math inline">\(a_n=2n+1\)</span>.</p>
+<p><em>Base cases.</em> At <span class="math inline">\(n=0\)</span>, <span class="math inline">\(a_0=1=2(0)+1\)</span>. At <span class="math inline">\(n=1\)</span>, <span class="math inline">\(a_1=3=2(1)+1\)</span>.</p>
+<p><em>Inductive step.</em> Fix an integer <span class="math inline">\(k\geq1\)</span> and assume <span class="math inline">\(P(j)\)</span> for every <span class="math inline">\(0\leq j\leq k\)</span>. In particular, <span class="math inline">\(a_k=2k+1\)</span> and <span class="math inline">\(a_{k-1}=2(k-1)+1\)</span>. Both uses are permitted because <span class="math inline">\(0\leq k-1\leq k\)</span>. Substituting <span class="math inline">\(n=k-1\geq0\)</span> into the recursive rule gives <span class="math display">\[\begin{aligned}
+a_{k+1}
+&amp;=2a_k-a_{k-1}\\
+&amp;=2(2k+1)-\bigl(2(k-1)+1\bigr)\\
+&amp;=4k+2-(2k-1)\\
+&amp;=2k+3\\
+&amp;=2(k+1)+1.
+\end{aligned}\]</span> Thus <span class="math inline">\(P(k+1)\)</span> holds. Strong induction proves <span class="math inline">\(a_n=2n+1\)</span> for all <span class="math inline">\(n\in\mathbb{N}\)</span>. <span class="math inline">\(\square\)</span></p>
+<p>The step uses <span class="math inline">\(P(k)\)</span> and <span class="math inline">\(P(k-1)\)</span>, although the hypothesis makes every earlier case available. It need not use all of them. At its first permitted value <span class="math inline">\(k=1\)</span>, the step establishes <span class="math inline">\(P(2)\)</span> from the two checked bases. No value at index <span class="math inline">\(-1\)</span> is needed.</p>
+</section>
+<section id="ch5:choosing" class="level2">
+<h2 class="anchored" data-anchor-id="ch5:choosing">5.6 Choice of hypothesis</h2>
+<p>The names “weak” and “strong” describe the hypotheses used in the step. Strong induction gives more earlier cases at once, but does not prove a larger collection of statements about the natural numbers. Both principles can be used to obtain the other.</p>
+<p>Ordinary induction is available within strong induction because the strong hypothesis includes <span class="math inline">\(P(k)\)</span>. If that is all the step needs, the other earlier cases may simply remain unused.</p>
+<p>For the other direction, suppose we have the bases and step of a strong induction argument, with indices beginning at <span class="math inline">\(n_0\)</span> and last base index <span class="math inline">\(r\)</span>. Define <span class="math inline">\(Q(k)\)</span> to say: <span class="math display">\[P(j)\text{ holds for every integer }j\text{ with }n_0\leq j\leq k.\]</span> The checked bases establish <span class="math inline">\(Q(r)\)</span>. For an arbitrary integer <span class="math inline">\(k\geq r\)</span>, assuming <span class="math inline">\(Q(k)\)</span> supplies exactly the earlier cases needed by the strong step, so that step proves <span class="math inline">\(P(k+1)\)</span>. Together with <span class="math inline">\(Q(k)\)</span>, the new case gives <span class="math inline">\(Q(k+1)\)</span>. Ordinary induction applied to <span class="math inline">\(Q\)</span> therefore establishes all the required <span class="math inline">\(P\)</span> cases. This is why strengthening the claim used in ordinary induction can reproduce a strong induction proof.</p>
+<p><span id="example-5.12."><strong>Example&nbsp;5.12.</strong></span> Use the same values <span class="math inline">\(a_n\)</span> from Example&nbsp;<a href="#ch5:two-term">5.11</a>. Instead of assuming only one formula, let <span class="math inline">\(Q(k)\)</span> be the paired claim <span class="math display">\[a_k=2k+1\quad\text{and}\quad a_{k+1}=2k+3.\]</span> We can prove <span class="math inline">\(Q(k)\)</span> by ordinary induction.</p>
+<p><em>Proof.</em> At <span class="math inline">\(k=0\)</span>, both parts hold because <span class="math inline">\(a_0=1\)</span> and <span class="math inline">\(a_1=3\)</span>. For an arbitrary <span class="math inline">\(k\geq0\)</span>, suppose <span class="math inline">\(Q(k)\)</span> holds. Then <span class="math display">\[a_{k+2}=2a_{k+1}-a_k
+        =2(2k+3)-(2k+1)=2k+5.\]</span> We already know <span class="math inline">\(a_{k+1}=2k+3=2(k+1)+1\)</span>. The new equality is <span class="math inline">\(a_{k+2}=2(k+1)+3\)</span>. These are precisely the two parts of <span class="math inline">\(Q(k+1)\)</span>. Ordinary induction proves <span class="math inline">\(Q(k)\)</span> for every <span class="math inline">\(k\in\mathbb{N}\)</span>, and hence <span class="math inline">\(a_n=2n+1\)</span> for every <span class="math inline">\(n\in\mathbb{N}\)</span>. <span class="math inline">\(\square\)</span></p>
+<p>The paired claim carries forward the old second value and establishes the new second value. The arithmetic has not become more powerful; we have organised the information differently.</p>
+<p>For a sum whose next term is added to the previous sum, ordinary induction usually provides enough information. For the two-value rule, we needed two earlier formulas. For the block construction, we needed a case four indices before the target.</p>
+<div class="ds-table">
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Example</th>
+<th style="text-align: left;">Earlier information used</th>
+<th style="text-align: left;">Convenient approach</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Odd-integer sum</td>
+<td style="text-align: left;">The sum at <span class="math inline">\(k\)</span>.</td>
+<td style="text-align: left;">Ordinary induction.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Two-value rule</td>
+<td style="text-align: left;">The formulas at <span class="math inline">\(k\)</span> and <span class="math inline">\(k-1\)</span>.</td>
+<td style="text-align: left;">Strong induction, or an ordinary proof of a paired claim.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Block construction</td>
+<td style="text-align: left;">The representation at <span class="math inline">\(k-3\)</span> for target <span class="math inline">\(k+1\)</span>.</td>
+<td style="text-align: left;">Strong induction with four starting cases.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Whichever version we choose, write the target first, identify the earlier indices needed and verify that the hypothesis actually includes them.</p>
+<p><span id="example-5.13."><strong>Example&nbsp;5.13.</strong></span> For <span class="math inline">\(n\in\mathbb{N}\)</span>, the number <span class="math inline">\(n(n+1)\)</span> is even. If <span class="math inline">\(n\)</span> is even, its product with the integer <span class="math inline">\(n+1\)</span> is even. If <span class="math inline">\(n\)</span> is odd, write <span class="math inline">\(n=2q+1\)</span> with <span class="math inline">\(q\in\mathbb{Z}\)</span>. Then <span class="math inline">\(n+1=2(q+1)\)</span> is even, so the product is again even. The parity alternatives cover every permitted <span class="math inline">\(n\)</span>, establishing the claim directly.</p>
+<p>Induction is useful when a transition between indices supplies a manageable proof. It is one method to consider alongside the direct and indirect methods of the earlier chapters.</p>
+</section>
+<section id="ch5:checking" class="level2">
+<h2 class="anchored" data-anchor-id="ch5:checking">5.7 Errors in induction</h2>
+<p>Check the base cases and the step as separate obligations. Within the step, check its direction, the exact hypothesis used and the index of the case it first establishes.</p>
+<p><span id="example-5.14."><strong>Example&nbsp;5.14.</strong></span> Consider <span class="math inline">\(P(n)\)</span>: <span class="math inline">\(n+1\leq n\)</span>, for <span class="math inline">\(n\in\mathbb{N}\)</span>. If we temporarily assume <span class="math inline">\(P(k)\)</span>, adding <span class="math inline">\(1\)</span> to both sides gives <span class="math inline">\(k+2\leq k+1\)</span>, which is <span class="math inline">\(P(k+1)\)</span>. Thus the transition implication is valid.</p>
+<p>The universal claim is still false. Its proposed base <span class="math inline">\(P(0)\)</span> would be <span class="math inline">\(1\leq0\)</span>, which is false. A proved implication does not establish its antecedent. There is no true starting case here from which the argument can begin.</p>
+<p><span id="example-5.15."><strong>Example&nbsp;5.15.</strong></span> David claims that every natural number is even. He checks that <span class="math inline">\(0\)</span> is even and observes that if <span class="math inline">\(k\)</span> is even, then <span class="math inline">\(k+2\)</span> is even.</p>
+<p>Both facts are correct, but the step advances from <span class="math inline">\(k\)</span> to <span class="math inline">\(k+2\)</span>, not to <span class="math inline">\(k+1\)</span>. Starting from <span class="math inline">\(0\)</span>, it reaches <span class="math inline">\(0,2,4,6,\ldots\)</span>, leaving the odd indices untouched. The permitted input <span class="math inline">\(1\)</span> refutes David’s universal claim. An induction argument must cover all the indices in its conclusion.</p>
+<p><span id="example-5.16."><strong>Example&nbsp;5.16.</strong></span> While trying to prove <span class="math inline">\(7\mid(8^{k+1}-1)\)</span>, Grace writes: “Let <span class="math inline">\(8^{k+1}-1=7r\)</span> for an integer <span class="math inline">\(r\)</span>. Therefore <span class="math inline">\(7\mid(8^{k+1}-1)\)</span>.”</p>
+<p>The supposed integer <span class="math inline">\(r\)</span> already asserts exactly the target divisibility claim. Its existence has not been established. The available hypothesis supplies an integer <span class="math inline">\(q\)</span> with <span class="math inline">\(8^k-1=7q\)</span>, not a witness for the next exponent. Example&nbsp;<a href="#ch5:power-divisibility">5.5</a> repairs the argument by constructing <span class="math inline">\(r=8q+1\)</span> and checking the required equation.</p>
+<p><span id="example-5.17."><strong>Example&nbsp;5.17.</strong></span> In Example&nbsp;<a href="#ch5:two-term">5.11</a>, the step uses <span class="math inline">\(P(k-1)\)</span>. Starting that step at <span class="math inline">\(k=0\)</span> would require <span class="math inline">\(P(-1)\)</span>, outside the range of the claim and of the defined values. Checking <span class="math inline">\(P(0)\)</span> alone would not fix this.</p>
+<p>Instead, we checked <span class="math inline">\(P(0)\)</span> and <span class="math inline">\(P(1)\)</span>, then began the general step at <span class="math inline">\(k=1\)</span>. Its first target is <span class="math inline">\(P(2)\)</span>, and both cases it uses are available. For any proposed step, substitute its smallest permitted <span class="math inline">\(k\)</span> before relying on the general notation.</p>
+</section>
+<section id="ch5:exercises" class="level2">
+<h2 class="anchored" data-anchor-id="ch5:exercises">5.8 Exercises</h2>
+<div class="ds-exercises" style="--ds-chapter: '5';">
+<ol type="1">
+<li><p><span id="ch5ex:claim" data-label="ch5ex:claim"></span> Let <span class="math inline">\(P(n)\)</span> be the claim <span class="math inline">\(2+4+\cdots+2n=n(n+1)\)</span>, for integers <span class="math inline">\(n\geq1\)</span>.</p>
+<ol type="a">
+<li><p>State and verify its first case.</p></li>
+<li><p>Write <span class="math inline">\(P(k)\)</span> and <span class="math inline">\(P(k+1)\)</span>, including the last term and right side in each.</p></li>
+<li><p>Which equation is assumed and which must be proved in an ordinary inductive step?</p></li>
+</ol></li>
+<li><p><span id="ch5ex:samples" data-label="ch5ex:samples"></span> Eve checks <span class="math inline">\(n=0,1,\ldots,9\)</span> in the claim <span class="math inline">\(n&lt;10\)</span> and concludes that it holds for every <span class="math inline">\(n\in\mathbb{N}\)</span>.</p>
+<ol type="a">
+<li><p>Give a counterexample to her conclusion.</p></li>
+<li><p>Has she proved a transition from an arbitrary permitted index to the next one? Explain.</p></li>
+</ol></li>
+<li><p><span id="ch5ex:reach" data-label="ch5ex:reach"></span> Suppose <span class="math inline">\(P(3)\)</span> has been proved, together with <span class="math inline">\(P(k)\to P(k+1)\)</span> for every integer <span class="math inline">\(k\geq3\)</span>. Which statements below are guaranteed by these facts? Explain the range of the conclusion.</p>
+<ol type="a">
+<li><p><span class="math inline">\(P(2)\)</span>.</p></li>
+<li><p><span class="math inline">\(P(3)\)</span>.</p></li>
+<li><p><span class="math inline">\(P(8)\)</span>.</p></li>
+<li><p><span class="math inline">\(P(100)\)</span>.</p></li>
+</ol></li>
+<li><p><span id="ch5ex:guided-sum" data-label="ch5ex:guided-sum"></span> Prove the claim from Exercise&nbsp;<a href="#ch5ex:claim">5.1</a>. After stating the hypothesis for an arbitrary integer <span class="math inline">\(k\geq1\)</span>, complete the calculation <span class="math display">\[\begin{aligned}
+2+4+\cdots+2k+2(k+1)
+&amp;=\underline{\hspace{2cm}}+2(k+1)\\
+&amp;=(k+1)\bigl(\underline{\hspace{1.3cm}}\bigr)\\
+&amp;=(k+1)(k+2).
+\end{aligned}\]</span> Identify the line using the hypothesis, check the base case and state the final conclusion.</p></li>
+<li><p><span id="ch5ex:sums" data-label="ch5ex:sums"></span> Use ordinary induction in each part. Write the next target before beginning the step.</p>
+<ol type="a">
+<li><p>For integers <span class="math inline">\(n\geq1\)</span>, <span class="math inline">\(\displaystyle\sum_{j=1}^{n}(3j-1)=\frac{n(3n+1)}2\)</span>.</p></li>
+<li><p>For <span class="math inline">\(n\in\mathbb{N}\)</span>, <span class="math inline">\(\displaystyle\sum_{j=0}^{n}3^j=\frac{3^{n+1}-1}{2}\)</span>.</p></li>
+</ol></li>
+<li><p><span id="ch5ex:power-divisibility" data-label="ch5ex:power-divisibility"></span> Prove by ordinary induction that <span class="math inline">\(4\mid(9^n-1)\)</span> for all <span class="math inline">\(n\in\mathbb{N}\)</span>. In the step, construct the new witness explicitly from the integer supplied by the inductive hypothesis.</p></li>
+<li><p><span id="ch5ex:polynomial" data-label="ch5ex:polynomial"></span> Prove by ordinary induction that <span class="math inline">\(2\mid(n^2-n)\)</span> for every <span class="math inline">\(n\in\mathbb{N}\)</span>. Show how <span class="math inline">\((k+1)^2-(k+1)\)</span> can be written using <span class="math inline">\(k^2-k\)</span> and an additional even quantity.</p></li>
+<li><p><span id="ch5ex:inequality" data-label="ch5ex:inequality"></span> Prove by ordinary induction that <span class="math inline">\(2^n\geq n+1\)</span> for every <span class="math inline">\(n\in\mathbb{N}\)</span>. Justify the estimate used after applying the hypothesis.</p></li>
+<li><p><span id="ch5ex:later-start" data-label="ch5ex:later-start"></span> Show that <span class="math inline">\(2^n&gt;2n\)</span> fails at <span class="math inline">\(n=2\)</span> but holds at <span class="math inline">\(n=3\)</span>. Then prove by ordinary induction that it holds for every integer <span class="math inline">\(n\geq3\)</span>. State the permitted range of <span class="math inline">\(k\)</span> in the step.</p></li>
+<li><p><span id="ch5ex:next-sum" data-label="ch5ex:next-sum"></span> Suppose the inductive hypothesis is <span class="math inline">\(\sum_{j=0}^{k}3^j=(3^{k+1}-1)/2\)</span>.</p>
+<ol type="a">
+<li><p>Write the exact equation required at index <span class="math inline">\(k+1\)</span>.</p></li>
+<li><p>Which single term is added to the sum in the hypothesis?</p></li>
+<li><p>How many terms occur in the sum at index <span class="math inline">\(k+1\)</span>?</p></li>
+</ol></li>
+<li><p><span id="ch5ex:available" data-label="ch5ex:available"></span> Assume <span class="math inline">\(P(j)\)</span> for every integer <span class="math inline">\(4\leq j\leq k\)</span>, with <span class="math inline">\(k\geq7\)</span>. Let <span class="math inline">\(m\)</span> be an integer satisfying <span class="math inline">\(4\leq m&lt;k\)</span>. Which statements below are guaranteed to be within the hypothesis for every permitted choice of <span class="math inline">\(k,m\)</span>? Justify the index bounds.</p>
+<ol type="a">
+<li><p><span class="math inline">\(P(m)\)</span>.</p></li>
+<li><p><span class="math inline">\(P(m+1)\)</span>.</p></li>
+<li><p><span class="math inline">\(P(k-4)\)</span>.</p></li>
+<li><p><span class="math inline">\(P(k+1)\)</span>.</p></li>
+</ol></li>
+<li><p><span id="ch5ex:bases" data-label="ch5ex:bases"></span> You want to prove <span class="math inline">\(P(n)\)</span> for every integer <span class="math inline">\(n\geq4\)</span>. Your proposed strong-induction step proves <span class="math inline">\(P(k+1)\)</span> using <span class="math inline">\(P(k-2)\)</span>.</p>
+<ol type="a">
+<li><p>What is the smallest value of <span class="math inline">\(k\)</span> for which <span class="math inline">\(k-2\)</span> is in the claimed range?</p></li>
+<li><p>Which consecutive base cases must be checked before that step begins?</p></li>
+<li><p>Identify the first three new target indices and the earlier index used for each.</p></li>
+</ol></li>
+<li><p><span id="ch5ex:blocks" data-label="ch5ex:blocks"></span> A model allows blocks of length <span class="math inline">\(3\)</span> or <span class="math inline">\(5\)</span> units, joined without splitting. Prove by strong induction that every integer length <span class="math inline">\(n\geq8\)</span> can be formed.</p>
+<ol type="a">
+<li><p>Express <span class="math inline">\(8,9,10\)</span> as <span class="math inline">\(3a+5b\)</span> with <span class="math inline">\(a,b\in\mathbb{N}\)</span>.</p></li>
+<li><p>For target <span class="math inline">\(k+1\)</span> with <span class="math inline">\(k\geq10\)</span>, identify the earlier length obtained by subtracting <span class="math inline">\(3\)</span>, and check its index range.</p></li>
+<li><p>Complete the inductive step and state why the three base cases cover the first uses of your construction.</p></li>
+</ol></li>
+<li><p><span id="ch5ex:recursive-formula" data-label="ch5ex:recursive-formula"></span> Define <span class="math display">\[b_0=0,\qquad b_1=2,\qquad
+b_{n+2}=3b_{n+1}-2b_n\quad(n\geq0).\]</span> Prove by strong induction that <span class="math inline">\(b_n=2^{n+1}-2\)</span> for all <span class="math inline">\(n\in\mathbb{N}\)</span>.</p>
+<ol type="a">
+<li><p>Check the two starting cases.</p></li>
+<li><p>State a hypothesis that supplies the formulas for <span class="math inline">\(b_k\)</span> and <span class="math inline">\(b_{k-1}\)</span>, with a valid lower bound on <span class="math inline">\(k\)</span>.</p></li>
+<li><p>Use the recursive rule to establish the formula for <span class="math inline">\(b_{k+1}\)</span> and conclude the proof.</p></li>
+</ol></li>
+<li><p><span id="ch5ex:recursive-bound" data-label="ch5ex:recursive-bound"></span> Let <span class="math inline">\(c_0=c_1=1\)</span> and <span class="math inline">\(c_{n+2}=c_{n+1}+c_n\)</span> for <span class="math inline">\(n\geq0\)</span>. Prove by strong induction that <span class="math inline">\(c_n\leq2^n\)</span> for all <span class="math inline">\(n\in\mathbb{N}\)</span>. Check both bases and show why the two earlier bounds imply the bound at <span class="math inline">\(k+1\)</span>.</p></li>
+<li><p><span id="ch5ex:recursive-parity" data-label="ch5ex:recursive-parity"></span> Define integers by <span class="math inline">\(d_0=1\)</span>, <span class="math inline">\(d_1=3\)</span> and <span class="math inline">\(d_{n+2}=d_{n+1}+d_n+1\)</span> for <span class="math inline">\(n\geq0\)</span>. Prove by strong induction that every <span class="math inline">\(d_n\)</span> is odd. In the step, use separate integer witnesses for the two earlier odd values and identify the new witness.</p></li>
+<li><p><span id="ch5ex:equivalence" data-label="ch5ex:equivalence"></span></p>
+<ol type="a">
+<li><p>Compare the hypotheses available when proving <span class="math inline">\(P(k+1)\)</span> by ordinary and strong induction.</p></li>
+<li><p>Explain why a stronger hypothesis does not give the principle greater proving power here. Describe the combined claim <span class="math inline">\(Q(k)\)</span> that lets ordinary induction retain all earlier <span class="math inline">\(P\)</span> cases.</p></li>
+<li><p>Does a strong-induction proof have to use every earlier case in its hypothesis? Explain.</p></li>
+</ol></li>
+<li><p><span id="ch5ex:paired" data-label="ch5ex:paired"></span> For the values <span class="math inline">\(b_n\)</span> in Exercise&nbsp;<a href="#ch5ex:recursive-formula">5.14</a>, let <span class="math inline">\(Q(k)\)</span> state both <span class="math inline">\(b_k=2^{k+1}-2\)</span> and <span class="math inline">\(b_{k+1}=2^{k+2}-2\)</span>. Describe an ordinary induction proof of <span class="math inline">\(Q(k)\)</span> for <span class="math inline">\(k\in\mathbb{N}\)</span>. Give its base, its hypothesis and its next target, and explain which equality is retained and which must be newly established. A full algebraic calculation is not required.</p></li>
+<li><p><span id="ch5ex:no-base" data-label="ch5ex:no-base"></span> A student claims <span class="math inline">\(5\mid2^n\)</span> for every <span class="math inline">\(n\in\mathbb{N}\)</span>. In the step, they assume <span class="math inline">\(2^k=5q\)</span> for an integer <span class="math inline">\(q\)</span> and derive <span class="math inline">\(2^{k+1}=5(2q)\)</span>.</p>
+<ol type="a">
+<li><p>Is the step’s conditional argument valid?</p></li>
+<li><p>Check the proposed base <span class="math inline">\(n=0\)</span>. Is the universal claim true?</p></li>
+<li><p>Explain why the valid conditional does not establish the claim by induction.</p></li>
+</ol></li>
+<li><p><span id="ch5ex:skipped" data-label="ch5ex:skipped"></span> For a family of claims <span class="math inline">\(P(n)\)</span> on <span class="math inline">\(\mathbb{N}\)</span>, a student establishes <span class="math inline">\(P(0)\)</span> and <span class="math inline">\(P(k)\to P(k+2)\)</span> for all <span class="math inline">\(k\in\mathbb{N}\)</span>.</p>
+<ol type="a">
+<li><p>Which indices can be reached from the proved base?</p></li>
+<li><p>What additional base would be needed to reach the remaining indices using the same step?</p></li>
+<li><p>Suppose <span class="math inline">\(P(n)\)</span> means “<span class="math inline">\(n\)</span> is even”. Can that additional base be verified? What conclusion is actually justified?</p></li>
+</ol></li>
+<li><p><span id="ch5ex:circular" data-label="ch5ex:circular"></span> In a proposed step for <span class="math inline">\(4\mid(9^n-1)\)</span>, the hypothesis is <span class="math inline">\(9^k-1=4q\)</span> for an integer <span class="math inline">\(q\)</span>. The student writes:</p>
+<blockquote class="blockquote">
+<p>Let <span class="math inline">\(r=(9^{k+1}-1)/4\)</span>. Then <span class="math inline">\(9^{k+1}-1=4r\)</span>, so the target is divisible by <span class="math inline">\(4\)</span>.</p>
+</blockquote>
+<ol type="a">
+<li><p>What property of <span class="math inline">\(r\)</span> remains unjustified?</p></li>
+<li><p>Use the hypothesis to construct an integer witness for the next case and repair the step.</p></li>
+</ol></li>
+<li><p><span id="ch5ex:gap" data-label="ch5ex:gap"></span> Let <span class="math inline">\(u_0=2\)</span>, <span class="math inline">\(u_1=4\)</span> and <span class="math inline">\(u_{n+2}=u_{n+1}+2u_n\)</span> for <span class="math inline">\(n\geq0\)</span>. To prove <span class="math inline">\(u_n=2^{n+1}\)</span>, a proposed argument checks <span class="math inline">\(n=0,1\)</span>, then begins its general step at <span class="math inline">\(k\geq2\)</span>:</p>
+<blockquote class="blockquote">
+<p>Assume <span class="math inline">\(u_j=2^{j+1}\)</span> for all <span class="math inline">\(0\leq j\leq k\)</span>. Then <span class="math inline">\(u_{k+1}=u_k+2u_{k-1}
+=2^{k+1}+2\cdot2^k=2^{k+2}\)</span>.</p>
+</blockquote>
+<ol type="a">
+<li><p>What is the first target index covered by the stated step? Which case between the bases and that target has not been checked?</p></li>
+<li><p>Show that the general step can start earlier. Check the indices it uses at its first permitted value.</p></li>
+<li><p>Complete the corrected induction proof.</p></li>
+</ol></li>
+<li><p><span id="ch5ex:choose" data-label="ch5ex:choose"></span> For each claim, choose ordinary induction, strong induction or a short direct proof. Give a reason and the useful starting assumption or assumptions. More than one method may work.</p>
+<ol type="a">
+<li><p><span class="math inline">\(3\mid(6n+9)\)</span> for every <span class="math inline">\(n\in\mathbb{N}\)</span>.</p></li>
+<li><p><span class="math inline">\(\sum_{j=1}^{n}2j=n(n+1)\)</span> for every integer <span class="math inline">\(n\geq1\)</span>.</p></li>
+<li><p>The formula for <span class="math inline">\(b_n\)</span> in Exercise&nbsp;<a href="#ch5ex:recursive-formula">5.14</a>.</p></li>
+</ol></li>
+<li><p><span id="ch5ex:score" data-label="ch5ex:score"></span> A model begins with total <span class="math inline">\(t_0=3\)</span>. At step <span class="math inline">\(n+1\)</span> it adds <span class="math inline">\(2(n+1)\)</span>, so <span class="math display">\[t_{n+1}=t_n+2(n+1)\qquad(n\geq0).\]</span> Prove that <span class="math inline">\(t_n=n(n+1)+3\)</span> for all <span class="math inline">\(n\in\mathbb{N}\)</span>. State your induction method, verify its base and show how the update rule turns the hypothesis into the next target.</p></li>
+</ol>
+</div>
+<div class="ds-chapter-navigation">
+<p><a href="../../../teaching/notes/chapter-04/">← Chapter 4</a> · <a href="../../../teaching/notes/chapter-06/">Chapter 6 →</a></p>
+</div>
+
+
+</section>
+
+<a href="#page-top" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
+<script>
+  (() => {
+    const main = document.getElementById("quarto-document-content");
+    const skipLink = document.querySelector(".skip-link");
+
+    if (skipLink && main) {
+      skipLink.addEventListener("click", () => {
+        window.requestAnimationFrame(() => main.focus({ preventScroll: true }));
+      });
+    }
+  })();
+</script>
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/rjnieto\.com");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>© 2026 RJ Nieto</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+<p>Built with Quarto</p>
+</div>
+  </div>
+</footer>
+
+
+
+
+</body></html>

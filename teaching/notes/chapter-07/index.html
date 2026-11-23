@@ -1,0 +1,1194 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-GB" xml:lang="en-GB"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.10.18">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="description" content="Chapter 7: Equivalence relations. HTML edition of Lecture Notes in Discrete Mathematics.">
+
+<title>Chapter 7: Equivalence relations – RJ Nieto</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<link href="../../../assets/branding/rj-logo.png" rel="icon" type="image/png">
+<script src="../../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-dark-b85bc7c33db8c58e0ec93c3465666fed.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap-68e913143d7006db5355610df9e4aed5.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="dark">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<meta name="author" content="Rey Joseph Nieto">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "@id": "https://rjnieto.com/#rey-joseph-nieto",
+  "name": "Rey Joseph Nieto",
+  "alternateName": ["RJ Nieto", "Thinking Pinoy"],
+  "description": "Assistant Secretary in the Office of the Cabinet Secretary, Office of the President of the Philippines.",
+  "url": "https://rjnieto.com/",
+  "image": {
+    "@type": "ImageObject",
+    "@id": "https://rjnieto.com/#portrait",
+    "url": "https://rjnieto.com/assets/images/rey-joseph-nieto-portrait.jpg",
+    "contentUrl": "https://rjnieto.com/assets/images/rey-joseph-nieto-portrait.jpg",
+    "width": 824,
+    "height": 824,
+    "caption": "Portrait of Rey Joseph RJ Nieto"
+  },
+  "jobTitle": "Assistant Secretary",
+  "worksFor": {
+    "@type": "GovernmentOrganization",
+    "name": "Office of the Cabinet Secretary, Office of the President of the Philippines"
+  },
+  "sameAs": [
+    "https://www.linkedin.com/in/rjosephnieto/",
+    "https://www.facebook.com/rjosephnieto",
+    "https://x.com/rjosephnieto"
+  ]
+}
+</script>
+<link rel="preload" href="../../../assets/fonts/ibm-plex-sans/IBMPlexSans-Roman.woff2" as="font" type="font/woff2" crossorigin="">
+<script defer="" src="../../../assets/js/home-research-background.js"></script>
+<script defer="" src="../../../assets/js/discrete-notes-layout.js"></script>
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta property="og:url" content="https://rjnieto.com/teaching/notes/chapter-07/">
+<meta property="og:type" content="article">
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../../../styles.css">
+<link rel="stylesheet" href="../../../assets/css/site-typography.css">
+<link rel="stylesheet" href="../../../assets/css/home-research-background.css">
+<link rel="stylesheet" href="../../../assets/css/discrete-notes.css">
+<meta property="og:title" content="Chapter 7: Equivalence relations – RJ Nieto">
+<meta property="og:description" content="Chapter 7: Equivalence relations. HTML edition of Lecture Notes in Discrete Mathematics.">
+<meta property="og:image" content="https://rjnieto.com/teaching/bulsu/discrete-math/images/thumbnails/chapter_07.webp">
+<meta property="og:site_name" content="RJ Nieto">
+<meta property="og:locale" content="en_GB">
+<meta name="twitter:title" content="Chapter 7: Equivalence relations – RJ Nieto">
+<meta name="twitter:description" content="Chapter 7: Equivalence relations. HTML edition of Lecture Notes in Discrete Mathematics.">
+<meta name="twitter:image" content="https://rjnieto.com/teaching/bulsu/discrete-math/images/thumbnails/chapter_07.webp">
+<meta name="twitter:creator" content="@rjosephnieto">
+<meta name="twitter:site" content="@rjosephnieto">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://rjnieto.com/teaching/notes/chapter-07/">
+</head>
+
+<body class="nav-fixed ds-lecture-notes quarto-light">
+<span id="page-top" class="page-top-anchor" aria-hidden="true"></span>
+<a class="skip-link" href="#quarto-document-content">Skip to main content</a>
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../../">
+    <span class="navbar-title">RJ Nieto</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../../"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../cv/"> 
+<span class="menu-text">CV</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../teaching/"> 
+<span class="menu-text">Teaching</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../calculated/"> 
+<span class="menu-text">Writing</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../research/"> 
+<span class="menu-text">Hobby</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul class="collapse">
+  <li><a href="#ch7:relations" id="toc-ch7:relations" class="nav-link active" data-scroll-target="#ch7\:relations">7.1 Relations</a></li>
+  <li><a href="#ch7:operations" id="toc-ch7:operations" class="nav-link" data-scroll-target="#ch7\:operations">7.2 Inverse relations and composition</a></li>
+  <li><a href="#ch7:first-properties" id="toc-ch7:first-properties" class="nav-link" data-scroll-target="#ch7\:first-properties">7.3 Reflexivity, symmetry and antisymmetry</a></li>
+  <li><a href="#ch7:transitivity" id="toc-ch7:transitivity" class="nav-link" data-scroll-target="#ch7\:transitivity">7.4 Transitivity</a></li>
+  <li><a href="#ch7:equivalence" id="toc-ch7:equivalence" class="nav-link" data-scroll-target="#ch7\:equivalence">7.5 Equivalence relations</a></li>
+  <li><a href="#ch7:classes" id="toc-ch7:classes" class="nav-link" data-scroll-target="#ch7\:classes">7.6 Equivalence classes</a></li>
+  <li><a href="#ch7:partitions" id="toc-ch7:partitions" class="nav-link" data-scroll-target="#ch7\:partitions">7.7 Partitions</a></li>
+  <li><a href="#ch7:exercises" id="toc-ch7:exercises" class="nav-link" data-scroll-target="#ch7\:exercises">7.8 Exercises</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content" tabindex="-1">
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Chapter 7: Equivalence relations</h1>
+<p class="subtitle lead">Discrete Mathematics · Rey Joseph Nieto</p>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<!-- Generated from the corresponding chapter LaTeX. Run scripts/build-discrete-html.py to refresh. -->
+<p><a href="../../../teaching/" class="btn btn-outline-secondary btn-sm">Course page</a> <a href="../../../teaching/bulsu/discrete-math/lecture-notes/chapter_07.pdf" class="btn btn-outline-primary btn-sm" aria-label="Open Chapter 7: Equivalence relations as PDF">PDF</a></p>
+<p><span id="ch7:chapter" data-label="ch7:chapter"></span></p>
+<p>Suppose every student has one assigned default printer. Alice and Bob have the same default printer, and Bob and Charlie have the same default printer. We can conclude that Alice and Charlie do too. The assignment groups the students without ambiguity.</p>
+<p>Now change the rule: two students are related when there is at least one printer they can both use. Alice may share one printer with Bob, while Bob shares a different printer with Charlie. Alice and Charlie need not share any printer. The new rule does not support the same conclusion.</p>
+<p>Chapter 4 introduced relations as sets of ordered pairs and used transitivity to examine a two-step argument. Here we develop that language further: we reverse relations, combine them and test their properties. Chapter 6’s drawings will help us see the pairs, with arrows to record direction. We will then identify the conditions under which a relation really does divide a set into separate groups.</p>
+<div class="ds-box ds-learningoutcomes">
+<div id="what-you-should-be-able-to-do" class="ds-box-title">
+<p><strong>What you should be able to do</strong></p>
+</div>
+<p>After working through this chapter, you should be able to:</p>
+<ul>
+<li><p>specify a relation using pairs, a table, a rule or a directed diagram;</p></li>
+<li><p>find inverse relations and compute compositions using a middle element;</p></li>
+<li><p>test reflexivity, symmetry, antisymmetry and transitivity;</p></li>
+<li><p>give proofs of properties and complete counterexamples to failures;</p></li>
+<li><p>recognise equivalence relations and determine their classes;</p></li>
+<li><p>check a partition and explain its connection with equivalence relations.</p></li>
+</ul>
+</div>
+<section id="ch7:relations" class="level2">
+<h2 class="anchored" data-anchor-id="ch7:relations">7.1 Relations</h2>
+<p>An ordered pair <span class="math inline">\((a,b)\)</span> records a first entry and a second entry. Equality of ordered pairs requires equality in each position. Thus <span class="math inline">\((1,2)\ne(2,1)\)</span>, although the unordered sets <span class="math inline">\(\{1,2\}\)</span> and <span class="math inline">\(\{2,1\}\)</span> are equal.</p>
+<div class="ds-box ds-definition">
+<div id="definition-7.1-cartesian-product-and-relation" class="ds-box-title">
+<p><strong>Definition 7.1: Cartesian product and relation</strong></p>
+</div>
+<p>The <strong>Cartesian product</strong> of sets <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> is <span class="math display">\[A\times B=\{(a,b):a\in A\text{ and }b\in B\}.\]</span> A <strong>relation from <span class="math inline">\(A\)</span> to <span class="math inline">\(B\)</span></strong> is a subset <span class="math inline">\(R\subseteq A\times B\)</span>. A <strong>relation on <span class="math inline">\(A\)</span></strong> is a relation from <span class="math inline">\(A\)</span> to itself, so <span class="math inline">\(R\subseteq A\times A\)</span>.</p>
+<p>We write <span class="math inline">\(aRb\)</span> to mean <span class="math inline">\((a,b)\in R\)</span>.</p>
+</div>
+<p>The Cartesian product lists all allowed ordered pairs; the relation selects the pairs for which its rule holds. The sets <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are part of the specification. A relation can leave some elements of <span class="math inline">\(A\)</span> unrelated to anything in <span class="math inline">\(B\)</span>, or relate one element to several others. A function from <span class="math inline">\(A\)</span> to <span class="math inline">\(B\)</span> has the additional requirement of exactly one output in <span class="math inline">\(B\)</span> for every input in <span class="math inline">\(A\)</span>.</p>
+<p><span id="ch7:permissions"><strong>Example&nbsp;7.1.</strong></span> Let <span class="math inline">\(A=\{\text{Alice},\text{Bob},\text{Charlie}\}\)</span> be a set of users, and let <span class="math inline">\(B=\{p,q\}\)</span> be a set of folders. Define <span class="math inline">\(R\)</span> by <span class="math display">\[R=\{(\text{Alice},p),(\text{Alice},q),(\text{Bob},p)\}.\]</span> The pair <span class="math inline">\((\text{Alice},q)\)</span> means that Alice can access folder <span class="math inline">\(q\)</span>. It does not mean that <span class="math inline">\(q\)</span> can access Alice. The six possible user–folder pairs belong to <span class="math inline">\(A\times B\)</span>; only three belong to <span class="math inline">\(R\)</span>.</p>
+<p>The same data can be recorded in a table. A entry means that the row element is related to the column element.</p>
+<div class="ds-table">
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: center;">User</th>
+<th style="text-align: center;">Folder <span class="math inline">\(p\)</span></th>
+<th style="text-align: center;">Folder <span class="math inline">\(q\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">Alice</td>
+<td style="text-align: center;"><span class="math inline">\(\text{\texttt{T}}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\text{\texttt{T}}\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Bob</td>
+<td style="text-align: center;"><span class="math inline">\(\text{\texttt{T}}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\text{\texttt{F}}\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Charlie</td>
+<td style="text-align: center;"><span class="math inline">\(\text{\texttt{F}}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\text{\texttt{F}}\)</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Here <span class="math inline">\(R\)</span> is a relation from <span class="math inline">\(A\)</span> to <span class="math inline">\(B\)</span>, but not a function from <span class="math inline">\(A\)</span> to <span class="math inline">\(B\)</span>. Alice has two related folders, and Charlie has none. Each feature violates the exactly-one-output requirement.</p>
+<p><span id="ch7:diagram"><strong>Example&nbsp;7.2.</strong></span> On <span class="math inline">\(D=\{1,2,3\}\)</span>, let <span class="math display">\[T=\{(1,1),(1,2),(2,1),(2,3)\}.\]</span> In a <strong>directed diagram</strong>, draw an arrow from <span class="math inline">\(x\)</span> to <span class="math inline">\(y\)</span> exactly when <span class="math inline">\((x,y)\in T\)</span>. A pair <span class="math inline">\((x,x)\)</span> is drawn as a <strong>loop</strong> from a vertex back to itself.</p>
+<div class="ds-table">
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: center;"><span class="math inline">\(T\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(1\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(2\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(3\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(1\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\text{\texttt{T}}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\text{\texttt{T}}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\text{\texttt{F}}\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(2\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\text{\texttt{T}}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\text{\texttt{F}}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\text{\texttt{T}}\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(3\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\text{\texttt{F}}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\text{\texttt{F}}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\text{\texttt{F}}\)</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><img src="../../../teaching/notes/assets/chapter-07/diagram-01.svg" class="ds-note-image img-fluid" loading="lazy" decoding="async" alt="Directed relation on 1, 2 and 3: a loop at 1, arrows both ways between 1 and 2, and an arrow from 2 to 3."></p>
+<p>There are two arrows between <span class="math inline">\(1\)</span> and <span class="math inline">\(2\)</span>, one for each ordered pair. The arrow <span class="math inline">\(2\to3\)</span> has no reverse arrow because <span class="math inline">\((3,2)\notin T\)</span>. Vertex <span class="math inline">\(3\)</span> remains in the diagram even though no arrow starts there. Read a table entry from its row to its column; the entry in row <span class="math inline">\(2\)</span>, column <span class="math inline">\(3\)</span> records <span class="math inline">\(2T3\)</span>.</p>
+<p>These diagrams allow directions and loops. Chapter 6’s simple undirected graphs did not allow loops and used unordered pairs as edges. We are now using a different kind of diagram to represent ordered pairs.</p>
+</section>
+<section id="ch7:operations" class="level2">
+<h2 class="anchored" data-anchor-id="ch7:operations">7.2 Inverse relations and composition</h2>
+<p>Two useful operations ask different questions: what happens when we reverse a pair, and what happens when we follow one relation by another?</p>
+<div class="ds-box ds-definition">
+<div id="definition-7.2-inverse-relation" class="ds-box-title">
+<p><strong>Definition 7.2: Inverse relation</strong></p>
+</div>
+<p>If <span class="math inline">\(R\subseteq A\times B\)</span>, its <strong>inverse relation</strong> is <span class="math display">\[R^{-1}=\{(b,a):(a,b)\in R\}\subseteq B\times A.\]</span> Thus <span class="math inline">\(bR^{-1}a\)</span> holds exactly when <span class="math inline">\(aRb\)</span> holds.</p>
+</div>
+<p><span id="example-7.3."><strong>Example&nbsp;7.3.</strong></span> For the permission relation in Example&nbsp;<a href="#ch7:permissions">7.1</a>, <span class="math display">\[R^{-1}=\{(p,\text{Alice}),(q,\text{Alice}),(p,\text{Bob})\}.\]</span> The inverse relates a folder to the users who can access it. For example, <span class="math inline">\(pR^{-1}\text{Bob}\)</span> because Bob <span class="math inline">\(R\,p\)</span>. This reversal always defines a relation, even though it need not define a function. Folder <span class="math inline">\(p\)</span> is related to two users. Reversing the pairs a second time gives <span class="math inline">\((R^{-1})^{-1}=R\)</span>. In a directed diagram on one set, inversion reverses every arrow; a loop remains a loop.</p>
+<div class="ds-box ds-definition">
+<div id="definition-7.3-composition-of-relations" class="ds-box-title">
+<p><strong>Definition 7.3: Composition of relations</strong></p>
+</div>
+<p>Let <span class="math inline">\(R\subseteq A\times B\)</span> and <span class="math inline">\(S\subseteq B\times C\)</span>. Their <strong>composition</strong> <span class="math inline">\(S\circ R\)</span> is the relation from <span class="math inline">\(A\)</span> to <span class="math inline">\(C\)</span> defined by <span class="math display">\[a(S\circ R)c
+\quad\Longleftrightarrow\quad
+\exists b\in B\;(aRb\text{ and }bSc).\]</span> The same middle element <span class="math inline">\(b\)</span> must satisfy both conditions.</p>
+</div>
+<p>In <span class="math inline">\(S\circ R\)</span>, follow <span class="math inline">\(R\)</span> first and <span class="math inline">\(S\)</span> second. The symbol on the right is used first. A pair <span class="math inline">\((a,c)\)</span> belongs to the composition when there is at least one suitable middle element. Several middle elements can produce the same pair, but a set records that pair only once.</p>
+<p><span id="ch7:composition"><strong>Example&nbsp;7.4.</strong></span> Keep the sets <span class="math inline">\(A,B\)</span> and permission relation <span class="math inline">\(R\)</span> from Example&nbsp;<a href="#ch7:permissions">7.1</a>. Let <span class="math inline">\(C=\{s,t\}\)</span> be a set of servers and define <span class="math display">\[S=\{(p,s),(q,s),(q,t)\}.\]</span> Here <span class="math inline">\(bSc\)</span> means that folder <span class="math inline">\(b\)</span> is stored on server <span class="math inline">\(c\)</span>. The composition records user–server pairs connected through an accessible folder. It describes these given relations; it does not grant access to every folder on a server.</p>
+<p><img src="../../../teaching/notes/assets/chapter-07/diagram-02.svg" class="ds-note-image img-fluid" loading="lazy" decoding="async" alt="Composing relations: Alice reaches p and q, Bob reaches p, p reaches s, and q reaches s and t; Charlie has no first step."></p>
+<p>Alice reaches <span class="math inline">\(s\)</span> through either <span class="math inline">\(p\)</span> or <span class="math inline">\(q\)</span>, and reaches <span class="math inline">\(t\)</span> through <span class="math inline">\(q\)</span>. Bob reaches <span class="math inline">\(s\)</span> through <span class="math inline">\(p\)</span>. Charlie has no first step in <span class="math inline">\(R\)</span>. Consequently, <span class="math display">\[S\circ R=\{(\text{Alice},s),(\text{Alice},t),(\text{Bob},s)\}.\]</span> The two witnesses for <span class="math inline">\((\text{Alice},s)\)</span> do not create two copies of that pair. The pair <span class="math inline">\((\text{Bob},t)\)</span> is absent: Bob’s only accessible folder is <span class="math inline">\(p\)</span>, and <span class="math inline">\((p,t)\notin S\)</span>.</p>
+<p><span id="example-7.5."><strong>Example&nbsp;7.5.</strong></span> On <span class="math inline">\(A=\{0,1,2\}\)</span>, let <span class="math inline">\(R=\{(0,1)\}\)</span> and <span class="math inline">\(S=\{(1,2)\}\)</span>. For <span class="math inline">\(S\circ R\)</span>, the middle element <span class="math inline">\(1\)</span> connects <span class="math inline">\(0R1\)</span> to <span class="math inline">\(1S2\)</span>, so <span class="math display">\[S\circ R=\{(0,2)\}.\]</span> For <span class="math inline">\(R\circ S\)</span>, we must follow <span class="math inline">\(S\)</span> first. Its only arrow ends at <span class="math inline">\(2\)</span>, where no <span class="math inline">\(R\)</span>-arrow starts. Hence <span class="math inline">\(R\circ S=\varnothing\)</span>. Both compositions are defined on the stated sets, but they are different relations.</p>
+<p><span id="ch7:shared-output"><strong>Example&nbsp;7.6.</strong></span> For the permission relation <span class="math inline">\(R\)</span> in Example&nbsp;<a href="#ch7:permissions">7.1</a>, <span class="math inline">\(R^{-1}\circ R\)</span> is a relation on the user set <span class="math inline">\(A\)</span>. A user first reaches an accessible folder; the inverse then reaches a user who can access that same folder. It therefore relates two users exactly when they share at least one accessible folder.</p>
+<p>Folder <span class="math inline">\(p\)</span> gives all four ordered pairs between Alice and Bob, including their self-pairs. Folder <span class="math inline">\(q\)</span> adds no new pair, because only Alice can access it. Thus <span class="math display">\[\begin{aligned}
+R^{-1}\circ R=\{&amp;
+(\text{Alice},\text{Alice}),(\text{Alice},\text{Bob}),\\
+&amp;(\text{Bob},\text{Alice}),(\text{Bob},\text{Bob})\}.
+\end{aligned}\]</span> Charlie is not even related to himself, since he cannot access a folder. Composing a relation with its inverse need not produce just the pairs <span class="math inline">\((a,a)\)</span>, or include every such pair.</p>
+</section>
+<section id="ch7:first-properties" class="level2">
+<h2 class="anchored" data-anchor-id="ch7:first-properties">7.3 Reflexivity, symmetry and antisymmetry</h2>
+<p>From now on, the properties concern a relation on one specified nonempty set <span class="math inline">\(A\)</span>. Each property makes a claim about all the appropriate elements of <span class="math inline">\(A\)</span>.</p>
+<div class="ds-box ds-definition">
+<div id="definition-7.4-reflexivity-symmetry-and-antisymmetry" class="ds-box-title">
+<p><strong>Definition 7.4: Reflexivity, symmetry and antisymmetry</strong></p>
+</div>
+<p>A relation <span class="math inline">\(R\)</span> on <span class="math inline">\(A\)</span> is:</p>
+<ul>
+<li><p><strong>reflexive</strong> if <span class="math inline">\(xRx\)</span> for every <span class="math inline">\(x\in A\)</span>;</p></li>
+<li><p><strong>symmetric</strong> if, for all <span class="math inline">\(x,y\in A\)</span>, <span class="math inline">\(xRy\Longrightarrow yRx\)</span>;</p></li>
+<li><p><strong>antisymmetric</strong> if, for all <span class="math inline">\(x,y\in A\)</span>, <span class="math inline">\((xRy\text{ and }yRx)\Longrightarrow x=y\)</span>.</p></li>
+</ul>
+</div>
+<p>In a directed diagram, reflexivity requires a loop at every vertex. Symmetry requires the reverse of every arrow. Antisymmetry permits no pair of opposite arrows between distinct vertices. Loops are allowed by antisymmetry: their two endpoints are already equal.</p>
+<p><span id="example-7.7."><strong>Example&nbsp;7.7.</strong></span> The relation <span class="math inline">\(R=\{(1,1),(2,2)\}\)</span> is reflexive on <span class="math inline">\(A=\{1,2\}\)</span>: both required self-pairs are present. The same set of pairs also defines a relation on <span class="math inline">\(B=\{1,2,3\}\)</span>, but it is not reflexive on <span class="math inline">\(B\)</span>, because <span class="math inline">\((3,3)\)</span> is missing. One missing self-pair is enough to refute reflexivity; having some loops is insufficient to prove it.</p>
+<p><span id="example-7.8."><strong>Example&nbsp;7.8.</strong></span> For <span class="math inline">\(T\)</span> in Example&nbsp;<a href="#ch7:diagram">7.2</a>, the pairs <span class="math inline">\((1,2)\)</span> and <span class="math inline">\((2,1)\)</span> reverse each other. However, <span class="math inline">\((2,3)\in T\)</span> while <span class="math inline">\((3,2)\notin T\)</span>. This pair is a complete counterexample to symmetry. The loop at <span class="math inline">\(1\)</span> is its own reverse, so it creates no problem for symmetry.</p>
+<p>Reversing all pairs shows a useful test: <span class="math inline">\(R\)</span> is symmetric if and only if <span class="math inline">\(R^{-1}=R\)</span>. Indeed, symmetry puts every reversed pair back in <span class="math inline">\(R\)</span>; and equality with the inverse ensures that every pair has its reverse.</p>
+<p><span id="example-7.9."><strong>Example&nbsp;7.9.</strong></span> On <span class="math inline">\(\mathbb{Z}\)</span>, let <span class="math inline">\(aRb\)</span> mean <span class="math inline">\(a\leq b\)</span>. If both <span class="math inline">\(aRb\)</span> and <span class="math inline">\(bRa\)</span> hold, then <span class="math inline">\(a\leq b\)</span> and <span class="math inline">\(b\leq a\)</span>, which force <span class="math inline">\(a=b\)</span>. This proves antisymmetry. It also has every self-pair, since <span class="math inline">\(a\leq a\)</span>. It is not symmetric: <span class="math inline">\(0\leq1\)</span>, but <span class="math inline">\(1\leq0\)</span> is false.</p>
+<p>To refute antisymmetry, we would need two <em>distinct</em> elements related in both directions. A self-pair such as <span class="math inline">\((0,0)\)</span> does not meet that requirement.</p>
+<p><span id="example-7.10."><strong>Example&nbsp;7.10.</strong></span> Each row below specifies a relation on <span class="math inline">\(A=\{1,2,3\}\)</span>.</p>
+<div class="ds-table">
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Relation</th>
+<th style="text-align: center;">Symmetric?</th>
+<th style="text-align: center;">Antisymmetric?</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(I=\{(1,1),(2,2),(3,3)\}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\text{\texttt{T}}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\text{\texttt{T}}\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(J=\{(1,2),(2,1)\}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\text{\texttt{T}}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\text{\texttt{F}}\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(K=\{(1,2)\}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\text{\texttt{F}}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\text{\texttt{T}}\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(L=\{(1,2),(2,1),(2,3)\}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\text{\texttt{F}}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\text{\texttt{F}}\)</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>In <span class="math inline">\(I\)</span>, every pair is its own reverse, and no distinct elements are related both ways. In <span class="math inline">\(J\)</span>, every reverse is present, but <span class="math inline">\(1\)</span> and <span class="math inline">\(2\)</span> violate antisymmetry. In <span class="math inline">\(K\)</span>, <span class="math inline">\((2,1)\)</span> is missing, so symmetry fails; there is no distinct pair related both ways, so antisymmetry holds. Finally, <span class="math inline">\(L\)</span> violates symmetry at <span class="math inline">\((2,3)\)</span> and violates antisymmetry at <span class="math inline">\(1,2\)</span>.</p>
+<div class="ds-box ds-caution">
+<div id="antisymmetric-does-not-mean-not-symmetric" class="ds-box-title">
+<p><strong>Antisymmetric does not mean “not symmetric”</strong></p>
+</div>
+<p>The two properties have separate definitions. A relation can have both, one, or neither. To disprove antisymmetry, exhibit <span class="math inline">\(x\ne y\)</span> with both <span class="math inline">\(xRy\)</span> and <span class="math inline">\(yRx\)</span>.</p>
+</div>
+</section>
+<section id="ch7:transitivity" class="level2">
+<h2 class="anchored" data-anchor-id="ch7:transitivity">7.4 Transitivity</h2>
+<div class="ds-box ds-definition">
+<div id="definition-7.5-transitivity" class="ds-box-title">
+<p><strong>Definition 7.5: Transitivity</strong></p>
+</div>
+<p>A relation <span class="math inline">\(R\)</span> on <span class="math inline">\(A\)</span> is <strong>transitive</strong> if, for all <span class="math inline">\(x,y,z\in A\)</span>, <span class="math display">\[(xRy\text{ and }yRz)\Longrightarrow xRz.\]</span> The elements <span class="math inline">\(x,y,z\)</span> need not be distinct.</p>
+</div>
+<p>The middle element must match in the two premises. To refute the property, give <span class="math inline">\(x,y,z\)</span> for which both premises hold and the conclusion fails. To prove it, show that every two-step chain has the required direct pair. The direct pair may be a loop.</p>
+<p><span id="example-7.11."><strong>Example&nbsp;7.11.</strong></span> In <span class="math inline">\(T\)</span> from Example&nbsp;<a href="#ch7:diagram">7.2</a>, <span class="math inline">\(1T2\)</span> and <span class="math inline">\(2T3\)</span> hold, but <span class="math inline">\(1T3\)</span> does not. Thus <span class="math inline">\(T\)</span> is not transitive. There is a directed two-step route from <span class="math inline">\(1\)</span> to <span class="math inline">\(3\)</span>, but the relation does not contain <span class="math inline">\((1,3)\)</span>. Transitivity requires that pair itself, rather than only a route connecting its entries.</p>
+<p><span id="ch7:repeated"><strong>Example&nbsp;7.12.</strong></span> On <span class="math inline">\(\{a,b\}\)</span>, let <span class="math inline">\(R=\{(a,b),(b,a)\}\)</span>. The relation is symmetric, but it is not transitive. Taking <span class="math inline">\(x=a\)</span>, <span class="math inline">\(y=b\)</span> and <span class="math inline">\(z=a\)</span> gives <span class="math inline">\(aRb\)</span> and <span class="math inline">\(bRa\)</span>, while <span class="math inline">\(aRa\)</span> is false. The other two-step chain would likewise require <span class="math inline">\((b,b)\)</span>.</p>
+<p>There are no three distinct elements in this set. Checking only triples of distinct elements would miss both failures.</p>
+<p><span id="example-7.13."><strong>Example&nbsp;7.13.</strong></span> On <span class="math inline">\(A=\{1,2,3\}\)</span>, let <span class="math inline">\(R=\{(1,2)\}\)</span>. For the first premise <span class="math inline">\(xRy\)</span> to hold, we must have <span class="math inline">\(x=1\)</span> and <span class="math inline">\(y=2\)</span>. But no pair of <span class="math inline">\(R\)</span> starts at <span class="math inline">\(2\)</span>, so <span class="math inline">\(yRz\)</span> cannot also hold. There is no triple making both premises true. The transitivity implication is therefore true for every triple, and <span class="math inline">\(R\)</span> is transitive.</p>
+<p>The empty relation on this nonempty set is also transitive. It is symmetric and antisymmetric for the same logical reason: none of the relevant premises holds. It is not reflexive, because all required self-pairs are missing. These are applications of Chapter 2’s truth rule for an implication with a false premise.</p>
+<p><span id="example-7.14."><strong>Example&nbsp;7.14.</strong></span> Let <span class="math inline">\(R\)</span> on <span class="math inline">\(\mathbb{Z}\)</span> be given by <span class="math inline">\(aRb\)</span> exactly when <span class="math inline">\(a\leq b\)</span>. Take arbitrary <span class="math inline">\(a,b,c\in\mathbb{Z}\)</span> and suppose <span class="math inline">\(aRb\)</span> and <span class="math inline">\(bRc\)</span>. Then <span class="math inline">\(a\leq b\)</span> and <span class="math inline">\(b\leq c\)</span>, so <span class="math inline">\(a\leq c\)</span>, which is <span class="math inline">\(aRc\)</span>. Thus <span class="math inline">\(R\)</span> is transitive.</p>
+<p>Together with the earlier checks, <span class="math inline">\(\leq\)</span> is reflexive, antisymmetric and transitive, and is not symmetric. These properties do not all have to occur together.</p>
+</section>
+<section id="ch7:equivalence" class="level2">
+<h2 class="anchored" data-anchor-id="ch7:equivalence">7.5 Equivalence relations</h2>
+<p>For a grouping rule, we want each object related to itself, the relationship to work in both directions, and two successive relationships to keep us in the same group.</p>
+<div class="ds-box ds-definition">
+<div id="definition-7.6-equivalence-relation" class="ds-box-title">
+<p><strong>Definition 7.6: Equivalence relation</strong></p>
+</div>
+<p>A relation on a set is an <strong>equivalence relation</strong> if it is reflexive, symmetric and transitive. Related elements are then called <strong>equivalent</strong> under that relation.</p>
+</div>
+<p>Equivalent objects need not be equal. The relation specifies which feature is being treated as the same.</p>
+<p><span id="ch7:printers"><strong>Example&nbsp;7.15.</strong></span> Let <span class="math inline">\(U=\{\text{Alice},\text{Bob},\text{Charlie},\text{David},\text{Eve}\}\)</span> and let <span class="math inline">\(d:U\to\{p_1,p_2,p_3\}\)</span> assign each student exactly one default printer. Define <span class="math display">\[uRv\quad\Longleftrightarrow\quad d(u)=d(v).\]</span> This extends Chapter 4’s transitivity example.</p>
+<p><em>Reflexivity.</em> For any <span class="math inline">\(u\in U\)</span>, <span class="math inline">\(d(u)=d(u)\)</span>, so <span class="math inline">\(uRu\)</span>.</p>
+<p><em>Symmetry.</em> If <span class="math inline">\(uRv\)</span>, then <span class="math inline">\(d(u)=d(v)\)</span>. Reversing the equality gives <span class="math inline">\(d(v)=d(u)\)</span>, so <span class="math inline">\(vRu\)</span>.</p>
+<p><em>Transitivity.</em> If <span class="math inline">\(uRv\)</span> and <span class="math inline">\(vRw\)</span>, then <span class="math inline">\(d(u)=d(v)\)</span> and <span class="math inline">\(d(v)=d(w)\)</span>. Hence <span class="math inline">\(d(u)=d(w)\)</span>, so <span class="math inline">\(uRw\)</span>.</p>
+<p>Thus <span class="math inline">\(R\)</span> is an equivalence relation. For a concrete assignment, use the following table.</p>
+<div class="ds-table">
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: center;">Student</th>
+<th style="text-align: center;">Default printer</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">Alice</td>
+<td style="text-align: center;"><span class="math inline">\(p_1\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Bob</td>
+<td style="text-align: center;"><span class="math inline">\(p_1\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Charlie</td>
+<td style="text-align: center;"><span class="math inline">\(p_2\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">David</td>
+<td style="text-align: center;"><span class="math inline">\(p_2\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Eve</td>
+<td style="text-align: center;"><span class="math inline">\(p_3\)</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Alice and Bob are equivalent under <span class="math inline">\(R\)</span>, although they are different students. The proof works for any fixed assignment function <span class="math inline">\(d\)</span>, not just the five values in this table. More generally, equality of the values of any fixed function defines an equivalence relation on its input set.</p>
+<p><span id="example-7.16."><strong>Example&nbsp;7.16.</strong></span> On <span class="math inline">\(\mathbb{Z}\)</span>, define <span class="math inline">\(aRb\)</span> by <span class="math inline">\(|a-b|\leq1\)</span>, where <span class="math inline">\(|a-b|\)</span> is the distance between the integers. This relation is reflexive, since <span class="math inline">\(|a-a|=0\)</span>. It is symmetric, since <span class="math inline">\(|b-a|=|a-b|\)</span>. However, <span class="math inline">\(0R1\)</span> and <span class="math inline">\(1R2\)</span> hold while <span class="math inline">\(0R2\)</span> fails: <span class="math inline">\(|0-2|=2&gt;1\)</span>. It is not transitive and therefore is not an equivalence relation.</p>
+<p><span id="example-7.17."><strong>Example&nbsp;7.17.</strong></span> Suppose Alice can use only <span class="math inline">\(p\)</span>, Bob can use <span class="math inline">\(p\)</span> and <span class="math inline">\(q\)</span>, and Charlie can use only <span class="math inline">\(q\)</span>. On these three students, define <span class="math inline">\(uRv\)</span> when they can both use at least one printer. Every student is related to themselves, because each has an available printer. The relation is symmetric: a printer shared by <span class="math inline">\(u,v\)</span> is also shared by <span class="math inline">\(v,u\)</span>.</p>
+<p>Yet Alice <span class="math inline">\(R\)</span> Bob through <span class="math inline">\(p\)</span>, and Bob <span class="math inline">\(R\)</span> Charlie through <span class="math inline">\(q\)</span>, while Alice <span class="math inline">\(R\)</span> Charlie is false. The two premises use different printers. This relation is not transitive. It is the shared-output construction of Example&nbsp;<a href="#ch7:shared-output">7.6</a>, with a different permission assignment.</p>
+<p><span id="ch7:parity"><strong>Example&nbsp;7.18.</strong></span> On <span class="math inline">\(\mathbb{Z}\)</span>, define <span class="math display">\[aRb\quad\Longleftrightarrow\quad
+a-b=2k\text{ for some }k\in\mathbb{Z}.\]</span> In other words, the difference is even.</p>
+<p><em>Reflexivity.</em> For any <span class="math inline">\(a\in\mathbb{Z}\)</span>, <span class="math inline">\(a-a=0=2(0)\)</span>, so <span class="math inline">\(aRa\)</span>.</p>
+<p><em>Symmetry.</em> Suppose <span class="math inline">\(aRb\)</span>, so <span class="math inline">\(a-b=2k\)</span> for an integer <span class="math inline">\(k\)</span>. Then <span class="math inline">\(b-a=2(-k)\)</span>. Since <span class="math inline">\(-k\in\mathbb{Z}\)</span>, this gives <span class="math inline">\(bRa\)</span>.</p>
+<p><em>Transitivity.</em> Suppose <span class="math inline">\(aRb\)</span> and <span class="math inline">\(bRc\)</span>. For some integers <span class="math inline">\(j,k\)</span>, we have <span class="math inline">\(a-b=2j\)</span> and <span class="math inline">\(b-c=2k\)</span>. Adding gives <span class="math display">\[a-c=(a-b)+(b-c)=2(j+k).\]</span> Since <span class="math inline">\(j+k\in\mathbb{Z}\)</span>, we obtain <span class="math inline">\(aRc\)</span>. All three properties hold, so <span class="math inline">\(R\)</span> is an equivalence relation. Each step used Chapter 3’s integer-witness method; no finite list of particular integers could check the whole infinite domain.</p>
+</section>
+<section id="ch7:classes" class="level2">
+<h2 class="anchored" data-anchor-id="ch7:classes">7.6 Equivalence classes</h2>
+<div class="ds-box ds-definition">
+<div id="definition-7.7-equivalence-class" class="ds-box-title">
+<p><strong>Definition 7.7: Equivalence class</strong></p>
+</div>
+<p>Let <span class="math inline">\(R\)</span> be an equivalence relation on <span class="math inline">\(A\)</span> and let <span class="math inline">\(a\in A\)</span>. The <strong>equivalence class</strong> of <span class="math inline">\(a\)</span> is the set <span class="math display">\[[a]_R=\{x\in A:aRx\}.\]</span> We often write <span class="math inline">\([a]\)</span> when the relation is clear. The element <span class="math inline">\(a\)</span> is called a <strong>representative</strong> of its class.</p>
+</div>
+<p>The brackets describe a set of elements, not one element or a new name for <span class="math inline">\(a\)</span> alone. To find <span class="math inline">\([a]\)</span>, determine every <span class="math inline">\(x\)</span> in the specified set that satisfies <span class="math inline">\(aRx\)</span>. Reflexivity guarantees that <span class="math inline">\(a\)</span> itself belongs to <span class="math inline">\([a]\)</span>.</p>
+<p><span id="example-7.19."><strong>Example&nbsp;7.19.</strong></span> For the printer assignment in Example&nbsp;<a href="#ch7:printers">7.15</a>, <span class="math display">\[\begin{aligned}
+[\text{Alice}]&amp;=[\text{Bob}]=\{\text{Alice},\text{Bob}\},\\
+[\text{Charlie}]&amp;=[\text{David}]=\{\text{Charlie},\text{David}\},\\
+[\text{Eve}]&amp;=\{\text{Eve}\}.
+\end{aligned}\]</span> For instance, <span class="math inline">\([\text{Alice}]\)</span> consists of all students whose default printer equals <span class="math inline">\(p_1\)</span>, namely Alice and Bob. There are five students but only three distinct classes. The equality <span class="math inline">\([\text{Alice}]=[\text{Bob}]\)</span> is an equality of sets; it does not identify the two students as one person. Either is a representative of the same class.</p>
+<p><img src="../../../teaching/notes/assets/chapter-07/01-printer-equivalence-classes.webp" class="ds-note-image img-fluid" loading="lazy" decoding="async" alt="Students grouped into equivalence classes according to their assigned default printer."></p>
+<p>Five students form three classes: Alice and Bob belong to the same class, as do Charlie and David; Eve forms a singleton class.</p>
+<div class="ds-box ds-python">
+<div id="python-non-examinable" class="ds-box-title">
+<p><strong>Python (non-examinable)</strong></p>
+</div>
+<p>Here a dictionary records each student’s assigned printer. In <code>printer[student]</code>, square brackets look up the printer for that student. For each printer label, we start an empty list <code>members</code>; <code>append</code> adds a student to that list when the two printer labels agree. Python uses <code>==</code> to test equality.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>printer <span class="op">=</span> {</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Alice"</span>: <span class="st">"p1"</span>, <span class="st">"Bob"</span>: <span class="st">"p1"</span>,</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Charlie"</span>: <span class="st">"p2"</span>, <span class="st">"David"</span>: <span class="st">"p2"</span>,</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Eve"</span>: <span class="st">"p3"</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> label <span class="kw">in</span> [<span class="st">"p1"</span>, <span class="st">"p2"</span>, <span class="st">"p3"</span>]:</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>    members <span class="op">=</span> []</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> student <span class="kw">in</span> printer:</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> printer[student] <span class="op">==</span> label:</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>            members.append(student)</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(label, members)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><strong>Output.</strong></p>
+<pre class="text"><code>p1 ['Alice', 'Bob']
+p2 ['Charlie', 'David']
+p3 ['Eve']</code></pre>
+<p>The three lists contain the three equivalence classes already found. Lists preserve a display order; that order does not form part of the mathematical sets. Each student appears once because each has one assigned printer.</p>
+</div>
+<p><span id="example-7.20."><strong>Example&nbsp;7.20.</strong></span> For the even-difference relation in Example&nbsp;<a href="#ch7:parity">7.18</a>, <span class="math inline">\(0Rx\)</span> exactly when <span class="math inline">\(0-x=-x\)</span> is even, which is equivalent to <span class="math inline">\(x\)</span> being even. Likewise, <span class="math inline">\(1Rx\)</span> exactly when <span class="math inline">\(x\)</span> is odd: for an integer <span class="math inline">\(k\)</span>, <span class="math inline">\(1-x=2k\)</span> is equivalent to <span class="math inline">\(x=2(-k)+1\)</span>. Hence <span class="math display">\[[0]=\{2k:k\in\mathbb{Z}\},\qquad
+[1]=\{2k+1:k\in\mathbb{Z}\}.\]</span> These are all the distinct classes: every integer is even or odd. Every even integer represents <span class="math inline">\([0]\)</span>; every odd integer represents <span class="math inline">\([1]\)</span>. Thus <span class="math inline">\([2]=[0]\)</span> and <span class="math inline">\([-3]=[1]\)</span>, even though <span class="math inline">\(2\ne0\)</span> and <span class="math inline">\(-3\ne1\)</span>.</p>
+</section>
+<section id="ch7:partitions" class="level2">
+<h2 class="anchored" data-anchor-id="ch7:partitions">7.7 Partitions</h2>
+<div class="ds-box ds-definition">
+<div id="definition-7.8-partition" class="ds-box-title">
+<p><strong>Definition 7.8: Partition</strong></p>
+</div>
+<p>A <strong>partition</strong> <span class="math inline">\(\mathcal P\)</span> of a nonempty set <span class="math inline">\(A\)</span> is a collection of subsets of <span class="math inline">\(A\)</span>, called <strong>blocks</strong>, such that:</p>
+<ul>
+<li><p>every block is nonempty;</p></li>
+<li><p>every element of <span class="math inline">\(A\)</span> lies in a block;</p></li>
+<li><p>two distinct blocks are disjoint.</p></li>
+</ul>
+<p>Thus every element of <span class="math inline">\(A\)</span> belongs to exactly one block.</p>
+</div>
+<p>A partition is a set whose elements are themselves sets. The blocks cover <span class="math inline">\(A\)</span>, and no element is shared between different blocks.</p>
+<p><span id="ch7:partition-check"><strong>Example&nbsp;7.21.</strong></span> Let <span class="math inline">\(A=\{1,2,3,4,5\}\)</span>. The collection <span class="math display">\[\mathcal P=\{\{1,4\},\{2,3\},\{5\}\}\]</span> is a partition: its three blocks are nonempty, together contain all five elements, and do not overlap. Here <span class="math inline">\(1\in\{1,4\}\)</span> and <span class="math inline">\(\{1,4\}\in\mathcal P\)</span>. The number <span class="math inline">\(1\)</span> is an element of a block, while the block itself is an element of the partition.</p>
+<p>Three changes illustrate separate failures. The collection <span class="math inline">\(\{\{1,2\},\{2,3\},\{4,5\}\}\)</span> fails because <span class="math inline">\(2\)</span> belongs to two distinct blocks. The collection <span class="math inline">\(\{\{1,2\},\{3,4\}\}\)</span> fails because it omits <span class="math inline">\(5\)</span>. The collection <span class="math inline">\(\{A,\varnothing\}\)</span> fails because it includes an empty block. In contrast, <span class="math inline">\(\{A\}\)</span> is a valid partition with one block, and <span class="math inline">\(\{\{1\},\{2\},\{3\},\{4\},\{5\}\}\)</span> is a valid partition with five blocks.</p>
+<p><span id="ch7:equal-classes"><strong>Example&nbsp;7.22.</strong></span> Let <span class="math inline">\(R\)</span> be an equivalence relation on <span class="math inline">\(A\)</span>. We first prove <span class="math display">\[aRb\quad\Longleftrightarrow\quad [a]=[b].\]</span></p>
+<p><em>Proof.</em> Suppose <span class="math inline">\(aRb\)</span>. If <span class="math inline">\(x\in[a]\)</span>, then <span class="math inline">\(aRx\)</span>; symmetry gives <span class="math inline">\(bRa\)</span>, so transitivity gives <span class="math inline">\(bRx\)</span>. Thus <span class="math inline">\([a]\subseteq[b]\)</span>. If <span class="math inline">\(x\in[b]\)</span>, then <span class="math inline">\(bRx\)</span>; together with <span class="math inline">\(aRb\)</span>, transitivity gives <span class="math inline">\(aRx\)</span>. Thus <span class="math inline">\([b]\subseteq[a]\)</span>. The two inclusions prove <span class="math inline">\([a]=[b]\)</span>.</p>
+<p>Conversely, suppose <span class="math inline">\([a]=[b]\)</span>. Reflexivity gives <span class="math inline">\(b\in[b]\)</span>, hence <span class="math inline">\(b\in[a]\)</span>. By the class definition, <span class="math inline">\(aRb\)</span>. <span class="math inline">\(\square\)</span></p>
+<p>Now suppose <span class="math inline">\([a]\)</span> and <span class="math inline">\([b]\)</span> have an element <span class="math inline">\(x\)</span> in common. Then <span class="math inline">\(aRx\)</span> and <span class="math inline">\(bRx\)</span>. Symmetry changes the latter to <span class="math inline">\(xRb\)</span>, and transitivity gives <span class="math inline">\(aRb\)</span>. The result just proved yields <span class="math inline">\([a]=[b]\)</span>. Therefore two distinct equivalence classes cannot overlap.</p>
+<p><span id="ch7:classes-partition"><strong>Example&nbsp;7.23.</strong></span> Let <span class="math inline">\(R\)</span> be an equivalence relation on a nonempty set <span class="math inline">\(A\)</span>. Collect its <em>distinct</em> equivalence classes. We check the three partition requirements.</p>
+<p>Each class <span class="math inline">\([a]\)</span> is nonempty because <span class="math inline">\(aRa\)</span> puts <span class="math inline">\(a\)</span> in <span class="math inline">\([a]\)</span>. Every <span class="math inline">\(x\in A\)</span> is covered because <span class="math inline">\(x\in[x]\)</span>. Finally, Example&nbsp;<a href="#ch7:equal-classes">7.22</a> shows that two distinct classes are disjoint. Thus the classes form a partition of <span class="math inline">\(A\)</span>.</p>
+<p>For the printer assignment, listing Alice’s and Bob’s classes does not create two blocks: they are the same set. The partition has one block for each distinct class.</p>
+<p><span id="ch7:from-partition"><strong>Example&nbsp;7.24.</strong></span> Let <span class="math inline">\(A=\{1,2,3,4,5\}\)</span> and take a different partition <span class="math display">\[\mathcal P=\{\{1,3\},\{2,4\},\{5\}\}.\]</span></p>
+<p><img src="../../../teaching/notes/assets/chapter-07/diagram-03.svg" class="ds-note-image img-fluid" loading="lazy" decoding="async" alt="A partition with three disjoint blocks: {1, 3}, {2, 4}, and {5}."></p>
+<p>Define <span class="math inline">\(xRy\)</span> when <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span> belong to the same block. The first block supplies <span class="math inline">\((1,1),(1,3),(3,1),(3,3)\)</span>. The second supplies <span class="math inline">\((2,2),(2,4),(4,2),(4,4)\)</span>. The singleton block supplies <span class="math inline">\((5,5)\)</span>. Consequently, <span class="math display">\[\begin{aligned}
+R=\{&amp;(1,1),(1,3),(3,1),(3,3),\\
+     &amp;(2,2),(2,4),(4,2),(4,4),(5,5)\}.
+\end{aligned}\]</span> Self-pairs are included: an element is in the same block as itself. There is no pair between distinct blocks, so, for example, <span class="math inline">\((1,2)\notin R\)</span>. Its classes are <span class="math inline">\([1]=[3]=\{1,3\}\)</span>, <span class="math inline">\([2]=[4]=\{2,4\}\)</span> and <span class="math inline">\([5]=\{5\}\)</span>.</p>
+<p><span id="ch7:partition-relation"><strong>Example&nbsp;7.25.</strong></span> For a partition <span class="math inline">\(\mathcal P\)</span> of <span class="math inline">\(A\)</span>, define <span class="math inline">\(xRy\)</span> when <span class="math inline">\(x,y\)</span> belong to the same block.</p>
+<p><em>Reflexivity.</em> Every <span class="math inline">\(x\in A\)</span> lies in a block, so it lies in the same block as itself. Hence <span class="math inline">\(xRx\)</span>.</p>
+<p><em>Symmetry.</em> If <span class="math inline">\(x,y\)</span> lie in the same block, then <span class="math inline">\(y,x\)</span> lie in that block too. Thus <span class="math inline">\(xRy\)</span> implies <span class="math inline">\(yRx\)</span>.</p>
+<p><em>Transitivity.</em> Suppose <span class="math inline">\(xRy\)</span> and <span class="math inline">\(yRz\)</span>. The elements <span class="math inline">\(x,y\)</span> lie together in a block <span class="math inline">\(B\)</span>, and <span class="math inline">\(y,z\)</span> lie together in a block <span class="math inline">\(C\)</span>. Both blocks contain <span class="math inline">\(y\)</span>. Since distinct blocks are disjoint, <span class="math inline">\(B=C\)</span>. Therefore <span class="math inline">\(x,z\)</span> lie in that same block, so <span class="math inline">\(xRz\)</span>.</p>
+<p>Thus <span class="math inline">\(R\)</span> is an equivalence relation. For any <span class="math inline">\(a\in A\)</span>, let <span class="math inline">\(B\)</span> be its block. An element <span class="math inline">\(x\)</span> satisfies <span class="math inline">\(aRx\)</span> exactly when <span class="math inline">\(x\in B\)</span>, so <span class="math inline">\([a]=B\)</span>. Its distinct classes recover the original partition.</p>
+<p>Conversely, if we start with an equivalence relation, form its classes and then relate elements in the same class, we recover the original relation: Example&nbsp;<a href="#ch7:equal-classes">7.22</a> gives <span class="math inline">\(aRb\)</span> exactly when <span class="math inline">\([a]=[b]\)</span>. The relation records the related pairs; the partition records the groups those pairs determine.</p>
+</section>
+<section id="ch7:exercises" class="level2">
+<h2 class="anchored" data-anchor-id="ch7:exercises">7.8 Exercises</h2>
+<div class="ds-exercises" style="--ds-chapter: '7';">
+<ol type="1">
+<li><p><span id="ch7ex:product" data-label="ch7ex:product"></span> Let <span class="math inline">\(A=\{0,1\}\)</span>, <span class="math inline">\(B=\{p,q,r\}\)</span> and <span class="math inline">\(R=\{(0,p),(0,r)\}\)</span>.</p>
+<ol type="a">
+<li><p>List <span class="math inline">\(A\times B\)</span> and identify which pairs belong to <span class="math inline">\(R\)</span>.</p></li>
+<li><p>Is <span class="math inline">\(R\)</span> a relation from <span class="math inline">\(A\)</span> to <span class="math inline">\(B\)</span>? Is it a function from <span class="math inline">\(A\)</span> to <span class="math inline">\(B\)</span>? Explain both answers.</p></li>
+<li><p>Could a relation from <span class="math inline">\(A\)</span> to <span class="math inline">\(B\)</span> contain <span class="math inline">\((p,0)\)</span>? Explain using the specified sets.</p></li>
+</ol></li>
+<li><p><span id="ch7ex:H" data-label="ch7ex:H"></span> Use this relation <span class="math inline">\(H\)</span> in every exercise that names it: <span class="math display">\[A=\{a,b,c\},\qquad
+H=\{(a,a),(a,b),(b,c),(c,b),(c,c)\}.\]</span></p>
+<ol type="a">
+<li><p>Draw its directed diagram, including every vertex and loop.</p></li>
+<li><p>Make a table with rows and columns <span class="math inline">\(a,b,c\)</span>, using <span class="math inline">\(\text{\texttt{T}}\)</span> and <span class="math inline">\(\text{\texttt{F}}\)</span> to record membership.</p></li>
+<li><p>Which arrows start at <span class="math inline">\(b\)</span>? Which end at <span class="math inline">\(b\)</span>?</p></li>
+</ol></li>
+<li><p><span id="ch7ex:inverse" data-label="ch7ex:inverse"></span> On <span class="math inline">\(A=\{0,1,2\}\)</span>, let <span class="math inline">\(R=\{(0,1),(1,2),(2,2)\}\)</span>.</p>
+<ol type="a">
+<li><p>Find <span class="math inline">\(R^{-1}\)</span> and then <span class="math inline">\((R^{-1})^{-1}\)</span>.</p></li>
+<li><p>Does <span class="math inline">\(R\)</span> assign exactly one output to every element of <span class="math inline">\(A\)</span>? Does <span class="math inline">\(R^{-1}\)</span>? Justify your answers from the pairs.</p></li>
+<li><p>What happens to the loop at <span class="math inline">\(2\)</span> under inversion?</p></li>
+</ol></li>
+<li><p><span id="ch7ex:compose-context" data-label="ch7ex:compose-context"></span> Let <span class="math inline">\(A=\{\text{Alice},\text{Bob},\text{Eve}\}\)</span>, <span class="math inline">\(B=\{x,y\}\)</span> and <span class="math inline">\(C=\{p,q\}\)</span>. Define <span class="math display">\[\begin{aligned}
+R&amp;=\{(\text{Alice},x),(\text{Bob},x),(\text{Bob},y),(\text{Eve},y)\},\\
+S&amp;=\{(x,p),(y,p),(y,q)\}.
+\end{aligned}\]</span> Find <span class="math inline">\(S\circ R\)</span>. For each resulting pair, give a middle element witnessing membership. Which pair has two different middle-element witnesses?</p></li>
+<li><p><span id="ch7ex:order" data-label="ch7ex:order"></span> On <span class="math inline">\(A=\{0,1,2,3\}\)</span>, let <span class="math inline">\(R=\{(0,1),(1,2)\}\)</span> and <span class="math inline">\(S=\{(2,3)\}\)</span>. Find <span class="math inline">\(S\circ R\)</span> and <span class="math inline">\(R\circ S\)</span>. Explain why both expressions are defined and why their values need not agree.</p></li>
+<li><p><span id="ch7ex:shared-output" data-label="ch7ex:shared-output"></span> For <span class="math inline">\(H\)</span> in Exercise&nbsp;<a href="#ch7ex:H">7.2</a>, find <span class="math inline">\(H^{-1}\circ H\)</span> by determining which elements have an <span class="math inline">\(H\)</span>-output in common. List all its pairs. Is this composition reflexive, symmetric, antisymmetric or transitive on <span class="math inline">\(\{a,b,c\}\)</span>? Support each decision with a proof or counterexample.</p></li>
+<li><p><span id="ch7ex:carrier" data-label="ch7ex:carrier"></span> Let <span class="math inline">\(R=\{(0,0),(1,1)\}\)</span>. Is <span class="math inline">\(R\)</span> reflexive on <span class="math inline">\(\{0,1\}\)</span>? Is it reflexive on <span class="math inline">\(\{0,1,2\}\)</span>? Explain why these answers can differ although no pair in <span class="math inline">\(R\)</span> changed.</p></li>
+<li><p><span id="ch7ex:four-cases" data-label="ch7ex:four-cases"></span> On <span class="math inline">\(A=\{a,b,c\}\)</span>, give a relation with each combination below, and justify its two properties.</p>
+<ol type="a">
+<li><p>Symmetric and antisymmetric.</p></li>
+<li><p>Symmetric, not antisymmetric.</p></li>
+<li><p>Antisymmetric, not symmetric.</p></li>
+<li><p>Neither symmetric nor antisymmetric.</p></li>
+</ol></li>
+<li><p><span id="ch7ex:anti-error" data-label="ch7ex:anti-error"></span> For <span class="math inline">\(I=\{(a,a),(b,b),(c,c)\}\)</span> on <span class="math inline">\(\{a,b,c\}\)</span>, David says that <span class="math inline">\((a,a)\)</span> violates antisymmetry because it gives an arrow in both directions. Identify the error and prove the correct conclusion.</p></li>
+<li><p><span id="ch7ex:repeat" data-label="ch7ex:repeat"></span> On <span class="math inline">\(A=\{a,b,c\}\)</span>, let <span class="math inline">\(R=\{(a,b),(b,a)\}\)</span>.</p>
+<ol type="a">
+<li><p>Give two triples witnessing failures of transitivity.</p></li>
+<li><p>Add as few pairs as possible to obtain a transitive relation on <span class="math inline">\(A\)</span>. Prove that your new relation is transitive and explain why fewer additions cannot work.</p></li>
+<li><p>Is the new relation reflexive on <span class="math inline">\(A\)</span>?</p></li>
+</ol></li>
+<li><p><span id="ch7ex:vacuity" data-label="ch7ex:vacuity"></span> On <span class="math inline">\(A=\{0,1,2\}\)</span>, consider <span class="math inline">\(R=\{(0,2)\}\)</span>.</p>
+<ol type="a">
+<li><p>Decide all four properties: reflexive, symmetric, antisymmetric and transitive. Explain the implications whose premises never hold.</p></li>
+<li><p>Repeat for the empty relation on <span class="math inline">\(A\)</span>.</p></li>
+</ol></li>
+<li><p><span id="ch7ex:numerical" data-label="ch7ex:numerical"></span> For each relation on <span class="math inline">\(\mathbb{Z}\)</span>, decide whether it is reflexive, symmetric, antisymmetric and transitive. Prove each successful property and give explicit witnesses for each failed one.</p>
+<ol type="a">
+<li><p><span class="math inline">\(aRb\)</span> means <span class="math inline">\(a\leq b\)</span>.</p></li>
+<li><p><span class="math inline">\(aRb\)</span> means <span class="math inline">\(a&lt;b\)</span>.</p></li>
+<li><p><span class="math inline">\(aRb\)</span> means <span class="math inline">\(a+b=0\)</span>.</p></li>
+</ol></li>
+<li><p><span id="ch7ex:function" data-label="ch7ex:function"></span> Let <span class="math inline">\(F\)</span> be a nonempty set of files, let <span class="math inline">\(L\)</span> be a set of labels, and let <span class="math inline">\(\ell:F\to L\)</span> be a function. Define <span class="math inline">\(fRg\)</span> by <span class="math inline">\(\ell(f)=\ell(g)\)</span>. Prove that <span class="math inline">\(R\)</span> is an equivalence relation. For a fixed file <span class="math inline">\(f\)</span>, describe <span class="math inline">\([f]_R\)</span> using <span class="math inline">\(\ell\)</span>.</p></li>
+<li><p><span id="ch7ex:two-properties" data-label="ch7ex:two-properties"></span> On <span class="math inline">\(A=\{a,b,c\}\)</span>, construct a relation that is:</p>
+<ol type="a">
+<li><p>reflexive and symmetric, but not transitive;</p></li>
+<li><p>reflexive and transitive, but not symmetric;</p></li>
+<li><p>symmetric and transitive, but not reflexive.</p></li>
+</ol>
+<p>Verify the two claimed properties and give a complete counterexample to the third in each part.</p></li>
+<li><p><span id="ch7ex:even-sum" data-label="ch7ex:even-sum"></span> On <span class="math inline">\(\mathbb{Z}\)</span>, define <span class="math inline">\(aRb\)</span> when <span class="math inline">\(a+b\)</span> is even. Prove that this is an equivalence relation and determine its distinct equivalence classes. In the transitivity proof, start with <span class="math inline">\(a+b=2j\)</span> and <span class="math inline">\(b+c=2k\)</span> and express <span class="math inline">\(a+c\)</span> as twice an integer.</p></li>
+<li><p><span id="ch7ex:file-classes" data-label="ch7ex:file-classes"></span> Five files <span class="math inline">\(a,b,c,d,e\)</span> have the following sizes in a fixed unit.</p>
+<div class="ds-table">
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: center;">File</th>
+<th style="text-align: center;"><span class="math inline">\(a\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(b\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(c\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(d\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(e\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">Size</td>
+<td style="text-align: center;"><span class="math inline">\(2\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(3\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(2\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(5\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(3\)</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Relate two files exactly when their sizes are equal. List <span class="math inline">\([a],[b],[c],[d],[e]\)</span>, then list the distinct classes. Does <span class="math inline">\([a]=[c]\)</span> imply <span class="math inline">\(a=c\)</span>? Explain.</p></li>
+<li><p><span id="ch7ex:partition-check" data-label="ch7ex:partition-check"></span> Which collections are partitions of <span class="math inline">\(A=\{0,1,2,3,4,5\}\)</span>? For each failure, identify the exact requirement that fails.</p>
+<ol type="a">
+<li><p><span class="math inline">\(\{\{0,2,4\},\{1,3,5\}\}\)</span>.</p></li>
+<li><p><span class="math inline">\(\{\{0,1,2\},\{2,3\},\{4,5\}\}\)</span>.</p></li>
+<li><p><span class="math inline">\(\{\{0,1\},\{2,3\},\{4\}\}\)</span>.</p></li>
+<li><p><span class="math inline">\(\{\{0,1,2,3,4,5\},\varnothing\}\)</span>.</p></li>
+</ol></li>
+<li><p><span id="ch7ex:nested" data-label="ch7ex:nested"></span> Let <span class="math inline">\(U=\{\text{Alice},\text{Bob},\text{Charlie},\text{David},\text{Eve}\}\)</span> and <span class="math display">\[\mathcal P=\{\{\text{Alice},\text{Bob}\},\{\text{Charlie}\},
+                 \{\text{David},\text{Eve}\}\}.\]</span> Mark each statement <code>TRUE</code> or <code>FALSE</code> and explain your answer.</p>
+<ol type="a">
+<li><p><span class="math inline">\(\text{Alice}\in\mathcal P\)</span>.</p></li>
+<li><p><span class="math inline">\(\text{Alice}\in\{\text{Alice},\text{Bob}\}\)</span>.</p></li>
+<li><p><span class="math inline">\(\{\text{Alice},\text{Bob}\}\in\mathcal P\)</span>.</p></li>
+<li><p><span class="math inline">\(\{\text{Alice},\text{Bob}\}\subseteq U\)</span>.</p></li>
+</ol></li>
+<li><p><span id="ch7ex:overlap-classes" data-label="ch7ex:overlap-classes"></span> Let <span class="math inline">\(R\)</span> be an equivalence relation. Suppose <span class="math inline">\(c\in[a]_R\)</span> and <span class="math inline">\(c\in[b]_R\)</span>. Prove <span class="math inline">\(aRb\)</span>, naming the properties used at each step. Then explain why <span class="math inline">\([a]_R=[b]_R\)</span>.</p></li>
+<li><p><span id="ch7ex:from-partition" data-label="ch7ex:from-partition"></span> For <span class="math inline">\(A=\{a,b,c,d,e\}\)</span> and <span class="math inline">\(\mathcal P=\{\{a,d\},\{b,c\},\{e\}\}\)</span>, define <span class="math inline">\(xRy\)</span> when <span class="math inline">\(x,y\)</span> lie in the same block.</p>
+<ol type="a">
+<li><p>List every ordered pair in <span class="math inline">\(R\)</span>.</p></li>
+<li><p>Explain why each self-pair must be included.</p></li>
+<li><p>Give <span class="math inline">\([a]_R,[d]_R,[e]_R\)</span> and explain why different representatives can name the same block.</p></li>
+</ol></li>
+<li><p><span id="ch7ex:merge" data-label="ch7ex:merge"></span> Start with the partition <span class="math inline">\(\{\{a,b\},\{c,d\},\{e\}\}\)</span> of <span class="math inline">\(\{a,b,c,d,e\}\)</span> and its same-block relation. Merge its first two blocks, obtaining <span class="math inline">\(\{\{a,b,c,d\},\{e\}\}\)</span>. List the ordered pairs added to the relation. Must any old pair be removed? Explain using the two same-block rules.</p></li>
+<li><p><span id="ch7ex:overlap-family" data-label="ch7ex:overlap-family"></span> The collection <span class="math inline">\(\{\{a,b\},\{b,c\}\}\)</span> covers <span class="math inline">\(\{a,b,c\}\)</span>. Define <span class="math inline">\(xRy\)</span> when some set in this collection contains both <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span>. Prove reflexivity and symmetry, but refute transitivity. Identify the step in Example&nbsp;<a href="#ch7:partition-relation">7.25</a> that the overlapping sets prevent.</p></li>
+<li><p><span id="ch7ex:inverse-symmetric" data-label="ch7ex:inverse-symmetric"></span> For a relation <span class="math inline">\(R\)</span> on <span class="math inline">\(A\)</span>, prove that <span class="math inline">\(R\)</span> is symmetric if and only if <span class="math inline">\(R^{-1}=R\)</span>. In each direction, use the definition of the inverse to justify membership of the required pairs.</p></li>
+<li><p><span id="ch7ex:composition-transitive" data-label="ch7ex:composition-transitive"></span> For a relation <span class="math inline">\(R\)</span> on <span class="math inline">\(A\)</span>, prove <span class="math display">\[R\text{ is transitive}\quad\Longleftrightarrow\quad
+R\circ R\subseteq R.\]</span> Translate membership of <span class="math inline">\(R\circ R\)</span> into a statement about a middle element, then prove both directions.</p></li>
+<li><p><span id="ch7ex:inverse-composition" data-label="ch7ex:inverse-composition"></span> Let <span class="math inline">\(R\subseteq A\times B\)</span> and <span class="math inline">\(S\subseteq B\times C\)</span>. Prove <span class="math display">\[(S\circ R)^{-1}=R^{-1}\circ S^{-1}.\]</span> Begin with an arbitrary pair <span class="math inline">\((c,a)\in C\times A\)</span> and show that it belongs to one side exactly when it belongs to the other.</p></li>
+<li><p><span id="ch7ex:components" data-label="ch7ex:components"></span> Let <span class="math inline">\(G\)</span> be a finite simple undirected graph with vertex set <span class="math inline">\(V\)</span>. Define <span class="math inline">\(uRv\)</span> when <span class="math inline">\(G\)</span> has a path from <span class="math inline">\(u\)</span> to <span class="math inline">\(v\)</span>.</p>
+<ol type="a">
+<li><p>Prove reflexivity and symmetry. Include the length-<span class="math inline">\(0\)</span> path.</p></li>
+<li><p>Prove transitivity. Joining two paths may produce a walk with repeated vertices; explain why a path with the same endpoints still exists.</p></li>
+<li><p>Identify the equivalence classes of <span class="math inline">\(R\)</span>. What does the partition look like when <span class="math inline">\(G\)</span> is connected?</p></li>
+</ol></li>
+</ol>
+</div>
+<div class="ds-chapter-navigation">
+<p><a href="../../../teaching/notes/chapter-06/">← Chapter 6</a> · <a href="../../../teaching/notes/chapter-08/">Chapter 8 →</a></p>
+</div>
+
+
+</section>
+
+<a href="#page-top" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
+<script>
+  (() => {
+    const main = document.getElementById("quarto-document-content");
+    const skipLink = document.querySelector(".skip-link");
+
+    if (skipLink && main) {
+      skipLink.addEventListener("click", () => {
+        window.requestAnimationFrame(() => main.focus({ preventScroll: true }));
+      });
+    }
+  })();
+</script>
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/rjnieto\.com");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>© 2026 RJ Nieto</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+<p>Built with Quarto</p>
+</div>
+  </div>
+</footer>
+
+
+
+
+</body></html>

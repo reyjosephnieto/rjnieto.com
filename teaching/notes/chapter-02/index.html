@@ -1,0 +1,1500 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-GB" xml:lang="en-GB"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.10.18">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="description" content="Chapter 2: Propositional logic. HTML edition of Lecture Notes in Discrete Mathematics.">
+
+<title>Chapter 2: Propositional logic – RJ Nieto</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<link href="../../../assets/branding/rj-logo.png" rel="icon" type="image/png">
+<script src="../../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-dark-b85bc7c33db8c58e0ec93c3465666fed.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap-68e913143d7006db5355610df9e4aed5.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="dark">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<meta name="author" content="Rey Joseph Nieto">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "@id": "https://rjnieto.com/#rey-joseph-nieto",
+  "name": "Rey Joseph Nieto",
+  "alternateName": ["RJ Nieto", "Thinking Pinoy"],
+  "description": "Assistant Secretary in the Office of the Cabinet Secretary, Office of the President of the Philippines.",
+  "url": "https://rjnieto.com/",
+  "image": {
+    "@type": "ImageObject",
+    "@id": "https://rjnieto.com/#portrait",
+    "url": "https://rjnieto.com/assets/images/rey-joseph-nieto-portrait.jpg",
+    "contentUrl": "https://rjnieto.com/assets/images/rey-joseph-nieto-portrait.jpg",
+    "width": 824,
+    "height": 824,
+    "caption": "Portrait of Rey Joseph RJ Nieto"
+  },
+  "jobTitle": "Assistant Secretary",
+  "worksFor": {
+    "@type": "GovernmentOrganization",
+    "name": "Office of the Cabinet Secretary, Office of the President of the Philippines"
+  },
+  "sameAs": [
+    "https://www.linkedin.com/in/rjosephnieto/",
+    "https://www.facebook.com/rjosephnieto",
+    "https://x.com/rjosephnieto"
+  ]
+}
+</script>
+<link rel="preload" href="../../../assets/fonts/ibm-plex-sans/IBMPlexSans-Roman.woff2" as="font" type="font/woff2" crossorigin="">
+<script defer="" src="../../../assets/js/home-research-background.js"></script>
+<script defer="" src="../../../assets/js/discrete-notes-layout.js"></script>
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta property="og:url" content="https://rjnieto.com/teaching/notes/chapter-02/">
+<meta property="og:type" content="article">
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../../../styles.css">
+<link rel="stylesheet" href="../../../assets/css/site-typography.css">
+<link rel="stylesheet" href="../../../assets/css/home-research-background.css">
+<link rel="stylesheet" href="../../../assets/css/discrete-notes.css">
+<meta property="og:title" content="Chapter 2: Propositional logic – RJ Nieto">
+<meta property="og:description" content="Chapter 2: Propositional logic. HTML edition of Lecture Notes in Discrete Mathematics.">
+<meta property="og:image" content="https://rjnieto.com/teaching/bulsu/discrete-math/images/thumbnails/chapter_02.webp">
+<meta property="og:site_name" content="RJ Nieto">
+<meta property="og:locale" content="en_GB">
+<meta name="twitter:title" content="Chapter 2: Propositional logic – RJ Nieto">
+<meta name="twitter:description" content="Chapter 2: Propositional logic. HTML edition of Lecture Notes in Discrete Mathematics.">
+<meta name="twitter:image" content="https://rjnieto.com/teaching/bulsu/discrete-math/images/thumbnails/chapter_02.webp">
+<meta name="twitter:creator" content="@rjosephnieto">
+<meta name="twitter:site" content="@rjosephnieto">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://rjnieto.com/teaching/notes/chapter-02/">
+</head>
+
+<body class="nav-fixed ds-lecture-notes quarto-light">
+<span id="page-top" class="page-top-anchor" aria-hidden="true"></span>
+<a class="skip-link" href="#quarto-document-content">Skip to main content</a>
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../../">
+    <span class="navbar-title">RJ Nieto</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../../"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../cv/"> 
+<span class="menu-text">CV</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../teaching/"> 
+<span class="menu-text">Teaching</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../calculated/"> 
+<span class="menu-text">Writing</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../research/"> 
+<span class="menu-text">Hobby</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul class="collapse">
+  <li><a href="#ch2:conditionals" id="toc-ch2:conditionals" class="nav-link active" data-scroll-target="#ch2\:conditionals">2.1 Conditional rules</a></li>
+  <li><a href="#ch2:related" id="toc-ch2:related" class="nav-link" data-scroll-target="#ch2\:related">2.2 Converse, inverse and contrapositive</a></li>
+  <li><a href="#ch2:equivalence" id="toc-ch2:equivalence" class="nav-link" data-scroll-target="#ch2\:equivalence">2.3 Logical equivalence</a></li>
+  <li><a href="#ch2:negation" id="toc-ch2:negation" class="nav-link" data-scroll-target="#ch2\:negation">2.4 Negation and rewriting</a></li>
+  <li><a href="#ch2:quantified" id="toc-ch2:quantified" class="nav-link" data-scroll-target="#ch2\:quantified">2.5 Quantifier negation</a></li>
+  <li><a href="#ch2:validity" id="toc-ch2:validity" class="nav-link" data-scroll-target="#ch2\:validity">2.6 Valid arguments</a></li>
+  <li><a href="#ch2:invalid" id="toc-ch2:invalid" class="nav-link" data-scroll-target="#ch2\:invalid">2.7 Invalid arguments</a></li>
+  <li><a href="#ch2:exercises" id="toc-ch2:exercises" class="nav-link" data-scroll-target="#ch2\:exercises">2.8 Exercises</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content" tabindex="-1">
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Chapter 2: Propositional logic</h1>
+<p class="subtitle lead">Discrete Mathematics · Rey Joseph Nieto</p>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<!-- Generated from the corresponding chapter LaTeX. Run scripts/build-discrete-html.py to refresh. -->
+<p><a href="../../../teaching/" class="btn btn-outline-secondary btn-sm">Course page</a> <a href="../../../teaching/bulsu/discrete-math/lecture-notes/chapter_02.pdf" class="btn btn-outline-primary btn-sm" aria-label="Open Chapter 2: Propositional logic as PDF">PDF</a></p>
+<p><span id="ch2:chapter" data-label="ch2:chapter"></span></p>
+<p>In high-school algebra, a letter such as <span class="math inline">\(x\)</span> could stand for a number. The identity <span class="math inline">\(x+x=2x\)</span> holds for every real number <span class="math inline">\(x\)</span>: the letter lets us state a rule once and use it for different numbers.</p>
+<p>Here we use letters such as <span class="math inline">\(P\)</span> and <span class="math inline">\(Q\)</span> as placeholders for whole <em>statements</em>: ideas expressed as claims that are true or false. Using letters makes it easier to see which claims are being used and whether a conclusion follows from them.</p>
+<p>For example, fix one data link between two devices. Let <span class="math inline">\(P\)</span> mean “This link uses Wi-Fi” and <span class="math inline">\(Q\)</span> mean “This link uses no data cable between the devices”. The rule “If this link uses Wi-Fi, it uses no data cable” has the form <span class="math inline">\(P\to Q\)</span>. If we also know <span class="math inline">\(P\)</span>, we can conclude <span class="math inline">\(Q\)</span>: this link uses no data cable.</p>
+<p>The same deduction pattern can be used with statements about laboratory access or numbers. It guarantees a true conclusion whenever its starting claims are true. We must keep each letter’s meaning consistent within an argument, but we can use the same reasoning rule with different statements.</p>
+<p>Chapter 1 gave us the ingredients of this language: statements, connectives, predicates and quantifiers, together with sets and functions. Chapter 2 develops the recipes for working with them: rewriting conditions, forming negations and drawing conclusions. We will use these tools when writing proofs in Chapter 3.</p>
+<p>This may feel abstract or even bizarre at first. With practice, familiar patterns become easier to recognise, and structuring your reasoning this way becomes increasingly instinctive.</p>
+<div class="ds-box ds-learningoutcomes">
+<div id="what-you-should-be-able-to-do" class="ds-box-title">
+<p><strong>What you should be able to do</strong></p>
+</div>
+<p>After working through this chapter, you should be able to:</p>
+<ul>
+<li><p>translate conditional rules, including “if”, “only if”, and necessary and sufficient conditions;</p></li>
+<li><p>form the converse, inverse and contrapositive of an implication;</p></li>
+<li><p>establish logical equivalence by a truth table or justified rewriting;</p></li>
+<li><p>negate compound and quantified claims without changing their domains;</p></li>
+<li><p>justify elementary deductions from stated premises;</p></li>
+<li><p>demonstrate an invalid argument by making its premises true and its conclusion false.</p></li>
+</ul>
+</div>
+<section id="ch2:conditionals" class="level2">
+<h2 class="anchored" data-anchor-id="ch2:conditionals">2.1 Conditional rules</h2>
+<p>Suppose a practice laboratory displays this rule:</p>
+<blockquote class="blockquote">
+<p>You may use the laboratory only if you have completed its safety briefing.</p>
+</blockquote>
+<p>Alice has completed the briefing. Does the rule guarantee that she may use the laboratory? It does not. The rule makes the briefing a requirement; there could still be another requirement, such as a booking. Someone who has completed the briefing but has no booking would not contradict the displayed rule.</p>
+<p>Now replace “only if” with “if”:</p>
+<blockquote class="blockquote">
+<p>You may use the laboratory if you have completed its safety briefing.</p>
+</blockquote>
+<p>Under this second rule, completing the briefing is enough to establish permission. The two sentences use almost the same words but commit the laboratory to different rules.</p>
+<p>Recall that <span class="math inline">\(P\to Q\)</span> is false exactly when <span class="math inline">\(P\)</span> is true and <span class="math inline">\(Q\)</span> is false. Here <span class="math inline">\(P\)</span> is the antecedent and <span class="math inline">\(Q\)</span> is the consequent. Thus the first laboratory rule, with <span class="math inline">\(P\)</span> meaning “Alice may use the laboratory” and <span class="math inline">\(Q\)</span> meaning “Alice has completed the briefing”, says <span class="math inline">\(P\to Q\)</span>. It rules out permission without the briefing. It does not rule out a completed briefing without permission.</p>
+<p><span id="example-2.1."><strong>Example&nbsp;2.1.</strong></span> In a practice access system, suppose the rule is “If a user has a staff pass, then the user may enter.” For each user let <span class="math inline">\(P\)</span> mean “the user has a staff pass” and <span class="math inline">\(Q\)</span> mean “the user may enter”. Consider these records:</p>
+<div class="ds-table">
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: left;">User</th>
+<th style="text-align: center;"><span class="math inline">\(P\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(Q\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(P\to Q\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Alice</td>
+<td style="text-align: center;"><span class="math inline">\(\text{\texttt{T}}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\text{\texttt{T}}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\text{\texttt{T}}\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Bob</td>
+<td style="text-align: center;"><span class="math inline">\(\text{\texttt{F}}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\text{\texttt{T}}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\text{\texttt{T}}\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Charlie</td>
+<td style="text-align: center;"><span class="math inline">\(\text{\texttt{F}}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\text{\texttt{F}}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\text{\texttt{T}}\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">David</td>
+<td style="text-align: center;"><span class="math inline">\(\text{\texttt{T}}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\text{\texttt{F}}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\text{\texttt{F}}\)</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>David’s record violates the rule: he has a staff pass, but entry is denied. Bob’s record does not violate it. The rule has not said that a staff pass is the only route to permission; Bob might have a visitor pass. Charlie’s record does not violate it either, because the rule has made no promise of entry for someone without a staff pass.</p>
+<p>Bob’s and Charlie’s records illustrate the two cases with a false antecedent. We are checking whether this conditional rule is violated, not claiming that the consequent has happened. In particular, <span class="math inline">\(P\to Q\)</span> does not by itself assert <span class="math inline">\(P\)</span> or <span class="math inline">\(Q\)</span>, and it does not assert that <span class="math inline">\(P\)</span> causes <span class="math inline">\(Q\)</span>.</p>
+<p><span id="if-and-only-if."><strong>“If” and “only if”.</strong></span> The part after “if” gives a sufficient starting condition. The part after “only if” gives a requirement on what precedes it. Compare:</p>
+<div class="ds-table">
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Wording</th>
+<th style="text-align: left;">Logical form</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">If <span class="math inline">\(P\)</span>, then <span class="math inline">\(Q\)</span>.</td>
+<td style="text-align: left;"><span class="math inline">\(P\to Q\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(Q\)</span> if <span class="math inline">\(P\)</span>.</td>
+<td style="text-align: left;"><span class="math inline">\(P\to Q\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(P\)</span> only if <span class="math inline">\(Q\)</span>.</td>
+<td style="text-align: left;"><span class="math inline">\(P\to Q\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(P\)</span> if <span class="math inline">\(Q\)</span>.</td>
+<td style="text-align: left;"><span class="math inline">\(Q\to P\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(Q\)</span> only if <span class="math inline">\(P\)</span>.</td>
+<td style="text-align: left;"><span class="math inline">\(Q\to P\)</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>For example, “A file is released only if it has been checked” says released <span class="math inline">\(\to\)</span> checked. A released but unchecked file would violate that rule. A checked file that remains a draft would not.</p>
+<div class="ds-box ds-definition">
+<div id="definition-2.1-necessary-and-sufficient-conditions" class="ds-box-title">
+<p><strong>Definition 2.1: Necessary and sufficient conditions</strong></p>
+</div>
+<p>For the implication <span class="math inline">\(P\to Q\)</span>, we say that <span class="math inline">\(P\)</span> is a <strong>sufficient condition for</strong> <span class="math inline">\(Q\)</span>, and that <span class="math inline">\(Q\)</span> is a <strong>necessary condition for</strong> <span class="math inline">\(P\)</span>. The condition <span class="math inline">\(P\)</span> is enough to ensure <span class="math inline">\(Q\)</span>; the condition <span class="math inline">\(Q\)</span> is required whenever <span class="math inline">\(P\)</span> holds.</p>
+</div>
+<p>Consequently, “<span class="math inline">\(P\)</span> is necessary for <span class="math inline">\(Q\)</span>” means <span class="math inline">\(Q\to P\)</span>, whereas “<span class="math inline">\(P\)</span> is sufficient for <span class="math inline">\(Q\)</span>” means <span class="math inline">\(P\to Q\)</span>. The direction depends on which condition is being described as necessary or sufficient, rather than its position at the beginning of the sentence.</p>
+<p><span id="example-2.2."><strong>Example&nbsp;2.2.</strong></span> Suppose a practice portal grants access exactly when an account is verified <em>and</em> its payment is recorded. For one account, let <span class="math inline">\(V\)</span> mean “the account is verified”, <span class="math inline">\(C\)</span> mean “its payment is recorded” and <span class="math inline">\(A\)</span> mean “access is granted”. The complete rule is <span class="math display">\[A\leftrightarrow(V\land C).\]</span> Verification is necessary for access: <span class="math inline">\(A\to V\)</span>. It is not sufficient on its own. If <span class="math inline">\(V\)</span> is <code>TRUE</code> but <span class="math inline">\(C\)</span> is <code>FALSE</code>, then <span class="math inline">\(V\land C\)</span> is false, so access is not granted. The same reasoning shows that payment is necessary but is not sufficient on its own.</p>
+<p>Together, verification and payment are sufficient: <span class="math inline">\((V\land C)\to A\)</span>. They are also necessary: <span class="math inline">\(A\to(V\land C)\)</span>. The biconditional records both directions, which is what “exactly when” expresses here.</p>
+</section>
+<section id="ch2:related" class="level2">
+<h2 class="anchored" data-anchor-id="ch2:related">2.2 Converse, inverse and contrapositive</h2>
+<p>Reversing a rule or negating its components produces a new statement. We must specify which operation has been performed.</p>
+<div class="ds-box ds-definition">
+<div id="definition-2.2-related-implications" class="ds-box-title">
+<p><strong>Definition 2.2: Related implications</strong></p>
+</div>
+<p>Starting from <span class="math inline">\(P\to Q\)</span>, its</p>
+<ul>
+<li><p><strong>converse</strong> is <span class="math inline">\(Q\to P\)</span>;</p></li>
+<li><p><strong>inverse</strong> is <span class="math inline">\(\neg P\to\neg Q\)</span>;</p></li>
+<li><p><strong>contrapositive</strong> is <span class="math inline">\(\neg Q\to\neg P\)</span>.</p></li>
+</ul>
+<p>The contrapositive both reverses the direction and negates the two components.</p>
+</div>
+<p>Their truth values can be compared in one table:</p>
+<div class="ds-table">
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: center;"><span class="math inline">\(P\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(Q\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(P\to Q\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(Q\to P\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(\neg P\to\neg Q\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(\neg Q\to\neg P\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(\text{\texttt{T}}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\text{\texttt{T}}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\text{\texttt{T}}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\text{\texttt{T}}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\text{\texttt{T}}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\text{\texttt{T}}\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(\text{\texttt{T}}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\text{\texttt{F}}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\text{\texttt{F}}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\text{\texttt{T}}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\text{\texttt{T}}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\text{\texttt{F}}\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(\text{\texttt{F}}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\text{\texttt{T}}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\text{\texttt{T}}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\text{\texttt{F}}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\text{\texttt{F}}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\text{\texttt{T}}\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(\text{\texttt{F}}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\text{\texttt{F}}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\text{\texttt{T}}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\text{\texttt{T}}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\text{\texttt{T}}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\text{\texttt{T}}\)</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>The original implication and its contrapositive agree in every row. The converse and inverse also agree with each other, but their columns do not match the original implication. We may therefore replace an implication by its contrapositive without changing its truth value. Reversing it alone does not have this guarantee.</p>
+<p><span id="example-2.3."><strong>Example&nbsp;2.3.</strong></span> Let <span class="math inline">\(x\in\mathbb{R}\)</span>. Consider the true claim “If <span class="math inline">\(x&gt;5\)</span>, then <span class="math inline">\(x&gt;2\)</span>.” Its related statements are:</p>
+<div class="ds-table">
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Statement</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Converse</td>
+<td style="text-align: left;">If <span class="math inline">\(x&gt;2\)</span>, then <span class="math inline">\(x&gt;5\)</span>.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Inverse</td>
+<td style="text-align: left;">If <span class="math inline">\(x\leq5\)</span>, then <span class="math inline">\(x\leq2\)</span>.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Contrapositive</td>
+<td style="text-align: left;">If <span class="math inline">\(x\leq2\)</span>, then <span class="math inline">\(x\leq5\)</span>.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>The value <span class="math inline">\(x=3\)</span> refutes both the converse and the inverse: it is greater than <span class="math inline">\(2\)</span> without being greater than <span class="math inline">\(5\)</span>, and it is at most <span class="math inline">\(5\)</span> without being at most <span class="math inline">\(2\)</span>. The contrapositive is true for every real <span class="math inline">\(x\)</span>, just as the original implication is.</p>
+<p>Here “if <span class="math inline">\(x&gt;5\)</span>, then <span class="math inline">\(x&gt;2\)</span>” is understood as a claim about every <span class="math inline">\(x\in\mathbb{R}\)</span>. Forming its contrapositive retains that domain and the universal quantifier. We have not negated the whole quantified claim.</p>
+<p>A statement and its converse can both be true. For instance, for an integer <span class="math inline">\(n\)</span>, “<span class="math inline">\(n=0\)</span>” and “<span class="math inline">\(n^2=0\)</span>” imply each other. The table says that a true implication does not <em>guarantee</em> a true converse; it does not say that the converse must be false.</p>
+<p><span id="biconditionals."><strong>Biconditionals.</strong></span> The claim <span class="math inline">\(P\leftrightarrow Q\)</span> requires <span class="math inline">\(P\to Q\)</span> and <span class="math inline">\(Q\to P\)</span> together. It can therefore be written as <span class="math display">\[(P\to Q)\land(Q\to P).\]</span> If <span class="math inline">\(P\)</span> is both necessary and sufficient for <span class="math inline">\(Q\)</span>, the relationship is <span class="math inline">\(P\leftrightarrow Q\)</span>. Establishing only one direction leaves half of this requirement unchecked.</p>
+</section>
+<section id="ch2:equivalence" class="level2">
+<h2 class="anchored" data-anchor-id="ch2:equivalence">2.3 Logical equivalence</h2>
+<p>Two descriptions may use different connectives yet impose exactly the same condition. The matching columns for an implication and its contrapositive give one example.</p>
+<div class="ds-box ds-definition">
+<div id="definition-2.3-logical-equivalence" class="ds-box-title">
+<p><strong>Definition 2.3: Logical equivalence</strong></p>
+</div>
+<p>Two propositional expressions are <strong>logically equivalent</strong> when they have the same truth value for every assignment of truth values to their component propositional variables. We use <span class="math inline">\(\equiv\)</span> to record this relationship. For example, <span class="math display">\[P\to Q\ \equiv\ \neg Q\to\neg P.\]</span></p>
+</div>
+<p>In a truth table, equivalence means that the two final columns agree in <em>every</em> row. One differing row disproves equivalence. The letters <span class="math inline">\(P,Q,R\)</span> below may stand for compound statements as well as atomic ones, provided we substitute the same statement consistently wherever its letter occurs.</p>
+<p><span id="example-2.4."><strong>Example&nbsp;2.4.</strong></span> Compare <span class="math inline">\(P\to Q\)</span> with <span class="math inline">\(\neg P\lor Q\)</span>:</p>
+<div class="ds-table">
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: center;"><span class="math inline">\(P\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(Q\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(\neg P\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(P\to Q\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(\neg P\lor Q\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(\text{\texttt{T}}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\text{\texttt{T}}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\text{\texttt{F}}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\text{\texttt{T}}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\text{\texttt{T}}\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(\text{\texttt{T}}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\text{\texttt{F}}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\text{\texttt{F}}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\text{\texttt{F}}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\text{\texttt{F}}\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(\text{\texttt{F}}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\text{\texttt{T}}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\text{\texttt{T}}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\text{\texttt{T}}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\text{\texttt{T}}\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(\text{\texttt{F}}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\text{\texttt{F}}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\text{\texttt{T}}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\text{\texttt{T}}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\text{\texttt{T}}\)</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>The final columns agree throughout, so <span class="math inline">\(P\to Q\equiv\neg P\lor Q\)</span>. Saying “Either the requirement is not met, or the promised outcome holds” excludes exactly the failed case <span class="math inline">\(P\)</span> <code>TRUE</code> and <span class="math inline">\(Q\)</span> <code>FALSE</code>. The “or” remains inclusive.</p>
+<p>The symbol <span class="math inline">\(\leftrightarrow\)</span> is a connective within an expression. We can evaluate <span class="math inline">\(P\leftrightarrow Q\)</span> in one particular situation. By contrast, <span class="math inline">\(P\equiv Q\)</span> asserts agreement across all truth assignments. Two expressions are logically equivalent exactly when the biconditional between them is true in every row.</p>
+<p><span id="example-2.5."><strong>Example&nbsp;2.5.</strong></span> Suppose <span class="math inline">\(P\)</span> is <code>TRUE</code> and <span class="math inline">\(Q\)</span> is <code>FALSE</code>. Then <span class="math inline">\(P\lor Q\)</span> and <span class="math inline">\(P\)</span> are both true, so <span class="math inline">\((P\lor Q)\leftrightarrow P\)</span> is true in this situation. However, if <span class="math inline">\(P\)</span> is <code>FALSE</code> and <span class="math inline">\(Q\)</span> is <code>TRUE</code>, then <span class="math inline">\(P\lor Q\)</span> is true while <span class="math inline">\(P\)</span> is false. Their values now differ. Consequently, <span class="math inline">\(P\lor Q\)</span> and <span class="math inline">\(P\)</span> are not logically equivalent.</p>
+<div class="ds-box ds-definition">
+<div id="definition-2.4-tautology-contradiction-and-contingency" class="ds-box-title">
+<p><strong>Definition 2.4: Tautology, contradiction and contingency</strong></p>
+</div>
+<p>A propositional expression is a <strong>tautology</strong> if it is true for every truth assignment, a <strong>contradiction</strong> if it is false for every truth assignment, and <strong>contingent</strong> if it is true for some assignments and false for others.</p>
+</div>
+<p>For example, <span class="math inline">\(P\lor\neg P\)</span> is a tautology: one of <span class="math inline">\(P\)</span> and <span class="math inline">\(\neg P\)</span> is always true. The expression <span class="math inline">\(P\land\neg P\)</span> is a contradiction, because they cannot both be true. The expression <span class="math inline">\(P\to Q\)</span> is contingent: its truth table contains both truth values. One false row does not make a form a contradiction, just as one true row does not make it a tautology; the classification depends on all permitted assignments.</p>
+<p><span id="equivalence-laws."><strong>Equivalence laws.</strong></span> The following laws let us replace an expression by an equivalent one. Parentheses specify the part being replaced; they may not be moved or discarded arbitrarily.</p>
+<div class="ds-table">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 71%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Law</th>
+<th style="text-align: left;">Equivalent expressions</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Double negation</td>
+<td style="text-align: left;"><span class="math inline">\(\neg\neg P\equiv P\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Commutativity</td>
+<td style="text-align: left;"><span class="math inline">\(P\land Q\equiv Q\land P\)</span>; <span class="math inline">\(P\lor Q\equiv Q\lor P\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Associativity</td>
+<td style="text-align: left;"><span class="math inline">\((P\land Q)\land R\equiv P\land(Q\land R)\)</span>;<br>
+<span class="math inline">\((P\lor Q)\lor R\equiv P\lor(Q\lor R)\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Idempotence</td>
+<td style="text-align: left;"><span class="math inline">\(P\land P\equiv P\)</span>; <span class="math inline">\(P\lor P\equiv P\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Distributivity</td>
+<td style="text-align: left;"><span class="math inline">\(P\land(Q\lor R)\equiv(P\land Q)\lor(P\land R)\)</span>;<br>
+<span class="math inline">\(P\lor(Q\land R)\equiv(P\lor Q)\land(P\lor R)\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">De Morgan’s laws</td>
+<td style="text-align: left;"><span class="math inline">\(\neg(P\land Q)\equiv\neg P\lor\neg Q\)</span>;<br>
+<span class="math inline">\(\neg(P\lor Q)\equiv\neg P\land\neg Q\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Implication</td>
+<td style="text-align: left;"><span class="math inline">\(P\to Q\equiv\neg P\lor Q\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Biconditional</td>
+<td style="text-align: left;"><span class="math inline">\(P\leftrightarrow Q\equiv(P\to Q)\land(Q\to P)\)</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>These are laws of classical two-valued logic. They can be checked by complete truth tables, as we did for the implication law. Commutativity changes the order of two components; associativity changes grouping among repeated uses of the same connective. Neither permits changing “and” into “or”. Distributivity explains when changing the outer connective is justified.</p>
+</section>
+<section id="ch2:negation" class="level2">
+<h2 class="anchored" data-anchor-id="ch2:negation">2.4 Negation and rewriting</h2>
+<p>Negation must reverse the truth value of the <em>whole</em> claim. Adding “not” to one convenient word does not necessarily achieve that.</p>
+<p><span id="example-2.6."><strong>Example&nbsp;2.6.</strong></span> Fix one account. Let <span class="math inline">\(P\)</span> mean “the account is verified” and <span class="math inline">\(Q\)</span> mean “the account has a recorded payment”. The claim “It is not the case that the account is both verified and paid” is <span class="math inline">\(\neg(P\land Q)\)</span>. De Morgan’s law gives <span class="math display">\[\neg(P\land Q)\equiv\neg P\lor\neg Q.\]</span> At least one condition fails; both might fail. Replacing the claim by <span class="math inline">\(\neg P\land\neg Q\)</span> would wrongly insist that both fail. For a verified account without a recorded payment, <span class="math inline">\(P\)</span> is true and <span class="math inline">\(Q\)</span> is false. The original negation is true, but <span class="math inline">\(\neg P\land\neg Q\)</span> is false.</p>
+<p>By comparison, “Neither verified nor paid” means <span class="math inline">\(\neg(P\lor Q)\equiv\neg P\land\neg Q\)</span>. Here both conditions must fail.</p>
+<p>The two De Morgan laws can also be read directly. An “and” claim fails when at least one component fails. An inclusive “or” claim fails only when both components fail. This reasoning explains why the connective changes when the negation is moved inside.</p>
+<p><span id="example-2.7."><strong>Example&nbsp;2.7.</strong></span> Let <span class="math inline">\(V\)</span> mean “the account is verified”, <span class="math inline">\(S\)</span> mean “it has a staff pass” and <span class="math inline">\(G\)</span> mean “it has a guest pass”. The eligibility condition is <span class="math inline">\(V\land(S\lor G)\)</span>: verification is required together with at least one kind of pass. Distributivity gives <span class="math display">\[V\land(S\lor G)\equiv(V\land S)\lor(V\land G).\]</span> The right-hand form lists the two qualifying alternatives: verified with a staff pass, or verified with a guest pass. Verification must appear in both alternatives. The shorter-looking expression <span class="math inline">\((V\land S)\lor G\)</span> would allow an unverified guest account to qualify.</p>
+<p>To express failure of the original eligibility condition, we can write <span class="math display">\[\begin{aligned}
+\neg\bigl(V\land(S\lor G)\bigr)
+&amp;\equiv\neg V\lor\neg(S\lor G)
+&amp;&amp;\text{(De Morgan)}\\
+&amp;\equiv\neg V\lor(\neg S\land\neg G)
+&amp;&amp;\text{(De Morgan).}
+\end{aligned}\]</span> Eligibility fails if verification is missing, or if both kinds of pass are missing. Each line replaces the previous condition by one with the same truth value under every assignment.</p>
+<p><span id="example-2.8."><strong>Example&nbsp;2.8.</strong></span> Let <span class="math inline">\(P\)</span> mean “Faith submitted the required file” and <span class="math inline">\(Q\)</span> mean “Faith received an acknowledgement”. The promise is <span class="math inline">\(P\to Q\)</span>. Its failure is <span class="math display">\[\begin{aligned}
+\neg(P\to Q)
+&amp;\equiv\neg(\neg P\lor Q) &amp;&amp;\text{(implication law)}\\
+&amp;\equiv\neg\neg P\land\neg Q &amp;&amp;\text{(De Morgan)}\\
+&amp;\equiv P\land\neg Q &amp;&amp;\text{(double negation).}
+\end{aligned}\]</span> Faith submitted the file <em>and</em> did not receive an acknowledgement. This is exactly the failed row of the implication truth table. The inverse <span class="math inline">\(\neg P\to\neg Q\)</span> is a different claim about what happens when Faith does not submit; it is not the negation of the promise.</p>
+<p>For a biconditional, failure means that the components have different truth values: either <span class="math inline">\(P\)</span> holds without <span class="math inline">\(Q\)</span>, or <span class="math inline">\(Q\)</span> holds without <span class="math inline">\(P\)</span>. Thus <span class="math display">\[\neg(P\leftrightarrow Q)
+\equiv(P\land\neg Q)\lor(\neg P\land Q).\]</span> For example, “The indicator is on if and only if the check passed” fails either when the indicator is on after a failed check, or when it is off after a successful check. Both kinds of mismatch must be included.</p>
+</section>
+<section id="ch2:quantified" class="level2">
+<h2 class="anchored" data-anchor-id="ch2:quantified">2.5 Quantifier negation</h2>
+<p>A universal claim fails when it has a counterexample. An existential claim fails when it has no witness. This gives the formal negation laws corresponding to the checks in Chapter 1.</p>
+<div class="ds-box ds-definition">
+<div id="definition-2.5-negation-laws-for-quantifiers" class="ds-box-title">
+<p><strong>Definition 2.5: Negation laws for quantifiers</strong></p>
+</div>
+<p>For a predicate <span class="math inline">\(P(x)\)</span> on a fixed domain <span class="math inline">\(D\)</span>, <span class="math display">\[\neg\bigl(\forall x\in D\,P(x)\bigr)
+\equiv\exists x\in D\,\neg P(x),\]</span> and <span class="math display">\[\neg\bigl(\exists x\in D\,P(x)\bigr)
+\equiv\forall x\in D\,\neg P(x).\]</span> Negate the condition and switch the quantifier, retaining the domain.</p>
+</div>
+<p>The first equivalence says “not every object has the property” exactly when “at least one object lacks it”. The second says “no object has the property” exactly when “every object lacks it”. This reasoning applies to all permitted elements, rather than treating a quantifier as an extra propositional variable in a truth table. The examples below use nonempty domains.</p>
+<p><span id="example-2.9."><strong>Example&nbsp;2.9.</strong></span> Let <span class="math inline">\(D=\{\text{Alice},\text{Bob},\text{Charlie}\}\)</span> and let <span class="math inline">\(C(x)\)</span> mean “<span class="math inline">\(x\)</span> has completed the practice task”. Suppose Alice and Bob have completed it, but Charlie has not. Then <span class="math display">\[\neg\bigl(\forall x\in D\,C(x)\bigr)
+\equiv\exists x\in D\,\neg C(x)\]</span> is true, with Charlie as the witness on the right. However, <span class="math inline">\(\forall x\in D\,\neg C(x)\)</span> is false, because Alice and Bob have completed the task. One incomplete task refutes “everyone completed”; it does not establish “nobody completed”.</p>
+<p>The negation of “someone completed” would instead be <span class="math inline">\(\forall x\in D\,\neg C(x)\)</span>. These are different starting claims, so their negations should be different too.</p>
+<p>The negation of <span class="math inline">\(\forall n\in\mathbb{N}\,(n\geq4)\)</span> is <span class="math inline">\(\exists n\in\mathbb{N}\,(n&lt;4)\)</span>. We still choose a natural number, and the negation of <span class="math inline">\(n\geq4\)</span> is <span class="math inline">\(n&lt;4\)</span>, not <span class="math inline">\(n\leq4\)</span>. Here <span class="math inline">\(n=0\)</span> is a witness for the negation. The negation of <span class="math inline">\(\exists x\in\mathbb{R}\,(x^2&lt;0)\)</span> is <span class="math inline">\(\forall x\in\mathbb{R}\,(x^2\geq0)\)</span>. Forming the negation and deciding whether it is true are separate tasks; in this second example the existential claim is false and its negation is true.</p>
+<p><span id="example-2.10."><strong>Example&nbsp;2.10.</strong></span> Let <span class="math inline">\(D\)</span> be a set of records. Write <span class="math inline">\(S(x)\)</span> for “<span class="math inline">\(x\)</span> is a student record” and <span class="math inline">\(C(x)\)</span> for “<span class="math inline">\(x\)</span> is complete”. The rule that every student record is complete is <span class="math display">\[\forall x\in D\,\bigl(S(x)\to C(x)\bigr).\]</span> Its negation is obtained in two stages: <span class="math display">\[\begin{aligned}
+\neg\Bigl(\forall x\in D\,(S(x)\to C(x))\Bigr)
+&amp;\equiv\exists x\in D\,\neg(S(x)\to C(x))\\
+&amp;\equiv\exists x\in D\,\bigl(S(x)\land\neg C(x)\bigr).
+\end{aligned}\]</span> First the universal quantifier becomes existential. Then we negate the implication using the law from Section&nbsp;<a href="#ch2:negation">2.4</a>. The result says that some student record is incomplete. An incomplete staff record that is not a student record does not witness this failure, because it does not satisfy <span class="math inline">\(S(x)\)</span>.</p>
+<p>The contrapositive rule would be <span class="math inline">\(\forall x\in D\,(\neg C(x)\to\neg S(x))\)</span>. It retains the universal quantifier and has the same meaning as the original rule. It must not be confused with the existential statement that refutes the rule.</p>
+<p><span id="multiple-quantifiers."><strong>Multiple quantifiers.</strong></span> Negate a statement from the outside in, applying one law at a time. For sets of users <span class="math inline">\(U\)</span> and files <span class="math inline">\(F\)</span>, and the predicate <span class="math inline">\(A(u,f)\)</span> meaning “user <span class="math inline">\(u\)</span> may access file <span class="math inline">\(f\)</span>”, <span class="math display">\[\begin{aligned}
+\neg\Bigl(\forall u\in U\,\exists f\in F\,A(u,f)\Bigr)
+&amp;\equiv\exists u\in U\,\neg\Bigl(\exists f\in F\,A(u,f)\Bigr)\\
+&amp;\equiv\exists u\in U\,\forall f\in F\,\neg A(u,f).
+\end{aligned}\]</span> The original says that each user can access at least one file. Its negation says that there is a user who cannot access <em>any</em> file. Each quantifier changes type, but the order of the variables remains user first, file second.</p>
+<p><span id="example-2.11."><strong>Example&nbsp;2.11.</strong></span> Use the following new data: <span class="math inline">\(U=\{\text{Alice},\text{Bob}\}\)</span>, <span class="math inline">\(F=\{\text{guide},\text{report}\}\)</span>, and these permissions:</p>
+<div class="ds-table">
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th></th>
+<th style="text-align: center;">guide</th>
+<th style="text-align: center;">report</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Alice</td>
+<td style="text-align: center;"><span class="math inline">\(\text{\texttt{T}}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\text{\texttt{F}}\)</span></td>
+</tr>
+<tr class="even">
+<td>Bob</td>
+<td style="text-align: center;"><span class="math inline">\(\text{\texttt{F}}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\text{\texttt{T}}\)</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>The claim <span class="math inline">\(\forall u\in U\,\exists f\in F\,A(u,f)\)</span> is true: Alice can access guide and Bob can access report. Its negation <span class="math inline">\(\exists u\in U\,\forall f\in F\,\neg A(u,f)\)</span> is false, because neither user is denied every file.</p>
+<p>The tempting replacement <span class="math inline">\(\forall u\in U\,\exists f\in F\,\neg A(u,f)\)</span> is true in this same table: each user has an inaccessible file. It therefore cannot be the negation of the original, which is also true. Negating only the predicate while leaving both quantifiers unchanged has produced a different condition.</p>
+<p>For comparison, the negation of “There is one file that every user may access” is <span class="math display">\[\neg\Bigl(\exists f\in F\,\forall u\in U\,A(u,f)\Bigr)
+\equiv\forall f\in F\,\exists u\in U\,\neg A(u,f).\]</span> Every file has at least one user who cannot access it; the user may depend on the file. In the last table, Bob supplies that failure for guide, and Alice supplies it for report. The two quantified negations answer different questions, just as the original claims do.</p>
+</section>
+<section id="ch2:validity" class="level2">
+<h2 class="anchored" data-anchor-id="ch2:validity">2.6 Valid arguments</h2>
+<p>An argument starts with claims that are being assumed and offers a conclusion. We need to check whether those assumptions are enough for that conclusion.</p>
+<div class="ds-box ds-definition">
+<div id="definition-2.6-premises-conclusion-and-validity" class="ds-box-title">
+<p><strong>Definition 2.6: Premises, conclusion and validity</strong></p>
+</div>
+<p>The <strong>premises</strong> are an argument’s stated assumptions. Its <strong>conclusion</strong> is the claim it asks us to infer. An argument form is <strong>valid</strong> if there is no truth assignment in which all its premises are true and its conclusion is false. Such an assignment is a <strong>countervaluation</strong>; finding one establishes invalidity.</p>
+</div>
+<p>Validity concerns the connection between the premises and conclusion. It does not assert that the premises describe the actual situation. An argument is called <strong>sound</strong> when it is valid and its premises are in fact true.</p>
+<p><span id="example-2.12.-truth-table-verification."><strong>Example&nbsp;2.12. Truth-table verification.</strong></span> Consider the argument with premises <span class="math inline">\(P\to Q\)</span> and <span class="math inline">\(P\)</span>, and conclusion <span class="math inline">\(Q\)</span>. This pattern is called <strong>modus ponens</strong>. The extra column below records whether both premises are true together.</p>
+<div class="ds-table">
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: center;"><span class="math inline">\(P\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(Q\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(P\to Q\)</span></th>
+<th style="text-align: center;"><span class="math inline">\((P\to Q)\land P\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(\text{\texttt{T}}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\text{\texttt{T}}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\text{\texttt{T}}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\text{\texttt{T}}\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(\text{\texttt{T}}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\text{\texttt{F}}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\text{\texttt{F}}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\text{\texttt{F}}\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(\text{\texttt{F}}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\text{\texttt{T}}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\text{\texttt{T}}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\text{\texttt{F}}\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(\text{\texttt{F}}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\text{\texttt{F}}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\text{\texttt{T}}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\text{\texttt{F}}\)</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Only the first row makes both premises true, and in that row the conclusion <span class="math inline">\(Q\)</span> is true. No countervaluation exists, so the argument is valid. The second row has a false conclusion, but it does not refute the argument: one premise, <span class="math inline">\(P\to Q\)</span>, is false there.</p>
+<p>If the premises are <span class="math inline">\(A_1,\ldots,A_k\)</span> and the conclusion is <span class="math inline">\(C\)</span>, this test amounts to asking whether <span class="math display">\[(A_1\land\cdots\land A_k)\to C\]</span> is a tautology. It fails exactly in a row where every premise is true and the conclusion is false. An argument with inconsistent premises has no all-true premise row and is valid under this definition, but it cannot be sound: its premises cannot all be true together.</p>
+<p><span id="deduction-rules."><strong>Deduction rules.</strong></span> Each row below is a valid pattern. All listed premises must be available before the conclusion can be used.</p>
+<div class="ds-table">
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Pattern</th>
+<th style="text-align: left;">Premises</th>
+<th style="text-align: left;">Conclusion</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Modus ponens</td>
+<td style="text-align: left;"><span class="math inline">\(P\to Q\)</span>, <span class="math inline">\(P\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(Q\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Modus tollens</td>
+<td style="text-align: left;"><span class="math inline">\(P\to Q\)</span>, <span class="math inline">\(\neg Q\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\neg P\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Chaining implications</td>
+<td style="text-align: left;"><span class="math inline">\(P\to Q\)</span>, <span class="math inline">\(Q\to R\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(P\to R\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Disjunctive syllogism</td>
+<td style="text-align: left;"><span class="math inline">\(P\lor Q\)</span>, <span class="math inline">\(\neg P\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(Q\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Conjunction introduction</td>
+<td style="text-align: left;"><span class="math inline">\(P\)</span>, <span class="math inline">\(Q\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(P\land Q\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Conjunction elimination</td>
+<td style="text-align: left;"><span class="math inline">\(P\land Q\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(P\)</span> (also <span class="math inline">\(Q\)</span>)</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>For the next two examples, fix one data link between two devices. Let <span class="math inline">\(P\)</span> mean “This link uses Wi-Fi” and <span class="math inline">\(Q\)</span> mean “This link uses no data cable between the devices”. Our recurring implication is <span class="math display">\[P\to Q:\quad\text{If this link uses Wi-Fi, it uses no data cable.}\]</span> The claim concerns this particular link. Other parts of the network may still contain cables.</p>
+<p><span id="example-2.13.-modus-ponens."><strong>Example&nbsp;2.13. Modus ponens.</strong></span> Suppose we know both of the following:</p>
+<blockquote class="blockquote">
+<p>If this link uses Wi-Fi, it uses no data cable.<br>
+This link uses Wi-Fi.</p>
+</blockquote>
+<p>We can conclude that this link uses no data cable. In symbols, <span class="math display">\[P\to Q,\qquad P,\qquad\therefore Q.\]</span> Here <span class="math inline">\(\therefore\)</span> means “therefore”. The second premise establishes the condition required by the first. Modus ponens lets us infer its stated consequence.</p>
+<p><span id="example-2.14.-modus-tollens."><strong>Example&nbsp;2.14. Modus tollens.</strong></span> Keep the same rule, but suppose we now know that this link uses a data cable:</p>
+<blockquote class="blockquote">
+<p>If this link uses Wi-Fi, it uses no data cable.<br>
+This link uses a data cable.</p>
+</blockquote>
+<p>The second premise is <span class="math inline">\(\neg Q\)</span>. We conclude that this link does not use Wi-Fi, which is <span class="math inline">\(\neg P\)</span>: <span class="math display">\[P\to Q,\qquad\neg Q,\qquad\therefore\neg P.\]</span> If <span class="math inline">\(P\)</span> were true, the first premise would require <span class="math inline">\(Q\)</span> to be true as well. That is incompatible with the given <span class="math inline">\(\neg Q\)</span>. This is modus tollens.</p>
+<p><span id="example-2.15.-chaining-implications."><strong>Example&nbsp;2.15. Chaining implications.</strong></span> Let <span class="math inline">\(x\in\mathbb{R}\)</span>. We have the two rules</p>
+<blockquote class="blockquote">
+<p>If <span class="math inline">\(x&gt;10\)</span>, then <span class="math inline">\(x&gt;5\)</span>.<br>
+If <span class="math inline">\(x&gt;5\)</span>, then <span class="math inline">\(x&gt;0\)</span>.</p>
+</blockquote>
+<p>Combining them gives “If <span class="math inline">\(x&gt;10\)</span>, then <span class="math inline">\(x&gt;0\)</span>.” The intermediate condition <span class="math inline">\(x&gt;5\)</span> connects the first rule to the second. With <span class="math inline">\(A\)</span> meaning <span class="math inline">\(x&gt;10\)</span>, <span class="math inline">\(B\)</span> meaning <span class="math inline">\(x&gt;5\)</span> and <span class="math inline">\(C\)</span> meaning <span class="math inline">\(x&gt;0\)</span>, the pattern is <span class="math display">\[A\to B,\qquad B\to C,\qquad\therefore A\to C.\]</span> The conclusion is still conditional. We have not been told that <span class="math inline">\(x&gt;10\)</span>, so we cannot conclude that <span class="math inline">\(x&gt;0\)</span> without a further premise.</p>
+<p><span id="example-2.16.-disjunctive-syllogism."><strong>Example&nbsp;2.16. Disjunctive syllogism.</strong></span> Suppose a laptop has a usable Wi-Fi connection or a usable Ethernet connection, possibly both. It has no usable Wi-Fi connection. It must therefore have a usable Ethernet connection.</p>
+<p>Let <span class="math inline">\(W\)</span> mean “The laptop has usable Wi-Fi” and <span class="math inline">\(E\)</span> mean “The laptop has usable Ethernet”. The argument is <span class="math display">\[W\lor E,\qquad\neg W,\qquad\therefore E.\]</span> At least one alternative must hold, and the Wi-Fi alternative has been ruled out. This leaves Ethernet. If instead we knew <span class="math inline">\(W\)</span>, we could not infer <span class="math inline">\(\neg E\)</span>: the inclusive “or” also permits both connections to be usable.</p>
+<p><span id="example-2.17.-conjunction-introduction."><strong>Example&nbsp;2.17. Conjunction introduction.</strong></span> Alice has a laptop. Alice also has a charger. We can combine these two facts into “Alice has a laptop and a charger.” Let <span class="math inline">\(L\)</span> mean “Alice has a laptop” and <span class="math inline">\(C\)</span> mean “Alice has a charger”. Then <span class="math display">\[L,\qquad C,\qquad\therefore L\land C.\]</span> Both components have already been established separately. Conjunction introduction allows us to state them together; either fact on its own would not establish the whole conjunction.</p>
+<p><span id="example-2.18.-conjunction-elimination."><strong>Example&nbsp;2.18. Conjunction elimination.</strong></span> Now suppose the given premise is “Alice has a laptop and a charger.” With the same meanings of <span class="math inline">\(L\)</span> and <span class="math inline">\(C\)</span>, we have <span class="math inline">\(L\land C\)</span>. We may conclude that Alice has a laptop, and we may also conclude that she has a charger: <span class="math display">\[L\land C\ \therefore L,\qquad\text{and}\qquad
+L\land C\ \therefore C.\]</span> An “and” claim requires both components to be true. Each component is therefore available for use on its own in a later step.</p>
+<p><span id="example-2.19."><strong>Example&nbsp;2.19.</strong></span> For one application, let <span class="math inline">\(P\)</span> mean “its identity check is complete”, <span class="math inline">\(Q\)</span> mean “its payment is recorded”, <span class="math inline">\(R\)</span> mean “it is ready for review” and <span class="math inline">\(S\)</span> mean “it is sent to the reviewer”. Suppose the premises are <span class="math display">\[P\land Q,\qquad (P\land Q)\to R,\qquad R\to S.\]</span> The first two premises give <span class="math inline">\(R\)</span> by modus ponens. Combining this result with the third gives <span class="math inline">\(S\)</span> by modus ponens again. Alternatively, chaining the two implications first gives <span class="math inline">\((P\land Q)\to S\)</span>, to which the first premise can be applied.</p>
+<p>If the recorded fact had been <span class="math inline">\(P\lor Q\)</span> instead of <span class="math inline">\(P\land Q\)</span>, the first application would not be justified. A completed identity check without a recorded payment makes the “or” true but does not supply the required “and”. A rule must be applied to the condition it actually requires.</p>
+<p><span id="universal-premises."><strong>Universal premises.</strong></span> A universal premise may supply the conditional needed in a particular case. If <span class="math inline">\(\forall x\in D\,(V(x)\to A(x))\)</span> is a premise and <span class="math inline">\(\text{Alice}\in D\)</span>, it gives <span class="math inline">\(V(\text{Alice})\to A(\text{Alice})\)</span>. Together with <span class="math inline">\(V(\text{Alice})\)</span>, modus ponens yields <span class="math inline">\(A(\text{Alice})\)</span>. Membership in the stated domain is part of this justification. Applying the rule to an object outside <span class="math inline">\(D\)</span> would not be licensed by the universal premise.</p>
+</section>
+<section id="ch2:invalid" class="level2">
+<h2 class="anchored" data-anchor-id="ch2:invalid">2.7 Invalid arguments</h2>
+<p>A conclusion can happen to be true even when an argument for it is invalid. To assess the argument, we examine what its premises require across all possible assignments, rather than checking only the situation we already know. A countervaluation must make every premise true in the same assignment and the conclusion false. Making different premises true in different assignments, or choosing a row with a false premise, does not refute the form.</p>
+<p><span id="example-2.20."><strong>Example&nbsp;2.20.</strong></span> Consider this argument:</p>
+<blockquote class="blockquote">
+<p>If <span class="math inline">\(8&gt;3\)</span>, then <span class="math inline">\(8&gt;1\)</span>. Also, <span class="math inline">\(8&gt;1\)</span>. Therefore <span class="math inline">\(8&gt;3\)</span>.</p>
+</blockquote>
+<p>All three numerical statements are true. Its proposed argument form, however, has premises <span class="math inline">\(P\to Q\)</span> and <span class="math inline">\(Q\)</span>, with conclusion <span class="math inline">\(P\)</span>. Take <span class="math inline">\(P\)</span> <code>FALSE</code> and <span class="math inline">\(Q\)</span> <code>TRUE</code>. Both premises are then true, but the conclusion is false. The form does not guarantee its conclusion, even though this particular numerical conclusion happens to be correct.</p>
+<p><span id="example-2.21.-affirming-the-consequent."><strong>Example&nbsp;2.21. Affirming the consequent.</strong></span> Return to the link between two devices: <span class="math inline">\(P\)</span> means “This link uses Wi-Fi” and <span class="math inline">\(Q\)</span> means “This link uses no data cable between the devices”. The attempted argument is <span class="math display">\[P\to Q,\qquad Q,\qquad\text{therefore }P.\]</span> This failed pattern is called <strong>affirming the consequent</strong>. A countervaluation is <span class="math inline">\(P\)</span> <code>FALSE</code>, <span class="math inline">\(Q\)</span> <code>TRUE</code>:</p>
+<div class="ds-table">
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: center;"><span class="math inline">\(P\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(Q\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(P\to Q\)</span></th>
+<th style="text-align: center;">Conclusion <span class="math inline">\(P\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(\text{\texttt{F}}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\text{\texttt{T}}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\text{\texttt{T}}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\text{\texttt{F}}\)</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>The premise <span class="math inline">\(Q\)</span> is true in this row, as is the conditional. The devices could be communicating using Bluetooth: the link uses no data cable, but it does not use Wi-Fi. The absence of a cable therefore does not establish Wi-Fi. Replacing the original premise by a biconditional would supply the missing converse, but that would be an additional assumption, not a deduction from the given rule.</p>
+<div class="ds-box ds-python">
+<div id="python-non-examinable" class="ds-box-title">
+<p><strong>Python (non-examinable)</strong></p>
+</div>
+<p>To test the argument <span class="math inline">\(P\to Q,\ Q,\ \therefore P\)</span>, let <code>p</code> and <code>q</code> represent the truth values of <span class="math inline">\(P\)</span> and <span class="math inline">\(Q\)</span>. The two <code>for</code> loops consider <code>True</code> and <code>False</code> for each name, listing every assignment. The assignment to <code>premise</code> stores the truth value of <span class="math inline">\(P\to Q\)</span>. An <code>if</code> statement runs its indented line only when its condition is true: here, when both premises hold and the conclusion <span class="math inline">\(P\)</span> fails.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> p <span class="kw">in</span> [<span class="va">True</span>, <span class="va">False</span>]:</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> q <span class="kw">in</span> [<span class="va">True</span>, <span class="va">False</span>]:</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>        premise <span class="op">=</span> (<span class="kw">not</span> p) <span class="kw">or</span> q</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> premise <span class="kw">and</span> q <span class="kw">and</span> <span class="kw">not</span> p:</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>            <span class="bu">print</span>(p, q)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><strong>Output.</strong></p>
+<pre class="text"><code>False True</code></pre>
+<p>The output gives <span class="math inline">\(P\)</span> false and <span class="math inline">\(Q\)</span> true. Both premises hold while the conclusion <span class="math inline">\(P\)</span> fails, so this countervaluation establishes invalidity.</p>
+</div>
+<p><img src="../../../teaching/notes/assets/chapter-02/01-implication-and-converse.webp" class="ds-note-image img-fluid" loading="lazy" decoding="async" alt="An implication and its converse compared using connections and cables."></p>
+<p>Wi-Fi links lie within the no-data-cable case; a Bluetooth link satisfies the consequent without satisfying the antecedent.</p>
+<p><span id="example-2.22.-denying-the-antecedent."><strong>Example&nbsp;2.22. Denying the antecedent.</strong></span> Using the same meanings, suppose someone argues <span class="math display">\[P\to Q,\qquad\neg P,\qquad\text{therefore }\neg Q.\]</span> This is <strong>denying the antecedent</strong>. Again set <span class="math inline">\(P\)</span> <code>FALSE</code> and <span class="math inline">\(Q\)</span> <code>TRUE</code>. The conditional is true and <span class="math inline">\(\neg P\)</span> is true, while the conclusion <span class="math inline">\(\neg Q\)</span> is false. A link that does not use Wi-Fi need not use a data cable: a Bluetooth link again gives a counterexample.</p>
+<p>Compare this with modus tollens: that valid pattern starts from <span class="math inline">\(\neg Q\)</span> and concludes <span class="math inline">\(\neg P\)</span>. Negating both letters without reversing their roles does not reproduce the same argument.</p>
+</section>
+<section id="ch2:exercises" class="level2">
+<h2 class="anchored" data-anchor-id="ch2:exercises">2.8 Exercises</h2>
+<div class="ds-exercises" style="--ds-chapter: '2';">
+<ol type="1">
+<li><p><span id="ch2ex:conditional-language" data-label="ch2ex:conditional-language"></span> Fix one request and a recorded time. Let <span class="math inline">\(P\)</span> mean “The request is verified” and <span class="math inline">\(Q\)</span> mean “The request is authorised”. Translate each claim into symbols.</p>
+<ol type="a">
+<li><p>If the request is verified, then it is authorised.</p></li>
+<li><p>The request is verified only if it is authorised.</p></li>
+<li><p>The request is verified if it is authorised.</p></li>
+<li><p>Verification is sufficient for authorisation.</p></li>
+<li><p>Verification is necessary for authorisation.</p></li>
+<li><p>The request is authorised if and only if it is verified.</p></li>
+</ol></li>
+<li><p><span id="ch2ex:release-audit" data-label="ch2ex:release-audit"></span> For each saved file, let <span class="math inline">\(C\)</span> mean “The file has been checked” and <span class="math inline">\(R\)</span> mean “The file has been released”. The following are the recorded values.</p>
+<div class="ds-table">
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: left;">File</th>
+<th style="text-align: center;"><span class="math inline">\(C\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(R\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">alpha</td>
+<td style="text-align: center;"><span class="math inline">\(\text{\texttt{T}}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\text{\texttt{T}}\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">beta</td>
+<td style="text-align: center;"><span class="math inline">\(\text{\texttt{T}}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\text{\texttt{F}}\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">gamma</td>
+<td style="text-align: center;"><span class="math inline">\(\text{\texttt{F}}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\text{\texttt{T}}\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">delta</td>
+<td style="text-align: center;"><span class="math inline">\(\text{\texttt{F}}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\text{\texttt{F}}\)</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+<ol type="a">
+<li><p>Write “A file is released only if it has been checked” symbolically.</p></li>
+<li><p>Which file violates that rule? Explain the failed condition.</p></li>
+<li><p>Does the rule require every checked file to be released? Use one row of the table to explain your answer.</p></li>
+</ol></li>
+<li><p><span id="ch2ex:related-conditionals" data-label="ch2ex:related-conditionals"></span> Let <span class="math inline">\(D=\{0,1,2,3,4,5\}\)</span>. Consider the claim <span class="math inline">\(\forall n\in D\,(n&gt;4\to n&gt;2)\)</span>.</p>
+<ol type="a">
+<li><p>Write its converse, inverse and contrapositive, retaining the domain.</p></li>
+<li><p>Decide which of the original claim and the three claims in part (a) are true. Give a counterexample to each false claim.</p></li>
+<li><p>Negate the original claim, leaving no negation outside a quantifier or implication. Is this negation the same claim as the contrapositive?</p></li>
+</ol></li>
+<li><p><span id="ch2ex:criterion" data-label="ch2ex:criterion"></span> Let <span class="math inline">\(R\)</span> mean “Bob is registered” and <span class="math inline">\(L\)</span> mean “Bob may enter the laboratory”. Suppose the stated rule is <span class="math inline">\(R\to L\)</span>.</p>
+<ol type="a">
+<li><p>Which condition is sufficient for the other, and which is necessary?</p></li>
+<li><p>If <span class="math inline">\(L\)</span> is true, must <span class="math inline">\(R\)</span> be true? Give truth values showing what the stated rule allows.</p></li>
+<li><p>What additional conditional would turn the rule into <span class="math inline">\(R\leftrightarrow L\)</span>?</p></li>
+<li><p>If both <span class="math inline">\(R\)</span> and <span class="math inline">\(L\)</span> are false, does the biconditional in part (c) hold? Explain using its two conditional directions.</p></li>
+</ol></li>
+<li><p><span id="ch2ex:propositional-negations" data-label="ch2ex:propositional-negations"></span> Negate each formula. Give an equivalent formula in which every negation applies directly to a propositional variable.</p>
+<ol type="a">
+<li><p><span class="math inline">\(P\land Q\)</span>.</p></li>
+<li><p><span class="math inline">\(P\lor\neg Q\)</span>.</p></li>
+<li><p><span class="math inline">\(P\to Q\)</span>.</p></li>
+<li><p><span class="math inline">\((P\land Q)\to R\)</span>.</p></li>
+</ol></li>
+<li><p><span id="ch2ex:classification" data-label="ch2ex:classification"></span> Classify each formula as a tautology, a contradiction or contingent. For each contingent formula, give one assignment making it true and one making it false.</p>
+<ol type="a">
+<li><p><span class="math inline">\(P\lor\neg P\)</span>.</p></li>
+<li><p><span class="math inline">\(P\land\neg P\)</span>.</p></li>
+<li><p><span class="math inline">\((P\to Q)\land P\)</span>.</p></li>
+<li><p><span class="math inline">\((P\land Q)\to P\)</span>.</p></li>
+</ol></li>
+<li><p><span id="ch2ex:equivalence-tables" data-label="ch2ex:equivalence-tables"></span> For each pair, construct a truth table with a column for each complete formula, then decide whether the formulas are logically equivalent.</p>
+<ol type="a">
+<li><p><span class="math inline">\(P\to Q\)</span> and <span class="math inline">\(\neg Q\to\neg P\)</span>.</p></li>
+<li><p><span class="math inline">\(P\to Q\)</span> and <span class="math inline">\(Q\to P\)</span>.</p></li>
+</ol></li>
+<li><p><span id="ch2ex:non-equivalence" data-label="ch2ex:non-equivalence"></span> For each pair, give one assignment of truth values making the formulas different, and evaluate both formulas on that assignment.</p>
+<ol type="a">
+<li><p><span class="math inline">\(\neg(P\land Q)\)</span> and <span class="math inline">\(\neg P\land\neg Q\)</span>.</p></li>
+<li><p><span class="math inline">\(P\lor(Q\land R)\)</span> and <span class="math inline">\((P\lor Q)\land R\)</span>.</p></li>
+<li><p><span class="math inline">\(P\to Q\)</span> and <span class="math inline">\(\neg P\to\neg Q\)</span>.</p></li>
+</ol></li>
+<li><p><span id="ch2ex:equivalence-chains" data-label="ch2ex:equivalence-chains"></span> Show each equivalence by a short chain of equivalent formulas. Give the reason for each substantive step.</p>
+<ol type="a">
+<li><p><span class="math inline">\(\neg(P\to\neg Q)\equiv P\land Q\)</span>.</p></li>
+<li><p><span class="math inline">\(\neg(\neg P\lor Q)\lor(P\land R)
+\equiv P\land(\neg Q\lor R)\)</span>.</p></li>
+</ol></li>
+<li><p><span id="ch2ex:law-reasons" data-label="ch2ex:law-reasons"></span> Supply a justification for each of the three equivalence steps: <span class="math display">\[\begin{aligned}
+\neg\bigl(P\land(Q\lor R)\bigr)
+&amp;\equiv\neg P\lor\neg(Q\lor R)\\
+&amp;\equiv\neg P\lor(\neg Q\land\neg R)\\
+&amp;\equiv(\neg P\lor\neg Q)\land(\neg P\lor\neg R).
+\end{aligned}\]</span></p></li>
+<li><p><span id="ch2ex:quantifier-negations" data-label="ch2ex:quantifier-negations"></span> Write the negation of each claim, with explicit domains and no negation outside a quantifier. Simplify the numerical conditions as well.</p>
+<ol type="a">
+<li><p><span class="math inline">\(\forall n\in\mathbb{Z}\,(n\geq-2)\)</span>.</p></li>
+<li><p><span class="math inline">\(\exists n\in\mathbb{Z}\,(n^2=3)\)</span>.</p></li>
+<li><p><span class="math inline">\(\forall x\in\mathbb{R}\,(x&lt;1\lor x&gt;4)\)</span>.</p></li>
+<li><p><span class="math inline">\(\exists n\in\mathbb{N}\,(n&gt;2\land n&lt;5)\)</span>.</p></li>
+</ol></li>
+<li><p><span id="ch2ex:record-negations" data-label="ch2ex:record-negations"></span> Let <span class="math inline">\(D\)</span> be a set of records. Let <span class="math inline">\(S(r)\)</span> mean “<span class="math inline">\(r\)</span> is a student record” and <span class="math inline">\(C(r)\)</span> mean “<span class="math inline">\(r\)</span> is complete”.</p>
+<ol type="a">
+<li><p>Negate <span class="math inline">\(\forall r\in D\,(S(r)\to C(r))\)</span> and express the result in English.</p></li>
+<li><p>Negate <span class="math inline">\(\exists r\in D\,(S(r)\land C(r))\)</span> and express the result in English.</p></li>
+<li><p>Hannah proposes <span class="math inline">\(\forall r\in D\,(S(r)\to\neg C(r))\)</span> as the answer to part (a). Give a two-record example in which your answer to part (a) is true but Hannah’s proposed answer is false.</p></li>
+</ol></li>
+<li><p><span id="ch2ex:permission-negations" data-label="ch2ex:permission-negations"></span> For this exercise, use the following new permission data. Let <span class="math inline">\(U=\{\text{Alice},\text{Bob},\text{Grace}\}\)</span> and <span class="math inline">\(F=\{\text{guide},\text{report},\text{ledger}\}\)</span>. Let <span class="math inline">\(A(u,f)\)</span> mean “user <span class="math inline">\(u\)</span> may access file <span class="math inline">\(f\)</span>”. The table lists all permissions: <span class="math inline">\(1\)</span> means permitted and <span class="math inline">\(0\)</span> means not permitted.</p>
+<div class="ds-table">
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th></th>
+<th style="text-align: center;">guide</th>
+<th style="text-align: center;">report</th>
+<th style="text-align: center;">ledger</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Alice</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">0</td>
+</tr>
+<tr class="even">
+<td>Bob</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">0</td>
+</tr>
+<tr class="odd">
+<td>Grace</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+</tr>
+</tbody>
+</table>
+</div>
+<ol type="a">
+<li><p>Negate <span class="math inline">\(\forall u\in U\,\exists f\in F\,A(u,f)\)</span>, with no negation outside a quantifier. Express your answer in English.</p></li>
+<li><p>Do the same for <span class="math inline">\(\exists f\in F\,\forall u\in U\,A(u,f)\)</span>.</p></li>
+<li><p>Use the table to decide the truth value of each negated claim. Explain which users or files establish your answers.</p></li>
+</ol></li>
+<li><p><span id="ch2ex:truth-validity" data-label="ch2ex:truth-validity"></span> For each argument, identify its propositional form and decide whether that form is valid. Separately, state the actual truth values of its premises and conclusion. In judging the form, treat its component statements as propositional variables.</p>
+<ol type="a">
+<li><p>If <span class="math inline">\(3\)</span> is even, then <span class="math inline">\(4\)</span> is even. The number <span class="math inline">\(3\)</span> is even. Therefore <span class="math inline">\(4\)</span> is even.</p></li>
+<li><p>If <span class="math inline">\(4\)</span> is even, then <span class="math inline">\(4^2\)</span> is even. The number <span class="math inline">\(4^2\)</span> is even. Therefore <span class="math inline">\(4\)</span> is even.</p></li>
+</ol></li>
+<li><p><span id="ch2ex:argument-forms" data-label="ch2ex:argument-forms"></span> Decide whether each argument form is valid. Name a rule that justifies a valid form. For an invalid form, give truth values making every premise true and the conclusion false.</p>
+<ol type="a">
+<li><p>Premises: <span class="math inline">\(P\to Q\)</span>, <span class="math inline">\(P\)</span>. Conclusion: <span class="math inline">\(Q\)</span>.</p></li>
+<li><p>Premises: <span class="math inline">\(P\to Q\)</span>, <span class="math inline">\(\neg Q\)</span>. Conclusion: <span class="math inline">\(\neg P\)</span>.</p></li>
+<li><p>Premises: <span class="math inline">\(P\to Q\)</span>, <span class="math inline">\(Q\)</span>. Conclusion: <span class="math inline">\(P\)</span>.</p></li>
+<li><p>Premises: <span class="math inline">\(P\to Q\)</span>, <span class="math inline">\(\neg P\)</span>. Conclusion: <span class="math inline">\(\neg Q\)</span>.</p></li>
+</ol></li>
+<li><p><span id="ch2ex:chaining" data-label="ch2ex:chaining"></span> For one fixed file, let <span class="math inline">\(C\)</span> mean “The file has been checked”, <span class="math inline">\(L\)</span> mean “The file has been logged”, and <span class="math inline">\(A\)</span> mean “The file has been archived”. Assume <span class="math inline">\(C\to L\)</span> and <span class="math inline">\(L\to A\)</span>.</p>
+<ol type="a">
+<li><p>If <span class="math inline">\(\neg A\)</span> is also known, derive <span class="math inline">\(\neg C\)</span> through an intermediate conclusion. Justify each step.</p></li>
+<li><p>If instead <span class="math inline">\(\neg C\)</span> is known, may we conclude <span class="math inline">\(\neg A\)</span>? Either justify the inference or give truth values satisfying the premises and refuting the conclusion.</p></li>
+</ol></li>
+<li><p><span id="ch2ex:disjunctive-reasoning" data-label="ch2ex:disjunctive-reasoning"></span> Let <span class="math inline">\(P\)</span> mean “A usable primary backup exists” and <span class="math inline">\(M\)</span> mean “A usable mirror backup exists”. The only general requirement is <span class="math inline">\(P\lor M\)</span>.</p>
+<ol type="a">
+<li><p>If <span class="math inline">\(\neg P\)</span> is known, what follows about <span class="math inline">\(M\)</span>? Name the inference rule.</p></li>
+<li><p>If <span class="math inline">\(P\)</span> is known instead, can we infer <span class="math inline">\(\neg M\)</span>? Explain with a truth assignment that respects the general requirement.</p></li>
+</ol></li>
+<li><p><span id="ch2ex:repair-argument" data-label="ch2ex:repair-argument"></span> Let <span class="math inline">\(C\)</span> mean “The request was checked” and <span class="math inline">\(L\)</span> mean “The request was logged”. A classmate argues: “<span class="math inline">\(C\to L\)</span>; <span class="math inline">\(L\)</span>; therefore <span class="math inline">\(C\)</span>.”</p>
+<ol type="a">
+<li><p>Identify the invalid form and give a countervaluation.</p></li>
+<li><p>Suppose the intended policy actually says that a request is logged if and only if it was checked. Write the two conditional directions of that policy, and explain how they now justify <span class="math inline">\(C\)</span> from <span class="math inline">\(L\)</span>.</p></li>
+</ol></li>
+<li><p><span id="ch2ex:integrated-policy" data-label="ch2ex:integrated-policy"></span> Let <span class="math inline">\(U=\{\text{Alice},\text{Bob},\text{Grace}\}\)</span>. For <span class="math inline">\(u\in U\)</span>, let <span class="math inline">\(R(u)\)</span> mean “<span class="math inline">\(u\)</span> is registered”, <span class="math inline">\(C(u)\)</span> mean “<span class="math inline">\(u\)</span> completed the practical”, and <span class="math inline">\(A(u)\)</span> mean “<span class="math inline">\(u\)</span> is permitted to enter”. The policy is <span class="math display">\[\forall u\in U\,\bigl(A(u)\leftrightarrow(R(u)\land C(u))\bigr).\]</span> The known facts are <span class="math inline">\(A(\text{Alice})\)</span>, <span class="math inline">\(\neg C(\text{Bob})\)</span> and <span class="math inline">\(R(\text{Grace})\)</span>.</p>
+<ol type="a">
+<li><p>What follows about Alice’s registration and completion of the practical?</p></li>
+<li><p>What follows about Bob’s permission to enter? Identify the necessary condition that determines your answer.</p></li>
+<li><p>Do the known facts settle whether Grace may enter? If not, describe two possibilities for her record, each consistent with the policy and the facts.</p></li>
+<li><p>Negate “Every registered user is permitted to enter”, first writing the claim and then its negation symbolically with domain <span class="math inline">\(U\)</span>.</p></li>
+<li><p>Do the known facts settle whether “Every registered user is permitted to enter” is true? If not, complete the unspecified facts in two ways: one in which that claim is true and one in which it is false, while retaining the policy and every known fact.</p></li>
+</ol></li>
+</ol>
+</div>
+<div class="ds-chapter-navigation">
+<p><a href="../../../teaching/notes/chapter-01/">← Chapter 1</a> · <a href="../../../teaching/notes/chapter-03/">Chapter 3 →</a></p>
+</div>
+
+
+</section>
+
+<a href="#page-top" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
+<script>
+  (() => {
+    const main = document.getElementById("quarto-document-content");
+    const skipLink = document.querySelector(".skip-link");
+
+    if (skipLink && main) {
+      skipLink.addEventListener("click", () => {
+        window.requestAnimationFrame(() => main.focus({ preventScroll: true }));
+      });
+    }
+  })();
+</script>
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/rjnieto\.com");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>© 2026 RJ Nieto</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+<p>Built with Quarto</p>
+</div>
+  </div>
+</footer>
+
+
+
+
+</body></html>

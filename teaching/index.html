@@ -6,7 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="description" content="Lecture notes, class schedule, assessment deadlines and course policies for IT 104: Discrete Mathematics at Bulacan State University’s Bustos Campus.">
+<meta name="description" content="Lecture notes and class announcements for IT 104: Discrete Mathematics at Bulacan State University’s Bustos Campus.">
 
 <title>Discrete Mathematics – RJ Nieto</title>
 <style>
@@ -44,10 +44,10 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-b85bc7c33db8c58e0ec93c3465666fed.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-b33b9b69f4c5fb4494f9449cceaef590.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-68e913143d7006db5355610df9e4aed5.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -106,43 +106,20 @@ ul.task-list li input[type="checkbox"] {
   ]
 }
 </script>
+<link rel="preload" href="../assets/fonts/ibm-plex-sans/IBMPlexSans-Roman.woff2" as="font" type="font/woff2" crossorigin="">
+<script defer="" src="../assets/js/home-research-background.js"></script>
+<script defer="" src="../assets/js/discrete-notes-layout.js"></script>
 <meta name="robots" content="index, follow, max-image-preview:large">
 <meta property="og:url" content="https://rjnieto.com/teaching/">
 <meta property="og:type" content="article">
+<script src="../assets/js/discrete-course-redirect.js"></script>
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 <link rel="stylesheet" href="../styles.css">
+<link rel="stylesheet" href="../assets/css/site-typography.css">
+<link rel="stylesheet" href="../assets/css/home-research-background.css">
 <meta property="og:title" content="Discrete Mathematics – RJ Nieto">
-<meta property="og:description" content="Lecture notes, class schedule, assessment deadlines and course policies for IT 104: Discrete Mathematics at Bulacan State University’s Bustos Campus.">
+<meta property="og:description" content="Lecture notes and class announcements for IT 104: Discrete Mathematics at Bulacan State University’s Bustos Campus.">
 <meta property="og:image" content="https://rjnieto.com/assets/images/discrete-math-feature.png">
 <meta property="og:site_name" content="RJ Nieto">
 <meta property="og:locale" content="en_GB">
@@ -150,7 +127,7 @@ window.Quarto = {
 <meta property="og:image:width" content="1672">
 <meta property="og:image:alt" content="Blue, teal and gold mathematical sculptures combining logical paths, sets, graphs, induction steps, modular rings, counting patterns and recursive trees">
 <meta name="twitter:title" content="Discrete Mathematics – RJ Nieto">
-<meta name="twitter:description" content="Lecture notes, class schedule, assessment deadlines and course policies for IT 104: Discrete Mathematics at Bulacan State University’s Bustos Campus.">
+<meta name="twitter:description" content="Lecture notes and class announcements for IT 104: Discrete Mathematics at Bulacan State University’s Bustos Campus.">
 <meta name="twitter:image" content="https://rjnieto.com/assets/images/discrete-math-feature.png">
 <meta name="twitter:creator" content="@rjosephnieto">
 <meta name="twitter:site" content="@rjosephnieto">
@@ -216,21 +193,7 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#logistics" id="toc-logistics" class="nav-link active" data-scroll-target="#logistics">Course information</a>
-  <ul class="collapse">
-  <li><a href="#no-class-saturdays" id="toc-no-class-saturdays" class="nav-link" data-scroll-target="#no-class-saturdays">No-class Saturdays</a></li>
-  </ul></li>
-  <li><a href="#course-outline" id="toc-course-outline" class="nav-link" data-scroll-target="#course-outline">Course outline and printable lecture notes</a></li>
-  <li><a href="#class-format" id="toc-class-format" class="nav-link" data-scroll-target="#class-format">Class format</a></li>
-  <li><a href="#assessment" id="toc-assessment" class="nav-link" data-scroll-target="#assessment">Assessment</a>
-  <ul class="collapse">
-  <li><a href="#assessment-dates" id="toc-assessment-dates" class="nav-link" data-scroll-target="#assessment-dates">Assessment dates</a></li>
-  <li><a href="#mathematical-corrections" id="toc-mathematical-corrections" class="nav-link" data-scroll-target="#mathematical-corrections">Bonus for Mathematical Corrections</a></li>
-  <li><a href="#final-examination-exemption" id="toc-final-examination-exemption" class="nav-link" data-scroll-target="#final-examination-exemption">Final examination exemption</a></li>
-  </ul></li>
-  <li><a href="#problem-sheets" id="toc-problem-sheets" class="nav-link" data-scroll-target="#problem-sheets">Problem sets</a></li>
-  <li><a href="#course-policies" id="toc-course-policies" class="nav-link" data-scroll-target="#course-policies">Course policies</a></li>
-  <li><a href="#about-me" id="toc-about-me" class="nav-link" data-scroll-target="#about-me">About me</a></li>
+  <li><a href="#course-outline" id="toc-course-outline" class="nav-link active" data-scroll-target="#course-outline">Lecture Notes</a></li>
   </ul>
 </nav>
     </div>
@@ -257,22 +220,13 @@ window.Quarto = {
 
 
 <p><img src="../assets/images/discrete-math-feature.png" style="width:100%; height:auto;" alt="Blue, teal and gold mathematical sculptures combining logical paths, sets, graphs, induction steps, modular rings, counting patterns and recursive trees" width="1672" height="941"></p>
-<section id="logistics" class="level2">
-<h2 class="anchored" data-anchor-id="logistics">Course information</h2>
-<p><strong>IT 104</strong> · 2nd Semester, A.Y. ’26 – ’27</p>
-<ul>
-<li><strong>Instructor:</strong> Rey Joseph Nieto.</li>
-<li><strong>Email:</strong> reyjoseph [dot] nieto [at] bulsu [dot] edu [dot] ph</li>
-<li><strong>Last day to drop subjects:</strong> 22 January 2027.</li>
-<li><strong>Assumed background:</strong> completion of, or familiarity with, <em>Mathematics in the Modern World</em> (MMW).</li>
-</ul>
-<div class="callout callout-style-default callout-important callout-titled" title="First meeting: 28 November 2026">
+<div id="announcements" class="callout callout-style-default callout-important callout-titled" title="Announcements">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Important</span>First meeting: 28 November 2026
+<span class="screen-reader-only">Important</span>Announcements
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -284,469 +238,210 @@ window.Quarto = {
 </ul>
 </div>
 </div>
-<section id="no-class-saturdays" class="level3">
-<h3 class="anchored" data-anchor-id="no-class-saturdays">No-class Saturdays</h3>
+<div class="discrete-chapter-list">
+<div class="discrete-chapter">
+<p><a href="../teaching/changelog/" class="discrete-chapter-thumbnail" aria-label="Open Changelog"><img src="bulsu/discrete-math/images/thumbnails/changelog.webp" class="nolightbox" loading="lazy" decoding="async" alt="" width="512" height="512"></a></p>
+<section id="course-changelog" class="level2 unlisted discrete-chapter-details">
+<h2 class="unlisted anchored" data-anchor-id="course-changelog"><a href="../teaching/changelog/">Changelog</a></h2>
 <ul>
-<li><strong>21 November 2026:</strong> no face-to-face class; Chapter 1 is assigned for self-study.</li>
-<li><strong>26 December 2026:</strong> Christmas break.</li>
-<li><strong>2 January 2027:</strong> Christmas break.</li>
-<li><strong>23 January 2027:</strong> First Philippine Republic anniversary (assumed holiday).</li>
-<li><strong>6 February 2027:</strong> Chinese New Year.</li>
-<li><strong>27 March 2027:</strong> Black Saturday.</li>
+<li>Updates to the course page.</li>
+<li>Revisions to the lecture notes.</li>
 </ul>
+<p><a href="../teaching/changelog/" class="discrete-chapter-pdf btn btn-outline-primary btn-sm" aria-label="View the Discrete Mathematics changelog">View changelog</a></p>
 </section>
+</div>
+<div class="discrete-chapter">
+<p><a href="../teaching/logistics/" class="discrete-chapter-thumbnail" aria-label="Open Logistics"><img src="bulsu/discrete-math/images/thumbnails/logistics.webp" class="nolightbox" loading="lazy" decoding="async" alt="" width="512" height="512"></a></p>
+<section id="course-logistics" class="level2 unlisted discrete-chapter-details">
+<h2 class="unlisted anchored" data-anchor-id="course-logistics"><a href="../teaching/logistics/">Logistics</a></h2>
+<ul>
+<li>Class timetable and arrangements.</li>
+<li>Assessment and deadlines.</li>
+<li>Course policies.</li>
+</ul>
+<p><a href="../teaching/logistics/" class="discrete-chapter-pdf btn btn-outline-primary btn-sm" aria-label="View Discrete Mathematics logistics">View logistics</a></p>
 </section>
+</div>
+</div>
 <section id="course-outline" class="level2">
-<h2 class="anchored" data-anchor-id="course-outline">Course outline and printable lecture notes</h2>
-<ul>
-<li>I have planned twelve self-contained chapters across thirteen teaching weeks, including the opening self-study week, to allow for class suspensions and catch-up work. Chapter numbers match the numbered teaching weeks.</li>
-<li>If we stay on schedule, we may also discuss introductory automata theory and mathematical ways of describing computer programs and their behaviour.</li>
-<li>The notes include <strong>Python coding examples</strong>, all <strong>non-examinable</strong>, with their code, explanations and output contained in separate labelled boxes.</li>
-<li>There are no coding assignments; pseudocode may be used.</li>
-</ul>
+<h2 class="anchored" data-anchor-id="course-outline">Lecture Notes</h2>
 <div class="discrete-chapter-list">
 <div class="discrete-chapter">
 <p><a href="bulsu/discrete-math/lecture-notes/chapter_00.pdf" class="discrete-chapter-thumbnail" aria-label="Open Introduction (PDF)"><img src="bulsu/discrete-math/images/thumbnails/chapter_00.webp" class="nolightbox" loading="lazy" decoding="async" alt="" width="512" height="512"></a></p>
 <section id="chapter-00" class="level3 unlisted discrete-chapter-details">
-<h3 class="unlisted anchored" data-anchor-id="chapter-00"><a href="bulsu/discrete-math/lecture-notes/chapter_00.pdf">Introduction</a></h3>
+<h3 class="unlisted anchored" data-anchor-id="chapter-00"><a href="../teaching/notes/chapter-00/">Introduction</a></h3>
 <p><span class="discrete-chapter-date">Read before <time datetime="2026-11-28">28 November 2026</time></span></p>
 <ul>
 <li>Discrete mathematics</li>
 <li>Using the notes</li>
-<li>Course outline</li>
 <li>Abstraction and computing</li>
 </ul>
-<p><a href="bulsu/discrete-math/lecture-notes/chapter_00.pdf" class="discrete-chapter-pdf btn btn-outline-primary btn-sm" aria-label="Download Introduction (PDF)">Download PDF</a></p>
+<p><a href="../teaching/notes/chapter-00/" class="discrete-chapter-html btn btn-outline-primary btn-sm" aria-label="Read Introduction online">HTML</a> <a href="bulsu/discrete-math/lecture-notes/chapter_00.pdf" class="discrete-chapter-pdf btn btn-primary btn-sm" aria-label="Download Introduction (PDF)">PDF</a></p>
 </section>
 </div>
 <div class="discrete-chapter">
 <p><a href="bulsu/discrete-math/lecture-notes/chapter_01.pdf" class="discrete-chapter-thumbnail" aria-label="Open Chapter 1: Statements and quantifiers (PDF)"><img src="bulsu/discrete-math/images/thumbnails/chapter_01.webp" class="nolightbox" loading="lazy" decoding="async" alt="" width="512" height="512"></a></p>
 <section id="chapter-01" class="level3 unlisted discrete-chapter-details">
-<h3 class="unlisted anchored" data-anchor-id="chapter-01"><a href="bulsu/discrete-math/lecture-notes/chapter_01.pdf">Chapter 1: Statements and quantifiers</a></h3>
+<h3 class="unlisted anchored" data-anchor-id="chapter-01"><a href="../teaching/notes/chapter-01/">Chapter 1: Statements and quantifiers</a></h3>
 <p><span class="discrete-chapter-date"><time datetime="2026-11-21">21 November 2026</time> · Self-study.</span></p>
 <ul>
-<li>Sets and notation</li>
-<li>Functions</li>
-<li>Expressions and statements</li>
-<li>Compound statements</li>
-<li>Predicates and domains</li>
-<li>Quantifiers</li>
+<li>Statements and connectives</li>
+<li>Predicates and quantifiers</li>
 <li>Witnesses and counterexamples</li>
-<li>Quantifier order</li>
 </ul>
-<p><a href="bulsu/discrete-math/lecture-notes/chapter_01.pdf" class="discrete-chapter-pdf btn btn-outline-primary btn-sm" aria-label="Download Chapter 1: Statements and quantifiers (PDF)">Download PDF</a></p>
+<p><a href="../teaching/notes/chapter-01/" class="discrete-chapter-html btn btn-outline-primary btn-sm" aria-label="Read Chapter 1 online">HTML</a> <a href="bulsu/discrete-math/lecture-notes/chapter_01.pdf" class="discrete-chapter-pdf btn btn-primary btn-sm" aria-label="Download Chapter 1: Statements and quantifiers (PDF)">PDF</a></p>
 </section>
 </div>
 <div class="discrete-chapter">
 <p><a href="bulsu/discrete-math/lecture-notes/chapter_02.pdf" class="discrete-chapter-thumbnail" aria-label="Open Chapter 2: Propositional logic (PDF)"><img src="bulsu/discrete-math/images/thumbnails/chapter_02.webp" class="nolightbox" loading="lazy" decoding="async" alt="" width="512" height="512"></a></p>
 <section id="chapter-02" class="level3 unlisted discrete-chapter-details">
-<h3 class="unlisted anchored" data-anchor-id="chapter-02"><a href="bulsu/discrete-math/lecture-notes/chapter_02.pdf">Chapter 2: Propositional logic</a></h3>
+<h3 class="unlisted anchored" data-anchor-id="chapter-02"><a href="../teaching/notes/chapter-02/">Chapter 2: Propositional logic</a></h3>
 <p><span class="discrete-chapter-date"><time datetime="2026-11-28">28 November 2026</time></span></p>
 <ul>
-<li>Conditional rules</li>
-<li>Converse, inverse and contrapositive</li>
-<li>Logical equivalence</li>
-<li>Negation and rewriting</li>
-<li>Quantifier negation</li>
-<li>Valid arguments</li>
-<li>Invalid arguments</li>
+<li>Implication and contrapositive</li>
+<li>Logical equivalence and negation</li>
+<li>Valid and invalid arguments</li>
 </ul>
-<p><a href="bulsu/discrete-math/lecture-notes/chapter_02.pdf" class="discrete-chapter-pdf btn btn-outline-primary btn-sm" aria-label="Download Chapter 2: Propositional logic (PDF)">Download PDF</a></p>
+<p><a href="../teaching/notes/chapter-02/" class="discrete-chapter-html btn btn-outline-primary btn-sm" aria-label="Read Chapter 2 online">HTML</a> <a href="bulsu/discrete-math/lecture-notes/chapter_02.pdf" class="discrete-chapter-pdf btn btn-primary btn-sm" aria-label="Download Chapter 2: Propositional logic (PDF)">PDF</a></p>
 </section>
 </div>
 <div class="discrete-chapter">
 <p><a href="bulsu/discrete-math/lecture-notes/chapter_03.pdf" class="discrete-chapter-thumbnail" aria-label="Open Chapter 3: Proof methods (PDF)"><img src="bulsu/discrete-math/images/thumbnails/chapter_03.webp" class="nolightbox" loading="lazy" decoding="async" alt="" width="512" height="512"></a></p>
 <section id="chapter-03" class="level3 unlisted discrete-chapter-details">
-<h3 class="unlisted anchored" data-anchor-id="chapter-03"><a href="bulsu/discrete-math/lecture-notes/chapter_03.pdf">Chapter 3: Proof methods</a></h3>
+<h3 class="unlisted anchored" data-anchor-id="chapter-03"><a href="../teaching/notes/chapter-03/">Chapter 3: Proof methods</a></h3>
 <p><span class="discrete-chapter-date"><time datetime="2026-12-05">5 December 2026</time></span></p>
 <ul>
-<li>Mathematical proof</li>
-<li>Parity and divisibility</li>
 <li>Direct proof</li>
 <li>Proof by contrapositive</li>
 <li>Proof by contradiction</li>
-<li>Proof construction and checking</li>
 </ul>
-<p><a href="bulsu/discrete-math/lecture-notes/chapter_03.pdf" class="discrete-chapter-pdf btn btn-outline-primary btn-sm" aria-label="Download Chapter 3: Proof methods (PDF)">Download PDF</a></p>
+<p><a href="../teaching/notes/chapter-03/" class="discrete-chapter-html btn btn-outline-primary btn-sm" aria-label="Read Chapter 3 online">HTML</a> <a href="bulsu/discrete-math/lecture-notes/chapter_03.pdf" class="discrete-chapter-pdf btn btn-primary btn-sm" aria-label="Download Chapter 3: Proof methods (PDF)">PDF</a></p>
 </section>
 </div>
 <div class="discrete-chapter">
 <p><a href="bulsu/discrete-math/lecture-notes/chapter_04.pdf" class="discrete-chapter-thumbnail" aria-label="Open Chapter 4: Sets and mappings (PDF)"><img src="bulsu/discrete-math/images/thumbnails/chapter_04.webp" class="nolightbox" loading="lazy" decoding="async" alt="" width="512" height="512"></a></p>
 <section id="chapter-04" class="level3 unlisted discrete-chapter-details">
-<h3 class="unlisted anchored" data-anchor-id="chapter-04"><a href="bulsu/discrete-math/lecture-notes/chapter_04.pdf">Chapter 4: Sets and mappings</a></h3>
+<h3 class="unlisted anchored" data-anchor-id="chapter-04"><a href="../teaching/notes/chapter-04/">Chapter 4: Sets and mappings</a></h3>
 <p><span class="discrete-chapter-date"><time datetime="2026-12-12">12 December 2026</time></span></p>
 <ul>
-<li>Subsets and set operations</li>
-<li>Set inclusion</li>
-<li>Set equality</li>
-<li>Injectivity</li>
-<li>Images of subsets</li>
+<li>Set inclusion and equality</li>
+<li>Injectivity and images</li>
 <li>Relations and transitivity</li>
-<li>Proof checking</li>
 </ul>
-<p><a href="bulsu/discrete-math/lecture-notes/chapter_04.pdf" class="discrete-chapter-pdf btn btn-outline-primary btn-sm" aria-label="Download Chapter 4: Sets and mappings (PDF)">Download PDF</a></p>
+<p><a href="../teaching/notes/chapter-04/" class="discrete-chapter-html btn btn-outline-primary btn-sm" aria-label="Read Chapter 4 online">HTML</a> <a href="bulsu/discrete-math/lecture-notes/chapter_04.pdf" class="discrete-chapter-pdf btn btn-primary btn-sm" aria-label="Download Chapter 4: Sets and mappings (PDF)">PDF</a></p>
 </section>
 </div>
 <div class="discrete-chapter">
 <p><a href="bulsu/discrete-math/lecture-notes/chapter_05.pdf" class="discrete-chapter-thumbnail" aria-label="Open Chapter 5: Induction (PDF)"><img src="bulsu/discrete-math/images/thumbnails/chapter_05.webp" class="nolightbox" loading="lazy" decoding="async" alt="" width="512" height="512"></a></p>
 <section id="chapter-05" class="level3 unlisted discrete-chapter-details">
-<h3 class="unlisted anchored" data-anchor-id="chapter-05"><a href="bulsu/discrete-math/lecture-notes/chapter_05.pdf">Chapter 5: Induction</a></h3>
+<h3 class="unlisted anchored" data-anchor-id="chapter-05"><a href="../teaching/notes/chapter-05/">Chapter 5: Induction</a></h3>
 <p><span class="discrete-chapter-date"><time datetime="2026-12-19">19 December 2026</time></span></p>
 <ul>
-<li>Indexed claims</li>
-<li>Ordinary (weak) induction</li>
-<li>Sums, divisibility and inequalities</li>
+<li>Weak induction</li>
 <li>Strong induction</li>
-<li>Recursive rules</li>
-<li>Choice of hypothesis</li>
-<li>Errors in induction</li>
+<li>Choosing an inductive hypothesis</li>
 </ul>
-<p><a href="bulsu/discrete-math/lecture-notes/chapter_05.pdf" class="discrete-chapter-pdf btn btn-outline-primary btn-sm" aria-label="Download Chapter 5: Induction (PDF)">Download PDF</a></p>
+<p><a href="../teaching/notes/chapter-05/" class="discrete-chapter-html btn btn-outline-primary btn-sm" aria-label="Read Chapter 5 online">HTML</a> <a href="bulsu/discrete-math/lecture-notes/chapter_05.pdf" class="discrete-chapter-pdf btn btn-primary btn-sm" aria-label="Download Chapter 5: Induction (PDF)">PDF</a></p>
 </section>
 </div>
 <div class="discrete-chapter">
 <p><a href="bulsu/discrete-math/lecture-notes/chapter_06.pdf" class="discrete-chapter-thumbnail" aria-label="Open Chapter 6: Graphs (PDF)"><img src="bulsu/discrete-math/images/thumbnails/chapter_06.webp" class="nolightbox" loading="lazy" decoding="async" alt="" width="512" height="512"></a></p>
 <section id="chapter-06" class="level3 unlisted discrete-chapter-details">
-<h3 class="unlisted anchored" data-anchor-id="chapter-06"><a href="bulsu/discrete-math/lecture-notes/chapter_06.pdf">Chapter 6: Graphs</a></h3>
+<h3 class="unlisted anchored" data-anchor-id="chapter-06"><a href="../teaching/notes/chapter-06/">Chapter 6: Graphs</a></h3>
 <p><span class="discrete-chapter-date"><time datetime="2027-01-09">9 January 2027</time></span></p>
 <ul>
-<li>Graph representations</li>
-<li>Vertex degrees</li>
-<li>Paths and connectedness</li>
+<li>Graphs, degrees and paths</li>
 <li>Trees and unique paths</li>
-<li>Leaves and induction</li>
-<li>Spanning trees</li>
-<li>Rooted trees</li>
+<li>Spanning and rooted trees</li>
 </ul>
-<p><a href="bulsu/discrete-math/lecture-notes/chapter_06.pdf" class="discrete-chapter-pdf btn btn-outline-primary btn-sm" aria-label="Download Chapter 6: Graphs (PDF)">Download PDF</a></p>
+<p><a href="../teaching/notes/chapter-06/" class="discrete-chapter-html btn btn-outline-primary btn-sm" aria-label="Read Chapter 6 online">HTML</a> <a href="bulsu/discrete-math/lecture-notes/chapter_06.pdf" class="discrete-chapter-pdf btn btn-primary btn-sm" aria-label="Download Chapter 6: Graphs (PDF)">PDF</a></p>
 </section>
 </div>
 <div class="discrete-chapter">
 <p><a href="bulsu/discrete-math/lecture-notes/chapter_07.pdf" class="discrete-chapter-thumbnail" aria-label="Open Chapter 7: Equivalence relations (PDF)"><img src="bulsu/discrete-math/images/thumbnails/chapter_07.webp" class="nolightbox" loading="lazy" decoding="async" alt="" width="512" height="512"></a></p>
 <section id="chapter-07" class="level3 unlisted discrete-chapter-details">
-<h3 class="unlisted anchored" data-anchor-id="chapter-07"><a href="bulsu/discrete-math/lecture-notes/chapter_07.pdf">Chapter 7: Equivalence relations</a></h3>
+<h3 class="unlisted anchored" data-anchor-id="chapter-07"><a href="../teaching/notes/chapter-07/">Chapter 7: Equivalence relations</a></h3>
 <p><span class="discrete-chapter-date"><time datetime="2027-01-16">16 January 2027</time></span></p>
 <ul>
-<li>Relations</li>
-<li>Inverse relations and composition</li>
-<li>Reflexivity, symmetry and antisymmetry</li>
-<li>Transitivity</li>
-<li>Equivalence relations</li>
+<li>Properties of relations</li>
 <li>Equivalence classes</li>
 <li>Partitions</li>
 </ul>
-<p><a href="bulsu/discrete-math/lecture-notes/chapter_07.pdf" class="discrete-chapter-pdf btn btn-outline-primary btn-sm" aria-label="Download Chapter 7: Equivalence relations (PDF)">Download PDF</a></p>
+<p><a href="../teaching/notes/chapter-07/" class="discrete-chapter-html btn btn-outline-primary btn-sm" aria-label="Read Chapter 7 online">HTML</a> <a href="bulsu/discrete-math/lecture-notes/chapter_07.pdf" class="discrete-chapter-pdf btn btn-primary btn-sm" aria-label="Download Chapter 7: Equivalence relations (PDF)">PDF</a></p>
 </section>
 </div>
 <div class="discrete-chapter">
 <p><a href="bulsu/discrete-math/lecture-notes/chapter_08.pdf" class="discrete-chapter-thumbnail" aria-label="Open Chapter 8: Modular arithmetic (PDF)"><img src="bulsu/discrete-math/images/thumbnails/chapter_08.webp" class="nolightbox" loading="lazy" decoding="async" alt="" width="512" height="512"></a></p>
 <section id="chapter-08" class="level3 unlisted discrete-chapter-details">
-<h3 class="unlisted anchored" data-anchor-id="chapter-08"><a href="bulsu/discrete-math/lecture-notes/chapter_08.pdf">Chapter 8: Modular arithmetic</a></h3>
+<h3 class="unlisted anchored" data-anchor-id="chapter-08"><a href="../teaching/notes/chapter-08/">Chapter 8: Modular arithmetic</a></h3>
 <p><span class="discrete-chapter-date"><time datetime="2027-02-13">13 February 2027</time></span></p>
 <ul>
-<li>Divisibility</li>
-<li>Quotients and remainders</li>
-<li>Congruence</li>
-<li>Residue classes</li>
-<li>Arithmetic with congruences</li>
-<li>Modular systems</li>
+<li>Divisibility and remainders</li>
+<li>Congruence and residue classes</li>
+<li>Modular arithmetic and systems</li>
 </ul>
-<p><a href="bulsu/discrete-math/lecture-notes/chapter_08.pdf" class="discrete-chapter-pdf btn btn-outline-primary btn-sm" aria-label="Download Chapter 8: Modular arithmetic (PDF)">Download PDF</a></p>
+<p><a href="../teaching/notes/chapter-08/" class="discrete-chapter-html btn btn-outline-primary btn-sm" aria-label="Read Chapter 8 online">HTML</a> <a href="bulsu/discrete-math/lecture-notes/chapter_08.pdf" class="discrete-chapter-pdf btn btn-primary btn-sm" aria-label="Download Chapter 8: Modular arithmetic (PDF)">PDF</a></p>
 </section>
 </div>
 <div class="discrete-chapter">
 <p><a href="bulsu/discrete-math/lecture-notes/chapter_09.pdf" class="discrete-chapter-thumbnail" aria-label="Open Chapter 9: Counting principles (PDF)"><img src="bulsu/discrete-math/images/thumbnails/chapter_09.webp" class="nolightbox" loading="lazy" decoding="async" alt="" width="512" height="512"></a></p>
 <section id="chapter-09" class="level3 unlisted discrete-chapter-details">
-<h3 class="unlisted anchored" data-anchor-id="chapter-09"><a href="bulsu/discrete-math/lecture-notes/chapter_09.pdf">Chapter 9: Counting principles</a></h3>
+<h3 class="unlisted anchored" data-anchor-id="chapter-09"><a href="../teaching/notes/chapter-09/">Chapter 9: Counting principles</a></h3>
 <p><span class="discrete-chapter-date"><time datetime="2027-02-20">20 February 2027</time></span></p>
 <ul>
-<li>Counting outcomes</li>
-<li>Sum rule</li>
-<li>Product rule</li>
-<li>Counting by cases</li>
-<li>Counting complements</li>
-<li>Two overlapping sets</li>
-<li>Three overlapping sets</li>
+<li>Sum and product rules</li>
+<li>Counting by cases and complements</li>
+<li>Inclusion–exclusion</li>
 </ul>
-<p><a href="bulsu/discrete-math/lecture-notes/chapter_09.pdf" class="discrete-chapter-pdf btn btn-outline-primary btn-sm" aria-label="Download Chapter 9: Counting principles (PDF)">Download PDF</a></p>
+<p><a href="../teaching/notes/chapter-09/" class="discrete-chapter-html btn btn-outline-primary btn-sm" aria-label="Read Chapter 9 online">HTML</a> <a href="bulsu/discrete-math/lecture-notes/chapter_09.pdf" class="discrete-chapter-pdf btn btn-primary btn-sm" aria-label="Download Chapter 9: Counting principles (PDF)">PDF</a></p>
 </section>
 </div>
 <div class="discrete-chapter">
 <p><a href="bulsu/discrete-math/lecture-notes/chapter_10.pdf" class="discrete-chapter-thumbnail" aria-label="Open Chapter 10: Permutations and combinations (PDF)"><img src="bulsu/discrete-math/images/thumbnails/chapter_10.webp" class="nolightbox" loading="lazy" decoding="async" alt="" width="512" height="512"></a></p>
 <section id="chapter-10" class="level3 unlisted discrete-chapter-details">
-<h3 class="unlisted anchored" data-anchor-id="chapter-10"><a href="bulsu/discrete-math/lecture-notes/chapter_10.pdf">Chapter 10: Permutations and combinations</a></h3>
+<h3 class="unlisted anchored" data-anchor-id="chapter-10"><a href="../teaching/notes/chapter-10/">Chapter 10: Permutations and combinations</a></h3>
 <p><span class="discrete-chapter-date"><time datetime="2027-02-27">27 February 2027</time></span></p>
 <ul>
-<li>Factorials and arrangements</li>
-<li>Permutations</li>
-<li>Combinations</li>
-<li>Counting via subsets</li>
+<li>Permutations and combinations</li>
 <li>Combinatorial proofs</li>
-<li>Row sums by induction</li>
 <li>Binomial expansions</li>
 </ul>
-<p><a href="bulsu/discrete-math/lecture-notes/chapter_10.pdf" class="discrete-chapter-pdf btn btn-outline-primary btn-sm" aria-label="Download Chapter 10: Permutations and combinations (PDF)">Download PDF</a></p>
+<p><a href="../teaching/notes/chapter-10/" class="discrete-chapter-html btn btn-outline-primary btn-sm" aria-label="Read Chapter 10 online">HTML</a> <a href="bulsu/discrete-math/lecture-notes/chapter_10.pdf" class="discrete-chapter-pdf btn btn-primary btn-sm" aria-label="Download Chapter 10: Permutations and combinations (PDF)">PDF</a></p>
 </section>
 </div>
 <div class="discrete-chapter">
 <p><a href="bulsu/discrete-math/lecture-notes/chapter_11.pdf" class="discrete-chapter-thumbnail" aria-label="Open Chapter 11: Sequences (PDF)"><img src="bulsu/discrete-math/images/thumbnails/chapter_11.webp" class="nolightbox" loading="lazy" decoding="async" alt="" width="512" height="512"></a></p>
 <section id="chapter-11" class="level3 unlisted discrete-chapter-details">
-<h3 class="unlisted anchored" data-anchor-id="chapter-11"><a href="bulsu/discrete-math/lecture-notes/chapter_11.pdf">Chapter 11: Sequences</a></h3>
+<h3 class="unlisted anchored" data-anchor-id="chapter-11"><a href="../teaching/notes/chapter-11/">Chapter 11: Sequences</a></h3>
 <p><span class="discrete-chapter-date"><time datetime="2027-03-06">6 March 2027</time></span></p>
 <ul>
-<li>Sequences and indices</li>
-<li>Explicit and recursive descriptions</li>
-<li>Arithmetic sequences</li>
-<li>Geometric sequences</li>
-<li>Further recurrence relations</li>
-<li>Verification and comparison</li>
+<li>Explicit and recursive sequences</li>
+<li>Arithmetic and geometric sequences</li>
+<li>Recurrence relations</li>
 </ul>
-<p><a href="bulsu/discrete-math/lecture-notes/chapter_11.pdf" class="discrete-chapter-pdf btn btn-outline-primary btn-sm" aria-label="Download Chapter 11: Sequences (PDF)">Download PDF</a></p>
+<p><a href="../teaching/notes/chapter-11/" class="discrete-chapter-html btn btn-outline-primary btn-sm" aria-label="Read Chapter 11 online">HTML</a> <a href="bulsu/discrete-math/lecture-notes/chapter_11.pdf" class="discrete-chapter-pdf btn btn-primary btn-sm" aria-label="Download Chapter 11: Sequences (PDF)">PDF</a></p>
 </section>
 </div>
 <div class="discrete-chapter">
 <p><a href="bulsu/discrete-math/lecture-notes/chapter_12.pdf" class="discrete-chapter-thumbnail" aria-label="Open Chapter 12: Recursion (PDF)"><img src="bulsu/discrete-math/images/thumbnails/chapter_12.webp" class="nolightbox" loading="lazy" decoding="async" alt="" width="512" height="512"></a></p>
 <section id="chapter-12" class="level3 unlisted discrete-chapter-details">
-<h3 class="unlisted anchored" data-anchor-id="chapter-12"><a href="bulsu/discrete-math/lecture-notes/chapter_12.pdf">Chapter 12: Recursion</a></h3>
+<h3 class="unlisted anchored" data-anchor-id="chapter-12"><a href="../teaching/notes/chapter-12/">Chapter 12: Recursion</a></h3>
 <p><span class="discrete-chapter-date"><time datetime="2027-03-13">13 March 2027</time></span></p>
 <ul>
-<li>Injectivity and surjectivity</li>
-<li>Images and inverses</li>
-<li>Full binary trees</li>
-<li>Recursive counting functions</li>
+<li>Injectivity, surjectivity and inverses</li>
+<li>Recursive structures and functions</li>
 <li>Structural induction</li>
 </ul>
-<p><a href="bulsu/discrete-math/lecture-notes/chapter_12.pdf" class="discrete-chapter-pdf btn btn-outline-primary btn-sm" aria-label="Download Chapter 12: Recursion (PDF)">Download PDF</a></p>
+<p><a href="../teaching/notes/chapter-12/" class="discrete-chapter-html btn btn-outline-primary btn-sm" aria-label="Read Chapter 12 online">HTML</a> <a href="bulsu/discrete-math/lecture-notes/chapter_12.pdf" class="discrete-chapter-pdf btn btn-primary btn-sm" aria-label="Download Chapter 12: Recursion (PDF)">PDF</a></p>
 </section>
 </div>
 <div id="entire-book" class="discrete-book-download">
 <p><a href="bulsu/discrete-math/lecture-notes/Nieto_DS.pdf" class="discrete-book-thumbnail" aria-label="Open the entire Discrete Mathematics book (PDF)"><img src="bulsu/discrete-math/images/book-cover.webp" class="nolightbox" loading="lazy" decoding="async" alt="Cover of Lecture Notes in Discrete Mathematics by Rey Joseph Nieto" width="660" height="934"></a></p>
 <div class="discrete-book-details">
-<p><strong>Entire book</strong> · Updated 19 November 2026 · 198 pages <a href="bulsu/discrete-math/lecture-notes/Nieto_DS.pdf" class="discrete-chapter-pdf btn btn-outline-primary btn-sm" aria-label="Download the entire Discrete Mathematics book (PDF)">Download PDF</a></p>
+<p><strong>Entire book</strong> · Updated 19 November 2026 · 198 pages <a href="bulsu/discrete-math/lecture-notes/Nieto_DS.pdf" class="discrete-chapter-pdf btn btn-primary btn-sm" aria-label="Download the entire Discrete Mathematics book (PDF)">Download PDF</a></p>
 </div>
 </div>
 </div>
-</section>
-<section id="class-format" class="level2">
-<h2 class="anchored" data-anchor-id="class-format">Class format</h2>
-<p><strong>Saturday Meeting Timetable</strong></p>
-<ul>
-<li><strong>10:30 a.m.–12 noon:</strong> lecture on the current chapter.</li>
-<li><strong>12 noon–1:00 p.m.:</strong> lunch break.</li>
-<li><strong>1:00–1:30 p.m.:</strong> recap of the previous chapter.</li>
-<li><strong>1:30–2:30 p.m.:</strong> problems on the previous chapter.</li>
-</ul>
-<p><strong>20 March 2027</strong> is reserved for the Chapter 12 problem class and course revision.</p>
-<p><strong>Preparation and participation</strong></p>
-<ul>
-<li><strong>Read the assigned chapter before class</strong> and attempt the previous chapter’s problems. You need not have mastered the material; identify where you need help. Questions will draw on the reading, with guidance as needed.</li>
-<li><strong>Recitation</strong> is graded at every meeting on the quality of your reasoning, rather than how often you speak. There are no traditional quizzes.</li>
-<li><strong>Consultations:</strong> I am available after class; if nobody approaches within five minutes of dismissal, I will leave. You may also email questions.</li>
-</ul>
-</section>
-<section id="assessment" class="level2">
-<h2 class="anchored" data-anchor-id="assessment">Assessment</h2>
-<div class="discrete-grading-table">
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th>Component</th>
-<th style="text-align: right;">Weight</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Problem sets (best four of five)</td>
-<td style="text-align: right;">50%</td>
-</tr>
-<tr class="even">
-<td>Attendance</td>
-<td style="text-align: right;">5%</td>
-</tr>
-<tr class="odd">
-<td>Recitation</td>
-<td style="text-align: right;">15%</td>
-</tr>
-<tr class="even">
-<td>Midterm examination</td>
-<td style="text-align: right;">15%</td>
-</tr>
-<tr class="odd">
-<td>Final examination</td>
-<td style="text-align: right;">15%</td>
-</tr>
-<tr class="even">
-<td><strong>Total</strong></td>
-<td style="text-align: right;"><strong>100%</strong></td>
-</tr>
-</tbody>
-</table>
-</div>
-<ul>
-<li>Problem-set scores are converted to percentages. The lowest is dropped; the remaining four are averaged, with each retained set accounting for <strong>12.5%</strong> of the course mark.</li>
-<li>Term examinations use <strong>zero-based grading</strong>.</li>
-<li>The minimum passing percentage is <strong>75%</strong>, equivalent to <strong>3.00</strong> (<a href="https://drive.google.com/file/d/1ew8hDsW_anZjLsZJKI3rEKAnhT1K4OTd/view">Student Manual, Part II, Section K</a>).</li>
-</ul>
-<section id="assessment-dates" class="level3">
-<h3 class="anchored" data-anchor-id="assessment-dates">Assessment dates</h3>
-<div class="discrete-dates-table">
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th>Date</th>
-<th>Assessment</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>19 December 2026</td>
-<td>Problem Set 1 due</td>
-</tr>
-<tr class="even">
-<td>9 January 2027</td>
-<td>Problem Set 2 due</td>
-</tr>
-<tr class="odd">
-<td>30 January 2027</td>
-<td>Midterm examination</td>
-</tr>
-<tr class="even">
-<td>13 February 2027</td>
-<td>Problem Set 3 due</td>
-</tr>
-<tr class="odd">
-<td>27 February 2027</td>
-<td>Problem Set 4 due</td>
-</tr>
-<tr class="even">
-<td>13 March 2027</td>
-<td>Problem Set 5 due</td>
-</tr>
-<tr class="odd">
-<td>3 April 2027</td>
-<td>Final examination</td>
-</tr>
-</tbody>
-</table>
-</div>
-</section>
-<section id="mathematical-corrections" class="level3">
-<h3 class="anchored" data-anchor-id="mathematical-corrections">Bonus for Mathematical Corrections</h3>
-<ul>
-<li>Question my reasoning and raise suspected mistakes.</li>
-<li>Each confirmed significant error in the notes or lectures earns <strong>five percentage points on one examination mark</strong> (for example, 70% becomes 75%).</li>
-<li>A significant error affects a claim, calculation or reasoning; harmless typographical errors do not qualify.</li>
-<li>I will choose the examination and redirect any credit above 100% to other components in whichever way benefits you most.</li>
-<li>Raw marks and bonus adjustments are recorded separately.</li>
-</ul>
-</section>
-<section id="final-examination-exemption" class="level3">
-<h3 class="anchored" data-anchor-id="final-examination-exemption">Final examination exemption</h3>
-<p>To qualify:</p>
-<ul>
-<li><strong>Pre-final standing:</strong> 1.50 or better.</li>
-<li><strong>Coursework:</strong> all course requirements completed.</li>
-<li><strong>Attendance:</strong> perfect attendance, as an additional course condition; valid excused absences do not count against this requirement.</li>
-</ul>
-<p>The academic conditions follow the <a href="https://drive.google.com/file/d/1ew8hDsW_anZjLsZJKI3rEKAnhT1K4OTd/view">Student Manual, Part II, Section J.5</a>.</p>
-<p>Let <span class="math inline">\(P\)</span> be your best-four problem-set average, <span class="math inline">\(A\)</span> your attendance score, <span class="math inline">\(R\)</span> your recitation score and <span class="math inline">\(M\)</span> your midterm score, all percentages after any bonus credit. Your pre-final percentage is</p>
-<p><span class="math display">\[
-S=\frac{50P+5A+15R+15M}{85}.
-\]</span></p>
-<ul>
-<li>Convert <span class="math inline">\(S\)</span> using the University’s grading scale to obtain your pre-final standing.</li>
-<li><strong>If exempt and not taking the final:</strong> I will record the exemption and use <span class="math inline">\(S\)</span> as the placeholder for its 15% component, preserving your pre-final percentage and grade.</li>
-<li><strong>If exempt and choosing to take the final:</strong> You waive the exemption. I will record your actual examination score, including any bonus credit, and use it at the usual 15% weight to calculate your course grade, as for a student without an exemption. Your final course grade may be better or worse than your pre-final standing.</li>
-</ul>
-</section>
-</section>
-<section id="problem-sheets" class="level2">
-<h2 class="anchored" data-anchor-id="problem-sheets">Problem sets</h2>
-<ul>
-<li><strong>All submissions must be handwritten.</strong></li>
-<li>Each problem set will allow <strong>at least two weeks</strong> for completion.</li>
-<li>Late or missing submissions receive <strong>zero</strong> unless an accepted excuse or university-approved arrangement applies.</li>
-<li>An unexcused absence does not extend a deadline or entitle you to a make-up assessment.</li>
-</ul>
-<p><strong>AI and face-to-face checks</strong></p>
-<ul>
-<li>You may use AI for revision, but not to solve assigned problem sets.</li>
-<li>Examinations and recitations require independent answers without AI.</li>
-<li>I may ask you to explain your submitted solution in person: your approach, notation and reasons for particular steps.</li>
-<li>These discussions will not include unrelated or trick questions, or require a different solution.</li>
-<li>If you cannot give even a basic account of your own reasoning, the problem set receives <strong>zero</strong>.</li>
-</ul>
-<p>Problem sets will be posted here when issued.</p>
-</section>
-<section id="course-policies" class="level2">
-<h2 class="anchored" data-anchor-id="course-policies">Course policies</h2>
-<p>The approved syllabus and university rules take precedence. See the <a href="https://drive.google.com/file/d/1ew8hDsW_anZjLsZJKI3rEKAnhT1K4OTd/view">Student Manual, Part II, Sections F–G and J–L</a> and the <a href="https://drive.google.com/file/d/1FA3IPniUsXfeqscEyS_FdN356I_EwxGm/view">Student Conduct, Discipline and Grievance Guidelines</a> (BOR Resolution No.&nbsp;34, series of 2022).</p>
-<p><strong>Devices and notes</strong></p>
-<ul>
-<li>Phones and other personal electronic devices must be switched off and put away, including when consulting notes.</li>
-<li>If you have a device out or in use, you will be marked absent for that class.</li>
-<li>Approved accessibility arrangements and university-required exceptions take precedence.</li>
-<li>Use printed notes or, preferably, your own handwritten notes; bring paper and a pen or pencil.</li>
-</ul>
-<p><strong>Participation and conduct</strong></p>
-<ul>
-<li>Difficulty understanding is not a reason for exclusion; ask for help.</li>
-<li>A clear and persistent unwillingness to engage will lead to being asked to step outside and return when ready to participate.</li>
-<li>Disruptive behaviour will be addressed under university disciplinary procedures. Participation marks follow the approved assessment criteria.</li>
-</ul>
-<p><strong>Attendance and punctuality</strong></p>
-<ul>
-<li>Attend regularly. Arrival <strong>15 minutes</strong> after the start is recorded as tardy; arrival <strong>20 minutes</strong> after the start is recorded as absent.</li>
-<li>Being marked absent does not prevent attendance at the lesson.</li>
-<li>Before midterms, unexcused absences exceeding <strong>20% of required semester contact hours</strong> trigger automatic dropping, recorded as <strong>FDA (failure due to absences) or UD (unofficially dropped)</strong>.</li>
-<li>The absence total does not reset after midterms. These classifications are distinct from a numerical grade of 5.0.</li>
-<li>If absent, read the missed notes and attempt the problems before the next class; seek help promptly if needed.</li>
-</ul>
-<p><strong>Excused absences</strong></p>
-<p>Recognised grounds:</p>
-<ul>
-<li>Official university representation in curricular, co-curricular or extracurricular activities.</li>
-<li>Illness certified by your attending doctor or the University physician.</li>
-<li><em>Force majeure</em>: unavoidable extraordinary events beyond your control.</li>
-</ul>
-<p>Other absence rules:</p>
-<ul>
-<li>Weddings, parties and similar personal commitments do not qualify.</li>
-<li>Notify me promptly with supporting documentation and arrange to complete missed work.</li>
-<li>The handbook sets a <strong>30% limit on excused absences</strong>.</li>
-</ul>
-<p><strong>Missed examinations</strong></p>
-<ul>
-<li>For an excused absence, contact me promptly with supporting documentation.</li>
-<li>Special examinations require the instructor’s recommendation and unit head’s approval under the manual’s Section J.</li>
-<li>The final is <strong>not automatically double-weighted</strong>.</li>
-<li>An unexcused missed examination receives <strong>zero</strong>, subject to university rules.</li>
-</ul>
-<p><strong>Marks and concerns</strong></p>
-<ul>
-<li>You may request an explanation or review of your marks and use the university grievance procedure.</li>
-<li>I may consider perfect attendance and meaningful participation when reviewing borderline marks, within university rules. Neither guarantees a pass or replaces required coursework.</li>
-</ul>
-<p><strong>Commitment</strong></p>
-<ul>
-<li>Speak with me early if you anticipate difficulty meeting the requirements.</li>
-<li>If you cannot commit to preparation, attendance, participation and coursework, I recommend official withdrawal under university procedures and deadlines.</li>
-</ul>
-<p><strong>Proofwriting and abstraction</strong></p>
-<ul>
-<li>This is a <strong>proof-based course</strong>.</li>
-<li>The aim is to reason precisely about objects, assumptions and relationships, as you would with code modules, interfaces and network configurations.</li>
-<li>You will practise explaining why a method works, justifying a claim and finding counterexamples.</li>
-</ul>
-</section>
-<section id="about-me" class="level2">
-<h2 class="anchored" data-anchor-id="about-me">About me</h2>
-<ul>
-<li><strong>Education:</strong> first-class BSc in Mathematics, University of Bristol, England (2026).</li>
-<li><strong>Teaching:</strong> previously taught Mathematics in the Modern World and Living in the IT Era at BulSU San Rafael; formerly a teaching assistant for Mathematical Programming at Bristol.</li>
-<li><strong>Work:</strong> Assistant Secretary at the Office of the Cabinet Secretary, Office of the President, working on policy analytics during weekdays.</li>
-<li><strong>Interests:</strong> probability, topological data analysis, AI and machine learning, network science and combinatorics, with applications in healthcare, industry and public policy.</li>
-</ul>
 
 
 </section>

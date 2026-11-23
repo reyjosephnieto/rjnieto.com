@@ -1,0 +1,1071 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-GB" xml:lang="en-GB"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.10.18">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="description" content="Chapter 11: Sequences. HTML edition of Lecture Notes in Discrete Mathematics.">
+
+<title>Chapter 11: Sequences – RJ Nieto</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<link href="../../../assets/branding/rj-logo.png" rel="icon" type="image/png">
+<script src="../../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-dark-b85bc7c33db8c58e0ec93c3465666fed.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap-68e913143d7006db5355610df9e4aed5.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="dark">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<meta name="author" content="Rey Joseph Nieto">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "@id": "https://rjnieto.com/#rey-joseph-nieto",
+  "name": "Rey Joseph Nieto",
+  "alternateName": ["RJ Nieto", "Thinking Pinoy"],
+  "description": "Assistant Secretary in the Office of the Cabinet Secretary, Office of the President of the Philippines.",
+  "url": "https://rjnieto.com/",
+  "image": {
+    "@type": "ImageObject",
+    "@id": "https://rjnieto.com/#portrait",
+    "url": "https://rjnieto.com/assets/images/rey-joseph-nieto-portrait.jpg",
+    "contentUrl": "https://rjnieto.com/assets/images/rey-joseph-nieto-portrait.jpg",
+    "width": 824,
+    "height": 824,
+    "caption": "Portrait of Rey Joseph RJ Nieto"
+  },
+  "jobTitle": "Assistant Secretary",
+  "worksFor": {
+    "@type": "GovernmentOrganization",
+    "name": "Office of the Cabinet Secretary, Office of the President of the Philippines"
+  },
+  "sameAs": [
+    "https://www.linkedin.com/in/rjosephnieto/",
+    "https://www.facebook.com/rjosephnieto",
+    "https://x.com/rjosephnieto"
+  ]
+}
+</script>
+<link rel="preload" href="../../../assets/fonts/ibm-plex-sans/IBMPlexSans-Roman.woff2" as="font" type="font/woff2" crossorigin="">
+<script defer="" src="../../../assets/js/home-research-background.js"></script>
+<script defer="" src="../../../assets/js/discrete-notes-layout.js"></script>
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta property="og:url" content="https://rjnieto.com/teaching/notes/chapter-11/">
+<meta property="og:type" content="article">
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../../../styles.css">
+<link rel="stylesheet" href="../../../assets/css/site-typography.css">
+<link rel="stylesheet" href="../../../assets/css/home-research-background.css">
+<link rel="stylesheet" href="../../../assets/css/discrete-notes.css">
+<meta property="og:title" content="Chapter 11: Sequences – RJ Nieto">
+<meta property="og:description" content="Chapter 11: Sequences. HTML edition of Lecture Notes in Discrete Mathematics.">
+<meta property="og:image" content="https://rjnieto.com/teaching/bulsu/discrete-math/images/thumbnails/chapter_11.webp">
+<meta property="og:site_name" content="RJ Nieto">
+<meta property="og:locale" content="en_GB">
+<meta name="twitter:title" content="Chapter 11: Sequences – RJ Nieto">
+<meta name="twitter:description" content="Chapter 11: Sequences. HTML edition of Lecture Notes in Discrete Mathematics.">
+<meta name="twitter:image" content="https://rjnieto.com/teaching/bulsu/discrete-math/images/thumbnails/chapter_11.webp">
+<meta name="twitter:creator" content="@rjosephnieto">
+<meta name="twitter:site" content="@rjosephnieto">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://rjnieto.com/teaching/notes/chapter-11/">
+</head>
+
+<body class="nav-fixed ds-lecture-notes quarto-light">
+<span id="page-top" class="page-top-anchor" aria-hidden="true"></span>
+<a class="skip-link" href="#quarto-document-content">Skip to main content</a>
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../../">
+    <span class="navbar-title">RJ Nieto</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../../"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../cv/"> 
+<span class="menu-text">CV</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../teaching/"> 
+<span class="menu-text">Teaching</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../calculated/"> 
+<span class="menu-text">Writing</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../research/"> 
+<span class="menu-text">Hobby</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul class="collapse">
+  <li><a href="#ch11:indices" id="toc-ch11:indices" class="nav-link active" data-scroll-target="#ch11\:indices">11.1 Sequences and indices</a></li>
+  <li><a href="#ch11:descriptions" id="toc-ch11:descriptions" class="nav-link" data-scroll-target="#ch11\:descriptions">11.2 Explicit and recursive descriptions</a></li>
+  <li><a href="#ch11:arithmetic" id="toc-ch11:arithmetic" class="nav-link" data-scroll-target="#ch11\:arithmetic">11.3 Arithmetic sequences</a></li>
+  <li><a href="#ch11:geometric" id="toc-ch11:geometric" class="nav-link" data-scroll-target="#ch11\:geometric">11.4 Geometric sequences</a></li>
+  <li><a href="#ch11:models" id="toc-ch11:models" class="nav-link" data-scroll-target="#ch11\:models">11.5 Further recurrence relations</a></li>
+  <li><a href="#ch11:verification" id="toc-ch11:verification" class="nav-link" data-scroll-target="#ch11\:verification">11.6 Verification and comparison</a></li>
+  <li><a href="#ch11:exercises" id="toc-ch11:exercises" class="nav-link" data-scroll-target="#ch11\:exercises">11.7 Exercises</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content" tabindex="-1">
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Chapter 11: Sequences</h1>
+<p class="subtitle lead">Discrete Mathematics · Rey Joseph Nieto</p>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<!-- Generated from the corresponding chapter LaTeX. Run scripts/build-discrete-html.py to refresh. -->
+<p><a href="../../../teaching/" class="btn btn-outline-secondary btn-sm">Course page</a> <a href="../../../teaching/bulsu/discrete-math/lecture-notes/chapter_11.pdf" class="btn btn-outline-primary btn-sm" aria-label="Open Chapter 11: Sequences as PDF">PDF</a></p>
+<p><span id="ch11:chapter" data-label="ch11:chapter"></span></p>
+<p>Before any import batches run, a database contains five records. Each batch adds three records. To find the count after fifty batches, we could update the count fifty times, or calculate the initial count plus fifty additions of three. These are two ways to describe the same indexed quantity.</p>
+<p>The index records how many batches have finished. Index <span class="math inline">\(0\)</span> describes the initial snapshot, before any batch, so the value after three batches is the fourth entry if we list that initial snapshot too.</p>
+<p>Chapter 5 used recursive rules and induction; Chapters 9 and 10 counted objects depending on a size parameter. We now study such numbered values as sequences. We will specify their indices, compare direct formulas with rules using earlier values, and prove that a proposed formula describes every term.</p>
+<div class="ds-box ds-learningoutcomes">
+<div id="what-you-should-be-able-to-do" class="ds-box-title">
+<p><strong>What you should be able to do</strong></p>
+</div>
+<p>After working through this chapter, you should be able to:</p>
+<ul>
+<li><p>interpret a sequence as a function of an integer index;</p></li>
+<li><p>distinguish a term, its index and the sequence’s set of values;</p></li>
+<li><p>evaluate explicit formulas and recursive descriptions;</p></li>
+<li><p>supply initial values and valid ranges for a recurrence;</p></li>
+<li><p>describe arithmetic and geometric sequences with either type of rule;</p></li>
+<li><p>translate simple updating processes into mathematical descriptions;</p></li>
+<li><p>verify a proposed formula and identify incomplete specifications.</p></li>
+</ul>
+</div>
+<section id="ch11:indices" class="level2">
+<h2 class="anchored" data-anchor-id="ch11:indices">11.1 Sequences and indices</h2>
+<div class="ds-box ds-definition">
+<div id="definition-11.1-numerical-sequence" class="ds-box-title">
+<p><strong>Definition 11.1: Numerical sequence</strong></p>
+</div>
+<p>Fix a starting index <span class="math inline">\(s\in\mathbb{N}\)</span>, where <span class="math inline">\(\mathbb{N}=\{0,1,2,\ldots\}\)</span>. A numerical sequence <span class="math inline">\((a_n)_{n\geq s}\)</span> assigns a real number <span class="math inline">\(a_n\)</span> to each index in <span class="math inline">\(I_s=\{s,s+1,s+2,\ldots\}\)</span>. It is a function <span class="math inline">\(a:I_s\to\mathbb{R}\)</span>, with <span class="math inline">\(a_n=a(n)\)</span>. The value <span class="math inline">\(a_n\)</span> is the <strong>term at index <span class="math inline">\(n\)</span></strong>.</p>
+</div>
+<p>We usually start at <span class="math inline">\(0\)</span> or <span class="math inline">\(1\)</span>, but state the choice. A subscript labels an input: <span class="math inline">\(a_n\)</span> does not mean <span class="math inline">\(a\)</span> multiplied by <span class="math inline">\(n\)</span>. Order and repeated values are retained. A finite sequence similarly uses a finite consecutive set of indices, such as <span class="math inline">\(\{0,1,\ldots,6\}\)</span>.</p>
+<p><span id="ch11:imports"><strong>Example&nbsp;11.1.</strong></span> For the database in the opening, let <span class="math inline">\(a_n\)</span> be the number of records after <span class="math inline">\(n\)</span> batches. The first five terms are:</p>
+<div class="ds-table">
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: center;">Index <span class="math inline">\(n\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(0\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(1\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(2\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(3\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(4\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">Records <span class="math inline">\(a_n\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(5\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(8\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(11\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(14\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(17\)</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Thus <span class="math inline">\(a_3=14\)</span> is the count after three batches. It is the fourth displayed term because the list begins with <span class="math inline">\(a_0\)</span>. The third displayed term is <span class="math inline">\(a_2=11\)</span>.</p>
+<p><span id="example-11.2."><strong>Example&nbsp;11.2.</strong></span> The sequences <span class="math display">\[2,5,2,5,\ldots
+\qquad\text{and}\qquad
+5,2,5,2,\ldots\]</span> both start at index <span class="math inline">\(0\)</span>, alternating as shown. Their sets of values are both <span class="math inline">\(\{2,5\}\)</span>. Nevertheless, they are different functions: their values at index <span class="math inline">\(0\)</span> differ. Repeating a value is allowed; a sequence need not be injective.</p>
+<p>Likewise, the constant sequence <span class="math inline">\(7,7,7,\ldots\)</span> has infinitely many indexed terms but a set of values containing just one element.</p>
+<p><span id="example-11.3."><strong>Example&nbsp;11.3.</strong></span> For <span class="math inline">\((a_n)_{n\geq0}\)</span> in Example&nbsp;<a href="#ch11:imports">11.1</a>, define <span class="math inline">\((b_n)_{n\geq1}\)</span> by <span class="math inline">\(b_n=a_{n-1}\)</span>. Then <span class="math display">\[b_1=5,\quad b_2=8,\quad b_3=11,\quad b_4=14.\]</span> Both lists display the same values in the same order, but their index sets differ. If <span class="math inline">\(a_n=5+3n\)</span>, then <span class="math display">\[b_n=5+3(n-1)\qquad(n\geq1).\]</span> Substituting <span class="math inline">\(n=1\)</span> gives the correct first value <span class="math inline">\(5\)</span>. The functions are reindexed descriptions, rather than literally the same function on the same domain.</p>
+<p><span id="example-11.4."><strong>Example&nbsp;11.4.</strong></span> Let <span class="math inline">\(a_n=n^2+1\)</span> for <span class="math inline">\(n\geq0\)</span>. Then <span class="math inline">\(a_2=5\)</span> and <span class="math inline">\(a_3=10\)</span>. More generally, <span class="math display">\[a_{n+1}=(n+1)^2+1=n^2+2n+2,
+\qquad
+a_n+1=n^2+2.\]</span> For example, <span class="math inline">\(a_{2+1}=10\)</span>, whereas <span class="math inline">\(a_2+1=6\)</span>. The parentheses around <span class="math inline">\(n+1\)</span> are needed when substituting the new index into the formula.</p>
+</section>
+<section id="ch11:descriptions" class="level2">
+<h2 class="anchored" data-anchor-id="ch11:descriptions">11.2 Explicit and recursive descriptions</h2>
+<div class="ds-box ds-definition">
+<div id="definition-11.2-explicit-formula" class="ds-box-title">
+<p><strong>Definition 11.2: Explicit formula</strong></p>
+</div>
+<p>An <strong>explicit formula</strong> gives <span class="math inline">\(a_n\)</span> directly as a function of its index <span class="math inline">\(n\)</span>, without using earlier values of the sequence. Its index domain is part of the description.</p>
+</div>
+<p>For example, <span class="math inline">\(a_n=5+3n\)</span> for <span class="math inline">\(n\geq0\)</span> allows us to calculate a term by substituting its index. A finite list of values alone does not specify which formula or continuing rule is intended.</p>
+<p><span id="ch11:prefix"><strong>Example&nbsp;11.5.</strong></span> For <span class="math inline">\(n\geq0\)</span>, define <span class="math display">\[u_n=n+1,\qquad
+v_n=n+1+n(n-1)(n-2).\]</span> At <span class="math inline">\(n=0,1,2\)</span>, at least one factor of the extra product is zero. The formulas agree there, but they differ at the next index:</p>
+<div class="ds-table">
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: center;"><span class="math inline">\(n\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(0\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(1\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(2\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(3\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(u_n\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(1\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(2\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(3\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(4\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(v_n\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(1\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(2\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(3\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(10\)</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Thus the prefix <span class="math inline">\(1,2,3\)</span> does not force the next value to be <span class="math inline">\(4\)</span>. A stated arithmetic rule would add information; the three observations by themselves do not. More generally, a finite prefix can be followed by different continuations.</p>
+<div class="ds-box ds-definition">
+<div id="definition-11.3-recursive-description" class="ds-box-title">
+<p><strong>Definition 11.3: Recursive description</strong></p>
+</div>
+<p>A <strong>recursive description</strong> specifies initial values and a <strong>recurrence relation</strong>: a rule computing later terms from earlier ones. State the indices on which the sequence is defined and the range on which the rule applies. The initial values and rule must allow every term in the domain to be determined.</p>
+</div>
+<p>The rule describes a transition. The initial values supply the starting information. Earlier here means a smaller index.</p>
+<p><span id="example-11.6."><strong>Example&nbsp;11.6.</strong></span> The complete recursive description for Example&nbsp;<a href="#ch11:imports">11.1</a> is <span class="math display">\[a_0=5,\qquad a_{n+1}=a_n+3\quad(n\geq0).\]</span> It gives <span class="math inline">\(a_1=5+3=8\)</span>, then <span class="math inline">\(a_2=8+3=11\)</span>, then <span class="math inline">\(a_3=11+3=14\)</span>.</p>
+<p><img src="../../../teaching/notes/assets/chapter-11/diagram-01.svg" class="ds-note-image img-fluid" loading="lazy" decoding="async" alt="Successive sequence terms a0 equals 5, a1 equals 8, a2 equals 11 and a3 equals 14, joined by increments of 3."></p>
+<p>The explicit formula <span class="math inline">\(a_n=5+3n\)</span> gives <span class="math inline">\(a_{10}=35\)</span> directly. The displayed recursive rule calculates that term by continuing the successive updates from <span class="math inline">\(a_0\)</span>. The two descriptions will be justified by the constant-difference reasoning below.</p>
+<div class="ds-box ds-python">
+<div id="python-non-examinable" class="ds-box-title">
+<p><strong>Python (non-examinable)</strong></p>
+</div>
+<p>The list <code>a</code> starts with <span class="math inline">\(a_0=5\)</span>. Python counts list positions from zero, so <code>a[n]</code> represents <span class="math inline">\(a_n\)</span> here. The loop uses <code>n</code> from <span class="math inline">\(0\)</span> through <span class="math inline">\(9\)</span>; each call to <code>append</code> adds the next term to the list.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> [<span class="dv">5</span>]</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> n <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">10</span>):</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    a.append(a[n] <span class="op">+</span> <span class="dv">3</span>)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(a)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(a[<span class="dv">10</span>], <span class="dv">5</span> <span class="op">+</span> <span class="dv">3</span> <span class="op">*</span> <span class="dv">10</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><strong>Output.</strong></p>
+<pre class="text"><code>[5, 8, 11, 14, 17, 20, 23, 26, 29, 32, 35]
+35 35</code></pre>
+<p>The last line compares the term obtained by successive updates with the explicit formula at <span class="math inline">\(n=10\)</span>; <code>*</code> denotes multiplication. A recursive description can be implemented by a loop: the program need not call itself. This finite calculation does not establish the formula for every index.</p>
+</div>
+<p><span id="example-11.7."><strong>Example&nbsp;11.7.</strong></span> Both sequences below use the rule “double the previous term”, starting at index <span class="math inline">\(0\)</span>: <span class="math display">\[1,2,4,8,\ldots
+\qquad\text{and}\qquad
+3,6,12,24,\ldots.\]</span> They satisfy <span class="math inline">\(a_{n+1}=2a_n\)</span>, but have different initial values. Specifying <span class="math inline">\(a_0=1\)</span> selects the first; specifying <span class="math inline">\(a_0=3\)</span> selects the second. The recurrence equation alone does not distinguish them.</p>
+<p><img src="../../../teaching/notes/assets/chapter-11/01-same-recurrence-different-starts.webp" class="ds-note-image img-fluid" loading="lazy" decoding="async" alt="Sequences following the same recurrence from different initial values."></p>
+<p>Both sequences double the preceding term, but starting at <span class="math inline">\(1\)</span> or <span class="math inline">\(3\)</span> gives different values at every displayed index.</p>
+<p><span id="ch11:fibonacci"><strong>Example&nbsp;11.8. The Fibonacci sequence.</strong></span> Define <span class="math display">\[f_0=0,\qquad f_1=1,\qquad
+f_{n+2}=f_{n+1}+f_n\quad(n\geq0).\]</span> This is the Fibonacci sequence with its stated starting indices. First <span class="math inline">\(f_2=f_1+f_0=1\)</span>, then <span class="math inline">\(f_3=f_2+f_1=2\)</span>, and <span class="math inline">\(f_4=f_3+f_2=3\)</span>. Continuing gives:</p>
+<div class="ds-table">
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: center;"><span class="math inline">\(n\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(0\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(1\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(2\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(3\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(4\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(5\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(6\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(f_n\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(0\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(1\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(1\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(2\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(3\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(5\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(8\)</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>At the first allowed step <span class="math inline">\(n=0\)</span>, both required inputs <span class="math inline">\(f_1,f_0\)</span> are already known. Each subsequent step uses two values that have already been determined.</p>
+<div class="ds-box ds-python">
+<div id="python-non-examinable-1" class="ds-box-title">
+<p><strong>Python (non-examinable)</strong></p>
+</div>
+<p>The list <code>f</code> starts with <span class="math inline">\(f_0=0\)</span> and <span class="math inline">\(f_1=1\)</span>. Its positions are numbered from zero, so <code>f[n]</code> represents <span class="math inline">\(f_n\)</span>. The loop takes <code>n</code> from <span class="math inline">\(0\)</span> through <span class="math inline">\(4\)</span>, and <code>append</code> adds the newly computed term to the end of the list. At each step, the two required entries already exist.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>f <span class="op">=</span> [<span class="dv">0</span>, <span class="dv">1</span>]</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> n <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">5</span>):</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    f.append(f[n <span class="op">+</span> <span class="dv">1</span>] <span class="op">+</span> f[n])</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(f)</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(f[<span class="dv">6</span>])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><strong>Output.</strong></p>
+<pre class="text"><code>[0, 1, 1, 2, 3, 5, 8]
+8</code></pre>
+<p>The first loop step adds <span class="math inline">\(f_2=f_1+f_0\)</span>; the last adds <span class="math inline">\(f_6=f_5+f_4\)</span>. Starting with just <code>[0]</code> would leave <code>f[1]</code> unavailable at the first step.</p>
+</div>
+<p><span id="example-11.9."><strong>Example&nbsp;11.9.</strong></span> The specification <span class="math display">\[c_0=0,\qquad c_{n+2}=c_{n+1}+c_n\quad(n\geq0)\]</span> leaves <span class="math inline">\(c_1\)</span> unspecified. Choosing <span class="math inline">\(c_1=1\)</span> produces <span class="math inline">\(0,1,1,2,3,\ldots\)</span>; choosing <span class="math inline">\(c_1=2\)</span> produces <span class="math inline">\(0,2,2,4,6,\ldots\)</span>. Both follow the same stated rule and value of <span class="math inline">\(c_0\)</span>. They are different sequences, so more initial information is needed.</p>
+<p>There is also an index problem in writing <span class="math inline">\(d_0=2\)</span> and <span class="math inline">\(d_n=3d_{n-1}\)</span> for <span class="math inline">\(n\geq0\)</span>, if the domain is <span class="math inline">\(\mathbb{N}\)</span>. At <span class="math inline">\(n=0\)</span> it refers to <span class="math inline">\(d_{-1}\)</span>, outside that domain. Use the rule for <span class="math inline">\(n\geq1\)</span>, or write equivalently <span class="math display">\[d_0=2,\qquad d_{n+1}=3d_n\quad(n\geq0).\]</span> The corrected first step computes <span class="math inline">\(d_1\)</span> from <span class="math inline">\(d_0\)</span>.</p>
+</section>
+<section id="ch11:arithmetic" class="level2">
+<h2 class="anchored" data-anchor-id="ch11:arithmetic">11.3 Arithmetic sequences</h2>
+<div class="ds-box ds-definition">
+<div id="definition-11.4-arithmetic-sequence" class="ds-box-title">
+<p><strong>Definition 11.4: Arithmetic sequence</strong></p>
+</div>
+<p>A sequence starting at <span class="math inline">\(s\)</span> is <strong>arithmetic</strong> if a fixed real number <span class="math inline">\(d\)</span>, its <strong>common difference</strong>, satisfies <span class="math display">\[a_{n+1}=a_n+d\qquad(n\geq s).\]</span> If its initial term is <span class="math inline">\(a_s=A\)</span>, its explicit formula is <span class="math display">\[a_n=A+(n-s)d\qquad(n\geq s).\]</span></p>
+</div>
+<p>There are <span class="math inline">\(n-s\)</span> transitions from index <span class="math inline">\(s\)</span> to index <span class="math inline">\(n\)</span>. Each adds <span class="math inline">\(d\)</span>, so the total change from the initial term is <span class="math inline">\((n-s)d\)</span>. The difference can be positive, negative or zero. For a finite arithmetic sequence, apply the rule only while both consecutive indices are in its domain.</p>
+<p><span id="example-11.10."><strong>Example&nbsp;11.10.</strong></span> For the imports, <span class="math inline">\(a_0=5\)</span> and every batch adds <span class="math inline">\(d=3\)</span>. Thus <span class="math display">\[a_n=5+3n\qquad(n\geq0).\]</span> After fifty batches the count is <span class="math inline">\(a_{50}=5+3(50)=155\)</span>. The fifty additions occur after the initial snapshot; there is no addition at index <span class="math inline">\(0\)</span>.</p>
+<p><span id="example-11.11."><strong>Example&nbsp;11.11.</strong></span> Rows of seats are numbered <span class="math inline">\(1,2,3,\ldots\)</span>. Row <span class="math inline">\(1\)</span> has <span class="math inline">\(12\)</span> seats, and each later row has four more than its predecessor. The recursive and explicit descriptions are <span class="math display">\[a_1=12,\quad a_{n+1}=a_n+4\ (n\geq1);
+\qquad
+a_n=12+4(n-1)\ (n\geq1).\]</span> Row <span class="math inline">\(10\)</span> has <span class="math inline">\(12+4(9)=48\)</span> seats. There are nine transitions from row <span class="math inline">\(1\)</span> to row <span class="math inline">\(10\)</span>. The formula <span class="math inline">\(12+4n\)</span> would already give the wrong value at <span class="math inline">\(n=1\)</span>.</p>
+<p><span id="example-11.12."><strong>Example&nbsp;11.12.</strong></span> A queue begins with <span class="math inline">\(20\)</span> records. Each full round processes exactly three records; such a round runs only when at least three remain. After <span class="math inline">\(n\)</span> full rounds, the count is <span class="math display">\[q_n=20-3n\qquad(0\leq n\leq6).\]</span> The values are <span class="math inline">\(20,17,14,11,8,5,2\)</span>. The recursive description is <span class="math inline">\(q_0=20\)</span> and <span class="math inline">\(q_{n+1}=q_n-3\)</span> for <span class="math inline">\(0\leq n\leq5\)</span>.</p>
+<p>At <span class="math inline">\(n=6\)</span>, only two records remain. Extending the formula to <span class="math inline">\(n=7\)</span> would give <span class="math inline">\(-1\)</span>, which cannot represent a number of waiting records. Finishing with a partial round would require a different final update. The algebraic formula can extend to negative values; this counting model cannot.</p>
+<p><span id="example-11.13."><strong>Example&nbsp;11.13.</strong></span> Suppose an arithmetic sequence starting at <span class="math inline">\(0\)</span> has <span class="math inline">\(a_2=11\)</span> and <span class="math inline">\(a_5=23\)</span>. Three transitions occur between these indices, so <span class="math display">\[23-11=3d,\qquad d=4.\]</span> Then <span class="math inline">\(a_0=a_2-2d=11-8=3\)</span>. The complete descriptions are <span class="math display">\[a_0=3,\quad a_{n+1}=a_n+4\ (n\geq0);
+\qquad a_n=3+4n\ (n\geq0).\]</span> We used the stated arithmetic assumption. The two observed values alone would not force the intervening or later values.</p>
+</section>
+<section id="ch11:geometric" class="level2">
+<h2 class="anchored" data-anchor-id="ch11:geometric">11.4 Geometric sequences</h2>
+<div class="ds-box ds-definition">
+<div id="definition-11.5-geometric-sequence" class="ds-box-title">
+<p><strong>Definition 11.5: Geometric sequence</strong></p>
+</div>
+<p>A sequence starting at <span class="math inline">\(s\)</span> is <strong>geometric</strong> when a fixed real multiplier <span class="math inline">\(r\)</span> satisfies <span class="math display">\[a_{n+1}=r a_n\qquad(n\geq s).\]</span> For <span class="math inline">\(r\ne0\)</span> and <span class="math inline">\(a_s=A\)</span>, its explicit formula is <span class="math display">\[a_n=A r^{\,n-s}\qquad(n\geq s).\]</span> Whenever <span class="math inline">\(a_n\ne0\)</span>, the multiplier is the <strong>common ratio</strong> <span class="math inline">\(r=a_{n+1}/a_n\)</span>.</p>
+</div>
+<p>There are <span class="math inline">\(n-s\)</span> multiplications by <span class="math inline">\(r\)</span> after the initial term. The multiplier definition remains meaningful when terms are zero, even though division by a zero term is not allowed. For <span class="math inline">\(r=0\)</span>, retain the stated initial term and write all later terms as zero; we treat that case separately from the displayed power formula.</p>
+<p><span id="example-11.14."><strong>Example&nbsp;11.14.</strong></span> Let <span class="math inline">\(b_n\)</span> count length-<span class="math inline">\(n\)</span> bit strings. There is one length-<span class="math inline">\(0\)</span> string, the empty string, so <span class="math inline">\(b_0=1\)</span>. Each length-<span class="math inline">\(n\)</span> string extends in exactly two ways by appending <span class="math inline">\(0\)</span> or <span class="math inline">\(1\)</span>. Different prefixes or final bits give different extended strings, and every length-<span class="math inline">\((n+1)\)</span> string is obtained once. Thus <span class="math display">\[b_0=1,\qquad b_{n+1}=2b_n\quad(n\geq0).\]</span> This is geometric with <span class="math inline">\(r=2\)</span>, giving <span class="math inline">\(b_n=2^n\)</span>. It agrees with Chapter 9’s product-rule count.</p>
+<p><span id="example-11.15."><strong>Example&nbsp;11.15.</strong></span> Let <span class="math inline">\(a_1=81\)</span> and <span class="math inline">\(a_{n+1}=\frac13a_n\)</span> for <span class="math inline">\(n\geq1\)</span>. The sequence begins <span class="math inline">\(81,27,9,3,1,\frac13,\ldots\)</span>. Its explicit formula is <span class="math display">\[a_n=81\left(\frac13\right)^{n-1}\qquad(n\geq1).\]</span> In particular, <span class="math inline">\(a_5=81/3^4=1\)</span>. The exponent counts four multiplications between indices <span class="math inline">\(1\)</span> and <span class="math inline">\(5\)</span>. Our numerical sequences may have real values; they are not all counting sequences.</p>
+<p><span id="example-11.16."><strong>Example&nbsp;11.16.</strong></span> Let <span class="math inline">\(a_0=2\)</span> and <span class="math inline">\(a_{n+1}=-3a_n\)</span> for <span class="math inline">\(n\geq0\)</span>. The first terms are <span class="math display">\[2,-6,18,-54,162,\ldots,
+\qquad a_n=2(-3)^n.\]</span> The signs alternate because each update multiplies by a negative number. Keep the parentheses: <span class="math inline">\(2(-3)^2=18\)</span>. The expression <span class="math inline">\(-2(3^2)=-18\)</span> has a different sign and does not describe the same term.</p>
+<p><span id="example-11.17."><strong>Example&nbsp;11.17.</strong></span> The constant sequence <span class="math inline">\(7,7,7,\ldots\)</span> is arithmetic with difference <span class="math inline">\(0\)</span> and geometric with multiplier <span class="math inline">\(1\)</span>. The two types can overlap.</p>
+<p>The all-zero sequence is also arithmetic with difference <span class="math inline">\(0\)</span>. It satisfies <span class="math inline">\(a_{n+1}=r a_n\)</span> for every fixed real <span class="math inline">\(r\)</span>, so it is geometric under our multiplier definition. The quotient <span class="math inline">\(0/0\)</span> does not identify a ratio.</p>
+<p>If instead <span class="math inline">\(a_0=7\)</span> and the multiplier is <span class="math inline">\(r=0\)</span>, the sequence is <span class="math inline">\(7,0,0,\ldots\)</span>. Write its explicit description as <span class="math display">\[a_0=7,\qquad a_n=0\quad(n\geq1).\]</span> No evaluation of a zeroth power of zero is needed. Once a geometric sequence reaches zero, a fixed multiplier keeps every later term at zero.</p>
+</section>
+<section id="ch11:models" class="level2">
+<h2 class="anchored" data-anchor-id="ch11:models">11.5 Further recurrence relations</h2>
+<p>Not every numerical sequence has a fixed difference or a fixed multiplier. A recurrence can still describe a changing update precisely.</p>
+<p><span id="ch11:squares"><strong>Example&nbsp;11.18.</strong></span> At stage <span class="math inline">\(n\geq0\)</span>, a square array has <span class="math inline">\(n+1\)</span> rows and <span class="math inline">\(n+1\)</span> columns. Let <span class="math inline">\(s_n\)</span> count its cells. The explicit formula is <span class="math inline">\(s_n=(n+1)^2\)</span>.</p>
+<p><img src="../../../teaching/notes/assets/chapter-11/diagram-02.svg" class="ds-note-image img-fluid" loading="lazy" decoding="async" alt="Square arrays with side lengths 1, 2 and 3, representing s0 equals 1, s1 equals 4 and s2 equals 9."></p>
+<p>To grow the side from <span class="math inline">\(n+1\)</span> to <span class="math inline">\(n+2\)</span>, add a row of <span class="math inline">\(n+1\)</span> cells, a column of <span class="math inline">\(n+1\)</span> cells and the new corner. The number added is <span class="math inline">\(2n+3\)</span>. Thus another description is <span class="math display">\[s_0=1,\qquad s_{n+1}=s_n+2n+3\quad(n\geq0).\]</span> The first terms <span class="math inline">\(1,4,9,16\)</span> have differences <span class="math inline">\(3,5,7\)</span>, so the sequence is not arithmetic. It is not geometric either: the first two successive ratios are <span class="math inline">\(4\)</span> and <span class="math inline">\(9/4\)</span>, which differ.</p>
+<p><span id="ch11:affine"><strong>Example&nbsp;11.19.</strong></span> A process starts with one record. At each round, it replaces each current record by two records and then adds one new record. Let <span class="math inline">\(a_n\)</span> count records after <span class="math inline">\(n\)</span> rounds. The description is <span class="math display">\[a_0=1,\qquad a_{n+1}=2a_n+1\quad(n\geq0).\]</span> It gives <span class="math inline">\(1,3,7,15,31,\ldots\)</span>. The factor <span class="math inline">\(2\)</span> describes the replacements; the added <span class="math inline">\(1\)</span> describes the extra record. This is not the geometric rule <span class="math inline">\(a_{n+1}=2a_n\)</span>.</p>
+<p>The values suggest the explicit formula <span class="math inline">\(a_n=2^{n+1}-1\)</span>. It matches the terms just calculated, but we must justify it for every index rather than rely on that finite match.</p>
+</section>
+<section id="ch11:verification" class="level2">
+<h2 class="anchored" data-anchor-id="ch11:verification">11.6 Verification and comparison</h2>
+<p>A candidate formula must agree with all prescribed initial values and with each permitted update. Induction connects those checks to a claim about the whole sequence.</p>
+<p><span id="ch11:affine-proof"><strong>Example&nbsp;11.20.</strong></span> For Example&nbsp;<a href="#ch11:affine">11.19</a>, prove <span class="math inline">\(a_n=2^{n+1}-1\)</span> for every <span class="math inline">\(n\geq0\)</span>.</p>
+<p><em>Proof.</em> Let <span class="math inline">\(P(n)\)</span> state this equality.</p>
+<p><em>Base case.</em> At <span class="math inline">\(n=0\)</span>, <span class="math inline">\(a_0=1=2^{0+1}-1\)</span>.</p>
+<p><em>Inductive step.</em> Fix <span class="math inline">\(k\geq0\)</span> and assume <span class="math inline">\(a_k=2^{k+1}-1\)</span>. The recurrence then gives <span class="math display">\[\begin{aligned}
+a_{k+1}
+&amp;=2a_k+1\\
+&amp;=2(2^{k+1}-1)+1\\
+&amp;=2^{k+2}-1\\
+&amp;=2^{(k+1)+1}-1.
+\end{aligned}\]</span> This is <span class="math inline">\(P(k+1)\)</span>. Ordinary induction proves the formula for all <span class="math inline">\(n\geq0\)</span>. <span class="math inline">\(\square\)</span></p>
+<p>We may now use it at an index not checked in the initial list: for example, <span class="math inline">\(a_6=2^7-1=127\)</span>.</p>
+<p><span id="example-11.21."><strong>Example&nbsp;11.21.</strong></span> The formula <span class="math inline">\(b_n=2^n-1\)</span> also satisfies the update equation: <span class="math display">\[2b_n+1=2(2^n-1)+1=2^{n+1}-1=b_{n+1}.\]</span> But <span class="math inline">\(b_0=0\)</span>, not the required <span class="math inline">\(a_0=1\)</span>. Its terms begin <span class="math inline">\(0,1,3,7,\ldots\)</span>, so it does not describe the sequence of Example&nbsp;<a href="#ch11:affine">11.19</a>. Checking the update while omitting the initial value would not establish the proposed answer.</p>
+<p><span id="example-11.22."><strong>Example&nbsp;11.22.</strong></span> Chapter 5 studied <span class="math display">\[c_0=1,\quad c_1=3,\quad
+c_{n+2}=2c_{n+1}-c_n\quad(n\geq0)\]</span> and proved <span class="math inline">\(c_n=2n+1\)</span> for every <span class="math inline">\(n\geq0\)</span>, using both initial values in the induction. The first terms are <span class="math inline">\(1,3,5,7,\ldots\)</span>. The explicit formula shows <span class="math display">\[c_{n+1}-c_n=(2n+3)-(2n+1)=2.\]</span> Consequently, the shorter recursive description <span class="math inline">\(c_0=1\)</span>, <span class="math inline">\(c_{n+1}=c_n+2\)</span> for <span class="math inline">\(n\geq0\)</span> gives the same sequence. Having two earlier terms in a rule does not prevent its sequence from being arithmetic.</p>
+<p>More generally, the rules considered here determine later terms from known earlier terms. If two candidate descriptions agree on the required initial values and obey the same such update, agreement propagates to every later index. For a rule using two earlier terms, both starting values must be checked.</p>
+</section>
+<section id="ch11:exercises" class="level2">
+<h2 class="anchored" data-anchor-id="ch11:exercises">11.7 Exercises</h2>
+<div class="ds-exercises" style="--ds-chapter: '11';">
+<ol type="1">
+<li><p><span id="ch11ex:index" data-label="ch11ex:index"></span> Let <span class="math inline">\(a_n=n^2+2\)</span> for <span class="math inline">\(n\geq0\)</span>.</p>
+<ol type="a">
+<li><p>List the first five terms with their indices.</p></li>
+<li><p>Find <span class="math inline">\(a_3\)</span> and <span class="math inline">\(a_5\)</span>. Which displayed position does <span class="math inline">\(a_3\)</span> occupy?</p></li>
+<li><p>Simplify <span class="math inline">\(a_{n+1}\)</span> and <span class="math inline">\(a_n+1\)</span> separately. Show that they do not denote the same expression.</p></li>
+</ol></li>
+<li><p><span id="ch11ex:sets" data-label="ch11ex:sets"></span> For <span class="math inline">\(n\geq0\)</span>, let <span class="math inline">\(a_n=(-1)^n\)</span> and <span class="math inline">\(b_n=(-1)^{n+1}\)</span>. Give the first four terms of each and their sets of values. Are the indexed functions equal? Give an index witnessing your answer.</p></li>
+<li><p><span id="ch11ex:reindex" data-label="ch11ex:reindex"></span> Let <span class="math inline">\(a_n=4+5n\)</span> for <span class="math inline">\(n\geq0\)</span> and define <span class="math inline">\(b_n=a_{n-1}\)</span> for <span class="math inline">\(n\geq1\)</span>.</p>
+<ol type="a">
+<li><p>Give an explicit formula for <span class="math inline">\(b_n\)</span>.</p></li>
+<li><p>Find <span class="math inline">\(b_1\)</span> and <span class="math inline">\(b_5\)</span>.</p></li>
+<li><p>Explain why the two descriptions list the same ordered values but have different domains.</p></li>
+</ol></li>
+<li><p><span id="ch11ex:explicit" data-label="ch11ex:explicit"></span> List the first four terms and their indices:</p>
+<ol type="a">
+<li><p><span class="math inline">\(a_n=3(2^n)\)</span>, <span class="math inline">\(n\geq0\)</span>.</p></li>
+<li><p><span class="math inline">\(b_n=3(2^{n-1})\)</span>, <span class="math inline">\(n\geq1\)</span>.</p></li>
+<li><p><span class="math inline">\(c_n=10-2n\)</span>, <span class="math inline">\(n\geq0\)</span>.</p></li>
+</ol>
+<p>For part (c), the values are real numbers; no nonnegative-count restriction is imposed.</p></li>
+<li><p><span id="ch11ex:first-rule" data-label="ch11ex:first-rule"></span> Let <span class="math inline">\(a_0=2\)</span> and <span class="math inline">\(a_{n+1}=a_n+5\)</span> for <span class="math inline">\(n\geq0\)</span>. Calculate <span class="math inline">\(a_1,\ldots,a_4\)</span> recursively. Give an explicit formula and use it to find <span class="math inline">\(a_{10}\)</span>. Check that it gives the specified initial value.</p></li>
+<li><p><span id="ch11ex:changing-increment" data-label="ch11ex:changing-increment"></span> Define <span class="math inline">\(u_0=1\)</span> and <span class="math inline">\(u_{n+1}=u_n+2(n+1)\)</span> for <span class="math inline">\(n\geq0\)</span>. Find <span class="math inline">\(u_1,u_2,u_3,u_4\)</span>. Is this sequence arithmetic? Explain why a formula based on a constant increment would be inappropriate.</p></li>
+<li><p><span id="ch11ex:two-values" data-label="ch11ex:two-values"></span> Let <span class="math display">\[c_0=2,\quad c_1=1,\quad
+c_{n+2}=c_{n+1}+c_n\quad(n\geq0).\]</span> Find <span class="math inline">\(c_2,\ldots,c_6\)</span>, displaying the two earlier terms used in each step. Explain why the first allowed step requires no index below <span class="math inline">\(0\)</span>.</p></li>
+<li><p><span id="ch11ex:missing-base" data-label="ch11ex:missing-base"></span> Someone specifies only <span class="math inline">\(a_0=1\)</span> and <span class="math inline">\(a_{n+2}=a_{n+1}+a_n\)</span> for <span class="math inline">\(n\geq0\)</span>. Choose two different possible values of <span class="math inline">\(a_1\)</span>, and generate three further terms for each. Use them to show why the given data do not determine a unique sequence.</p></li>
+<li><p><span id="ch11ex:repair-index" data-label="ch11ex:repair-index"></span> A sequence has domain <span class="math inline">\(\mathbb{N}\)</span>, and is described by <span class="math inline">\(a_0=4\)</span> and <span class="math inline">\(a_n=2a_{n-1}\)</span> for <span class="math inline">\(n\geq0\)</span>. Identify the undefined index used at the first permitted step. Give two equivalent repairs, one with <span class="math inline">\(a_n\)</span> on the left and one with <span class="math inline">\(a_{n+1}\)</span>. Using the repaired description, find <span class="math inline">\(a_3\)</span>.</p></li>
+<li><p><span id="ch11ex:circular" data-label="ch11ex:circular"></span> Consider these proposed descriptions on <span class="math inline">\(\mathbb{N}\)</span>:</p>
+<ol type="a">
+<li><p><span class="math inline">\(a_0=1\)</span> and <span class="math inline">\(a_{n+1}=a_{n+1}+1\)</span> for <span class="math inline">\(n\geq0\)</span>.</p></li>
+<li><p><span class="math inline">\(b_0=1\)</span> and <span class="math inline">\(b_{n+1}=b_{n+1}\)</span> for <span class="math inline">\(n\geq0\)</span>.</p></li>
+</ol>
+<p>Which is contradictory, and which leaves later terms undetermined? Explain why neither is a rule computing the next value from earlier values.</p></li>
+<li><p><span id="ch11ex:arithmetic" data-label="ch11ex:arithmetic"></span> The sequences below are assumed arithmetic. For each, give its initial value, common difference, explicit formula and recursive rule, including the valid ranges.</p>
+<ol type="a">
+<li><p><span class="math inline">\(7,11,15,\ldots\)</span>, with first index <span class="math inline">\(0\)</span>.</p></li>
+<li><p><span class="math inline">\(20,17,14,\ldots\)</span>, with first index <span class="math inline">\(1\)</span>.</p></li>
+<li><p><span class="math inline">\(-2,-2,-2,\ldots\)</span>, with first index <span class="math inline">\(0\)</span>.</p></li>
+<li><p><span class="math inline">\(9,12,15,\ldots\)</span>, with first index <span class="math inline">\(2\)</span>.</p></li>
+</ol></li>
+<li><p><span id="ch11ex:separated" data-label="ch11ex:separated"></span> An arithmetic sequence starting at <span class="math inline">\(0\)</span> satisfies <span class="math inline">\(a_3=17\)</span> and <span class="math inline">\(a_8=42\)</span>. Find its common difference and <span class="math inline">\(a_0\)</span>. Give an explicit formula and compute <span class="math inline">\(a_{15}\)</span>.</p></li>
+<li><p><span id="ch11ex:finite-count" data-label="ch11ex:finite-count"></span> A queue starts with <span class="math inline">\(23\)</span> records. Each full round processes exactly four records, and a full round runs only if at least four remain. Describe the count after <span class="math inline">\(n\)</span> full rounds explicitly and recursively. State the largest permitted <span class="math inline">\(n\)</span>. If a final partial round then processes all remaining records, does that last step follow the same constant-difference rule? Explain.</p></li>
+<li><p><span id="ch11ex:geometric" data-label="ch11ex:geometric"></span> For each geometric sequence, give the first four terms and an explicit description on its stated domain.</p>
+<ol type="a">
+<li><p><span class="math inline">\(a_0=5\)</span>, <span class="math inline">\(r=3\)</span>, <span class="math inline">\(n\geq0\)</span>.</p></li>
+<li><p><span class="math inline">\(b_1=64\)</span>, <span class="math inline">\(r=\tfrac12\)</span>, <span class="math inline">\(n\geq1\)</span>.</p></li>
+<li><p><span class="math inline">\(c_0=-1\)</span>, <span class="math inline">\(r=-2\)</span>, <span class="math inline">\(n\geq0\)</span>.</p></li>
+<li><p><span class="math inline">\(d_0=9\)</span>, <span class="math inline">\(r=0\)</span>, <span class="math inline">\(n\geq0\)</span>.</p></li>
+</ol></li>
+<li><p><span id="ch11ex:ratio-choices" data-label="ch11ex:ratio-choices"></span> A real geometric sequence starting at <span class="math inline">\(0\)</span> has <span class="math inline">\(g_0=3\)</span> and <span class="math inline">\(g_2=12\)</span>. Find all possible real multipliers and give the corresponding explicit formulas. Do the two supplied values determine <span class="math inline">\(g_1\)</span> uniquely?</p></li>
+<li><p><span id="ch11ex:zeros" data-label="ch11ex:zeros"></span></p>
+<ol type="a">
+<li><p>Find the sequence with <span class="math inline">\(a_0=0\)</span> and <span class="math inline">\(a_{n+1}=5a_n\)</span> for <span class="math inline">\(n\geq0\)</span>.</p></li>
+<li><p>Could a geometric sequence begin <span class="math inline">\(1,0,2\)</span>? Justify your answer from the fixed-multiplier rule.</p></li>
+<li><p>Does the all-zero sequence determine a unique multiplier? Explain why term ratios do not answer that question.</p></li>
+</ol></li>
+<li><p><span id="ch11ex:classify" data-label="ch11ex:classify"></span> For <span class="math inline">\(n\geq0\)</span>, decide whether each sequence is arithmetic, geometric, both or neither.</p>
+<ol type="a">
+<li><p><span class="math inline">\(a_n=6+2n\)</span>.</p></li>
+<li><p><span class="math inline">\(b_n=3(-2)^n\)</span>.</p></li>
+<li><p><span class="math inline">\(c_n=4\)</span>.</p></li>
+<li><p><span class="math inline">\(d_n=n^2\)</span>.</p></li>
+</ol>
+<p>For a claimed property, justify the constant difference or multiplier for every allowed index. For a failed property, give incompatible steps.</p></li>
+<li><p><span id="ch11ex:word-models" data-label="ch11ex:word-models"></span> In both models, index <span class="math inline">\(0\)</span> is before any cycle.</p>
+<ol type="a">
+<li><p>There are initially four stored images; each cycle adds six, with none removed. Give both descriptions and the count after eight cycles.</p></li>
+<li><p>There are initially four copies; each round replaces every copy by three copies. Give both descriptions and the count after three rounds.</p></li>
+</ol></li>
+<li><p><span id="ch11ex:rectangle" data-label="ch11ex:rectangle"></span> At stage <span class="math inline">\(n\geq0\)</span>, an array has <span class="math inline">\(n+1\)</span> rows and <span class="math inline">\(n+2\)</span> columns. Let <span class="math inline">\(r_n\)</span> count its cells.</p>
+<ol type="a">
+<li><p>Give an explicit formula and its first four terms.</p></li>
+<li><p>Show that <span class="math inline">\(r_{n+1}-r_n=2n+4\)</span>, and give a complete recursive description.</p></li>
+<li><p>Is the sequence arithmetic or geometric? Support each decision with differences or multipliers.</p></li>
+</ol></li>
+<li><p><span id="ch11ex:affine" data-label="ch11ex:affine"></span> Let <span class="math inline">\(a_0=2\)</span> and <span class="math inline">\(a_{n+1}=2a_n+3\)</span> for <span class="math inline">\(n\geq0\)</span>. Compute the first four terms, then prove <span class="math display">\[a_n=5(2^n)-3\qquad(n\geq0).\]</span> State the base case, the hypothesis and the target at index <span class="math inline">\(k+1\)</span>.</p></li>
+<li><p><span id="ch11ex:wrong-base" data-label="ch11ex:wrong-base"></span> For the sequence of Example&nbsp;<a href="#ch11:affine">11.19</a>, someone proposes <span class="math inline">\(b_n=3(2^n)-1\)</span>. Show that <span class="math inline">\(b_{n+1}=2b_n+1\)</span>, but explain why this formula does not describe the given sequence. Identify the missing part of the proposed verification.</p></li>
+<li><p><span id="ch11ex:prefix" data-label="ch11ex:prefix"></span> For <span class="math inline">\(n\geq0\)</span>, let <span class="math display">\[u_n=2n+1,\qquad
+v_n=2n+1+n(n-1)(n-2)(n-3).\]</span> Show that the first four terms agree, but the terms at index <span class="math inline">\(4\)</span> differ. What does this show about a claim based only on observing <span class="math inline">\(1,3,5,7\)</span>?</p></li>
+<li><p><span id="ch11ex:equal-descriptions" data-label="ch11ex:equal-descriptions"></span> Let <span class="math inline">\(f_n=7+4n\)</span> and <span class="math inline">\(g_n=3+4(n+1)\)</span>, both for <span class="math inline">\(n\geq0\)</span>. Also let <span class="math inline">\(h_n=7+4(n-1)\)</span> for <span class="math inline">\(n\geq1\)</span>.</p>
+<ol type="a">
+<li><p>Prove that <span class="math inline">\(f\)</span> and <span class="math inline">\(g\)</span> are the same indexed function.</p></li>
+<li><p>Explain how <span class="math inline">\(h\)</span> lists the same ordered values with different indices.</p></li>
+<li><p>Compare <span class="math inline">\(f_3,g_3,h_3\)</span>.</p></li>
+</ol></li>
+<li><p><span id="ch11ex:two-rules" data-label="ch11ex:two-rules"></span> Let <span class="math display">\[c_0=2,\quad c_1=5,\quad
+c_{n+2}=2c_{n+1}-c_n\quad(n\geq0).\]</span> Verify that <span class="math inline">\(c_n=3n+2\)</span> matches both initial values and the recurrence equation. Explain, using induction, why those checks establish the formula for every <span class="math inline">\(n\geq0\)</span>. Give another complete recursive description that uses only the immediately preceding term.</p></li>
+<li><p><span id="ch11ex:variable-proof" data-label="ch11ex:variable-proof"></span> For the sequence in Exercise&nbsp;<a href="#ch11ex:changing-increment">11.6</a>, prove by ordinary induction that <span class="math display">\[u_n=n^2+n+1\qquad(n\geq0).\]</span> Show explicitly how the added <span class="math inline">\(2(k+1)\)</span> turns the hypothesis into the target at <span class="math inline">\(k+1\)</span>.</p></li>
+<li><p><span id="ch11ex:binary-count" data-label="ch11ex:binary-count"></span> Let <span class="math inline">\(t_n\)</span> be the number of length-<span class="math inline">\(n\)</span> bit strings with no two adjacent <span class="math inline">\(1\)</span>s. Include the empty string when <span class="math inline">\(n=0\)</span>.</p>
+<ol type="a">
+<li><p>Find <span class="math inline">\(t_0,t_1,t_2,t_3\)</span> by listing.</p></li>
+<li><p>Classify strings of length <span class="math inline">\(n+2\)</span> by their final bit. If the final bit is <span class="math inline">\(1\)</span>, what must the preceding bit be? Use the two cases to justify <span class="math inline">\(t_{n+2}=t_{n+1}+t_n\)</span> for <span class="math inline">\(n\geq0\)</span>.</p></li>
+<li><p>Give the complete recursive description and use it to find <span class="math inline">\(t_5\)</span>.</p></li>
+</ol></li>
+</ol>
+</div>
+<div class="ds-chapter-navigation">
+<p><a href="../../../teaching/notes/chapter-10/">← Chapter 10</a> · <a href="../../../teaching/notes/chapter-12/">Chapter 12 →</a></p>
+</div>
+
+
+</section>
+
+<a href="#page-top" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
+<script>
+  (() => {
+    const main = document.getElementById("quarto-document-content");
+    const skipLink = document.querySelector(".skip-link");
+
+    if (skipLink && main) {
+      skipLink.addEventListener("click", () => {
+        window.requestAnimationFrame(() => main.focus({ preventScroll: true }));
+      });
+    }
+  })();
+</script>
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/rjnieto\.com");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>© 2026 RJ Nieto</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+<p>Built with Quarto</p>
+</div>
+  </div>
+</footer>
+
+
+
+
+</body></html>

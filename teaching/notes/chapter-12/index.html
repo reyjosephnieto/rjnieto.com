@@ -1,0 +1,1100 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-GB" xml:lang="en-GB"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.10.18">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="description" content="Chapter 12: Recursion. HTML edition of Lecture Notes in Discrete Mathematics.">
+
+<title>Chapter 12: Recursion – RJ Nieto</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<link href="../../../assets/branding/rj-logo.png" rel="icon" type="image/png">
+<script src="../../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-dark-b85bc7c33db8c58e0ec93c3465666fed.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap-68e913143d7006db5355610df9e4aed5.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="dark">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<meta name="author" content="Rey Joseph Nieto">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "@id": "https://rjnieto.com/#rey-joseph-nieto",
+  "name": "Rey Joseph Nieto",
+  "alternateName": ["RJ Nieto", "Thinking Pinoy"],
+  "description": "Assistant Secretary in the Office of the Cabinet Secretary, Office of the President of the Philippines.",
+  "url": "https://rjnieto.com/",
+  "image": {
+    "@type": "ImageObject",
+    "@id": "https://rjnieto.com/#portrait",
+    "url": "https://rjnieto.com/assets/images/rey-joseph-nieto-portrait.jpg",
+    "contentUrl": "https://rjnieto.com/assets/images/rey-joseph-nieto-portrait.jpg",
+    "width": 824,
+    "height": 824,
+    "caption": "Portrait of Rey Joseph RJ Nieto"
+  },
+  "jobTitle": "Assistant Secretary",
+  "worksFor": {
+    "@type": "GovernmentOrganization",
+    "name": "Office of the Cabinet Secretary, Office of the President of the Philippines"
+  },
+  "sameAs": [
+    "https://www.linkedin.com/in/rjosephnieto/",
+    "https://www.facebook.com/rjosephnieto",
+    "https://x.com/rjosephnieto"
+  ]
+}
+</script>
+<link rel="preload" href="../../../assets/fonts/ibm-plex-sans/IBMPlexSans-Roman.woff2" as="font" type="font/woff2" crossorigin="">
+<script defer="" src="../../../assets/js/home-research-background.js"></script>
+<script defer="" src="../../../assets/js/discrete-notes-layout.js"></script>
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta property="og:url" content="https://rjnieto.com/teaching/notes/chapter-12/">
+<meta property="og:type" content="article">
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../../../styles.css">
+<link rel="stylesheet" href="../../../assets/css/site-typography.css">
+<link rel="stylesheet" href="../../../assets/css/home-research-background.css">
+<link rel="stylesheet" href="../../../assets/css/discrete-notes.css">
+<meta property="og:title" content="Chapter 12: Recursion – RJ Nieto">
+<meta property="og:description" content="Chapter 12: Recursion. HTML edition of Lecture Notes in Discrete Mathematics.">
+<meta property="og:image" content="https://rjnieto.com/teaching/bulsu/discrete-math/images/thumbnails/chapter_12.webp">
+<meta property="og:site_name" content="RJ Nieto">
+<meta property="og:locale" content="en_GB">
+<meta name="twitter:title" content="Chapter 12: Recursion – RJ Nieto">
+<meta name="twitter:description" content="Chapter 12: Recursion. HTML edition of Lecture Notes in Discrete Mathematics.">
+<meta name="twitter:image" content="https://rjnieto.com/teaching/bulsu/discrete-math/images/thumbnails/chapter_12.webp">
+<meta name="twitter:creator" content="@rjosephnieto">
+<meta name="twitter:site" content="@rjosephnieto">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://rjnieto.com/teaching/notes/chapter-12/">
+</head>
+
+<body class="nav-fixed ds-lecture-notes quarto-light">
+<span id="page-top" class="page-top-anchor" aria-hidden="true"></span>
+<a class="skip-link" href="#quarto-document-content">Skip to main content</a>
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../../">
+    <span class="navbar-title">RJ Nieto</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../../"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../cv/"> 
+<span class="menu-text">CV</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../teaching/"> 
+<span class="menu-text">Teaching</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../calculated/"> 
+<span class="menu-text">Writing</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../research/"> 
+<span class="menu-text">Hobby</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul class="collapse">
+  <li><a href="#ch12:functions" id="toc-ch12:functions" class="nav-link active" data-scroll-target="#ch12\:functions">12.1 Injectivity and surjectivity</a></li>
+  <li><a href="#ch12:inverse-images" id="toc-ch12:inverse-images" class="nav-link" data-scroll-target="#ch12\:inverse-images">12.2 Images and inverses</a></li>
+  <li><a href="#ch12:trees" id="toc-ch12:trees" class="nav-link" data-scroll-target="#ch12\:trees">12.3 Full binary trees</a></li>
+  <li><a href="#ch12:recursive-functions" id="toc-ch12:recursive-functions" class="nav-link" data-scroll-target="#ch12\:recursive-functions">12.4 Recursive counting functions</a></li>
+  <li><a href="#ch12:structural-induction" id="toc-ch12:structural-induction" class="nav-link" data-scroll-target="#ch12\:structural-induction">12.5 Structural induction</a></li>
+  <li><a href="#ch12:exercises" id="toc-ch12:exercises" class="nav-link" data-scroll-target="#ch12\:exercises">12.6 Exercises</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content" tabindex="-1">
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Chapter 12: Recursion</h1>
+<p class="subtitle lead">Discrete Mathematics · Rey Joseph Nieto</p>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<!-- Generated from the corresponding chapter LaTeX. Run scripts/build-discrete-html.py to refresh. -->
+<p><a href="../../../teaching/" class="btn btn-outline-secondary btn-sm">Course page</a> <a href="../../../teaching/bulsu/discrete-math/lecture-notes/chapter_12.pdf" class="btn btn-outline-primary btn-sm" aria-label="Open Chapter 12: Recursion as PDF">PDF</a></p>
+<p><span id="ch12:chapter" data-label="ch12:chapter"></span></p>
+<p>A task either finishes immediately or splits into exactly two smaller tasks, each of which follows the same rule. Suppose every resulting task eventually finishes. How does the number of finished end tasks compare with the number of splits? A tree drawing can record one execution, but we want an answer covering every possible finite pattern of splits.</p>
+<p>We will define counting functions on these trees and prove a relationship between their values. First we sharpen the function language from Chapters 1 and 4, including what it means to cover every output and how to find all inputs leading to a chosen output. The tree construction then brings together Chapter 6’s rooted trees, Chapter 11’s recursive descriptions and Chapter 5’s induction.</p>
+<div class="ds-box ds-learningoutcomes">
+<div id="what-you-should-be-able-to-do" class="ds-box-title">
+<p><strong>What you should be able to do</strong></p>
+</div>
+<p>After working through this chapter, you should be able to:</p>
+<ul>
+<li><p>distinguish injectivity, surjectivity and bijectivity;</p></li>
+<li><p>calculate images and inverse images on stated domains;</p></li>
+<li><p>distinguish an inverse image from an inverse function;</p></li>
+<li><p>describe full binary trees through a base object and a constructor;</p></li>
+<li><p>translate a recursive counting procedure into a mathematical function;</p></li>
+<li><p>trace recursive evaluation on a finite tree;</p></li>
+<li><p>prove a tree property using both subtree hypotheses in structural induction.</p></li>
+</ul>
+</div>
+<section id="ch12:functions" class="level2">
+<h2 class="anchored" data-anchor-id="ch12:functions">12.1 Injectivity and surjectivity</h2>
+<p>A function <span class="math inline">\(f:X\to Y\)</span> assigns exactly one output in <span class="math inline">\(Y\)</span> to each input in <span class="math inline">\(X\)</span>. The <strong>domain</strong> <span class="math inline">\(X\)</span> lists the permitted inputs; the <strong>codomain</strong> <span class="math inline">\(Y\)</span> lists the permitted outputs. Its <strong>range</strong> <span class="math inline">\(f(X)=\{f(x):x\in X\}\)</span> is the set of outputs actually obtained, which may be smaller than <span class="math inline">\(Y\)</span>.</p>
+<p>Chapter 4 studied injectivity. We now place that property beside surjectivity, which asks whether any element of the codomain is missed.</p>
+<div class="ds-box ds-definition">
+<div id="definition-12.1-injective-surjective-and-bijective" class="ds-box-title">
+<p><strong>Definition 12.1: Injective, surjective and bijective</strong></p>
+</div>
+<p>Let <span class="math inline">\(f:X\to Y\)</span>. The function is <strong>injective</strong> if equal outputs force equal inputs: <span class="math display">\[\text{for all }a,b\in X,\quad f(a)=f(b)\Longrightarrow a=b.\]</span> It is <strong>surjective</strong>, or <strong>onto</strong>, if <span class="math display">\[\text{for every }y\in Y,\ \text{there is an }x\in X
+\text{ with }f(x)=y.\]</span> It is <strong>bijective</strong> if it is both injective and surjective.</p>
+</div>
+<p>For a particular output in <span class="math inline">\(Y\)</span>, injectivity permits at most one input leading to it; surjectivity requires at least one. A bijection gives exactly one. Every function already gives one output per input. That requirement alone does not settle either property.</p>
+<p><span id="ch12:data"><strong>Example&nbsp;12.1.</strong></span> Use the following new data. Let <span class="math inline">\(U=\{\text{Alice},\text{Bob},\text{Charlie},\text{David}\}\)</span>, <span class="math inline">\(J=\{10,20,30,40,50\}\)</span> and <span class="math inline">\(P=\{\text{Printer 1},\text{Printer 2},\text{Printer 3}\}\)</span>. The complete table defines <span class="math inline">\(i:U\to J\)</span> and <span class="math inline">\(d,h:U\to P\)</span>.</p>
+<div class="ds-table">
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Input</th>
+<th style="text-align: center;">Alice</th>
+<th style="text-align: center;">Bob</th>
+<th style="text-align: center;">Charlie</th>
+<th style="text-align: center;">David</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(i\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(10\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(20\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(30\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(40\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(d\)</span></td>
+<td style="text-align: center;">Printer 1</td>
+<td style="text-align: center;">Printer 1</td>
+<td style="text-align: center;">Printer 2</td>
+<td style="text-align: center;">Printer 3</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(h\)</span></td>
+<td style="text-align: center;">Printer 1</td>
+<td style="text-align: center;">Printer 1</td>
+<td style="text-align: center;">Printer 2</td>
+<td style="text-align: center;">Printer 2</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>The identifier function <span class="math inline">\(i\)</span> is injective: every input has a different output. It is not surjective onto <span class="math inline">\(J\)</span>, because <span class="math inline">\(50\in J\)</span> is not the output of any user. One missed codomain element is enough to refute surjectivity.</p>
+<p><span id="example-12.2."><strong>Example&nbsp;12.2.</strong></span> The function <span class="math inline">\(d\)</span> in Example&nbsp;<a href="#ch12:data">12.1</a> is surjective: Printer 1 is reached by Alice, Printer 2 by Charlie, and Printer 3 by David. These witnesses account for every element of <span class="math inline">\(P\)</span>. But <span class="math inline">\(d\)</span> is not injective, since Alice and Bob are distinct and share Printer 1.</p>
+<p>Surjectivity asks whether an output is reached, not whether it is reached only once.</p>
+<p><span id="example-12.3."><strong>Example&nbsp;12.3.</strong></span> Keep the identifier assignments, but define <span class="math inline">\(j:U\to J'\)</span> with <span class="math inline">\(J'=\{10,20,30,40\}\)</span> and <span class="math inline">\(j(u)=i(u)\)</span>. The outputs remain distinct, so <span class="math inline">\(j\)</span> is injective. They also cover every element of the stated codomain <span class="math inline">\(J'\)</span>, so <span class="math inline">\(j\)</span> is surjective and therefore bijective.</p>
+<p>The rules for <span class="math inline">\(i\)</span> and <span class="math inline">\(j\)</span> agree at every input. The codomain change alters the surjectivity question. We have specified a function with a new codomain, not proved that the unused value <span class="math inline">\(50\)</span> was reached.</p>
+<p><span id="example-12.4."><strong>Example&nbsp;12.4.</strong></span> For <span class="math inline">\(h\)</span> in Example&nbsp;<a href="#ch12:data">12.1</a>, Alice and Bob share Printer 1, so <span class="math inline">\(h\)</span> is not injective. No user is assigned Printer 3, so <span class="math inline">\(h\)</span> is not surjective.</p>
+<p>Together, <span class="math inline">\(i,d,j,h\)</span> show all four possibilities: injective only, surjective only, both, and neither. Injectivity and surjectivity are not opposites.</p>
+<p><span id="ch12:shift"><strong>Example&nbsp;12.5.</strong></span> Let <span class="math inline">\(g:\mathbb{Z}\to\mathbb{Z}\)</span> be given by <span class="math inline">\(g(k)=k+3\)</span>. Prove that <span class="math inline">\(g\)</span> is bijective.</p>
+<p><em>Injectivity.</em> If <span class="math inline">\(g(a)=g(b)\)</span> for integers <span class="math inline">\(a,b\)</span>, then <span class="math inline">\(a+3=b+3\)</span>, hence <span class="math inline">\(a=b\)</span>.</p>
+<p><em>Surjectivity.</em> Let <span class="math inline">\(y\)</span> be an arbitrary integer in the codomain. Choose <span class="math inline">\(x=y-3\)</span>, which is an integer and therefore lies in the domain. Then <span class="math inline">\(g(x)=(y-3)+3=y\)</span>. Every permitted output has an input witness, so <span class="math inline">\(g\)</span> is onto. Both properties hold. <span class="math inline">\(\square\)</span></p>
+<p>For example, the witness for output <span class="math inline">\(-2\)</span> is input <span class="math inline">\(-5\)</span>. The general choice <span class="math inline">\(x=y-3\)</span> covers all outputs; the single numerical example would not do so.</p>
+</section>
+<section id="ch12:inverse-images" class="level2">
+<h2 class="anchored" data-anchor-id="ch12:inverse-images">12.2 Images and inverses</h2>
+<p>Recall that for <span class="math inline">\(A\subseteq X\)</span>, the <strong>image</strong> under <span class="math inline">\(f:X\to Y\)</span> is <span class="math display">\[f(A)=\{f(a):a\in A\}\subseteq Y.\]</span> An image follows inputs forwards. An inverse image instead collects all inputs whose outputs belong to a specified subset of <span class="math inline">\(Y\)</span>.</p>
+<div class="ds-box ds-definition">
+<div id="definition-12.2-inverse-image" class="ds-box-title">
+<p><strong>Definition 12.2: Inverse image</strong></p>
+</div>
+<p>For <span class="math inline">\(f:X\to Y\)</span> and <span class="math inline">\(B\subseteq Y\)</span>, its <strong>inverse image</strong>, or <strong>preimage</strong>, is <span class="math display">\[f^{-1}(B)=\{x\in X:f(x)\in B\}\subseteq X.\]</span> This notation defines a set of inputs for any function, whether or not it is injective or surjective.</p>
+</div>
+<p>To find the inputs leading to one output <span class="math inline">\(y\)</span>, use the singleton set <span class="math inline">\(\{y\}\)</span> and write <span class="math inline">\(f^{-1}(\{y\})\)</span>. We retain the braces so that a set of inputs is visibly distinguished from an inverse-function value. The superscript <span class="math inline">\(-1\)</span> here does not mean a reciprocal.</p>
+<p><span id="example-12.6."><strong>Example&nbsp;12.6.</strong></span> Use <span class="math inline">\(h:U\to P\)</span> from Example&nbsp;<a href="#ch12:data">12.1</a>. For <span class="math inline">\(A=\{\text{Alice},\text{Bob},\text{Charlie}\}\)</span>, <span class="math display">\[h(A)=\{\text{Printer 1},\text{Printer 2}\}.\]</span> Repeated outputs are included only once. For an individual input, <span class="math inline">\(h(\text{Alice})=\text{Printer 1}\)</span>, whereas <span class="math inline">\(h(\{\text{Alice}\})=\{\text{Printer 1}\}\)</span>. The first is one printer label; the second is a set.</p>
+<p><span id="example-12.7."><strong>Example&nbsp;12.7.</strong></span> For the same function <span class="math inline">\(h\)</span>, <span class="math display">\[\begin{aligned}
+h^{-1}(\{\text{Printer 1}\})&amp;=\{\text{Alice},\text{Bob}\},\\
+h^{-1}(\{\text{Printer 1},\text{Printer 2}\})&amp;=U.
+\end{aligned}\]</span> In the second calculation, a user is included if their output belongs to either of the two listed categories. Every user satisfies that condition. The result is a subset of the domain, not a set of printers.</p>
+<p><img src="../../../teaching/notes/assets/chapter-12/01-inverse-image-matching-inputs.webp" class="ds-note-image img-fluid" loading="lazy" decoding="async" alt="An inverse image collecting every input whose output belongs to a chosen set."></p>
+<p>The inverse image of <span class="math inline">\(\{\text{Printer 1}\}\)</span> under <span class="math inline">\(h\)</span> contains both Alice and Bob.</p>
+<p><span id="example-12.8."><strong>Example&nbsp;12.8.</strong></span> No input of <span class="math inline">\(h\)</span> leads to Printer 3, so <span class="math inline">\(h^{-1}(\{\text{Printer 3}\})=\varnothing\)</span>. This is not a failure of the inverse-image definition. The set simply has no matching inputs.</p>
+<p>Also, <span class="math inline">\(h^{-1}(\varnothing)=\varnothing\)</span>: no function output belongs to the empty set. By contrast, <span class="math inline">\(h^{-1}(P)=U\)</span>, since every output of the function lies in its codomain.</p>
+<p><span id="example-12.9."><strong>Example&nbsp;12.9.</strong></span> Define <span class="math inline">\(q:\mathbb{Z}\to\mathbb{Z}\)</span> by <span class="math inline">\(q(k)=k^2\)</span>. Solving the relevant integer equations gives <span class="math display">\[q^{-1}(\{4\})=\{-2,2\},\qquad
+q^{-1}(\{0\})=\{0\},\qquad
+q^{-1}(\{-1\})=\varnothing.\]</span> Both <span class="math inline">\(-2\)</span> and <span class="math inline">\(2\)</span> square to <span class="math inline">\(4\)</span>; only <span class="math inline">\(0\)</span> squares to <span class="math inline">\(0\)</span>; no integer square is negative. Even a one-element inverse image is written as a set. The failure of injectivity does not prevent any of these inverse images from being defined.</p>
+<div class="ds-box ds-definition">
+<div id="definition-12.3-inverse-function" class="ds-box-title">
+<p><strong>Definition 12.3: Inverse function</strong></p>
+</div>
+<p>If <span class="math inline">\(f:X\to Y\)</span> is bijective, its <strong>inverse function</strong> <span class="math inline">\(f^{-1}:Y\to X\)</span> sends each <span class="math inline">\(y\in Y\)</span> to the unique <span class="math inline">\(x\in X\)</span> with <span class="math inline">\(f(x)=y\)</span>. It satisfies <span class="math display">\[f^{-1}(f(x))=x\quad(x\in X),\qquad
+f(f^{-1}(y))=y\quad(y\in Y).\]</span> Surjectivity supplies an input for every <span class="math inline">\(y\)</span>; injectivity makes that input unique.</p>
+</div>
+<p><span id="example-12.10."><strong>Example&nbsp;12.10.</strong></span> For the bijection <span class="math inline">\(g(k)=k+3\)</span> in Example&nbsp;<a href="#ch12:shift">12.5</a>, the inverse function is <span class="math inline">\(g^{-1}:\mathbb{Z}\to\mathbb{Z}\)</span>, <span class="math inline">\(g^{-1}(y)=y-3\)</span>. In particular, <span class="math display">\[g^{-1}(7)=4,\qquad g^{-1}(\{7\})=\{4\}.\]</span> The first expression evaluates the inverse function at one integer. The second gives the inverse image of a singleton set. Also, <span class="math inline">\(g(g^{-1}(7))=g(4)=7\)</span>, as required. The inverse is not <span class="math inline">\(1/g(7)=1/10\)</span>.</p>
+<p><span id="example-12.11."><strong>Example&nbsp;12.11.</strong></span> For <span class="math inline">\(h:U\to P\)</span>, an attempted inverse <span class="math inline">\(P\to U\)</span> would have two possible users for Printer 1 and no possible user for Printer 3. It cannot assign every printer the unique user required to undo <span class="math inline">\(h\)</span>.</p>
+<p>The set <span class="math inline">\(h^{-1}(\{\text{Printer 1}\})=\{\text{Alice},\text{Bob}\}\)</span> remains meaningful. It reports both inputs rather than pretending there is one inverse-function value.</p>
+</section>
+<section id="ch12:trees" class="level2">
+<h2 class="anchored" data-anchor-id="ch12:trees">12.3 Full binary trees</h2>
+<p>Recall that, in a rooted tree, a leaf has no children and an internal vertex has at least one child. A full binary tree has exactly two children at every internal vertex. Its one-vertex tree has one leaf and no internal vertices.</p>
+<p>For the recursive description, distinguish a left child from a right child. This makes our trees <strong>ordered</strong>: swapping different left and right subtrees changes the ordered tree. The counting results below do not depend on that order.</p>
+<div class="ds-box ds-definition">
+<div id="definition-12.4-the-family-mathcal-t-of-finite-full-binary-trees" class="ds-box-title">
+<p><strong>Definition 12.4: The family <span class="math inline">\(\mathcal T\)</span> of finite full binary trees</strong></p>
+</div>
+<p>The family <span class="math inline">\(\mathcal T\)</span> is specified by the following rules.</p>
+<ol type="a">
+<li><p><strong>Base object.</strong> The one-vertex rooted tree <span class="math inline">\(\bullet\)</span> belongs to <span class="math inline">\(\mathcal T\)</span>.</p></li>
+<li><p><strong>Constructor.</strong> If <span class="math inline">\(S,R\in\mathcal T\)</span>, then <span class="math inline">\(\operatorname{Node}(S,R)\in\mathcal T\)</span>. It has a new root whose left subtree is a copy of <span class="math inline">\(S\)</span> and whose right subtree is a separate copy of <span class="math inline">\(R\)</span>.</p></li>
+<li><p><strong>Exclusion.</strong> Only trees obtained by finitely many applications of these rules belong to <span class="math inline">\(\mathcal T\)</span>.</p></li>
+</ol>
+</div>
+<p>Here tree objects record the rooted, left/right shape. Renaming vertices or moving a drawing does not create a different member of <span class="math inline">\(\mathcal T\)</span>. The copies have disjoint vertex sets, even if <span class="math inline">\(S\)</span> and <span class="math inline">\(R\)</span> have the same shape. The constructor joins their roots to the new root by two new edges. Every non-leaf tree in the family has a unique left subtree and right subtree at its root, so we can read its construction back from the tree.</p>
+<p><span id="ch12:small-trees"><strong>Example&nbsp;12.12.</strong></span> The base object <span class="math inline">\(\bullet\)</span> has one vertex. Using it twice gives <span class="math inline">\(B=\operatorname{Node}(\bullet,\bullet)\)</span>.</p>
+<p><img src="../../../teaching/notes/assets/chapter-12/diagram-01.svg" class="ds-note-image img-fluid" loading="lazy" decoding="async" alt="The base tree: a single leaf, denoted by a bullet."></p>
+<p><img src="../../../teaching/notes/assets/chapter-12/diagram-02.svg" class="ds-note-image img-fluid" loading="lazy" decoding="async" alt="Tree B equals Node of two leaves: one root with a left leaf and a right leaf."></p>
+<p>The tree <span class="math inline">\(B\)</span> has two distinct leaves, one in each copy of <span class="math inline">\(\bullet\)</span>, and one internal vertex. Using the same base shape twice does not identify its two vertices with one another.</p>
+<p><span id="ch12:unbalanced"><strong>Example&nbsp;12.13.</strong></span> Using <span class="math inline">\(B\)</span> from Example&nbsp;<a href="#ch12:small-trees">12.12</a>, form <span class="math inline">\(A=\operatorname{Node}(\bullet,B)\)</span>. Its left subtree is a single leaf and its right subtree contains a branch.</p>
+<p><img src="../../../teaching/notes/assets/chapter-12/diagram-03.svg" class="ds-note-image img-fluid" loading="lazy" decoding="async" alt="Tree A equals Node of a leaf and B: a left leaf and a right internal vertex with two leaf children."></p>
+<p>There are three leaves and two internal vertices. The leaves have different depths, but every internal vertex has exactly two children, so <span class="math inline">\(A\)</span> is full binary. The ordered tree <span class="math inline">\(\operatorname{Node}(B,\bullet)\)</span> has the opposite left/right arrangement and the same counts.</p>
+<p><span id="example-12.14."><strong>Example&nbsp;12.14.</strong></span> A root with exactly one leaf child is not in <span class="math inline">\(\mathcal T\)</span>. It is not the base object, and the constructor always gives its new root two children. Likewise, a root with three children cannot be obtained.</p>
+<p>An infinite branching tree is also excluded. Every construction allowed here uses finitely many steps. This finiteness will let a recursive evaluation reach base objects rather than continue indefinitely.</p>
+</section>
+<section id="ch12:recursive-functions" class="level2">
+<h2 class="anchored" data-anchor-id="ch12:recursive-functions">12.4 Recursive counting functions</h2>
+<p>A mathematical function may take a tree as its input. The input need not be a number. Our opening question needs a function that returns the number of leaves of a tree in <span class="math inline">\(\mathcal T\)</span>.</p>
+<p><span id="ch12:procedure"><strong>Example&nbsp;12.15. Counting leaves.</strong></span> Consider this pseudocode, with input a tree <span class="math inline">\(T\in\mathcal T\)</span>. Here <code>Node(S,R)</code> means that <span class="math inline">\(S\)</span> and <span class="math inline">\(R\)</span> are its left and right subtrees.</p>
+<pre><code>CountLeaves(T):
+    if T is a single leaf:
+        return 1
+    else:
+        write T as Node(S,R)
+        return CountLeaves(S) + CountLeaves(R)</code></pre>
+<p>To translate it, name its output <span class="math inline">\(L(T)\)</span> and state the function’s type: <span class="math inline">\(L:\mathcal T\to\mathbb{N}\)</span>, where <span class="math inline">\(\mathbb{N}=\{0,1,2,\ldots\}\)</span>. The first branch says <span class="math inline">\(L(\bullet)=1\)</span>. The other branch says <span class="math display">\[L(\operatorname{Node}(S,R))=L(S)+L(R).\]</span> Every leaf of the combined tree lies in exactly one child subtree; the new root is not a leaf. Thus the two returned counts are added without including an extra leaf for the root. These rules describe the procedure mathematically, with an input domain, an output set and both cases.</p>
+<p>Each recursive call uses a proper child subtree, which has fewer vertices than its parent tree. Since the input tree is finite, successive calls eventually reach the one-vertex base case. The base rule and the unique root decomposition therefore determine one value for every allowed input.</p>
+<div class="ds-box ds-definition">
+<div id="definition-12.5-leaf-and-internal-vertex-counting-functions" class="ds-box-title">
+<p><strong>Definition 12.5: Leaf and internal-vertex counting functions</strong></p>
+</div>
+<p>For <span class="math inline">\(T\in\mathcal T\)</span>, let <span class="math inline">\(L(T)\)</span> count its rooted leaves and <span class="math inline">\(I(T)\)</span> its internal vertices. Their recursive descriptions are <span class="math display">\[\begin{aligned}
+L(\bullet)&amp;=1,
+&amp;L(\operatorname{Node}(S,R))&amp;=L(S)+L(R),\\
+I(\bullet)&amp;=0,
+&amp;I(\operatorname{Node}(S,R))&amp;=1+I(S)+I(R),
+\end{aligned}\]</span> for all <span class="math inline">\(S,R\in\mathcal T\)</span>. Both functions have domain <span class="math inline">\(\mathcal T\)</span> and codomain <span class="math inline">\(\mathbb{N}\)</span>.</p>
+</div>
+<p>The new root is an internal vertex, which accounts for the added <span class="math inline">\(1\)</span> in the rule for <span class="math inline">\(I\)</span>. All other internal vertices occur in the two disjoint child subtrees.</p>
+<p><span id="ch12:trace"><strong>Example&nbsp;12.16. Recursive evaluation.</strong></span> For <span class="math inline">\(A=\operatorname{Node}(\bullet,B)\)</span> with <span class="math inline">\(B=\operatorname{Node}(\bullet,\bullet)\)</span>, the procedure makes one call on each child of the root. The call on <span class="math inline">\(B\)</span> itself makes two leaf calls. Its numerical evaluation is <span class="math display">\[\begin{aligned}
+L(A)
+&amp;=L(\bullet)+L(B)\\
+&amp;=1+\bigl(L(\bullet)+L(\bullet)\bigr)\\
+&amp;=1+(1+1)=3.
+\end{aligned}\]</span> The two leaf calls inside <span class="math inline">\(B\)</span> each return <span class="math inline">\(1\)</span>; the call on <span class="math inline">\(B\)</span> returns <span class="math inline">\(2\)</span>; the outer call returns <span class="math inline">\(1+2=3\)</span>. The matching internal count is <span class="math display">\[I(A)=1+I(\bullet)+I(B)=1+0+(1+0+0)=2.\]</span> The recursive values agree with the drawing.</p>
+<p><img src="../../../teaching/notes/assets/chapter-12/02-recursive-leaf-count.webp" class="ds-note-image img-fluid" loading="lazy" decoding="async" alt="The leaf count of a binary tree obtained by adding the leaf counts of its two subtrees."></p>
+<p>Each node displays its subtree’s leaf count: the right subtree returns <span class="math inline">\(2\)</span> and the root returns <span class="math inline">\(1+2=3\)</span>.</p>
+<div class="ds-box ds-python">
+<div id="python-non-examinable" class="ds-box-title">
+<p><strong>Python (non-examinable)</strong></p>
+</div>
+<p>To run the procedure, represent a single leaf by <code>None</code> and <span class="math inline">\(\operatorname{Node}(S,R)\)</span> by the ordered pair <code>(S, R)</code>, called a <em>tuple</em> in Python. Here <code>None</code> represents one vertex, not an empty tree. The line beginning <code>def</code> defines the function; <code>return</code> gives its output. The condition <code>tree is None</code> recognises the base leaf.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> count_leaves(tree):</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> tree <span class="kw">is</span> <span class="va">None</span>:</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="dv">1</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    left, right <span class="op">=</span> tree</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> count_leaves(left) <span class="op">+</span> count_leaves(right)</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>B <span class="op">=</span> (<span class="va">None</span>, <span class="va">None</span>)</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>A <span class="op">=</span> (<span class="va">None</span>, B)</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(count_leaves(B), count_leaves(A))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><strong>Output.</strong></p>
+<pre class="text"><code>2 3</code></pre>
+<p>The assignment <code>left, right = tree</code> reads the two child subtrees. Each recursive call applies the same function to a child, and its returned value supplies one of the two counts being added. These are exactly the trees <span class="math inline">\(B\)</span> and <span class="math inline">\(A\)</span> traced above. The code assumes an input built from the stated leaf and two-child rules; it does not check arbitrary Python data. The example computes two values, while the mathematical definitions and proofs describe the whole family.</p>
+</div>
+<p><span id="example-12.17.-repeated-subtrees."><strong>Example&nbsp;12.17. Repeated subtrees.</strong></span> For <span class="math inline">\(D=\operatorname{Node}(B,B)\)</span>, <span class="math display">\[L(D)=2+2=4,\qquad I(D)=1+1+1=3.\]</span> Each occurrence of <span class="math inline">\(B\)</span> supplies a separate subtree. Both must contribute to the count. The whole tree has <span class="math inline">\(4+3=7\)</span> vertices. The formula <span class="math inline">\(L(D)=L(B)\)</span> would omit all leaves in the second copy.</p>
+<p><span id="example-12.18."><strong>Example&nbsp;12.18.</strong></span> Suppose someone writes only <span class="math inline">\(F(\operatorname{Node}(S,R))=F(S)+F(R)\)</span> for <span class="math inline">\(F:\mathcal T\to\mathbb{N}\)</span>. There is no rule yet for <span class="math inline">\(F(\bullet)\)</span>. Setting that base value to <span class="math inline">\(0\)</span> gives zero at every tree; setting it to <span class="math inline">\(1\)</span> gives the leaf count. Both choices obey the displayed constructor rule.</p>
+<p>The function description needs its base case, just as a sequence recurrence in Chapter 11 needs its initial information. The tree domain also excludes the one-child inputs for which the constructor rule supplies no case.</p>
+<p><span id="example-12.19."><strong>Example&nbsp;12.19.</strong></span> Define <span class="math inline">\(W:\mathcal T\to\mathbb{N}\)</span> by <span class="math inline">\(W(\bullet)=1\)</span> and <span class="math inline">\(W(\operatorname{Node}(S,R))=1+W(S)+W(R)\)</span>. Then <span class="math inline">\(W(B)=1+1+1=3\)</span>, although <span class="math inline">\(B\)</span> has only two leaves. The extra <span class="math inline">\(1\)</span> counts the new root. In fact, this rule counts all vertices rather than leaves. The recurrence can be complete and evaluable while describing a quantity different from the intended one.</p>
+</section>
+<section id="ch12:structural-induction" class="level2">
+<h2 class="anchored" data-anchor-id="ch12:structural-induction">12.5 Structural induction</h2>
+<p>Ordinary induction follows the construction of integers from a starting value and a next step. Here an object is built from a leaf or from two already constructed child trees. Our proof can follow those same construction rules.</p>
+<div class="ds-box ds-definition">
+<div id="definition-12.6-structural-induction-on-mathcal-t" class="ds-box-title">
+<p><strong>Definition 12.6: Structural induction on <span class="math inline">\(\mathcal T\)</span></strong></p>
+</div>
+<p>To prove a property <span class="math inline">\(Q(T)\)</span> for every <span class="math inline">\(T\in\mathcal T\)</span>:</p>
+<ol type="a">
+<li><p><strong>Base case.</strong> Prove <span class="math inline">\(Q(\bullet)\)</span>.</p></li>
+<li><p><strong>Constructor case.</strong> Let <span class="math inline">\(S,R\in\mathcal T\)</span> be arbitrary. Assume <span class="math inline">\(Q(S)\)</span> and <span class="math inline">\(Q(R)\)</span>, and use them to prove <span class="math inline">\(Q(\operatorname{Node}(S,R))\)</span>.</p></li>
+</ol>
+<p>These checks establish <span class="math inline">\(Q\)</span> for every tree generated by the defining rules.</p>
+</div>
+<p>The principle works because every allowed tree has a finite construction. The property starts at each base leaf and is preserved whenever two constructed trees are joined. Following the construction to its root therefore establishes the property of the finished tree. The exclusion clause ensures that no other kinds of object need a separate case.</p>
+<p>The two subtree hypotheses may concern trees of different shapes and sizes. We assume the property for the child trees, then prove it for their newly constructed parent. Assuming it for that parent instead would assume the target we are trying to establish.</p>
+<p><span id="ch12:main-proof"><strong>Example&nbsp;12.20. Leaves and internal vertices.</strong></span> Prove that for every <span class="math inline">\(T\in\mathcal T\)</span>, <span class="math display">\[L(T)=I(T)+1.\]</span></p>
+<p><em>Proof.</em> We use structural induction.</p>
+<p><em>Base case.</em> For the single-leaf tree, <span class="math inline">\(L(\bullet)=1=0+1=I(\bullet)+1\)</span>.</p>
+<p><em>Constructor case.</em> Let <span class="math inline">\(S,R\in\mathcal T\)</span> and assume both <span class="math display">\[L(S)=I(S)+1,\qquad L(R)=I(R)+1.\]</span> The target is <span class="math inline">\(L(\operatorname{Node}(S,R))=I(\operatorname{Node}(S,R))+1\)</span>. Using the recursive definitions and the two hypotheses, <span class="math display">\[\begin{aligned}
+L(\operatorname{Node}(S,R))
+&amp;=L(S)+L(R)\\
+&amp;=(I(S)+1)+(I(R)+1)\\
+&amp;=I(S)+I(R)+2\\
+&amp;=\bigl(1+I(S)+I(R)\bigr)+1\\
+&amp;=I(\operatorname{Node}(S,R))+1.
+\end{aligned}\]</span> The base and constructor cases cover the defining rules of <span class="math inline">\(\mathcal T\)</span>, so the claim holds for every <span class="math inline">\(T\in\mathcal T\)</span>. <span class="math inline">\(\square\)</span></p>
+<p>Each child tree supplies its own extra leaf in the induction hypotheses. The constructor adds one internal root, leaving one extra leaf for the whole tree.</p>
+<p><span id="example-12.21."><strong>Example&nbsp;12.21.</strong></span> If a tree in <span class="math inline">\(\mathcal T\)</span> has <span class="math inline">\(18\)</span> internal vertices, it has <span class="math inline">\(19\)</span> leaves and <span class="math inline">\(18+19=37\)</span> vertices in total. Conversely, <span class="math inline">\(24\)</span> leaves require <span class="math inline">\(23\)</span> internal vertices. We can make these deductions without knowing the particular shape, because the proof covers every tree in the specified family.</p>
+<p>In the opening task model, internal vertices record splits and leaves record finished end tasks. There is therefore one more finished end task than split, provided the execution is finite and each split creates exactly two child tasks.</p>
+<p><span id="example-12.22."><strong>Example&nbsp;12.22.</strong></span> A proposed proof handles the base case and then checks only <span class="math inline">\(\operatorname{Node}(S,S)\)</span>. That does not establish the claim for <span class="math inline">\(\operatorname{Node}(S,R)\)</span> when <span class="math inline">\(S\)</span> and <span class="math inline">\(R\)</span> differ. For example, <span class="math inline">\(A=\operatorname{Node}(\bullet,B)\)</span> has different child shapes.</p>
+<p>The constructor permits any pair of trees from <span class="math inline">\(\mathcal T\)</span>. Its proof case must therefore allow arbitrary <span class="math inline">\(S,R\)</span> and use the property of each. The two hypotheses need not be numerically identical.</p>
+<p><span id="example-12.23."><strong>Example&nbsp;12.23.</strong></span> Consider the rooted tree with a root and exactly one leaf child. It has one leaf and one internal vertex, so <span class="math inline">\(L=I+1\)</span> would read <span class="math inline">\(1=2\)</span>. This does not refute Example&nbsp;<a href="#ch12:main-proof">12.20</a>: the tree is not full binary and is outside <span class="math inline">\(\mathcal T\)</span>.</p>
+<p>Its leaf count is still an ordinary count, but our two-child constructor and recursive specification do not describe this input. Changing the family requires changing the rules and checking which conclusions remain valid.</p>
+</section>
+<section id="ch12:exercises" class="level2">
+<h2 class="anchored" data-anchor-id="ch12:exercises">12.6 Exercises</h2>
+<div class="ds-exercises" style="--ds-chapter: '12';">
+<ol type="1">
+<li><p><span id="ch12ex:finite-functions" data-label="ch12ex:finite-functions"></span> Let <span class="math inline">\(X=\{0,1,2\}\)</span> and <span class="math inline">\(Y=\{a,b,c\}\)</span>. Three functions <span class="math inline">\(X\to Y\)</span> are defined by the complete table.</p>
+<div class="ds-table">
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: center;">Input</th>
+<th style="text-align: center;"><span class="math inline">\(0\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(1\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(2\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(f\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(a\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(b\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(c\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(g\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(a\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(a\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(b\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(h\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(c\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(b\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(a\)</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>For each function, give the range and decide whether it is injective, surjective and bijective. Give witnesses for any failed property.</p></li>
+<li><p><span id="ch12ex:codomain" data-label="ch12ex:codomain"></span> Let <span class="math inline">\(i:\{1,2,3\}\to\{10,20,30,40\}\)</span> be <span class="math inline">\(i(k)=10k\)</span>. Let <span class="math inline">\(j:\{1,2,3\}\to\{10,20,30\}\)</span> use the same rule. Classify each function as injective, surjective, both or neither. Explain exactly what changed.</p></li>
+<li><p><span id="ch12ex:construct" data-label="ch12ex:construct"></span> Use complete tables to give:</p>
+<ol type="a">
+<li><p>an injective but non-surjective function <span class="math inline">\(\{1,2\}\to\{a,b,c\}\)</span>;</p></li>
+<li><p>a surjective but non-injective function <span class="math inline">\(\{1,2,3\}\to\{a,b\}\)</span>;</p></li>
+<li><p>a function <span class="math inline">\(\{1,2,3\}\to\{a,b,c\}\)</span> with neither property.</p></li>
+</ol></li>
+<li><p><span id="ch12ex:shift" data-label="ch12ex:shift"></span> For <span class="math inline">\(f:\mathbb{Z}\to\mathbb{Z}\)</span>, <span class="math inline">\(f(k)=k-4\)</span>, prove injectivity and surjectivity separately. Give the inverse function, including its domain and codomain, and verify its value at <span class="math inline">\(7\)</span>.</p></li>
+<li><p><span id="ch12ex:parity-image" data-label="ch12ex:parity-image"></span> Let <span class="math inline">\(f:\mathbb{Z}\to\mathbb{Z}\)</span> be <span class="math inline">\(f(k)=2k\)</span>. Prove that <span class="math inline">\(f\)</span> is injective, but give a codomain element showing it is not surjective. David proposes the inverse rule <span class="math inline">\(y\mapsto y/2\)</span> on all of <span class="math inline">\(\mathbb{Z}\)</span>. Explain why it does not define an inverse function <span class="math inline">\(\mathbb{Z}\to\mathbb{Z}\)</span>.</p></li>
+<li><p><span id="ch12ex:images" data-label="ch12ex:images"></span> Let <span class="math inline">\(U=\{\text{Alice},\text{Bob},\text{Charlie},\text{David}\}\)</span> and <span class="math inline">\(P=\{\text{Printer 1},\text{Printer 2},\text{Printer 3}\}\)</span>. Define <span class="math inline">\(p:U\to P\)</span> by</p>
+<div class="ds-table">
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: center;">User</th>
+<th style="text-align: center;">Alice</th>
+<th style="text-align: center;">Bob</th>
+<th style="text-align: center;">Charlie</th>
+<th style="text-align: center;">David</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(p\)</span></td>
+<td style="text-align: center;">Printer 2</td>
+<td style="text-align: center;">Printer 1</td>
+<td style="text-align: center;">Printer 2</td>
+<td style="text-align: center;">Printer 1</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Find each set:</p>
+<ol type="a">
+<li><p><span class="math inline">\(p(\{\text{Alice},\text{Charlie}\})\)</span>;</p></li>
+<li><p><span class="math inline">\(p(\{\text{Bob},\text{Charlie}\})\)</span>;</p></li>
+<li><p><span class="math inline">\(p^{-1}(\{\text{Printer 2}\})\)</span>;</p></li>
+<li><p><span class="math inline">\(p^{-1}(\{\text{Printer 3}\})\)</span>;</p></li>
+<li><p><span class="math inline">\(p^{-1}(\{\text{Printer 1},\text{Printer 3}\})\)</span>.</p></li>
+</ol></li>
+<li><p><span id="ch12ex:empty-full" data-label="ch12ex:empty-full"></span> For the function <span class="math inline">\(p\)</span> in Exercise&nbsp;<a href="#ch12ex:images">12.6</a>, find <span class="math inline">\(p(\varnothing)\)</span>, <span class="math inline">\(p^{-1}(\varnothing)\)</span>, <span class="math inline">\(p^{-1}(P)\)</span> and <span class="math inline">\(p(U)\)</span>. For each expression, say whether its definition selects inputs or outputs.</p></li>
+<li><p><span id="ch12ex:squares" data-label="ch12ex:squares"></span> Let <span class="math inline">\(q:\mathbb{Z}\to\mathbb{Z}\)</span> be <span class="math inline">\(q(k)=k^2\)</span>. Find the following:</p>
+<ol type="a">
+<li><p><span class="math inline">\(q(\{-3,0,3\})\)</span>.</p></li>
+<li><p><span class="math inline">\(q^{-1}(\{9\})\)</span>.</p></li>
+<li><p><span class="math inline">\(q^{-1}(\{0\})\)</span>.</p></li>
+<li><p><span class="math inline">\(q^{-1}(\{-4,4\})\)</span>.</p></li>
+</ol>
+<p>Does <span class="math inline">\(q\)</span> have an inverse function <span class="math inline">\(\mathbb{Z}\to\mathbb{Z}\)</span>? Justify your answer using the stated domain and codomain.</p></li>
+<li><p><span id="ch12ex:types" data-label="ch12ex:types"></span> Let <span class="math inline">\(b:\mathbb{Z}\to\mathbb{Z}\)</span>, <span class="math inline">\(b(k)=k-4\)</span>. Find <span class="math inline">\(b(7)\)</span>, <span class="math inline">\(b(\{7\})\)</span>, <span class="math inline">\(b^{-1}(7)\)</span> and <span class="math inline">\(b^{-1}(\{7\})\)</span>. Explain the role of the braces in each expression and why <span class="math inline">\(b^{-1}(7)\)</span> is not <span class="math inline">\(1/b(7)\)</span>.</p></li>
+<li><p><span id="ch12ex:preimage-error" data-label="ch12ex:preimage-error"></span> For <span class="math inline">\(p\)</span> in Exercise&nbsp;<a href="#ch12ex:images">12.6</a>, Faith writes <span class="math inline">\(p^{-1}(\{\text{Printer 2}\})=\text{Alice}\)</span>. Identify both the omitted input and the type of object that the answer must be. Give the corrected set and explain why its existence does not give <span class="math inline">\(p\)</span> an inverse function.</p></li>
+<li><p><span id="ch12ex:tree-build" data-label="ch12ex:tree-build"></span> Let <span class="math inline">\(B=\operatorname{Node}(\bullet,\bullet)\)</span>. Draw each ordered tree with its root at the top:</p>
+<ol type="a">
+<li><p><span class="math inline">\(\bullet\)</span>;</p></li>
+<li><p><span class="math inline">\(B\)</span>;</p></li>
+<li><p><span class="math inline">\(\operatorname{Node}(B,\bullet)\)</span>;</p></li>
+<li><p><span class="math inline">\(\operatorname{Node}(\bullet,B)\)</span>;</p></li>
+<li><p><span class="math inline">\(\operatorname{Node}(B,B)\)</span>.</p></li>
+</ol>
+<p>For each drawing, identify its leaves and internal vertices.</p></li>
+<li><p><span id="ch12ex:family" data-label="ch12ex:family"></span> Which descriptions belong to <span class="math inline">\(\mathcal T\)</span>? Justify each answer from the base or constructor rules.</p>
+<ol type="a">
+<li><p>A single rooted vertex.</p></li>
+<li><p>A root with exactly one leaf child.</p></li>
+<li><p>A root with two leaf children.</p></li>
+<li><p>A root with three leaf children.</p></li>
+<li><p>A finite full binary tree whose leaves have different depths.</p></li>
+</ol></li>
+<li><p><span id="ch12ex:leaf-convention" data-label="ch12ex:leaf-convention"></span> For <span class="math inline">\(\bullet\)</span>, give the root’s graph degree, number of children, leaf count and internal count. Why would treating a leaf as only a degree-one vertex give the wrong base value for <span class="math inline">\(L\)</span> on this family?</p></li>
+<li><p><span id="ch12ex:counts" data-label="ch12ex:counts"></span> Let <span class="math inline">\(B=\operatorname{Node}(\bullet,\bullet)\)</span>, <span class="math inline">\(A=\operatorname{Node}(B,\bullet)\)</span> and <span class="math inline">\(C=\operatorname{Node}(A,B)\)</span>. Find <span class="math inline">\(L\)</span> and <span class="math inline">\(I\)</span> for <span class="math inline">\(B,A,C\)</span>, showing the substitution into each constructor rule. Check the resulting values against <span class="math inline">\(L=I+1\)</span>.</p></li>
+<li><p><span id="ch12ex:trace" data-label="ch12ex:trace"></span> Let <span class="math inline">\(B=\operatorname{Node}(\bullet,\bullet)\)</span> and <span class="math inline">\(T=\operatorname{Node}(B,B)\)</span>. Trace <code>CountLeaves(T)</code> using Example&nbsp;<a href="#ch12:procedure">12.15</a>. Show the two calls on copies of <span class="math inline">\(B\)</span>, the values returned by their leaf calls, and the final output. Why must the second occurrence of <span class="math inline">\(B\)</span> contribute even though it has the same shape as the first?</p></li>
+<li><p><span id="ch12ex:translate" data-label="ch12ex:translate"></span> The input of this procedure is <span class="math inline">\(T\in\mathcal T\)</span>.</p>
+<pre><code>CountInternal(T):
+    if T is a single leaf:
+        return 0
+    else:
+        write T as Node(S,R)
+        return 1 + CountInternal(S) + CountInternal(R)</code></pre>
+<p>Specify its function domain and codomain, base value and constructor rule. Trace it on the tree <span class="math display">\[\operatorname{Node}(\bullet,\operatorname{Node}(\bullet,\bullet)).\]</span> Explain what the added <span class="math inline">\(1\)</span> counts.</p></li>
+<li><p><span id="ch12ex:missing-base" data-label="ch12ex:missing-base"></span> Suppose <span class="math inline">\(F:\mathcal T\to\mathbb{N}\)</span> satisfies <span class="math inline">\(F(\operatorname{Node}(S,R))=F(S)+F(R)\)</span>, but no base value is supplied. Choose two different base values and calculate <span class="math inline">\(F(B)\)</span> for <span class="math inline">\(B=\operatorname{Node}(\bullet,\bullet)\)</span>. Use the two results to explain the missing information.</p></li>
+<li><p><span id="ch12ex:bad-procedure" data-label="ch12ex:bad-procedure"></span> A proposed leaf-counting procedure returns <span class="math inline">\(1\)</span> at a leaf, but at <span class="math inline">\(\operatorname{Node}(S,R)\)</span> it returns <span class="math display">\[1+\texttt{CountLeaves(S)}+\texttt{CountLeaves(R)}.\]</span> Assume both recursive calls use this same proposed rule. Translate it into a recursive function <span class="math inline">\(W\)</span>, evaluate <span class="math inline">\(W(B)\)</span>, and compare with the actual leaf count. Explain which quantity the rule counts.</p></li>
+<li><p><span id="ch12ex:termination" data-label="ch12ex:termination"></span> In the procedure from Example&nbsp;<a href="#ch12:procedure">12.15</a>, what changes when a call passes to a child subtree? Use the finiteness of the input tree to justify termination. Why would replacing the recursive call on a child by another call on the whole unchanged tree fail to provide this justification?</p></li>
+<li><p><span id="ch12ex:proof-parts" data-label="ch12ex:proof-parts"></span> For a structural-induction proof of <span class="math inline">\(L(T)=I(T)+1\)</span> on <span class="math inline">\(\mathcal T\)</span>, state:</p>
+<ol type="a">
+<li><p>the property of the base object;</p></li>
+<li><p>the two subtree hypotheses;</p></li>
+<li><p>the target for <span class="math inline">\(\operatorname{Node}(S,R)\)</span>;</p></li>
+<li><p>the recursive identity that introduces the new internal root.</p></li>
+</ol></li>
+<li><p><span id="ch12ex:proof-gap" data-label="ch12ex:proof-gap"></span> In an attempted independent proof of <span class="math inline">\(L(T)=I(T)+1\)</span> by structural induction, a student assumes only <span class="math inline">\(L(S)=I(S)+1\)</span>, then writes <span class="math display">\[L(\operatorname{Node}(S,R))
+=L(S)+L(R)=(I(S)+1)+(I(R)+1).\]</span> Which replacement is unsupported by the stated hypothesis? Repair the hypotheses and finish the argument. Explain why restricting to <span class="math inline">\(R=S\)</span> would not repair the proof for all trees in <span class="math inline">\(\mathcal T\)</span>.</p></li>
+<li><p><span id="ch12ex:structural-vs-sample" data-label="ch12ex:structural-vs-sample"></span> Judy checks <span class="math inline">\(L=I+1\)</span> for <span class="math inline">\(\bullet\)</span>, <span class="math inline">\(\operatorname{Node}(\bullet,\bullet)\)</span> and <span class="math inline">\(\operatorname{Node}(B,B)\)</span>, where <span class="math inline">\(B=\operatorname{Node}(\bullet,\bullet)\)</span>. Are these checks a structural-induction proof? Identify the general implication still needed.</p></li>
+<li><p><span id="ch12ex:inference" data-label="ch12ex:inference"></span> For trees in <span class="math inline">\(\mathcal T\)</span>, find the requested counts.</p>
+<ol type="a">
+<li><p>A tree has <span class="math inline">\(12\)</span> internal vertices. Find its leaves and total vertices.</p></li>
+<li><p>A tree has <span class="math inline">\(20\)</span> leaves. Find its internal vertices and total vertices.</p></li>
+<li><p>Can a tree have <span class="math inline">\(8\)</span> leaves and <span class="math inline">\(8\)</span> internal vertices?</p></li>
+</ol></li>
+<li><p><span id="ch12ex:all-vertices" data-label="ch12ex:all-vertices"></span> Define <span class="math inline">\(V:\mathcal T\to\mathbb{N}\)</span> by <span class="math inline">\(V(\bullet)=1\)</span> and <span class="math inline">\(V(\operatorname{Node}(S,R))=1+V(S)+V(R)\)</span>. Use structural induction to prove <span class="math inline">\(V(T)=2I(T)+1\)</span> for every <span class="math inline">\(T\in\mathcal T\)</span>. State both subtree hypotheses and show how the new-root contribution enters the algebra.</p></li>
+<li><p><span id="ch12ex:restricted-family" data-label="ch12ex:restricted-family"></span> Give a finite rooted tree outside <span class="math inline">\(\mathcal T\)</span> for which the ordinary numbers of leaves and internal vertices do not satisfy <span class="math inline">\(L=I+1\)</span>. Explain why it does not contradict the proved theorem. Identify which recursive construction rule would need to change to include your example.</p></li>
+<li><p><span id="ch12ex:function-on-trees" data-label="ch12ex:function-on-trees"></span> Consider the counting function <span class="math inline">\(L:\mathcal T\to\mathbb{N}\)</span>.</p>
+<ol type="a">
+<li><p>Construct two distinct ordered trees with the same leaf count. What does this say about injectivity?</p></li>
+<li><p>Show that <span class="math inline">\(0\)</span> is not a leaf count. What does this say about surjectivity onto the stated codomain?</p></li>
+<li><p>Describe <span class="math inline">\(L^{-1}(\{2\})\)</span> by identifying every tree in that inverse image.</p></li>
+</ol>
+<p>Use <span class="math inline">\(L=I+1\)</span> when it helps, and keep inverse images as sets of tree objects.</p></li>
+</ol>
+</div>
+<div class="ds-chapter-navigation">
+<p><a href="../../../teaching/notes/chapter-11/">← Chapter 11</a></p>
+</div>
+
+
+</section>
+
+<a href="#page-top" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
+<script>
+  (() => {
+    const main = document.getElementById("quarto-document-content");
+    const skipLink = document.querySelector(".skip-link");
+
+    if (skipLink && main) {
+      skipLink.addEventListener("click", () => {
+        window.requestAnimationFrame(() => main.focus({ preventScroll: true }));
+      });
+    }
+  })();
+</script>
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/rjnieto\.com");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>© 2026 RJ Nieto</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+<p>Built with Quarto</p>
+</div>
+  </div>
+</footer>
+
+
+
+
+</body></html>

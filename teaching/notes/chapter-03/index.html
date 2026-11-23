@@ -1,0 +1,1075 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-GB" xml:lang="en-GB"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.10.18">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="description" content="Chapter 3: Proof methods. HTML edition of Lecture Notes in Discrete Mathematics.">
+
+<title>Chapter 3: Proof methods – RJ Nieto</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<link href="../../../assets/branding/rj-logo.png" rel="icon" type="image/png">
+<script src="../../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-dark-b85bc7c33db8c58e0ec93c3465666fed.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap-68e913143d7006db5355610df9e4aed5.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="dark">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<meta name="author" content="Rey Joseph Nieto">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "@id": "https://rjnieto.com/#rey-joseph-nieto",
+  "name": "Rey Joseph Nieto",
+  "alternateName": ["RJ Nieto", "Thinking Pinoy"],
+  "description": "Assistant Secretary in the Office of the Cabinet Secretary, Office of the President of the Philippines.",
+  "url": "https://rjnieto.com/",
+  "image": {
+    "@type": "ImageObject",
+    "@id": "https://rjnieto.com/#portrait",
+    "url": "https://rjnieto.com/assets/images/rey-joseph-nieto-portrait.jpg",
+    "contentUrl": "https://rjnieto.com/assets/images/rey-joseph-nieto-portrait.jpg",
+    "width": 824,
+    "height": 824,
+    "caption": "Portrait of Rey Joseph RJ Nieto"
+  },
+  "jobTitle": "Assistant Secretary",
+  "worksFor": {
+    "@type": "GovernmentOrganization",
+    "name": "Office of the Cabinet Secretary, Office of the President of the Philippines"
+  },
+  "sameAs": [
+    "https://www.linkedin.com/in/rjosephnieto/",
+    "https://www.facebook.com/rjosephnieto",
+    "https://x.com/rjosephnieto"
+  ]
+}
+</script>
+<link rel="preload" href="../../../assets/fonts/ibm-plex-sans/IBMPlexSans-Roman.woff2" as="font" type="font/woff2" crossorigin="">
+<script defer="" src="../../../assets/js/home-research-background.js"></script>
+<script defer="" src="../../../assets/js/discrete-notes-layout.js"></script>
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta property="og:url" content="https://rjnieto.com/teaching/notes/chapter-03/">
+<meta property="og:type" content="article">
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../../../styles.css">
+<link rel="stylesheet" href="../../../assets/css/site-typography.css">
+<link rel="stylesheet" href="../../../assets/css/home-research-background.css">
+<link rel="stylesheet" href="../../../assets/css/discrete-notes.css">
+<meta property="og:title" content="Chapter 3: Proof methods – RJ Nieto">
+<meta property="og:description" content="Chapter 3: Proof methods. HTML edition of Lecture Notes in Discrete Mathematics.">
+<meta property="og:image" content="https://rjnieto.com/teaching/bulsu/discrete-math/images/thumbnails/chapter_03.webp">
+<meta property="og:site_name" content="RJ Nieto">
+<meta property="og:locale" content="en_GB">
+<meta name="twitter:title" content="Chapter 3: Proof methods – RJ Nieto">
+<meta name="twitter:description" content="Chapter 3: Proof methods. HTML edition of Lecture Notes in Discrete Mathematics.">
+<meta name="twitter:image" content="https://rjnieto.com/teaching/bulsu/discrete-math/images/thumbnails/chapter_03.webp">
+<meta name="twitter:creator" content="@rjosephnieto">
+<meta name="twitter:site" content="@rjosephnieto">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://rjnieto.com/teaching/notes/chapter-03/">
+</head>
+
+<body class="nav-fixed ds-lecture-notes quarto-light">
+<span id="page-top" class="page-top-anchor" aria-hidden="true"></span>
+<a class="skip-link" href="#quarto-document-content">Skip to main content</a>
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../../">
+    <span class="navbar-title">RJ Nieto</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../../"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../cv/"> 
+<span class="menu-text">CV</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../teaching/"> 
+<span class="menu-text">Teaching</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../calculated/"> 
+<span class="menu-text">Writing</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../research/"> 
+<span class="menu-text">Hobby</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul class="collapse">
+  <li><a href="#ch3:proofs" id="toc-ch3:proofs" class="nav-link active" data-scroll-target="#ch3\:proofs">3.1 Mathematical proof</a></li>
+  <li><a href="#ch3:definitions" id="toc-ch3:definitions" class="nav-link" data-scroll-target="#ch3\:definitions">3.2 Parity and divisibility</a></li>
+  <li><a href="#ch3:direct" id="toc-ch3:direct" class="nav-link" data-scroll-target="#ch3\:direct">3.3 Direct proof</a></li>
+  <li><a href="#ch3:contrapositive" id="toc-ch3:contrapositive" class="nav-link" data-scroll-target="#ch3\:contrapositive">3.4 Proof by contrapositive</a></li>
+  <li><a href="#ch3:contradiction" id="toc-ch3:contradiction" class="nav-link" data-scroll-target="#ch3\:contradiction">3.5 Proof by contradiction</a></li>
+  <li><a href="#ch3:checking" id="toc-ch3:checking" class="nav-link" data-scroll-target="#ch3\:checking">3.6 Proof construction and checking</a></li>
+  <li><a href="#ch3:exercises" id="toc-ch3:exercises" class="nav-link" data-scroll-target="#ch3\:exercises">3.7 Exercises</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content" tabindex="-1">
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Chapter 3: Proof methods</h1>
+<p class="subtitle lead">Discrete Mathematics · Rey Joseph Nieto</p>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<!-- Generated from the corresponding chapter LaTeX. Run scripts/build-discrete-html.py to refresh. -->
+<p><a href="../../../teaching/" class="btn btn-outline-secondary btn-sm">Course page</a> <a href="../../../teaching/bulsu/discrete-math/lecture-notes/chapter_03.pdf" class="btn btn-outline-primary btn-sm" aria-label="Open Chapter 3: Proof methods as PDF">PDF</a></p>
+<p><span id="ch3:chapter" data-label="ch3:chapter"></span></p>
+<p>Alice claims that the square of every odd integer is odd. She tries <span class="math inline">\(3^2=9\)</span>, <span class="math inline">\(5^2=25\)</span> and <span class="math inline">\((-7)^2=49\)</span>. Bob checks another thousand odd integers, and every result agrees. Have they proved the claim?</p>
+<p>Their calculations give examples, but infinitely many integers remain unchecked. A proof must explain why an odd integer cannot produce an even square. We will return to Alice’s claim and give an argument that works for every odd integer, including negative ones.</p>
+<p>Chapter 2 supplied rules for drawing conclusions from premises. We now use those rules together with mathematical definitions to construct complete arguments. Instead of being handed both the premises and the next step, we must decide how to begin, what information a definition provides and what would establish the conclusion.</p>
+<p>Our three main methods are direct proof, proof by contrapositive and proof by contradiction. We will practise them on elementary number properties so that the reasoning remains visible. Finding a proof can take several attempts; the finished argument usually reads more smoothly than the work that led to it. With practice, choosing a useful starting point becomes easier.</p>
+<div class="ds-box ds-learningoutcomes">
+<div id="what-you-should-be-able-to-do" class="ds-box-title">
+<p><strong>What you should be able to do</strong></p>
+</div>
+<p>After working through this chapter, you should be able to:</p>
+<ul>
+<li><p>identify a claim’s domain, hypotheses and required conclusion;</p></li>
+<li><p>use the definitions of even, odd and divisibility in an argument;</p></li>
+<li><p>construct short direct proofs, contrapositive proofs and contradiction proofs;</p></li>
+<li><p>explain why an argument covers an arbitrary permitted input;</p></li>
+<li><p>disprove a universal claim with a permitted counterexample;</p></li>
+<li><p>locate and repair missing assumptions, unjustified steps and wrong proof directions.</p></li>
+</ul>
+</div>
+<section id="ch3:proofs" class="level2">
+<h2 class="anchored" data-anchor-id="ch3:proofs">3.1 Mathematical proof</h2>
+<p>Recall the distinction from Chapter 2: a valid argument form guarantees its conclusion when its premises are true. A mathematical proof must also supply the mathematical reasons that make its steps available. For example, knowing the form <span class="math inline">\(P\to Q,\ P,\ \therefore Q\)</span> does not by itself tell us whether a square is even. We must connect the numerical claim to definitions and established facts.</p>
+<div class="ds-box ds-definition">
+<div id="definition-3.1-proof" class="ds-box-title">
+<p><strong>Definition 3.1: Proof</strong></p>
+</div>
+<p>A <strong>proof</strong> is a mathematical argument that establishes a claim from its hypotheses, definitions and previously established facts, using valid reasoning. Each step must be justified, and the argument must cover the cases required by the claim.</p>
+</div>
+<p>A proved result may be called a <strong>theorem</strong> or a <strong>proposition</strong>. A <strong>lemma</strong> is a result proved for use in another argument.</p>
+<p><span id="hypotheses-and-conclusions."><strong>Hypotheses and conclusions.</strong></span> Consider <span class="math display">\[\forall x\in D\,\bigl(P(x)\to Q(x)\bigr).\]</span> The <strong>hypothesis</strong> is <span class="math inline">\(P(x)\)</span> and the required conclusion is <span class="math inline">\(Q(x)\)</span>, with <span class="math inline">\(x\)</span> belonging to <span class="math inline">\(D\)</span>. In a direct proof, we choose an arbitrary <span class="math inline">\(x\in D\)</span>, assume <span class="math inline">\(P(x)\)</span> and derive <span class="math inline">\(Q(x)\)</span>. We are establishing what happens <em>if</em> the hypothesis holds; we do not have to show that every element satisfies the hypothesis.</p>
+<p>“Arbitrary” means that we have not selected an input with extra helpful properties. If a claim concerns all integers, beginning with <span class="math inline">\(n=3\)</span> would restrict the argument to one input. Beginning with “Let <span class="math inline">\(n\)</span> be an integer” leaves it available for every integer allowed by the claim. We may then impose exactly the hypotheses the claim gives us.</p>
+<p><span id="example-3.1."><strong>Example&nbsp;3.1.</strong></span> Prove that for every real number <span class="math inline">\(x\)</span>, if <span class="math inline">\(x&gt;7\)</span>, then <span class="math inline">\(2x+1&gt;15\)</span>.</p>
+<p>The claim has domain <span class="math inline">\(\mathbb{R}\)</span>, hypothesis <span class="math inline">\(x&gt;7\)</span> and conclusion <span class="math inline">\(2x+1&gt;15\)</span>. We need no numerical value for <span class="math inline">\(x\)</span>.</p>
+<p><em>Proof.</em> Let <span class="math inline">\(x\in\mathbb{R}\)</span> and suppose that <span class="math inline">\(x&gt;7\)</span>. Multiplication by the positive number <span class="math inline">\(2\)</span> preserves the inequality, so <span class="math inline">\(2x&gt;14\)</span>. Adding <span class="math inline">\(1\)</span> gives <span class="math inline">\(2x+1&gt;15\)</span>, as required. <span class="math inline">\(\square\)</span></p>
+<p>The argument applies to every real <span class="math inline">\(x\)</span> satisfying the hypothesis. The small square marks the end of the proof. The reason for multiplying by a <em>positive</em> number was stated because multiplying an inequality by a negative number would reverse its direction.</p>
+<p>Trying values can suggest a claim, reveal a counterexample or help us find the calculation to use. The final proof must explain what covers the untested inputs. A complete check of a finite domain can do that, as in Chapter 1. For an infinite domain, a finite collection of successful tests alone does not.</p>
+<p>You can also work backwards while searching. If the goal is to show that a number equals twice an integer, it is reasonable to ask which integer would work. When presenting the proof, establish that representation from the hypotheses. Simply assuming the desired conclusion and obtaining a true statement does not show that the conclusion follows.</p>
+</section>
+<section id="ch3:definitions" class="level2">
+<h2 class="anchored" data-anchor-id="ch3:definitions">3.2 Parity and divisibility</h2>
+<p>We need a small amount of arithmetic vocabulary for our proof examples. Throughout the core examples, our number variables range over the integers unless a different domain is specified. Sums, differences and products of integers are integers. A quotient of two integers need not be an integer: for instance, <span class="math inline">\(5/2\notin\mathbb{Z}\)</span>.</p>
+<div class="ds-box ds-definition">
+<div id="definition-3.2-even-and-odd-integers" class="ds-box-title">
+<p><strong>Definition 3.2: Even and odd integers</strong></p>
+</div>
+<p>An integer <span class="math inline">\(n\)</span> is <strong>even</strong> if <span class="math inline">\(n=2k\)</span> for some integer <span class="math inline">\(k\)</span>. It is <strong>odd</strong> if <span class="math inline">\(n=2k+1\)</span> for some integer <span class="math inline">\(k\)</span>. The integer <span class="math inline">\(k\)</span> is a witness to the stated representation.</p>
+</div>
+<p>An integer’s <strong>parity</strong> is whether it is even or odd. The definitions turn these familiar labels into forms we can use in algebra. To use the hypothesis “<span class="math inline">\(n\)</span> is even”, we may write <span class="math inline">\(n=2k\)</span> for some <span class="math inline">\(k\in\mathbb{Z}\)</span>. To prove that a quantity is even, we must show it equals twice an <em>integer</em>. For oddness, the target is twice an integer plus <span class="math inline">\(1\)</span>.</p>
+<p><span id="example-3.2."><strong>Example&nbsp;3.2.</strong></span> The number <span class="math inline">\(-10\)</span> is even because <span class="math inline">\(-10=2(-5)\)</span>, with integer witness <span class="math inline">\(-5\)</span>. The number <span class="math inline">\(-7\)</span> is odd because <span class="math inline">\(-7=2(-4)+1\)</span>, with witness <span class="math inline">\(-4\)</span>. Zero is even because <span class="math inline">\(0=2(0)\)</span>.</p>
+<p>We do not require <span class="math inline">\(k\)</span> in the definitions to be positive. Restricting it to positive integers would exclude valid negative examples and zero.</p>
+<p>We use the familiar fact that every integer is either even or odd. Dividing an integer by <span class="math inline">\(2\)</span> leaves remainder <span class="math inline">\(0\)</span> or <span class="math inline">\(1\)</span>, giving precisely the forms <span class="math inline">\(2k\)</span> and <span class="math inline">\(2k+1\)</span>. We will study remainders systematically in Chapter 8.</p>
+<p>The alternatives cannot both hold. If <span class="math inline">\(2k=2\ell+1\)</span> for integers <span class="math inline">\(k,\ell\)</span>, then <span class="math inline">\(k-\ell=\tfrac12\)</span>, but an integer difference cannot equal <span class="math inline">\(\tfrac12\)</span>. Thus, for an integer, “not even” means odd, and “not odd” means even. These conclusions depend on the integer domain; a real number such as <span class="math inline">\(\tfrac12\)</span> is neither an even nor an odd integer.</p>
+<div class="ds-box ds-definition">
+<div id="definition-3.3-divisibility" class="ds-box-title">
+<p><strong>Definition 3.3: Divisibility</strong></p>
+</div>
+<p>For integers <span class="math inline">\(d,n\)</span> with <span class="math inline">\(d\ne0\)</span>, write <span class="math inline">\(d\mid n\)</span> if <span class="math inline">\(n=dq\)</span> for some integer <span class="math inline">\(q\)</span>. Read this as “<span class="math inline">\(d\)</span> divides <span class="math inline">\(n\)</span>” or “<span class="math inline">\(n\)</span> is a multiple of <span class="math inline">\(d\)</span>”. Write <span class="math inline">\(d\nmid n\)</span> when no such integer <span class="math inline">\(q\)</span> exists. The divisors used in this chapter are nonzero.</p>
+</div>
+<p>The notation <span class="math inline">\(d\mid n\)</span> makes a claim; it is not a request to carry out a division. In particular, <span class="math inline">\(d\mid n\)</span> and <span class="math inline">\(n\mid d\)</span> have different meanings. The witness <span class="math inline">\(q\)</span> must be an integer.</p>
+<p><span id="example-3.3."><strong>Example&nbsp;3.3.</strong></span> We have <span class="math inline">\(6\mid42\)</span> because <span class="math inline">\(42=6(7)\)</span>. However, <span class="math inline">\(6\nmid20\)</span>: the equation <span class="math inline">\(20=6q\)</span> forces <span class="math inline">\(q=10/3\)</span>, which is not an integer. Writing <span class="math inline">\(20=6(10/3)\)</span> does not establish divisibility.</p>
+<p>Also, <span class="math inline">\(6\mid0\)</span> because <span class="math inline">\(0=6(0)\)</span>. The number being divided may be zero even though we have required the divisor to be nonzero.</p>
+<p>Evenness is divisibility by <span class="math inline">\(2\)</span>. More generally, the definition of divisibility tells us both how to unpack a hypothesis and what kind of witness to construct for a conclusion. We use only this elementary meaning here; the number-theory chapter develops it further.</p>
+</section>
+<section id="ch3:direct" class="level2">
+<h2 class="anchored" data-anchor-id="ch3:direct">3.3 Direct proof</h2>
+<p>In a direct proof, we begin with what is given and work towards what is required. Definitions often supply the first useful equation.</p>
+<div class="ds-box ds-definition">
+<div id="definition-3.4-direct-proof-of-an-implication" class="ds-box-title">
+<p><strong>Definition 3.4: Direct proof of an implication</strong></p>
+</div>
+<p>To prove <span class="math inline">\(P\to Q\)</span> directly, assume <span class="math inline">\(P\)</span> and deduce <span class="math inline">\(Q\)</span> using definitions and established results. For a universally quantified claim, first fix an arbitrary object in the stated domain and retain its hypotheses throughout the argument.</p>
+</div>
+<p><span id="ch3:even-sum"><strong>Example&nbsp;3.4.</strong></span> Prove that the sum of two even integers is even.</p>
+<p>The hypotheses concern two numbers, so use two representations: <span class="math inline">\(a=2r\)</span> and <span class="math inline">\(b=2s\)</span>. The goal is to write <span class="math inline">\(a+b\)</span> as twice an integer.</p>
+<p><em>Proof.</em> Let <span class="math inline">\(a,b\in\mathbb{Z}\)</span> and suppose both are even. There are integers <span class="math inline">\(r,s\)</span> such that <span class="math inline">\(a=2r\)</span> and <span class="math inline">\(b=2s\)</span>. Therefore <span class="math display">\[a+b=2r+2s=2(r+s).\]</span> Since <span class="math inline">\(r+s\)</span> is an integer, this represents <span class="math inline">\(a+b\)</span> as twice an integer. Hence <span class="math inline">\(a+b\)</span> is even. <span class="math inline">\(\square\)</span></p>
+<p>The witness for the conclusion is <span class="math inline">\(r+s\)</span>. We have explained why it belongs to <span class="math inline">\(\mathbb{Z}\)</span>, rather than merely pointing to a factor of <span class="math inline">\(2\)</span>.</p>
+<div class="ds-box ds-caution">
+<div id="separate-witnesses" class="ds-box-title">
+<p><strong>Separate witnesses</strong></p>
+</div>
+<p>Writing <span class="math inline">\(a=2k\)</span> and <span class="math inline">\(b=2k\)</span> with the same <span class="math inline">\(k\)</span> would assume <span class="math inline">\(a=b\)</span>. The original claim allows different even integers, such as <span class="math inline">\(6\)</span> and <span class="math inline">\(10\)</span>, whose witnesses are <span class="math inline">\(3\)</span> and <span class="math inline">\(5\)</span>. Use separate letters when the hypotheses do not require the witnesses to agree. They may turn out to be equal in a particular case, but the proof must not impose that restriction.</p>
+</div>
+<p><span id="example-3.5."><strong>Example&nbsp;3.5.</strong></span> Prove that the sum of two odd integers is even.</p>
+<p><em>Proof.</em> Let <span class="math inline">\(a,b\in\mathbb{Z}\)</span> be odd. Write <span class="math inline">\(a=2r+1\)</span> and <span class="math inline">\(b=2s+1\)</span> for integers <span class="math inline">\(r,s\)</span>. Then <span class="math display">\[a+b=(2r+1)+(2s+1)=2r+2s+2=2(r+s+1).\]</span> The number <span class="math inline">\(r+s+1\)</span> is an integer, so <span class="math inline">\(a+b\)</span> is even. <span class="math inline">\(\square\)</span></p>
+<p><img src="../../../teaching/notes/assets/chapter-03/01-odd-plus-odd-pairing.webp" class="ds-note-image img-fluid" loading="lazy" decoding="async" alt="Two odd collections paired to illustrate why an odd number plus an odd number is even."></p>
+<p>In the example <span class="math inline">\(5+7\)</span>, the two unpaired objects form a sixth pair.</p>
+<p>Two odd inputs have produced an even output. The definition needed at the end is the definition of the <em>conclusion</em>, not necessarily the one used to describe the inputs.</p>
+<p><span id="ch3:odd-square"><strong>Example&nbsp;3.6. Squares of odd integers.</strong></span> We can now settle Alice’s claim from the opening.</p>
+<p><em>Proof.</em> Let <span class="math inline">\(n\in\mathbb{Z}\)</span> be odd. Then <span class="math inline">\(n=2k+1\)</span> for some <span class="math inline">\(k\in\mathbb{Z}\)</span>. Squaring gives <span class="math display">\[\begin{aligned}
+n^2&amp;=(2k+1)^2\\
+    &amp;=4k^2+4k+1\\
+    &amp;=2(2k^2+2k)+1.
+\end{aligned}\]</span> Since <span class="math inline">\(2k^2+2k\)</span> is an integer, the final expression has the form <span class="math inline">\(2(\text{integer})+1\)</span>. Thus <span class="math inline">\(n^2\)</span> is odd. <span class="math inline">\(\square\)</span></p>
+<p>The proof did not select a particular odd input or assume that <span class="math inline">\(k\)</span> was positive. It covers every odd integer allowed by the claim. The numerical tests helped us notice the pattern; the representation <span class="math inline">\(n=2k+1\)</span> explains why it always holds.</p>
+<p><span id="ch3:even-product"><strong>Example&nbsp;3.7.</strong></span> Prove that the product of an even integer and any integer is even.</p>
+<p><em>Proof.</em> Let <span class="math inline">\(a,b\in\mathbb{Z}\)</span> and suppose <span class="math inline">\(a\)</span> is even. Write <span class="math inline">\(a=2k\)</span> for some <span class="math inline">\(k\in\mathbb{Z}\)</span>. Then <span class="math display">\[ab=(2k)b=2(kb).\]</span> Because <span class="math inline">\(kb\in\mathbb{Z}\)</span>, the product <span class="math inline">\(ab\)</span> is even. <span class="math inline">\(\square\)</span></p>
+<p>We did not need <span class="math inline">\(b\)</span> to be even. We did need it to be an integer: <span class="math inline">\(2(\tfrac12)=1\)</span> shows why an arbitrary real second factor would not support the same conclusion.</p>
+<p><span id="ch3:divisible-sum"><strong>Example&nbsp;3.8.</strong></span> Prove that if <span class="math inline">\(d\mid a\)</span> and <span class="math inline">\(d\mid b\)</span>, then <span class="math inline">\(d\mid(a+b)\)</span>, where <span class="math inline">\(a,b,d\in\mathbb{Z}\)</span> and <span class="math inline">\(d\ne0\)</span>.</p>
+<p><em>Proof.</em> Fix such integers and assume <span class="math inline">\(d\mid a\)</span> and <span class="math inline">\(d\mid b\)</span>. By definition, <span class="math inline">\(a=dr\)</span> and <span class="math inline">\(b=ds\)</span> for some integers <span class="math inline">\(r,s\)</span>. Hence <span class="math display">\[a+b=dr+ds=d(r+s).\]</span> Since <span class="math inline">\(r+s\in\mathbb{Z}\)</span>, the definition of divisibility gives <span class="math inline">\(d\mid(a+b)\)</span>. <span class="math inline">\(\square\)</span></p>
+<p>The conclusion is a divisibility claim, so it needs an integer multiplier. Here that multiplier is <span class="math inline">\(r+s\)</span>, just as in the earlier even-sum proof.</p>
+<p><span id="example-3.9."><strong>Example&nbsp;3.9.</strong></span> Suppose <span class="math inline">\(d\mid a\)</span> and <span class="math inline">\(d\mid b\)</span>, with <span class="math inline">\(a,b,d\in\mathbb{Z}\)</span> and <span class="math inline">\(d\ne0\)</span>. Prove that <span class="math inline">\(d\mid(3a-2b)\)</span>.</p>
+<p><em>Proof.</em> There are integers <span class="math inline">\(j,k\)</span> with <span class="math inline">\(a=dj\)</span> and <span class="math inline">\(b=dk\)</span>. Substituting these expressions gives <span class="math display">\[3a-2b=3dj-2dk=d(3j-2k).\]</span> The multiplier <span class="math inline">\(3j-2k\)</span> is an integer, so <span class="math inline">\(d\mid(3a-2b)\)</span>. <span class="math inline">\(\square\)</span></p>
+<p>The same reasoning works for any integer coefficients <span class="math inline">\(r,s\)</span>: <span class="math display">\[ra+sb=r(dj)+s(dk)=d(rj+sk).\]</span> Because <span class="math inline">\(r,s,j,k\)</span> are integers, so is <span class="math inline">\(rj+sk\)</span>. Thus <span class="math inline">\(d\mid(ra+sb)\)</span>.</p>
+<p><span id="example-3.10."><strong>Example&nbsp;3.10.</strong></span> For integers <span class="math inline">\(a,b,c\)</span> with <span class="math inline">\(a,b\ne0\)</span>, prove that <span class="math inline">\(a\mid b\)</span> and <span class="math inline">\(b\mid c\)</span> imply <span class="math inline">\(a\mid c\)</span>.</p>
+<p><em>Proof.</em> Assume <span class="math inline">\(a\mid b\)</span> and <span class="math inline">\(b\mid c\)</span>. Choose integers <span class="math inline">\(r,s\)</span> such that <span class="math inline">\(b=ar\)</span> and <span class="math inline">\(c=bs\)</span>. Substitution gives <span class="math display">\[c=bs=(ar)s=a(rs).\]</span> Since <span class="math inline">\(rs\in\mathbb{Z}\)</span>, we have <span class="math inline">\(a\mid c\)</span>. <span class="math inline">\(\square\)</span></p>
+<p>Compare this with chaining implications in Chapter 2. Here the definitions provide the equations that connect the two hypotheses. The direction matters: <span class="math inline">\(a\mid b\)</span> supplied <span class="math inline">\(b=ar\)</span>, not <span class="math inline">\(a=br\)</span>.</p>
+<p>Each proof above begins with the domain and hypotheses, introduces what the definitions permit, and explains why the final expression meets the definition required by the conclusion. Algebra performs part of the work; the sentences identify what the algebra establishes.</p>
+</section>
+<section id="ch3:contrapositive" class="level2">
+<h2 class="anchored" data-anchor-id="ch3:contrapositive">3.4 Proof by contrapositive</h2>
+<p>Sometimes the hypothesis supplies information about a complicated expression, while the conclusion concerns a simpler input. It may be easier to start by assuming that the conclusion is false.</p>
+<p>Chapter 2 established <span class="math display">\[(P\to Q)\equiv(\neg Q\to\neg P).\]</span> The second implication is the contrapositive of the first. Proving it therefore establishes the original implication.</p>
+<div class="ds-box ds-definition">
+<div id="definition-3.5-proof-by-contrapositive" class="ds-box-title">
+<p><strong>Definition 3.5: Proof by contrapositive</strong></p>
+</div>
+<p>To prove <span class="math inline">\(P\to Q\)</span> by contrapositive, assume <span class="math inline">\(\neg Q\)</span> and deduce <span class="math inline">\(\neg P\)</span>. Keep the original domain and any background hypotheses. For a quantified implication, the argument must work for an arbitrary permitted input.</p>
+</div>
+<p><span id="ch3:square-even"><strong>Example&nbsp;3.11.</strong></span> Prove that for every integer <span class="math inline">\(n\)</span>, if <span class="math inline">\(n^2\)</span> is even, then <span class="math inline">\(n\)</span> is even.</p>
+<p>A direct attempt gives <span class="math inline">\(n^2=2k\)</span> for an integer <span class="math inline">\(k\)</span>, but that does not yet express <span class="math inline">\(n\)</span> as twice an integer. The contrapositive starts with <span class="math inline">\(n\)</span> odd and asks us to show that <span class="math inline">\(n^2\)</span> is odd, which Example&nbsp;<a href="#ch3:odd-square">3.6</a> already established.</p>
+<p><em>Proof.</em> We prove the contrapositive. Let <span class="math inline">\(n\in\mathbb{Z}\)</span> and suppose that <span class="math inline">\(n\)</span> is not even. Then <span class="math inline">\(n\)</span> is odd, so Example&nbsp;<a href="#ch3:odd-square">3.6</a> shows that <span class="math inline">\(n^2\)</span> is odd and hence not even. This proves that if <span class="math inline">\(n\)</span> is not even, then <span class="math inline">\(n^2\)</span> is not even. The original implication follows by contraposition. <span class="math inline">\(\square\)</span></p>
+<p>We used a previously proved result instead of repeating its calculation. The proof did not assume that <span class="math inline">\(n^2\)</span> was even; that is the starting assumption for a direct proof of the original implication.</p>
+<p><span id="example-3.12."><strong>Example&nbsp;3.12.</strong></span> For <span class="math inline">\(n\in\mathbb{Z}\)</span>, prove that if <span class="math inline">\(3n+2\)</span> is odd, then <span class="math inline">\(n\)</span> is odd.</p>
+<p>The contrapositive is: if <span class="math inline">\(n\)</span> is not odd, then <span class="math inline">\(3n+2\)</span> is not odd. Since these quantities are integers, we can rewrite it using evenness.</p>
+<p><em>Proof.</em> We prove the contrapositive. Let <span class="math inline">\(n\in\mathbb{Z}\)</span> be even. Then <span class="math inline">\(n=2k\)</span> for some <span class="math inline">\(k\in\mathbb{Z}\)</span>, so <span class="math display">\[3n+2=3(2k)+2=2(3k+1).\]</span> The multiplier <span class="math inline">\(3k+1\)</span> is an integer. Hence <span class="math inline">\(3n+2\)</span> is even and is not odd. This proves the contrapositive, so the stated implication is true. <span class="math inline">\(\square\)</span></p>
+<p><span id="example-3.13."><strong>Example&nbsp;3.13.</strong></span> For integers <span class="math inline">\(a,b\)</span>, prove that if <span class="math inline">\(a+b\)</span> is odd, then <span class="math inline">\(a\)</span> is odd or <span class="math inline">\(b\)</span> is odd.</p>
+<p>Negating the conclusion requires De Morgan’s law: “not (<span class="math inline">\(a\)</span> odd or <span class="math inline">\(b\)</span> odd)” means that neither is odd. Both are then even.</p>
+<p><em>Proof.</em> We prove the contrapositive. Let <span class="math inline">\(a,b\in\mathbb{Z}\)</span> and suppose neither is odd. Both are even, so Example&nbsp;<a href="#ch3:even-sum">3.4</a> shows that <span class="math inline">\(a+b\)</span> is even. Thus <span class="math inline">\(a+b\)</span> is not odd, which proves the contrapositive. Therefore an odd sum has at least one odd summand. <span class="math inline">\(\square\)</span></p>
+<p>The “or” is inclusive. We have proved the implication stated in the claim, not its converse: <span class="math inline">\(3\)</span> and <span class="math inline">\(5\)</span> are both odd, but <span class="math inline">\(3+5\)</span> is even.</p>
+<div class="ds-box ds-caution">
+<div id="contrapositive-and-negation" class="ds-box-title">
+<p><strong>Contrapositive and negation</strong></p>
+</div>
+<p>For a claim <span class="math inline">\(\forall n\in\mathbb{Z}\,(P(n)\to Q(n))\)</span>, the contrapositive retains the universal quantifier: <span class="math display">\[\forall n\in\mathbb{Z}\,(\neg Q(n)\to\neg P(n)).\]</span> The negation of the whole claim is instead <span class="math inline">\(\exists n\in\mathbb{Z}\,(P(n)\land\neg Q(n))\)</span>. It says that a counterexample exists. These have different jobs: the contrapositive is an equivalent claim to prove; the negation describes how the original could fail.</p>
+</div>
+</section>
+<section id="ch3:contradiction" class="level2">
+<h2 class="anchored" data-anchor-id="ch3:contradiction">3.5 Proof by contradiction</h2>
+<p>A nonexistence claim can be difficult to attack by listing things that do not work. A contradiction proof lets us assume that a proposed object exists and ask what that would force.</p>
+<div class="ds-box ds-definition">
+<div id="definition-3.6-proof-by-contradiction" class="ds-box-title">
+<p><strong>Definition 3.6: Proof by contradiction</strong></p>
+</div>
+<p>To prove a claim <span class="math inline">\(S\)</span>, temporarily assume <span class="math inline">\(\neg S\)</span>, while retaining the stated domain and background hypotheses. Deduce incompatible conclusions, such as a statement together with its negation. These show that the temporary assumption is impossible, so <span class="math inline">\(S\)</span> holds.</p>
+</div>
+<p>The contradiction must follow from justified steps. Being surprised by an answer, or merely failing to find an example, does not establish one. We must identify the incompatible facts.</p>
+<p>To prove a conditional <span class="math inline">\(P\to Q\)</span> this way, its negation is <span class="math inline">\(P\land\neg Q\)</span>. For a universal conditional, we suppose that there is a permitted counterexample satisfying those two conditions. We do not suppose that every input is a counterexample.</p>
+<p><span id="example-3.14."><strong>Example&nbsp;3.14.</strong></span> A greatest integer would be an integer at least as large as every integer. The claim says that no such integer exists.</p>
+<p><em>Proof.</em> Suppose, for contradiction, that a greatest integer <span class="math inline">\(g\)</span> exists. The number <span class="math inline">\(g+1\)</span> is an integer because integers are closed under addition. It satisfies <span class="math inline">\(g+1&gt;g\)</span>. However, greatestness would require <span class="math inline">\(g+1\leq g\)</span>. These inequalities cannot both hold. Therefore no greatest integer exists. <span class="math inline">\(\square\)</span></p>
+<p>We did not try a long list of proposed greatest integers. The assumption gave us one candidate <span class="math inline">\(g\)</span>, and the expression <span class="math inline">\(g+1\)</span> defeated that candidate regardless of its value.</p>
+<p><span id="example-3.15."><strong>Example&nbsp;3.15.</strong></span> Prove that there are no integers <span class="math inline">\(a,b\)</span> satisfying <span class="math inline">\(6a+3=4b\)</span>.</p>
+<p><em>Proof.</em> Suppose, for contradiction, that integers <span class="math inline">\(a,b\)</span> satisfy the equation. Its left side can be written as <span class="math display">\[6a+3=2(3a+1)+1,\]</span> so it is odd, because <span class="math inline">\(3a+1\)</span> is an integer. Its right side is <span class="math inline">\(4b=2(2b)\)</span>, so it is even. The equation would make the same integer both odd and even, which is impossible. Hence no such integers exist. <span class="math inline">\(\square\)</span></p>
+<p>The negation of “there are no such integers” is the existence of a pair that works. That is precisely what we temporarily assumed; the parity definitions then ruled out every proposed pair.</p>
+<p><span id="example-3.16."><strong>Example&nbsp;3.16.</strong></span> We can also prove that an integer with an even square must be even using contradiction. Compare the assumptions with the contrapositive proof in Example&nbsp;<a href="#ch3:square-even">3.11</a>.</p>
+<p><em>Proof.</em> Let <span class="math inline">\(n\in\mathbb{Z}\)</span> and suppose <span class="math inline">\(n^2\)</span> is even. Suppose, for contradiction, that <span class="math inline">\(n\)</span> is not even. Then <span class="math inline">\(n\)</span> is odd, so Example&nbsp;<a href="#ch3:odd-square">3.6</a> gives that <span class="math inline">\(n^2\)</span> is odd. This contradicts our hypothesis that <span class="math inline">\(n^2\)</span> is even. Therefore <span class="math inline">\(n\)</span> is even. <span class="math inline">\(\square\)</span></p>
+<p>This proof retained the original hypothesis and temporarily denied the conclusion. The contrapositive proof assumed only that <span class="math inline">\(n\)</span> was not even and established that <span class="math inline">\(n^2\)</span> was not even. Both methods are valid, but their stated assumptions and stopping points differ.</p>
+</section>
+<section id="ch3:checking" class="level2">
+<h2 class="anchored" data-anchor-id="ch3:checking">3.6 Proof construction and checking</h2>
+<p>The logical form gives us possible starting points, but it does not guarantee that one particular method will be shortest. For a claim <span class="math inline">\(P\to Q\)</span>, compare the following:</p>
+<div class="ds-table">
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Method</th>
+<th style="text-align: left;">Starting point</th>
+<th style="text-align: left;">What to establish</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Direct</td>
+<td style="text-align: left;">Assume <span class="math inline">\(P\)</span>.</td>
+<td style="text-align: left;">Deduce <span class="math inline">\(Q\)</span>.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Contrapositive</td>
+<td style="text-align: left;">Assume <span class="math inline">\(\neg Q\)</span>.</td>
+<td style="text-align: left;">Deduce <span class="math inline">\(\neg P\)</span>.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Contradiction</td>
+<td style="text-align: left;">Assume <span class="math inline">\(P\)</span> and <span class="math inline">\(\neg Q\)</span>.</td>
+<td style="text-align: left;">Deduce incompatible facts.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>In each row, keep the domain and any background hypotheses. For a general claim <span class="math inline">\(S\)</span> that is not presented as a conditional, contradiction starts with <span class="math inline">\(\neg S\)</span>. We often choose a method because its assumptions give a representation we know how to use.</p>
+<p>For instance, knowing that <span class="math inline">\(n\)</span> is odd immediately gives <span class="math inline">\(n=2k+1\)</span>. Knowing only that <span class="math inline">\(n^2\)</span> is even gives an equation for the square, which is less convenient if we want an equation for <span class="math inline">\(n\)</span> itself. This was the reason for trying the contrapositive in Example&nbsp;<a href="#ch3:square-even">3.11</a>.</p>
+<p><span id="example-3.17."><strong>Example&nbsp;3.17.</strong></span> Prove that an integer <span class="math inline">\(n\)</span> is even if and only if <span class="math inline">\(n^2\)</span> is even.</p>
+<p><em>Proof.</em> Let <span class="math inline">\(n\in\mathbb{Z}\)</span>. First suppose <span class="math inline">\(n\)</span> is even. By Example&nbsp;<a href="#ch3:even-product">3.7</a>, its product with the integer <span class="math inline">\(n\)</span> is even, so <span class="math inline">\(n^2\)</span> is even.</p>
+<p>Conversely, suppose <span class="math inline">\(n^2\)</span> is even. Example&nbsp;<a href="#ch3:square-even">3.11</a> gives that <span class="math inline">\(n\)</span> is even. Both implications hold, so the biconditional is proved. <span class="math inline">\(\square\)</span></p>
+<p>The first direction used a direct proof result; the second used one proved by contrapositive. A biconditional does not require using the same method in both directions.</p>
+<p><span id="counterexamples."><strong>Counterexamples.</strong></span> Before investing in a proof, test simple allowed values, including zero or negative inputs when the domain permits them. One counterexample to a universal claim settles its falsity. In an implication, that counterexample must make the hypothesis true and the conclusion false. A false hypothesis does not supply a failed case.</p>
+<p><span id="example-3.18."><strong>Example&nbsp;3.18.</strong></span> Consider the proposed claim: for nonzero integer <span class="math inline">\(d\)</span> and integers <span class="math inline">\(a,b\)</span>, if <span class="math inline">\(d\mid ab\)</span>, then <span class="math inline">\(d\mid a\)</span> or <span class="math inline">\(d\mid b\)</span>.</p>
+<p>Take <span class="math inline">\(d=6\)</span>, <span class="math inline">\(a=2\)</span> and <span class="math inline">\(b=3\)</span>. We have <span class="math inline">\(ab=6\)</span>, so <span class="math inline">\(6\mid ab\)</span>. However, <span class="math inline">\(6\nmid2\)</span> and <span class="math inline">\(6\nmid3\)</span>. The hypothesis is true and the conclusion false, so this is a counterexample.</p>
+<p>The universal claim is false. The definition of divisibility does not allow us to separate the factors in this way for an arbitrary <span class="math inline">\(d\)</span>.</p>
+<div class="ds-box ds-python">
+<div id="python-non-examinable" class="ds-box-title">
+<p><strong>Python (non-examinable)</strong></p>
+</div>
+<p>Consider the claim that, for integers <span class="math inline">\(a,b\)</span>, if <span class="math inline">\(6\mid ab\)</span>, then <span class="math inline">\(6\mid a\)</span> or <span class="math inline">\(6\mid b\)</span>. We can search for counterexamples with <span class="math inline">\(d=6\)</span>. Python’s <code>range(1, 7)</code> supplies the integers <span class="math inline">\(1\)</span> through <span class="math inline">\(6\)</span>; the upper endpoint is excluded. The operator <code>%</code> gives the remainder, so <code>a % d == 0</code> tests whether <span class="math inline">\(d\)</span> divides <span class="math inline">\(a\)</span>. The assignments below record the hypothesis and conclusion for each pair. The <code>if</code> line selects exactly a true hypothesis and a false conclusion.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>d <span class="op">=</span> <span class="dv">6</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> a <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, <span class="dv">7</span>):</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> b <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, <span class="dv">7</span>):</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>        hypothesis <span class="op">=</span> (a <span class="op">*</span> b) <span class="op">%</span> d <span class="op">==</span> <span class="dv">0</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>        conclusion <span class="op">=</span> (a <span class="op">%</span> d <span class="op">==</span> <span class="dv">0</span>) <span class="kw">or</span> (b <span class="op">%</span> d <span class="op">==</span> <span class="dv">0</span>)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> hypothesis <span class="kw">and</span> <span class="kw">not</span> conclusion:</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>            <span class="bu">print</span>(a, b)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><strong>Output.</strong></p>
+<pre class="text"><code>2 3
+3 2
+3 4
+4 3</code></pre>
+<p>The first pair recovers the counterexample verified above. Each printed pair supplies another one, and any one of them refutes the universal claim. Successful tests alone would not prove a claim about all integers.</p>
+</div>
+<p><span id="faulty-proofs."><strong>Faulty proofs.</strong></span> The next examples separate the result being claimed from the argument offered for it. Check where each argument starts, what its equations actually establish and which hypotheses it uses.</p>
+<p><span id="example-3.19."><strong>Example&nbsp;3.19.</strong></span> Charlie wants to prove that if <span class="math inline">\(n^2\)</span> is even, then <span class="math inline">\(n\)</span> is even. He writes: “Let <span class="math inline">\(n\)</span> be even. Then <span class="math inline">\(n=2k\)</span>, so <span class="math inline">\(n^2=2(2k^2)\)</span> is even. Therefore the claim is proved.”</p>
+<p>His calculation establishes that <span class="math inline">\(n\)</span> even implies <span class="math inline">\(n^2\)</span> even. He began with the intended conclusion and proved the converse. Although both directions happen to be true here, that does not make one a proof of the other. The argument must begin with assumptions appropriate to its chosen method.</p>
+<p>A repair is the contrapositive proof in Example&nbsp;<a href="#ch3:square-even">3.11</a>, or the contradiction proof in Section&nbsp;<a href="#ch3:contradiction">3.5</a>.</p>
+<p><span id="example-3.20."><strong>Example&nbsp;3.20.</strong></span> Eve proposes that every integer is even because <span class="math display">\[n=2\left(\frac n2\right).\]</span> The equation is correct, but evenness requires an integer witness. When <span class="math inline">\(n=5\)</span>, the proposed witness is <span class="math inline">\(5/2\)</span>, which is not an integer. The equation therefore does not prove evenness for an arbitrary <span class="math inline">\(n\)</span>.</p>
+<p><span id="example-3.21."><strong>Example&nbsp;3.21.</strong></span> Alice claims that for all integers <span class="math inline">\(a,b,c\)</span>, the equation <span class="math inline">\(ab=ac\)</span> implies <span class="math inline">\(b=c\)</span>. Her proof divides both sides by <span class="math inline">\(a\)</span>.</p>
+<p>The input <span class="math inline">\(a=0\)</span>, <span class="math inline">\(b=2\)</span>, <span class="math inline">\(c=5\)</span> satisfies <span class="math inline">\(ab=ac\)</span>, since both products are zero, but <span class="math inline">\(b\ne c\)</span>. It is a counterexample. The division step failed because the hypotheses did not exclude <span class="math inline">\(a=0\)</span>.</p>
+<p>With the added hypothesis <span class="math inline">\(a\ne0\)</span>, the statement is true: from <span class="math inline">\(ab=ac\)</span>, division by the nonzero number <span class="math inline">\(a\)</span> gives <span class="math inline">\(b=c\)</span>. The repaired proof establishes the claim with that extra hypothesis; it does not prove the original unrestricted claim.</p>
+<p>Look for the exact definition or earlier result that supports each step. An expression of the form <span class="math inline">\(2t\)</span> establishes evenness only after we know <span class="math inline">\(t\in\mathbb{Z}\)</span>. A contradiction must identify incompatible facts. A proof about every input must avoid extra restrictions on that input.</p>
+<div class="ds-box ds-enrichment">
+<div id="non-examinable-an-irrationality-proof" class="ds-box-title">
+<p><strong>(Non-examinable) An irrationality proof</strong></p>
+</div>
+<p>This enrichment example combines the even-square result with familiar fraction arithmetic. The example and its terminology are non-examinable.</p>
+<p>A real number is <strong>rational</strong> if it can be written as <span class="math inline">\(a/b\)</span> for integers <span class="math inline">\(a,b\)</span> with <span class="math inline">\(b\ne0\)</span>; it is <strong>irrational</strong> if no such fraction exists. A fraction is in <strong>lowest terms</strong> when no integer greater than <span class="math inline">\(1\)</span> divides both numerator and denominator. We use the elementary fact that any rational number can be written in lowest terms by cancelling common factors. Choose a positive denominator.</p>
+<p>The number <span class="math inline">\(\sqrt2\)</span> is the positive real number whose square is <span class="math inline">\(2\)</span>. We will prove that it is irrational.</p>
+<p><em>Proof.</em> Suppose, for contradiction, that <span class="math inline">\(\sqrt2=a/b\)</span>, where <span class="math inline">\(a,b\in\mathbb{Z}\)</span>, <span class="math inline">\(b&gt;0\)</span>, and the fraction is in lowest terms. Squaring and multiplying by <span class="math inline">\(b^2\)</span> gives <span class="math display">\[a^2=2b^2.\]</span> Thus <span class="math inline">\(a^2\)</span> is even. Example&nbsp;<a href="#ch3:square-even">3.11</a> shows that <span class="math inline">\(a\)</span> is even, so <span class="math inline">\(a=2k\)</span> for some <span class="math inline">\(k\in\mathbb{Z}\)</span>. Substitution gives <span class="math display">\[4k^2=2b^2,\qquad\text{hence}\qquad b^2=2k^2.\]</span> Now <span class="math inline">\(b^2\)</span> is even, so the same result shows that <span class="math inline">\(b\)</span> is even. The integer <span class="math inline">\(2\)</span> therefore divides both <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span>, contradicting the choice of a fraction in lowest terms. Hence <span class="math inline">\(\sqrt2\)</span> is irrational. <span class="math inline">\(\square\)</span></p>
+<p>The contradiction is with the chosen representation being in lowest terms, not with fractions being allowed to have even numerators and denominators. A fraction such as <span class="math inline">\(2/4\)</span> is perfectly valid; it simply is not in lowest terms.</p>
+</div>
+</section>
+<section id="ch3:exercises" class="level2">
+<h2 class="anchored" data-anchor-id="ch3:exercises">3.7 Exercises</h2>
+<div class="ds-exercises" style="--ds-chapter: '3';">
+<ol type="1">
+<li><p><span id="ch3ex:witnesses" data-label="ch3ex:witnesses"></span> Justify each statement directly from its definition. Write the required integer explicitly, rather than giving only the statement’s truth value.</p>
+<ol type="a">
+<li><p><span class="math inline">\(-8\)</span> is even.</p></li>
+<li><p><span class="math inline">\(-11\)</span> is odd.</p></li>
+<li><p><span class="math inline">\(7\mid 0\)</span>.</p></li>
+<li><p><span class="math inline">\(-3\mid 12\)</span>.</p></li>
+</ol></li>
+<li><p><span id="ch3ex:beginnings" data-label="ch3ex:beginnings"></span> For each claim, write the opening assumptions and say what remains to be shown using the indicated method. Do not complete the proof yet.</p>
+<ol type="a">
+<li><p>For all integers <span class="math inline">\(a,b\)</span>, if <span class="math inline">\(a\)</span> is odd and <span class="math inline">\(b\)</span> is even, then <span class="math inline">\(a+b\)</span> is odd. Use a direct proof.</p></li>
+<li><p>For every integer <span class="math inline">\(n\)</span>, if <span class="math inline">\(5n+4\)</span> is odd, then <span class="math inline">\(n\)</span> is odd. Use a proof by contrapositive.</p></li>
+<li><p>There are no integers <span class="math inline">\(a,b\)</span> for which <span class="math inline">\(4a+1=2b\)</span>. Use a proof by contradiction.</p></li>
+</ol></li>
+<li><p><span id="ch3ex:mixed-sum" data-label="ch3ex:mixed-sum"></span> Fill each gap and explain why the integer used in the conclusion really is an integer.</p>
+<blockquote class="blockquote">
+<p>Let <span class="math inline">\(a,b\)</span> be arbitrary integers, with <span class="math inline">\(a\)</span> odd and <span class="math inline">\(b\)</span> even. There are integers <span class="math inline">\(r,s\)</span> such that <span class="math inline">\(a=\underline{\hspace{1.5cm}}\)</span> and <span class="math inline">\(b=\underline{\hspace{1.5cm}}\)</span>. Therefore <span class="math display">\[a+b=\underline{\hspace{3cm}}=2(r+s)+1.\]</span> Since <span class="math inline">\(\underline{\hspace{1.5cm}}\in\mathbb{Z}\)</span>, the definition of <span class="math inline">\(\underline{\hspace{1.5cm}}\)</span> shows that <span class="math inline">\(a+b\)</span> is odd.</p>
+</blockquote></li>
+<li><p><span id="ch3ex:product-reasons" data-label="ch3ex:product-reasons"></span> Consider this argument.</p>
+<blockquote class="blockquote">
+<p>Let <span class="math inline">\(a,b\)</span> be arbitrary odd integers. Write <span class="math inline">\(a=2r+1\)</span> and <span class="math inline">\(b=2s+1\)</span> for some integers <span class="math inline">\(r,s\)</span>. Then <span class="math display">\[ab=(2r+1)(2s+1)=2(2rs+r+s)+1.\]</span> The number <span class="math inline">\(2rs+r+s\)</span> is an integer, so <span class="math inline">\(ab\)</span> is odd.</p>
+</blockquote>
+<ol type="a">
+<li><p>Which definition justifies the first representations of <span class="math inline">\(a,b\)</span>?</p></li>
+<li><p>Why is <span class="math inline">\(2rs+r+s\)</span> an integer?</p></li>
+<li><p>Which definition justifies the conclusion?</p></li>
+<li><p>Why does the proof apply to all odd integers, including negative ones?</p></li>
+</ol></li>
+<li><p><span id="ch3ex:direct-arithmetic" data-label="ch3ex:direct-arithmetic"></span> Prove each claim. State the domain of your arbitrary input and justify the final step.</p>
+<ol type="a">
+<li><p>For every real number <span class="math inline">\(x\)</span>, if <span class="math inline">\(x&gt;-3\)</span>, then <span class="math inline">\(4x+5&gt;-7\)</span>.</p></li>
+<li><p>For every integer <span class="math inline">\(n\)</span>, if <span class="math inline">\(n\)</span> is even, then <span class="math inline">\(n^2+3\)</span> is odd.</p></li>
+<li><p>For every integer <span class="math inline">\(n\)</span>, <span class="math inline">\((n+1)^2-n^2\)</span> is odd.</p></li>
+</ol></li>
+<li><p><span id="ch3ex:construct-witness" data-label="ch3ex:construct-witness"></span> Prove that for every integer <span class="math inline">\(n\)</span> there is an integer <span class="math inline">\(m\)</span> such that <span class="math inline">\(m&gt;n\)</span> and <span class="math inline">\(3\mid(m-n)\)</span>. Give a formula for <span class="math inline">\(m\)</span> in terms of <span class="math inline">\(n\)</span>, then check both required properties.</p></li>
+<li><p><span id="ch3ex:product-divisibility" data-label="ch3ex:product-divisibility"></span> Let <span class="math inline">\(d,a,b\)</span> be integers with <span class="math inline">\(d\ne0\)</span>. Complete this proof of the claim that if <span class="math inline">\(d\mid a\)</span> and <span class="math inline">\(d\mid b\)</span>, then <span class="math inline">\(d^2\mid ab\)</span>.</p>
+<blockquote class="blockquote">
+<p>Suppose <span class="math inline">\(d\mid a\)</span> and <span class="math inline">\(d\mid b\)</span>. There are integers <span class="math inline">\(r,s\)</span> with <span class="math inline">\(a=\underline{\hspace{1cm}}\)</span> and <span class="math inline">\(b=\underline{\hspace{1cm}}\)</span>. Hence <span class="math display">\[ab=\underline{\hspace{2.5cm}}=d^2(rs).\]</span> Here <span class="math inline">\(d^2\ne0\)</span> because <span class="math inline">\(\underline{\hspace{2cm}}\)</span>, and <span class="math inline">\(rs\in\mathbb{Z}\)</span> because <span class="math inline">\(\underline{\hspace{3cm}}\)</span>. Thus <span class="math inline">\(d^2\mid ab\)</span>.</p>
+</blockquote></li>
+<li><p><span id="ch3ex:direct-divisibility" data-label="ch3ex:direct-divisibility"></span> Prove each claim directly from the definition of divisibility.</p>
+<ol type="a">
+<li><p>For integers <span class="math inline">\(d,a\)</span> with <span class="math inline">\(d\ne0\)</span>, if <span class="math inline">\(d\mid a\)</span>, then <span class="math inline">\(d\mid(a^2-a)\)</span>.</p></li>
+<li><p>For integers <span class="math inline">\(a,b\)</span> with <span class="math inline">\(a\ne0\)</span>, if <span class="math inline">\(a\mid b\)</span>, then <span class="math inline">\(a\mid(b+3a)\)</span>.</p></li>
+</ol></li>
+<li><p><span id="ch3ex:converse" data-label="ch3ex:converse"></span></p>
+<ol type="a">
+<li><p>Prove that for every integer <span class="math inline">\(n\)</span>, if <span class="math inline">\(8\mid n\)</span>, then <span class="math inline">\(4\mid n\)</span>.</p></li>
+<li><p>State the converse and give a counterexample to it. Check explicitly that your example satisfies the converse’s hypothesis and fails its conclusion.</p></li>
+</ol></li>
+<li><p><span id="ch3ex:examples-only" data-label="ch3ex:examples-only"></span> A student writes:</p>
+<blockquote class="blockquote">
+<p>For <span class="math inline">\(n=-1,0,2\)</span>, the expression <span class="math inline">\(10n+5\)</span> gives <span class="math inline">\(-5,5,25\)</span>. All three are divisible by <span class="math inline">\(5\)</span>. Therefore <span class="math inline">\(5\mid(10n+5)\)</span> for every integer <span class="math inline">\(n\)</span>.</p>
+</blockquote>
+<ol type="a">
+<li><p>Are the calculations correct? Do they prove the universal claim? Explain the gap in the reasoning.</p></li>
+<li><p>Replace the argument with a direct proof of the universal claim.</p></li>
+</ol></li>
+<li><p><span id="ch3ex:same-witness" data-label="ch3ex:same-witness"></span> A proposed proof says:</p>
+<blockquote class="blockquote">
+<p>Let <span class="math inline">\(a,b\)</span> be odd integers. Then <span class="math inline">\(a=2k+1\)</span> and <span class="math inline">\(b=2k+1\)</span> for some integer <span class="math inline">\(k\)</span>. Hence <span class="math inline">\(a-b=0\)</span>, which is even.</p>
+</blockquote>
+<ol type="a">
+<li><p>Explain what extra assumption is introduced by using the same <span class="math inline">\(k\)</span>. Give two odd integers for which those two representations cannot hold with the same <span class="math inline">\(k\)</span>.</p></li>
+<li><p>Prove the intended claim: the difference of any two odd integers is even.</p></li>
+</ol></li>
+<li><p><span id="ch3ex:quotient-error" data-label="ch3ex:quotient-error"></span> A student proposes:</p>
+<blockquote class="blockquote">
+<p>If <span class="math inline">\(3\mid n\)</span>, write <span class="math inline">\(n=3k\)</span> for some integer <span class="math inline">\(k\)</span>. Then <span class="math inline">\(n=6(k/2)\)</span>, so <span class="math inline">\(6\mid n\)</span>.</p>
+</blockquote>
+<ol type="a">
+<li><p>Identify the missing requirement in the last step.</p></li>
+<li><p>Give a counterexample to the proposed claim. In your example, what is <span class="math inline">\(k/2\)</span>?</p></li>
+<li><p>Prove the repaired claim: for every integer <span class="math inline">\(n\)</span>, if <span class="math inline">\(3\mid n\)</span>, then <span class="math inline">\(6\mid 2n\)</span>.</p></li>
+</ol></li>
+<li><p><span id="ch3ex:assuming-conclusion" data-label="ch3ex:assuming-conclusion"></span> A student offers the following as a proof of the even-square claim, without using that claim as an earlier result:</p>
+<blockquote class="blockquote">
+<p>Let <span class="math inline">\(n\)</span> be an integer and suppose <span class="math inline">\(n^2\)</span> is even. Since <span class="math inline">\(n\)</span> is even, there is an integer <span class="math inline">\(k\)</span> with <span class="math inline">\(n=2k\)</span>. Therefore <span class="math inline">\(n\)</span> is even.</p>
+</blockquote>
+<ol type="a">
+<li><p>Identify the unsupported assertion. Explain why the final sentence has not been established by this argument.</p></li>
+<li><p>Write a valid proof by contrapositive. You may use the previously proved fact that the square of an odd integer is odd.</p></li>
+</ol></li>
+<li><p><span id="ch3ex:guided-contrapositive" data-label="ch3ex:guided-contrapositive"></span> Prove that for every integer <span class="math inline">\(n\)</span>, if <span class="math inline">\(5n+4\)</span> is odd, then <span class="math inline">\(n\)</span> is odd.</p>
+<ol type="a">
+<li><p>State the contrapositive in words, using the fact that every integer has exactly one parity.</p></li>
+<li><p>Complete the calculation for an arbitrary even integer <span class="math inline">\(n=2k\)</span>: <span class="math display">\[5n+4=\underline{\hspace{2.5cm}}=2\bigl(\underline{\hspace{1.7cm}}\bigr).\]</span></p></li>
+<li><p>Explain why the calculation proves the contrapositive and hence the original claim.</p></li>
+</ol></li>
+<li><p><span id="ch3ex:odd-product-contrapositive" data-label="ch3ex:odd-product-contrapositive"></span> Prove by contrapositive that for all integers <span class="math inline">\(a,b\)</span>, if <span class="math inline">\(ab\)</span> is odd, then <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span> are both odd. State the contrapositive before proving it. Remember that the negation of “both are odd” is “at least one is even” for integer inputs.</p></li>
+<li><p><span id="ch3ex:independent-contrapositive" data-label="ch3ex:independent-contrapositive"></span> Prove by contrapositive that for every integer <span class="math inline">\(n\)</span>, if <span class="math inline">\(n^2+2n\)</span> is odd, then <span class="math inline">\(n\)</span> is odd. Start with an arbitrary integer satisfying the contrapositive’s hypothesis.</p></li>
+<li><p><span id="ch3ex:no-parity-solution" data-label="ch3ex:no-parity-solution"></span> Prove by contradiction that there are no integers <span class="math inline">\(a,b\)</span> satisfying <span class="math inline">\(4a+1=2b\)</span>. Write the assumption that begins the contradiction proof, identify the incompatible properties it forces on one integer, and state the conclusion.</p></li>
+<li><p><span id="ch3ex:no-smallest-multiple" data-label="ch3ex:no-smallest-multiple"></span> Prove by contradiction that there is no smallest integer divisible by <span class="math inline">\(4\)</span>. If <span class="math inline">\(M\)</span> were such a smallest integer, construct another integer divisible by <span class="math inline">\(4\)</span> that is smaller than <span class="math inline">\(M\)</span>. Your argument must also work when <span class="math inline">\(M\)</span> is negative.</p></li>
+<li><p><span id="ch3ex:incompatible-sum-difference" data-label="ch3ex:incompatible-sum-difference"></span> Prove by contradiction that there are no integers <span class="math inline">\(a,b\)</span> for which <span class="math inline">\(a+b\)</span> is odd and <span class="math inline">\(a-b\)</span> is even. You may use previously proved parity facts. Identify the fact used at each step.</p></li>
+<li><p><span id="ch3ex:method-choice" data-label="ch3ex:method-choice"></span> For each claim, choose direct proof, contrapositive or contradiction. Give a reason for your choice, the opening assumption or assumptions, and one useful next step. More than one method may work; a full proof is not required here.</p>
+<ol type="a">
+<li><p>For integers <span class="math inline">\(d,a,b\)</span> with <span class="math inline">\(d\ne0\)</span>, if <span class="math inline">\(d\mid a\)</span> and <span class="math inline">\(d\mid b\)</span>, then <span class="math inline">\(d\mid(2a-5b)\)</span>.</p></li>
+<li><p>For every integer <span class="math inline">\(n\)</span>, if <span class="math inline">\(n^2+1\)</span> is even, then <span class="math inline">\(n\)</span> is odd.</p></li>
+<li><p>There is no greatest integer divisible by <span class="math inline">\(7\)</span>.</p></li>
+</ol></li>
+<li><p><span id="ch3ex:counterexamples" data-label="ch3ex:counterexamples"></span> Each claim below is false. Give a counterexample and verify both that its hypotheses hold and that its conclusion fails.</p>
+<ol type="a">
+<li><p>For all integers <span class="math inline">\(a,b\)</span>, if <span class="math inline">\(ab\)</span> is even, then <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span> are both even.</p></li>
+<li><p>For all integers <span class="math inline">\(d,n\)</span> with <span class="math inline">\(d\ne0\)</span>, if <span class="math inline">\(d\mid n^2\)</span>, then <span class="math inline">\(d\mid n\)</span>.</p></li>
+<li><p>For all nonzero integers <span class="math inline">\(a,b\)</span>, if <span class="math inline">\(a\mid b\)</span> and <span class="math inline">\(b\mid a\)</span>, then <span class="math inline">\(a=b\)</span>.</p></li>
+</ol>
+<p>Repair part (a) by replacing “both” with “at least one”, and prove the repaired claim. You may use Exercise&nbsp;<a href="#ch3ex:product-reasons">3.4</a>.</p></li>
+<li><p><span id="ch3ex:integrated-parity" data-label="ch3ex:integrated-parity"></span> Prove that for all integers <span class="math inline">\(a,b\)</span>, the sum <span class="math inline">\(a+b\)</span> is odd if and only if <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span> have different parity: one is even and the other is odd. Write both directions of the proof. You may use earlier parity results, but name the result whenever you use it.</p></li>
+</ol>
+</div>
+<div class="ds-chapter-navigation">
+<p><a href="../../../teaching/notes/chapter-02/">← Chapter 2</a> · <a href="../../../teaching/notes/chapter-04/">Chapter 4 →</a></p>
+</div>
+
+
+</section>
+
+<a href="#page-top" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
+<script>
+  (() => {
+    const main = document.getElementById("quarto-document-content");
+    const skipLink = document.querySelector(".skip-link");
+
+    if (skipLink && main) {
+      skipLink.addEventListener("click", () => {
+        window.requestAnimationFrame(() => main.focus({ preventScroll: true }));
+      });
+    }
+  })();
+</script>
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/rjnieto\.com");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>© 2026 RJ Nieto</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+<p>Built with Quarto</p>
+</div>
+  </div>
+</footer>
+
+
+
+
+</body></html>

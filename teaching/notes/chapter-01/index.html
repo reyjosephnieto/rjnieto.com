@@ -1,0 +1,1469 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-GB" xml:lang="en-GB"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.10.18">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="description" content="Chapter 1: Statements and quantifiers. HTML edition of Lecture Notes in Discrete Mathematics.">
+
+<title>Chapter 1: Statements and quantifiers – RJ Nieto</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<link href="../../../assets/branding/rj-logo.png" rel="icon" type="image/png">
+<script src="../../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-dark-b85bc7c33db8c58e0ec93c3465666fed.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap-68e913143d7006db5355610df9e4aed5.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="dark">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<meta name="author" content="Rey Joseph Nieto">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "@id": "https://rjnieto.com/#rey-joseph-nieto",
+  "name": "Rey Joseph Nieto",
+  "alternateName": ["RJ Nieto", "Thinking Pinoy"],
+  "description": "Assistant Secretary in the Office of the Cabinet Secretary, Office of the President of the Philippines.",
+  "url": "https://rjnieto.com/",
+  "image": {
+    "@type": "ImageObject",
+    "@id": "https://rjnieto.com/#portrait",
+    "url": "https://rjnieto.com/assets/images/rey-joseph-nieto-portrait.jpg",
+    "contentUrl": "https://rjnieto.com/assets/images/rey-joseph-nieto-portrait.jpg",
+    "width": 824,
+    "height": 824,
+    "caption": "Portrait of Rey Joseph RJ Nieto"
+  },
+  "jobTitle": "Assistant Secretary",
+  "worksFor": {
+    "@type": "GovernmentOrganization",
+    "name": "Office of the Cabinet Secretary, Office of the President of the Philippines"
+  },
+  "sameAs": [
+    "https://www.linkedin.com/in/rjosephnieto/",
+    "https://www.facebook.com/rjosephnieto",
+    "https://x.com/rjosephnieto"
+  ]
+}
+</script>
+<link rel="preload" href="../../../assets/fonts/ibm-plex-sans/IBMPlexSans-Roman.woff2" as="font" type="font/woff2" crossorigin="">
+<script defer="" src="../../../assets/js/home-research-background.js"></script>
+<script defer="" src="../../../assets/js/discrete-notes-layout.js"></script>
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta property="og:url" content="https://rjnieto.com/teaching/notes/chapter-01/">
+<meta property="og:type" content="article">
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../../../styles.css">
+<link rel="stylesheet" href="../../../assets/css/site-typography.css">
+<link rel="stylesheet" href="../../../assets/css/home-research-background.css">
+<link rel="stylesheet" href="../../../assets/css/discrete-notes.css">
+<meta property="og:title" content="Chapter 1: Statements and quantifiers – RJ Nieto">
+<meta property="og:description" content="Chapter 1: Statements and quantifiers. HTML edition of Lecture Notes in Discrete Mathematics.">
+<meta property="og:image" content="https://rjnieto.com/teaching/bulsu/discrete-math/images/thumbnails/chapter_01.webp">
+<meta property="og:site_name" content="RJ Nieto">
+<meta property="og:locale" content="en_GB">
+<meta name="twitter:title" content="Chapter 1: Statements and quantifiers – RJ Nieto">
+<meta name="twitter:description" content="Chapter 1: Statements and quantifiers. HTML edition of Lecture Notes in Discrete Mathematics.">
+<meta name="twitter:image" content="https://rjnieto.com/teaching/bulsu/discrete-math/images/thumbnails/chapter_01.webp">
+<meta name="twitter:creator" content="@rjosephnieto">
+<meta name="twitter:site" content="@rjosephnieto">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://rjnieto.com/teaching/notes/chapter-01/">
+</head>
+
+<body class="nav-fixed ds-lecture-notes quarto-light">
+<span id="page-top" class="page-top-anchor" aria-hidden="true"></span>
+<a class="skip-link" href="#quarto-document-content">Skip to main content</a>
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../../">
+    <span class="navbar-title">RJ Nieto</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../../"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../cv/"> 
+<span class="menu-text">CV</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../teaching/"> 
+<span class="menu-text">Teaching</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../calculated/"> 
+<span class="menu-text">Writing</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../research/"> 
+<span class="menu-text">Hobby</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul class="collapse">
+  <li><a href="#sec:sets" id="toc-sec:sets" class="nav-link active" data-scroll-target="#sec\:sets">1.1 Sets and notation</a></li>
+  <li><a href="#sec:functions" id="toc-sec:functions" class="nav-link" data-scroll-target="#sec\:functions">1.2 Functions</a></li>
+  <li><a href="#sec:statements" id="toc-sec:statements" class="nav-link" data-scroll-target="#sec\:statements">1.3 Expressions and statements</a></li>
+  <li><a href="#sec:connectives" id="toc-sec:connectives" class="nav-link" data-scroll-target="#sec\:connectives">1.4 Compound statements</a></li>
+  <li><a href="#sec:predicates" id="toc-sec:predicates" class="nav-link" data-scroll-target="#sec\:predicates">1.5 Predicates and domains</a></li>
+  <li><a href="#sec:quantifiers" id="toc-sec:quantifiers" class="nav-link" data-scroll-target="#sec\:quantifiers">1.6 Quantifiers</a></li>
+  <li><a href="#sec:testing" id="toc-sec:testing" class="nav-link" data-scroll-target="#sec\:testing">1.7 Witnesses and counterexamples</a></li>
+  <li><a href="#sec:multiple" id="toc-sec:multiple" class="nav-link" data-scroll-target="#sec\:multiple">1.8 Quantifier order</a></li>
+  <li><a href="#sec:exercises" id="toc-sec:exercises" class="nav-link" data-scroll-target="#sec\:exercises">1.9 Exercises</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content" tabindex="-1">
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Chapter 1: Statements and quantifiers</h1>
+<p class="subtitle lead">Discrete Mathematics · Rey Joseph Nieto</p>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<!-- Generated from the corresponding chapter LaTeX. Run scripts/build-discrete-html.py to refresh. -->
+<p><a href="../../../teaching/" class="btn btn-outline-secondary btn-sm">Course page</a> <a href="../../../teaching/bulsu/discrete-math/lecture-notes/chapter_01.pdf" class="btn btn-outline-primary btn-sm" aria-label="Open Chapter 1: Statements and quantifiers as PDF">PDF</a></p>
+<p><span id="ch:statements" data-label="ch:statements"></span></p>
+<p>Common sense is a prized commodity, and it seems to be getting rarer by the day. You may reasonably ask what mathematical language adds when a claim can already be understood through common sense. Consider the following calculations: <span class="math display">\[\begin{aligned}
+0.9&amp;&lt;1,\\
+0.99&amp;&lt;1,\\
+0.999&amp;&lt;1.
+\end{aligned}\]</span> The same inequality holds after any finite number of nines. Now suppose the nines repeat without end. We write this as <span class="math inline">\(0.\overline{99}\)</span>, where the bar means that the block <span class="math inline">\(99\)</span> repeats forever. Would you expect this number to be smaller than <span class="math inline">\(1\)</span>, equal to <span class="math inline">\(1\)</span>, or greater than <span class="math inline">\(1\)</span>? Make a guess before reading on.</p>
+<p>We interpret an infinite decimal as the real number approached by its finite decimal approximations; it has no final digit. Let <span class="math display">\[x=0.\overline{99}.\]</span> Multiplying by <span class="math inline">\(10\)</span> shifts the decimal point one place to the right. The digits after the decimal point are still all nines, so <span class="math display">\[10x=9.\overline{99}=9+x.\]</span> Subtracting <span class="math inline">\(x\)</span> from both sides gives <span class="math display">\[10x-x=9.\overline{99}-0.\overline{99}=9.\]</span> Thus <span class="math inline">\(9x=9\)</span>, so <span class="math inline">\(x=1\)</span>. Therefore <span class="math inline">\(0.\overline{99}=1\)</span>.</p>
+<p>The three finite inequalities remain correct. The mistake is the inference from “every finite approximation is less than <span class="math inline">\(1\)</span>” to “the infinite decimal is less than <span class="math inline">\(1\)</span>”. The infinite decimal and <span class="math inline">\(1\)</span> are two representations of the same real number.</p>
+<p><span id="a-common-language."><strong>A common language.</strong></span> Before we develop more advanced results, we need a common mathematical language in which to reason together. We must agree on what our objects, symbols and statements mean, so that we can follow one another’s arguments and check whether a conclusion follows.</p>
+<p>A rule such as “Every user can access a file” may sound clear until we try to apply it. Does it mean that each user has some accessible file, possibly a different one for each person? Or must there be one particular file that every user can access? These are different requirements. A system can satisfy the first while failing the second.</p>
+<p>Mathematical language helps us make that difference explicit. This chapter introduces the objects we talk about, the statements we make about them and the notation used to say exactly what is being claimed. We begin with sets and functions because they give us a language for specifying the users, files, numbers and other objects under discussion.</p>
+<div class="ds-box ds-learningoutcomes">
+<div id="what-you-should-be-able-to-do" class="ds-box-title">
+<p><strong>What you should be able to do</strong></p>
+</div>
+<p>After working through this chapter, you should be able to:</p>
+<ul>
+<li><p>read basic set and function notation, including domains and codomains;</p></li>
+<li><p>distinguish expressions, statements and open sentences;</p></li>
+<li><p>interpret the five logical connectives and construct short truth tables;</p></li>
+<li><p>translate claims using predicates, explicit domains and quantifiers;</p></li>
+<li><p>test claims using witnesses, counterexamples and complete finite checks;</p></li>
+<li><p>interpret the scope of quantifiers and explain why their order matters.</p></li>
+</ul>
+</div>
+<div class="ds-box ds-studybox">
+<div id="using-this-self-study-chapter" class="ds-box-title">
+<p><strong>Using this self-study chapter</strong></p>
+</div>
+<p>This chapter assumes familiarity with the topics covered in <em>Mathematics in the Modern World</em> (MMW). The discussion and exercises marked non-examinable are optional enrichment. All Python examples are non-examinable; no coding is required. The only numerical prerequisites are familiar number systems and elementary algebra; the mathematical language needed here is developed in the chapter.</p>
+</div>
+<section id="sec:sets" class="level2">
+<h2 class="anchored" data-anchor-id="sec:sets">1.1 Sets and notation</h2>
+<p>Before writing a rule about “every user”, we must say which users count. One way to do this is to collect the relevant objects into a set.</p>
+<div class="ds-box ds-definition">
+<div id="definition-1.1-set-and-membership" class="ds-box-title">
+<p><strong>Definition 1.1: Set and membership</strong></p>
+</div>
+<p>A <strong>set</strong> is a well-defined collection of distinct objects, called its <strong>elements</strong>. The notation <span class="math inline">\(x\in A\)</span> means that <span class="math inline">\(x\)</span> is an element of the set <span class="math inline">\(A\)</span>; <span class="math inline">\(x\notin A\)</span> means that it is not.</p>
+</div>
+<p>“Well-defined” means that membership is determined by the description of the set. “The users registered in the practice system at noon today” can specify a set once the system and date are fixed.</p>
+<p>By contrast, “the tall students in this class” and “the pretty people in this class” are <strong>ill-defined descriptions</strong> as they stand. What counts as tall or pretty? Two readers could disagree about whether Alice belongs because no precise criterion has been specified.</p>
+<p>We could make the height example precise by saying “the students in this class whose recorded height is at least <span class="math inline">\(170\)</span> cm”, using a fixed height record. A recorded height of <span class="math inline">\(170\)</span> cm meets the rule; <span class="math inline">\(169\)</span> cm does not. A membership criterion need not be numerical: the fixed registration list above also determines who belongs.</p>
+<p>Throughout several examples, we will use <span class="math display">\[U=\{\text{Alice},\text{Bob},\text{Charlie}\},\qquad
+F=\{\text{guide},\text{report},\text{data}\}.\]</span> Here <span class="math inline">\(U\)</span> is a set of users and <span class="math inline">\(F\)</span> is a set of files. The braces delimit a set, while commas separate its listed elements. Thus <span class="math inline">\(\text{Bob}\in U\)</span> and <span class="math inline">\(\text{report}\in F\)</span>. If David is not one of these three users, then <span class="math inline">\(\text{David}\notin U\)</span>.</p>
+<p><span id="set-descriptions."><strong>Set descriptions.</strong></span> We can describe a set in words, by listing its elements or by stating a condition that determines membership. Using <span class="math inline">\(\mathbb{N}=\{0,1,2,3,\ldots\}\)</span> for the natural numbers, the set of natural numbers from <span class="math inline">\(1\)</span> through <span class="math inline">\(4\)</span> can be written as <span class="math display">\[D=\{1,2,3,4\}=\{n\in\mathbb{N}:1\leq n\leq4\}.\]</span> The second description is <strong>set-builder notation</strong>. Read it as “the set of natural numbers <span class="math inline">\(n\)</span> such that <span class="math inline">\(1\leq n\leq4\)</span>”. The colon means “such that”. It separates the kind of object being considered from the condition it must satisfy.</p>
+<p><span id="set-equality."><strong>Set equality.</strong></span> A set records membership, so changing the order in which its elements are listed does not change the set. Repeating a listed element does not add a new one. For instance, <span class="math display">\[\{2,5,8\}=\{8,2,5\}=\{2,2,5,8\}.\]</span> Two sets are equal when they contain exactly the same elements. The symbol <span class="math inline">\(=\)</span> expresses equality; <span class="math inline">\(\in\)</span> expresses membership. In particular, <span class="math inline">\(2\in\{2,5,8\}\)</span> is true, but <span class="math inline">\(\{2\}=\{2,5,8\}\)</span> is false. The first says that one object belongs to a collection. The second says that two collections are identical, which they are not. The number <span class="math inline">\(2\)</span> and the set <span class="math inline">\(\{2\}\)</span> containing that number are different objects in this notation; we must not substitute one for the other.</p>
+<p><span id="example-1.1."><strong>Example&nbsp;1.1.</strong></span> Let <span class="math inline">\(B=\{n\in\mathbb{N}:2&lt;n\leq6\}\)</span>. List its elements and decide whether <span class="math inline">\(2\in B\)</span> and <span class="math inline">\(6\in B\)</span>.</p>
+<p>The inequality <span class="math inline">\(2&lt;n\)</span> excludes <span class="math inline">\(2\)</span>, while <span class="math inline">\(n\leq6\)</span> includes <span class="math inline">\(6\)</span>. Since <span class="math inline">\(n\)</span> must be a natural number, the permitted values are <span class="math inline">\(3,4,5,6\)</span>. Therefore <span class="math inline">\(B=\{3,4,5,6\}\)</span>, <span class="math inline">\(2\notin B\)</span> and <span class="math inline">\(6\in B\)</span>.</p>
+<p><span id="number-sets."><strong>Number sets.</strong></span> We use <span class="math inline">\(\mathbb{N}=\{0,1,2,3,\ldots\}\)</span> for the <strong>natural numbers</strong>. The <strong>integers</strong> include negative whole numbers as well: <span class="math display">\[\mathbb{Z}=\{\ldots,-2,-1,0,1,2,\ldots\}.\]</span> We write <span class="math inline">\(\mathbb{R}\)</span> for the <strong>real numbers</strong>, the numbers represented on the usual number line. In particular, negative integers belong to <span class="math inline">\(\mathbb{Z}\)</span> but not <span class="math inline">\(\mathbb{N}\)</span>. Some books start the natural numbers at <span class="math inline">\(1\)</span>. In these notes, as in Levin, <span class="math inline">\(0\in\mathbb{N}\)</span>. When we need the positive integers, we will say so explicitly.</p>
+</section>
+<section id="sec:functions" class="level2">
+<h2 class="anchored" data-anchor-id="sec:functions">1.2 Functions</h2>
+<p>A set can identify the objects in a system. A function describes a precise assignment from one set of objects to another. For example, a practice system might assign each registered user one default printer.</p>
+<div class="ds-box ds-definition">
+<div id="def:function" class="ds-box-title">
+<p><strong>Definition 1.2: Function, domain and codomain</strong></p>
+</div>
+<p>A <strong>function</strong> <span class="math inline">\(f:A\to B\)</span> assigns to <strong>every</strong> element of <span class="math inline">\(A\)</span> <strong>exactly one</strong> element of <span class="math inline">\(B\)</span>. The set <span class="math inline">\(A\)</span> is its <strong>domain</strong>, and the set <span class="math inline">\(B\)</span> is its <strong>codomain</strong>. The notation <span class="math inline">\(f(x)\)</span> denotes the output assigned to an input <span class="math inline">\(x\in A\)</span>.</p>
+</div>
+<p>The expression <span class="math inline">\(f:A\to B\)</span> tells us the function’s name and its permitted inputs and outputs. It does not, by itself, tell us which output belongs to each input. We also need a rule, a table or some other unambiguous description of the assignment.</p>
+<p><span id="example-1.2."><strong>Example&nbsp;1.2.</strong></span> Let <span class="math inline">\(L=\{\text{Printer 1},\text{Printer 2}\}\)</span>. Define <span class="math inline">\(d:U\to L\)</span> by</p>
+<div class="ds-table">
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: left;">User <span class="math inline">\(u\)</span></th>
+<th style="text-align: center;">Alice</th>
+<th style="text-align: center;">Bob</th>
+<th style="text-align: center;">Charlie</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Default printer <span class="math inline">\(d(u)\)</span></td>
+<td style="text-align: center;">Printer 1</td>
+<td style="text-align: center;">Printer 1</td>
+<td style="text-align: center;">Printer 2</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>This is a function. Every user in <span class="math inline">\(U\)</span> appears, and each is assigned exactly one printer in <span class="math inline">\(L\)</span>. It is acceptable for Alice and Bob to have the same output: the definition restricts the number of outputs for each input, not the number of inputs that may share an output.</p>
+<p><img src="../../../teaching/notes/assets/chapter-01/01-default-printer-function.webp" class="ds-note-image img-fluid" loading="lazy" decoding="async" alt="Students assigned to default printers, illustrating one output for each input."></p>
+<p>Each user has exactly one default printer; Alice and Bob may share the same printer.</p>
+<p>If the assignment omitted Charlie, it would not define a function on all of <span class="math inline">\(U\)</span>. If it gave Bob two different default printers, it would also fail. An output outside the stated codomain would fail the description <span class="math inline">\(d:U\to L\)</span> as well.</p>
+<p><span id="example-1.3."><strong>Example&nbsp;1.3.</strong></span> Define <span class="math inline">\(f:\mathbb{N}\to\mathbb{N}\)</span> by <span class="math inline">\(f(n)=2n+1\)</span>. To evaluate the function, substitute the input into its rule: <span class="math display">\[f(0)=2(0)+1=1,\qquad f(4)=2(4)+1=9.\]</span> Every natural-number input gives exactly one natural-number output, so the rule fits its stated domain and codomain. The output <span class="math inline">\(f(4)\)</span> is <span class="math inline">\(9\)</span>; the notation <span class="math inline">\(f(4)\)</span> does not mean that <span class="math inline">\(f\)</span> is multiplied by <span class="math inline">\(4\)</span>.</p>
+<p>The outputs actually attained form the function’s <strong>range</strong>. Every element of this set belongs to the codomain; we say that the range is a <strong>subset</strong> of the codomain. For the last example, the range consists of the positive odd integers <span class="math inline">\(1,3,5,\ldots\)</span>. We will examine further properties of functions later; for now, focus on the domain, the permitted outputs and the exactly-one-output requirement.</p>
+</section>
+<section id="sec:statements" class="level2">
+<h2 class="anchored" data-anchor-id="sec:statements">1.3 Expressions and statements</h2>
+<p>Compare <span class="math inline">\(7+4\)</span> with <span class="math inline">\(7+4=12\)</span>. The first represents a number. The second makes a claim about that number. Although the claim is false, it is still the kind of sentence that can be judged true or false.</p>
+<div class="ds-box ds-definition">
+<div id="definition-1.3-expression-and-statement" class="ds-box-title">
+<p><strong>Definition 1.3: Expression and statement</strong></p>
+</div>
+<p>A <strong>mathematical expression</strong> denotes an object or value. A <strong>statement</strong>, also called a <strong>proposition</strong>, makes a definite claim that is either true or false under the interpretation being used. Its truth or falsity is its <strong>truth value</strong>: <code>TRUE</code> or <code>FALSE</code>.</p>
+</div>
+<p>Thus <span class="math inline">\(7+4\)</span>, <span class="math inline">\(f(4)\)</span> and the set <span class="math inline">\(U\)</span> are expressions. The sentences “<span class="math inline">\(7+4=11\)</span>” and “<span class="math inline">\(\text{Charlie}\in U\)</span>” are true statements, while “<span class="math inline">\(7+4=12\)</span>” and “<span class="math inline">\(-2\in\mathbb{N}\)</span>” are false statements. A false statement still makes a definite claim; its truth value is <code>FALSE</code>.</p>
+<p>A question such as “Which file is accessible?” does not assert an answer. A command such as “Open the guide” tells someone what to do. Neither is a statement in our mathematical sense. Similarly, <span class="math inline">\(5+\)</span> is an incomplete expression: it has not supplied a second quantity to add.</p>
+<p>Suppose <span class="math inline">\(b\)</span> has been defined as the fixed byte count of a particular saved file. The sentence “<span class="math inline">\(b&gt;1000\)</span>” has a definite truth value even if we have not inspected the file. Our lack of information does not prevent it from being a statement. The file and the time at which its size is recorded must be fixed; otherwise the intended claim may change.</p>
+<p><span id="open-sentences."><strong>Open sentences.</strong></span> Now consider <span class="math inline">\(n+4=12\)</span> without assigning <span class="math inline">\(n\)</span> a value. It is true for <span class="math inline">\(n=8\)</span> and false for <span class="math inline">\(n=3\)</span>. We call this an <strong>open sentence</strong>: its truth value depends on an unspecified variable. Substituting a value can turn it into a statement. So can specifying how the claim is to range over its possible inputs, which is the purpose of quantifiers in Section&nbsp;<a href="#sec:quantifiers">1.6</a>.</p>
+<p><span id="example-1.4."><strong>Example&nbsp;1.4.</strong></span> Suppose <span class="math inline">\(n\)</span> ranges over the integers but has not been assigned a value. First identify what each item does; then, if it makes a complete claim, decide whether that claim is true or false where the information allows.</p>
+<div class="ds-table">
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Item</th>
+<th style="text-align: left;">Classification and reason</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(n+4\)</span></td>
+<td style="text-align: left;">Expression: it denotes a value once <span class="math inline">\(n\)</span> is specified.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(n+4=12\)</span></td>
+<td style="text-align: left;">Open sentence if <span class="math inline">\(n\)</span> has not been assigned or quantified.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(8+4=12\)</span></td>
+<td style="text-align: left;">True statement: substitution has fixed the input.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(8+4=13\)</span></td>
+<td style="text-align: left;">False statement: it makes a complete claim, but <span class="math inline">\(8+4\)</span> equals <span class="math inline">\(12\)</span>.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">“Is <span class="math inline">\(n+4=12\)</span>?”</td>
+<td style="text-align: left;">Question: it asks for a truth value rather than asserting one.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Now fix <span class="math inline">\(n=8\)</span>. In this context, <span class="math inline">\(n+4=12\)</span> is a true statement even though it is written with a letter. Without that assignment, the same condition is open. Quantifiers can also turn the condition into a complete claim, as we will see in Section&nbsp;<a href="#sec:quantifiers">1.6</a>. We must read the complete claim and its context.</p>
+</section>
+<section id="sec:connectives" class="level2">
+<h2 class="anchored" data-anchor-id="sec:connectives">1.4 Compound statements</h2>
+<p>Statements can be combined to make other statements. Suppose <span class="math inline">\(P\)</span> means “Alice is registered in the practice system” and <span class="math inline">\(Q\)</span> means “Alice has a current access permission”. Then <span class="math inline">\(P\)</span> and <span class="math inline">\(Q\)</span> are <strong>propositional variables</strong>: letters standing for statements. They are not numbers to be added or multiplied.</p>
+<p>An <strong>atomic</strong> statement is treated as a single claim in the logical analysis at hand. A <strong>compound</strong> (or <strong>molecular</strong>) statement is built from statements using logical connectives. A connective specifies how the component truth values determine the truth value of the result.</p>
+<div class="ds-box ds-definition">
+<div id="definition-1.4-the-five-logical-connectives" class="ds-box-title">
+<p><strong>Definition 1.4: The five logical connectives</strong></p>
+</div>
+<div class="ds-table">
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Notation</th>
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Reading</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(\neg P\)</span></td>
+<td style="text-align: left;">Negation</td>
+<td style="text-align: left;">Not <span class="math inline">\(P\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(P\land Q\)</span></td>
+<td style="text-align: left;">Conjunction</td>
+<td style="text-align: left;"><span class="math inline">\(P\)</span> and <span class="math inline">\(Q\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(P\lor Q\)</span></td>
+<td style="text-align: left;">Disjunction</td>
+<td style="text-align: left;"><span class="math inline">\(P\)</span> or <span class="math inline">\(Q\)</span>, allowing both</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(P\to Q\)</span></td>
+<td style="text-align: left;">Implication</td>
+<td style="text-align: left;">If <span class="math inline">\(P\)</span>, then <span class="math inline">\(Q\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(P\leftrightarrow Q\)</span></td>
+<td style="text-align: left;">Biconditional</td>
+<td style="text-align: left;"><span class="math inline">\(P\)</span> if and only if <span class="math inline">\(Q\)</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p>The negation <span class="math inline">\(\neg P\)</span> reverses the truth value of <span class="math inline">\(P\)</span>. A conjunction is true only when both components are true. A disjunction is true when at least one component is true, including the case where both are true. This is the <strong>inclusive</strong> meaning of “or” used in these notes. If a rule intends “one or the other but not both”, it must say so.</p>
+<p>An implication <span class="math inline">\(P\to Q\)</span> is false exactly when <span class="math inline">\(P\)</span> is true and <span class="math inline">\(Q\)</span> is false. Here <span class="math inline">\(P\)</span> is the <strong>antecedent</strong> and <span class="math inline">\(Q\)</span> is the <strong>consequent</strong>. An implication says that the case “<span class="math inline">\(P\)</span> <code>TRUE</code> but <span class="math inline">\(Q\)</span> <code>FALSE</code>” does not occur. It does not, by its notation alone, say that <span class="math inline">\(P\)</span> causes <span class="math inline">\(Q\)</span>.</p>
+<p>A biconditional <span class="math inline">\(P\leftrightarrow Q\)</span> is true when <span class="math inline">\(P\)</span> and <span class="math inline">\(Q\)</span> have the same truth value. It requires both directions: <span class="math inline">\(P\)</span> holds if <span class="math inline">\(Q\)</span> holds, and <span class="math inline">\(Q\)</span> holds if <span class="math inline">\(P\)</span> holds. It is therefore false when exactly one component is true.</p>
+<p><span id="example-1.5.-negating-an-inequality."><strong>Example&nbsp;1.5. Negating an inequality.</strong></span> Fix a saved file and a recorded time, and let <span class="math inline">\(b\)</span> be the file’s size in bytes at that time. Let <span class="math inline">\(P\)</span> be the statement <span class="math inline">\(b&gt;1000\)</span>, meaning “The file exceeds 1000 bytes.” Its negation <span class="math inline">\(\neg P\)</span> says that the recorded size is <em>at most</em> 1000 bytes, written <span class="math inline">\(b\leq1000\)</span>.</p>
+<p>Suppose the recorded size is exactly 1000 bytes. Then <span class="math inline">\(P\)</span> is false because <span class="math inline">\(1000&gt;1000\)</span> is false. Its negation is true because <span class="math inline">\(1000\leq1000\)</span> is true. The equality case belongs in the negation: a file of exactly 1000 bytes does not exceed 1000 bytes.</p>
+<p>The condition <span class="math inline">\(b&lt;1000\)</span> would also be false at this size, so it cannot be the negation of <span class="math inline">\(b&gt;1000\)</span>. Negation must reverse the truth value in every case, including the boundary.</p>
+<p><span id="example-1.6.-conjunction-and-disjunction."><strong>Example&nbsp;1.6. Conjunction and disjunction.</strong></span> Let <span class="math inline">\(P\)</span> mean “David has a laptop” and <span class="math inline">\(Q\)</span> mean “David has a tablet”, referring to his devices at one fixed time.</p>
+<p>Suppose David has both devices. Then <span class="math inline">\(P\)</span> and <span class="math inline">\(Q\)</span> are both true, so <span class="math inline">\(P\land Q\)</span> is true: both required claims hold. The disjunction <span class="math inline">\(P\lor Q\)</span> is also true, because at least one claim holds; having both devices satisfies that requirement too.</p>
+<p>Now consider a situation in which David has a laptop but no tablet. Then <span class="math inline">\(P\)</span> is true and <span class="math inline">\(Q\)</span> is false. The conjunction <span class="math inline">\(P\land Q\)</span> is false because one required claim fails, while <span class="math inline">\(P\lor Q\)</span> remains true because the laptop claim holds. If he has neither device, both compound statements are false.</p>
+<p><span id="truth-tables."><strong>Truth tables.</strong></span> A <strong>truth table</strong> lists the truth value of a compound statement for every possible combination of truth values of its components. Write <span class="math inline">\(\text{\texttt{T}}\)</span> for <code>TRUE</code> and <span class="math inline">\(\text{\texttt{F}}\)</span> for <code>FALSE</code>. Two components have four combinations:</p>
+<div class="ds-table">
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: center;"><span class="math inline">\(P\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(Q\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(\neg P\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(P\land Q\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(P\lor Q\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(P\to Q\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(P\leftrightarrow Q\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(\text{\texttt{T}}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\text{\texttt{T}}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\text{\texttt{F}}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\text{\texttt{T}}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\text{\texttt{T}}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\text{\texttt{T}}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\text{\texttt{T}}\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(\text{\texttt{T}}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\text{\texttt{F}}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\text{\texttt{F}}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\text{\texttt{F}}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\text{\texttt{T}}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\text{\texttt{F}}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\text{\texttt{F}}\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(\text{\texttt{F}}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\text{\texttt{T}}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\text{\texttt{T}}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\text{\texttt{F}}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\text{\texttt{T}}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\text{\texttt{T}}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\text{\texttt{F}}\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(\text{\texttt{F}}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\text{\texttt{F}}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\text{\texttt{T}}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\text{\texttt{F}}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\text{\texttt{F}}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\text{\texttt{T}}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\text{\texttt{T}}\)</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="ds-box ds-python">
+<div id="python-non-examinable" class="ds-box-title">
+<p><strong>Python (non-examinable)</strong></p>
+</div>
+<p>We can generate the same four rows in Python. The values <code>True</code> and <code>False</code> are Boolean truth values. The square brackets form a list of choices. A <code>for</code> loop repeats its indented lines for each choice; the two loops below consider every pair of truth values.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> p <span class="kw">in</span> [<span class="va">True</span>, <span class="va">False</span>]:</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> q <span class="kw">in</span> [<span class="va">True</span>, <span class="va">False</span>]:</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(p, q, <span class="kw">not</span> p, p <span class="kw">and</span> q, p <span class="kw">or</span> q,</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>              (<span class="kw">not</span> p) <span class="kw">or</span> q, p <span class="op">==</span> q)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><strong>Output.</strong></p>
+<pre class="text"><code>True True False True True True True
+True False False False True False False
+False True True False True True False
+False False True False False True True</code></pre>
+<p>The seven columns are <span class="math inline">\(P\)</span>, <span class="math inline">\(Q\)</span>, <span class="math inline">\(\neg P\)</span>, <span class="math inline">\(P\land Q\)</span>, <span class="math inline">\(P\lor Q\)</span>, <span class="math inline">\(P\to Q\)</span> and <span class="math inline">\(P\leftrightarrow Q\)</span>, in that order. Here <code>not</code>, <code>and</code> and <code>or</code> act on Boolean values. The expression <code>(not p) or q</code> represents <span class="math inline">\(P\to Q\)</span>, and <code>p == q</code> compares their truth values for the biconditional. Python uses <code>==</code> for comparison; a single <code>=</code> assigns a value to a name. Each comma in <code>print</code> separates one output column.</p>
+</div>
+<p><span id="example-1.7."><strong>Example&nbsp;1.7.</strong></span> Let <span class="math inline">\(P\)</span> mean “Alice is registered” and <span class="math inline">\(Q\)</span> mean “Alice has permission”. The claim <span class="math inline">\(P\to Q\)</span> says, “If Alice is registered, then Alice has permission.”</p>
+<p>If Alice is registered but lacks permission, the implication is false. If Alice is registered and has permission, it is true. If Alice is not registered, neither truth value of <span class="math inline">\(Q\)</span> produces the forbidden combination, so the implication is true in either case. This last conclusion does not tell us whether Alice has permission: it says that Alice’s case does not violate the particular implication being checked.</p>
+<p>To assert a system-wide rule, we would need a claim about all relevant users, not just Alice. Quantifiers will let us express that later in the chapter.</p>
+<p><span id="example-1.8."><strong>Example&nbsp;1.8.</strong></span> Consider one completed integrity check and its status indicator at a fixed recorded time. Let <span class="math inline">\(P\)</span> mean “The indicator is green” and <span class="math inline">\(Q\)</span> mean “The check passed”. We want to evaluate the claim “The indicator is green if and only if the check passed”, written <span class="math inline">\(P\leftrightarrow Q\)</span>.</p>
+<p>If the check passed and the indicator is green, both components are true, so the biconditional is true. If the check did not pass and the indicator is not green, both components are false, and the biconditional is still true: the two truth values match. This second case does not assert that the check passed or that the indicator is green.</p>
+<p>If the check passed but the indicator is not green, <span class="math inline">\(P\)</span> is false and <span class="math inline">\(Q\)</span> is true, so the biconditional is false. It is also false if the indicator is green although the check did not pass. In each of these cases, the truth values disagree.</p>
+<p><span id="parentheses-and-scope."><strong>Parentheses and scope.</strong></span> Parentheses indicate which statements a connective combines. For example, <span class="math inline">\(\neg(P\lor Q)\)</span> negates the whole disjunction, while <span class="math inline">\((\neg P)\lor Q\)</span> negates <span class="math inline">\(P\)</span> alone. The <strong>scope</strong> of a connective is the part of the expression it acts on. We use parentheses whenever grouping could be unclear.</p>
+<p>To see the effect, take <span class="math inline">\(P\)</span> <code>FALSE</code> and <span class="math inline">\(Q\)</span> <code>TRUE</code>. For <span class="math inline">\(\neg(P\lor Q)\)</span>, first evaluate the expression inside parentheses. The disjunction <span class="math inline">\(P\lor Q\)</span> is true because <span class="math inline">\(Q\)</span> is true. Negating that result makes <span class="math inline">\(\neg(P\lor Q)\)</span> false.</p>
+<p>For <span class="math inline">\((\neg P)\lor Q\)</span>, first negate <span class="math inline">\(P\)</span>. Since <span class="math inline">\(P\)</span> is false, <span class="math inline">\(\neg P\)</span> is true. The outer disjunction then has two true components, <span class="math inline">\(\neg P\)</span> and <span class="math inline">\(Q\)</span>, so <span class="math inline">\((\neg P)\lor Q\)</span> is true. The same values of <span class="math inline">\(P\)</span> and <span class="math inline">\(Q\)</span> give different results because the negation acts on different parts.</p>
+<p><span id="example-1.9."><strong>Example&nbsp;1.9.</strong></span> Fix one report and a recorded time. Let <span class="math inline">\(P\)</span> mean “Bob uploaded the report” and <span class="math inline">\(Q\)</span> mean “Judy approved the report”, referring to what has happened by that time. Translate and evaluate the sentence “Bob uploaded the report, but Judy has not approved it.”</p>
+<p>The first part asserts <span class="math inline">\(P\)</span>. The second part denies <span class="math inline">\(Q\)</span>, so it is <span class="math inline">\(\neg Q\)</span>. Here “but” joins the two claims with the logical meaning of “and”, while suggesting a contrast in ordinary English. The compound statement is therefore <span class="math inline">\(P\land\neg Q\)</span>.</p>
+<p>Suppose the recorded information shows that Bob’s upload is complete and Judy’s approval is still pending. Then <span class="math inline">\(P\)</span> is true and <span class="math inline">\(Q\)</span> is false. First negate <span class="math inline">\(Q\)</span>: <span class="math inline">\(\neg Q\)</span> is true. Both components of the conjunction <span class="math inline">\(P\land\neg Q\)</span> are now true, so the whole statement is true.</p>
+<p><span id="example-1.10."><strong>Example&nbsp;1.10.</strong></span> Construct the truth table for <span class="math inline">\((P\lor Q)\land\neg Q\)</span>.</p>
+<div class="ds-table">
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: center;"><span class="math inline">\(P\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(Q\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(P\lor Q\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(\neg Q\)</span></th>
+<th style="text-align: center;"><span class="math inline">\((P\lor Q)\land\neg Q\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(\text{\texttt{T}}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\text{\texttt{T}}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\text{\texttt{T}}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\text{\texttt{F}}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\text{\texttt{F}}\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(\text{\texttt{T}}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\text{\texttt{F}}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\text{\texttt{T}}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\text{\texttt{T}}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\text{\texttt{T}}\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(\text{\texttt{F}}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\text{\texttt{T}}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\text{\texttt{T}}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\text{\texttt{F}}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\text{\texttt{F}}\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(\text{\texttt{F}}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\text{\texttt{F}}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\text{\texttt{F}}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\text{\texttt{T}}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\text{\texttt{F}}\)</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>The intermediate columns make the reasoning checkable. For example, in the third row, <span class="math inline">\(P\lor Q\)</span> is true because <span class="math inline">\(Q\)</span> is true, but <span class="math inline">\(\neg Q\)</span> is false. Their conjunction is therefore false. Only the second row makes both components of the final conjunction true.</p>
+<p>For a further grouping check, take <span class="math inline">\(P\)</span> <code>TRUE</code> and <span class="math inline">\(Q,R\)</span> <code>FALSE</code>. Then <span class="math inline">\(P\lor(Q\land R)\)</span> is true, while <span class="math inline">\((P\lor Q)\land R\)</span> is false. The same component truth values have produced different results because the grouping changed. Detailed implication analysis and logical equivalence belong to Chapter 2; here we are learning to read and evaluate the expressions.</p>
+</section>
+<section id="sec:predicates" class="level2">
+<h2 class="anchored" data-anchor-id="sec:predicates">1.5 Predicates and domains</h2>
+<p>An open sentence can be treated as a condition applied to an input. This lets us use one concise description for many related statements.</p>
+<div class="ds-box ds-definition">
+<div id="definition-1.5-predicate-and-domain-of-discourse" class="ds-box-title">
+<p><strong>Definition 1.5: Predicate and domain of discourse</strong></p>
+</div>
+<p>A <strong>predicate</strong> is a condition involving one or more variables that becomes a statement when suitable values are assigned to all its unspecified variables. Its <strong>domain of discourse</strong> specifies the objects that a variable is allowed to represent.</p>
+</div>
+<p>For example, let the domain be <span class="math inline">\(\mathbb{Z}\)</span> and define <span class="math inline">\(E(n)\)</span> to mean “<span class="math inline">\(n\)</span> is even”. An integer is <strong>even</strong> when it equals <span class="math inline">\(2k\)</span> for some integer <span class="math inline">\(k\)</span>. Thus <span class="math inline">\(E(6)\)</span> is true because <span class="math inline">\(6=2(3)\)</span>, and <span class="math inline">\(E(5)\)</span> is false because no integer <span class="math inline">\(k\)</span> satisfies <span class="math inline">\(5=2k\)</span>. Negative integers and zero can be even too: <span class="math inline">\(E(-4)\)</span> and <span class="math inline">\(E(0)\)</span> are true.</p>
+<p>Predicate notation is a convenient name for a condition. Writing <span class="math inline">\(E(n)\)</span> does not by itself assert that every <span class="math inline">\(n\)</span> satisfies it. Substitution supplies a particular input: <span class="math inline">\(E(6)\)</span> is one statement, and <span class="math inline">\(E(5)\)</span> is another.</p>
+<p><span id="example-1.11.-functions-and-predicates."><strong>Example&nbsp;1.11. Functions and predicates.</strong></span> Let <span class="math inline">\(f:\mathbb{N}\to\mathbb{N}\)</span> have rule <span class="math inline">\(f(n)=2n+1\)</span>, and let <span class="math inline">\(H(n)\)</span> mean “<span class="math inline">\(n&gt;4\)</span>” for <span class="math inline">\(n\in\mathbb{N}\)</span>. Then <span class="math display">\[f(3)=7,\qquad H(3)\text{ is \texttt{FALSE}},\qquad H(7)\text{ is \texttt{TRUE}}.\]</span> The numerical function <span class="math inline">\(f\)</span> produces a number; the predicate <span class="math inline">\(H\)</span> tests a condition and produces a truth value once its input is supplied. The similar notation should not lead us to confuse <span class="math inline">\(7\)</span> with <code>TRUE</code>. Functions need not always have numerical outputs: in particular, a predicate can itself be viewed as a function with truth values as outputs.</p>
+<p>Consider the condition <span class="math inline">\(n&lt;0\)</span>. It is satisfied by some integers, such as <span class="math inline">\(-2\)</span>, but by no natural number under our convention. A claim about its possible solutions therefore depends on whether <span class="math inline">\(n\)</span> is allowed to range over <span class="math inline">\(\mathbb{Z}\)</span> or only <span class="math inline">\(\mathbb{N}\)</span>. We must specify that domain before deciding what the claim means.</p>
+<p>Likewise, solving <span class="math inline">\(2x=1\)</span> gives <span class="math inline">\(x=\tfrac12\)</span>. This is an allowed input if the domain is <span class="math inline">\(\mathbb{R}\)</span>, but not if it is <span class="math inline">\(\mathbb{Z}\)</span>, since <span class="math inline">\(\tfrac12\)</span> is not an integer. Changing the permitted inputs changes what we can conclude, even though the written equation is unchanged.</p>
+<p><span id="several-variables."><strong>Several variables.</strong></span> Let <span class="math inline">\(A(u,f)\)</span> mean “user <span class="math inline">\(u\)</span> is permitted to access file <span class="math inline">\(f\)</span>”, where <span class="math inline">\(u\in U\)</span> and <span class="math inline">\(f\in F\)</span>. Fix the permissions as follows for the remainder of the worked examples. A <span class="math inline">\(\text{\texttt{T}}\)</span> entry means permission is granted, and an <span class="math inline">\(\text{\texttt{F}}\)</span> entry means it is not.</p>
+<div class="ds-table">
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th></th>
+<th style="text-align: center;">guide</th>
+<th style="text-align: center;">report</th>
+<th style="text-align: center;">data</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Alice</td>
+<td style="text-align: center;"><span class="math inline">\(\text{\texttt{T}}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\text{\texttt{T}}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\text{\texttt{F}}\)</span></td>
+</tr>
+<tr class="even">
+<td>Bob</td>
+<td style="text-align: center;"><span class="math inline">\(\text{\texttt{F}}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\text{\texttt{T}}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\text{\texttt{T}}\)</span></td>
+</tr>
+<tr class="odd">
+<td>Charlie</td>
+<td style="text-align: center;"><span class="math inline">\(\text{\texttt{T}}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\text{\texttt{F}}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\text{\texttt{T}}\)</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>For instance, <span class="math inline">\(A(\text{Bob},\text{report})\)</span> is true and <span class="math inline">\(A(\text{Bob},\text{guide})\)</span> is false. Both inputs matter. The expression <span class="math inline">\(A(u,\text{report})\)</span> still depends on the user: it is true for Alice and Bob but false for Charlie. Supplying one input has not fixed the other.</p>
+</section>
+<section id="sec:quantifiers" class="level2">
+<h2 class="anchored" data-anchor-id="sec:quantifiers">1.6 Quantifiers</h2>
+<p>Often we want a claim about a whole domain, not a list of unrelated substitutions. A <strong>quantifier</strong> specifies how a predicate is being asserted across that domain.</p>
+<div class="ds-box ds-definition">
+<div id="definition-1.6-universal-and-existential-quantification" class="ds-box-title">
+<p><strong>Definition 1.6: Universal and existential quantification</strong></p>
+</div>
+<p>Let <span class="math inline">\(P(x)\)</span> be a predicate whose inputs belong to a specified domain <span class="math inline">\(D\)</span>.</p>
+<ul>
+<li><p><span class="math inline">\(\forall x\in D\,P(x)\)</span> means that <span class="math inline">\(P(x)\)</span> is true for <strong>every</strong> element of <span class="math inline">\(D\)</span>. This is a <strong>universal</strong> claim.</p></li>
+<li><p><span class="math inline">\(\exists x\in D\,P(x)\)</span> means that <span class="math inline">\(P(x)\)</span> is true for <strong>at least one</strong> element of <span class="math inline">\(D\)</span>. This is an <strong>existential</strong> claim.</p></li>
+</ul>
+</div>
+<p>Read <span class="math inline">\(\forall\)</span> as “for every” or “for all”, and <span class="math inline">\(\exists\)</span> as “there exists”. If there are two or ten successful inputs, an existential claim is still true: it does not require exactly one. In the quantified examples below, the domains are nonempty. When several domains are in use, each quantifier will specify its own domain.</p>
+<p><span id="example-1.12."><strong>Example&nbsp;1.12.</strong></span> Take <span class="math inline">\(D=\{0,1,2,3\}\)</span> and let <span class="math inline">\(P(n)\)</span> mean “<span class="math inline">\(n&lt;3\)</span>”. The claim <span class="math inline">\(\exists n\in D\,P(n)\)</span> is true: <span class="math inline">\(n=0\)</span> supplies one successful input. The claim <span class="math inline">\(\forall n\in D\,P(n)\)</span> is false, since <span class="math inline">\(P(3)\)</span> is false. The same predicate has produced different claims because the quantifier changed.</p>
+<p><span id="domain-restrictions."><strong>Domain restrictions.</strong></span> “Every user is registered” can be written as <span class="math inline">\(\forall u\in U\,R(u)\)</span> when <span class="math inline">\(U\)</span> is already the set of users and <span class="math inline">\(R(u)\)</span> means “<span class="math inline">\(u\)</span> is registered”. If our domain instead includes objects of other kinds, we must identify which objects the claim is about.</p>
+<p>Suppose <span class="math inline">\(D\)</span> is a set of records, <span class="math inline">\(S(x)\)</span> means “record <span class="math inline">\(x\)</span> is a student record”, and <span class="math inline">\(C(x)\)</span> means “record <span class="math inline">\(x\)</span> is complete”. Then <span class="math display">\[\forall x\in D\,\bigl(S(x)\to C(x)\bigr)\]</span> says that every student record is complete. A record that is not a student record does not violate this rule. Writing <span class="math inline">\(\forall x\in D\,(S(x)\land C(x))\)</span> would make the stronger claim that every record is both a student record and complete.</p>
+<p>By contrast, <span class="math display">\[\exists x\in D\,\bigl(S(x)\land C(x)\bigr)\]</span> says that some student record is complete. We need one record satisfying <em>both</em> conditions. An implication inside this existential claim would not express the same requirement: a non-student record could make <span class="math inline">\(S(x)\to C(x)\)</span> true even if no student record were complete.</p>
+<p>For example, suppose <span class="math inline">\(r\in D\)</span> is an incomplete staff record and is not a student record. Both <span class="math inline">\(S(r)\)</span> and <span class="math inline">\(C(r)\)</span> are <code>FALSE</code>, so <span class="math inline">\(S(r)\to C(r)\)</span> is <code>TRUE</code>, while <span class="math inline">\(S(r)\land C(r)\)</span> is <code>FALSE</code>. This record does not violate the universal rule and does not provide the complete student record required by the existential claim.</p>
+<p><span id="quantifier-scope."><strong>Quantifier scope.</strong></span> The <strong>scope</strong> of a quantifier is the part of the expression to which it applies. Parentheses make that scope visible. In <span class="math inline">\(\forall x\in D\,(S(x)\to C(x))\)</span>, the quantifier applies to the whole implication <span class="math inline">\(S(x)\to C(x)\)</span> inside the parentheses.</p>
+<div class="ds-box ds-enrichment">
+<div id="non-examinable-free-and-bound-variables" class="ds-box-title">
+<p><strong>(Non-examinable) Free and bound variables</strong></p>
+</div>
+<p>This optional discussion introduces formal terminology for describing variable occurrences. It will not be assessed in this course. Interpreting quantifiers, their scope and their order remains core material.</p>
+<p>In <span class="math inline">\(\forall x\in D\,P(x)\)</span>, the quantifier tells us how <span class="math inline">\(x\)</span> is used. We call the occurrences of <span class="math inline">\(x\)</span> that it controls <strong>bound</strong>; a variable occurrence not controlled by a quantifier is <strong>free</strong>.</p>
+<p>Compare the following expressions, with <span class="math inline">\(x,y\in\mathbb{Z}\)</span>:</p>
+<div class="ds-table">
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Expression</th>
+<th style="text-align: left;">What remains unspecified?</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(x+y=5\)</span></td>
+<td style="text-align: left;">Both <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span> are free.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(\exists y\in\mathbb{Z}\,(x+y=5)\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(y\)</span> is bound; <span class="math inline">\(x\)</span> is still free.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(\forall x\in\mathbb{Z}\,\exists y\in\mathbb{Z}\,(x+y=5)\)</span></td>
+<td style="text-align: left;">Both variables are bound, so this is a statement.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>We have not removed the free variable from the second expression merely because the condition happens to have a solution for every integer <span class="math inline">\(x\)</span>. As written, <span class="math inline">\(x\)</span> is still free; its role in the claim must be specified. The third expression supplies that specification and is true: after an integer <span class="math inline">\(x\)</span> is given, <span class="math inline">\(y=5-x\)</span> is an integer that works.</p>
+<p>The words “free” and “bound” describe occurrences within an expression, not permanent properties of a letter. For example, in <span class="math display">\[\bigl(\forall x\in D\,P(x)\bigr)\land Q(x),\]</span> the <span class="math inline">\(x\)</span> in <span class="math inline">\(P(x)\)</span> is bound, but the <span class="math inline">\(x\)</span> in <span class="math inline">\(Q(x)\)</span> is free: it is outside the quantifier’s parentheses. We can make the separation easier to see by renaming the bound variable to a fresh letter <span class="math inline">\(z\)</span>: <span class="math display">\[\bigl(\forall z\in D\,P(z)\bigr)\land Q(x).\]</span> The quantifier and the variable it controls in <span class="math inline">\(P\)</span> now use <span class="math inline">\(z\)</span>; the free <span class="math inline">\(x\)</span> in <span class="math inline">\(Q(x)\)</span> is unchanged. Renaming this bound variable does not change the claim.</p>
+</div>
+<p><span id="implicit-universal-quantification."><strong>Implicit universal quantification.</strong></span> Mathematical writing sometimes leaves a universal quantifier unstated. For example, “For real <span class="math inline">\(x\)</span>, <span class="math inline">\(x+1&gt;x\)</span>” is normally read as <span class="math inline">\(\forall x\in\mathbb{R}\,(x+1&gt;x)\)</span>. This is a writing convention, supported by the context. It does not mean that a bare open sentence has automatically become a statement without any interpretation. In your own translations, write the quantifiers and domains explicitly until the intended claim is unambiguous.</p>
+</section>
+<section id="sec:testing" class="level2">
+<h2 class="anchored" data-anchor-id="sec:testing">1.7 Witnesses and counterexamples</h2>
+<p>A quantifier tells us what kind of evidence would establish or refute the claim. Checking a convenient input is useful only if we understand what that check allows us to conclude.</p>
+<div class="ds-box ds-definition">
+<div id="definition-1.7-witness-and-counterexample" class="ds-box-title">
+<p><strong>Definition 1.7: Witness and counterexample</strong></p>
+</div>
+<p>A <strong>witness</strong> for <span class="math inline">\(\exists x\in D\,P(x)\)</span> is an element <span class="math inline">\(a\in D\)</span> for which <span class="math inline">\(P(a)\)</span> is true. A <strong>counterexample</strong> to <span class="math inline">\(\forall x\in D\,P(x)\)</span> is an element <span class="math inline">\(b\in D\)</span> for which <span class="math inline">\(P(b)\)</span> is false.</p>
+</div>
+<p><span id="example-1.13."><strong>Example&nbsp;1.13.</strong></span> The claim <span class="math inline">\(\exists n\in\mathbb{Z}\,(n+3=1)\)</span> is true. The integer <span class="math inline">\(-2\)</span> is a witness because <span class="math inline">\(-2+3=1\)</span>. However, <span class="math inline">\(\exists n\in\mathbb{N}\,(n+3=1)\)</span> is false: the equation forces <span class="math inline">\(n=-2\)</span>, and <span class="math inline">\(-2\notin\mathbb{N}\)</span>. A value satisfying the equation outside the permitted domain does not witness the stated claim.</p>
+<p><span id="example-1.14."><strong>Example&nbsp;1.14.</strong></span> Consider <span class="math inline">\(\forall n\in\mathbb{N}\,(n^2&gt;n)\)</span>. It holds for <span class="math inline">\(n=2\)</span> and <span class="math inline">\(n=3\)</span>, but it fails for <span class="math inline">\(n=0\)</span>, since <span class="math inline">\(0^2=0\)</span> is not greater than <span class="math inline">\(0\)</span>. It also fails for <span class="math inline">\(n=1\)</span>. Either failed case alone disproves the universal claim; we do not have to find every failed case.</p>
+<p>For a finite domain such as <span class="math inline">\(D=\{1,2,3\}\)</span>, we can establish <span class="math inline">\(\forall n\in D\,(n^2\geq n)\)</span> by checking all three inputs. They give <span class="math inline">\(1\geq1\)</span>, <span class="math inline">\(4\geq2\)</span> and <span class="math inline">\(9\geq3\)</span>. There are no unexamined elements of <span class="math inline">\(D\)</span> left.</p>
+<div class="ds-box ds-python">
+<div id="python-non-examinable-1" class="ds-box-title">
+<p><strong>Python (non-examinable)</strong></p>
+</div>
+<p>For the complete domain <span class="math inline">\(D=\{1,2,3\}\)</span>, we can record the truth value of <span class="math inline">\(n^2\geq n\)</span> for each input. The assignment <code>domain = [1, 2, 3]</code> stores these three inputs in a list. The empty list <code>[]</code> initially contains no results; <code>append</code> adds one result on each pass through the indented loop. Python writes multiplication as <code>*</code> and “greater than or equal to” as <code>&gt;=</code>.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>domain <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>]</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>checks <span class="op">=</span> []</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> n <span class="kw">in</span> domain:</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    checks.append(n <span class="op">*</span> n <span class="op">&gt;=</span> n)</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(checks)</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">all</span>(checks))</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">any</span>(checks))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><strong>Output.</strong></p>
+<pre class="text"><code>[True, True, True]
+True
+True</code></pre>
+<p>The function <code>all</code> returns <code>True</code> when every recorded condition is true; <code>any</code> returns <code>True</code> when at least one is true. Thus the last two lines check the universal and existential claims on this stated finite domain. Every input in <span class="math inline">\(D\)</span> has been checked.</p>
+</div>
+<p>For the infinite domain <span class="math inline">\(\mathbb{N}\)</span>, those three checks are not a complete verification. Even a computer calculation checking a million inputs leaves infinitely many others unexamined. Examples may suggest a general claim, but establishing an infinite universal claim requires reasoning that covers an arbitrary permitted input. We begin the systematic study of such proofs in later chapters.</p>
+<div class="ds-table">
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: left;">What you found</th>
+<th style="text-align: left;">What this establishes</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">One successful permitted input</td>
+<td style="text-align: left;">An existential claim is true. This fact alone does not generally establish a universal claim.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">One failed permitted input</td>
+<td style="text-align: left;">A universal claim is false. This fact alone does not generally refute an existential claim.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Every input succeeds in a complete finite check</td>
+<td style="text-align: left;">The universal claim is true.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Every input fails in a complete finite check</td>
+<td style="text-align: left;">The existential claim is false.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>If the domain has only one element, checking that element is already a complete check. In the last two rows, “every input” means every element of the stated domain, not every element we happened to test. To explain why a claim is false, identify the relevant failed case or explain why no permitted witness can work. Formal laws for negating quantified claims follow in Chapter 2.</p>
+</section>
+<section id="sec:multiple" class="level2">
+<h2 class="anchored" data-anchor-id="sec:multiple">1.8 Quantifier order</h2>
+<p>When a predicate has more than one input, a claim may need more than one quantifier. Read the quantifiers from left to right. Their order determines which choices may depend on earlier choices.</p>
+<p>Return to the permission table for <span class="math inline">\(A(u,f)\)</span> in Section&nbsp;<a href="#sec:predicates">1.5</a>. <span class="math display">\[\forall u\in U\,\exists f\in F\,A(u,f)\]</span> says: “For each user, there is at least one file that the user can access.” Choose a user first, then find a suitable file. For Alice we may choose guide; for Bob we may choose report; for Charlie we may choose data. We have considered every user in this finite domain, so the claim is true. There is no requirement to choose the same file for all three users.</p>
+<p>Now reverse the quantifiers: <span class="math display">\[\exists f\in F\,\forall u\in U\,A(u,f).\]</span> This says: “There is a file that every user can access.” We must choose one file that works for all users. Guide fails for Bob, report fails for Charlie, and data fails for Alice. Since those are all the files in <span class="math inline">\(F\)</span>, no file works, and the claim is false.</p>
+<p><img src="../../../teaching/notes/assets/chapter-01/02-quantifier-order-permissions.webp" class="ds-note-image img-fluid" loading="lazy" decoding="async" alt="User and folder permissions illustrating how changing the order of quantifiers changes a claim."></p>
+<p>Every user has access to a file, but no file can be accessed by all three users.</p>
+<div class="ds-box ds-caution">
+<div id="quantifier-order" class="ds-box-title">
+<p><strong>Quantifier order</strong></p>
+</div>
+<p>The statement <span class="math inline">\(\forall u\,\exists f\,A(u,f)\)</span> allows the file choice to depend on the user. The statement <span class="math inline">\(\exists f\,\forall u\,A(u,f)\)</span> requires one file chosen before the user is considered. Exchanging these quantifiers changes the requirement; the permission table shows that one claim can be true while the other is false.</p>
+</div>
+<p><span id="example-1.15."><strong>Example&nbsp;1.15.</strong></span> The statement <span class="math inline">\(\forall x\in\mathbb{Z}\,\exists y\in\mathbb{Z}\,(y&gt;x)\)</span> is true. Once an integer <span class="math inline">\(x\)</span> has been given, choose <span class="math inline">\(y=x+1\)</span>. This is an integer larger than <span class="math inline">\(x\)</span>.</p>
+<p>The statement <span class="math inline">\(\exists y\in\mathbb{Z}\,\forall x\in\mathbb{Z}\,(y&gt;x)\)</span> is false. Suppose someone proposes a fixed integer <span class="math inline">\(y\)</span>. The universal claim must include the permitted input <span class="math inline">\(x=y\)</span>, but then it would require <span class="math inline">\(y&gt;y\)</span>, which is false. Therefore no proposed integer can be the required witness. The first claim offers a choice depending on <span class="math inline">\(x\)</span>; the second asks for a single choice that works for all <span class="math inline">\(x\)</span>.</p>
+<p>The expression <span class="math inline">\(\exists f\in F\,A(u,f)\)</span> quantifies over files but does not specify which user <span class="math inline">\(u\)</span> we mean or how the claim ranges over users. It describes a property of a user rather than stating how that property holds across <span class="math inline">\(U\)</span>. Substituting a specific user, as in <span class="math inline">\(\exists f\in F\,A(\text{Alice},f)\)</span>, gives a statement. Alternatively, adding <span class="math inline">\(\forall u\in U\)</span> gives the first system-wide claim above.</p>
+<p>The four common combinations have different readings:</p>
+<div class="ds-table">
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Claim</th>
+<th style="text-align: left;">Reading</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(\forall u\in U\,\forall f\in F\,A(u,f)\)</span></td>
+<td style="text-align: left;">Every user can access every file.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(\forall u\in U\,\exists f\in F\,A(u,f)\)</span></td>
+<td style="text-align: left;">Each user can access at least one file; the file may depend on the user.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(\exists u\in U\,\forall f\in F\,A(u,f)\)</span></td>
+<td style="text-align: left;">At least one user can access every file.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(\exists u\in U\,\exists f\in F\,A(u,f)\)</span></td>
+<td style="text-align: left;">At least one user–file pair has access permission.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>In each of these four claims, both the user and the file are quantified. If the domains and predicate are fixed, each complete claim has a truth value. The exercises ask you to make that judgment with evidence that matches the quantifiers.</p>
+</section>
+<section id="sec:exercises" class="level2">
+<h2 class="anchored" data-anchor-id="sec:exercises">1.9 Exercises</h2>
+<div class="ds-exercises" style="--ds-chapter: '1';">
+<ol type="1">
+<li><p><span id="ex:membership" data-label="ex:membership"></span> Let <span class="math inline">\(B=\{2,4,6\}\)</span>. Decide whether each statement is true or false. Explain the distinction between an element and a set of elements where relevant.</p>
+<ol type="a">
+<li><p><span class="math inline">\(4\in B\)</span>.</p></li>
+<li><p><span class="math inline">\(5\notin B\)</span>.</p></li>
+<li><p><span class="math inline">\(\{4\}\in B\)</span>.</p></li>
+<li><p><span class="math inline">\(B=\{6,4,2,4\}\)</span>.</p></li>
+</ol></li>
+<li><p><span id="ex:set-description" data-label="ex:set-description"></span></p>
+<ol type="a">
+<li><p>List <span class="math inline">\(\{n\in\mathbb{N}:n&lt;11\text{ and }n\text{ is a multiple of }3\}\)</span>. Here a multiple of <span class="math inline">\(3\)</span> means a number <span class="math inline">\(3k\)</span> for an integer <span class="math inline">\(k\)</span>.</p></li>
+<li><p>Describe <span class="math inline">\(\{0,2,4,6,8\}\)</span> precisely in words.</p></li>
+<li><p>Write <span class="math inline">\(\{1,2,3,4\}\)</span> in set-builder notation, using <span class="math inline">\(\mathbb{N}\)</span> and inequalities.</p></li>
+</ol></li>
+<li><p><span id="ex:reading-function" data-label="ex:reading-function"></span> Let <span class="math inline">\(D=\{0,1,2,3\}\)</span> and <span class="math inline">\(C=\{0,1,4,9,16\}\)</span>. Define <span class="math inline">\(f:D\to C\)</span> by <span class="math inline">\(f(n)=n^2\)</span>.</p>
+<ol type="a">
+<li><p>State the domain and codomain.</p></li>
+<li><p>Find <span class="math inline">\(f(0)\)</span> and <span class="math inline">\(f(3)\)</span>.</p></li>
+<li><p>List the outputs actually obtained from inputs in <span class="math inline">\(D\)</span>.</p></li>
+<li><p>No input in <span class="math inline">\(D\)</span> has output <span class="math inline">\(16\)</span>. Does this prevent <span class="math inline">\(f\)</span> from being a function <span class="math inline">\(D\to C\)</span>? Explain using the definition.</p></li>
+</ol></li>
+<li><p>In each case, the proposed domain is <span class="math inline">\(\{a,b,c\}\)</span> and the proposed codomain is <span class="math inline">\(\{0,1\}\)</span>. Decide whether the displayed assignments define a function with that domain and codomain. If not, identify the precise failure. The notation <span class="math inline">\(a\mapsto0\)</span> means that input <span class="math inline">\(a\)</span> is assigned output <span class="math inline">\(0\)</span>.</p>
+<ol type="a">
+<li><p><span class="math inline">\(a\mapsto0\)</span>, <span class="math inline">\(b\mapsto1\)</span>, <span class="math inline">\(c\mapsto0\)</span>.</p></li>
+<li><p><span class="math inline">\(a\mapsto0\)</span>, <span class="math inline">\(b\mapsto1\)</span>, with no assignment for <span class="math inline">\(c\)</span>.</p></li>
+<li><p><span class="math inline">\(a\mapsto0\)</span>, <span class="math inline">\(a\mapsto1\)</span>, <span class="math inline">\(b\mapsto0\)</span>, <span class="math inline">\(c\mapsto1\)</span>.</p></li>
+<li><p><span class="math inline">\(a\mapsto0\)</span>, <span class="math inline">\(b\mapsto1\)</span>, <span class="math inline">\(c\mapsto2\)</span>.</p></li>
+</ol></li>
+<li><p><span id="ex:expressions" data-label="ex:expressions"></span> Classify each item as an expression denoting a value, a complete statement, an open sentence, a question or a command. For complete statements, give the truth value where possible. In part (c), <span class="math inline">\(m\)</span> ranges over <span class="math inline">\(\mathbb{Z}\)</span> but has not been assigned a value.</p>
+<ol type="a">
+<li><p><span class="math inline">\(7+5\)</span>.</p></li>
+<li><p><span class="math inline">\(7+5=13\)</span>.</p></li>
+<li><p><span class="math inline">\(m+2=6\)</span>.</p></li>
+<li><p>Is <span class="math inline">\(3\)</span> smaller than <span class="math inline">\(5\)</span>?</p></li>
+<li><p>Delete the old file.</p></li>
+<li><p><span class="math inline">\(3^2\geq8\)</span>.</p></li>
+</ol></li>
+<li><p>Fix one campus computer, identified as Lab-PC-07. Consider the sentence: “The most recent successful backup of Lab-PC-07 before 11:00 a.m. on 21 November 2026 finished on 20 November 2026.” Assume such a backup exists.</p>
+<ol type="a">
+<li><p>Is this a statement even if you cannot inspect the backup records? Explain.</p></li>
+<li><p>A classmate says that <span class="math inline">\(2^3=6\)</span> cannot be a statement because it is false. Identify the mistake.</p></li>
+</ol></li>
+<li><p><span id="ex:connective-reading" data-label="ex:connective-reading"></span> Let <span class="math inline">\(P\)</span> mean “The backup completed” and <span class="math inline">\(Q\)</span> mean “The integrity check passed”. Translate each formula into a clear English sentence, retaining its meaning.</p>
+<ol type="a">
+<li><p><span class="math inline">\(\neg Q\)</span>.</p></li>
+<li><p><span class="math inline">\(P\land Q\)</span>.</p></li>
+<li><p><span class="math inline">\(P\lor Q\)</span>.</p></li>
+<li><p><span class="math inline">\(P\to Q\)</span>.</p></li>
+<li><p><span class="math inline">\(P\leftrightarrow Q\)</span>.</p></li>
+</ol></li>
+<li><p>Let <span class="math inline">\(P\)</span> mean “A valid local copy exists” and <span class="math inline">\(Q\)</span> mean “A valid remote copy exists”.</p>
+<ol type="a">
+<li><p>If both copies exist, is <span class="math inline">\(P\lor Q\)</span> true or false?</p></li>
+<li><p>A message says “Exactly one of the two copies exists”. Is that message true in the same situation? Explain why it differs from <span class="math inline">\(P\lor Q\)</span>.</p></li>
+</ol></li>
+<li><p>Suppose <span class="math inline">\(P\)</span> is <code>FALSE</code> and <span class="math inline">\(Q\)</span> is <code>TRUE</code>. Find the truth value of each formula, using the truth condition for its connective.</p>
+<ol type="a">
+<li><p><span class="math inline">\(\neg P\)</span>.</p></li>
+<li><p><span class="math inline">\(P\land Q\)</span>.</p></li>
+<li><p><span class="math inline">\(P\lor Q\)</span>.</p></li>
+<li><p><span class="math inline">\(P\to Q\)</span>.</p></li>
+<li><p><span class="math inline">\(P\leftrightarrow Q\)</span>.</p></li>
+</ol></li>
+<li><p><span id="ex:truth-table" data-label="ex:truth-table"></span> Construct the truth table for <span class="math inline">\((P\land Q)\lor\neg P\)</span>. Use the row order <span class="math inline">\((P,Q)=(\text{\texttt{T}},\text{\texttt{T}}),(\text{\texttt{T}},\text{\texttt{F}}),(\text{\texttt{F}},\text{\texttt{T}}),(\text{\texttt{F}},\text{\texttt{F}})\)</span>, and show intermediate columns for <span class="math inline">\(P\land Q\)</span> and <span class="math inline">\(\neg P\)</span> before the final column.</p></li>
+<li><p>Let <span class="math inline">\(P\)</span> and <span class="math inline">\(Q\)</span> be <code>TRUE</code> and <span class="math inline">\(R\)</span> <code>FALSE</code>.</p>
+<ol type="a">
+<li><p>Evaluate <span class="math inline">\((P\lor Q)\land R\)</span>, showing the value inside parentheses.</p></li>
+<li><p>Evaluate <span class="math inline">\(P\lor(Q\land R)\)</span>, again showing the inner value.</p></li>
+<li><p>Can the parentheses in these two expressions be ignored? Use your answers.</p></li>
+</ol></li>
+<li><p>Let <span class="math inline">\(P\)</span> mean “The file has been checked”, <span class="math inline">\(Q\)</span> mean “The file has been cleared”, and <span class="math inline">\(R\)</span> mean “The file is released”. Write each sentence symbolically, using parentheses where needed.</p>
+<ol type="a">
+<li><p>The file has been checked and has been cleared.</p></li>
+<li><p>The file has been checked or has been cleared, or both.</p></li>
+<li><p>If the file has been checked, then it is released.</p></li>
+<li><p>The file is released exactly when it has been checked and cleared.</p></li>
+</ol></li>
+<li><p>For <span class="math inline">\(n\in\mathbb{Z}\)</span>, let <span class="math inline">\(f(n)=n^2\)</span> and let <span class="math inline">\(P(n)\)</span> be the predicate <span class="math inline">\(n^2\leq10\)</span>.</p>
+<ol type="a">
+<li><p>Find <span class="math inline">\(f(-3)\)</span> and state the truth value of <span class="math inline">\(P(-3)\)</span>.</p></li>
+<li><p>Find <span class="math inline">\(f(-4)\)</span> and state the truth value of <span class="math inline">\(P(-4)\)</span>.</p></li>
+<li><p>Explain why the numerical function <span class="math inline">\(f\)</span> and the predicate <span class="math inline">\(P\)</span> are different, even though both definitions contain <span class="math inline">\(n^2\)</span>.</p></li>
+</ol></li>
+<li><p>Let <span class="math inline">\(B(x,y)\)</span> mean <span class="math inline">\(x+2=y\)</span>, with <span class="math inline">\(x,y\in\mathbb{Z}\)</span>.</p>
+<ol type="a">
+<li><p>Give the truth values of <span class="math inline">\(B(3,5)\)</span> and <span class="math inline">\(B(5,3)\)</span>.</p></li>
+<li><p>Write out <span class="math inline">\(B(x,6)\)</span>. Which variable remains unspecified?</p></li>
+<li><p>Write out <span class="math inline">\(B(4,y)\)</span>. Which variable remains unspecified?</p></li>
+<li><p>Is <span class="math inline">\(B(4,6)\)</span> a complete statement? If so, give its truth value.</p></li>
+</ol></li>
+<li><p><span id="ex:domain-matters" data-label="ex:domain-matters"></span> Let <span class="math inline">\(D_1=\{0,1,2\}\)</span> and <span class="math inline">\(D_2=\{-2,-1,0,1,2\}\)</span>. Evaluate each claim once with <span class="math inline">\(D=D_1\)</span> and once with <span class="math inline">\(D=D_2\)</span>. Give a witness or counterexample where one settles the claim.</p>
+<ol type="a">
+<li><p><span class="math inline">\(\forall x\in D\,(x\geq0)\)</span>.</p></li>
+<li><p><span class="math inline">\(\exists x\in D\,(x^2=4)\)</span>.</p></li>
+<li><p><span class="math inline">\(\exists x\in D\,(x+2=0)\)</span>.</p></li>
+</ol></li>
+<li><p><span id="ex:quantified-writing" data-label="ex:quantified-writing"></span> For parts (a)–(d), write each claim with an explicit quantifier and domain, then state whether it is true. Supply a witness for each true existential claim.</p>
+<ol type="a">
+<li><p>Every integer has a non-negative square.</p></li>
+<li><p>There is a negative integer.</p></li>
+<li><p>Some integer has square <span class="math inline">\(9\)</span>.</p></li>
+<li><p>In a discussion where <span class="math inline">\(n\)</span> ranges over <span class="math inline">\(\mathbb{N}\)</span>, an author writes “<span class="math inline">\(n+1&gt;n\)</span>” as an assertion about every allowed <span class="math inline">\(n\)</span>. Make the implicit quantifier explicit.</p></li>
+</ol>
+<p>For parts (e) and (f), let <span class="math inline">\(D\)</span> be a fixed set of users, some registered and some unregistered. Let <span class="math inline">\(R(u)\)</span> mean “<span class="math inline">\(u\)</span> is registered” and <span class="math inline">\(G(u)\)</span> mean “<span class="math inline">\(u\)</span> has permission to access the guide”. Translate each claim using <span class="math inline">\(D\)</span>, <span class="math inline">\(R\)</span> and <span class="math inline">\(G\)</span>, and explain your choice of connective.</p>
+<ol start="5" type="a">
+<li><p>Every registered user has permission to access the guide.</p></li>
+<li><p>At least one registered user has permission to access the guide.</p></li>
+</ol></li>
+<li><p><span id="ex:free-scope" data-label="ex:free-scope"></span> <em>Optional; non-examinable.</em> All variables below range over <span class="math inline">\(\mathbb{Z}\)</span>. Identify the free variables, if any, in each formula, and state which variable is bound by each quantifier. Is each entire formula a complete statement?</p>
+<ol type="a">
+<li><p><span class="math inline">\(\forall x\in\mathbb{Z}\,(x+y=0)\)</span>.</p></li>
+<li><p><span class="math inline">\(\bigl(\forall x\in\mathbb{Z}\,(x^2\geq0)\bigr)\land(y&gt;2)\)</span>.</p></li>
+<li><p><span class="math inline">\(\exists y\in\mathbb{Z}\,(x=y+1)\)</span>.</p></li>
+<li><p><span class="math inline">\(\forall x\in\mathbb{Z}\,\exists y\in\mathbb{Z}\,(x=y+1)\)</span>.</p></li>
+</ol></li>
+<li><p><span id="ex:finite-check" data-label="ex:finite-check"></span> Let <span class="math inline">\(D=\{-2,-1,0,1,2\}\)</span>. Make a two-row table listing <span class="math inline">\(x\)</span> and <span class="math inline">\(x^2\)</span>, then decide each claim. For a true existential claim give a witness, and for a false universal claim give a counterexample. Explain what justifies the other two kinds of conclusion when the domain is finite.</p>
+<ol type="a">
+<li><p><span class="math inline">\(\exists x\in D\,(x^2=1)\)</span>.</p></li>
+<li><p><span class="math inline">\(\forall x\in D\,(x^2\leq2)\)</span>.</p></li>
+<li><p><span class="math inline">\(\forall x\in D\,(x^2\geq0)\)</span>.</p></li>
+<li><p><span class="math inline">\(\exists x\in D\,(x^2&lt;0)\)</span>.</p></li>
+</ol></li>
+<li><p>Assess each conclusion. Explain what the stated checks do or do not establish.</p>
+<ol type="a">
+<li><p>Eve checks <span class="math inline">\(n=0,1,2\)</span> in <span class="math inline">\(\forall n\in\mathbb{N}\,(n^2\geq n)\)</span>. All three checks succeed, so Eve says the universal claim has been proved.</p></li>
+<li><p>Faith checks <span class="math inline">\(n=0,1,2\)</span> in <span class="math inline">\(\exists n\in\mathbb{N}\,(n^2=16)\)</span>. All three checks fail, so Faith says the existential claim is false.</p></li>
+<li><p>Grace checks <span class="math inline">\(n=4\)</span> in the same existential claim. Since <span class="math inline">\(4^2=16\)</span>, Grace says the existential claim is true.</p></li>
+<li><p>A classmate finds <span class="math inline">\(n=10\)</span> when checking <span class="math inline">\(\forall n\in\mathbb{N}\,(n&lt;10)\)</span> and concludes that the universal claim is false.</p></li>
+</ol></li>
+<li><p>Decide each claim. Give a witness for a true existential claim, a counterexample for a false universal claim, or a brief explanation otherwise. Listing a few failed candidates cannot rule out an existential claim over an infinite domain.</p>
+<ol type="a">
+<li><p><span class="math inline">\(\forall n\in\mathbb{N}\,(n&lt;100)\)</span>.</p></li>
+<li><p><span class="math inline">\(\exists n\in\mathbb{N}\,(n+7=3)\)</span>.</p></li>
+<li><p><span class="math inline">\(\exists n\in\mathbb{Z}\,(n+7=3)\)</span>.</p></li>
+<li><p><span class="math inline">\(\forall n\in\mathbb{Z}\,(n^2\geq0)\)</span>.</p></li>
+</ol></li>
+<li><p><span id="ex:dependent" data-label="ex:dependent"></span> Let <span class="math inline">\(E(x,y)\)</span> mean <span class="math inline">\(y=x+2\)</span>, with <span class="math inline">\(x,y\in\mathbb{Z}\)</span>. Read each claim in words and decide whether it is true. For a true claim explain how to choose <span class="math inline">\(y\)</span>; for a false claim explain why no fixed choice of <span class="math inline">\(y\)</span> works.</p>
+<ol type="a">
+<li><p><span class="math inline">\(\forall x\in\mathbb{Z}\,\exists y\in\mathbb{Z}\,E(x,y)\)</span>.</p></li>
+<li><p><span class="math inline">\(\exists y\in\mathbb{Z}\,\forall x\in\mathbb{Z}\,E(x,y)\)</span>.</p></li>
+</ol></li>
+<li><p>Let <span class="math inline">\(D=\{0,1,2\}\)</span> and let <span class="math inline">\(H(x,y)\)</span> mean <span class="math inline">\(y\geq x\)</span>, with <span class="math inline">\(x,y\in D\)</span>.</p>
+<ol type="a">
+<li><p>Is <span class="math inline">\(\forall x\in D\,\exists y\in D\,H(x,y)\)</span> true? Give an allowed choice of <span class="math inline">\(y\)</span> for each <span class="math inline">\(x\)</span>.</p></li>
+<li><p>Is <span class="math inline">\(\exists y\in D\,\forall x\in D\,H(x,y)\)</span> true? If so, give one fixed witness <span class="math inline">\(y\)</span>.</p></li>
+<li><p>Do these answers mean that reversing quantifiers always preserves truth? Explain using Exercise&nbsp;<a href="#ex:dependent">1.21</a>.</p></li>
+</ol></li>
+<li><p><span id="ex:permissiontable" data-label="ex:permissiontable"></span> Use the following <em>new</em> data for this exercise and Exercise&nbsp;<a href="#ex:translations">1.24</a>. Let <span class="math inline">\(U=\{\text{Alice},\text{Bob},\text{Charlie}\}\)</span> and <span class="math inline">\(F=\{\text{guide},\text{report},\text{ledger},\text{notes}\}\)</span>. Let <span class="math inline">\(A(u,f)\)</span> mean “user <span class="math inline">\(u\)</span> is permitted to access file <span class="math inline">\(f\)</span>”. The table specifies all the permissions: <span class="math inline">\(1\)</span> means permitted and <span class="math inline">\(0\)</span> means not permitted.</p>
+<div class="ds-table">
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th></th>
+<th style="text-align: center;">guide</th>
+<th style="text-align: center;">report</th>
+<th style="text-align: center;">ledger</th>
+<th style="text-align: center;">notes</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Alice</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+</tr>
+<tr class="even">
+<td>Bob</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">0</td>
+</tr>
+<tr class="odd">
+<td>Charlie</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">0</td>
+</tr>
+</tbody>
+</table>
+</div>
+<ol type="a">
+<li><p>Evaluate <span class="math inline">\(A(\text{Alice},\text{ledger})\)</span>, <span class="math inline">\(A(\text{Bob},\text{report})\)</span> and <span class="math inline">\(A(\text{Charlie},\text{notes})\)</span>.</p></li>
+<li><p>Evaluate <span class="math inline">\(\forall u\in U\,\exists f\in F\,A(u,f)\)</span>. If true, give a suitable file for each user.</p></li>
+<li><p>Evaluate <span class="math inline">\(\exists f\in F\,\forall u\in U\,A(u,f)\)</span>. Explain your answer for every candidate file.</p></li>
+<li><p>Evaluate <span class="math inline">\(\forall f\in F\,\exists u\in U\,A(u,f)\)</span>. If false, identify a counterexample file.</p></li>
+<li><p>Evaluate <span class="math inline">\(\exists u\in U\,\forall f\in F\,A(u,f)\)</span>. If false, explain why every user fails.</p></li>
+<li><p><em>Optional; non-examinable.</em> In <span class="math inline">\(\exists u\in U\,A(u,f)\)</span>, identify the free variable. State which allowed values make the formula true and which make it false.</p></li>
+<li><p><em>Optional; non-examinable.</em> In <span class="math inline">\(\forall f\in F\,A(u,f)\)</span>, identify the free variable. Evaluate the resulting statement for each allowed value of that variable.</p></li>
+<li><p>Translate “There is a file that no user is permitted to access” into symbols and decide whether it is true.</p></li>
+</ol></li>
+<li><p><span id="ex:translations" data-label="ex:translations"></span> Keep the domains and predicate from Exercise&nbsp;<a href="#ex:permissiontable">1.23</a>. Decide whether each proposed formula faithfully expresses its English claim, and correct it if necessary. Judge the meaning: an incorrect translation may accidentally have the same truth value as the intended claim.</p>
+<ol type="a">
+<li><p>“Every user can access at least one file.” Proposed formula: <span class="math inline">\(\exists f\in F\,\forall u\in U\,A(u,f)\)</span>.</p></li>
+<li><p>“Alice can access every file.” Proposed formula: <span class="math inline">\(\forall u\in U\,A(u,f)\)</span>.</p></li>
+<li><p>“At least one user can access report.” Proposed formula: <span class="math inline">\(\forall u\in U\,A(u,\text{report})\)</span>.</p></li>
+<li><p>“For every file there is a user who can access it.” Proposed formula: <span class="math inline">\(\forall f\in F\,\exists u\in U\,A(u,f)\)</span>.</p></li>
+</ol></li>
+</ol>
+</div>
+<div class="ds-chapter-navigation">
+<p><a href="../../../teaching/notes/chapter-00/">← Introduction</a> · <a href="../../../teaching/notes/chapter-02/">Chapter 2 →</a></p>
+</div>
+
+
+</section>
+
+<a href="#page-top" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
+<script>
+  (() => {
+    const main = document.getElementById("quarto-document-content");
+    const skipLink = document.querySelector(".skip-link");
+
+    if (skipLink && main) {
+      skipLink.addEventListener("click", () => {
+        window.requestAnimationFrame(() => main.focus({ preventScroll: true }));
+      });
+    }
+  })();
+</script>
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/rjnieto\.com");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>© 2026 RJ Nieto</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+<p>Built with Quarto</p>
+</div>
+  </div>
+</footer>
+
+
+
+
+</body></html>

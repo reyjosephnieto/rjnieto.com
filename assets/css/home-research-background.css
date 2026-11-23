@@ -1,0 +1,78 @@
+/* Decorative geometry and stacking; site-theme.scss owns the shared palette. */
+:is(.home-research-page, .research-background-page).home-research-ready {
+  position: relative;
+  isolation: isolate;
+}
+
+:is(.home-research-page, .research-background-page) .home-research-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  width: 100%;
+  height: var(--home-research-height, 100vh);
+  overflow: hidden;
+  background: #111b26;
+  pointer-events: none;
+}
+
+:is(.home-research-page, .research-background-page) .home-research-canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+:is(.home-research-page, .research-background-page) .home-research-backdrop::before {
+  position: absolute;
+  inset: 0;
+  content: "";
+  --research-veil-centre: 0.62;
+  --research-veil-edge: 0.08;
+  background: linear-gradient(to right,
+    rgb(12 20 30 / var(--research-veil-edge)) 0%,
+    rgb(12 20 30 / var(--research-veil-edge)) max(0px, calc(var(--research-content-left, 24vw) - 4rem)),
+    rgb(12 20 30 / var(--research-veil-centre)) var(--research-content-left, 24vw),
+    rgb(12 20 30 / var(--research-veil-centre)) var(--research-content-right, 76vw),
+    rgb(12 20 30 / var(--research-veil-edge)) min(100%, calc(var(--research-content-right, 76vw) + 4rem)),
+    rgb(12 20 30 / var(--research-veil-edge)) 100%);
+  pointer-events: none;
+}
+
+.home-research-ready #quarto-content,
+.home-research-ready > footer {
+  position: relative;
+  z-index: 1;
+}
+
+@media (max-width: 700px) {
+  :is(.home-research-page, .research-background-page) .home-research-backdrop::before {
+    background: linear-gradient(to right,
+      rgb(12 20 30 / var(--research-veil-edge)) 0%,
+      rgb(12 20 30 / 52%) 12%,
+      rgb(12 20 30 / var(--research-veil-centre)) 25%,
+      rgb(12 20 30 / var(--research-veil-centre)) 75%,
+      rgb(12 20 30 / 52%) 88%,
+      rgb(12 20 30 / var(--research-veil-edge)) 100%);
+  }
+}
+
+/* Main pages retain the same composition with less foreground movement. */
+.research-background-page:not(.home-research-page) .home-research-canvas {
+  opacity: 0.58;
+}
+
+.research-background-page:not(.home-research-page) .home-research-backdrop::before {
+  --research-veil-centre: 0.74;
+  --research-veil-edge: 0.12;
+}
+
+@media print {
+  :is(.home-research-page, .research-background-page) .home-research-backdrop {
+    display: none;
+  }
+}
+
+@media (forced-colors: active) {
+  :is(.home-research-page, .research-background-page) .home-research-backdrop {
+    display: none;
+  }
+}

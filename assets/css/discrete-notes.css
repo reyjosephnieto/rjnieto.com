@@ -1,0 +1,320 @@
+/* HTML lecture notes: retain the site's prose and confine wide content. */
+.ds-lecture-notes {
+  --ds-blue-ink: #a9d8ee;
+  --ds-blue-border: #4f819e;
+  --ds-blue-paper: #172d40;
+  --ds-purple-ink: #d6b5f0;
+  --ds-purple-border: #8b6ea4;
+  --ds-purple-paper: #2a2038;
+  --ds-code-ink: #eeeaf4;
+  --ds-code-paper: #101c2a;
+  --ds-code-border: #405167;
+  --ds-python-code-paper: #1d1729;
+  --ds-code-comment: #aab9c5;
+  --ds-code-keyword: #b7cefa;
+  --ds-code-string: #b9dcc5;
+  --ds-code-number: #e7cd9a;
+  --ds-inline-code-ink: #ead9b4;
+  --ds-diagram-paper: #fffefa;
+}
+
+.ds-lecture-notes #quarto-document-content {
+  min-width: 0;
+  overflow-wrap: break-word;
+}
+
+/* Only paragraphs with an oversized expression become local scrollers. */
+.ds-lecture-notes .ds-wide-expression {
+  max-width: 100%;
+  overflow-x: auto;
+  overscroll-behavior-inline: contain;
+}
+
+.ds-lecture-notes :is(.ds-box, .ds-definition, .ds-learningoutcomes,
+    .ds-studybox, .ds-caution, .ds-enrichment) {
+  min-width: 0;
+  margin-block: 1.25rem;
+  padding: 1rem 1.15rem;
+  color: var(--ink, #f1f0e9);
+  background: var(--ds-blue-paper);
+  border: 1px solid var(--ds-blue-border);
+  border-left: 4px solid var(--ds-blue-ink);
+  border-radius: 0.3rem;
+}
+
+.ds-lecture-notes .ds-python {
+  background: var(--ds-purple-paper);
+  border-color: var(--ds-purple-border);
+  border-left-color: var(--ds-purple-ink);
+}
+
+.ds-lecture-notes .ds-box > :first-child {
+  margin-top: 0;
+}
+
+.ds-lecture-notes .ds-box > :last-child {
+  margin-bottom: 0;
+}
+
+.ds-lecture-notes .ds-box p {
+  text-indent: 1.35em;
+}
+
+.ds-lecture-notes :is(.ds-box-title, .ds-box-title > p) {
+  margin-block: 0 0.7rem;
+  color: var(--ds-blue-ink);
+  font-family: var(--site-font, "IBM Plex Sans", Arial, sans-serif);
+  font-size: 0.96em;
+  font-weight: 700;
+  line-height: 1.5;
+  text-indent: 0;
+}
+
+.ds-lecture-notes .ds-box-title > p:last-child {
+  margin-bottom: 0;
+}
+
+.ds-lecture-notes .ds-python :is(.ds-box-title, .ds-box-title > p) {
+  color: var(--ds-purple-ink);
+}
+
+.ds-lecture-notes .ds-table {
+  min-width: 0;
+  max-width: 100%;
+  margin-block: 1rem 1.25rem;
+  overflow-x: auto;
+  overscroll-behavior-inline: contain;
+}
+
+.ds-lecture-notes .ds-table table {
+  --bs-table-color: var(--ink, #f1f0e9);
+  --bs-table-bg: transparent;
+  --bs-table-border-color: var(--rule, #405167);
+  width: 100%;
+  margin-bottom: 0;
+  color: var(--ink, #f1f0e9);
+  font-size: 0.95em;
+  line-height: 1.5;
+}
+
+.ds-lecture-notes .ds-table :is(th, td) {
+  padding: 0.45rem 0.65rem;
+  vertical-align: top;
+}
+
+.ds-lecture-notes .math.display {
+  display: block;
+  max-width: 100%;
+  margin-block: 1rem;
+  padding-block: 0.25rem;
+  overflow-x: auto;
+  overscroll-behavior-inline: contain;
+}
+
+.ds-lecture-notes #quarto-document-content img {
+  max-width: 100%;
+  height: auto;
+}
+
+.ds-lecture-notes :is(.ds-diagram img, .ds-diagram svg,
+    #quarto-document-content img[src$=".svg"]) {
+  display: block;
+  width: auto;
+  max-width: min(100%, 46rem);
+  height: auto;
+  margin-inline: auto;
+}
+
+/* TikZ diagrams retain their dark labels; raster illustrations keep their art. */
+.ds-lecture-notes :is(.ds-diagram svg,
+    #quarto-document-content img[src$=".svg"]) {
+  box-sizing: content-box;
+  max-width: min(calc(100% - 1.3rem), 46rem);
+  padding: 0.65rem;
+  background: var(--ds-diagram-paper);
+  border-radius: 0.25rem;
+  color-scheme: light;
+}
+
+.ds-lecture-notes :is(pre, div.sourceCode) {
+  min-width: 0;
+  max-width: 100%;
+  overflow-x: auto;
+  overscroll-behavior-inline: contain;
+}
+
+.ds-lecture-notes pre {
+  padding: 0.85rem 1rem;
+  color: var(--ds-code-ink);
+  background: var(--ds-code-paper);
+  border-color: var(--ds-code-border);
+  font-size: 0.88em;
+  line-height: 1.5;
+}
+
+.ds-lecture-notes :is(div.sourceCode, div.sourceCode pre.sourceCode) {
+  color: var(--ds-code-ink);
+  background: var(--ds-code-paper);
+}
+
+.ds-lecture-notes :is(pre, pre code, pre code span) {
+  white-space: pre;
+  overflow-wrap: normal;
+  word-break: normal;
+}
+
+.ds-lecture-notes :is(pre code, pre code span) {
+  color: inherit;
+  background: transparent;
+}
+
+.ds-lecture-notes :not(pre) > code {
+  color: var(--ds-inline-code-ink);
+}
+
+.ds-lecture-notes pre code span:is(.co, .an, .cv) {
+  color: var(--ds-code-comment);
+}
+
+.ds-lecture-notes pre code span:is(.kw, .cf, .im) {
+  color: var(--ds-code-keyword);
+}
+
+.ds-lecture-notes pre code span:is(.st, .ch, .ss) {
+  color: var(--ds-code-string);
+}
+
+.ds-lecture-notes pre code span:is(.dv, .fl, .bn, .cn) {
+  color: var(--ds-code-number);
+}
+
+.ds-lecture-notes .ds-python :is(pre, div.sourceCode,
+    div.sourceCode pre.sourceCode) {
+  background: var(--ds-python-code-paper);
+}
+
+.ds-lecture-notes .ds-python pre {
+  border: 1px solid var(--ds-purple-border);
+  border-radius: 0.2rem;
+}
+
+.ds-lecture-notes .ds-exercises > ol {
+  padding-left: 3.3rem;
+}
+
+.ds-lecture-notes .ds-exercises > ol > li::marker {
+  content: var(--ds-chapter) "." counter(list-item) ". ";
+  color: var(--ds-blue-ink);
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+.ds-lecture-notes .ds-exercises > ol > li + li {
+  margin-top: 1.1rem;
+}
+
+.ds-lecture-notes .ds-exercises ol ol {
+  padding-left: 1.8rem;
+  list-style-type: lower-alpha;
+}
+
+.ds-lecture-notes .ds-exercises ol ol > li::marker {
+  content: counter(list-item, lower-alpha) ") ";
+}
+
+.ds-lecture-notes .ds-exercises ol ol > li + li {
+  margin-top: 0.35rem;
+}
+
+.ds-lecture-notes .ds-chapter-navigation {
+  margin-block: 2rem 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--rule, #405167);
+  font-family: var(--site-font, "IBM Plex Sans", Arial, sans-serif);
+  font-size: 0.94em;
+}
+
+.ds-lecture-notes .ds-chapter-navigation > p {
+  margin-bottom: 0.5rem;
+  text-indent: 0;
+}
+
+.ds-lecture-notes .ds-chapter-navigation a {
+  display: inline-block;
+  margin-inline-end: 1rem;
+}
+
+@media (max-width: 600px) {
+  .ds-lecture-notes :is(.ds-box, .ds-definition, .ds-learningoutcomes,
+      .ds-studybox, .ds-caution, .ds-enrichment) {
+    padding: 0.8rem;
+  }
+
+  .ds-lecture-notes .ds-table :is(th, td) {
+    padding: 0.4rem 0.5rem;
+  }
+
+  .ds-lecture-notes .ds-exercises > ol {
+    padding-left: 2.8rem;
+  }
+}
+
+@media print {
+  .ds-lecture-notes {
+    --ink: #20242b;
+    --muted-ink: #535a60;
+    --paper: #fff;
+    --rule: #b7c4cb;
+    --accent: #194f70;
+    --accent-dark: #133e58;
+    --ds-blue-ink: #194f70;
+    --ds-blue-border: #8fb9d2;
+    --ds-blue-paper: #f1f7fb;
+    --ds-purple-ink: #553575;
+    --ds-purple-border: #b9a5d0;
+    --ds-purple-paper: #f7f3fb;
+    --ds-code-ink: #292532;
+    --ds-code-paper: #f5f6f7;
+    --ds-code-border: #bbc3cb;
+    --ds-python-code-paper: #fff;
+    --ds-code-comment: #505b64;
+    --ds-code-keyword: #293f70;
+    --ds-code-string: #245b39;
+    --ds-code-number: #72501e;
+    --ds-inline-code-ink: #34303d;
+    color: var(--ink);
+    background: var(--paper);
+  }
+}
+
+@media (forced-colors: active) {
+  .ds-lecture-notes {
+    --ink: CanvasText;
+    --muted-ink: CanvasText;
+    --paper: Canvas;
+    --rule: CanvasText;
+    --accent: LinkText;
+    --accent-dark: LinkText;
+    --ds-blue-ink: LinkText;
+    --ds-blue-border: CanvasText;
+    --ds-blue-paper: Canvas;
+    --ds-purple-ink: LinkText;
+    --ds-purple-border: CanvasText;
+    --ds-purple-paper: Canvas;
+    --ds-code-ink: CanvasText;
+    --ds-code-paper: Canvas;
+    --ds-code-border: CanvasText;
+    --ds-python-code-paper: Canvas;
+    --ds-code-comment: CanvasText;
+    --ds-code-keyword: CanvasText;
+    --ds-code-string: CanvasText;
+    --ds-code-number: CanvasText;
+    --ds-inline-code-ink: CanvasText;
+  }
+
+  .ds-lecture-notes :is(.ds-diagram svg,
+      #quarto-document-content img[src$=".svg"]) {
+    forced-color-adjust: none;
+    background: #fff;
+  }
+}

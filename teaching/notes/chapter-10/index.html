@@ -1,0 +1,1128 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-GB" xml:lang="en-GB"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.10.18">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="description" content="Chapter 10: Permutations and combinations. HTML edition of Lecture Notes in Discrete Mathematics.">
+
+<title>Chapter 10: Permutations and combinations – RJ Nieto</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<link href="../../../assets/branding/rj-logo.png" rel="icon" type="image/png">
+<script src="../../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-dark-b85bc7c33db8c58e0ec93c3465666fed.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap-68e913143d7006db5355610df9e4aed5.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="dark">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<meta name="author" content="Rey Joseph Nieto">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "@id": "https://rjnieto.com/#rey-joseph-nieto",
+  "name": "Rey Joseph Nieto",
+  "alternateName": ["RJ Nieto", "Thinking Pinoy"],
+  "description": "Assistant Secretary in the Office of the Cabinet Secretary, Office of the President of the Philippines.",
+  "url": "https://rjnieto.com/",
+  "image": {
+    "@type": "ImageObject",
+    "@id": "https://rjnieto.com/#portrait",
+    "url": "https://rjnieto.com/assets/images/rey-joseph-nieto-portrait.jpg",
+    "contentUrl": "https://rjnieto.com/assets/images/rey-joseph-nieto-portrait.jpg",
+    "width": 824,
+    "height": 824,
+    "caption": "Portrait of Rey Joseph RJ Nieto"
+  },
+  "jobTitle": "Assistant Secretary",
+  "worksFor": {
+    "@type": "GovernmentOrganization",
+    "name": "Office of the Cabinet Secretary, Office of the President of the Philippines"
+  },
+  "sameAs": [
+    "https://www.linkedin.com/in/rjosephnieto/",
+    "https://www.facebook.com/rjosephnieto",
+    "https://x.com/rjosephnieto"
+  ]
+}
+</script>
+<link rel="preload" href="../../../assets/fonts/ibm-plex-sans/IBMPlexSans-Roman.woff2" as="font" type="font/woff2" crossorigin="">
+<script defer="" src="../../../assets/js/home-research-background.js"></script>
+<script defer="" src="../../../assets/js/discrete-notes-layout.js"></script>
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta property="og:url" content="https://rjnieto.com/teaching/notes/chapter-10/">
+<meta property="og:type" content="article">
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../../../styles.css">
+<link rel="stylesheet" href="../../../assets/css/site-typography.css">
+<link rel="stylesheet" href="../../../assets/css/home-research-background.css">
+<link rel="stylesheet" href="../../../assets/css/discrete-notes.css">
+<meta property="og:title" content="Chapter 10: Permutations and combinations – RJ Nieto">
+<meta property="og:description" content="Chapter 10: Permutations and combinations. HTML edition of Lecture Notes in Discrete Mathematics.">
+<meta property="og:image" content="https://rjnieto.com/teaching/bulsu/discrete-math/images/thumbnails/chapter_10.webp">
+<meta property="og:site_name" content="RJ Nieto">
+<meta property="og:locale" content="en_GB">
+<meta name="twitter:title" content="Chapter 10: Permutations and combinations – RJ Nieto">
+<meta name="twitter:description" content="Chapter 10: Permutations and combinations. HTML edition of Lecture Notes in Discrete Mathematics.">
+<meta name="twitter:image" content="https://rjnieto.com/teaching/bulsu/discrete-math/images/thumbnails/chapter_10.webp">
+<meta name="twitter:creator" content="@rjosephnieto">
+<meta name="twitter:site" content="@rjosephnieto">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://rjnieto.com/teaching/notes/chapter-10/">
+</head>
+
+<body class="nav-fixed ds-lecture-notes quarto-light">
+<span id="page-top" class="page-top-anchor" aria-hidden="true"></span>
+<a class="skip-link" href="#quarto-document-content">Skip to main content</a>
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../../">
+    <span class="navbar-title">RJ Nieto</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../../"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../cv/"> 
+<span class="menu-text">CV</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../teaching/"> 
+<span class="menu-text">Teaching</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../calculated/"> 
+<span class="menu-text">Writing</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../research/"> 
+<span class="menu-text">Hobby</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul class="collapse">
+  <li><a href="#ch10:factorials" id="toc-ch10:factorials" class="nav-link active" data-scroll-target="#ch10\:factorials">10.1 Factorials and arrangements</a></li>
+  <li><a href="#ch10:permutations" id="toc-ch10:permutations" class="nav-link" data-scroll-target="#ch10\:permutations">10.2 Permutations</a></li>
+  <li><a href="#ch10:combinations" id="toc-ch10:combinations" class="nav-link" data-scroll-target="#ch10\:combinations">10.3 Combinations</a></li>
+  <li><a href="#ch10:positions" id="toc-ch10:positions" class="nav-link" data-scroll-target="#ch10\:positions">10.4 Counting via subsets</a></li>
+  <li><a href="#ch10:counting-proofs" id="toc-ch10:counting-proofs" class="nav-link" data-scroll-target="#ch10\:counting-proofs">10.5 Combinatorial proofs</a></li>
+  <li><a href="#ch10:induction" id="toc-ch10:induction" class="nav-link" data-scroll-target="#ch10\:induction">10.6 Row sums by induction</a></li>
+  <li><a href="#ch10:binomial" id="toc-ch10:binomial" class="nav-link" data-scroll-target="#ch10\:binomial">10.7 Binomial expansions</a></li>
+  <li><a href="#ch10:exercises" id="toc-ch10:exercises" class="nav-link" data-scroll-target="#ch10\:exercises">10.8 Exercises</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content" tabindex="-1">
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Chapter 10: Permutations and combinations</h1>
+<p class="subtitle lead">Discrete Mathematics · Rey Joseph Nieto</p>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<!-- Generated from the corresponding chapter LaTeX. Run scripts/build-discrete-html.py to refresh. -->
+<p><a href="../../../teaching/" class="btn btn-outline-secondary btn-sm">Course page</a> <a href="../../../teaching/bulsu/discrete-math/lecture-notes/chapter_10.pdf" class="btn btn-outline-primary btn-sm" aria-label="Open Chapter 10: Permutations and combinations as PDF">PDF</a></p>
+<p><span id="ch10:chapter" data-label="ch10:chapter"></span></p>
+<p>A system selects three of eight distinct records for review. Choosing a first record, a second and a third gives <span class="math inline">\(8(7)(6)=336\)</span> ordered lists. But if the system stores only which three records were selected, different orders name the same selection. How do we remove those repeated descriptions?</p>
+<p>If the system instead assigns first, second and third review priorities, changing the order changes the outcome. Chapter 9’s instruction to specify one complete outcome therefore remains our starting point.</p>
+<p>This chapter develops formulas for arrangements and selections from the sum and product rules. Chapter 7’s equivalence classes will explain why a division can remove repeated orders. We will then use counting to prove identities, revisit Chapter 5’s induction, and explain the coefficients in binomial expansions.</p>
+<div class="ds-box ds-learningoutcomes">
+<div id="what-you-should-be-able-to-do" class="ds-box-title">
+<p><strong>What you should be able to do</strong></p>
+</div>
+<p>After working through this chapter, you should be able to:</p>
+<ul>
+<li><p>calculate and simplify factorial expressions;</p></li>
+<li><p>count ordered arrangements of distinct objects;</p></li>
+<li><p>count subsets and justify division by the number of orders;</p></li>
+<li><p>handle restrictions using the earlier counting rules;</p></li>
+<li><p>recognise when a string is determined by a set of positions;</p></li>
+<li><p>prove selected identities by counting and by induction;</p></li>
+<li><p>explain and use binomial coefficients in an expansion.</p></li>
+</ul>
+</div>
+<section id="ch10:factorials" class="level2">
+<h2 class="anchored" data-anchor-id="ch10:factorials">10.1 Factorials and arrangements</h2>
+<p>When all objects must be used once, each position leaves one fewer object available for the next. We begin with notation for the resulting product.</p>
+<div class="ds-box ds-definition">
+<div id="definition-10.1-factorial" class="ds-box-title">
+<p><strong>Definition 10.1: Factorial</strong></p>
+</div>
+<p>For a positive integer <span class="math inline">\(n\)</span>, its <strong>factorial</strong> is the product of the positive integers from <span class="math inline">\(1\)</span> through <span class="math inline">\(n\)</span>: <span class="math display">\[n!=n(n-1)(n-2)\cdots2(1).\]</span> We also define <span class="math inline">\(0!=1\)</span>. The notation is read “<span class="math inline">\(n\)</span> factorial”.</p>
+</div>
+<p><span id="example-10.1."><strong>Example&nbsp;10.1.</strong></span> Alice, Bob and Charlie each give one presentation. Write <span class="math inline">\(A,B,C\)</span> for their names, and record the speaking order as a string using each letter once. There are three choices for the first speaker, two for the second and one for the last, giving <span class="math inline">\(3(2)(1)=3!=6\)</span>.</p>
+<div class="ds-table">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 22%">
+<col style="width: 15%">
+<col style="width: 15%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">First speaker</th>
+<th colspan="2" style="text-align: left;">Complete orders</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">Alice</td>
+<td style="text-align: left;"><code>ABC</code></td>
+<td style="text-align: left;"><code>ACB</code></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Bob</td>
+<td style="text-align: left;"><code>BAC</code></td>
+<td style="text-align: left;"><code>BCA</code></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Charlie</td>
+<td style="text-align: left;"><code>CAB</code></td>
+<td style="text-align: left;"><code>CBA</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>The table lists every outcome once. All three people participate; only their order changes.</p>
+<p><span id="example-10.2."><strong>Example&nbsp;10.2.</strong></span> Expanding the relevant factors gives <span class="math display">\[\frac{8!}{5!}
+=\frac{8(7)(6)\,5!}{5!}
+=8(7)(6)=336.\]</span> We cancel the entire common factor <span class="math inline">\(5!\)</span>. The quotient is not <span class="math inline">\(8/5\)</span>. Similarly, <span class="math inline">\(5!=5(4)(3)(2)(1)=120\)</span> and <span class="math inline">\(1!=1\)</span>.</p>
+<div class="ds-box ds-definition">
+<div id="definition-10.2-permutation-of-all-the-objects" class="ds-box-title">
+<p><strong>Definition 10.2: Permutation of all the objects</strong></p>
+</div>
+<p>A <strong>permutation</strong> of <span class="math inline">\(n\)</span> distinct objects is an ordered arrangement using every object exactly once. The number of such arrangements is <span class="math inline">\(n!\)</span>.</p>
+</div>
+<p>For <span class="math inline">\(n\geq1\)</span>, the product rule gives <span class="math inline">\(n\)</span> choices, then <span class="math inline">\(n-1\)</span>, continuing down to one. For <span class="math inline">\(n=0\)</span>, there is one arrangement: the empty list. This interpretation agrees with <span class="math inline">\(0!=1\)</span>. Having no objects to arrange does not give zero possible empty arrangements.</p>
+<p><span id="example-10.3."><strong>Example&nbsp;10.3.</strong></span> Five distinct test cases must each be run once in a schedule. If any order is allowed, there are <span class="math inline">\(5!=120\)</span> schedules. If one particular case must run first, the remaining four cases can be arranged in <span class="math inline">\(4!=24\)</span> ways. If two particular, different cases must run first and last respectively, the three middle cases have <span class="math inline">\(3!=6\)</span> possible orders.</p>
+<p>The fixed positions supply no additional choice. We arrange only the cases whose positions remain free.</p>
+<p><span id="example-10.4."><strong>Example&nbsp;10.4.</strong></span> The printed strings using two <span class="math inline">\(A\)</span>s and one <span class="math inline">\(B\)</span> are <span class="math display">\[\texttt{AAB},\qquad\texttt{ABA},\qquad\texttt{BAA}.\]</span> There are three, rather than <span class="math inline">\(3!=6\)</span>. If the <span class="math inline">\(A\)</span>s were labelled <span class="math inline">\(A_1,A_2\)</span>, there would be six orders of three distinct objects. Removing those labels identifies two orders for each printed string. Thus the factorial count for distinct objects cannot be transferred unchanged to indistinguishable symbols.</p>
+</section>
+<section id="ch10:permutations" class="level2">
+<h2 class="anchored" data-anchor-id="ch10:permutations">10.2 Permutations</h2>
+<p>We may need only <span class="math inline">\(k\)</span> positions from a pool of <span class="math inline">\(n\)</span> distinct objects. In this section an object cannot be reused within an arrangement.</p>
+<div class="ds-box ds-definition">
+<div id="definition-10.3-ordered-arrangements-without-repetition" class="ds-box-title">
+<p><strong>Definition 10.3: Ordered arrangements without repetition</strong></p>
+</div>
+<p>For integers <span class="math inline">\(0\leq k\leq n\)</span>, let <span class="math inline">\(P(n,k)\)</span> count the ordered lists of <span class="math inline">\(k\)</span> distinct objects chosen from <span class="math inline">\(n\)</span> available objects. Then <span class="math display">\[P(n,k)=\frac{n!}{(n-k)!}.\]</span> Such an arrangement is also called a <strong><span class="math inline">\(k\)</span>-permutation</strong>.</p>
+</div>
+<p>For <span class="math inline">\(k\geq1\)</span>, choose the entries successively: <span class="math display">\[P(n,k)=n(n-1)\cdots(n-k+1).\]</span> There are <span class="math inline">\(k\)</span> factors, ending at <span class="math inline">\(n-k+1\)</span>. The factorial quotient cancels the remaining factor <span class="math inline">\((n-k)!\)</span> in <span class="math inline">\(n!\)</span>. When <span class="math inline">\(k=0\)</span>, there is one empty list, and the quotient is <span class="math inline">\(n!/n!=1\)</span>. When <span class="math inline">\(k=n\)</span>, it becomes <span class="math inline">\(n!/0!=n!\)</span>.</p>
+<p>If <span class="math inline">\(k&gt;n\)</span>, no list of <span class="math inline">\(k\)</span> distinct objects can be formed from that pool. The count is zero, but the displayed factorial quotient is not applicable: <span class="math inline">\((n-k)!\)</span> would have a negative argument.</p>
+<p><span id="ch10:records"><strong>Example&nbsp;10.5.</strong></span> Assign three different records to first, second and third review priority, from eight distinct records. The positions are labelled, so an outcome is an ordered triple. There are <span class="math display">\[P(8,3)=8(7)(6)=\frac{8!}{5!}=336\]</span> assignments. We stop after three factors. Using <span class="math inline">\(8!\)</span> would also arrange the five records that were not assigned a priority.</p>
+<p><span id="example-10.6."><strong>Example&nbsp;10.6.</strong></span> A three-character digit code uses <span class="math inline">\(0\)</span> to <span class="math inline">\(9\)</span> without repetition. Its positions give <span class="math inline">\(P(10,3)=10(9)(8)=720\)</span> codes. For instance, <code>017</code> is a valid code.</p>
+<p>A three-digit positive integer cannot start with <span class="math inline">\(0\)</span>. There are nine choices for its first digit, nine remaining choices for its second, and eight for its third. Thus there are <span class="math inline">\(9(9)(8)=648\)</span> such integers. The second position may use <span class="math inline">\(0\)</span>; it must only avoid the digit already used. The difference <span class="math inline">\(720-648=72\)</span> counts the codes beginning with <span class="math inline">\(0\)</span>.</p>
+<p><span id="example-10.7."><strong>Example&nbsp;10.7.</strong></span> Let <span class="math inline">\(F=\{p,q,r\}\)</span> be three tasks and let <span class="math inline">\(S\)</span> be five available servers. An injective function <span class="math inline">\(f:F\to S\)</span> sends different tasks to different servers. Choose <span class="math inline">\(f(p)\)</span> in five ways, then <span class="math inline">\(f(q)\)</span> in four, then <span class="math inline">\(f(r)\)</span> in three. There are <span class="math inline">\(P(5,3)=5(4)(3)=60\)</span> injective functions.</p>
+<p>If different tasks may share a server, the count is instead <span class="math inline">\(5^3=125\)</span>, as in Chapter 9. An injective assignment here uses only three of the five servers; it need not use every available server.</p>
+</section>
+<section id="ch10:combinations" class="level2">
+<h2 class="anchored" data-anchor-id="ch10:combinations">10.3 Combinations</h2>
+<p>An unordered selection records which objects are included, rather than assigning them to positions. We can start by counting ordered lists and determine how often each selection is represented.</p>
+<p><span id="ch10:pair-groups"><strong>Example&nbsp;10.8.</strong></span> Choose two distinct records from <span class="math inline">\(\{a,b,c,d\}\)</span>. The ordered pairs number <span class="math inline">\(P(4,2)=4(3)=12\)</span>. Grouping pairs with the same underlying subset gives:</p>
+<div class="ds-table">
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: center;">Selected subset</th>
+<th style="text-align: left;">Its two orders</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(\{a,b\}\)</span></td>
+<td style="text-align: left;"><span class="math inline">\((a,b),\ (b,a)\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(\{a,c\}\)</span></td>
+<td style="text-align: left;"><span class="math inline">\((a,c),\ (c,a)\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(\{a,d\}\)</span></td>
+<td style="text-align: left;"><span class="math inline">\((a,d),\ (d,a)\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(\{b,c\}\)</span></td>
+<td style="text-align: left;"><span class="math inline">\((b,c),\ (c,b)\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(\{b,d\}\)</span></td>
+<td style="text-align: left;"><span class="math inline">\((b,d),\ (d,b)\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(\{c,d\}\)</span></td>
+<td style="text-align: left;"><span class="math inline">\((c,d),\ (d,c)\)</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Every subset has exactly two orders, so there are <span class="math inline">\(12/2=6\)</span> subsets. In Chapter 7’s language, two ordered pairs are equivalent when they contain the same records. The six equivalence classes all have size <span class="math inline">\(2!=2\)</span>. Their equal size is what justifies this division.</p>
+<p><img src="../../../teaching/notes/assets/chapter-10/01-orders-and-subsets.webp" class="ds-note-image img-fluid" loading="lazy" decoding="async" alt="Ordered arrangements compared with unordered subsets."></p>
+<p>The orders <span class="math inline">\((a,b)\)</span> and <span class="math inline">\((b,a)\)</span> belong to one group because both select the subset <span class="math inline">\(\{a,b\}\)</span>. Each selected pair has <span class="math inline">\(2!\)</span> orders.</p>
+<div class="ds-box ds-python">
+<div id="python-non-examinable" class="ds-box-title">
+<p><strong>Python (non-examinable)</strong></p>
+</div>
+<p>Python’s standard <code>itertools</code> module supplies <code>permutations</code> for ordered arrangements and <code>combinations</code> for unordered selections. The <code>from ... import ...</code> line makes those two tools available; <code>list</code> collects their results so that <code>len</code> can count them. The square-bracketed list <code>records</code> holds our four distinct inputs. The argument <code>2</code> specifies that we take two records at a time.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> itertools <span class="im">import</span> permutations, combinations</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>records <span class="op">=</span> [<span class="st">"a"</span>, <span class="st">"b"</span>, <span class="st">"c"</span>, <span class="st">"d"</span>]</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>orders <span class="op">=</span> <span class="bu">list</span>(permutations(records, <span class="dv">2</span>))</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>selections <span class="op">=</span> <span class="bu">list</span>(combinations(records, <span class="dv">2</span>))</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">len</span>(orders), <span class="bu">len</span>(selections))</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(selections)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><strong>Output.</strong></p>
+<pre class="text"><code>12 6
+[('a', 'b'), ('a', 'c'), ('a', 'd'), ('b', 'c'), ('b', 'd'), ('c', 'd')]</code></pre>
+<p>The parenthesised pairs are Python’s representations of the selections: the tool lists each selected pair once, using the input order. That display order does not give the mathematical subset an order. In contrast, <code>orders</code> contains both <code>(’a’, ’b’)</code> and <code>(’b’, ’a’)</code>. The four input records are distinct, as required by our counting argument.</p>
+</div>
+<div class="ds-box ds-definition">
+<div id="definition-10.4-combination-and-binomial-coefficient" class="ds-box-title">
+<p><strong>Definition 10.4: Combination and binomial coefficient</strong></p>
+</div>
+<p>A <strong><span class="math inline">\(k\)</span>-combination</strong> of <span class="math inline">\(n\)</span> distinct objects is a <span class="math inline">\(k\)</span>-element subset of those objects. For integers <span class="math inline">\(0\leq k\leq n\)</span>, its count is <span class="math display">\[\binom nk=\frac{n!}{k!(n-k)!}.\]</span> The notation is read “<span class="math inline">\(n\)</span> choose <span class="math inline">\(k\)</span>”. It is called a <strong>binomial coefficient</strong>; the two stacked numbers do not denote a fraction.</p>
+</div>
+<p>To justify the formula, every <span class="math inline">\(k\)</span>-element subset has exactly <span class="math inline">\(k!\)</span> ordered arrangements. Conversely, every ordered list of <span class="math inline">\(k\)</span> distinct objects belongs to exactly one underlying subset. The lists therefore form equal groups of size <span class="math inline">\(k!\)</span>: <span class="math display">\[P(n,k)=\binom nk\,k!,
+\qquad
+\binom nk=\frac{P(n,k)}{k!}.\]</span> Substituting the formula for <span class="math inline">\(P(n,k)\)</span> gives the stated factorial expression. The argument also works for <span class="math inline">\(k=0\)</span>, with one empty subset and one empty ordering.</p>
+<p><span id="example-10.9."><strong>Example&nbsp;10.9.</strong></span> The system at the start of the chapter selects three of eight distinct records, with no priorities. Each selected set has <span class="math inline">\(3!=6\)</span> possible orders. Thus <span class="math display">\[\binom83
+=\frac{8(7)(6)}{3(2)(1)}
+=\frac{336}{6}=56.\]</span> For the boundary cases, <span class="math inline">\(\binom80=1\)</span> counts the empty subset and <span class="math inline">\(\binom88=1\)</span> counts the full set. Also <span class="math inline">\(\binom00=1\)</span>: the empty set has exactly one subset, itself.</p>
+<p>We will use a counting convention in identities: for <span class="math inline">\(n\geq0\)</span> and an integer <span class="math inline">\(k\)</span> outside <span class="math inline">\(0\leq k\leq n\)</span>, set <span class="math inline">\(\binom nk=0\)</span>. There cannot be a subset of negative size, or one larger than the whole set. This convention does not extend factorials to negative integers. Use the factorial formula only in its stated range.</p>
+<p><span id="example-10.10."><strong>Example&nbsp;10.10.</strong></span> Six students are available. Selecting a three-person team with no roles gives <span class="math inline">\(\binom63=20\)</span> teams. Assigning different students to three named roles gives <span class="math inline">\(P(6,3)=6(5)(4)=120\)</span> assignments.</p>
+<p>Selecting a three-person team and designating one member as leader gives <span class="math inline">\(20(3)=60\)</span> outcomes. Only the leader is distinguished: the other two members are not ordered. Equivalently, choose the leader in six ways and the other two members from the remaining five: <span class="math inline">\(6\binom52=6(10)=60\)</span>.</p>
+<p><span id="example-10.11."><strong>Example&nbsp;10.11.</strong></span> A pool contains four members of Group <span class="math inline">\(H\)</span> and three of Group <span class="math inline">\(S\)</span>, with no person in both groups. A three-person team with exactly two from <span class="math inline">\(H\)</span> and one from <span class="math inline">\(S\)</span> can be chosen in <span class="math display">\[\binom42\binom31=6(3)=18\]</span> ways. Each team determines its <span class="math inline">\(H\)</span>-subset and its <span class="math inline">\(S\)</span>-subset uniquely, so the product counts teams once.</p>
+<p>For teams with at least one member from <span class="math inline">\(S\)</span>, count all <span class="math inline">\(\binom73=35\)</span> teams and exclude the <span class="math inline">\(\binom43=4\)</span> teams drawn entirely from <span class="math inline">\(H\)</span>. The result is <span class="math inline">\(35-4=31\)</span>.</p>
+<p><span id="example-10.12."><strong>Example&nbsp;10.12.</strong></span> Alice and Bob are among eight available students. A three-person team containing Alice is determined by selecting its other two members from the remaining seven: <span class="math inline">\(\binom72=21\)</span>. If Bob must also be excluded, only six candidates remain for those two places, giving <span class="math inline">\(\binom62=15\)</span>.</p>
+<p>To contain at least one of Alice and Bob, exclude the teams containing neither: <span class="math display">\[\binom83-\binom63=56-20=36.\]</span> Adding the Alice-containing and Bob-containing counts without correction would count teams containing both twice.</p>
+</section>
+<section id="ch10:positions" class="level2">
+<h2 class="anchored" data-anchor-id="ch10:positions">10.4 Counting via subsets</h2>
+<p>A final record may have ordered positions even when a combination is the appropriate count. Identify which set of positions or objects determines it.</p>
+<p><span id="ch10:bit-positions"><strong>Example&nbsp;10.13.</strong></span> A length-<span class="math inline">\(5\)</span> bit string with exactly two <span class="math inline">\(1\)</span>s is determined by the two positions containing them. For example, <span class="math display">\[\{1,2\}\longleftrightarrow\texttt{11000},
+\qquad
+\{2,5\}\longleftrightarrow\texttt{01001}.\]</span> There are <span class="math inline">\(\binom52=10\)</span> choices of position set, and hence ten strings. Choosing position <span class="math inline">\(2\)</span> and then <span class="math inline">\(5\)</span> produces the same string as choosing <span class="math inline">\(5\)</span> and then <span class="math inline">\(2\)</span>. <span class="math inline">\(P(5,2)=20\)</span> would count every string twice.</p>
+<p>The string has ordered positions, but the order in which we select its one-positions is not part of the outcome.</p>
+<p><span id="example-10.14."><strong>Example&nbsp;10.14.</strong></span> Form a three-letter string from <span class="math inline">\(\{A,B,C,D,E,F\}\)</span> with distinct letters in strictly increasing alphabetical order. Any three-element subset has exactly one allowed order: <span class="math inline">\(\{B,D,F\}\)</span> produces <code>BDF</code>, for instance. Thus the count is <span class="math inline">\(\binom63=20\)</span>.</p>
+<p>There is no extra factor of <span class="math inline">\(3!\)</span>. The other orders of the same three letters fail the alphabetical condition.</p>
+<p><span id="example-10.15."><strong>Example&nbsp;10.15.</strong></span> Fix a labelled set of five vertices. In a simple undirected graph, an edge is a two-element subset of the vertices, so there are <span class="math inline">\(\binom52=10\)</span> possible edges. Each graph with exactly three edges is determined by a three-element subset of those ten possibilities. There are therefore <span class="math display">\[\binom{10}{3}=\frac{10(9)(8)}{3(2)(1)}=120\]</span> such graphs. Retain all five labelled vertices, including any isolated ones. If any number of edges is allowed, Chapter 9’s yes-or-no choices give <span class="math inline">\(2^{10}=1{,}024\)</span> graphs.</p>
+</section>
+<section id="ch10:counting-proofs" class="level2">
+<h2 class="anchored" data-anchor-id="ch10:counting-proofs">10.5 Combinatorial proofs</h2>
+<div class="ds-box ds-definition">
+<div id="definition-10.5-combinatorial-proof" class="ds-box-title">
+<p><strong>Definition 10.5: Combinatorial proof</strong></p>
+</div>
+<p>A <strong>combinatorial proof</strong> establishes a counting identity by counting one finite collection in two ways, or by giving a reversible correspondence between the objects counted by its two sides.</p>
+</div>
+<p>State what the objects are and explain why each expression counts them. A numerical check can illustrate the identity, but a proof must cover the stated range of parameters.</p>
+<p><span id="ch10:symmetry"><strong>Example&nbsp;10.16. Binomial symmetry.</strong></span> For integers <span class="math inline">\(0\leq k\leq n\)</span>, prove <span class="math display">\[\binom nk=\binom n{n-k}.\]</span> Fix an <span class="math inline">\(n\)</span>-element set <span class="math inline">\(U\)</span>. Every <span class="math inline">\(k\)</span>-element subset <span class="math inline">\(S\)</span> has a unique <span class="math inline">\((n-k)\)</span>-element complement <span class="math inline">\(U\setminus S\)</span>. Conversely, complementing an <span class="math inline">\((n-k)\)</span>-element subset produces a <span class="math inline">\(k\)</span>-element subset. Taking the complement twice returns the original set. The correspondence pairs every subset on one side with exactly one on the other, proving the identity.</p>
+<p>For example, choosing nine of twelve records is equivalent to specifying the three left out: <span class="math inline">\(\binom{12}{9}=\binom{12}{3}=220\)</span>. The complement argument, rather than this one value, proves the formula for all allowed <span class="math inline">\(n,k\)</span>.</p>
+<p><span id="ch10:pascal"><strong>Example&nbsp;10.17. Pascal’s identity.</strong></span> For <span class="math inline">\(n\geq0\)</span> and <span class="math inline">\(0\leq k\leq n+1\)</span>, prove <span class="math display">\[\binom{n+1}{k}=\binom n{k-1}+\binom nk.\]</span> Consider <span class="math inline">\(k\)</span>-element subsets of a set containing Alice and <span class="math inline">\(n\)</span> other people. There are <span class="math inline">\(\binom{n+1}{k}\)</span> such subsets.</p>
+<p>If a subset contains Alice, its remaining <span class="math inline">\(k-1\)</span> members are chosen from the <span class="math inline">\(n\)</span> others: <span class="math inline">\(\binom n{k-1}\)</span> choices. If it does not contain Alice, all <span class="math inline">\(k\)</span> members come from those <span class="math inline">\(n\)</span> others: <span class="math inline">\(\binom nk\)</span> choices. The two cases are disjoint and cover all subsets. The sum rule therefore proves the identity.</p>
+<p>This is <strong>Pascal’s identity</strong>. Our zero convention handles the endpoints. For <span class="math inline">\(k=0\)</span>, the Alice-containing case is impossible; for <span class="math inline">\(k=n+1\)</span>, the Alice-excluding case is impossible. No negative factorial is used.</p>
+<p><span id="example-10.18.-pascals-triangle."><strong>Example&nbsp;10.18. Pascal’s triangle.</strong></span> Arrange <span class="math inline">\(\binom n0,\binom n1,\ldots,\binom nn\)</span> in row <span class="math inline">\(n\)</span>, starting with row <span class="math inline">\(0\)</span>. The first seven rows are:</p>
+<p><img src="../../../teaching/notes/assets/chapter-10/diagram-01.svg" class="ds-note-image img-fluid" loading="lazy" decoding="async" alt="Pascal's triangle for rows n equals 0 through 6, highlighting 6 and 4 in row 4 and their sum 10 in row 5."></p>
+<p>The outside entries are <span class="math inline">\(\binom n0=\binom nn=1\)</span>. Every interior entry is the sum of the two entries immediately above it, by Pascal’s identity. The outlined entries illustrate <span class="math inline">\(\binom53=\binom42+\binom43=6+4=10\)</span>. Complement symmetry explains why each row reads the same from either end.</p>
+<p><span id="ch10:leader"><strong>Example&nbsp;10.19. Teams with a leader.</strong></span> For <span class="math inline">\(n\geq1\)</span> and <span class="math inline">\(1\leq k\leq n\)</span>, prove <span class="math display">\[k\binom nk=n\binom{n-1}{k-1}.\]</span> An outcome is a <span class="math inline">\(k\)</span>-person team selected from <span class="math inline">\(n\)</span> people, with one member designated as leader. Choose the team first in <span class="math inline">\(\binom nk\)</span> ways, then its leader in <span class="math inline">\(k\)</span> ways. This gives the left side.</p>
+<p>Alternatively, choose the leader in <span class="math inline">\(n\)</span> ways, then the other <span class="math inline">\(k-1\)</span> members from the remaining <span class="math inline">\(n-1\)</span> people. This gives the right side. Each method specifies the same team and leader exactly once, so the counts are equal. For <span class="math inline">\(n=6,k=3\)</span>, the two methods give <span class="math inline">\(3\binom63=6\binom52=60\)</span>.</p>
+<p><span id="ch10:row-sum"><strong>Example&nbsp;10.20. Binomial row sum.</strong></span> For every integer <span class="math inline">\(n\geq0\)</span>, prove <span class="math display">\[\sum_{j=0}^{n}\binom nj=2^n.\]</span> The sum adds the counts for sizes <span class="math inline">\(0,1,\ldots,n\)</span>. Fix an <span class="math inline">\(n\)</span>-element set <span class="math inline">\(U\)</span>. Its subsets split into disjoint cases according to their size. Adding the case counts gives the left-hand side.</p>
+<p>Alternatively, for each element of <span class="math inline">\(U\)</span>, decide whether to include it or exclude it. These <span class="math inline">\(n\)</span> yes-or-no choices specify a subset once and give <span class="math inline">\(2^n\)</span> outcomes, as in Chapter 9. Both counts include every subset, including <span class="math inline">\(\varnothing\)</span>, so they are equal. For <span class="math inline">\(n=0\)</span>, both sides are <span class="math inline">\(1\)</span>.</p>
+</section>
+<section id="ch10:induction" class="level2">
+<h2 class="anchored" data-anchor-id="ch10:induction">10.6 Row sums by induction</h2>
+<p>The counting proof explains the subsets. We can also derive the same identity from Pascal’s identity using Chapter 5’s ordinary induction.</p>
+<p><span id="ch10:row-induction"><strong>Example&nbsp;10.21.</strong></span> Let <span class="math inline">\(P(n)\)</span> be the statement <span class="math inline">\(\sum_{j=0}^{n}\binom nj=2^n\)</span>, for integers <span class="math inline">\(n\geq0\)</span>.</p>
+<p><em>Base case.</em> When <span class="math inline">\(n=0\)</span>, the sum has one term: <span class="math inline">\(\binom00=1=2^0\)</span>.</p>
+<p><em>Inductive step.</em> Fix <span class="math inline">\(m\geq0\)</span> and assume <span class="math display">\[\sum_{j=0}^{m}\binom mj=2^m.\]</span> We must prove the corresponding row sum for <span class="math inline">\(m+1\)</span>. Pascal’s identity, including the zero endpoint terms, gives <span class="math display">\[\sum_{j=0}^{m+1}\binom{m+1}{j}
+=
+\sum_{j=0}^{m+1}\binom m{j-1}
++
+\sum_{j=0}^{m+1}\binom mj.\]</span> In the first sum on the right, <span class="math inline">\(j=0\)</span> contributes <span class="math inline">\(\binom m{-1}=0\)</span>. The remaining terms are exactly <span class="math inline">\(\binom m0,\binom m1,\ldots,\binom mm\)</span>. In the second sum, those same row-<span class="math inline">\(m\)</span> terms appear, followed by <span class="math inline">\(\binom m{m+1}=0\)</span>. Each sum is therefore <span class="math inline">\(2^m\)</span> by the inductive hypothesis. The new row sum is <span class="math display">\[2^m+2^m=2^{m+1},\]</span> as required. Induction proves the identity for every <span class="math inline">\(n\geq0\)</span>. <span class="math inline">\(\square\)</span></p>
+<p>The extra endpoint terms were zero counts of impossible subset sizes. The inductive hypothesis was used only for the row indexed by <span class="math inline">\(m\)</span>.</p>
+</section>
+<section id="ch10:binomial" class="level2">
+<h2 class="anchored" data-anchor-id="ch10:binomial">10.7 Binomial expansions</h2>
+<p>A <strong>binomial</strong> is a sum of two terms. When we multiply copies of <span class="math inline">\(x+y\)</span>, distribution chooses one term from each copy. A coefficient records how many contributions produce the same powers of <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span>.</p>
+<p><span id="example-10.22."><strong>Example&nbsp;10.22.</strong></span> Expand <span class="math inline">\((x+y)^3=(x+y)(x+y)(x+y)\)</span>. Label the factors <span class="math inline">\(1,2,3\)</span>. Each contribution is determined by the positions from which <span class="math inline">\(y\)</span> is chosen; the other factors supply <span class="math inline">\(x\)</span>.</p>
+<div class="ds-table">
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: center;">Positions supplying <span class="math inline">\(y\)</span></th>
+<th style="text-align: left;">Product</th>
+<th style="text-align: center;">Number of choices</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(\varnothing\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(x^3\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(1\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(\{1\},\{2\},\{3\}\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(x^2y\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(3\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(\{1,2\},\{1,3\},\{2,3\}\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(xy^2\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(3\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(\{1,2,3\}\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(y^3\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(1\)</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>For instance, selecting <span class="math inline">\(y\)</span> from factors <span class="math inline">\(1,3\)</span> and <span class="math inline">\(x\)</span> from factor <span class="math inline">\(2\)</span> contributes <span class="math inline">\(yxy=xy^2\)</span>. Collecting all eight contributions gives <span class="math display">\[(x+y)^3=x^3+3x^2y+3xy^2+y^3.\]</span> The coefficients are <span class="math inline">\(\binom30,\binom31,\binom32,\binom33\)</span>.</p>
+<div class="ds-box ds-definition">
+<div id="definition-10.6-binomial-theorem" class="ds-box-title">
+<p><strong>Definition 10.6: Binomial theorem</strong></p>
+</div>
+<p>For a nonnegative integer <span class="math inline">\(n\)</span>, the polynomial identity <span class="math display">\[(x+y)^n=\sum_{j=0}^{n}\binom nj x^{n-j}y^j\]</span> is the <strong>binomial theorem</strong>. The coefficient of <span class="math inline">\(x^{n-j}y^j\)</span> is <span class="math inline">\(\binom nj\)</span>. When <span class="math inline">\(n=0\)</span>, both sides are the constant polynomial <span class="math inline">\(1\)</span>.</p>
+</div>
+<p>For general <span class="math inline">\(n\)</span>, choose the <span class="math inline">\(j\)</span> factors supplying <span class="math inline">\(y\)</span>. There are <span class="math inline">\(\binom nj\)</span> such position sets. Every one contributes <span class="math inline">\(x^{n-j}y^j\)</span>, and every contribution with those powers comes from one of the sets. This proves the coefficient formula. Summing over <span class="math inline">\(j=0,\ldots,n\)</span> accounts for all choices.</p>
+<p><span id="example-10.23."><strong>Example&nbsp;10.23.</strong></span> In <span class="math inline">\((x+2)^4\)</span>, replace <span class="math inline">\(y\)</span> by <span class="math inline">\(2\)</span> in the theorem: <span class="math display">\[\begin{aligned}
+(x+2)^4
+&amp;=x^4+4x^3(2)+6x^2(2^2)+4x(2^3)+2^4\\
+&amp;=x^4+8x^3+24x^2+32x+16.
+\end{aligned}\]</span> For the <span class="math inline">\(x^2\)</span> term, choose two factors to supply <span class="math inline">\(2\)</span> and two to supply <span class="math inline">\(x\)</span>. Its coefficient is <span class="math inline">\(\binom42\,2^2=6(4)=24\)</span>. Using just <span class="math inline">\(\binom42=6\)</span> would omit the contribution from the two selected constants.</p>
+<p><span id="example-10.24."><strong>Example&nbsp;10.24.</strong></span> For <span class="math inline">\((1+3x)^5\)</span>, an <span class="math inline">\(x^2\)</span> contribution must select <span class="math inline">\(3x\)</span> from exactly two factors. Choose those factors in <span class="math inline">\(\binom52=10\)</span> ways. Each contribution supplies <span class="math inline">\((3x)^2=9x^2\)</span>, so the coefficient is <span class="math inline">\(10(9)=90\)</span>.</p>
+<p>The same method retains signs. For the coefficient of <span class="math inline">\(x^4\)</span> in <span class="math inline">\((x-2)^5\)</span>, choose the one factor supplying <span class="math inline">\(-2\)</span>. The other four supply <span class="math inline">\(x\)</span>, giving coefficient <span class="math inline">\(\binom51(-2)=-10\)</span>. The binomial coefficient counts the position choices. The constants in each selected product supply its additional numerical factor.</p>
+</section>
+<section id="ch10:exercises" class="level2">
+<h2 class="anchored" data-anchor-id="ch10:exercises">10.8 Exercises</h2>
+<div class="ds-exercises" style="--ds-chapter: '10';">
+<ol type="1">
+<li><p><span id="ch10ex:factorials" data-label="ch10ex:factorials"></span> Evaluate or simplify. In part (f), <span class="math inline">\(n\)</span> is an integer with <span class="math inline">\(n\geq0\)</span>.</p>
+<ol type="a">
+<li><p><span class="math inline">\(0!\)</span>.</p></li>
+<li><p><span class="math inline">\(1!\)</span>.</p></li>
+<li><p><span class="math inline">\(4!\)</span>.</p></li>
+<li><p><span class="math inline">\(\dfrac{6!}{3!}\)</span>.</p></li>
+<li><p><span class="math inline">\(\dfrac{8!}{6!\,2!}\)</span>.</p></li>
+<li><p><span class="math inline">\(\dfrac{(n+1)!}{n!}\)</span>.</p></li>
+</ol></li>
+<li><p><span id="ch10ex:small" data-label="ch10ex:small"></span> Alice, Bob and Charlie are available. List all speaking orders using all three people. Then list all two-person teams with no roles. Explain what constitutes one outcome in each task.</p></li>
+<li><p><span id="ch10ex:complete" data-label="ch10ex:complete"></span> Six distinct jobs must be scheduled in a line. Count schedules with:</p>
+<ol type="a">
+<li><p>no restriction;</p></li>
+<li><p>one particular job fixed first;</p></li>
+<li><p>two particular jobs occupying the first two positions, in either order.</p></li>
+</ol></li>
+<li><p><span id="ch10ex:partial" data-label="ch10ex:partial"></span> Evaluate:</p>
+<ol type="a">
+<li><p><span class="math inline">\(P(8,3)\)</span>.</p></li>
+<li><p><span class="math inline">\(P(6,2)\)</span>.</p></li>
+<li><p><span class="math inline">\(P(5,0)\)</span>.</p></li>
+<li><p><span class="math inline">\(P(4,4)\)</span>.</p></li>
+<li><p><span class="math inline">\(P(0,0)\)</span>.</p></li>
+</ol>
+<p>How many ordered lists of five distinct objects can be formed from only three available objects? Explain why the factorial quotient cannot be used with <span class="math inline">\(n=3,k=5\)</span>.</p></li>
+<li><p><span id="ch10ex:zeros" data-label="ch10ex:zeros"></span> Use <span class="math inline">\(\{0,1,2,3,4,5\}\)</span> without repetition.</p>
+<ol type="a">
+<li><p>Count four-character codes, allowing a leading zero.</p></li>
+<li><p>Count four-digit positive integers.</p></li>
+<li><p>Count the codes beginning with zero. Explain how the three counts are related.</p></li>
+</ol></li>
+<li><p><span id="ch10ex:functions" data-label="ch10ex:functions"></span> Let <span class="math inline">\(F=\{p,q,r\}\)</span> and <span class="math inline">\(S=\{1,2,3,4,5,6\}\)</span>. Count functions <span class="math inline">\(f:F\to S\)</span> with:</p>
+<ol type="a">
+<li><p>no restriction;</p></li>
+<li><p>injectivity;</p></li>
+<li><p>injectivity and <span class="math inline">\(f(p)=1\)</span>.</p></li>
+</ol>
+<p>Explain the available choices of image at each stage.</p></li>
+<li><p><span id="ch10ex:group-pairs" data-label="ch10ex:group-pairs"></span> List the two-element subsets of <span class="math inline">\(\{a,b,c,d,e\}\)</span>. For each, write its two ordered pairs. Use the grouping to justify the relation between <span class="math inline">\(P(5,2)\)</span> and <span class="math inline">\(\binom52\)</span>.</p></li>
+<li><p><span id="ch10ex:coefficients" data-label="ch10ex:coefficients"></span> Evaluate, using symmetry where convenient. Use the zero convention rather than negative factorials.</p>
+<ol type="a">
+<li><p><span class="math inline">\(\binom92\)</span>.</p></li>
+<li><p><span class="math inline">\(\binom97\)</span>.</p></li>
+<li><p><span class="math inline">\(\binom60\)</span>.</p></li>
+<li><p><span class="math inline">\(\binom66\)</span>.</p></li>
+<li><p><span class="math inline">\(\binom00\)</span>.</p></li>
+<li><p><span class="math inline">\(\binom45\)</span>.</p></li>
+<li><p><span class="math inline">\(\binom4{-1}\)</span>.</p></li>
+</ol></li>
+<li><p><span id="ch10ex:roles" data-label="ch10ex:roles"></span> Eight students are available. Count outcomes for:</p>
+<ol type="a">
+<li><p>selecting a three-person team with no roles;</p></li>
+<li><p>assigning different students to three named roles;</p></li>
+<li><p>selecting a three-person team with one designated leader.</p></li>
+</ol>
+<p>Describe why the outcomes differ.</p></li>
+<li><p><span id="ch10ex:groups" data-label="ch10ex:groups"></span> There are five members of Group <span class="math inline">\(A\)</span> and four of Group <span class="math inline">\(B\)</span>, with no overlap. Count four-person teams containing:</p>
+<ol type="a">
+<li><p>exactly two members of each group;</p></li>
+<li><p>at least one member of Group <span class="math inline">\(B\)</span>;</p></li>
+<li><p>at most one member of Group <span class="math inline">\(B\)</span>.</p></li>
+</ol>
+<p>Explain each product, sum or complement used.</p></li>
+<li><p><span id="ch10ex:particular" data-label="ch10ex:particular"></span> Alice and Bob are among ten available students. Count four-person teams satisfying:</p>
+<ol type="a">
+<li><p>Alice is included.</p></li>
+<li><p>Alice is included and Bob excluded.</p></li>
+<li><p>Alice and Bob are both included.</p></li>
+<li><p>At least one of Alice and Bob is included.</p></li>
+</ol></li>
+<li><p><span id="ch10ex:underlying-set" data-label="ch10ex:underlying-set"></span> Give the count and explain the underlying subset in each case.</p>
+<ol type="a">
+<li><p>Three distinct letters from <span class="math inline">\(\{A,B,C,D,E,F,G,H\}\)</span> in strictly increasing alphabetical order.</p></li>
+<li><p>A length-<span class="math inline">\(6\)</span> bit string with exactly two <span class="math inline">\(1\)</span>s.</p></li>
+</ol>
+<p>Why is a permutation count inappropriate for each task?</p></li>
+<li><p><span id="ch10ex:bit-strings" data-label="ch10ex:bit-strings"></span> Consider length-<span class="math inline">\(8\)</span> bit strings with exactly three <span class="math inline">\(1\)</span>s. Count those:</p>
+<ol type="a">
+<li><p>with no additional restriction;</p></li>
+<li><p>starting with <span class="math inline">\(1\)</span>;</p></li>
+<li><p>ending with <code>00</code>;</p></li>
+<li><p>starting with <span class="math inline">\(1\)</span> or ending with <code>00</code>.</p></li>
+</ol>
+<p>In part (d), identify the intersection and state how many positions remain free there.</p></li>
+<li><p><span id="ch10ex:graphs" data-label="ch10ex:graphs"></span> Fix the labelled vertex set <span class="math inline">\(V=\{a,b,c,d,e,f\}\)</span>. Graphs are simple and undirected.</p>
+<ol type="a">
+<li><p>How many edges are available?</p></li>
+<li><p>How many graphs on <span class="math inline">\(V\)</span> have exactly three edges?</p></li>
+<li><p>How many of those contain <span class="math inline">\(\{a,b\}\)</span>?</p></li>
+<li><p>How many of those omit <span class="math inline">\(\{a,b\}\)</span>?</p></li>
+</ol>
+<p>Check that parts (c) and (d) add to part (b). Keep all six labelled vertices in every graph.</p></li>
+<li><p><span id="ch10ex:unequal-classes" data-label="ch10ex:unequal-classes"></span> Group the four strings <span class="math display">\[\texttt{00},\quad\texttt{01},\quad
+\texttt{10},\quad\texttt{11}\]</span> according to their number of <span class="math inline">\(1\)</span>s. Grace divides <span class="math inline">\(4\)</span> by <span class="math inline">\(2\)</span>, arguing that <code>01</code> and <code>10</code> describe the same group. List the actual groups and explain why her division does not count them.</p></li>
+<li><p><span id="ch10ex:symmetry" data-label="ch10ex:symmetry"></span> For <span class="math inline">\(U=\{a,b,c,d,e\}\)</span>, describe the complement correspondence between three-element and two-element subsets, and give the image of <span class="math inline">\(\{a,c,e\}\)</span>. Explain its reverse, then use the same argument to prove <span class="math inline">\(\binom nk=\binom n{n-k}\)</span> for all integers <span class="math inline">\(0\leq k\leq n\)</span>.</p></li>
+<li><p><span id="ch10ex:pascal" data-label="ch10ex:pascal"></span> For <span class="math inline">\(n\geq0\)</span> and <span class="math inline">\(0\leq k\leq n+1\)</span>, consider all length-<span class="math inline">\((n+1)\)</span> bit strings with exactly <span class="math inline">\(k\)</span> ones. Classify them by their first bit and prove <span class="math display">\[\binom{n+1}{k}=\binom n{k-1}+\binom nk.\]</span> Explain how the zero convention handles <span class="math inline">\(k=0\)</span> and <span class="math inline">\(k=n+1\)</span>.</p></li>
+<li><p><span id="ch10ex:triangle" data-label="ch10ex:triangle"></span> Use Pascal’s identity to construct rows <span class="math inline">\(7\)</span> and <span class="math inline">\(8\)</span> of Pascal’s triangle, with the top row numbered <span class="math inline">\(0\)</span>. Check the middle entry of row <span class="math inline">\(8\)</span> by computing <span class="math inline">\(\binom84\)</span> from factorials. Explain why every row has matching entries at equal distances from its ends.</p></li>
+<li><p><span id="ch10ex:marked-bit" data-label="ch10ex:marked-bit"></span> For <span class="math inline">\(1\leq k\leq n\)</span>, an outcome consists of a length-<span class="math inline">\(n\)</span> bit string with exactly <span class="math inline">\(k\)</span> ones, and one of those one-positions marked. Count by choosing the string first and by choosing the marked position first. Use the two counts to prove <span class="math display">\[k\binom nk=n\binom{n-1}{k-1}.\]</span> Explain why the marked position is excluded from the later choice of <span class="math inline">\(k-1\)</span> positions.</p></li>
+<li><p><span id="ch10ex:row-sum" data-label="ch10ex:row-sum"></span> For an <span class="math inline">\(n\)</span>-element set, with <span class="math inline">\(n\geq2\)</span>:</p>
+<ol type="a">
+<li><p>Explain why <span class="math inline">\(\sum_{j=0}^{n}\binom nj\)</span> counts all subsets.</p></li>
+<li><p>How many nonempty subsets are there? Identify the term omitted from the full sum.</p></li>
+<li><p>How many subsets have at least two elements? Explain the additional term removed.</p></li>
+</ol></li>
+<li><p><span id="ch10ex:induction" data-label="ch10ex:induction"></span> Prove <span class="math inline">\(\sum_{j=0}^{n}\binom nj=2^n\)</span> for all <span class="math inline">\(n\geq0\)</span> by ordinary induction, using Pascal’s identity. State the base case and the inductive hypothesis. In the step from <span class="math inline">\(m\)</span> to <span class="math inline">\(m+1\)</span>, identify the two zero endpoint terms before applying the hypothesis.</p></li>
+<li><p><span id="ch10ex:expand" data-label="ch10ex:expand"></span> Use the binomial theorem to expand:</p>
+<ol type="a">
+<li><p><span class="math inline">\((x+1)^5\)</span>.</p></li>
+<li><p><span class="math inline">\((2x+1)^4\)</span>.</p></li>
+</ol>
+<p>Explain one non-endpoint coefficient in each expansion by describing the choices from the factors.</p></li>
+<li><p><span id="ch10ex:extract" data-label="ch10ex:extract"></span> Find the coefficient of:</p>
+<ol type="a">
+<li><p><span class="math inline">\(x^3\)</span> in <span class="math inline">\((1+2x)^6\)</span>;</p></li>
+<li><p><span class="math inline">\(x^4\)</span> in <span class="math inline">\((x+3)^7\)</span>;</p></li>
+<li><p><span class="math inline">\(x^5\)</span> in <span class="math inline">\((2x-1)^6\)</span>.</p></li>
+</ol>
+<p>Identify which terms are selected from how many factors, including any constant powers and signs.</p></li>
+<li><p><span id="ch10ex:flawed" data-label="ch10ex:flawed"></span></p>
+<ol type="a">
+<li><p>Mike gives <span class="math inline">\(7!/3!\)</span> for the number of three-element subsets of seven records. What ordered arrangements does that quotient count? Give the correct subset count.</p></li>
+<li><p>Judy says that the coefficient of <span class="math inline">\(x^2\)</span> in <span class="math inline">\((1+2x)^4\)</span> is <span class="math inline">\(\binom42\)</span>. Identify the missing factor and give the coefficient.</p></li>
+</ol></li>
+<li><p><span id="ch10ex:all-graphs" data-label="ch10ex:all-graphs"></span> Fix a labelled set of five vertices. Use the ten possible edges to explain combinatorially why <span class="math display">\[\sum_{j=0}^{10}\binom{10}{j}=2^{10}.\]</span> Describe the graph outcomes counted by each term and why the cases are disjoint and exhaustive.</p></li>
+<li><p><span id="ch10ex:leader-error" data-label="ch10ex:leader-error"></span> David proposes <span class="math display">\[3\binom83=8\binom73,\]</span> claiming that both sides count three-person teams with one designated leader. Describe the outcomes actually counted by each side. Correct the identity and explain how the second construction must change.</p></li>
+</ol>
+</div>
+<div class="ds-chapter-navigation">
+<p><a href="../../../teaching/notes/chapter-09/">← Chapter 9</a> · <a href="../../../teaching/notes/chapter-11/">Chapter 11 →</a></p>
+</div>
+
+
+</section>
+
+<a href="#page-top" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
+<script>
+  (() => {
+    const main = document.getElementById("quarto-document-content");
+    const skipLink = document.querySelector(".skip-link");
+
+    if (skipLink && main) {
+      skipLink.addEventListener("click", () => {
+        window.requestAnimationFrame(() => main.focus({ preventScroll: true }));
+      });
+    }
+  })();
+</script>
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/rjnieto\.com");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>© 2026 RJ Nieto</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+<p>Built with Quarto</p>
+</div>
+  </div>
+</footer>
+
+
+
+
+</body></html>
