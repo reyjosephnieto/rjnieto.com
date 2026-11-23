@@ -41,6 +41,11 @@ if [ -f "$site_dir/search.json" ]; then
 
     my %seen_href;
     my @unique_records;
+    my %moved_teaching_sections = map { $_ => 1 } qw(
+      changelog logistics no-class-saturdays class-format assessment
+      assessment-dates mathematical-corrections final-examination-exemption
+      problem-sheets course-policies about-me
+    );
 
     # Work backwards so that, when Quarto has appended a refreshed record,
     # the newest content and its native index.html objectID survive.
@@ -58,6 +63,12 @@ if [ -f "$site_dir/search.json" ]; then
               discrete-mathematics|math-modern-world|living-it-era)|mmw)
           /?(?:[?#]|\z)
         }x;
+
+        # Relocated sections can survive an incremental Teaching render.
+        # Match only the old landing page, keeping both new subpages intact.
+        if ($record->{href} =~ m{\A/?teaching/?(?:\?[^#]*)?\#([^#]+)\z}) {
+          next if exists $moved_teaching_sections{$1};
+        }
 
         # A destination anchor should yield one search result. Quarto can
         # retain duplicate records after incremental renders.

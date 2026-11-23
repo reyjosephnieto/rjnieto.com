@@ -48,6 +48,7 @@ header-includes: |
   }
   </script>
 toc: false
+body-classes: home-research-page
 ---
 
 ::: {.home-intro}
@@ -74,7 +75,8 @@ I teach [*Discrete Mathematics*](teaching/index.qmd) part-time at
 Campus. I previously taught *Mathematics in the Modern World*
 and *Living in the IT Era* at the
 [San Rafael](https://bulsu.edu.ph/academics/campus/San%20Rafael){target="_blank" rel="noopener"}
-Campus.
+Campus, and was a teaching assistant for *Mathematical Programming* at the
+[University of Bristol School of Mathematics](https://www.bristol.ac.uk/maths/){target="_blank" rel="noopener"}.
 
 ## Writing
 

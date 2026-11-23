@@ -1,19 +1,11 @@
 /* css styles */
-/* Academic-journal styling for the personal website */
+/* Shared layouts; palette and component colours live in site-theme.scss. */
 
-:root {
-  --ink: #252422;
-  --muted-ink: #6b6862;
-  --paper: #fffefa;
-  --rule: #d9d5cc;
-  --accent: #732c35;
-  --accent-dark: #48171d;
-}
 
 body {
   color: var(--ink);
   background-color: var(--paper);
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: var(--site-font, "IBM Plex Sans", Arial, sans-serif);
   font-size: 1.06rem;
   line-height: 1.75;
 }
@@ -31,10 +23,10 @@ body {
   z-index: 1100;
   padding: 0.65rem 0.9rem;
   color: #fff;
-  background: var(--accent-dark);
+  background: #173248;
   border: 2px solid #fff;
   border-radius: 0.25rem;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--site-font, "IBM Plex Sans", Arial, sans-serif);
   font-weight: 700;
   line-height: 1.25;
   text-decoration: none;
@@ -68,21 +60,20 @@ body {
 }
 
 .navbar {
-  background-color: var(--paper) !important;
   border-bottom: 1px solid var(--rule);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--site-font, "IBM Plex Sans", Arial, sans-serif);
 }
 
 .navbar-title {
   color: var(--ink);
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: var(--site-font, "IBM Plex Sans", Arial, sans-serif);
   font-size: 1.2rem;
   font-weight: normal;
   letter-spacing: 0.02em;
 }
 
 .navbar-nav .nav-link {
-  color: #46433f;
+  color: var(--muted-ink);
   font-size: 0.92rem;
 }
 
@@ -96,7 +87,7 @@ h2,
 h3,
 h4 {
   color: var(--ink);
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: var(--site-font, "IBM Plex Sans", Arial, sans-serif);
   font-weight: normal;
   line-height: 1.25;
 }
@@ -164,7 +155,7 @@ a.cv-institution {
 blockquote {
   margin: 1.75rem 0;
   padding-left: 1.25rem;
-  color: #4d4944;
+  color: var(--muted-ink);
   border-left: 3px solid var(--accent);
   font-style: italic;
 }
@@ -174,7 +165,7 @@ code {
 }
 
 pre {
-  border: 1px solid #e3dfd7;
+  border: 1px solid var(--rule);
   border-radius: 3px;
 }
 
@@ -191,7 +182,7 @@ pre {
 .definition {
   margin: 1.6rem 0;
   padding: 1rem 1.15rem;
-  background: #f8f6f1;
+  background: var(--site-surface);
   border-left: 4px solid var(--accent);
   border-radius: 2px;
 }
@@ -200,7 +191,7 @@ pre {
 .remark {
   margin: 1.4rem 0;
   padding: 0.85rem 1.05rem;
-  background: #fff;
+  background: var(--site-surface);
   border: 1px solid var(--rule);
   border-radius: 2px;
 }
@@ -238,7 +229,7 @@ pre {
 .sidebar,
 #TOC,
 .page-footer {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--site-font, "IBM Plex Sans", Arial, sans-serif);
 }
 
 #TOC {
@@ -360,7 +351,7 @@ img.profile-photo {
 .calculated-entry > p:first-of-type {
   margin: 0;
   color: var(--muted-ink);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--site-font, "IBM Plex Sans", Arial, sans-serif);
   font-size: 0.9rem;
 }
 
@@ -372,7 +363,7 @@ img.profile-photo {
 
 .calculated-excerpt p {
   margin: 0;
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: var(--site-font, "IBM Plex Sans", Arial, sans-serif);
   font-size: 1rem;
 }
 
@@ -446,7 +437,9 @@ img.profile-photo {
   text-align: left;
 }
 
-.discrete-course-page .discrete-chapter-details h3 {
+.discrete-course-page .discrete-chapter-details :is(h2, h3) {
+  padding-bottom: 0;
+  border-bottom: 0;
   margin: 0 0 0.5rem;
   font-size: 1.35rem;
 }
@@ -467,7 +460,7 @@ img.profile-photo {
   line-height: 1.5;
 }
 
-.discrete-course-page .discrete-chapter-pdf {
+.discrete-course-page :is(.discrete-chapter-pdf, .discrete-chapter-html) {
   font-size: 0.92rem;
 }
 
@@ -543,7 +536,7 @@ img.profile-photo {
   display: inline-block;
   margin-top: 0.7rem;
   white-space: nowrap;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--site-font, "IBM Plex Sans", Arial, sans-serif);
 }
 
 @media (max-width: 768px) {

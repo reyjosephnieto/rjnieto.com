@@ -210,7 +210,4 @@ model for future cohorts.
 
 ## Email
 
-- **Preferred:** rj (at) rjnieto (dot) com
-- **UCL:** rey.nieto.26 (at) ucl (dot) ac (dot) uk
-- **Johns Hopkins:** rnieto4 (at) jhu (dot) edu
-- **Bristol:** zo23232 (at) alumni (dot) bristol (dot) ac (dot) uk
+rj (at) rjnieto (dot) com

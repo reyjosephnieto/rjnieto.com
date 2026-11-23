@@ -1,0 +1,217 @@
+/*-- scss:defaults --*/
+
+// Shared palette, including Bootstrap and Quarto's search and navigation UI.
+$body-bg: #111b26;
+$body-color: #f1f0e9;
+$primary: #edce91;
+$secondary: #bac7d0;
+$light: #213143;
+$dark: #0c141e;
+$border-color: #394b5a;
+$link-color: $primary;
+$link-hover-color: #fff2cc;
+$headings-color: $body-color;
+$text-muted: #bac7d0;
+$min-contrast-ratio: 4.5;
+$font-family-sans-serif: "IBM Plex Sans", "Helvetica Neue", Arial, sans-serif;
+$web-font-path: false;
+
+$navbar-bg: #0c141e;
+$navbar-fg: #bac7d0;
+$navbar-hl: $primary;
+$navbar-brand: $body-color;
+$sidebar-bg: $body-bg;
+$sidebar-fg: #bac7d0;
+$toc-color: #bac7d0;
+$toc-active-border: $primary;
+$toc-inactive-border: $border-color;
+$footer-bg: #0c141e;
+$footer-fg: #bac7d0;
+
+$table-color: $body-color;
+$table-bg: transparent;
+$table-border-color: $border-color;
+$table-striped-bg: #1a2a3b;
+$table-hover-bg: #20374a;
+$input-bg: #162331;
+$input-color: $body-color;
+$input-border-color: #647b8e;
+$input-placeholder-color: #bac7d0;
+$input-focus-bg: #162331;
+$input-focus-color: $body-color;
+$input-focus-border-color: $primary;
+$dropdown-bg: #162331;
+$dropdown-color: $body-color;
+$dropdown-border-color: $border-color;
+$dropdown-link-color: $body-color;
+$dropdown-link-hover-color: $body-color;
+$dropdown-link-hover-bg: #273d50;
+$dropdown-link-active-color: #111b26;
+$dropdown-link-active-bg: $primary;
+$card-bg: #162331;
+$card-border-color: $border-color;
+$modal-content-bg: #162331;
+$modal-content-color: $body-color;
+$popover-bg: #162331;
+$popover-body-color: $body-color;
+$popover-header-color: $body-color;
+$popover-border-color: $border-color;
+$code-color: #ead9b4;
+$code-bg: #182638;
+$code-block-bg: #142131;
+
+/*-- scss:rules --*/
+
+:root {
+  color-scheme: dark;
+  --ink: #{$body-color};
+  --muted-ink: #bac7d0;
+  --paper: #{$body-bg};
+  --rule: #{$border-color};
+  --accent: #{$primary};
+  --accent-dark: #{$link-hover-color};
+  --site-surface: #162331;
+}
+
+.navbar {
+  background-color: rgb(12 20 30 / 90%) !important;
+}
+
+.navbar-nav .nav-link {
+  color: var(--muted-ink);
+}
+
+.nav-footer {
+  color: var(--muted-ink);
+  background: rgb(12 20 30 / 85%);
+}
+
+.navbar-title,
+#quarto-search,
+#quarto-search .aa-DetachedSearchButtonIcon {
+  color: var(--ink);
+}
+
+.nav-footer a {
+  color: var(--accent);
+}
+
+a:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
+}
+
+.skip-link {
+  color: #fff;
+  background: #173248;
+}
+
+img.profile-photo {
+  border-color: rgb(237 206 145 / 65%);
+}
+
+blockquote {
+  color: var(--muted-ink);
+}
+
+.theorem, .lemma, .proposition, .corollary, .definition,
+.example, .remark {
+  background: var(--site-surface);
+}
+
+.btn-outline-secondary {
+  --bs-btn-color: #bac7d0;
+  --bs-btn-border-color: #8196a6;
+}
+
+// Announcements keep their established red meaning on the shared dark palette.
+div.callout-important.callout {
+  border-color: #9b5d67;
+  border-left-color: #e199a4;
+  background: #301f2b;
+}
+
+div.callout-important.callout .callout-header {
+  color: #ffe3e8;
+  background: #432630;
+}
+
+// A solid surface keeps a search result or footnote readable over the geometry.
+.aa-DetachedOverlay,
+.aa-DetachedContainer,
+.aa-Panel,
+.tippy-box[data-theme~="quarto"] {
+  color: var(--ink);
+  background: var(--site-surface);
+}
+
+body :is(.aa-DetachedOverlay, #quarto-search-results)
+    li.aa-Item[aria-selected="false"] .search-item mark.search-match {
+  color: #111b26;
+  background-color: #edce91;
+}
+
+@media print {
+  :root {
+    color-scheme: light;
+    --ink: #252422;
+    --muted-ink: #535a60;
+    --paper: #fff;
+    --rule: #b7c4cb;
+    --accent: #194f70;
+    --accent-dark: #133e58;
+    --site-surface: #f5f7f9;
+    --bs-body-color: #252422;
+    --bs-body-bg: #fff;
+  }
+
+  body, #quarto-content, main {
+    color: var(--ink);
+    background: #fff;
+  }
+
+  .navbar, .nav-footer {
+    color: var(--ink);
+    background: #fff !important;
+  }
+
+  .table {
+    --bs-table-color: #252422;
+    --bs-table-bg: transparent;
+    --bs-table-border-color: #b7c4cb;
+  }
+
+  .btn-outline-primary, .btn-outline-secondary {
+    --bs-btn-color: #194f70;
+    --bs-btn-border-color: #194f70;
+  }
+
+  div.callout-important.callout,
+  div.callout-important.callout .callout-header {
+    color: #252422;
+    background: #fff;
+  }
+}
+
+@media (forced-colors: active) {
+  :root {
+    color-scheme: light dark;
+    --ink: CanvasText;
+    --muted-ink: CanvasText;
+    --paper: Canvas;
+    --rule: CanvasText;
+    --accent: LinkText;
+    --accent-dark: LinkText;
+    --site-surface: Canvas;
+  }
+
+  .navbar, .nav-footer {
+    background: Canvas !important;
+  }
+
+  .table {
+    --bs-table-color: CanvasText;
+    --bs-table-bg: Canvas;
+    --bs-table-border-color: CanvasText;
+  }
+}

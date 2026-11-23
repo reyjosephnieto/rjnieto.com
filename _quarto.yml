@@ -9,6 +9,11 @@ project:
     - "!kitchen/**"
     - "!agents2.md"
   resources:
+    - assets/js/discrete-course-redirect.js
+    - assets/js/home-research-background.js
+    - assets/js/discrete-notes-layout.js
+    - "assets/fonts/ibm-plex-sans/*.woff2"
+    - assets/fonts/ibm-plex-sans/OFL.txt
     - about.html
     - computational-topology/index.html
     - mathematics/year-4-h1/index.html
@@ -45,7 +50,7 @@ website:
     card-style: summary_large_image
 
   navbar:
-    background: light
+    background: dark
     left:
       - href: index.qmd
         text: Home
@@ -68,9 +73,16 @@ website:
 
 format:
   html:
-    theme: cosmo
-    css: styles.css
-    include-in-header: includes/identity-metadata.html
+    theme:
+      - cosmo
+      - assets/css/site-theme.scss
+    css:
+      - styles.css
+      - assets/css/site-typography.css
+      - assets/css/home-research-background.css
+    include-in-header:
+      - includes/identity-metadata.html
+      - includes/site-presentation.html
     include-before-body: includes/accessibility-before-body.html
     include-after-body: includes/accessibility-after-body.html
     toc: true

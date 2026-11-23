@@ -1,0 +1,24 @@
+---
+title: "Changelog"
+subtitle: "Discrete Mathematics · IT 104"
+description: "Updates to the Discrete Mathematics course page and lecture notes."
+image: "/assets/images/discrete-math-feature.png"
+image-alt: "Blue, teal and gold mathematical structures"
+canonical-url: "https://rjnieto.com/teaching/changelog/"
+header-includes: |
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta property="og:url" content="https://rjnieto.com/teaching/changelog/">
+  <meta property="og:type" content="article">
+toc: false
+body-classes: discrete-course-page
+---
+
+[Course page](../index.qmd) · [Logistics](../logistics/index.qmd)
+
+::: {#changelog}
+
+- **23 November 2026:** Added HTML editions alongside the chapter PDFs; moved logistics and the changelog to illustrated subpage links, renamed “Lecture Notes” and shortened chapter summaries to three topics on the [course page](../index.qmd). Applied the shared site design, with animation spanning the page and a still background for the HTML notes. Chapter titles open the HTML notes; PDF buttons are solid. Moved the course overview to Logistics.
+- **19 November 2026:** Updated the chapter PDFs and full book with boxed,
+  non-examinable Python examples; corrected 2 January to New Year break.
+
+:::
