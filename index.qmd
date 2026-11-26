@@ -54,16 +54,21 @@ body-classes: home-research-page
 ::: {.home-intro}
 ::: {.home-intro-copy}
 I serve as Assistant Secretary in the Office of the Cabinet Secretary, under the
-Office of the President of the Philippines, where I work on policy analytics.
+Office of the President of the Philippines. My work in policy analytics draws
+on statistical methods, machine learning, natural language processing and
+generative artificial intelligence, using semantic search, knowledge graphs
+and retrieval-augmented generation (RAG), including GraphRAG, to support
+information retrieval and policy analysis.
 
 I hold a BSc in Mathematics with First Class Honours from the [University of
 Bristol](https://www.bristol.ac.uk/study/undergraduate/2027/maths/bsc-mathematics/){target="_blank" rel="noopener"}.
 I have accepted a place at Johns Hopkins University on the pathway to the
 [Master of Science in Artificial
 Intelligence](https://ep.jhu.edu/programs/artificial-intelligence/){target="_blank" rel="noopener"}.
-My intended coursework focuses on applied machine learning and AI systems.
-My interests also include network science, with applications in
-healthcare, industry and public policy.
+My intended coursework focuses on applied machine learning and AI systems;
+my independent interests include recursive self-improvement.
+My interests also include network science, combinatorics, and algebraic topology,
+with applications in healthcare, industry and public policy.
 :::
 
 ::: {.home-intro-photo}
@@ -100,6 +105,9 @@ help identify acquisition problems. The work continues my University of Bristol 
 [thesis](https://github.com/reyjosephnieto/ph/blob/main/Nieto_TDA_Public_20260430.pdf){target="_blank" rel="noopener"}
 and [Python implementation](https://github.com/reyjosephnieto/ph){target="_blank" rel="noopener"}
 are publicly available.
+
+I also study self-improving AI systems, with a particular interest in recursive
+self-improvement.
 
 ## Earlier work
 

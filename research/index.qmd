@@ -16,7 +16,8 @@ toc-depth: 2
 I pursue network science, mathematics and artificial intelligence as an
 independent hobby. I am interested in how connections shape the behaviour
 of social and technological systems, and how machine learning can help us
-study those systems.
+study those systems. I also study self-improving AI systems, with a particular
+interest in recursive self-improvement.
 
 My current imaging project asks a practical question: when
 an image is blurred, rotated, resized, poorly exposed, or corrupted by sensor

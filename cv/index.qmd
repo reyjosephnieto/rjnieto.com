@@ -54,7 +54,10 @@ with applications in healthcare, industry and public policy.
 *Manila, Philippines*<br>
 September 2026–Present
 
-My work focuses on policy analytics.
+My work in policy analytics draws on statistical methods, machine learning,
+natural language processing and generative artificial intelligence, using
+semantic search, knowledge graphs and retrieval-augmented generation (RAG),
+including GraphRAG, to support information retrieval and policy analysis.
 
 ### Opinion Columnist
 
@@ -153,6 +156,7 @@ I have accepted a place on the AI Bridge programme, leading to the Master of
 Science in Artificial Intelligence. My intended coursework focuses on
 applied machine learning, large language models,
 agentic AI, social media analytics, and building and deploying AI systems.
+My independent study interests include recursive self-improvement.
 
 ### BSc Mathematics with First Class Honours
 
