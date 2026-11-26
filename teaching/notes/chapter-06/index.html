@@ -130,6 +130,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "caption": "Portrait of Rey Joseph RJ Nieto"
   },
   "jobTitle": "Assistant Secretary",
+  "knowsAbout": [
+    "Network science",
+    "Artificial intelligence",
+    "Machine learning",
+    "Topological data analysis",
+    "Applied mathematics"
+  ],
   "worksFor": {
     "@type": "GovernmentOrganization",
     "name": "Office of the Cabinet Secretary, Office of the President of the Philippines"
@@ -257,8 +264,9 @@ window.Quarto = {
   <li><a href="#ch6:trees" id="toc-ch6:trees" class="nav-link" data-scroll-target="#ch6\:trees">6.4 Trees and unique paths</a></li>
   <li><a href="#ch6:edge-count" id="toc-ch6:edge-count" class="nav-link" data-scroll-target="#ch6\:edge-count">6.5 Leaves and induction</a></li>
   <li><a href="#ch6:spanning" id="toc-ch6:spanning" class="nav-link" data-scroll-target="#ch6\:spanning">6.6 Spanning trees</a></li>
-  <li><a href="#ch6:rooted" id="toc-ch6:rooted" class="nav-link" data-scroll-target="#ch6\:rooted">6.7 Rooted trees</a></li>
-  <li><a href="#ch6:exercises" id="toc-ch6:exercises" class="nav-link" data-scroll-target="#ch6\:exercises">6.8 Exercises</a></li>
+  <li><a href="#ch6:kruskal" id="toc-ch6:kruskal" class="nav-link" data-scroll-target="#ch6\:kruskal">6.7 Constructing spanning trees</a></li>
+  <li><a href="#ch6:rooted" id="toc-ch6:rooted" class="nav-link" data-scroll-target="#ch6\:rooted">6.8 Rooted trees</a></li>
+  <li><a href="#ch6:exercises" id="toc-ch6:exercises" class="nav-link" data-scroll-target="#ch6\:exercises">6.9 Exercises</a></li>
   </ul>
 </nav>
     </div>
@@ -301,7 +309,7 @@ window.Quarto = {
 <li><p>distinguish walks, paths and cycles, and justify connectedness;</p></li>
 <li><p>recognise trees and explain their unique-path property;</p></li>
 <li><p>use leaf deletion and induction to prove the tree edge count;</p></li>
-<li><p>construct and check spanning trees;</p></li>
+<li><p>construct and check spanning trees, including by an edge-adding algorithm;</p></li>
 <li><p>interpret roots, parents, children, depths and rooted leaves.</p></li>
 </ul>
 </div>
@@ -518,8 +526,76 @@ F_2&amp;=\{\{a,b\},\{b,c\},\{b,d\},\{d,e\},\{e,f\}\}.
 <p>If <span class="math inline">\(m=n-1\)</span>, the spanning tree uses as many edges as <span class="math inline">\(G\)</span> has. Its edge set must therefore be the whole edge set of <span class="math inline">\(G\)</span>. Consequently, <span class="math inline">\(G\)</span> itself is a tree. We have established the criterion: <span class="math display">\[G\text{ is a tree}\quad\Longleftrightarrow\quad
 G\text{ is connected and }|E|=|V|-1.\]</span> Connectedness is the condition missing from the five-vertex counterexample in Section&nbsp;<a href="#ch6:edge-count">6.5</a>.</p>
 </section>
+<section id="ch6:kruskal" class="level2">
+<h2 class="anchored" data-anchor-id="ch6:kruskal">6.7 Constructing spanning trees</h2>
+<p>We obtained a spanning tree by deleting edges from a connected graph. We can also build one by starting with all its vertices and adding edges. At first, each vertex is a separate component. An edge is useful when it joins two of the components we have built so far.</p>
+<p>This is the unweighted form of <strong>Kruskal’s algorithm</strong>. The weighted version assigns a cost to each edge and considers the cheapest edges first. Here we only want a spanning tree, so we need no costs and may choose any order for the edges. Equivalently, all edges can be regarded as having the same cost.</p>
+<p>For a connected graph <span class="math inline">\(G=(V,E)\)</span> with <span class="math inline">\(n\)</span> vertices, proceed as follows.</p>
+<ol type="1">
+<li><p>Start with the graph <span class="math inline">\((V,\varnothing)\)</span>: retain every vertex and select no edges.</p></li>
+<li><p>Choose an order for the edges of <span class="math inline">\(G\)</span> and examine them one at a time.</p></li>
+<li><p>Accept an edge if its endpoints lie in different components of the graph formed by the edges already accepted. Otherwise, reject it.</p></li>
+<li><p>Stop when <span class="math inline">\(n-1\)</span> edges have been accepted, or when every edge has been examined.</p></li>
+</ol>
+<p>The component test concerns the graph we are building. The input graph <span class="math inline">\(G\)</span> is connected, but the selected edges may still leave several components. If the endpoints of the next edge are already joined by a path of accepted edges, adding it would close a cycle. If they lie in different components, there is no such path, so the new edge joins the components without creating a cycle.</p>
+<p><span id="ch6:kruskal-example"><strong>Example&nbsp;6.22.</strong></span> Use the fixed graph <span class="math inline">\(G\)</span> from Example&nbsp;<a href="#ch6:network">6.1</a>. Its edge set has no built-in order; choose to examine the edges as <span class="math display">\[\{a,b\},\ \{a,c\},\ \{b,c\},\ \{b,d\},\
+\{c,e\},\ \{d,e\},\ \{e,f\}.\]</span> Initially, the six vertices form six separate components. The table records the number of components after each decision.</p>
+<div class="ds-table">
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: center;">Edge</th>
+<th style="text-align: center;">Decision</th>
+<th style="text-align: center;">Components remaining</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(\{a,b\}\)</span></td>
+<td style="text-align: center;">Accept</td>
+<td style="text-align: center;"><span class="math inline">\(5\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(\{a,c\}\)</span></td>
+<td style="text-align: center;">Accept</td>
+<td style="text-align: center;"><span class="math inline">\(4\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(\{b,c\}\)</span></td>
+<td style="text-align: center;">Reject</td>
+<td style="text-align: center;"><span class="math inline">\(4\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(\{b,d\}\)</span></td>
+<td style="text-align: center;">Accept</td>
+<td style="text-align: center;"><span class="math inline">\(3\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(\{c,e\}\)</span></td>
+<td style="text-align: center;">Accept</td>
+<td style="text-align: center;"><span class="math inline">\(2\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(\{d,e\}\)</span></td>
+<td style="text-align: center;">Reject</td>
+<td style="text-align: center;"><span class="math inline">\(2\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(\{e,f\}\)</span></td>
+<td style="text-align: center;">Accept</td>
+<td style="text-align: center;"><span class="math inline">\(1\)</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>We reject <span class="math inline">\(\{b,c\}\)</span> because the accepted edges already give the path <span class="math inline">\(b,a,c\)</span>. Later, we reject <span class="math inline">\(\{d,e\}\)</span> because the accepted edges give the path <span class="math inline">\(d,b,a,c,e\)</span>. Each rejected edge would therefore create a cycle.</p>
+<p>The last edge joins the component on <span class="math inline">\(\{a,b,c,d,e\}\)</span> to the isolated vertex <span class="math inline">\(f\)</span>. The accepted edge set is <span class="math display">\[F=\{\{a,b\},\{a,c\},\{b,d\},\{c,e\},\{e,f\}\}.\]</span> This is <span class="math inline">\(F_1\)</span> from Example&nbsp;<a href="#ch6:spanning-examples">6.19</a>. All six vertices are connected, and we have accepted <span class="math inline">\(6-1=5\)</span> edges without creating a cycle. A different examination order can produce a different spanning tree.</p>
+<p><span id="why-the-construction-works."><strong>Why the construction works.</strong></span> Initially there are <span class="math inline">\(n\)</span> components and no cycles. Each accepted edge joins exactly two components, reducing their number by one, and creates no cycle. After <span class="math inline">\(k\)</span> accepted edges, the selected graph is therefore a forest with <span class="math inline">\(n-k\)</span> components. After <span class="math inline">\(n-1\)</span> accepted edges, it has one component and no cycles. It retains every vertex of <span class="math inline">\(G\)</span>, so it is a spanning tree.</p>
+<p>We must also explain why a connected input lets us reach <span class="math inline">\(n-1\)</span> accepted edges. Suppose instead that we examined every edge but still had separate components. Since <span class="math inline">\(G\)</span> is connected, a path in <span class="math inline">\(G\)</span> between two of these components must contain an edge crossing from one to another. Its endpoints must also have been in different components when we examined it: our components only merge as edges are accepted. We would therefore have accepted that edge, joining those endpoints into the same final component. This contradicts their being in different final components. Thus the procedure reaches a spanning tree.</p>
+<p>For a graph with one vertex, <span class="math inline">\(n-1=0\)</span>: the starting graph is already a spanning tree. If the input is disconnected, we exhaust the edge list with separate components still present. The same procedure then gives a <strong>spanning forest</strong>, consisting of one tree for each component of the input. No selection of its edges can connect vertices that were in different input components.</p>
+</section>
 <section id="ch6:rooted" class="level2">
-<h2 class="anchored" data-anchor-id="ch6:rooted">6.7 Rooted trees</h2>
+<h2 class="anchored" data-anchor-id="ch6:rooted">6.8 Rooted trees</h2>
 <p>A tree’s definition does not select a top or a starting vertex. A hierarchy needs that extra choice.</p>
 <div class="ds-box ds-definition">
 <div id="definition-6.7-root-parent-child-and-depth" class="ds-box-title">
@@ -536,7 +612,7 @@ G\text{ is connected and }|E|=|V|-1.\]</span> Connectedness is the condition mis
 <p>In a rooted tree, a <strong>leaf</strong> is a vertex with no children. An <strong>internal vertex</strong> has at least one child. A <strong>full binary tree</strong> is a rooted tree in which every internal vertex has exactly two children.</p>
 </div>
 <p>The rooted leaf convention agrees with degree <span class="math inline">\(1\)</span> at a non-root vertex. The root needs separate care: a root of degree <span class="math inline">\(1\)</span> has one child, so is not a rooted leaf. A one-vertex rooted tree has no children, so its root is a leaf despite having degree <span class="math inline">\(0\)</span>.</p>
-<p><span id="example-6.22."><strong>Example&nbsp;6.22.</strong></span> Consider the tree on <span class="math inline">\(\{a,b,c,d,e\}\)</span> with edges <span class="math inline">\(\{a,b\},\{a,c\},\{b,d\},\{b,e\}\)</span>. Designate <span class="math inline">\(a\)</span> as root, as in the left drawing. The right drawing shows the same edges with root <span class="math inline">\(c\)</span>.</p>
+<p><span id="example-6.23."><strong>Example&nbsp;6.23.</strong></span> Consider the tree on <span class="math inline">\(\{a,b,c,d,e\}\)</span> with edges <span class="math inline">\(\{a,b\},\{a,c\},\{b,d\},\{b,e\}\)</span>. Designate <span class="math inline">\(a\)</span> as root, as in the left drawing. The right drawing shows the same edges with root <span class="math inline">\(c\)</span>.</p>
 <p><img src="../../../teaching/notes/assets/chapter-06/diagram-05.svg" class="ds-note-image img-fluid" loading="lazy" decoding="async" alt="A tree rooted at a: a has children b and c, and b has children d and e."></p>
 <p><em>Root <span class="math inline">\(a\)</span></em></p>
 <p><img src="../../../teaching/notes/assets/chapter-06/diagram-06.svg" class="ds-note-image img-fluid" loading="lazy" decoding="async" alt="The same tree rooted at c: a is below c, b is below a, and d and e are below b."></p>
@@ -587,12 +663,12 @@ G\text{ is connected and }|E|=|V|-1.\]</span> Connectedness is the condition mis
 </table>
 </div>
 <p>The rooted leaves are <span class="math inline">\(c,d,e\)</span>, while <span class="math inline">\(a,b\)</span> are internal vertices. Both internal vertices have two children, so this is a full binary tree. Its leaves need not all have the same depth.</p>
-<p><span id="example-6.23."><strong>Example&nbsp;6.23.</strong></span> Now use root <span class="math inline">\(c\)</span> in the right drawing. The vertex <span class="math inline">\(c\)</span> has child <span class="math inline">\(a\)</span>, <span class="math inline">\(a\)</span> has child <span class="math inline">\(b\)</span>, and <span class="math inline">\(b\)</span> has children <span class="math inline">\(d,e\)</span>. The depths are <span class="math inline">\(0,1,2,3,3\)</span> for <span class="math inline">\(c,a,b,d,e\)</span>, respectively. The rooted leaves are now <span class="math inline">\(d,e\)</span>.</p>
+<p><span id="example-6.24."><strong>Example&nbsp;6.24.</strong></span> Now use root <span class="math inline">\(c\)</span> in the right drawing. The vertex <span class="math inline">\(c\)</span> has child <span class="math inline">\(a\)</span>, <span class="math inline">\(a\)</span> has child <span class="math inline">\(b\)</span>, and <span class="math inline">\(b\)</span> has children <span class="math inline">\(d,e\)</span>. The depths are <span class="math inline">\(0,1,2,3,3\)</span> for <span class="math inline">\(c,a,b,d,e\)</span>, respectively. The rooted leaves are now <span class="math inline">\(d,e\)</span>.</p>
 <p>The vertex <span class="math inline">\(c\)</span> still has graph degree <span class="math inline">\(1\)</span>, but it has a child under this rooting. It is not a rooted leaf. The rooted tree is not full binary because <span class="math inline">\(c\)</span> and <span class="math inline">\(a\)</span> each have only one child. No edge or graph degree changed when the root changed.</p>
 <p>The single-vertex rooted tree is also full binary: it has one leaf and no internal vertices. We will use such base objects when studying recursive structures in Chapter 12.</p>
 </section>
 <section id="ch6:exercises" class="level2">
-<h2 class="anchored" data-anchor-id="ch6:exercises">6.8 Exercises</h2>
+<h2 class="anchored" data-anchor-id="ch6:exercises">6.9 Exercises</h2>
 <div class="ds-exercises" style="--ds-chapter: '6';">
 <ol type="1">
 <li><p><span id="ch6ex:edges" data-label="ch6ex:edges"></span> Let <span class="math inline">\(V=\{a,b,c\}\)</span>. Decide each statement using the simple-graph definition.</p>
@@ -727,6 +803,12 @@ E_H=\{\{a,b\},\{a,c\},\{b,d\},\{c,d\},\{d,e\}\}.\]</span></p>
 <ol type="a">
 <li><p>Explain why the new graph contains a cycle.</p></li>
 <li><p>Prove that it has exactly one cycle, by considering which edge any new cycle must use and the unique old path between <span class="math inline">\(u\)</span> and <span class="math inline">\(v\)</span>.</p></li>
+</ol></li>
+<li><p><span id="ch6ex:kruskal" data-label="ch6ex:kruskal"></span></p>
+<ol type="a">
+<li><p>Apply Kruskal’s construction to <span class="math inline">\(H\)</span>, examining its edges in the order <span class="math display">\[\{a,b\},\ \{b,d\},\ \{a,c\},\ \{c,d\},\ \{d,e\}.\]</span> Record each decision and the components after it. Give the resulting spanning tree.</p></li>
+<li><p>Choose another examination order for <span class="math inline">\(H\)</span> that produces a different spanning tree. Show your decisions.</p></li>
+<li><p>Charlie accepts an edge only if at least one of its endpoints has not appeared in an accepted edge. He applies this rule to the graph with vertex set <span class="math inline">\(\{a,b,c,d\}\)</span>, examining <span class="math inline">\(\{a,b\},\{c,d\},\{b,c\}\)</span> in that order. Does his rule produce a spanning tree? Explain how Kruskal’s rule treats the last edge.</p></li>
 </ol></li>
 </ol>
 </div>
