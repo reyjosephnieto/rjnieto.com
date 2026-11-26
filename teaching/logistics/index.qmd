@@ -48,10 +48,10 @@ body-classes: discrete-course-page
 
 **Saturday Meeting Timetable**
 
-- **10:30 a.m.–12 noon:** lecture on the current chapter.
-- **12 noon–1:00 p.m.:** lunch break.
-- **1:00–1:30 p.m.:** recap of the previous chapter.
-- **1:30–2:30 p.m.:** problems on the previous chapter.
+- **90 minutes:** lecture.
+- **30 minutes:** break.
+- **30 minutes:** lecture.
+- **60 minutes:** problem class.
 
 **20 March 2027** is reserved for the Chapter 12 problem class and course revision.
 
@@ -257,11 +257,12 @@ Other absence rules:
 ## About me {#about-me}
 
 - **Education:** first-class BSc in Mathematics, University of Bristol, England (2026).
+- **Postgraduate study:** accepted onto Johns Hopkins University's AI Bridge pathway to the [Master of Science in Artificial Intelligence](https://ep.jhu.edu/programs/artificial-intelligence/).
 - **Teaching:** previously taught Mathematics in the Modern World and Living
   in the IT Era at BulSU San Rafael; formerly a teaching assistant for
   Mathematical Programming at Bristol.
 - **Work:** Assistant Secretary at the Office of the Cabinet Secretary,
   Office of the President, working on policy analytics during weekdays.
-- **Interests:** probability, topological data analysis, AI and machine
-  learning, network science and combinatorics, with applications in
+- **Interests:** network science, AI and machine learning, topological
+  data analysis, probability and combinatorics, with applications in
   healthcare, industry and public policy.

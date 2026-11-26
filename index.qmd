@@ -2,7 +2,7 @@
 title: "Rey Joseph \"RJ\" Nieto"
 pagetitle: "Rey Joseph \"RJ\" Nieto"
 title-prefix: ""
-description: "Rey Joseph “RJ” Nieto’s personal website, featuring public service, mathematics, university teaching, and his Calculated column for the Manila Bulletin."
+description: "Rey Joseph “RJ” Nieto: public service, university teaching, the Calculated column, network science and applied artificial intelligence."
 image: "assets/images/rey-joseph-nieto-social-preview.png"
 image-alt: "Portrait of Rey Joseph RJ Nieto on an ivory background with burgundy analytical motifs"
 canonical-url: "https://rjnieto.com/"
@@ -23,7 +23,7 @@ header-includes: |
         "url": "https://rjnieto.com/",
         "name": "RJ Nieto",
         "alternateName": ["Rey Joseph Nieto", "Rey Joseph “RJ” Nieto", "rjnieto.com"],
-      "description": "The personal website of Rey Joseph Nieto, featuring public service, teaching, writing, and independent mathematics, AI, and machine-learning research as a hobby.",
+        "description": "The personal website of Rey Joseph Nieto: public service, teaching, writing, and independent work in network science, mathematics and artificial intelligence.",
         "inLanguage": "en-GB",
         "author": { "@id": "https://rjnieto.com/#rey-joseph-nieto" }
       },
@@ -32,7 +32,7 @@ header-includes: |
         "@id": "https://rjnieto.com/#profile-page",
         "url": "https://rjnieto.com/",
         "name": "Rey Joseph “RJ” Nieto",
-        "description": "Rey Joseph “RJ” Nieto’s personal website, featuring public service, mathematics, university teaching, and his Calculated column for the Manila Bulletin.",
+        "description": "Rey Joseph “RJ” Nieto: public service, university teaching, the Calculated column, network science and applied artificial intelligence.",
         "inLanguage": "en-GB",
         "isPartOf": { "@id": "https://rjnieto.com/#website" },
         "mainEntity": { "@id": "https://rjnieto.com/#rey-joseph-nieto" },
@@ -58,8 +58,12 @@ Office of the President of the Philippines, where I work on policy analytics.
 
 I hold a BSc in Mathematics with First Class Honours from the [University of
 Bristol](https://www.bristol.ac.uk/study/undergraduate/2027/maths/bsc-mathematics/){target="_blank" rel="noopener"}.
-My interests lie in applying mathematics and computational methods to problems
-in healthcare, industry and public policy.
+I have accepted a place at Johns Hopkins University on the pathway to the
+[Master of Science in Artificial
+Intelligence](https://ep.jhu.edu/programs/artificial-intelligence/){target="_blank" rel="noopener"}.
+My intended coursework focuses on applied machine learning and AI systems.
+My interests also include network science, with applications in
+healthcare, industry and public policy.
 :::
 
 ::: {.home-intro-photo}
@@ -87,8 +91,8 @@ provides links to the published essays.
 
 ## Hobby
 
-My hobby is [independent mathematics, artificial intelligence, and
-machine-learning research](research/index.qmd). My current project asks how
+My hobby is [independent work in network science, mathematics and
+AI](research/index.qmd). My current imaging project asks how
 image-analysis methods respond when images are rotated, resized, poorly
 exposed, or degraded by sensor noise, and whether those response patterns can
 help identify acquisition problems. The work continues my University of Bristol dissertation,

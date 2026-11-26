@@ -17,6 +17,8 @@ body-classes: discrete-course-page
 
 ::: {#changelog}
 
+- **26 November 2026:** Revised the Saturday meeting timetable to show lecture, break and problem-class durations. Updated the instructor biography with the accepted Johns Hopkins AI pathway and network science interests.
+- **25 November 2026:** Added unweighted Kruskal’s construction, a worked example and an exercise to Chapter 6; refreshed its HTML and PDF editions and the full book.
 - **23 November 2026:** Added HTML editions alongside the chapter PDFs; moved logistics and the changelog to illustrated subpage links, renamed “Lecture Notes” and shortened chapter summaries to three topics on the [course page](../index.qmd). Applied the shared site design, with animation spanning the page and a still background for the HTML notes. Chapter titles open the HTML notes; PDF buttons are solid. Moved the course overview to Logistics. Added explanatory GIFs and bottom navigation buttons to the HTML Introduction and Chapters 1–12; PDFs retain their static illustrations. Spread background geometry across the full viewport at every screen width.
 - **19 November 2026:** Updated the chapter PDFs and full book with boxed,
   non-examinable Python examples; corrected 2 January to New Year break.

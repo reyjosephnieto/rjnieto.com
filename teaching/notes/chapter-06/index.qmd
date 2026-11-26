@@ -57,7 +57,7 @@ After working through this chapter, you should be able to:
 
 - use leaf deletion and induction to prove the tree edge count;
 
-- construct and check spanning trees;
+- construct and check spanning trees, including by an edge-adding algorithm;
 
 - interpret roots, parents, children, depths and rooted leaves.
 ::::
@@ -335,7 +335,50 @@ The edge selected for deletion must lie on a cycle. Deleting $\{e,f\}$ from $G$ 
 If $m=n-1$, the spanning tree uses as many edges as $G$ has. Its edge set must therefore be the whole edge set of $G$. Consequently, $G$ itself is a tree. We have established the criterion: $$G\text{ is a tree}\quad\Longleftrightarrow\quad
  G\text{ is connected and }|E|=|V|-1.$$ Connectedness is the condition missing from the five-vertex counterexample in Section [6.5](#ch6:edge-count).
 
-## 6.7 Rooted trees {#ch6:rooted}
+## 6.7 Constructing spanning trees {#ch6:kruskal}
+
+We obtained a spanning tree by deleting edges from a connected graph. We can also build one by starting with all its vertices and adding edges. At first, each vertex is a separate component. An edge is useful when it joins two of the components we have built so far.
+
+This is the unweighted form of **Kruskal's algorithm**. The weighted version assigns a cost to each edge and considers the cheapest edges first. Here we only want a spanning tree, so we need no costs and may choose any order for the edges. Equivalently, all edges can be regarded as having the same cost.
+
+For a connected graph $G=(V,E)$ with $n$ vertices, proceed as follows.
+
+1.  Start with the graph $(V,\varnothing)$: retain every vertex and select no edges.
+
+2.  Choose an order for the edges of $G$ and examine them one at a time.
+
+3.  Accept an edge if its endpoints lie in different components of the graph formed by the edges already accepted. Otherwise, reject it.
+
+4.  Stop when $n-1$ edges have been accepted, or when every edge has been examined.
+
+The component test concerns the graph we are building. The input graph $G$ is connected, but the selected edges may still leave several components. If the endpoints of the next edge are already joined by a path of accepted edges, adding it would close a cycle. If they lie in different components, there is no such path, so the new edge joins the components without creating a cycle.
+
+[**Example 6.22.**]{#ch6:kruskal-example} Use the fixed graph $G$ from Example [6.1](#ch6:network). Its edge set has no built-in order; choose to examine the edges as $$\{a,b\},\ \{a,c\},\ \{b,c\},\ \{b,d\},\
+ \{c,e\},\ \{d,e\},\ \{e,f\}.$$ Initially, the six vertices form six separate components. The table records the number of components after each decision.
+
+::: ds-table
+     Edge      Decision   Components remaining
+  ----------- ---------- ----------------------
+   $\{a,b\}$    Accept            $5$
+   $\{a,c\}$    Accept            $4$
+   $\{b,c\}$    Reject            $4$
+   $\{b,d\}$    Accept            $3$
+   $\{c,e\}$    Accept            $2$
+   $\{d,e\}$    Reject            $2$
+   $\{e,f\}$    Accept            $1$
+:::
+
+We reject $\{b,c\}$ because the accepted edges already give the path $b,a,c$. Later, we reject $\{d,e\}$ because the accepted edges give the path $d,b,a,c,e$. Each rejected edge would therefore create a cycle.
+
+The last edge joins the component on $\{a,b,c,d,e\}$ to the isolated vertex $f$. The accepted edge set is $$F=\{\{a,b\},\{a,c\},\{b,d\},\{c,e\},\{e,f\}\}.$$ This is $F_1$ from Example [6.19](#ch6:spanning-examples). All six vertices are connected, and we have accepted $6-1=5$ edges without creating a cycle. A different examination order can produce a different spanning tree.
+
+[**Why the construction works.**]{#why-the-construction-works.} Initially there are $n$ components and no cycles. Each accepted edge joins exactly two components, reducing their number by one, and creates no cycle. After $k$ accepted edges, the selected graph is therefore a forest with $n-k$ components. After $n-1$ accepted edges, it has one component and no cycles. It retains every vertex of $G$, so it is a spanning tree.
+
+We must also explain why a connected input lets us reach $n-1$ accepted edges. Suppose instead that we examined every edge but still had separate components. Since $G$ is connected, a path in $G$ between two of these components must contain an edge crossing from one to another. Its endpoints must also have been in different components when we examined it: our components only merge as edges are accepted. We would therefore have accepted that edge, joining those endpoints into the same final component. This contradicts their being in different final components. Thus the procedure reaches a spanning tree.
+
+For a graph with one vertex, $n-1=0$: the starting graph is already a spanning tree. If the input is disconnected, we exhaust the edge list with separate components still present. The same procedure then gives a **spanning forest**, consisting of one tree for each component of the input. No selection of its edges can connect vertices that were in different input components.
+
+## 6.8 Rooted trees {#ch6:rooted}
 
 A tree's definition does not select a top or a starting vertex. A hierarchy needs that extra choice.
 
@@ -361,7 +404,7 @@ In a rooted tree, a **leaf** is a vertex with no children. An **internal vertex*
 
 The rooted leaf convention agrees with degree $1$ at a non-root vertex. The root needs separate care: a root of degree $1$ has one child, so is not a rooted leaf. A one-vertex rooted tree has no children, so its root is a leaf despite having degree $0$.
 
-[**Example 6.22.**]{#example-6.22.} Consider the tree on $\{a,b,c,d,e\}$ with edges $\{a,b\},\{a,c\},\{b,d\},\{b,e\}$. Designate $a$ as root, as in the left drawing. The right drawing shows the same edges with root $c$.
+[**Example 6.23.**]{#example-6.23.} Consider the tree on $\{a,b,c,d,e\}$ with edges $\{a,b\},\{a,c\},\{b,d\},\{b,e\}$. Designate $a$ as root, as in the left drawing. The right drawing shows the same edges with root $c$.
 
 ![](/teaching/notes/assets/chapter-06/diagram-05.svg){.ds-note-image fig-alt="A tree rooted at a: a has children b and c, and b has children d and e." loading="lazy" decoding="async"}
 
@@ -385,13 +428,13 @@ With root $a$, the hierarchy is
 
 The rooted leaves are $c,d,e$, while $a,b$ are internal vertices. Both internal vertices have two children, so this is a full binary tree. Its leaves need not all have the same depth.
 
-[**Example 6.23.**]{#example-6.23.} Now use root $c$ in the right drawing. The vertex $c$ has child $a$, $a$ has child $b$, and $b$ has children $d,e$. The depths are $0,1,2,3,3$ for $c,a,b,d,e$, respectively. The rooted leaves are now $d,e$.
+[**Example 6.24.**]{#example-6.24.} Now use root $c$ in the right drawing. The vertex $c$ has child $a$, $a$ has child $b$, and $b$ has children $d,e$. The depths are $0,1,2,3,3$ for $c,a,b,d,e$, respectively. The rooted leaves are now $d,e$.
 
 The vertex $c$ still has graph degree $1$, but it has a child under this rooting. It is not a rooted leaf. The rooted tree is not full binary because $c$ and $a$ each have only one child. No edge or graph degree changed when the root changed.
 
 The single-vertex rooted tree is also full binary: it has one leaf and no internal vertices. We will use such base objects when studying recursive structures in Chapter 12.
 
-## 6.8 Exercises {#ch6:exercises}
+## 6.9 Exercises {#ch6:exercises}
 
 ::: {.ds-exercises style="--ds-chapter: '6';"}
 1.  []{#ch6ex:edges label="ch6ex:edges"} Let $V=\{a,b,c\}$. Decide each statement using the simple-graph definition.
@@ -547,6 +590,14 @@ The single-vertex rooted tree is also full binary: it has one leaf and no intern
     a)  Explain why the new graph contains a cycle.
 
     b)  Prove that it has exactly one cycle, by considering which edge any new cycle must use and the unique old path between $u$ and $v$.
+
+27. []{#ch6ex:kruskal label="ch6ex:kruskal"}
+
+    a)  Apply Kruskal's construction to $H$, examining its edges in the order $$\{a,b\},\ \{b,d\},\ \{a,c\},\ \{c,d\},\ \{d,e\}.$$ Record each decision and the components after it. Give the resulting spanning tree.
+
+    b)  Choose another examination order for $H$ that produces a different spanning tree. Show your decisions.
+
+    c)  Charlie accepts an edge only if at least one of its endpoints has not appeared in an accepted edge. He applies this rule to the graph with vertex set $\{a,b,c,d\}$, examining $\{a,b\},\{c,d\},\{b,c\}$ in that order. Does his rule produce a spanning tree? Explain how Kruskal's rule treats the last edge.
 :::
 
 ::: {.ds-chapter-navigation}

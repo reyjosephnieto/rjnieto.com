@@ -213,7 +213,7 @@ body-classes: discrete-course-page
 
 - Graphs, degrees and paths
 - Trees and unique paths
-- Spanning and rooted trees
+- Spanning trees, Kruskal’s algorithm and rooted trees
 
 [HTML](notes/chapter-06/index.qmd){.discrete-chapter-html .btn .btn-outline-primary .btn-sm aria-label="Read Chapter 6 online"}
 [PDF](bulsu/discrete-math/lecture-notes/chapter_06.pdf){.discrete-chapter-pdf .btn .btn-primary .btn-sm aria-label="Download Chapter 6: Graphs (PDF)"}
@@ -354,7 +354,7 @@ body-classes: discrete-course-page
 
 ::: {.discrete-book-details}
 
-**Entire book** · Updated 19 November 2026 · 198 pages
+**Entire book** · Updated 25 November 2026 · 200 pages
 [Download PDF](bulsu/discrete-math/lecture-notes/Nieto_DS.pdf){.discrete-chapter-pdf .btn .btn-primary .btn-sm aria-label="Download the entire Discrete Mathematics book (PDF)"}
 
 :::

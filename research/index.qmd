@@ -1,7 +1,7 @@
 ---
 title: "Hobby"
-subtitle: "Independent mathematics, AI, and machine-learning research"
-description: "RJ Nieto's hobby is independent mathematics, artificial intelligence, and machine-learning research."
+subtitle: "Independent work in network science, mathematics and AI"
+description: "RJ Nieto's independent interests in network science, artificial intelligence and mathematics, including work on the reliability of image-analysis methods."
 image: "/assets/images/research/diabetic-retinopathy-visual-field.webp"
 image-alt: "A clear view of children playing football beside a blurred and obscured view representing possible sight loss"
 canonical-url: "https://rjnieto.com/research/"
@@ -13,8 +13,12 @@ toc: true
 toc-depth: 2
 ---
 
-My hobby is independent mathematics, artificial intelligence, and
-machine-learning research. My current project asks a practical question: when
+I pursue network science, mathematics and artificial intelligence as an
+independent hobby. I am interested in how connections shape the behaviour
+of social and technological systems, and how machine learning can help us
+study those systems.
+
+My current imaging project asks a practical question: when
 an image is blurred, rotated, resized, poorly exposed, or corrupted by sensor
 noise, how does the information extracted by a computer change? I want to
 understand whether the pattern of those changes can help identify what went
