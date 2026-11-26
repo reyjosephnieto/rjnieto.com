@@ -40,8 +40,9 @@ body-classes: cv-page
 
 Public servant and mathematician with a background in quantitative research,
 university teaching, journalism, and strategic communications.
-My interests centre on network science and applied artificial intelligence,
-with applications in healthcare, industry and public policy.
+My interests include network science, combinatorics, algebraic topology and
+applied artificial intelligence, with applications in healthcare, industry
+and public policy.
 
 **LinkedIn:** [linkedin.com/in/rjosephnieto](https://www.linkedin.com/in/rjosephnieto/){target="_blank" rel="noopener"}
 
@@ -73,8 +74,9 @@ column. I previously wrote the weekly *Thinking Pinoy* column from 2020 to 2021.
 2026–Present
 
 I teach part-time undergraduate Saturday classes in
-[*Discrete Mathematics*](../teaching/index.qmd). I previously taught
-*Mathematics in the Modern World* and *Living in the IT Era*.
+[*Discrete Mathematics*](../teaching/index.qmd) at the Bustos Campus.
+I previously taught *Mathematics in the Modern World* and *Living in the IT Era*
+at the San Rafael Campus.
 
 ### Teaching Assistant (Mathematics)
 
@@ -189,6 +191,8 @@ cubical persistent homology on 400 retinal images across ten perturbation
 protocols and 170 settings. The study examined whether contrasting topological
 and geometric response profiles could help distinguish spatial misalignment
 from radiometric corruption.
+I continue this work independently, studying the reliability of image-analysis
+methods under rotation, resizing, exposure changes and sensor noise.
 
 [View the public dissertation and implementation](https://github.com/reyjosephnieto/ph){target="_blank" rel="noopener"}.
 
@@ -213,6 +217,9 @@ model for future cohorts.
 
 ## Technical and language skills
 
+- **Statistical and AI methods:** statistical analysis, machine learning,
+  natural language processing, generative AI, semantic search, knowledge
+  graphs and retrieval-augmented generation (RAG), including GraphRAG
 - **Programming languages:** Python, R, MATLAB, and Java
 - **Python ecosystem:** scientific computing and machine learning (NumPy,
   SciPy, scikit-learn, PyTorch, and TensorFlow); computer vision and
